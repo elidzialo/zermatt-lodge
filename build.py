@@ -60,7 +60,11 @@ def related_for(slug, meta):
         if s != slug and s not in rel: rel.append(s)
     return rel[:3]
 
-urls = [f"{DOMAIN}/", f"{DOMAIN}/guides/"]
+def strip_empty_faq(h):
+    """Drop the FAQ section when a page has no questions (no empty heading, no empty FAQPage)."""
+    return re.sub(r'\s*<section class="wrap sec" aria-labelledby="faqH">.*?</section>', "", h, count=1, flags=re.S)
+
+urls = [f"{DOMAIN}/", f"{DOMAIN}/guides"]
 for slug, (meta, body) in pages.items():
     body_html = fix_links(markdown.markdown(body, extensions=["tables", "sane_lists"]))
     body_html = re.sub(r"<h1>.*?</h1>", "", body_html, count=1, flags=re.S)
@@ -74,9 +78,11 @@ for slug, (meta, body) in pages.items():
          "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
-            {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides/"},
+            {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides"},
             {"@type": "ListItem", "position": 3, "name": meta["title"], "item": canon}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["q"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]}} for q in faqs]}]}
+    if not faqs:
+        schema["@graph"] = schema["@graph"][:2]
     out = (TPL.replace("{{TITLE}}", esc(meta["title"]))
               .replace("{{META_DESCRIPTION}}", esc(meta["meta_description"]))
               .replace("{{CANONICAL}}", canon)
@@ -88,6 +94,8 @@ for slug, (meta, body) in pages.items():
               .replace("{{FAQ_HTML}}", faq_html)
               .replace("{{RELATED_HTML}}", "\n".join(card(s) for s in related_for(slug, meta)))
               .replace("{{SCHEMA_JSON}}", json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")))
+    if not faqs:
+        out = strip_empty_faq(out)
     assert "{{" not in out.split("-->", 1)[1], slug
     d = os.path.join(ROOT, "guides", slug); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(out)
@@ -96,14 +104,15 @@ for slug, (meta, body) in pages.items():
 # Guides hub page, built from the same template
 hub_meta_desc = "Practical Liverpool guides from the hosts of Zermatt Lodge: hospital visits, Grand National, match days, contractor and group stays."
 hub = (TPL.replace("{{TITLE}}", "Liverpool Guides | Zermatt Lodge")
-          .replace("{{META_DESCRIPTION}}", hub_meta_desc).replace("{{CANONICAL}}", f"{DOMAIN}/guides/")
+          .replace("{{META_DESCRIPTION}}", hub_meta_desc).replace("{{CANONICAL}}", f"{DOMAIN}/guides")
           .replace("{{H1}}", "Liverpool guides for groups, families and work stays")
           .replace("{{BREADCRUMB}}", "All guides").replace("{{INTRO}}", hub_meta_desc)
           .replace("{{HERO_IMAGE}}", CDN + PHOTOS[0])
           .replace("{{BODY_HTML}}", "<p>Local, first-hand guides to staying in north Liverpool. Pick a guide below.</p>")
           .replace("{{FAQ_HTML}}", "")
           .replace("{{RELATED_HTML}}", "\n".join(card(s) for s in pages))
-          .replace("{{SCHEMA_JSON}}", json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Liverpool guides", "url": f"{DOMAIN}/guides/"})))
+          .replace("{{SCHEMA_JSON}}", json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Liverpool guides", "url": f"{DOMAIN}/guides"})))
+hub = strip_empty_faq(hub)
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
 open(os.path.join(ROOT, "guides/index.html"), "w", encoding="utf-8").write(hub)
 
