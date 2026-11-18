@@ -45,7 +45,7 @@ const INK = "#1b1f1d";
 const MUTED = "#5d6560";
 const LINE = "#e7e3dc";
 
-export const NO_PARTIES = "Strictly no parties or events - bookings found to be for parties will be cancelled without refund.";
+export const NO_PARTIES = "Strictly no parties or events - bookings found to be for parties are cancelled.";
 export const CANCELLATION =
   "Cancellation policy (Moderate): full refund if you cancel up to 5 days before check-in, a 50% refund if you cancel after that, and no refund after check-in.";
 
@@ -124,7 +124,7 @@ ${row(totalLabel, money(d.totalPence), { bold: true })}
 function noPartiesBox(): string {
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px"><tr>
 <td style="background:${AMBER_TINT};border:2px solid ${AMBER};border-radius:12px;padding:12px 16px;font-size:14.5px;color:${INK}">
-<b style="color:#8a1c12">Strictly no parties or events.</b> Bookings found to be for parties will be cancelled without refund.</td></tr></table>`;
+<b style="color:#8a1c12">Strictly no parties or events.</b> Bookings found to be for parties are cancelled.</td></tr></table>`;
 }
 
 function p(text: string): string {

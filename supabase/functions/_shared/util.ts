@@ -172,7 +172,7 @@ export async function releaseExpiredHolds(db: SupabaseClient, stripe?: Stripe): 
 export const POLICY_TEXT =
   "Cancellation policy (Moderate): full refund if you cancel up to 5 days before check-in; 50% refund after that; " +
   "no refund after check-in. No pets, no smoking. Guest ID and damage deposit may be required. " +
-  "STRICTLY NO PARTIES OR EVENTS - bookings found to be for parties will be cancelled without refund.";
+  "STRICTLY NO PARTIES OR EVENTS - bookings found to be for parties are cancelled.";
 
 /** Promo code format: letters and digits only, 3-30 characters. */
 export const PROMO_RE = /^[A-Z0-9]{3,30}$/;
