@@ -19,12 +19,12 @@ button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:var(--brand)}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
-.top{position:sticky;top:0;z-index:20;background:var(--brand);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top{position:sticky;top:0;z-index:20;background:var(--brand);color:#fff;padding:4px 12px 4px 16px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .top h1{font-family:Fraunces,Georgia,serif;font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
 .top h1 i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent)}
 .top .who{font-size:13px;opacity:.9;display:flex;gap:10px;align-items:center;min-width:0}
 .top .who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:44vw}
-.top button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:8px;padding:6px 10px;font-size:13px}
+.top button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:8px;padding:6px 12px;font-size:14px;min-height:44px;min-width:44px}
 nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:15;scrollbar-width:none}
 nav.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;white-space:nowrap;font-weight:600;font-size:14px;color:var(--muted)}
 nav.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
@@ -62,8 +62,30 @@ table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .tw{overflow-x:auto}
-.login{max-width:420px;margin:40px auto}
+.login{max-width:440px;margin:32px auto;padding:0 12px}
 .login p{color:var(--muted);margin-bottom:14px}
+.login .btn{min-height:48px;width:100%;font-size:16px}
+.login label.f{font-size:14px}
+.pw{position:relative}
+.pw input{padding-right:72px !important}
+.pw button{position:absolute;right:4px;bottom:2px;min-height:44px;min-width:60px;border:0;background:transparent;color:var(--brand);font-weight:700;font-size:14px}
+.tick{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:4px 0 14px;background:var(--brand-tint);border-radius:10px;cursor:pointer;min-height:44px}
+.tick input{width:24px;height:24px;flex:0 0 24px;margin-top:1px;accent-color:var(--brand)}
+.tick b{display:block;font-size:15px;color:var(--brand-ink)}
+.tick span{display:block;font-size:13px;color:var(--muted)}
+.links{display:flex;flex-direction:column;gap:2px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.linkbtn{background:none;border:0;color:var(--brand);font-weight:600;font-size:15px;min-height:44px;text-align:left;padding:0 2px;text-decoration:underline;text-underline-offset:3px}
+.linkbtn:hover{color:var(--accent-ink)}
+.steps{counter-reset:st;list-style:none;margin:0 0 6px}
+.steps li{counter-increment:st;position:relative;padding-left:34px;margin-bottom:14px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#1b1307;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.qr{display:block;width:200px;height:200px;max-width:100%;margin:8px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px}
+.secret{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;letter-spacing:.06em;word-break:break-all;background:var(--soft);border-radius:8px;padding:8px 10px;margin-top:4px;user-select:all}
+.code{font-size:24px !important;letter-spacing:.35em;text-align:center;font-family:ui-monospace,Menlo,Consolas,monospace}
+.meter{height:6px;border-radius:99px;background:var(--line);margin:-4px 0 4px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
+.hint{font-size:13px;color:var(--muted);margin-bottom:12px}
+.muted{color:var(--muted);font-size:14px}
 .cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .cal-h b{font-family:Fraunces,Georgia,serif;font-size:18px}
 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
@@ -91,26 +113,83 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 <body>
 <header class="top">
   <h1><i aria-hidden="true"></i>Book Homes admin</h1>
-  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" id="signOut">Sign out</button></div>
+  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" data-signout>Sign out</button></div>
 </header>
 
 <div id="viewLogin" class="login hidden">
   <div class="card">
     <h2>Sign in</h2>
-    <p>Enter your admin email and we'll send you a sign-in link. Only emails on the admin list can see this area.</p>
-    <div id="loginMsg"></div>
+    <div id="loginMsg" role="status" aria-live="polite"></div>
     <form id="loginForm" novalidate>
-      <label class="f">Email<input type="email" id="loginEmail" autocomplete="email" inputmode="email" required></label>
-      <button class="btn" type="submit" id="loginBtn" style="width:100%">Email me a sign-in link</button>
+      <label class="f">Email<input type="email" id="loginEmail" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" required></label>
+      <label class="f">Password<span class="pw"><input type="password" id="loginPw" autocomplete="current-password" required><button type="button" data-showpw="loginPw" aria-label="Show password">Show</button></span></label>
+      <label class="tick"><input type="checkbox" id="trustBox" checked><span><b>Trust this browser for 30 days</b><span>You'll stay signed in on this browser for 30 days, so no password or code until then. Untick on a shared computer: you'll be signed out when you close the tab.</span></span></label>
+      <button class="btn" type="submit" id="loginBtn">Sign in</button>
     </form>
+    <div class="links">
+      <button type="button" class="linkbtn" id="forgotBtn">Forgot password?</button>
+      <button type="button" class="linkbtn" id="linkBtn">Email me a login link instead</button>
+    </div>
+    <p class="muted" style="margin:10px 0 0">Only emails on the admin list can get in. You'll also need the 6-digit code from your authenticator app.</p>
+  </div>
+</div>
+
+<div id="viewMfaEnrol" class="login hidden">
+  <div class="card">
+    <h2>Set up 2-step verification</h2>
+    <p>One-time setup. After this, signing in needs your password and a 6-digit code from your phone.</p>
+    <div id="enrolMsg" role="status" aria-live="polite"></div>
+    <ol class="steps">
+      <li>Install an authenticator app on your phone, for example Google Authenticator, Microsoft Authenticator or 1Password.</li>
+      <li>In the app, tap <b>+</b> and scan this QR code.
+        <img id="enrolQr" class="qr" alt="QR code for your authenticator app">
+        <span class="muted">Can't scan it? <a href="#" id="enrolUri">Open in authenticator app</a> or type this key:</span>
+        <code class="secret" id="enrolSecret"></code></li>
+      <li>Type the 6-digit code the app shows.</li>
+    </ol>
+    <form id="enrolForm" novalidate>
+      <label class="f">6-digit code<input type="text" class="code" id="enrolCode" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="6" required></label>
+      <button class="btn" type="submit" id="enrolBtn">Verify 6-digit code</button>
+    </form>
+    <div class="links"><button type="button" class="linkbtn" data-signout>Cancel and sign out</button></div>
+  </div>
+</div>
+
+<div id="viewMfa" class="login hidden">
+  <div class="card">
+    <h2>Enter your 6-digit code</h2>
+    <p>Open your authenticator app and type the code for Book Homes.</p>
+    <div id="mfaMsg" role="status" aria-live="polite"></div>
+    <form id="mfaForm" novalidate>
+      <label class="f">6-digit code<input type="text" class="code" id="mfaCode" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" maxlength="6" required></label>
+      <button class="btn" type="submit" id="mfaBtn">Verify 6-digit code</button>
+    </form>
+    <div class="links"><button type="button" class="linkbtn" data-signout>Use a different account</button></div>
+  </div>
+</div>
+
+<div id="viewSetPw" class="login hidden">
+  <div class="card">
+    <h2>Set your password</h2>
+    <p id="setPwIntro">Choose a password for next time. At least 10 characters. A short phrase of 3 or 4 random words is easy to remember and hard to guess.</p>
+    <div id="setPwMsg" role="status" aria-live="polite"></div>
+    <form id="setPwForm" novalidate>
+      <input type="email" id="setPwUser" autocomplete="username" hidden>
+      <label class="f">New password<span class="pw"><input type="password" id="newPw" autocomplete="new-password" minlength="10" required><button type="button" data-showpw="newPw" aria-label="Show password">Show</button></span></label>
+      <div class="meter" aria-hidden="true"><i id="pwBar"></i></div>
+      <div class="hint" id="pwHint">At least 10 characters.</div>
+      <label class="f">Type it again<span class="pw"><input type="password" id="newPw2" autocomplete="new-password" required><button type="button" data-showpw="newPw2" aria-label="Show password">Show</button></span></label>
+      <button class="btn" type="submit" id="setPwBtn">Save password</button>
+    </form>
+    <div class="links"><button type="button" class="linkbtn" id="skipPw">Skip, I already have a password</button></div>
   </div>
 </div>
 
 <div id="viewDenied" class="login hidden">
   <div class="card">
     <h2>No access</h2>
-    <p>You're signed in, but this email isn't on the Zermatt Lodge admin list.</p>
-    <button class="btn ghost" type="button" id="deniedOut">Sign out</button>
+    <p id="deniedText">You're signed in, but this email isn't on the Zermatt Lodge admin list.</p>
+    <button class="btn ghost" type="button" data-signout>Sign out</button>
   </div>
 </div>
 
@@ -132,6 +211,10 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
       <div class="card"><h2>Today</h2><div id="dashToday" class="list"></div></div>
       <div class="card"><h2>Next 5 bookings</h2><div id="dashNext" class="list"></div></div>
       <div class="card"><h2>Sync health</h2><div id="dashSync" class="list"></div></div>
+      <div class="card"><h2>Sign-in and security</h2>
+        <p class="muted" id="trustStatus" style="margin-bottom:10px"></p>
+        <div class="acts"><button type="button" class="btn ghost" data-signout>Sign out</button><button type="button" class="btn ghost" id="signOutAll">Sign out of all devices</button></div>
+      </div>
     </section>
 
     <section data-panel="bookings" class="hidden">
@@ -214,7 +297,7 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 (function(){
 "use strict";
 // Public project URL + publishable (anon) key. Not secrets: every read is gated by Row Level Security,
-// which only returns rows to signed-in users whose email is in zermatt.admins.
+// which only returns rows to signed-in users whose email is in zermatt.admins AND who passed 2-step verification (aal2).
 var SUPABASE_URL = "https://kddhkuwnkkjcnbjegsmc.supabase.co";
 var SUPABASE_KEY = "sb_publishable_zASd1ua4ZuknbOatR4MnTA_nVwqRZlR";
 
@@ -243,46 +326,283 @@ if (!window.supabase || !window.supabase.createClient){
   document.body.insertAdjacentHTML("beforeend", '<div class="login"><div class="err">The sign-in library did not load. Check your connection and reload.</div></div>');
   return;
 }
+
+/* ---------- "trust this browser" + where the session is kept ---------- */
+// Ticked: the Supabase session is kept in localStorage, plus a marker that runs out after 30 days.
+// Unticked: the session is kept in sessionStorage, so closing the tab signs you out.
+// The marker never skips the password or the 6-digit code; it only decides how long this browser stays signed in.
+var REDIRECT = "https://bookhomes.co.uk/admin/";
+var TRUST_KEY = "bh_admin_trust", PENDING_KEY = "bh_admin_trust_pending", PW_SEEN_KEY = "bh_admin_pw_prompted", TRUST_DAYS = 30;
+function probe(name){ try { var s = window[name]; s.setItem("__bh", "1"); s.removeItem("__bh"); return s; } catch (e) { return null; } }
+var LS = probe("localStorage"), SS = probe("sessionStorage"), MEM = {};
+var memStore = {getItem: function(k){ return Object.prototype.hasOwnProperty.call(MEM, k) ? MEM[k] : null; }, setItem: function(k, v){ MEM[k] = String(v); }, removeItem: function(k){ delete MEM[k]; }};
+function lsGet(k){ try { return LS ? LS.getItem(k) : null; } catch (e) { return null; } }
+function lsSet(k, v){ try { if (LS) LS.setItem(k, v); } catch (e) {} }
+function lsDel(k){ try { if (LS) LS.removeItem(k); } catch (e) {} }
+function trustUntil(){ try { var v = JSON.parse(lsGet(TRUST_KEY) || "null"); return v && typeof v.until === "number" && v.until > Date.now() ? v.until : 0; } catch (e) { return 0; } }
+function setTrust(on){ if (on) lsSet(TRUST_KEY, JSON.stringify({until: Date.now() + TRUST_DAYS * 864e5})); else lsDel(TRUST_KEY); }
+function store(mode){ return (mode === "local" ? LS : SS) || memStore; }
+function clearLocalSession(){
+  if (!LS) return;
+  try { Object.keys(LS).forEach(function(k){ if (/^sb-.*-auth-token/.test(k)) LS.removeItem(k); }); } catch (e) {}
+}
+var cameFromEmail = /(access_token|token_hash|error_description)=|[?&]code=/.test(location.hash + location.search);
+var MODE;
+if (cameFromEmail){ MODE = lsGet(PENDING_KEY) === "0" ? "session" : "local"; setTrust(MODE === "local"); }
+else { MODE = trustUntil() ? "local" : "session"; }
+if (MODE === "session"){ lsDel(TRUST_KEY); clearLocalSession(); }
+var authStorage = {
+  getItem: function(k){ try { return store(MODE).getItem(k); } catch (e) { return null; } },
+  setItem: function(k, v){
+    try { store(MODE).setItem(k, v); } catch (e) {}
+    var other = store(MODE === "local" ? "session" : "local");
+    if (other !== store(MODE)) { try { other.removeItem(k); } catch (e) {} }
+  },
+  removeItem: function(k){ [LS, SS, memStore].forEach(function(s){ try { if (s) s.removeItem(k); } catch (e) {} }); }
+};
+
 var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
   db: {schema: "zermatt"},
-  auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}
+  auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit", storage: authStorage}
 });
 
-/* ---------- auth ---------- */
-var started = false;
-function route(session){
-  if (!session){ started = false; show("#who", false); show("#viewApp", false); show("#viewDenied", false); show("#viewLogin", true); return; }
-  $("#whoEmail").textContent = session.user.email || ""; show("#who", true); show("#viewLogin", false);
-  sb.rpc("is_admin").then(function(r){
-    if (r.error && /PGRST20|42883|42P01|schema|does not exist|Could not find/i.test((r.error.code || "") + " " + (r.error.message || ""))){
-      show("#viewApp", true); show("#viewDenied", false);
-      errBox("#appErr", "Setup pending: run supabase/ADMIN_PROMO_setup.sql in the Supabase SQL editor, then reload this page.");
-      return;
-    }
-    if (r.error || r.data !== true){ show("#viewApp", false); show("#viewDenied", true); return; }
-    show("#viewDenied", false); show("#viewApp", true);
-    if (!started){ started = true; loadAll(); }
-  });
+/* ---------- auth flow: password (or email link) -> 2-step code -> optional "set your password" -> dashboard ---------- */
+var started = false, routing = 0, FACTOR = null, ENROL = null, RECOVERY = false, SESSION = null;
+var LINK_ERR = (function(){ var m = (location.hash + "&" + location.search.slice(1)).match(/error_description=([^&]+)/); try { return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : ""; } catch (e) { return "That link didn't work."; } })();
+var VIEWS = ["Login", "MfaEnrol", "Mfa", "SetPw", "Denied", "App"];
+function view(name){ VIEWS.forEach(function(v){ show("#view" + v, v === name); }); window.scrollTo(0, 0); }
+function msg(el, text, ok){ $(el).innerHTML = text ? '<div class="' + (ok ? "okmsg" : "err") + '">' + esc(text) + '</div>' : ""; }
+function busy(btn, on, label){ btn.disabled = on; if (label) btn.textContent = label; }
+function claims(session){
+  try {
+    var p = session.access_token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    while (p.length % 4) p += "=";
+    return JSON.parse(decodeURIComponent(Array.prototype.map.call(atob(p), function(c){ return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2); }).join("")));
+  } catch (e) { return {}; }
 }
-sb.auth.getSession().then(function(r){ route(r.data && r.data.session); });
+function niceErr(e){
+  var m = (e && e.message) || String(e || "Something went wrong.");
+  if (/invalid login credentials/i.test(m)) return "Wrong email or password.";
+  if (/invalid totp|invalid.*code|expired/i.test(m) && /code|totp|challenge/i.test(m)) return "That code didn't work. Wait for a new code in the app and try again.";
+  if (/rate limit|too many/i.test(m)) return "Too many tries. Please wait a minute and try again.";
+  if (/signups? not allowed|user not found/i.test(m)) return "That email can't sign in here. Ask the owner to add you.";
+  return m;
+}
+
+function route(session){
+  var my = ++routing;
+  SESSION = session || null;
+  if (!session){
+    started = false; show("#who", false); view("Login");
+    if (LINK_ERR){ msg("#loginMsg", LINK_ERR + " Links work once and expire after a while, so ask for a new one."); LINK_ERR = ""; history.replaceState(null, "", location.pathname); }
+    return;
+  }
+  $("#whoEmail").textContent = session.user.email || ""; show("#who", true);
+  sb.rpc("is_admin").then(function(r){
+    if (my !== routing) return;
+    if (r.error || r.data !== true){
+      $("#deniedText").textContent = r.error ? "Could not check admin access: " + r.error.message : "You're signed in, but this email isn't on the Zermatt Lodge admin list.";
+      view("Denied"); return;
+    }
+    return sb.auth.mfa.getAuthenticatorAssuranceLevel().then(function(a){
+      if (my !== routing) return;
+      if (a.error) throw a.error;
+      if (a.data.currentLevel === "aal2") return afterMfa(session);
+      return sb.auth.mfa.listFactors().then(function(f){
+        if (my !== routing) return;
+        if (f.error) throw f.error;
+        var ok = (f.data.totp || []).filter(function(x){ return x.status === "verified"; });
+        if (ok.length){ FACTOR = ok[0].id; msg("#mfaMsg", ""); $("#mfaCode").value = ""; view("Mfa"); $("#mfaCode").focus(); return; }
+        return startEnrol(f.data.all || []);
+      });
+    });
+  }).catch(function(e){ view("Login"); msg("#loginMsg", niceErr(e)); });
+}
+
+function startEnrol(all){
+  view("MfaEnrol"); msg("#enrolMsg", "Getting your QR code...", true);
+  var stale = all.filter(function(x){ return x.factor_type === "totp" && x.status !== "verified"; });
+  return Promise.all(stale.map(function(x){ return sb.auth.mfa.unenroll({factorId: x.id}); })).then(function(){
+    return sb.auth.mfa.enroll({factorType: "totp", issuer: "Book Homes", friendlyName: "Book Homes admin " + new Date().toISOString().slice(0, 16)});
+  }).then(function(r){
+    if (r.error) throw r.error;
+    ENROL = r.data;
+    var qr = r.data.totp.qr_code || "";
+    $("#enrolQr").src = /^data:/.test(qr) ? qr : "data:image/svg+xml;charset=utf-8," + encodeURIComponent(qr);
+    $("#enrolSecret").textContent = (r.data.totp.secret || "").replace(/(.{4})/g, "$1 ").trim();
+    $("#enrolUri").href = r.data.totp.uri || "#";
+    msg("#enrolMsg", ""); $("#enrolCode").value = "";
+  }).catch(function(e){ msg("#enrolMsg", "Could not start setup: " + niceErr(e)); });
+}
+
+function afterMfa(session){
+  var amr = claims(session).amr || [];
+  var link = amr.filter(function(m){ return /^(otp|magiclink|recovery|email|invite)/.test(m.method || ""); })[0];
+  var pw = amr.some(function(m){ return m.method === "password"; });
+  var recovery = RECOVERY || (link && link.method === "recovery");
+  var seen = link && store(MODE).getItem(PW_SEEN_KEY) === String(link.timestamp);
+  if (link && !pw && !seen){
+    show("#skipPw", !recovery);
+    $("#setPwIntro").textContent = recovery
+      ? "Choose your new password. At least 10 characters. A short phrase of 3 or 4 random words is easy to remember and hard to guess."
+      : "You signed in with an email link. Set a password for next time (at least 10 characters), or skip if you already have one.";
+    $("#setPwUser").value = session.user.email || "";
+    msg("#setPwMsg", ""); $("#newPw").value = ""; $("#newPw2").value = ""; pwMeter();
+    view("SetPw"); return;
+  }
+  enterApp();
+}
+function markPwSeen(){
+  var link = (claims(SESSION || {}).amr || []).filter(function(m){ return /^(otp|magiclink|recovery|email|invite)/.test(m.method || ""); })[0];
+  if (link) { try { store(MODE).setItem(PW_SEEN_KEY, String(link.timestamp)); } catch (e) {} }
+  RECOVERY = false;
+}
+function enterApp(){
+  view("App");
+  var until = MODE === "local" ? trustUntil() : 0;
+  $("#trustStatus").textContent = until
+    ? "This browser is trusted: you'll stay signed in here until " + new Intl.DateTimeFormat("en-GB", {day: "numeric", month: "long", year: "numeric"}).format(new Date(until)) + ". After that you'll need your password and code again."
+    : "This browser isn't trusted: you'll be signed out when you close this tab.";
+  if (!started){ started = true; loadAll(); }
+}
+
 sb.auth.onAuthStateChange(function(evt, session){
-  if (evt === "SIGNED_IN" || evt === "SIGNED_OUT" || evt === "INITIAL_SESSION"){ route(session); }
-  if (evt === "SIGNED_IN" && location.hash) history.replaceState(null, "", location.pathname);
+  if (evt === "PASSWORD_RECOVERY") RECOVERY = true;
+  if (/^(INITIAL_SESSION|SIGNED_IN|SIGNED_OUT|MFA_CHALLENGE_VERIFIED|PASSWORD_RECOVERY)$/.test(evt)){
+    // Run outside the callback: calling other auth methods inside it can lock up supabase-js.
+    setTimeout(function(){ route(session); }, 0);
+  }
+  if ((evt === "SIGNED_IN" || evt === "PASSWORD_RECOVERY") && (location.hash || location.search)) history.replaceState(null, "", location.pathname);
 });
+
+function validEmail(em){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em); }
+function loginEmail(){ return $("#loginEmail").value.trim().toLowerCase(); }
+function rememberChoice(){ var t = $("#trustBox").checked; lsSet(PENDING_KEY, t ? "1" : "0"); return t; }
+
 $("#loginForm").addEventListener("submit", function(e){
   e.preventDefault();
-  var em = $("#loginEmail").value.trim().toLowerCase(), btn = $("#loginBtn"), out = $("#loginMsg");
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ out.innerHTML = '<div class="err">Please enter a valid email.</div>'; return; }
-  btn.disabled = true; btn.textContent = "Sending...";
-  sb.auth.signInWithOtp({email: em, options: {emailRedirectTo: location.origin + "/admin", shouldCreateUser: false}}).then(function(r){
-    btn.disabled = false; btn.textContent = "Email me a sign-in link";
-    if (r.error){ out.innerHTML = '<div class="err">' + esc(/signups? not allowed|not found/i.test(r.error.message) ? "That email can't sign in here. Ask the owner to add you." : r.error.message) + '</div>'; return; }
-    out.innerHTML = '<div class="okmsg">Check your inbox for the sign-in link. You can close this tab.</div>';
+  var em = loginEmail(), pw = $("#loginPw").value, btn = $("#loginBtn");
+  if (!validEmail(em)){ msg("#loginMsg", "Please enter a valid email."); return; }
+  if (!pw){ msg("#loginMsg", "Please enter your password, or use one of the options below."); return; }
+  var trust = rememberChoice();
+  MODE = trust ? "local" : "session"; setTrust(trust);
+  if (!trust) clearLocalSession();
+  busy(btn, true, "Signing in..."); msg("#loginMsg", "");
+  sb.auth.signInWithPassword({email: em, password: pw}).then(function(r){
+    busy(btn, false, "Sign in");
+    if (r.error){ msg("#loginMsg", niceErr(r.error)); return; }
+    $("#loginPw").value = "";
   });
 });
-function signOut(){ sb.auth.signOut().then(function(){ location.replace("/admin"); }); }
-$("#signOut").addEventListener("click", signOut);
-$("#deniedOut").addEventListener("click", signOut);
+$("#forgotBtn").addEventListener("click", function(){
+  var em = loginEmail(), btn = this;
+  if (!validEmail(em)){ msg("#loginMsg", "Type your email above first, then tap Forgot password."); $("#loginEmail").focus(); return; }
+  rememberChoice(); busy(btn, true);
+  sb.auth.resetPasswordForEmail(em, {redirectTo: REDIRECT}).then(function(r){
+    busy(btn, false);
+    if (r.error){ msg("#loginMsg", niceErr(r.error)); return; }
+    msg("#loginMsg", "If that email is an admin, a password reset link is on its way. Open it on this device.", true);
+  });
+});
+$("#linkBtn").addEventListener("click", function(){
+  var em = loginEmail(), btn = this;
+  if (!validEmail(em)){ msg("#loginMsg", "Type your email above first, then tap Email me a login link."); $("#loginEmail").focus(); return; }
+  rememberChoice(); busy(btn, true);
+  sb.auth.signInWithOtp({email: em, options: {emailRedirectTo: REDIRECT, shouldCreateUser: false}}).then(function(r){
+    busy(btn, false);
+    if (r.error){ msg("#loginMsg", niceErr(r.error)); return; }
+    msg("#loginMsg", "Check your inbox for the login link and open it on this device. You'll still need your 6-digit code.", true);
+  });
+});
+
+function digits(input, submit){
+  input.addEventListener("input", function(){
+    var v = input.value.replace(/\D/g, "").slice(0, 6);
+    if (v !== input.value) input.value = v;
+    if (v.length === 6) submit();
+  });
+}
+function submitEnrol(){
+  var code = $("#enrolCode").value, btn = $("#enrolBtn");
+  if (!ENROL){ msg("#enrolMsg", "The QR code didn't load. Reload the page to try again."); return; }
+  if (!/^\d{6}$/.test(code) || btn.disabled){ if (!btn.disabled) msg("#enrolMsg", "Enter the 6 digits from your app."); return; }
+  busy(btn, true, "Checking...");
+  sb.auth.mfa.challenge({factorId: ENROL.id}).then(function(c){
+    if (c.error) throw c.error;
+    return sb.auth.mfa.verify({factorId: ENROL.id, challengeId: c.data.id, code: code});
+  }).then(function(v){
+    busy(btn, false, "Verify 6-digit code");
+    if (v.error) throw v.error;
+    msg("#enrolMsg", "2-step verification is on.", true);
+  }).catch(function(e){ busy(btn, false, "Verify 6-digit code"); $("#enrolCode").value = ""; msg("#enrolMsg", niceErr(e)); });
+}
+function submitMfa(){
+  var code = $("#mfaCode").value, btn = $("#mfaBtn");
+  if (!/^\d{6}$/.test(code) || btn.disabled){ if (!btn.disabled) msg("#mfaMsg", "Enter the 6 digits from your app."); return; }
+  busy(btn, true, "Checking...");
+  sb.auth.mfa.challengeAndVerify({factorId: FACTOR, code: code}).then(function(r){
+    busy(btn, false, "Verify 6-digit code");
+    if (r.error) throw r.error;
+  }).catch(function(e){ busy(btn, false, "Verify 6-digit code"); $("#mfaCode").value = ""; msg("#mfaMsg", niceErr(e)); });
+}
+$("#enrolForm").addEventListener("submit", function(e){ e.preventDefault(); submitEnrol(); });
+$("#mfaForm").addEventListener("submit", function(e){ e.preventDefault(); submitMfa(); });
+digits($("#enrolCode"), submitEnrol);
+digits($("#mfaCode"), submitMfa);
+
+function pwScore(p){
+  var s = 0;
+  if (p.length >= 10) s++;
+  if (p.length >= 14) s++;
+  if (p.length >= 18) s++;
+  if (/[a-z]/.test(p) && /[A-Z]/.test(p)) s++;
+  if (/\d/.test(p)) s++;
+  if (/[^A-Za-z0-9]/.test(p)) s++;
+  if (/^(.)\1+$/.test(p) || /password|bookhomes|zermatt|123456|qwerty/i.test(p)) s = Math.min(s, 1);
+  return p.length < 10 ? 0 : Math.min(4, Math.max(1, s - 1));
+}
+function pwMeter(){
+  var p = $("#newPw").value, sc = pwScore(p);
+  var label = p.length < 10 ? (p.length ? (10 - p.length) + " more character" + (10 - p.length === 1 ? "" : "s") + " needed." : "At least 10 characters.")
+    : ["", "Weak: make it longer or add words.", "OK: a bit longer would be better.", "Good password.", "Strong password."][sc];
+  $("#pwHint").textContent = label;
+  var bar = $("#pwBar");
+  bar.style.width = (p.length < 10 ? Math.min(p.length * 2.5, 24) : sc * 25) + "%";
+  bar.style.background = sc >= 3 ? "var(--brand)" : sc === 2 ? "var(--accent)" : "var(--red)";
+}
+$("#newPw").addEventListener("input", pwMeter);
+$("#setPwForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var p = $("#newPw").value, p2 = $("#newPw2").value, btn = $("#setPwBtn");
+  if (p.length < 10){ msg("#setPwMsg", "Use at least 10 characters."); return; }
+  if (pwScore(p) < 2){ msg("#setPwMsg", "That password is too easy to guess. Make it longer or add another word."); return; }
+  if (p !== p2){ msg("#setPwMsg", "The two passwords don't match."); return; }
+  busy(btn, true, "Saving...");
+  sb.auth.updateUser({password: p}).then(function(r){
+    busy(btn, false, "Save password");
+    if (r.error && !/should be different/i.test(r.error.message)){ msg("#setPwMsg", niceErr(r.error)); return; }
+    $("#newPw").value = ""; $("#newPw2").value = "";
+    markPwSeen(); enterApp();
+  });
+});
+$("#skipPw").addEventListener("click", function(){ markPwSeen(); enterApp(); });
+
+$$("[data-showpw]").forEach(function(b){
+  b.addEventListener("click", function(){
+    var i = document.getElementById(b.getAttribute("data-showpw")), on = i.type === "password";
+    i.type = on ? "text" : "password"; b.textContent = on ? "Hide" : "Show"; b.setAttribute("aria-label", on ? "Hide password" : "Show password");
+  });
+});
+
+function signOut(scope){
+  setTrust(false);
+  sb.auth.signOut(scope ? {scope: scope} : undefined).then(function(){ clearLocalSession(); location.replace("/admin"); });
+}
+$$("[data-signout]").forEach(function(b){ b.addEventListener("click", function(){ signOut(); }); });
+$("#signOutAll").addEventListener("click", function(){
+  if (!confirm("Sign out of the admin area on every phone and computer, including this one?")) return;
+  signOut("global");
+});
 
 /* ---------- tabs ---------- */
 $$("nav.tabs button").forEach(function(b){
