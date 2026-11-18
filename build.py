@@ -12,7 +12,8 @@ TPL = open(os.path.join(ROOT, "design/guide-template.html"), encoding="utf-8").r
 os.makedirs(os.path.join(ROOT, "assets"), exist_ok=True)
 _css = re.search(r"<style[^>]*>(.*?)</style>", TPL, re.S)
 open(os.path.join(ROOT, "assets/guide.css"), "w", encoding="utf-8").write(_css.group(1).strip() + "\n")
-TPL = TPL.replace(_css.group(0), '<link rel="stylesheet" href="/assets/guide.css">')
+_css_v = hashlib.md5(_css.group(1).strip().encode()).hexdigest()[:8]  # cache-busting: /assets is cached for a week
+TPL = TPL.replace(_css.group(0), f'<link rel="stylesheet" href="/assets/guide.css?v={_css_v}">')
 _spr = re.search(r'<svg[^>]*(?:width="0"|display:none)[^>]*>.*?</svg>', TPL, re.S)
 if _spr:
     sym = _spr.group(0)
@@ -22,6 +23,22 @@ if _spr:
     TPL = re.sub(r'(<use[^>]*href=")#', r'\1/assets/icons.svg#', TPL)
 CDN = "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/"
 PHOTOS = ["c8d1f216-a703-42-FWn85","e170d7e1-d3ef-4d-ixjYf","c08747f9-8543-49-NzG8z","2c4e59c1-658f-4a-TUyeY","16f2ba43-e66f-45-ClIDR","499d78d6-787f-42-f3HjY","31705f0b-14e0-4d-ZGX04","f191e01b-94eb-47-v15NJ","44fa5ff3-6c69-4c-4onXa","ee9c770c-7a3e-4f-uH1ZG"]
+
+# Alt text for the hero photos (same captions as the homepage gallery)
+PHOTO_ALT = {
+    "c8d1f216-a703-42-FWn85": "Front of Zermatt Lodge, a 4-bedroom house in Liverpool",
+    "e170d7e1-d3ef-4d-ixjYf": "Living room with 55-inch Smart TV at Zermatt Lodge, Liverpool",
+    "c08747f9-8543-49-NzG8z": "Living room seating area at Zermatt Lodge holiday house",
+    "2c4e59c1-658f-4a-TUyeY": "Games room with pool table at Zermatt Lodge, Liverpool",
+    "16f2ba43-e66f-45-ClIDR": "Pool table and board games in the games room at Zermatt Lodge",
+    "499d78d6-787f-42-f3HjY": "Big fitted kitchen at Zermatt Lodge, Liverpool",
+    "31705f0b-14e0-4d-ZGX04": "Kitchen worktops and appliances at Zermatt Lodge",
+    "f191e01b-94eb-47-v15NJ": "Dining room with table for group meals at Zermatt Lodge",
+    "44fa5ff3-6c69-4c-4onXa": "Dining table set for seven guests at Zermatt Lodge",
+    "ee9c770c-7a3e-4f-uH1ZG": "King master bedroom at Zermatt Lodge, Liverpool",
+}
+def hero_srcset(photo):
+    return ", ".join(f"{CDN.replace('w_1600', f'w_{w}')}{photo} {w}w" for w in (480, 800, 1200, 1600))
 
 topics = {r["slug"]: r for r in csv.DictReader(open(os.path.join(ROOT, "content/topic-map.csv"), encoding="utf-8"))}
 pages = {}
@@ -71,7 +88,8 @@ for slug, (meta, body) in pages.items():
     faqs = meta.get("faqs") or []
     faq_html = "\n".join(f"<details><summary>{esc(q['q'])}</summary><p>{esc(q['a'])}</p></details>" for q in faqs)
     canon = f"{DOMAIN}/guides/{slug}"
-    hero = CDN + PHOTOS[int(hashlib.md5(slug.encode()).hexdigest(), 16) % len(PHOTOS)]
+    photo = PHOTOS[int(hashlib.md5(slug.encode()).hexdigest(), 16) % len(PHOTOS)]
+    hero = CDN + photo
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": meta["h1"], "description": meta["meta_description"], "image": hero,
          "dateModified": str(meta.get("last_updated")), "mainEntityOfPage": canon,
@@ -89,6 +107,8 @@ for slug, (meta, body) in pages.items():
               .replace("{{H1}}", esc(meta["h1"]))
               .replace("{{BREADCRUMB}}", esc(meta["title"]))
               .replace("{{INTRO}}", esc(meta["meta_description"]))
+              .replace("{{HERO_SRCSET}}", hero_srcset(photo))
+              .replace("{{HERO_ALT}}", esc(PHOTO_ALT.get(photo, "Zermatt Lodge, Liverpool")))
               .replace("{{HERO_IMAGE}}", hero)
               .replace("{{BODY_HTML}}", body_html)
               .replace("{{FAQ_HTML}}", faq_html)
@@ -107,6 +127,8 @@ hub = (TPL.replace("{{TITLE}}", "Liverpool Guides | Zermatt Lodge")
           .replace("{{META_DESCRIPTION}}", hub_meta_desc).replace("{{CANONICAL}}", f"{DOMAIN}/guides")
           .replace("{{H1}}", "Liverpool guides for groups, families and work stays")
           .replace("{{BREADCRUMB}}", "All guides").replace("{{INTRO}}", hub_meta_desc)
+          .replace("{{HERO_SRCSET}}", hero_srcset(PHOTOS[0]))
+          .replace("{{HERO_ALT}}", esc(PHOTO_ALT[PHOTOS[0]]))
           .replace("{{HERO_IMAGE}}", CDN + PHOTOS[0])
           .replace("{{BODY_HTML}}", "<p>Local, first-hand guides to staying in north Liverpool. Pick a guide below.</p>")
           .replace("{{FAQ_HTML}}", "")

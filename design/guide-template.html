@@ -11,6 +11,8 @@
     BREADCRUMB        short label for the current page in the breadcrumb (plain text)
     INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
     HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
     BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
@@ -33,10 +35,12 @@
 <meta property="og:image" content="{{HERO_IMAGE}}">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{{SCHEMA_JSON}}</script>
-<link rel="preload" as="image" href="{{HERO_IMAGE}}" fetchpriority="high">
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="{{HERO_IMAGE}}" imagesrcset="{{HERO_SRCSET}}" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <style>
 :root{
   --ink:#1b1f1d; --muted:#5d6560; --line:#e7e3dc; --bg:#fff; --soft:#f7f4ef; --cream:#fbf8f3;
@@ -315,7 +319,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       <p class="intro">{{INTRO}}</p>
       <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
     </header>
-    <figure class="hero-fig"><img src="{{HERO_IMAGE}}" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+    <figure class="hero-fig"><img src="{{HERO_IMAGE}}" srcset="{{HERO_SRCSET}}" sizes="(max-width:1200px) 100vw, 1144px" alt="{{HERO_ALT}}" width="1600" height="686" fetchpriority="high"></figure>
 
     <div class="layout">
       <article>
