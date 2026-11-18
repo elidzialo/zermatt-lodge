@@ -1,4 +1,4 @@
-// GET /functions/v1/availability   (public - deploy with --no-verify-jwt)
+// GET /functions/v1/zermatt-availability   (public, read-only; site calls it as /api/availability)
 // Returns the same format as data/availability.json:
 // {"updated":"ISO8601","currency":"GBP","days":[{"date","status","price","min_stay","closed_to_arrival"}]}
 // Channel blocks + direct bookings + live holds are all shown as "reserved".
@@ -31,7 +31,8 @@ Deno.serve(async (req: Request): Promise<Response> => {
       .limit(1),
   ]);
 
-  if (daysRes.error || bookingsRes.error) {
+  // No data yet (or schema not reachable): 503 so the site falls back to /data/availability.json
+  if (daysRes.error || bookingsRes.error || !daysRes.data?.length) {
     return json({ error: "Availability temporarily unavailable" }, 503, cors);
   }
 

@@ -1,4 +1,4 @@
-// GET /functions/v1/ical-export?token=...&for=airbnb
+// GET /functions/v1/zermatt-ical-export?token=...&for=airbnb
 // An .ics calendar for Airbnb / Booking.com / Vrbo to import.
 //   - always contains direct website bookings (paid) and live 15-minute holds
 //   - with ?for=<channel name>, also contains the blocks imported from the OTHER channels
@@ -7,7 +7,7 @@
 //     CAUTION: only use ?for= if the platforms do NOT re-export imported blocks, or a
 //     cancelled booking can keep itself alive in a loop. Default (no ?for=) is safe.
 // No guest names or contact details are ever included.
-// Deploy with --no-verify-jwt (the platforms cannot send a Supabase key).
+// verify_jwt off (the platforms cannot send a Supabase key). Optional ?token= via ICAL_EXPORT_TOKEN.
 import { adminClient, ukToday } from "../_shared/util.ts";
 import { buildIcal } from "../_shared/ical.ts";
 

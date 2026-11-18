@@ -1,9 +1,10 @@
-// POST /functions/v1/sync-availability   (called by pg_cron every 15 minutes)
-// Auth: header "x-cron-secret: <CRON_SECRET>"  (deploy with --no-verify-jwt)
+// POST /functions/v1/zermatt-sync-availability   (called by pg_cron every 15 minutes)
+// Auth: header "x-cron-secret" must match zermatt.settings.cron_secret (the cron job reads the
+// same row), so no secret has to be copied anywhere by hand.
 //
 // 1. Frees expired holds (and closes their Stripe pages)
 // 2. Loads availability.json (prices, min stay, status) from:
-//      - the AVAILABILITY_JSON_URL secret, and/or
+//      - AVAILABILITY_JSON_URL (default: <site>/data/availability.json), and/or
 //      - any ical_sources row with kind = 'availability_json'
 // 3. Loads every enabled iCal feed in ical_sources (Airbnb / Booking.com / Vrbo exports)
 //    A feed that fails keeps its last good copy - we never "unblock" on an error.
@@ -12,12 +13,12 @@ import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 import {
   adminClient,
   emailOwner,
-  env,
   isValidIsoDate,
   json,
   log,
   optionalEnv,
   releaseExpiredHolds,
+  siteUrl,
   stripeClient,
 } from "../_shared/util.ts";
 import { parseIcal } from "../_shared/ical.ts";
@@ -38,7 +39,7 @@ async function fetchText(url: string): Promise<string> {
   try {
     const res = await fetch(url, {
       signal: ctrl.signal,
-      headers: { "User-Agent": "ZermattLodge-CalendarSync/1.0", "Cache-Control": "no-cache" },
+      headers: { "User-Agent": "CalendarSync/1.0", "Cache-Control": "no-cache" },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.text();
@@ -81,9 +82,12 @@ async function alertOnce(db: SupabaseClient, key: string, subject: string, text:
 
 Deno.serve(async (req: Request): Promise<Response> => {
   if (req.method !== "POST" && req.method !== "GET") return json({ error: "Method not allowed" }, 405);
-  if (req.headers.get("x-cron-secret") !== env("CRON_SECRET")) return json({ error: "Unauthorised" }, 401);
-
   const db = adminClient();
+  const given = req.headers.get("x-cron-secret") ?? "";
+  const { data: secretRow } = await db.from("settings").select("value").eq("key", "cron_secret").maybeSingle();
+  const expected = (secretRow as { value: string } | null)?.value;
+  if (!expected || given.length !== expected.length || given !== expected) return json({ error: "Unauthorised" }, 401);
+
   const report: Record<string, unknown> = {};
   const problems: string[] = [];
 
@@ -102,12 +106,12 @@ Deno.serve(async (req: Request): Promise<Response> => {
   const jsonFeeds: { id: string | null; name: string; url: string }[] = sources
     .filter((s) => s.kind === "availability_json")
     .map((s) => ({ id: s.id, name: s.name, url: s.url }));
-  const envFeed = optionalEnv("AVAILABILITY_JSON_URL");
+  const envFeed = optionalEnv("AVAILABILITY_JSON_URL") ?? `${siteUrl()}/data/availability.json`;
   if (envFeed && !jsonFeeds.some((f) => f.url === envFeed)) {
     jsonFeeds.push({ id: null, name: "AVAILABILITY_JSON_URL", url: envFeed });
   }
 
-  const maxAgeHours = Number(optionalEnv("FEED_MAX_AGE_HOURS") ?? "12");
+  const maxAgeHours = Number(optionalEnv("FEED_MAX_AGE_HOURS") ?? "30");
   for (const feed of jsonFeeds) {
     try {
       const parsed = validateFeed(JSON.parse(await fetchText(feed.url)));

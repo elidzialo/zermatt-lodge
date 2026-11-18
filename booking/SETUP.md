@@ -1,3 +1,5 @@
+> **Superseded for the live site:** the backend now runs in the existing **eli-hub** Supabase project, in its own `zermatt` schema, with functions named `zermatt-*`. Follow `booking/GO-LIVE-STEPS.md`. This file is kept as background for a fresh, separate project.
+
 # Zermatt Lodge booking backend - setup guide
 
 Plain-English steps to get live availability, Stripe payments and calendar sync running on Supabase. Allow about 1-2 hours. Read `SYNC-ARCHITECTURE.md` first for the why.

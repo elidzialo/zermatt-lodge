@@ -16,9 +16,21 @@ export function optionalEnv(name: string): string | undefined {
   return v === undefined || v === "" ? undefined : v;
 }
 
-/** Service-role client. Bypasses RLS - only ever used server-side. */
+export const PHONE = "+44 7479 905477";
+export const LIVE_SITE = "https://zermatt-lodge-lime.vercel.app";
+
+/** Public settings with safe defaults (not secrets). */
+export function siteUrl(): string {
+  return (optionalEnv("SITE_URL") ?? LIVE_SITE).replace(/\/$/, "");
+}
+export function ownerEmail(): string {
+  return optionalEnv("OWNER_EMAIL") ?? "";
+}
+
+/** Service-role client on the private `zermatt` schema. Bypasses RLS - server-side only. */
 export function adminClient(): SupabaseClient {
   return createClient(env("SUPABASE_URL"), env("SUPABASE_SERVICE_ROLE_KEY"), {
+    db: { schema: "zermatt" },
     auth: { persistSession: false, autoRefreshToken: false },
   });
 }
@@ -30,12 +42,12 @@ export function stripeClient(): Stripe {
 }
 
 export function corsHeaders(origin: string | null, allowAny = false): Record<string, string> {
-  const site = optionalEnv("SITE_URL");
   let allow = "*";
-  if (!allowAny && site) {
-    const siteOrigin = new URL(site).origin;
-    // Allow the live site and local previews
-    allow = origin && (origin === siteOrigin || origin.startsWith("http://localhost")) ? origin : siteOrigin;
+  if (!allowAny) {
+    const siteOrigin = new URL(siteUrl()).origin;
+    // Only the live site and local previews may call it from a browser
+    const local = !!origin && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+    allow = origin && (origin === siteOrigin || local) ? origin : siteOrigin;
   }
   return {
     "Access-Control-Allow-Origin": allow,
@@ -88,15 +100,19 @@ export async function log(
   if (error) console.error("sync_log insert failed", error.message);
 }
 
+/** Emails the owner (OWNER_EMAIL secret; no email if unset). */
+export function emailOwner(subject: string, text: string): Promise<boolean> {
+  return sendEmail(ownerEmail(), subject, text);
+}
+
 /**
- * Sends the owner an email through Resend, if RESEND_API_KEY is set.
+ * Sends an email through Resend, if RESEND_API_KEY is set.
  * Never throws - an email failure must not break a booking.
  */
-export async function emailOwner(subject: string, text: string): Promise<boolean> {
+export async function sendEmail(to: string, subject: string, text: string): Promise<boolean> {
   const key = optionalEnv("RESEND_API_KEY");
-  const to = optionalEnv("OWNER_EMAIL");
   if (!key || !to) {
-    console.warn("Email skipped (RESEND_API_KEY or OWNER_EMAIL not set):", subject);
+    console.warn("Email skipped (RESEND_API_KEY or recipient not set):", subject);
     return false;
   }
   const from = optionalEnv("RESEND_FROM") ?? "Zermatt Lodge Bookings <onboarding@resend.dev>";
@@ -146,6 +162,10 @@ export async function releaseExpiredHolds(db: SupabaseClient, stripe?: Stripe): 
   }
   return typeof released === "number" ? released : 0;
 }
+
+export const POLICY_TEXT =
+  "Cancellation policy (Moderate): full refund if you cancel up to 5 days before check-in; 50% refund after that; " +
+  "no refund after check-in. No pets, no parties, no smoking. Guest ID and damage deposit may be required.";
 
 export function poundsFromPence(pence: number): string {
   return `£${(pence / 100).toFixed(2)}`;

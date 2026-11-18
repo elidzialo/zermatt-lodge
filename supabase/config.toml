@@ -1,25 +1,22 @@
-# Supabase CLI settings for the Zermatt Lodge booking backend.
-# If `supabase init` has already created a fuller config.toml, just copy the
-# [functions.*] blocks below into it.
-project_id = "zermatt-lodge"
+# Supabase CLI settings for the Zermatt Lodge booking functions (project eli-hub, kddhkuwnkkjcnbjegsmc).
+# All booking tables live in the private `zermatt` schema - nothing in `public` is touched.
+project_id = "kddhkuwnkkjcnbjegsmc"
 
-# These functions are called by the website, Stripe, the OTAs or pg_cron,
-# none of which send a Supabase login token. Each one checks its own access:
-#   stripe-webhook     -> Stripe signature (STRIPE_WEBHOOK_SECRET)
-#   sync-availability  -> x-cron-secret header (CRON_SECRET)
-#   ical-export        -> optional ?token= (ICAL_EXPORT_TOKEN)
-#   availability, create-checkout -> public by design, no secrets returned
-[functions.create-checkout]
+# Public read-only / own checks:
+[functions.zermatt-availability]
 verify_jwt = false
 
-[functions.stripe-webhook]
+[functions.zermatt-ical-export]
 verify_jwt = false
 
-[functions.ical-export]
+# Stripe signature is checked in code
+[functions.zermatt-stripe-webhook]
 verify_jwt = false
 
-[functions.sync-availability]
+# Public endpoint with strict input checks and CORS limited to the live site + localhost
+[functions.zermatt-create-checkout]
 verify_jwt = false
 
-[functions.availability]
-verify_jwt = false
+# Called by pg_cron with the anon key + x-cron-secret
+[functions.zermatt-sync-availability]
+verify_jwt = true
