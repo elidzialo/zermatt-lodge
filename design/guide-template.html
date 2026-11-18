@@ -24,6 +24,7 @@
 <link rel="canonical" href="{{CANONICAL}}">
 <meta name="theme-color" content="#1f4d3a">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
 <meta property="og:title" content="{{TITLE}}">
 <meta property="og:description" content="{{META_DESCRIPTION}}">
 <meta property="og:url" content="{{CANONICAL}}">
@@ -138,12 +139,12 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .ticks svg{width:18px;height:18px;color:var(--brand);flex-shrink:0}
 .fields{border:1px solid #a9aeaa;border-radius:12px;overflow:hidden}
 .fields .row{display:grid;grid-template-columns:1fr 1fr}
-.f{display:block;padding:10px 13px;cursor:pointer}
+.f{display:block;padding:10px 13px;cursor:pointer;min-width:0}
 .f:focus-within{background:var(--soft)}
 .fields .row .f+.f{border-left:1px solid #a9aeaa}
 .fields .g{border-top:1px solid #a9aeaa}
 .f small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:15px;width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:26px}
+.f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:16px;width:100%;min-width:0;max-width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:26px}
 .card .btn.block{margin-top:14px}
 .card .note{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
 .card .note a{color:var(--ink);font-weight:600}
@@ -178,7 +179,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
 /* Footer */
 footer{background:#111814;color:#c9d0cc;padding:56px 0 40px}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px}
 footer .logo{color:#fff}
 footer .logo small{color:#9aa39e}
 footer h2{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:12px}
@@ -209,7 +210,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   :root{--header:62px}
   .wrap{padding:0 18px}
   .top-right .phone{display:none}
-  .top-right .btn{min-height:40px;padding:8px 14px;font-size:14px}
+  .top-right .btn{min-height:44px;padding:8px 14px;font-size:14px}
   .logo{font-size:17px}.logo svg{width:30px;height:30px}
   .ahead{padding:24px 0 20px}
   .hero-fig{aspect-ratio:4/3;border-radius:0;margin:0 -18px}
@@ -279,9 +280,9 @@ footer a:hover{color:#fff;text-decoration:underline}
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
-      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="/#house">The house</a>
@@ -310,7 +311,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       </nav>
       <h1 class="serif">{{H1}}</h1>
       <p class="intro">{{INTRO}}</p>
-      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
     </header>
     <figure class="hero-fig"><img src="{{HERO_IMAGE}}" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
 
@@ -335,7 +336,7 @@ footer a:hover{color:#fff;text-decoration:underline}
           <div class="in">
             <span class="badge">Book direct - no service fees</span>
             <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
-            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
             <ul class="ticks">
               <li><svg aria-hidden="true"><use href="#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
               <li><svg aria-hidden="true"><use href="#i-pool"/></svg>Games room with pool table</li>
@@ -386,8 +387,8 @@ footer a:hover{color:#fff;text-decoration:underline}
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
-        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
       </div>
       <nav aria-label="Footer - the house">
         <h2>The house</h2>
@@ -405,13 +406,21 @@ footer a:hover{color:#fff;text-decoration:underline}
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
       <div>
         <h2>Contact</h2>
         <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
         <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
       </div>
     </div>
-    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
   </div>
 </footer>
 

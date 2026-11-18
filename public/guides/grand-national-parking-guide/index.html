@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grand National Parking: How It Works at Aintree</title>
+<meta name="description" content="Driving to the Grand National? Why parking must be pre-booked, the Steeplechase car park crossing, road closures, park and ride and when not to drive.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/grand-national-parking-guide">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Grand National Parking: How It Works at Aintree">
+<meta property="og:description" content="Driving to the Grand National? Why parking must be pre-booked, the Steeplechase car park crossing, road closures, park and ride and when not to drive.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/grand-national-parking-guide">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Grand National Parking: Pre-Booking, Road Closures and Smarter Alternatives", "description": "Driving to the Grand National? Why parking must be pre-booked, the Steeplechase car park crossing, road closures, park and ride and when not to drive.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/grand-national-parking-guide", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Grand National Parking: How It Works at Aintree", "item": "https://bookhomes.co.uk/guides/grand-national-parking-guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to book parking for the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Jockey Club's festival travel page says car parking must be booked in advance. Don't drive to Aintree on a festival day expecting to pay on the gate."}}, {"@type": "Question", "name": "What is the Steeplechase Car Park crossing closure?", "acceptedAnswer": {"@type": "Answer", "text": "Access to the Steeplechase Car Park uses a course crossing at Melling Road. The Jockey Club says it closes 30 minutes before and reopens 30 minutes after the feature race over the Grand National course, and no vehicles can move while it's closed."}}, {"@type": "Question", "name": "Are there road closures around Aintree for the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A series of road closures supports the festival transport plan. They're applied for through Liverpool City Council and Sefton Council and put in place by a traffic management contractor. Check the latest road closure map before you travel."}}, {"@type": "Question", "name": "What's the alternative to driving to the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Train. Merseyrail runs trains between Liverpool Central or Moorfields and Aintree about every 7.5 minutes before and after racing on festival days. Many people park at their accommodation or at a station car park outside the closure area and take the train."}}, {"@type": "Question", "name": "When is the 2027 Grand National Festival?", "acceptedAnswer": {"@type": "Answer", "text": "Thursday 8 to Saturday 10 April 2027, with the Grand National itself on the Saturday."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Grand National Parking: How It Works at Aintree</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Grand National Parking: Pre-Booking, Road Closures and Smarter Alternatives</h1>
+      <p class="intro">Driving to the Grand National? Why parking must be pre-booked, the Steeplechase car park crossing, road closures, park and ride and when not to drive.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>For the Grand National Festival, you can only park at Aintree Racecourse if you've booked a space in advance. On festival days, roads around the course close, and the busiest car park has a crossing that shuts around the feature race, so many racegoers find it easier to leave the car at their accommodation and take the train instead.</p>
+<p>The 2027 festival runs from <strong>Thursday 8 to Saturday 10 April</strong>. Here's how parking works, based on the Jockey Club's official travel plan.</p>
+<h2>The basics</h2>
+<ul>
+<li><strong>Address:</strong> Aintree Racecourse, Ormskirk Road, Liverpool L9 5AS</li>
+<li><strong>Road:</strong> the A59, about a mile from the M57 and M58</li>
+<li><strong>Festival parking:</strong> <strong>must be booked in advance</strong> through the racecourse's online booking</li>
+<li><strong>On non-festival race days:</strong> follow the A59 and yellow tourism signs to the car parks</li>
+</ul>
+<p>If you haven't booked, don't drive to the course hoping for a space. Plan to park elsewhere and travel in.</p>
+<h2>The Steeplechase Car Park and the crossing</h2>
+<p>The Steeplechase Car Park catches out more people than anything else.</p>
+<ul>
+<li>You reach it via a <strong>course crossing at Melling Road</strong>.</li>
+<li>That crossing <strong>closes 30 minutes before</strong> the feature race over the Grand National course and <strong>reopens 30 minutes after</strong> it.</li>
+<li><strong>No vehicle movement</strong> is allowed while the course crossings are closed.</li>
+<li>After parking, you <strong>walk to the Mildmay Course shuttle</strong> for the Racecourse Enclosures.</li>
+<li>On Saturday, ticket holders for the <strong>Embankment Enclosure</strong> use the course crossing next to the Embankment instead.</li>
+</ul>
+<p><strong>What it means for you:</strong> if you want to leave early, before the big race, or straight after it, you could be stuck. Plan to stay until the crossing reopens, or park elsewhere.</p>
+<h2>Road closures</h2>
+<p>The Jockey Club says a series of road closures in and around Aintree supports the festival transport plan.</p>
+<ul>
+<li>Closures are applied for through <strong>Liverpool City Council, Sefton Council</strong> and other councils as needed.</li>
+<li>A traffic management contractor puts them in place and maintains them.</li>
+<li>The racecourse publishes a <strong>road closure map</strong>. The version linked at the time of writing was labelled for an earlier year, so check you've got the current one.</li>
+</ul>
+<p>Expect diversions on the A59 and surrounding roads, and allow much longer than a normal journey.</p>
+<h2>Alternatives to parking at the course</h2>
+<h3>Train</h3>
+<p>This is how most racegoers get there. On festival days, the Jockey Club says:</p>
+<ul>
+<li>Trains between <strong>Liverpool Central or Moorfields and Aintree</strong> run about <strong>every 7.5 minutes</strong>, roughly 11:00 to 13:00 towards Aintree and 16:30 to 20:30 back.</li>
+<li><strong>Aintree station is across the road</strong> from the racecourse.</li>
+<li>On the <strong>Kirkby line</strong>, trains start and end at Sandhills between 11:00 and 14:00 and between 17:00 and 21:00, so passengers to or from Rice Lane, Fazakerley, Kirkby or Headbolt Lane change at Sandhills.</li>
+</ul>
+<p>Our guide to <a href="/guides/getting-to-aintree-racecourse-from-fazakerley">getting to Aintree Racecourse</a> covers every route.</p>
+<h3>Park at a station and ride in</h3>
+<p>Merseyrail has free car parks at many stations. Everton's matchday guidance mentions over 4,400 free spaces at more than 40 stations. Parking at a station outside the closure area and taking the train avoids the traffic around the course. Check which station car parks are open and how busy they get on festival days.</p>
+<h3>Bus</h3>
+<p>Services <strong>300, 310 and 345</strong> run to and from Liverpool. Check with Merseytravel for any festival changes.</p>
+<h3>Park at your accommodation</h3>
+<p>If you're staying in Liverpool, the simplest plan is often to leave the car where you're staying. Check before you book that the accommodation has off-street parking, and how you'll get from there to the course.</p>
+<h2>Tips for drivers</h2>
+<ul>
+<li><strong>Book early.</strong> Festival parking sells out.</li>
+<li><strong>Arrive early.</strong> The roads fill well before the first race.</li>
+<li><strong>Know your exit plan.</strong> Decide in advance whether you're leaving before the feature race or waiting until well after.</li>
+<li><strong>Don't park on residential streets.</strong> Local roads near the course are busy, and some will be closed.</li>
+<li><strong>Pick a designated driver</strong> if you're driving home.</li>
+</ul>
+<h2>Staying close and leaving the car</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and close to the M57 and M58. It isn't next door to the racecourse, but it's in the same part of the city. As the crow flies, Fazakerley station is under a mile from the middle of the course, though the walking route depends on where you start and which entrance you need, so check a map. On festival days, you can leave both cars parked at the house and take a taxi, walk if the route suits you, or use the train via Sandhills.</p>
+<ul>
+<li><strong>Free parking for 2 cars</strong>, so you don't need a racecourse parking ticket</li>
+<li><strong>Sleeps 7</strong> in a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong> for getting ready for the races</li>
+<li><strong>Big kitchen and dining room</strong> for breakfast before and dinner after</li>
+<li><strong>Games room with a pool table</strong>, board games and a 55" Smart TV with Netflix</li>
+</ul>
+<p>The house rules are strict, festival week included: <strong>no parties or events</strong>, no smoking and no pets. Check-in is 3pm and checkout is 11am.</p>
+<p>Festival dates book up early. <a href="/#book">Check availability and book direct</a>, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/grand-national-accommodation">Grand National accommodation</a></li>
+<li><a href="/guides/getting-to-aintree-racecourse-from-fazakerley">Getting to Aintree Racecourse</a></li>
+<li><a href="/guides/grand-national-ladies-day-group-stay">Ladies Day at Aintree: planning a group stay</a></li>
+<li>Taking the family to the Grand National</li>
+<li>Grand National weekend itinerary</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Do I need to book parking for the Grand National?</summary><p>Yes. The Jockey Club&#x27;s festival travel page says car parking must be booked in advance. Don&#x27;t drive to Aintree on a festival day expecting to pay on the gate.</p></details>
+<details><summary>What is the Steeplechase Car Park crossing closure?</summary><p>Access to the Steeplechase Car Park uses a course crossing at Melling Road. The Jockey Club says it closes 30 minutes before and reopens 30 minutes after the feature race over the Grand National course, and no vehicles can move while it&#x27;s closed.</p></details>
+<details><summary>Are there road closures around Aintree for the Grand National?</summary><p>Yes. A series of road closures supports the festival transport plan. They&#x27;re applied for through Liverpool City Council and Sefton Council and put in place by a traffic management contractor. Check the latest road closure map before you travel.</p></details>
+<details><summary>What&#x27;s the alternative to driving to the Grand National?</summary><p>Train. Merseyrail runs trains between Liverpool Central or Moorfields and Aintree about every 7.5 minutes before and after racing on festival days. Many people park at their accommodation or at a station car park outside the closure area and take the train.</p></details>
+<details><summary>When is the 2027 Grand National Festival?</summary><p>Thursday 8 to Saturday 10 April 2027, with the Grand National itself on the Saturday.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/grand-national-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Grand National Accommodation: Stay Near Aintree</h3><p>Built on the Jockey Club&#x27;s official travel plan: festival dates, the Kirkby-line change at Sandhills on race days, car parking rules and why a house suits a group.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/getting-to-aintree-racecourse-from-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>How to Get to Aintree Racecourse: Train, Bus and Car</h3><p>Step-by-step: drive vs train via Sandhills, festival-day Merseyrail changes, the 300/310/345 buses and getting home after the last race.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/grand-national-ladies-day-group-stay"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Ladies Day at Aintree: Planning a Group Stay</h3><p>Getting-ready logistics for a group (mirrors, bathrooms, timings), the Friday travel plan and a calm house base - no party house claims.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

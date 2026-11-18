@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Long Stay Accommodation in Liverpool: A Practical Guide</title>
+<meta name="description" content="Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Long Stay Accommodation in Liverpool: A Practical Guide">
+<meta property="og:description" content="Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Long Stay Accommodation in Liverpool: What to Ask Before You Book", "description": "Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Long Stay Accommodation in Liverpool: A Practical Guide", "item": "https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What counts as a long stay?", "acceptedAnswer": {"@type": "Answer", "text": "Hosts usually mean 28 nights or more. At that length, cleaning, laundry, bills and invoicing need agreeing upfront, which matters less on a weekend break."}}, {"@type": "Question", "name": "Is a house or an aparthotel better for a long stay in Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "An aparthotel suits one or two people who want to be in the city centre with reception and housekeeping. A whole house suits families, colleagues or crews who need separate bedrooms, a proper kitchen and parking."}}, {"@type": "Question", "name": "Can I register with a GP during a long stay?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. NHS guidance says you don't need proof of address or ID to register with a GP, and you can register as a temporary patient for up to 3 months."}}, {"@type": "Question", "name": "Can I claim my accommodation as a work expense?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your circumstances. Tax guidance from LITRG explains that a workplace counts as temporary unless you work there continuously for more than 24 months, which affects what travel and subsistence costs can be claimed. Check with your employer or accountant."}}, {"@type": "Question", "name": "Does Zermatt Lodge take long stays?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, subject to availability. Call +44 7479 905477 to talk through dates, cleaning and invoicing for stays of several weeks."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Long Stay Accommodation in Liverpool: A Practical Guide</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Long Stay Accommodation in Liverpool: What to Ask Before You Book</h1>
+      <p class="intro">Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>For a long stay in Liverpool, of a month or more, the right place is the one where the boring details are agreed upfront: cleaning, linen, bills, parking and invoices. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars, a big kitchen and room for up to 7. It suits families between homes, project teams and anyone who needs more than a hotel room for several weeks.</p>
+<p>This guide explains what to ask any host before booking a long stay, and how a house compares with an aparthotel.</p>
+<h2>Who books long stays in Liverpool?</h2>
+<ul>
+<li><strong>Families relocating</strong> while they buy or rent. See our <a href="/guides/relocating-to-liverpool-temporary-house">relocation guide</a></li>
+<li><strong>Homeowners during renovation</strong> or after a flood or fire. See <a href="/guides/insurance-temporary-accommodation-liverpool">insurance temporary accommodation</a></li>
+<li><strong>Contractors and project teams</strong> on multi-week jobs</li>
+<li><strong>Families supporting someone in hospital</strong> for weeks at a time</li>
+<li><strong>Film and TV crews</strong> on location shoots</li>
+</ul>
+<p>Each group needs slightly different things, but the questions below apply to all of them.</p>
+<h2>The questions to ask before you book</h2>
+<h3>1. What's included in the price?</h3>
+<p>Get it in writing. For a long stay, ask:</p>
+<ul>
+<li>Are all bills (gas, electricity, water, council tax) included?</li>
+<li>Is Wi-Fi included? If you're working from the property, ask about the connection and test it on day one</li>
+<li>Is there a cleaning fee, and is it one-off or per clean? At Zermatt Lodge it's a one-off £129</li>
+<li>Is a mid-stay clean or linen change available, and at what cost?</li>
+</ul>
+<h3>2. Cleaning and linen</h3>
+<p>Over four weeks, towels and bedding need changing. Agree how this works: whether the host arranges a clean, or whether you do it yourself. Ask what laundry facilities there are rather than assuming.</p>
+<h3>3. Parking</h3>
+<p>In Liverpool, this matters more than people expect. City-centre aparthotels often charge for parking or have none. Areas near the football grounds have residents' parking zones on match days. A property with its own off-street spaces saves both money and hassle over a month.</p>
+<h3>4. Cancellation and flexibility</h3>
+<p>Long stays often change: a house purchase slips, a project overruns or a patient is discharged early. Check:</p>
+<ul>
+<li>The cancellation terms. Zermatt Lodge uses a Moderate policy: a full refund up to 5 days before check-in, 50% after that</li>
+<li>Whether you can extend if dates move</li>
+<li>What happens if you need to leave early</li>
+</ul>
+<h3>5. Invoices and payment</h3>
+<p>Business guests should ask for an invoice in the company's name before arriving. If you need a VAT invoice, check whether the host can issue one. See our guide to invoices and VAT for business stays.</p>
+<h3>6. House rules</h3>
+<p>Read them carefully. A long stay is still a stay in someone's property. At Zermatt Lodge the rules are simple: no parties or events, no smoking, no pets.</p>
+<h2>House vs aparthotel for a long stay</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Aparthotel</th>
+<th>Whole house</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best for</td>
+<td>1 to 2 people</td>
+<td>Families, colleagues, crews of up to 7</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Usually city centre</td>
+<td>Often suburbs, with transport links</td>
+</tr>
+<tr>
+<td>Bedrooms</td>
+<td>Studio or 1 to 2 bed</td>
+<td>Several separate bedrooms</td>
+</tr>
+<tr>
+<td>Kitchen</td>
+<td>Compact</td>
+<td>Full-size, with dining space</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Often paid or limited</td>
+<td>Often free, off-street</td>
+</tr>
+<tr>
+<td>Outdoor space</td>
+<td>Rare</td>
+<td>Sometimes a private garden</td>
+</tr>
+<tr>
+<td>Reception</td>
+<td>Yes</td>
+<td>No, you deal with the host directly</td>
+</tr>
+</tbody>
+</table>
+<p>For a closer look, see house vs serviced apartment in Liverpool.</p>
+<h2>Settling in for several weeks</h2>
+<h3>Healthcare</h3>
+<p>NHS guidance says you don't need ID or proof of address to register with a GP. You can register as a <strong>temporary patient</strong> for up to three months, then reapply or register permanently. Our <a href="/guides/temporary-resident-gp-liverpool">temporary resident GP guide</a> has the details.</p>
+<h3>Shopping</h3>
+<p>There's a Lidl close to Zermatt Lodge, which makes a weekly shop easy. Online grocery delivery works well too.</p>
+<h3>Getting around</h3>
+<p>From Fazakerley station, Merseyrail trains reach Liverpool Central in about 15 minutes. Since February 2026, Merseyrail has accepted contactless bank cards, phones and watches: tap in and tap out. For longer stays, it's worth comparing weekly or monthly tickets on the Merseytravel website.</p>
+<h3>Tax and expenses</h3>
+<p>If you're working away from your usual workplace, tax rules may let you or your employer claim travel and accommodation costs. Tax guidance from LITRG explains that a workplace is treated as temporary unless you work there continuously for more than 24 months. Speak to your employer or accountant about your own situation.</p>
+<h2>Why Zermatt Lodge works for long stays</h2>
+<p>Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, Aintree University Hospital and the M57/M58. It isn't in the city centre, which is exactly why it has space and parking.</p>
+<ul>
+<li><strong>4 bedrooms, sleeps 7:</strong> king master with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Big kitchen and dining room</strong> for cooking every day, not just occasionally</li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Large private garden</strong></li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong> for evenings</li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>It's a quiet house: <strong>strictly no parties or events</strong>, no smoking and no pets. There's a one-off £129 cleaning fee.</p>
+<p>For long stays, call +44 7479 905477 to discuss dates, cleaning and invoicing, or check availability and book direct at <a href="/#book">Zermatt Lodge</a>.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li><a href="/guides/relocating-to-liverpool-temporary-house">Relocating to Liverpool: a temporary house</a></li>
+<li>House vs serviced apartment in Liverpool</li>
+<li><a href="/guides/temporary-resident-gp-liverpool">Seeing a GP as a temporary resident in Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>What counts as a long stay?</summary><p>Hosts usually mean 28 nights or more. At that length, cleaning, laundry, bills and invoicing need agreeing upfront, which matters less on a weekend break.</p></details>
+<details><summary>Is a house or an aparthotel better for a long stay in Liverpool?</summary><p>An aparthotel suits one or two people who want to be in the city centre with reception and housekeeping. A whole house suits families, colleagues or crews who need separate bedrooms, a proper kitchen and parking.</p></details>
+<details><summary>Can I register with a GP during a long stay?</summary><p>Yes. NHS guidance says you don&#x27;t need proof of address or ID to register with a GP, and you can register as a temporary patient for up to 3 months.</p></details>
+<details><summary>Can I claim my accommodation as a work expense?</summary><p>It depends on your circumstances. Tax guidance from LITRG explains that a workplace counts as temporary unless you work there continuously for more than 24 months, which affects what travel and subsistence costs can be claimed. Check with your employer or accountant.</p></details>
+<details><summary>Does Zermatt Lodge take long stays?</summary><p>Yes, subject to availability. Call +44 7479 905477 to talk through dates, cleaning and invoicing for stays of several weeks.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/relocating-to-liverpool-temporary-house"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Practical</span><h3>Relocating to Liverpool? Use a Short-Stay House as Base</h3><p>Step-by-step relocation base plan: viewing trips, school and GP registration pointers, areas to research and why a furnished house beats a hotel.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/temporary-resident-gp-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Seeing a GP as a Temporary Resident in Liverpool</h3><p>How to register as a temporary resident, when to use NHS 111 or an urgent treatment centre, and which A&amp;E covers north Liverpool.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

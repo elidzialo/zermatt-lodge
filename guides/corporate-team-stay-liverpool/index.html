@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Corporate Team Stays in Liverpool: Booking a Whole House</title>
+<meta name="description" content="Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/corporate-team-stay-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Corporate Team Stays in Liverpool: Booking a Whole House">
+<meta property="og:description" content="Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/corporate-team-stay-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Corporate Team Stays in Liverpool: How to Book a House for Colleagues", "description": "Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/corporate-team-stay-liverpool", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Corporate Team Stays in Liverpool: Booking a Whole House", "item": "https://bookhomes.co.uk/guides/corporate-team-stay-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a house cheaper than hotel rooms for a business team?", "acceptedAnswer": {"@type": "Answer", "text": "For teams of 4 to 7 staying several nights, a whole house often costs less than the same number of hotel rooms, and it comes with a kitchen, a dining table to work at and free parking. Compare the total, including parking and meals."}}, {"@type": "Question", "name": "Can we get an invoice in the company's name?", "acceptedAnswer": {"@type": "Answer", "text": "Ask before you book. At Zermatt Lodge, mention your company details when booking so the invoice can be made out correctly. If you need a VAT invoice, ask specifically."}}, {"@type": "Question", "name": "Is there Wi-Fi for working?", "acceptedAnswer": {"@type": "Answer", "text": "Ask the host about the connection before booking, and test it on arrival. If your work depends on a fast, stable connection, bring a mobile hotspot as a backup."}}, {"@type": "Question", "name": "How far is the house from Liverpool's business district?", "acceptedAnswer": {"@type": "Answer", "text": "Zermatt Lodge is in north Liverpool, near Fazakerley station. Direct trains reach Moorfields, in the business district, and Liverpool Central in around 15 minutes. It isn't in the city centre."}}, {"@type": "Question", "name": "Can the team hold a client event at the house?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's a quiet residential home with strictly no parties or events. It's a place for the team to stay, eat and prepare, not a venue."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Corporate Team Stays in Liverpool: Booking a Whole House</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Corporate Team Stays in Liverpool: How to Book a House for Colleagues</h1>
+      <p class="intro">Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>When a team of colleagues is in Liverpool for several days on the same project, booking one whole house often works better than a row of hotel rooms: one booking, one invoice, a table to work at and a kitchen so nobody lives on room service. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7.</p>
+<p>This guide is for the person organising the stay, usually an office manager, project lead or PA, and covers the questions that come up when booking a house for a business team.</p>
+<h2>When a house makes sense for a business team</h2>
+<p>A shared house isn't right for every trip. It works best when:</p>
+<ul>
+<li><strong>The team is 4 to 7 people</strong>, all working on the same project</li>
+<li><strong>The stay is 3 nights or longer</strong>, so the kitchen and living space get used</li>
+<li><strong>The work isn't all in the city centre.</strong> For example, a mix of city offices, a site in Knowsley or a client in north Liverpool</li>
+<li><strong>People are driving in</strong> with kit or samples and need parking</li>
+<li><strong>The team needs to prepare together</strong> in the evenings: rehearsing a pitch, reviewing documents or planning the next day</li>
+</ul>
+<p>A city-centre hotel is still better for a solo executive on a one-night trip, or when everyone needs to walk to the same office.</p>
+<h2>Where business happens in Liverpool</h2>
+<p>Liverpool's work locations are spread out, which is why base location matters.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What's there</th>
+<th>From north Liverpool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial district around Moorfields</td>
+<td>Offices, legal and financial firms</td>
+<td>Direct Merseyrail train from Fazakerley to Moorfields</td>
+</tr>
+<tr>
+<td>Knowledge Quarter</td>
+<td>Universities, hospitals, science and health organisations</td>
+<td>Train to Liverpool Central or drive in</td>
+</tr>
+<tr>
+<td>Waterfront (Kings Dock)</td>
+<td>Liverpool Experience Campus conference and exhibition venues</td>
+<td>Train to Central, then walk or change for James Street</td>
+</tr>
+<tr>
+<td>Knowsley Business Park</td>
+<td>Knowsley Council says it has 800+ businesses and around 18,000 jobs</td>
+<td>Short drive via the M57</td>
+</tr>
+<tr>
+<td>North docks and Seaforth</td>
+<td>Port and logistics</td>
+<td>Drive via the A5036</td>
+</tr>
+</tbody>
+</table>
+<p>See our Liverpool business travel guide for a fuller overview.</p>
+<h2>Booking checklist for team organisers</h2>
+<h3>Before you book</h3>
+<ol>
+<li><strong>Confirm numbers and names.</strong> Who's going and for which nights?</li>
+<li><strong>Check the cancellation terms.</strong> Zermatt Lodge uses a Moderate policy: a full refund up to 5 days before check-in, 50% after that. Confirm the team before that point.</li>
+<li><strong>Check what's included.</strong> There's a one-off £129 cleaning fee at Zermatt Lodge.</li>
+<li><strong>Ask for an invoice in the company name</strong>, and a VAT invoice if your finance team needs one. See invoices and VAT for business stays.</li>
+<li><strong>Ask about Wi-Fi.</strong> If the team will be working from the house, ask about the connection and plan a backup hotspot.</li>
+</ol>
+<h3>Room allocation</h3>
+<p>Sort this before arrival to avoid awkwardness. With a king master with en-suite, a second king, a queen and a single:</p>
+<ul>
+<li>Give the en-suite to whoever has the earliest starts, the most senior person, or rotate it on a long stay</li>
+<li>Anyone who needs to take late calls across time zones may prefer the single room</li>
+<li>Put night-owls and early birds at opposite ends of the house if you can</li>
+</ul>
+<p>Our room allocation guide has more ideas.</p>
+<h3>Workspace</h3>
+<p>A dining table seats the team for a working session. Bring:</p>
+<ul>
+<li>Extension leads and chargers</li>
+<li>A portable screen if you'll be reviewing slides together</li>
+<li>Printed materials, as there's no business centre on site</li>
+</ul>
+<h3>Travel</h3>
+<ul>
+<li><strong>Train:</strong> Fazakerley to Liverpool Central takes about 15 minutes. Merseyrail now accepts contactless cards, phones and watches. Tap in and tap out</li>
+<li><strong>Car:</strong> two free spaces at the house. City-centre parking is chargeable, so consider driving one car in and taking the train for the rest</li>
+<li><strong>Expenses:</strong> keep receipts. Tax guidance from LITRG explains how the temporary workplace rules affect what travel and subsistence can be claimed. Check your company policy</li>
+</ul>
+<h2>Making the stay work for the team</h2>
+<ul>
+<li><strong>Agree a breakfast plan.</strong> One big shop on day one saves money and time</li>
+<li><strong>Share the cooking.</strong> Two or three people cook each night, or order in</li>
+<li><strong>Respect downtime.</strong> After long days, people need space. Separate bedrooms make this easy</li>
+<li><strong>Keep the house quiet.</strong> It's in a residential street</li>
+</ul>
+<p>A games room with a pool table and a 55" Smart TV is a good way for colleagues to unwind together without going out every night.</p>
+<h2>Why Zermatt Lodge works for corporate teams</h2>
+<p>Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, the M57/M58 and Aintree University Hospital. It's not in the city centre, but the train is direct and the house gives a team space a hotel can't.</p>
+<ul>
+<li><strong>4 bedrooms, sleeps 7:</strong> king master with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Dining room and big kitchen</strong> for working sessions and team meals</li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Large private garden</strong> for fresh air between calls</li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>House rules: <strong>strictly no parties or events</strong>, no smoking and no pets. It's not suitable for client entertaining or team socials with guests.</p>
+<p>To book a team stay or ask about invoicing, call +44 7479 905477, or check dates and book direct at <a href="/#book">Zermatt Lodge</a>.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Liverpool business travel guide</li>
+<li>Invoices and VAT for business stays</li>
+<li><a href="/guides/acc-liverpool-conference-accommodation">ACC Liverpool conference accommodation</a></li>
+<li>Working remotely from Liverpool</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Is a house cheaper than hotel rooms for a business team?</summary><p>For teams of 4 to 7 staying several nights, a whole house often costs less than the same number of hotel rooms, and it comes with a kitchen, a dining table to work at and free parking. Compare the total, including parking and meals.</p></details>
+<details><summary>Can we get an invoice in the company&#x27;s name?</summary><p>Ask before you book. At Zermatt Lodge, mention your company details when booking so the invoice can be made out correctly. If you need a VAT invoice, ask specifically.</p></details>
+<details><summary>Is there Wi-Fi for working?</summary><p>Ask the host about the connection before booking, and test it on arrival. If your work depends on a fast, stable connection, bring a mobile hotspot as a backup.</p></details>
+<details><summary>How far is the house from Liverpool&#x27;s business district?</summary><p>Zermatt Lodge is in north Liverpool, near Fazakerley station. Direct trains reach Moorfields, in the business district, and Liverpool Central in around 15 minutes. It isn&#x27;t in the city centre.</p></details>
+<details><summary>Can the team hold a client event at the house?</summary><p>No. It&#x27;s a quiet residential home with strictly no parties or events. It&#x27;s a place for the team to stay, eat and prepare, not a venue.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/acc-liverpool-conference-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Venues events</span><h3>ACC Liverpool Conference Accommodation for Teams</h3><p>For exhibitor teams with kit in a car: unloading, parking and a shared house vs pricey waterfront hotels during big conferences.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

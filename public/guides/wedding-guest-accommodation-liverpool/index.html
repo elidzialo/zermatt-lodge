@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wedding Guest Accommodation in Liverpool for Groups</title>
+<meta name="description" content="Guests coming to a Liverpool wedding? How to keep your group together, getting ready, taxis to the venue, St George&#x27;s Hall parking and a house for up to 7.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/wedding-guest-accommodation-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Wedding Guest Accommodation in Liverpool for Groups">
+<meta property="og:description" content="Guests coming to a Liverpool wedding? How to keep your group together, getting ready, taxis to the venue, St George&#x27;s Hall parking and a house for up to 7.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/wedding-guest-accommodation-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Wedding Guest Accommodation in Liverpool: Staying Together Instead of Scattered Hotel Rooms", "description": "Guests coming to a Liverpool wedding? How to keep your group together, getting ready, taxis to the venue, St George's Hall parking and a house for up to 7.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/wedding-guest-accommodation-liverpool", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Wedding Guest Accommodation in Liverpool for Groups", "item": "https://bookhomes.co.uk/guides/wedding-guest-accommodation-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where should wedding guests stay in Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the venue. For city-centre ceremonies at St George's Hall or the Town Hall, a central hotel or somewhere on a direct train line works well. For venues on the edge of the city, such as Croxteth Hall or Knowsley Hall, a house with parking in north or east Liverpool is often closer and easier."}}, {"@type": "Question", "name": "Is there parking at St George's Hall for weddings?", "acceptedAnswer": {"@type": "Answer", "text": "No onsite parking for guests. Liverpool's ceremonies team lists nearby car parks including Lime Street Station Long Stay, St John's Shopping Centre and Queen Square. Wedding cars can book a drop-off on St George's Plateau with 48 hours' notice, for a fee."}}, {"@type": "Question", "name": "How do we get a taxi after a Liverpool wedding?", "acceptedAnswer": {"@type": "Answer", "text": "Pre-book. Liverpool City Council says private hire cars must be booked in advance, and black cabs must use the meter for journeys within Liverpool. Book your return before the day, especially for late finishes on Saturdays."}}, {"@type": "Question", "name": "Can we have an after-party at the house?", "acceptedAnswer": {"@type": "Answer", "text": "No. Zermatt Lodge has a strict no parties or events rule. It's a place to get ready, sleep and have a quiet breakfast together the next morning, not a venue."}}, {"@type": "Question", "name": "How many wedding guests can stay at Zermatt Lodge?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 7, in 4 bedrooms: a king master with en-suite, a second king, a queen and a single. There are 2 bathrooms and free parking for 2 cars."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Wedding Guest Accommodation in Liverpool for Groups</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Wedding Guest Accommodation in Liverpool: Staying Together Instead of Scattered Hotel Rooms</h1>
+      <p class="intro">Guests coming to a Liverpool wedding? How to keep your group together, getting ready, taxis to the venue, St George&#x27;s Hall parking and a house for up to 7.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>If you're a group of guests travelling to a Liverpool wedding, the simplest option is often to book one house together rather than several hotel rooms. You get ready in one place, share lifts or a pre-booked taxi to the venue, and wake up together the next morning. The right location depends on where the wedding is: a city-centre ceremony suits somewhere on a direct train line, while venues on the edge of the city suit a base with parking.</p>
+<p>This guide is for guests, not couples. It covers the practical side of getting a group to a Liverpool wedding on time and home safely.</p>
+<h2>Start with the venue</h2>
+<p>Before you book anywhere, find out three things from the couple or the invitation:</p>
+<ol>
+<li><strong>Where's the ceremony, and is the reception somewhere else?</strong> Many Liverpool weddings have a ceremony in one place and a reception in another.</li>
+<li><strong>What time does it finish?</strong> A midnight finish needs a different plan from a 6pm one.</li>
+<li><strong>Is there transport between venues?</strong> Some couples book a coach. Most don't.</li>
+</ol>
+<h3>City-centre venues</h3>
+<p>Liverpool's register office ceremonies take place at <strong>St George's Hall</strong>, opposite Lime Street station. The city's ceremonies team says:</p>
+<ul>
+<li>There's <strong>no onsite parking for guests</strong>.</li>
+<li>Nearby car parks include <strong>Lime Street Station Long Stay</strong> (Lord Nelson Street, L3 5QB), <strong>St John's Shopping Centre</strong> (St George's Place, L1 1LQ) and <strong>Queen Square</strong> (Whitechapel, L1 1RH).</li>
+<li>Blue Badge bays are spread around the city centre.</li>
+<li>Wedding cars can book access to <strong>St George's Plateau</strong> to drop the couple near the south steps. There's a fee, 48 hours' notice is needed and access isn't guaranteed if other events are on.</li>
+</ul>
+<p>For city-centre weddings, the train is your friend. If you're staying somewhere on a Merseyrail line, you can arrive without worrying about parking at all. See our guide for Liverpool Town Hall wedding guests too.</p>
+<h3>Venues on the edge of the city</h3>
+<p>Country-house and park venues around north and east Liverpool, such as Croxteth Hall in West Derby or Knowsley Hall, are much easier to reach by car or taxi than by train. Our guides to <a href="/guides/croxteth-hall-wedding-accommodation">Croxteth Hall weddings</a> and Knowsley Hall events go into those in detail.</p>
+<h2>Getting ready as a group</h2>
+<p>This is where a shared house really earns its keep.</p>
+<ul>
+<li><strong>Bathrooms:</strong> count them. Two bathrooms for seven people is workable if you plan a rota. One isn't.</li>
+<li><strong>Mirrors and light:</strong> a big kitchen table near a window makes a better make-up station than a hotel desk.</li>
+<li><strong>Ironing:</strong> ask whether there's an iron and board. Don't assume.</li>
+<li><strong>Timing:</strong> work backwards from when you need to leave. Allow at least 20 minutes per person in the bathroom, and more for anyone having hair done.</li>
+<li><strong>Food:</strong> eat a proper breakfast or brunch. Wedding breakfasts are often served late afternoon.</li>
+</ul>
+<h2>Taxis: book them before the day</h2>
+<p>Liverpool City Council's advice is worth knowing:</p>
+<ul>
+<li><strong>Private hire cars must be pre-booked.</strong> Don't get into one that hasn't been booked for you.</li>
+<li><strong>Black cabs (hackney carriages) must use the meter</strong> for journeys within Liverpool, and can only charge what it shows.</li>
+</ul>
+<p>On a Saturday night, especially if there's a match or a concert in the city, taxis are in demand. Book your return trip in advance and agree a pick-up point that's easy for a driver to find. If the venue is out of town, ask the venue which local firms they recommend.</p>
+<p><strong>Designate a driver if you're driving.</strong> If your group plans to drink, one car can stay at the accommodation and you take a taxi both ways.</p>
+<h2>The morning after</h2>
+<p>The day after a wedding is when a shared house is at its best. A slow breakfast around one table, swapping photos and stories, beats queuing for a hotel buffet in separate groups. Check the checkout time so nobody's rushing; 11am is common for houses.</p>
+<h2>House or hotel for wedding guests?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hotel rooms</th>
+<th>Whole house</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Getting ready</td>
+<td>Separate rooms</td>
+<td>Together</td>
+</tr>
+<tr>
+<td>Cost for 6 or 7</td>
+<td>Several room rates</td>
+<td>One booking, split</td>
+</tr>
+<tr>
+<td>Breakfast</td>
+<td>Hotel buffet or extra charge</td>
+<td>Your own kitchen</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Often paid in the city</td>
+<td>Often free outside the centre</td>
+</tr>
+<tr>
+<td>Late-night noise</td>
+<td>Corridors and other guests</td>
+<td>Your own space, but quiet hours apply</td>
+</tr>
+</tbody>
+</table>
+<p>Our <a href="/guides/house-vs-hotel-liverpool-groups">house vs hotel guide</a> looks at this in more depth.</p>
+<h2>Why Zermatt Lodge suits wedding guests</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's about 15 minutes by train from Fazakerley station to Liverpool Central, a short walk from St George's Hall, and it has free parking for 2 cars for venues you'd rather drive or taxi to. It isn't in the city centre, so build the journey into your timings.</p>
+<ul>
+<li><strong>Sleeps 7</strong> in a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong>, so getting ready is manageable with a rota</li>
+<li><strong>Big kitchen and dining room</strong> for a getting-ready brunch and the morning-after breakfast</li>
+<li><strong>Large private garden</strong> for a few photos before you leave</li>
+<li><strong>Games room with a pool table</strong>, board games and a 55" Smart TV with Netflix for the evening before</li>
+</ul>
+<p><strong>Strictly no parties or events.</strong> The house is for sleeping, getting ready and relaxing, not for after-parties or pre-wedding gatherings. No smoking and no pets. Check-in is 3pm and checkout is 11am. The Moderate cancellation policy gives a full refund up to 5 days before check-in.</p>
+<p><a href="/#book">Book direct for the wedding weekend</a>, or call +44 7479 905477 to check dates.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/croxteth-hall-wedding-accommodation">Croxteth Hall wedding accommodation</a></li>
+<li>Liverpool Town Hall wedding guests</li>
+<li>Knowsley Hall event accommodation</li>
+<li><a href="/guides/group-accommodation-liverpool-with-parking">Group accommodation in Liverpool with parking</a></li>
+<li><a href="/guides/house-vs-hotel-liverpool-groups">House vs hotel for groups in Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where should wedding guests stay in Liverpool?</summary><p>It depends on the venue. For city-centre ceremonies at St George&#x27;s Hall or the Town Hall, a central hotel or somewhere on a direct train line works well. For venues on the edge of the city, such as Croxteth Hall or Knowsley Hall, a house with parking in north or east Liverpool is often closer and easier.</p></details>
+<details><summary>Is there parking at St George&#x27;s Hall for weddings?</summary><p>No onsite parking for guests. Liverpool&#x27;s ceremonies team lists nearby car parks including Lime Street Station Long Stay, St John&#x27;s Shopping Centre and Queen Square. Wedding cars can book a drop-off on St George&#x27;s Plateau with 48 hours&#x27; notice, for a fee.</p></details>
+<details><summary>How do we get a taxi after a Liverpool wedding?</summary><p>Pre-book. Liverpool City Council says private hire cars must be booked in advance, and black cabs must use the meter for journeys within Liverpool. Book your return before the day, especially for late finishes on Saturdays.</p></details>
+<details><summary>Can we have an after-party at the house?</summary><p>No. Zermatt Lodge has a strict no parties or events rule. It&#x27;s a place to get ready, sleep and have a quiet breakfast together the next morning, not a venue.</p></details>
+<details><summary>How many wedding guests can stay at Zermatt Lodge?</summary><p>Up to 7, in 4 bedrooms: a king master with en-suite, a second king, a queen and a single. There are 2 bathrooms and free parking for 2 cars.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/croxteth-hall-wedding-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Venues events</span><h3>Croxteth Hall Wedding Accommodation for Families</h3><p>Croxteth Hall is minutes from Fazakerley; taxi times, parking and a house for the bridal party&#x27;s family.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/group-accommodation-liverpool-with-parking"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Group Accommodation in Liverpool with Parking</h3><p>Parking-led: why city-centre group stays get expensive with cars, what free off-street parking for two changes and how to reach the centre by train.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/house-vs-hotel-liverpool-groups"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Comparisons</span><h3>House vs Hotel in Liverpool for Groups</h3><p>Side-by-side comparison on space, parking, meals, privacy and when a hotel is genuinely the better pick.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

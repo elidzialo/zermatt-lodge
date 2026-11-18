@@ -3,7 +3,7 @@
 Everything else is built and deployed. These are the only clicks left. Never paste keys into chat, email or GitHub - only into the Supabase secrets screen.
 
 Supabase project: **eli-hub** - https://supabase.com/dashboard/project/kddhkuwnkkjcnbjegsmc
-Live site: https://zermatt-lodge-lime.vercel.app
+Live site: https://bookhomes.co.uk
 
 ## 1. Install the booking database (one time, about 2 minutes)
 
@@ -36,19 +36,15 @@ Until step 1 is done, the site shows the calendar from its built-in copy and the
 
 Without this, guests could pay but the booking would not be marked paid, so do not take bookings until it is set.
 
-## 4. Email alerts (optional, recommended)
+## 4. Admin portal and emails
 
-On the same secrets page (https://supabase.com/dashboard/project/kddhkuwnkkjcnbjegsmc/functions/secrets) add:
+1. **Admin access**: in the SQL editor run `insert into zermatt.admins (email) values ('your-email-in-lowercase') on conflict do nothing;`. Then open https://bookhomes.co.uk/admin and sign in with the emailed link. Admin booking/sign-up alerts go to every email in `zermatt.admins`.
+2. **Sign-in link redirect**: Supabase > Authentication > URL Configuration: add `https://bookhomes.co.uk/admin` to Redirect URLs (and set Site URL to `https://bookhomes.co.uk` if the hub does not need another one).
+3. **Resend** (guest confirmations and admin alerts): verify the domain `bookhomes.co.uk` at https://resend.com/domains (add the DNS records it shows), create an API key, then on https://supabase.com/dashboard/project/kddhkuwnkkjcnbjegsmc/functions/secrets add `RESEND_API_KEY`. Optional `RESEND_FROM` (default `Book Homes <bookings@bookhomes.co.uk>`).
+   Until then every email is logged in the admin Emails tab as `skipped_no_key` and bookings still work.
+4. Database extras (promo codes, sign-ups, manual blocks, email log) are already installed. If you ever rebuild the database, run `supabase/ADMIN_PROMO_setup.sql`.
 
-| Name | Value |
-|---|---|
-| `OWNER_EMAIL` | the email address that should get booking and clash alerts |
-| `RESEND_API_KEY` | from https://resend.com/api-keys (create a key) |
-| `RESEND_FROM` | e.g. `Zermatt Lodge <bookings@your-domain>` once the domain is verified at https://resend.com/domains |
-
-Until Resend has a verified domain it can only send to your own Resend login address, so guest confirmation emails need step 4 done properly.
-
-Optional: `SITE_URL` = `https://zermatt-lodge-lime.vercel.app` (this is already the built-in default; change it when you move to your own domain).
+Optional: `SITE_URL` = `https://bookhomes.co.uk` (this is already the built-in default).
 
 ## 5. After the first real booking
 

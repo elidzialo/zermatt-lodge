@@ -138,3 +138,66 @@ Before writing any priority 3 topic, check it can genuinely be made useful and d
 - The anfield-concert page needs a current source for concert-day travel (the LFC events link now redirects to hospitality).
 - Formby National Trust and Liverpool tourism pages failed to fetch this session - try again or find alternative sources for formby-red-squirrels-guide and croxteth-hall-visitor-guide.
 - Pages link to many guides that aren't written yet. That's intentional, as they're all in the topic map. Before launch, either publish those targets or hide links to unpublished slugs in the site template.
+
+## Batch 2 - Writer B
+
+- [x] aintree-major-trauma-centre-family-guide
+- [x] getting-to-aintree-racecourse-from-fazakerley (retargeted to "how to get to aintree racecourse", all starting points)
+- [x] anfield-concert-accommodation
+- [x] european-nights-anfield-stay
+- [x] liverpool-graduation-family-stay
+- [x] wedding-guest-accommodation-liverpool
+- [x] liverpool-cruise-terminal-stay
+- [x] dublin-ferry-liverpool-stay (reworked: P&O Liverpool-Dublin closed end of 2023; Stena Dublin-Birkenhead is freight-only; page now covers Holyhead and Belfast-Birkenhead options)
+- [x] film-crew-accommodation-liverpool
+- [x] skelmersdale-work-accommodation
+- [x] golf-group-trip-liverpool
+- [x] walton-centre-outpatient-overnight
+- [x] aintree-hospital-parking-guide
+- [x] temporary-resident-gp-liverpool
+- [x] grand-national-parking-guide
+- [x] becher-chase-weekend-liverpool
+- [x] anfield-stadium-tour-guide
+- [x] away-fans-guide-everton-stadium
+- [x] football-tour-liverpool-with-kids
+- [x] liverpool-christmas-markets-guide
+
+Notes from Writer B (verified 2026-11-18):
+- Liverpool to Dublin passenger ferry no longer runs (P&O closed it Dec 2023). Other pages/keywords mentioning a north-docks Dublin ferry need checking.
+- Aintree hospital pay machines: UHL page says cash and card; Walton Centre page says card only.
+- Skate St George's (Underbelly, with Christmas market, rooftop bar, Big Wheel): 21 Nov 2026 to 3 Jan 2027 on St George's Plateau.
+- Everton shuttles 2026/27 (Stagecoach): 919 Commutation Row, 939 Bootle, 918 Kirkby Bus Station; £2 single, £4 return.
+- LFC 2026/27 UCL home games: Porto Wed 9 Dec, Lens Wed 27 Jan, both 8pm.
+- Becher Chase Day 5 Dec 2026: gates 10:00, first race 11:50, last 15:15. Everton v Fulham 3pm same day.
+
+## Batch 2 - Writer A
+
+Done 2026-11-18 (20 pages, slugs unchanged from the topic map; angles widened to Liverpool-wide intent).
+
+- [x] clatterbridge-cancer-centre-liverpool-family-stay
+- [x] hospital-appointment-early-morning-stay
+- [x] grand-national-ladies-day-group-stay
+- [x] merseyside-derby-weekend
+- [x] acc-liverpool-conference-accommodation
+- [x] edge-hill-university-graduation-stay
+- [x] croxteth-hall-wedding-accommodation
+- [x] isle-of-man-ferry-liverpool-stay
+- [x] long-stay-accommodation-liverpool
+- [x] liverpool-freeport-business-stays
+- [x] corporate-team-stay-liverpool
+- [x] renovation-stay-liverpool
+- [x] visiting-aintree-hospital-practical-guide
+- [x] woodlands-hospice-visitor-stay
+- [x] long-stay-hospital-visiting-tips-liverpool
+- [x] grand-national-first-timers-guide
+- [x] grand-national-from-ireland
+- [x] away-fans-guide-anfield
+- [x] overseas-lfc-fans-first-trip
+- [x] exhibition-centre-liverpool-exhibitor-stay
+
+Notes from Writer A:
+- P&O ended its Liverpool-Dublin ferry at the end of 2023 (Shippax). dublin-ferry-liverpool-stay needs re-angling (Holyhead route) or dropping.
+- ACC Liverpool rebranded as Liverpool Experience Campus in 2026 (Convention Centre / Exhibition Centre at LEX; M&S Bank Arena unchanged).
+- Derby dates: Everton v Liverpool moved to Sun 29 Nov 2026 12pm (TV); Liverpool v Everton Sat 30 Jan 2027 3pm (subject to change).
+- Freeport tax sites are Parkside, 3MG and Wirral Waters (gov.uk), not the north docks; the freeport page says so.
+- Exhibition Centre door height conflicts between venue docs (4.6m vs 4.9m); page tells readers to confirm.

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grand National from Ireland: Flights, Ferries and Stays</title>
+<meta name="description" content="Travelling from Ireland for the Grand National? Flights into Liverpool, the Belfast and Holyhead ferries, driving to Aintree, and a 4-bed house for groups.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/grand-national-from-ireland">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Grand National from Ireland: Flights, Ferries and Stays">
+<meta property="og:description" content="Travelling from Ireland for the Grand National? Flights into Liverpool, the Belfast and Holyhead ferries, driving to Aintree, and a 4-bed house for groups.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/grand-national-from-ireland">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Going to the Grand National from Ireland: Getting There and Where to Stay", "description": "Travelling from Ireland for the Grand National? Flights into Liverpool, the Belfast and Holyhead ferries, driving to Aintree, and a 4-bed house for groups.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/grand-national-from-ireland", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Grand National from Ireland: Flights, Ferries and Stays", "item": "https://bookhomes.co.uk/guides/grand-national-from-ireland"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I fly direct from Ireland to Liverpool for the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Flight data shows direct flights into Liverpool John Lennon Airport from Dublin (Aer Lingus and Ryanair), Cork, Knock and Shannon (Ryanair), and from Belfast International, Belfast City and Derry (easyJet). Routes and schedules change, so check with the airlines."}}, {"@type": "Question", "name": "Is there a ferry from Dublin to Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "P&O Ferries ended its Liverpool to Dublin service at the end of 2023. From Dublin, most travellers with a car now sail to Holyhead with Stena Line or Irish Ferries, a crossing of about 3 hours 15 to 3 hours 30, then drive to Liverpool. Check current operators before you book."}}, {"@type": "Question", "name": "Is there a ferry from Belfast to Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Stena Line sails from Belfast to Liverpool (Birkenhead), about 8 hours, typically twice a day, and takes foot passengers as well as cars."}}, {"@type": "Question", "name": "How far is Liverpool Airport from Aintree?", "acceptedAnswer": {"@type": "Answer", "text": "The Jockey Club says Liverpool John Lennon Airport is about a 20-minute drive from Aintree Racecourse. Traffic on festival days can make it longer."}}, {"@type": "Question", "name": "When is the 2027 Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "The Randox Grand National Festival runs from Thursday 8 to Saturday 10 April 2027, with the Grand National on the Saturday."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Grand National from Ireland: Flights, Ferries and Stays</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Going to the Grand National from Ireland: Getting There and Where to Stay</h1>
+      <p class="intro">Travelling from Ireland for the Grand National? Flights into Liverpool, the Belfast and Holyhead ferries, driving to Aintree, and a 4-bed house for groups.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>Irish racegoers have more options than ever to reach the Grand National: short direct flights into Liverpool from Dublin, Belfast and the west of Ireland, the Belfast to Birkenhead ferry, or the Dublin to Holyhead crossing with a drive across North Wales. The 2027 festival runs from <strong>Thursday 8 to Saturday 10 April</strong>. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, a few miles from Aintree Racecourse, sleeping up to 7 with free parking for two cars, so it suits groups who bring a car over on the ferry as well as those who fly in.</p>
+<p>This guide compares the routes and explains how to get from each one to Aintree.</p>
+<h2>Option 1: Fly into Liverpool John Lennon Airport</h2>
+<h3>Which airports have direct flights?</h3>
+<p>Flight data for Liverpool John Lennon Airport shows direct routes from:</p>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>Airlines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dublin</td>
+<td>Aer Lingus, Ryanair (about 55 minutes in the air)</td>
+</tr>
+<tr>
+<td>Cork</td>
+<td>Ryanair</td>
+</tr>
+<tr>
+<td>Knock</td>
+<td>Ryanair</td>
+</tr>
+<tr>
+<td>Shannon</td>
+<td>Ryanair</td>
+</tr>
+<tr>
+<td>Belfast International</td>
+<td>easyJet</td>
+</tr>
+<tr>
+<td>Belfast City</td>
+<td>easyJet</td>
+</tr>
+<tr>
+<td>Derry</td>
+<td>easyJet</td>
+</tr>
+</tbody>
+</table>
+<p>Schedules change by season, and some routes run less often than others, so check before you plan. Festival week flights sell out, so book early.</p>
+<h3>From the airport to Aintree</h3>
+<p>The Jockey Club says the airport is about <strong>20 minutes' drive</strong> from Aintree Racecourse. Options include:</p>
+<ul>
+<li><strong>Hire car</strong> from the airport, if your group wants to drive around Liverpool during the trip</li>
+<li><strong>Taxi</strong> straight to your accommodation</li>
+<li><strong>Bus and train:</strong> the Arriva 500 runs between the airport and the city centre, and from there Merseyrail serves Aintree</li>
+</ul>
+<p>Our <a href="/guides/liverpool-airport-to-fazakerley">airport to Fazakerley guide</a> has the step-by-step options for reaching north Liverpool.</p>
+<h2>Option 2: Belfast to Birkenhead by ferry</h2>
+<p>Stena Line runs the Belfast to Liverpool (Birkenhead) route:</p>
+<ul>
+<li><strong>Crossing time:</strong> about 8 hours</li>
+<li><strong>Sailings:</strong> typically two a day</li>
+<li><strong>Foot passengers:</strong> accepted, as well as cars</li>
+</ul>
+<p>Birkenhead is on the Wirral, across the River Mersey from Liverpool. With a car, you drive through one of the Mersey road tunnels into Liverpool, which carries a toll. See our Mersey tunnel tolls guide. From the tunnel, it's a straightforward drive north to Aintree and Fazakerley. Check a live route for timings.</p>
+<p>Compare the departure times: a sailing that arrives the evening before your race day is far less stressful than one that lands on the morning itself. Our Belfast ferry guide covers the terminal and arrival in more detail.</p>
+<h2>Option 3: Dublin via Holyhead</h2>
+<p>There used to be a direct Dublin to Liverpool ferry, but <strong>P&amp;O Ferries ended its Liverpool to Dublin service at the end of 2023</strong> after losing its Liverpool berth. For travellers from Dublin bringing a car, the main route is now:</p>
+<ul>
+<li><strong>Dublin to Holyhead</strong> with Stena Line (about 3 hours 15 minutes) or Irish Ferries (about 3 hours 30 minutes), each running around four sailings a day</li>
+<li><strong>Then drive</strong> from Anglesey along the North Wales coast to Liverpool. Check a live route, and allow extra time on busy weekends</li>
+</ul>
+<p>Ferry routes change, so always check the operators' current timetables before booking.</p>
+<h2>Which option suits your group?</h2>
+<ul>
+<li><strong>A couple or small group with no car needed:</strong> fly, and use taxis and trains</li>
+<li><strong>A group of 5 to 7 who want a car for the weekend:</strong> take the ferry with your own car, or fly and hire one</li>
+<li><strong>From Northern Ireland with a car:</strong> Belfast to Birkenhead avoids a drive across Wales</li>
+<li><strong>From Dublin with a car:</strong> Holyhead is the practical route</li>
+</ul>
+<h2>On race day</h2>
+<p>Whichever way you arrive, the advice for race day is the same:</p>
+<ul>
+<li><strong>Use the train if you can.</strong> Festival trains run every seven and a half minutes between Liverpool Central/Moorfields and Aintree, according to the Jockey Club</li>
+<li><strong>Driving?</strong> Car parking must be booked online in advance</li>
+<li><strong>Bring a card or phone.</strong> The racecourse is cashless for food and drink, and cash is only for on-course bookies. Pounds sterling are used throughout</li>
+<li><strong>Small bags only.</strong> No bigger than 30cm x 10cm x 20cm, and there's no left luggage</li>
+</ul>
+<p>Our <a href="/guides/grand-national-first-timers-guide">first-timer's guide</a> covers enclosures, dress and the day itself.</p>
+<h2>Plan a long weekend</h2>
+<p>Many Irish groups arrive on the Thursday or Friday and leave on the Sunday or Monday. That gives you time for a day in the city, such as the waterfront, the museums or a match if there's a home fixture, and avoids travelling home tired straight after the big race.</p>
+<h2>Why Zermatt Lodge suits groups from Ireland</h2>
+<p>Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station and a few miles from Aintree. It isn't in the city centre, but the train to Liverpool Central takes about 15 minutes.</p>
+<ul>
+<li><strong>4 bedrooms, sleeps 7:</strong> king master with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong> for race-day mornings</li>
+<li><strong>Free parking for 2 cars</strong>, ideal if you've brought a car on the ferry</li>
+<li><strong>Big kitchen and dining room</strong>, handy when restaurants are packed during festival week</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Large private garden</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>House rules: <strong>strictly no parties or events</strong>, no smoking and no pets. It's a comfortable base for racegoers, not a party house.</p>
+<p>Festival week books up fast. Check dates and book direct at <a href="/#book">Zermatt Lodge</a>, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/grand-national-accommodation">Grand National accommodation: where to stay near Aintree</a></li>
+<li><a href="/guides/grand-national-first-timers-guide">Grand National Festival: a first-timer's guide</a></li>
+<li>Belfast ferry from Birkenhead: where to stay</li>
+<li><a href="/guides/liverpool-airport-to-fazakerley">Liverpool Airport to Fazakerley</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Can I fly direct from Ireland to Liverpool for the Grand National?</summary><p>Yes. Flight data shows direct flights into Liverpool John Lennon Airport from Dublin (Aer Lingus and Ryanair), Cork, Knock and Shannon (Ryanair), and from Belfast International, Belfast City and Derry (easyJet). Routes and schedules change, so check with the airlines.</p></details>
+<details><summary>Is there a ferry from Dublin to Liverpool?</summary><p>P&amp;O Ferries ended its Liverpool to Dublin service at the end of 2023. From Dublin, most travellers with a car now sail to Holyhead with Stena Line or Irish Ferries, a crossing of about 3 hours 15 to 3 hours 30, then drive to Liverpool. Check current operators before you book.</p></details>
+<details><summary>Is there a ferry from Belfast to Liverpool?</summary><p>Yes. Stena Line sails from Belfast to Liverpool (Birkenhead), about 8 hours, typically twice a day, and takes foot passengers as well as cars.</p></details>
+<details><summary>How far is Liverpool Airport from Aintree?</summary><p>The Jockey Club says Liverpool John Lennon Airport is about a 20-minute drive from Aintree Racecourse. Traffic on festival days can make it longer.</p></details>
+<details><summary>When is the 2027 Grand National?</summary><p>The Randox Grand National Festival runs from Thursday 8 to Saturday 10 April 2027, with the Grand National on the Saturday.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/grand-national-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Grand National Accommodation: Stay Near Aintree</h3><p>Built on the Jockey Club&#x27;s official travel plan: festival dates, the Kirkby-line change at Sandhills on race days, car parking rules and why a house suits a group.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/grand-national-first-timers-guide"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Grand National Festival: A First-Timer&#x27;s Guide</h3><p>Day-by-day explanation of the three festival days, gates, enclosures, what to wear and how to leave without the crush.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/liverpool-airport-to-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Liverpool Airport to Fazakerley: All Your Options</h3><p>Taxi, car hire and bus+Merseyrail routes from John Lennon Airport to Fazakerley with verified bus numbers.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

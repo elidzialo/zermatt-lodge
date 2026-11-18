@@ -19,4 +19,4 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /checkout/
 
-Sitemap: https://zermatt-lodge-lime.vercel.app/sitemap.xml
+Sitemap: https://bookhomes.co.uk/sitemap.xml

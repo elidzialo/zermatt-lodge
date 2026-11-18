@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f4d3a">
+<title>Book Homes admin - Zermatt Lodge</title>
+<style>
+:root{
+  --ink:#1b1f1d; --muted:#5d6560; --line:#e7e3dc; --bg:#fff; --soft:#f7f4ef; --cream:#fbf8f3;
+  --brand:#1f4d3a; --brand-2:#2c6a50; --brand-ink:#163a2b; --brand-tint:#e9f1ec;
+  --accent:#c8873a; --accent-ink:#8a5a1f; --accent-tint:#f8efe3; --red:#b42318; --red-tint:#fdeceb;
+  --radius:14px; --shadow:0 1px 2px rgba(20,30,25,.06),0 8px 24px rgba(20,30,25,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.top{position:sticky;top:0;z-index:20;background:var(--brand);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top h1{font-family:Fraunces,Georgia,serif;font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
+.top h1 i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.top .who{font-size:13px;opacity:.9;display:flex;gap:10px;align-items:center;min-width:0}
+.top .who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:44vw}
+.top button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:8px;padding:6px 10px;font-size:13px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:15;scrollbar-width:none}
+nav.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;white-space:nowrap;font-weight:600;font-size:14px;color:var(--muted)}
+nav.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:16px 12px 60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:14px}
+.card h2{font-family:Fraunces,Georgia,serif;font-size:18px;font-weight:600;margin-bottom:10px;color:var(--brand-ink)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:14px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.stat small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.stat b{display:block;font-size:26px;font-family:Fraunces,Georgia,serif;color:var(--brand-ink);margin-top:4px}
+.stat span{font-size:13px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:9px 16px;font-weight:600;text-decoration:none}
+.btn:hover{background:var(--brand-2)}
+.btn.amber{background:var(--accent);color:#1b1307}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.sm{min-height:34px;padding:5px 12px;font-size:13px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+label.f{display:block;font-size:13px;font-weight:600;margin-bottom:10px}
+label.f input,label.f select{display:block;width:100%;margin-top:4px;font-size:16px;padding:10px 12px;border:1px solid #a9aeaa;border-radius:10px;background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.row > *{flex:1;min-width:140px}
+.list{display:grid;gap:10px}
+.item{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+.item .h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600}
+.item .m{font-size:13.5px;color:var(--muted);margin-top:4px;word-break:break-word}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--soft);color:var(--muted)}
+.pill.paid,.pill.ok{background:var(--brand-tint);color:var(--brand)}
+.pill.held,.pill.pending,.pill.warn{background:var(--accent-tint);color:var(--accent-ink)}
+.pill.cancelled{background:#eee;color:#555}
+.pill.cancelled_conflict,.pill.error,.pill.conflict{background:var(--red-tint);color:var(--red)}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.err{background:var(--red-tint);color:var(--red);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+.okmsg{background:var(--brand-tint);color:var(--brand);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.tw{overflow-x:auto}
+.login{max-width:420px;margin:40px auto}
+.login p{color:var(--muted);margin-bottom:14px}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-h b{font-family:Fraunces,Georgia,serif;font-size:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font-size:11px;font-weight:700;color:var(--muted);text-align:center;padding:4px 0}
+.cal .d{min-height:64px;border-radius:8px;border:1px solid var(--line);padding:4px;font-size:11px;background:#fff;overflow:hidden}
+.cal .d .n{font-weight:700;font-size:12px}
+.cal .d .p{color:var(--muted)}
+.cal .d .t{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal .d.x{background:transparent;border:0}
+.cal .d.direct{background:var(--brand);color:#fff;border-color:var(--brand)}
+.cal .d.direct .p{color:#dfe9e3}
+.cal .d.held{background:var(--accent-tint);border-color:var(--accent)}
+.cal .d.manual{background:repeating-linear-gradient(45deg,#f3e3cf,#f3e3cf 6px,#fff 6px,#fff 12px);border-color:var(--accent)}
+.cal .d.channel{background:#e4e7e5;color:#333}
+.cal .d.today{outline:2px solid var(--accent);outline-offset:-2px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;margin-top:10px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px;border:1px solid var(--line)}
+.hidden{display:none !important}
+.newb{display:inline-block;background:var(--accent);color:#1b1307;font-size:11px;font-weight:800;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.acts{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.acts .msg{font-size:13px;color:var(--muted)}
+@media (max-width:560px){ .cal .d{min-height:52px;font-size:10px} .cal .d .t{display:none} }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1><i aria-hidden="true"></i>Book Homes admin</h1>
+  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" id="signOut">Sign out</button></div>
+</header>
+
+<div id="viewLogin" class="login hidden">
+  <div class="card">
+    <h2>Sign in</h2>
+    <p>Enter your admin email and we'll send you a sign-in link. Only emails on the admin list can see this area.</p>
+    <div id="loginMsg"></div>
+    <form id="loginForm" novalidate>
+      <label class="f">Email<input type="email" id="loginEmail" autocomplete="email" inputmode="email" required></label>
+      <button class="btn" type="submit" id="loginBtn" style="width:100%">Email me a sign-in link</button>
+    </form>
+  </div>
+</div>
+
+<div id="viewDenied" class="login hidden">
+  <div class="card">
+    <h2>No access</h2>
+    <p>You're signed in, but this email isn't on the Zermatt Lodge admin list.</p>
+    <button class="btn ghost" type="button" id="deniedOut">Sign out</button>
+  </div>
+</div>
+
+<div id="viewApp" class="hidden">
+  <nav class="tabs" role="tablist" aria-label="Admin sections">
+    <button type="button" role="tab" data-tab="dash" aria-selected="true">Dashboard</button>
+    <button type="button" role="tab" data-tab="bookings" aria-selected="false">Bookings</button>
+    <button type="button" role="tab" data-tab="calendar" aria-selected="false">Calendar</button>
+    <button type="button" role="tab" data-tab="leads" aria-selected="false">Sign-ups</button>
+    <button type="button" role="tab" data-tab="blocks" aria-selected="false">Block dates</button>
+    <button type="button" role="tab" data-tab="emails" aria-selected="false">Emails</button>
+    <button type="button" role="tab" data-tab="log" aria-selected="false">Sync log</button>
+  </nav>
+  <main>
+    <div id="appErr"></div>
+
+    <section data-panel="dash">
+      <div class="grid" id="dashStats"></div>
+      <div class="card"><h2>Today</h2><div id="dashToday" class="list"></div></div>
+      <div class="card"><h2>Next 5 bookings</h2><div id="dashNext" class="list"></div></div>
+      <div class="card"><h2>Sync health</h2><div id="dashSync" class="list"></div></div>
+    </section>
+
+    <section data-panel="bookings" class="hidden">
+      <div class="card">
+        <div class="row">
+          <label class="f">Status<select id="bkFilter">
+            <option value="">All</option><option value="paid" selected>Paid</option><option value="held">Held (in checkout)</option>
+            <option value="pending">Pending</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Cancelled (clash, refunded)</option>
+          </select></label>
+          <label class="f">When<select id="bkWhen"><option value="upcoming" selected>Upcoming and current</option><option value="all">All dates</option></select></label>
+        </div>
+        <div id="bkList" class="list"></div>
+      </div>
+    </section>
+
+    <section data-panel="calendar" class="hidden">
+      <div class="card">
+        <div class="cal-h">
+          <button type="button" class="btn ghost sm" id="calPrev" aria-label="Previous month">&lsaquo;</button>
+          <b id="calTitle"></b>
+          <button type="button" class="btn ghost sm" id="calNext" aria-label="Next month">&rsaquo;</button>
+        </div>
+        <div class="cal" id="calGrid"></div>
+        <div class="legend">
+          <span><i style="background:var(--brand)"></i>Direct booking (paid)</span>
+          <span><i style="background:var(--accent-tint);border-color:var(--accent)"></i>Checkout in progress</span>
+          <span><i style="background:#e4e7e5"></i>Channel / feed block</span>
+          <span><i style="background:repeating-linear-gradient(45deg,#f3e3cf,#f3e3cf 3px,#fff 3px,#fff 6px)"></i>Your manual block</span>
+          <span><i style="background:#fff"></i>Available</span>
+        </div>
+      </div>
+      <div class="card"><h2>Feed status</h2><div id="calFeeds" class="list"></div></div>
+    </section>
+
+    <section data-panel="leads" class="hidden">
+      <div class="card">
+        <div class="row" style="align-items:center;margin-bottom:10px">
+          <div><b id="leadCount">0</b> sign-ups</div>
+          <div style="text-align:right"><a class="btn amber sm" id="leadCsv" href="#" download="zermatt-signups.csv">Download CSV</a></div>
+        </div>
+        <div class="tw"><table><thead><tr><th>Date</th><th>Email</th><th>Name</th><th>Offers OK</th><th>Code</th><th>Page</th></tr></thead><tbody id="leadRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section data-panel="blocks" class="hidden">
+      <div class="card">
+        <h2>Block dates</h2>
+        <p class="empty" style="margin-bottom:10px">Closes these nights on the website straight away, and on Airbnb / Booking.com / Vrbo at their next calendar refresh.</p>
+        <div id="blkMsg"></div>
+        <form id="blkForm" novalidate>
+          <div class="row">
+            <label class="f">First night<input type="date" id="blkStart" required></label>
+            <label class="f">Last night<input type="date" id="blkEnd" required></label>
+          </div>
+          <label class="f">Reason<input type="text" id="blkReason" maxlength="120" placeholder="e.g. Maintenance, family stay"></label>
+          <button class="btn" type="submit" id="blkBtn">Block these nights</button>
+        </form>
+      </div>
+      <div class="card"><h2>Current blocks</h2><div id="blkList" class="list"></div></div>
+    </section>
+
+    <section data-panel="emails" class="hidden">
+      <div class="card">
+        <div class="row"><label class="f">Show<select id="emFilter"><option value="">Everything</option><option value="sent">Sent</option><option value="failed">Failed</option><option value="skipped_no_key">Skipped (no Resend key)</option></select></label></div>
+        <div id="emList" class="list"></div>
+      </div>
+    </section>
+
+    <section data-panel="log" class="hidden">
+      <div class="card">
+        <div class="row"><label class="f">Show<select id="logFilter"><option value="">Everything</option><option value="conflict">Conflicts</option><option value="error">Errors</option><option value="warn">Warnings</option></select></label></div>
+        <div id="logList" class="list"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+"use strict";
+// Public project URL + publishable (anon) key. Not secrets: every read is gated by Row Level Security,
+// which only returns rows to signed-in users whose email is in zermatt.admins.
+var SUPABASE_URL = "https://kddhkuwnkkjcnbjegsmc.supabase.co";
+var SUPABASE_KEY = "sb_publishable_zASd1ua4ZuknbOatR4MnTA_nVwqRZlR";
+
+var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+function show(id, on){ $(id).classList.toggle("hidden", !on); }
+function money(p){ return new Intl.NumberFormat("en-GB", {style:"currency", currency:"GBP"}).format((p || 0) / 100); }
+function ukToday(){ return new Intl.DateTimeFormat("en-CA", {timeZone:"Europe/London", year:"numeric", month:"2-digit", day:"2-digit"}).format(new Date()); }
+function addDays(s, n){ var d = new Date(s + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+var fmtD = new Intl.DateTimeFormat("en-GB", {weekday:"short", day:"numeric", month:"short", year:"numeric", timeZone:"UTC"});
+function dfmt(s){ return s ? fmtD.format(new Date(s + "T00:00:00Z")) : "-"; }
+var fmtT = new Intl.DateTimeFormat("en-GB", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit", timeZone:"Europe/London"});
+function tfmt(s){ return s ? fmtT.format(new Date(s)) : "never"; }
+function ago(s){
+  if (!s) return "never";
+  var m = Math.round((Date.now() - new Date(s).getTime()) / 60000);
+  if (m < 1) return "just now"; if (m < 60) return m + " min ago";
+  var h = Math.round(m / 60); if (h < 48) return h + " h ago";
+  return Math.round(h / 24) + " days ago";
+}
+function stripeLink(pi){ return pi && /^pi_[A-Za-z0-9_]+$/.test(pi) ? '<a href="https://dashboard.stripe.com/payments/' + esc(pi) + '" target="_blank" rel="noopener">Open in Stripe</a>' : ""; }
+function errBox(el, msg){ $(el).innerHTML = msg ? '<div class="err">' + esc(msg) + '</div>' : ""; }
+
+if (!window.supabase || !window.supabase.createClient){
+  document.body.insertAdjacentHTML("beforeend", '<div class="login"><div class="err">The sign-in library did not load. Check your connection and reload.</div></div>');
+  return;
+}
+var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+  db: {schema: "zermatt"},
+  auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}
+});
+
+/* ---------- auth ---------- */
+var started = false;
+function route(session){
+  if (!session){ started = false; show("#who", false); show("#viewApp", false); show("#viewDenied", false); show("#viewLogin", true); return; }
+  $("#whoEmail").textContent = session.user.email || ""; show("#who", true); show("#viewLogin", false);
+  sb.rpc("is_admin").then(function(r){
+    if (r.error && /PGRST20|42883|42P01|schema|does not exist|Could not find/i.test((r.error.code || "") + " " + (r.error.message || ""))){
+      show("#viewApp", true); show("#viewDenied", false);
+      errBox("#appErr", "Setup pending: run supabase/ADMIN_PROMO_setup.sql in the Supabase SQL editor, then reload this page.");
+      return;
+    }
+    if (r.error || r.data !== true){ show("#viewApp", false); show("#viewDenied", true); return; }
+    show("#viewDenied", false); show("#viewApp", true);
+    if (!started){ started = true; loadAll(); }
+  });
+}
+sb.auth.getSession().then(function(r){ route(r.data && r.data.session); });
+sb.auth.onAuthStateChange(function(evt, session){
+  if (evt === "SIGNED_IN" || evt === "SIGNED_OUT" || evt === "INITIAL_SESSION"){ route(session); }
+  if (evt === "SIGNED_IN" && location.hash) history.replaceState(null, "", location.pathname);
+});
+$("#loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var em = $("#loginEmail").value.trim().toLowerCase(), btn = $("#loginBtn"), out = $("#loginMsg");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ out.innerHTML = '<div class="err">Please enter a valid email.</div>'; return; }
+  btn.disabled = true; btn.textContent = "Sending...";
+  sb.auth.signInWithOtp({email: em, options: {emailRedirectTo: location.origin + "/admin", shouldCreateUser: false}}).then(function(r){
+    btn.disabled = false; btn.textContent = "Email me a sign-in link";
+    if (r.error){ out.innerHTML = '<div class="err">' + esc(/signups? not allowed|not found/i.test(r.error.message) ? "That email can't sign in here. Ask the owner to add you." : r.error.message) + '</div>'; return; }
+    out.innerHTML = '<div class="okmsg">Check your inbox for the sign-in link. You can close this tab.</div>';
+  });
+});
+function signOut(){ sb.auth.signOut().then(function(){ location.replace("/admin"); }); }
+$("#signOut").addEventListener("click", signOut);
+$("#deniedOut").addEventListener("click", signOut);
+
+/* ---------- tabs ---------- */
+$$("nav.tabs button").forEach(function(b){
+  b.addEventListener("click", function(){
+    $$("nav.tabs button").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+    $$("[data-panel]").forEach(function(p){ p.classList.toggle("hidden", p.getAttribute("data-panel") !== b.getAttribute("data-tab")); });
+    if (b.getAttribute("data-tab") === "calendar") renderCal();
+  });
+});
+
+/* ---------- data ---------- */
+var D = {bookings: [], leads: [], log: [], sources: [], blocks: [], days: {}, emails: []};
+var BOOKING_COLS = "id, check_in, check_out, nights, guests, guest_name, guest_email, guest_phone, total_pence, discount_pence, promo_code, status, stripe_payment_intent_id, paid_at, created_at, cancel_reason, hold_expires_at";
+function q(p){ return p.then(function(r){ if (r.error) throw r.error; return r.data || []; }); }
+function loadAll(){
+  errBox("#appErr", "");
+  var today = ukToday();
+  return Promise.all([
+    q(sb.from("bookings").select(BOOKING_COLS).order("check_in", {ascending: false}).limit(1000)),
+    q(sb.from("leads").select("id, email, name, consent, source_page, code_sent, created_at").order("created_at", {ascending: false}).limit(5000)),
+    q(sb.from("sync_log").select("id, created_at, kind, level, source, message, details").order("created_at", {ascending: false}).limit(300)),
+    q(sb.from("ical_sources").select("id, name, kind, enabled, last_fetched_at, last_status, last_error, last_event_count").order("name")),
+    q(sb.from("manual_blocks").select("id, start_date, end_date, reason, active, created_by, created_at").order("start_date", {ascending: false}).limit(500)),
+    q(sb.from("availability_days").select("date, status, feed_status, price_pence").gte("date", addDays(today, -62)).order("date").limit(800)),
+    q(sb.from("email_log").select("id, booking_id, to_role, to_address, template, subject, status, provider_id, error, created_at").order("created_at", {ascending: false}).limit(300))
+  ]).then(function(r){
+    D.emails = r[6];
+    D.bookings = r[0]; D.leads = r[1]; D.log = r[2]; D.sources = r[3]; D.blocks = r[4];
+    D.days = {}; r[5].forEach(function(d){ D.days[d.date] = d; });
+    renderDash(); renderBookings(); renderLeads(); renderBlocks(); renderLog(); renderEmails(); renderFeeds(); renderCal(); markSeen();
+  }).catch(function(e){ errBox("#appErr", "Could not load data: " + (e && e.message ? e.message : e)); });
+}
+
+function bookingItem(b){
+  var promo = b.promo_code ? ' · promo ' + esc(b.promo_code) + ' (-' + money(b.discount_pence) + ')' : "";
+  var isNew = b.status === "paid" && LAST_SEEN && (b.paid_at || b.created_at) > LAST_SEEN;
+  var acts = b.status === "paid" ? '<div class="acts"><button type="button" class="btn ghost sm" data-resend="' + esc(b.id) + '">Resend confirmation</button><span class="msg"></span></div>' : "";
+  return '<div class="item"><div class="h"><span>' + esc(b.guest_name) + (isNew ? '<span class="newb">NEW</span>' : "") + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + '</span></div>' +
+    '<div class="m">' + dfmt(b.check_in) + ' to ' + dfmt(b.check_out) + ' · ' + b.nights + ' night' + (b.nights === 1 ? "" : "s") + ' · ' + b.guests + ' guest' + (b.guests === 1 ? "" : "s") + '</div>' +
+    '<div class="m"><b>' + money(b.total_pence) + '</b>' + promo + (b.cancel_reason ? ' · ' + esc(b.cancel_reason) : "") + '</div>' +
+    '<div class="m">' + esc(b.guest_email) + (b.guest_phone ? ' · <a href="tel:' + esc(b.guest_phone.replace(/[^\d+]/g, "")) + '">' + esc(b.guest_phone) + '</a>' : "") + (b.stripe_payment_intent_id ? ' · ' + stripeLink(b.stripe_payment_intent_id) : "") + '</div>' + acts + '</div>';
+}
+function listOr(arr, fn, empty){ return arr.length ? arr.map(fn).join("") : '<p class="empty">' + esc(empty) + '</p>'; }
+
+function renderDash(){
+  var today = ukToday(), month = today.slice(0, 7), weekAgo = Date.now() - 7 * 864e5;
+  var paid = D.bookings.filter(function(b){ return b.status === "paid"; });
+  var revenue = paid.filter(function(b){ return (b.paid_at || "").slice(0, 7) === month; }).reduce(function(a, b){ return a + b.total_pence; }, 0);
+  var stayRevenue = paid.filter(function(b){ return b.check_in.slice(0, 7) === month; }).reduce(function(a, b){ return a + b.total_pence; }, 0);
+  var newLeads = LAST_SEEN ? D.leads.filter(function(l){ return l.created_at > LAST_SEEN; }).length : D.leads.filter(function(l){ return new Date(l.created_at).getTime() >= weekAgo; }).length;
+  var conflicts = D.log.filter(function(l){ return l.level === "conflict" && Date.now() - new Date(l.created_at).getTime() < 30 * 864e5; });
+  var upcoming = paid.filter(function(b){ return b.check_out >= today; }).length;
+  var newSince = LAST_SEEN ? paid.filter(function(b){ return (b.paid_at || b.created_at) > LAST_SEEN; }).length : 0;
+  $("#dashStats").innerHTML =
+    '<div class="stat"><small>New bookings</small><b style="color:' + (newSince ? "var(--accent-ink)" : "var(--brand-ink)") + '">' + newSince + '</b><span>' + (LAST_SEEN ? "Since your last visit (" + esc(tfmt(LAST_SEEN)) + ")" : "First visit on this device") + '</span></div>' +
+    '<div class="stat"><small>Sign-ups</small><b>' + D.leads.length + '</b><span>All time, from the 5% offer</span></div>' +
+    '<div class="stat"><small>Paid this month</small><b>' + money(revenue) + '</b><span>Direct bookings paid in ' + esc(new Intl.DateTimeFormat("en-GB", {month:"long"}).format(new Date())) + '</span></div>' +
+    '<div class="stat"><small>Stays this month</small><b>' + money(stayRevenue) + '</b><span>Paid stays arriving this month</span></div>' +
+    '<div class="stat"><small>Upcoming</small><b>' + upcoming + '</b><span>Paid bookings not yet finished</span></div>' +
+    '<div class="stat"><small>New sign-ups</small><b>' + newLeads + '</b><span>' + (LAST_SEEN ? "Since your last visit" : "Last 7 days") + '</span></div>' +
+    '<div class="stat"><small>Conflicts</small><b style="color:' + (conflicts.length ? "var(--red)" : "var(--brand-ink)") + '">' + conflicts.length + '</b><span>Last 30 days</span></div>';
+  var arr = paid.filter(function(b){ return b.check_in === today; }), dep = paid.filter(function(b){ return b.check_out === today; });
+  $("#dashToday").innerHTML = '<p><b>Arrivals today:</b> ' + (arr.length ? "" : "none") + '</p>' + arr.map(bookingItem).join("") +
+    '<p style="margin-top:6px"><b>Departures today:</b> ' + (dep.length ? "" : "none") + '</p>' + dep.map(bookingItem).join("");
+  var next = D.bookings.filter(function(b){ return (b.status === "paid" || b.status === "held") && b.check_in >= today; })
+    .sort(function(a, b){ return a.check_in < b.check_in ? -1 : 1; }).slice(0, 5);
+  $("#dashNext").innerHTML = listOr(next, bookingItem, "No upcoming bookings yet.");
+  $("#dashSync").innerHTML = feedItems() + (conflicts.length ? '<p style="margin-top:8px"><b>Recent conflicts</b></p>' + conflicts.slice(0, 5).map(logItem).join("") : "");
+}
+
+function feedItems(){
+  if (!D.sources.length) return '<p class="empty">No channel calendars added yet (zermatt.ical_sources is empty).</p>';
+  return D.sources.map(function(s){
+    var stale = !s.last_fetched_at || Date.now() - new Date(s.last_fetched_at).getTime() > 2 * 3600e3;
+    var cls = !s.enabled ? "" : s.last_status === "error" ? "error" : stale ? "warn" : "ok";
+    var label = !s.enabled ? "off" : s.last_status === "error" ? "error" : stale ? "stale" : "ok";
+    return '<div class="item"><div class="h"><span>' + esc(s.name) + ' <small style="font-weight:400;color:var(--muted)">(' + esc(s.kind) + ')</small></span><span class="pill ' + cls + '">' + label + '</span></div>' +
+      '<div class="m">Last fetch ' + esc(ago(s.last_fetched_at)) + (s.last_fetched_at ? ' (' + esc(tfmt(s.last_fetched_at)) + ')' : "") +
+      (s.last_event_count != null ? ' · ' + s.last_event_count + ' blocks' : "") + (s.last_error ? ' · ' + esc(s.last_error) : "") + '</div></div>';
+  }).join("");
+}
+function renderFeeds(){ $("#calFeeds").innerHTML = feedItems(); }
+
+function renderBookings(){
+  var st = $("#bkFilter").value, when = $("#bkWhen").value, today = ukToday();
+  var rows = D.bookings.filter(function(b){ return (!st || b.status === st) && (when === "all" || b.check_out >= today); });
+  if (when !== "all") rows = rows.slice().sort(function(a, b){ return a.check_in < b.check_in ? -1 : 1; });
+  $("#bkList").innerHTML = '<p class="empty">' + rows.length + ' booking' + (rows.length === 1 ? "" : "s") + '</p>' + listOr(rows, bookingItem, "Nothing matches this filter.");
+}
+$("#bkFilter").addEventListener("change", renderBookings);
+$("#bkWhen").addEventListener("change", renderBookings);
+
+/* ---------- calendar ---------- */
+var calMonth = ukToday().slice(0, 7);
+function shiftMonth(m, n){ var y = +m.slice(0, 4), mo = +m.slice(5, 7) - 1 + n; y += Math.floor(mo / 12); mo = ((mo % 12) + 12) % 12; return y + "-" + (mo < 9 ? "0" : "") + (mo + 1); }
+function fetchDays(m){
+  var from = m + "-01", to = addDays(shiftMonth(m, 1) + "-01", 0);
+  if (D.days[from] && D.days[addDays(to, -1)]) return Promise.resolve();
+  return q(sb.from("availability_days").select("date, status, feed_status, price_pence").gte("date", from).lt("date", to).order("date"))
+    .then(function(r){ r.forEach(function(d){ D.days[d.date] = d; }); }).catch(function(){});
+}
+function renderCal(){
+  var m = calMonth, first = m + "-01";
+  $("#calTitle").textContent = new Intl.DateTimeFormat("en-GB", {month:"long", year:"numeric", timeZone:"UTC"}).format(new Date(first + "T00:00:00Z"));
+  fetchDays(m).then(function(){
+    var dow = (new Date(first + "T00:00:00Z").getUTCDay() + 6) % 7, html = "", today = ukToday();
+    ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function(d){ html += '<div class="dow">' + d + '</div>'; });
+    for (var i = 0; i < dow; i++) html += '<div class="d x"></div>';
+    for (var s = first; s.slice(0, 7) === m; s = addDays(s, 1)){
+      var cls = "", tag = "", day = D.days[s];
+      var bk = D.bookings.filter(function(b){ return (b.status === "paid" || b.status === "held") && b.check_in <= s && s < b.check_out; })[0];
+      var blk = D.blocks.filter(function(b){ return b.active && b.start_date <= s && s < b.end_date; })[0];
+      if (bk){ cls = bk.status === "paid" ? "direct" : "held"; tag = bk.guest_name; }
+      else if (blk){ cls = "manual"; tag = blk.reason; }
+      else if (day && day.status !== "available"){ cls = "channel"; tag = day.feed_status !== "available" ? "Feed: " + day.feed_status : "Channel"; }
+      else if (!day){ cls = "channel"; tag = "Not open"; }
+      if (s === today) cls += " today";
+      html += '<div class="d ' + cls + '" title="' + esc(s + (tag ? " - " + tag : "")) + '"><span class="n">' + (+s.slice(8)) + '</span>' +
+        (tag ? '<span class="t">' + esc(tag) + '</span>' : "") + (day && day.price_pence != null && !bk ? '<span class="p">' + money(day.price_pence).replace(".00", "") + '</span>' : "") + '</div>';
+    }
+    $("#calGrid").innerHTML = html;
+  });
+}
+$("#calPrev").addEventListener("click", function(){ calMonth = shiftMonth(calMonth, -1); renderCal(); });
+$("#calNext").addEventListener("click", function(){ calMonth = shiftMonth(calMonth, 1); renderCal(); });
+
+/* ---------- sign-ups ---------- */
+var csvUrl = null;
+function csvCell(v){
+  var t = String(v == null ? "" : v);
+  if (/^[=+\-@\t\r]/.test(t)) t = "'" + t; // stop spreadsheet formula injection
+  return '"' + t.replace(/"/g, '""') + '"';
+}
+function renderLeads(){
+  $("#leadCount").textContent = D.leads.length;
+  $("#leadRows").innerHTML = D.leads.length ? D.leads.map(function(l){
+    return '<tr><td>' + esc(tfmt(l.created_at)) + '</td><td>' + esc(l.email) + '</td><td>' + esc(l.name || "") + '</td><td>' + (l.consent ? "Yes" : "No") + '</td><td>' + esc(l.code_sent || "") + '</td><td>' + esc(l.source_page || "") + '</td></tr>';
+  }).join("") : '<tr><td colspan="6" class="empty">No sign-ups yet.</td></tr>';
+  var lines = [["created_at", "email", "name", "consent_to_offers", "code_sent", "source_page"].map(csvCell).join(",")];
+  D.leads.forEach(function(l){ lines.push([l.created_at, l.email, l.name, l.consent ? "yes" : "no", l.code_sent, l.source_page].map(csvCell).join(",")); });
+  if (csvUrl) URL.revokeObjectURL(csvUrl);
+  csvUrl = URL.createObjectURL(new Blob(["﻿" + lines.join("\r\n") + "\r\n"], {type: "text/csv;charset=utf-8"}));
+  var a = $("#leadCsv"); a.href = csvUrl; a.download = "zermatt-signups-" + ukToday() + ".csv";
+}
+
+/* ---------- manual blocks ---------- */
+function renderBlocks(){
+  var today = ukToday();
+  var act = D.blocks.filter(function(b){ return b.active && b.end_date > today; });
+  $("#blkList").innerHTML = listOr(act, function(b){
+    var last = addDays(b.end_date, -1);
+    return '<div class="item"><div class="h"><span>' + dfmt(b.start_date) + (last !== b.start_date ? ' to ' + dfmt(last) : "") + '</span>' +
+      '<button type="button" class="btn ghost sm" data-lift="' + esc(b.id) + '">Unblock</button></div>' +
+      '<div class="m">' + esc(b.reason) + ' · nights ' + esc(b.start_date) + ' to ' + esc(last) + (b.created_by ? ' · by ' + esc(b.created_by) : "") + '</div></div>';
+  }, "No manual blocks.");
+  $$("[data-lift]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if (!confirm("Unblock these nights? They will be bookable again unless something else blocks them.")) return;
+      btn.disabled = true;
+      sb.from("manual_blocks").update({active: false}).eq("id", btn.getAttribute("data-lift")).then(function(r){
+        if (r.error){ btn.disabled = false; errBox("#blkMsg", r.error.message); return; }
+        $("#blkMsg").innerHTML = '<div class="okmsg">Unblocked.</div>'; D.days = {}; loadAll();
+      });
+    });
+  });
+}
+$("#blkStart").min = ukToday(); $("#blkEnd").min = ukToday();
+$("#blkStart").addEventListener("change", function(){ $("#blkEnd").min = this.value; if (!$("#blkEnd").value || $("#blkEnd").value < this.value) $("#blkEnd").value = this.value; });
+$("#blkForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var a = $("#blkStart").value, z = $("#blkEnd").value, reason = $("#blkReason").value.trim() || "Owner block", btn = $("#blkBtn");
+  if (!a || !z || z < a){ errBox("#blkMsg", "Choose a first and last night (last night on or after the first)."); return; }
+  var end = addDays(z, 1);
+  var clash = D.bookings.filter(function(b){ return (b.status === "paid" || b.status === "held") && b.check_in < end && a < b.check_out; });
+  if (clash.length && !confirm("These dates overlap " + clash.length + " direct booking(s). Blocking does not cancel them. Block anyway?")) return;
+  btn.disabled = true;
+  sb.from("manual_blocks").insert({start_date: a, end_date: end, reason: reason.slice(0, 120)}).then(function(r){
+    btn.disabled = false;
+    if (r.error){ errBox("#blkMsg", r.error.message); return; }
+    $("#blkMsg").innerHTML = '<div class="okmsg">Blocked ' + esc(dfmt(a)) + ' to ' + esc(dfmt(z)) + '.</div>';
+    $("#blkForm").reset(); D.days = {}; loadAll();
+  });
+});
+
+/* ---------- new since last visit (this device) ---------- */
+var SEEN_KEY = "bh_admin_last_seen";
+var LAST_SEEN = (function(){ try { return localStorage.getItem(SEEN_KEY); } catch (e) { return null; } })();
+function markSeen(){ try { localStorage.setItem(SEEN_KEY, new Date().toISOString()); } catch (e) {} }
+
+/* ---------- resend confirmation ---------- */
+document.addEventListener("click", function(e){
+  var btn = e.target.closest ? e.target.closest("[data-resend]") : null;
+  if (!btn) return;
+  if (!confirm("Send the booking confirmation email to this guest again?")) return;
+  var msg = btn.parentNode.querySelector(".msg");
+  btn.disabled = true; msg.textContent = "Sending...";
+  sb.auth.getSession().then(function(r){
+    var tok = r.data && r.data.session && r.data.session.access_token;
+    if (!tok) throw new Error("Please sign in again.");
+    return fetch(SUPABASE_URL + "/functions/v1/zermatt-admin-resend", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY},
+      body: JSON.stringify({booking_id: btn.getAttribute("data-resend")})
+    });
+  }).then(function(res){ return res.json().then(function(j){ return {ok: res.ok, j: j}; }); })
+    .then(function(r){
+      btn.disabled = false;
+      var st = r.j && r.j.status;
+      msg.textContent = r.ok && st === "sent" ? "Sent." : st === "skipped_no_key" ? "Not sent: Resend is not set up yet (logged)." : (r.j && (r.j.error || st)) || "Failed.";
+      loadAll();
+    })
+    .catch(function(ex){ btn.disabled = false; msg.textContent = ex.message || "Failed."; });
+});
+
+/* ---------- emails ---------- */
+function renderEmails(){
+  var f = $("#emFilter").value;
+  var rows = D.emails.filter(function(m){ return !f || m.status === f; });
+  $("#emList").innerHTML = listOr(rows, function(m){
+    var cls = m.status === "sent" ? "ok" : m.status === "failed" ? "error" : "warn";
+    return '<div class="item"><div class="h"><span>' + esc(m.subject || m.template) + '</span><span class="pill ' + cls + '">' + esc(m.status.replace(/_/g, " ")) + '</span></div>' +
+      '<div class="m">' + esc(tfmt(m.created_at)) + ' · ' + esc(m.to_role) + ' · ' + esc(m.to_address) + ' · ' + esc(m.template) + (m.booking_id ? ' · booking ' + esc(m.booking_id.slice(0, 8).toUpperCase()) : "") + '</div>' +
+      (m.error ? '<div class="m" style="color:var(--red)">' + esc(m.error) + '</div>' : "") + '</div>';
+  }, "No emails logged yet.");
+}
+$("#emFilter").addEventListener("change", renderEmails);
+
+/* ---------- sync log ---------- */
+function logItem(l){
+  var d = l.details ? JSON.stringify(l.details) : "";
+  return '<div class="item"><div class="h"><span>' + esc(l.message) + '</span><span class="pill ' + esc(l.level) + '">' + esc(l.level) + '</span></div>' +
+    '<div class="m">' + esc(tfmt(l.created_at)) + ' · ' + esc(l.kind) + (l.source ? ' · ' + esc(l.source) : "") + '</div>' +
+    (d ? '<div class="m" style="font-family:ui-monospace,Menlo,monospace;font-size:12px">' + esc(d.length > 400 ? d.slice(0, 400) + "..." : d) + '</div>' : "") + '</div>';
+}
+function renderLog(){
+  var f = $("#logFilter").value;
+  $("#logList").innerHTML = listOr(D.log.filter(function(l){ return !f || l.level === f; }), logItem, "Nothing logged.");
+}
+$("#logFilter").addEventListener("change", renderLog);
+})();
+</script>
+</body>
+</html>

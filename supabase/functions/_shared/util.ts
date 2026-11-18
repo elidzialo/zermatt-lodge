@@ -17,7 +17,13 @@ export function optionalEnv(name: string): string | undefined {
 }
 
 export const PHONE = "+44 7479 905477";
-export const LIVE_SITE = "https://zermatt-lodge-lime.vercel.app";
+export const LIVE_SITE = "https://bookhomes.co.uk";
+/** Browser origins allowed to call the public booking functions (plus localhost previews). */
+export const ALLOWED_ORIGINS = [
+  "https://bookhomes.co.uk",
+  "https://www.bookhomes.co.uk",
+  "https://zermatt-lodge-lime.vercel.app",
+];
 
 /** Public settings with safe defaults (not secrets). */
 export function siteUrl(): string {
@@ -45,9 +51,9 @@ export function corsHeaders(origin: string | null, allowAny = false): Record<str
   let allow = "*";
   if (!allowAny) {
     const siteOrigin = new URL(siteUrl()).origin;
-    // Only the live site and local previews may call it from a browser
+    // Only the live site(s) and local previews may call it from a browser
     const local = !!origin && /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
-    allow = origin && (origin === siteOrigin || local) ? origin : siteOrigin;
+    allow = origin && (origin === siteOrigin || ALLOWED_ORIGINS.includes(origin) || local) ? origin : siteOrigin;
   }
   return {
     "Access-Control-Allow-Origin": allow,
@@ -115,7 +121,7 @@ export async function sendEmail(to: string, subject: string, text: string): Prom
     console.warn("Email skipped (RESEND_API_KEY or recipient not set):", subject);
     return false;
   }
-  const from = optionalEnv("RESEND_FROM") ?? "Zermatt Lodge Bookings <onboarding@resend.dev>";
+  const from = optionalEnv("RESEND_FROM") ?? "Book Homes <bookings@bookhomes.co.uk>";
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -165,7 +171,11 @@ export async function releaseExpiredHolds(db: SupabaseClient, stripe?: Stripe): 
 
 export const POLICY_TEXT =
   "Cancellation policy (Moderate): full refund if you cancel up to 5 days before check-in; 50% refund after that; " +
-  "no refund after check-in. No pets, no parties, no smoking. Guest ID and damage deposit may be required.";
+  "no refund after check-in. No pets, no smoking. Guest ID and damage deposit may be required. " +
+  "STRICTLY NO PARTIES OR EVENTS - bookings found to be for parties will be cancelled without refund.";
+
+/** Promo code format: letters and digits only, 3-30 characters. */
+export const PROMO_RE = /^[A-Z0-9]{3,30}$/;
 
 export function poundsFromPence(pence: number): string {
   return `£${(pence / 100).toFixed(2)}`;

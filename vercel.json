@@ -3,6 +3,19 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "zermatt-lodge-lime.vercel.app"
+        }
+      ],
+      "destination": "https://bookhomes.co.uk/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/create-checkout",
@@ -11,6 +24,10 @@
     {
       "source": "/api/availability",
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-availability"
+    },
+    {
+      "source": "/api/signup",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-signup"
     }
   ],
   "headers": [
@@ -38,6 +55,19 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/admin(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
         }
       ]
     }

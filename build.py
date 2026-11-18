@@ -6,7 +6,7 @@ import csv, html, json, os, re, glob, hashlib
 import markdown, yaml
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-DOMAIN = os.environ.get("SITE_DOMAIN", "https://www.example-domain.co.uk").rstrip("/")
+DOMAIN = os.environ.get("SITE_DOMAIN", "https://bookhomes.co.uk").rstrip("/")
 TPL = open(os.path.join(ROOT, "design/guide-template.html"), encoding="utf-8").read()
 # Move shared CSS + icon sprite out of each guide page into cached files
 os.makedirs(os.path.join(ROOT, "assets"), exist_ok=True)
@@ -71,7 +71,7 @@ for slug, (meta, body) in pages.items():
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": meta["h1"], "description": meta["meta_description"], "image": hero,
          "dateModified": str(meta.get("last_updated")), "mainEntityOfPage": canon,
-         "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}},
+         "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
             {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides/"},
@@ -118,7 +118,7 @@ print(f"built {len(pages)} guides + hub, sitemap {len(urls)} urls")
 import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
-for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "sitemap.xml", "data/availability.json", "assets", "guides"]:
+for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)

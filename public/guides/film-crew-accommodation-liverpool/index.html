@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Film Crew Accommodation in Liverpool: A House for Your Unit</title>
+<meta name="description" content="Housing a film or TV crew in Liverpool? Why the city is so busy for filming, The Depot studios, getting around for location shoots and a 4-bed crew house.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/film-crew-accommodation-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Film Crew Accommodation in Liverpool: A House for Your Unit">
+<meta property="og:description" content="Housing a film or TV crew in Liverpool? Why the city is so busy for filming, The Depot studios, getting around for location shoots and a 4-bed crew house.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/film-crew-accommodation-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Film Crew Accommodation in Liverpool: Housing a Small Crew Together", "description": "Housing a film or TV crew in Liverpool? Why the city is so busy for filming, The Depot studios, getting around for location shoots and a 4-bed crew house.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/film-crew-accommodation-liverpool", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Film Crew Accommodation in Liverpool: A House for Your Unit", "item": "https://bookhomes.co.uk/guides/film-crew-accommodation-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Liverpool a busy city for filming?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Liverpool Film Office's impact report, published in February 2026, says more than 1,600 productions have filmed in the city region since 2019, including The Batman, House of Guinness, The Responder and Time."}}, {"@type": "Question", "name": "Where are the film studios in Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "The Depot, run with the Liverpool Film Office, has two sound stages of 20,000 sq ft each off Edge Lane, east of the city centre. A larger studio campus is planned at the former Littlewoods building next door."}}, {"@type": "Question", "name": "What should a production look for in crew accommodation?", "acceptedAnswer": {"@type": "Answer", "text": "Separate bedrooms so people can sleep after split shifts, enough bathrooms, off-street parking, a kitchen for early starts, and flexible dates. Also check access to the motorways and to where you're actually filming."}}, {"@type": "Question", "name": "Can a crew house have vans parked outside?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the property. Zermatt Lodge has free parking for 2 cars. If you're bringing vans or a larger vehicle, call first to check before booking."}}, {"@type": "Question", "name": "Can Zermatt Lodge be booked for weeks at a time?", "acceptedAnswer": {"@type": "Answer", "text": "Longer stays can be discussed. Call +44 7479 905477 with your production dates and crew numbers."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Film Crew Accommodation in Liverpool: A House for Your Unit</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Film Crew Accommodation in Liverpool: Housing a Small Crew Together</h1>
+      <p class="intro">Housing a film or TV crew in Liverpool? Why the city is so busy for filming, The Depot studios, getting around for location shoots and a 4-bed crew house.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>For a small film or TV crew working in Liverpool, a whole house is often better than a block of hotel rooms: everyone has a proper bedroom, there's a kitchen for early call times, and you can park outside. The best location depends on where you're shooting. Studio work at The Depot off Edge Lane, city-centre locations and shoots across Merseyside each favour slightly different bases.</p>
+<p>Liverpool is one of the busiest filming locations in the UK, so crew accommodation fills up. This guide is for production managers, location managers and freelancers finding somewhere to stay.</p>
+<h2>Why Liverpool is so busy for filming</h2>
+<p>The Liverpool Film Office's impact report, published in February 2026 and covering 2019 to 2025, gives a sense of scale:</p>
+<ul>
+<li><strong>More than 1,600 productions</strong> in the Liverpool City Region since 2019</li>
+<li><strong>Over 5,000 full-time equivalent jobs</strong> supported</li>
+<li><strong>About £150m</strong> added to the local economy</li>
+<li>Productions including <strong>The Batman</strong>, <strong>Clayface</strong>, <strong>House of Guinness</strong>, <strong>This City Is Ours</strong>, <strong>The Responder</strong> and <strong>Time</strong></li>
+</ul>
+<p>The city's streets, waterfront and docks are versatile, which helps explain why productions keep coming back. Our list of films to watch before visiting Liverpool shows how varied the locations are.</p>
+<h2>The studios</h2>
+<h3>The Depot</h3>
+<p>The Depot opened in October 2021 with two sound-proofed production units of 20,000 sq ft each, off Edge Lane, east of the city centre. The Liverpool Film Office says it has generated £29.1m for the city region and helped 15 businesses start up or grow.</p>
+<h3>Littlewoods Studios (planned)</h3>
+<p>The former Littlewoods building next to The Depot is planned as a studio campus with six sound stages and post-production facilities. Check progress before assuming it's open.</p>
+<h2>Location shoots across the city region</h2>
+<p>Many productions don't stay in one place. A crew might be on the waterfront one day, on a terraced street in north Liverpool the next and on the Sefton coast after that. That's where a base with good road links really helps.</p>
+<ul>
+<li><strong>Motorways:</strong> the M57 runs around the east of Liverpool, connecting to the M62 at its southern end and to the M58 at Switch Island in the north. The M62 runs east towards Manchester.</li>
+<li><strong>City centre:</strong> filming in town often means closures, permits and expensive parking. A crew base with trains into the centre lets people who aren't driving the kit travel separately.</li>
+<li><strong>Coast and countryside:</strong> the Sefton coast and West Lancashire are reached via the A59 and M58 from north Liverpool.</li>
+</ul>
+<p>Always check live journey times for your call times. Morning traffic on routes into Liverpool can be slow.</p>
+<h2>What a crew needs from accommodation</h2>
+<h3>Sleep</h3>
+<p>Crews work long, irregular days. Separate bedrooms with proper beds matter more than anything else. Ask how many people would be sharing rooms, and whether anyone's on a sofa bed.</p>
+<h3>Bathrooms</h3>
+<p>For a crew of five to seven with the same early call time, two bathrooms is the realistic minimum.</p>
+<h3>Parking</h3>
+<p>You'll probably have at least one car or van per two people. Check:</p>
+<ul>
+<li>how many vehicles can park off-street</li>
+<li>whether a van will fit (height and length)</li>
+<li>whether kit can be left in vehicles overnight, and how secure the area feels</li>
+</ul>
+<p>Our van parking accommodation guide covers what to ask.</p>
+<h3>A kitchen</h3>
+<p>Catering usually covers the working day, but not 5am breakfasts or late suppers after a night shoot. A full kitchen saves money and keeps people going.</p>
+<h3>Flexibility</h3>
+<p>Schedules slip. Ask about extending, shortening and cancellation terms before you sign anything.</p>
+<h2>Hotel, serviced apartment or house?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Hotel</th>
+<th>Serviced apartments</th>
+<th>Whole house</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Privacy</td>
+<td>Good</td>
+<td>Good</td>
+<td>Shared house, own rooms</td>
+</tr>
+<tr>
+<td>Kitchen</td>
+<td>Rarely</td>
+<td>Usually</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Often paid</td>
+<td>Varies</td>
+<td>Often free outside the centre</td>
+</tr>
+<tr>
+<td>Team feel</td>
+<td>Separate</td>
+<td>Separate</td>
+<td>Together</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Short stays, senior cast</td>
+<td>Mid-length stays</td>
+<td>Small crews, weeks at a time</td>
+</tr>
+</tbody>
+</table>
+<p>Our <a href="/guides/contractor-accommodation-liverpool">contractor accommodation guide</a> and <a href="/guides/long-stay-accommodation-liverpool">long-stay guide</a> go into the practicalities of longer bookings.</p>
+<h2>Why Zermatt Lodge suits a small crew</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M58 and close to Fazakerley station. It's not in the city centre or next to the studios, but it gives a crew a quiet base with road access in several directions and a train to Liverpool Central in about 15 minutes for anyone not driving.</p>
+<ul>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single. Ideal for four people with a room each, or up to seven sharing</li>
+<li><strong>2 bathrooms</strong> for early calls</li>
+<li><strong>Free parking for 2 cars</strong>. If you're bringing vans, call first to check what will fit</li>
+<li><strong>Big kitchen and dining room</strong> for breakfasts and team meals</li>
+<li><strong>Large private garden</strong> and a <strong>games room with a pool table</strong> for downtime</li>
+<li><strong>55" Smart TV with Netflix</strong> and board games</li>
+</ul>
+<p>Check-in is from 3pm and checkout is 11am. It's a quiet residential home: no parties or events, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in.</p>
+<p>For production bookings or longer stays, call <strong>+44 7479 905477</strong> with your dates and crew size, or <a href="/#book">check availability and book direct</a>.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li><a href="/guides/long-stay-accommodation-liverpool">Long-stay accommodation in Liverpool</a></li>
+<li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58</a></li>
+<li>Accommodation with van parking in Liverpool</li>
+<li>Films to watch before visiting Liverpool</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Is Liverpool a busy city for filming?</summary><p>Yes. The Liverpool Film Office&#x27;s impact report, published in February 2026, says more than 1,600 productions have filmed in the city region since 2019, including The Batman, House of Guinness, The Responder and Time.</p></details>
+<details><summary>Where are the film studios in Liverpool?</summary><p>The Depot, run with the Liverpool Film Office, has two sound stages of 20,000 sq ft each off Edge Lane, east of the city centre. A larger studio campus is planned at the former Littlewoods building next door.</p></details>
+<details><summary>What should a production look for in crew accommodation?</summary><p>Separate bedrooms so people can sleep after split shifts, enough bathrooms, off-street parking, a kitchen for early starts, and flexible dates. Also check access to the motorways and to where you&#x27;re actually filming.</p></details>
+<details><summary>Can a crew house have vans parked outside?</summary><p>It depends on the property. Zermatt Lodge has free parking for 2 cars. If you&#x27;re bringing vans or a larger vehicle, call first to check before booking.</p></details>
+<details><summary>Can Zermatt Lodge be booked for weeks at a time?</summary><p>Longer stays can be discussed. Call +44 7479 905477 with your production dates and crew numbers.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/long-stay-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Long Stay Accommodation in Liverpool: A Practical Guide</h3><p>What to ask for on 28+ night stays (cleaning, linen, bills, invoicing) and how a whole house compares with aparthotels.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

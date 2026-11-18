@@ -5,19 +5,9 @@
 //   charge.refunded            -> refund of 50% or more = cancellation, nights released
 // Every call also frees expired holds.
 import Stripe from "npm:stripe@17.7.0";
-import {
-  adminClient,
-  emailOwner,
-  env,
-  json,
-  log,
-  PHONE,
-  POLICY_TEXT,
-  poundsFromPence,
-  releaseExpiredHolds,
-  sendEmail,
-  stripeClient,
-} from "../_shared/util.ts";
+import { adminClient, env, json, log, releaseExpiredHolds, stripeClient } from "../_shared/util.ts";
+import { adminCancelled, adminConflict, adminNewBooking, guestConfirmation, guestConflictRefund } from "../_shared/emails.ts";
+import { adminEmails, emailDataFromBooking, sendLogged, sendToAdmins } from "../_shared/mailer.ts";
 
 const cryptoProvider = Stripe.createSubtleCryptoProvider();
 
@@ -83,19 +73,11 @@ interface BookingRow {
   guest_email: string;
   guest_phone: string | null;
   total_pence: number;
+  discount_pence: number | null;
+  promo_code: string | null;
+  stripe_payment_intent_id: string | null;
   status: string;
   refund_id: string | null;
-}
-
-function summaryOf(b: BookingRow, paymentIntentId: string | null): string {
-  return [
-    `Booking: ${b.id}`,
-    `Dates: ${b.check_in} to ${b.check_out} (${b.nights} nights)`,
-    `Guests: ${b.guests}`,
-    `Guest: ${b.guest_name} - ${b.guest_email}${b.guest_phone ? " - " + b.guest_phone : ""}`,
-    `Total: ${poundsFromPence(b.total_pence)}`,
-    `Stripe payment: ${paymentIntentId ?? "-"}`,
-  ].join("\n");
 }
 
 async function handleCompleted(db: Db, stripe: Stripe, session: Stripe.Checkout.Session): Promise<void> {
@@ -126,7 +108,6 @@ async function handleCompleted(db: Db, stripe: Stripe, session: Stripe.Checkout.
   const { data: row } = await db.from("bookings").select("*").eq("id", result.booking_id).single();
   const b = row as BookingRow | null;
   if (!b) return;
-  const summary = summaryOf(b, paymentIntentId);
 
   if (session.amount_total !== null && session.amount_total !== b.total_pence) {
     await log(db, "webhook", "error", "Amount paid does not match booking total", {
@@ -155,41 +136,19 @@ async function handleCompleted(db: Db, stripe: Stripe, session: Stripe.Checkout.
       refundNote = "No payment reference found - please check Stripe and refund by hand.";
     }
     await log(db, "conflict", "conflict", "Clash at payment - booking cancelled_conflict", { booking_id: b.id, refundNote });
-    await emailOwner(
-      `Zermatt Lodge - booking clash refunded (${b.check_in})`,
-      `A guest paid on the website, but by the time Stripe confirmed the payment the nights had been taken ` +
-        `(channel calendar or another booking). The booking is cancelled (cancelled_conflict).\n${refundNote}\n\n${summary}`,
-    );
-    await sendEmail(
-      b.guest_email,
-      "Zermatt Lodge - sorry, those dates have just gone",
-      `Hi ${b.guest_name.split(" ")[0]},\n\n` +
-        `Thank you for booking Zermatt Lodge. Unfortunately the dates you chose (${b.check_in} to ${b.check_out}) ` +
-        `were booked by someone else at the same moment, so we could not confirm your stay.\n\n` +
-        `We have refunded your payment of ${poundsFromPence(b.total_pence)} in full. It usually shows on your card within 5-10 working days.\n\n` +
-        `We would love to find you other dates - just reply to this email or call ${PHONE}.\n\nZALO Stays`,
-    );
+    const cd = emailDataFromBooking({ ...b, stripe_payment_intent_id: paymentIntentId }, { refundNote });
+    const replyTo = (await adminEmails(db))[0];
+    await sendToAdmins(db, "admin_conflict", adminConflict(cd), b.id);
+    await sendLogged(db, { bookingId: b.id, toRole: "guest", to: b.guest_email, template: "guest_conflict_refund", email: guestConflictRefund(cd), replyTo });
     return;
   }
 
   // ----- Confirmed
   await log(db, "webhook", "info", "Booking paid", { booking_id: b.id, check_in: b.check_in, check_out: b.check_out });
-  await emailOwner(
-    `Zermatt Lodge - new direct booking ${b.check_in} to ${b.check_out}`,
-    `New paid booking on the website.\n` +
-      `The dates are now in the website calendar feed. Airbnb, Booking.com and Vrbo only pick that up on their next refresh, ` +
-      `so block these dates on each platform now.\n\n${summary}`,
-  );
-  await sendEmail(
-    b.guest_email,
-    `Zermatt Lodge - booking confirmed ${b.check_in} to ${b.check_out}`,
-    `Hi ${b.guest_name.split(" ")[0]},\n\n` +
-      `Your stay at Zermatt Lodge is confirmed.\n\n` +
-      `Check-in: ${b.check_in} from 3pm\nCheckout: ${b.check_out} by 11am\nGuests: ${b.guests}\n` +
-      `Paid: ${poundsFromPence(b.total_pence)}\nBooking reference: ${b.id.slice(0, 8).toUpperCase()}\n\n` +
-      `We will be in touch before your stay for ID and the rental agreement, and send the full address and arrival details.\n\n` +
-      `${POLICY_TEXT}\n\nQuestions? Reply to this email or call ${PHONE}.\n\nZALO Stays`,
-  );
+  const ed = emailDataFromBooking({ ...b, stripe_payment_intent_id: paymentIntentId });
+  const replyTo = (await adminEmails(db))[0];
+  await sendLogged(db, { bookingId: b.id, toRole: "guest", to: b.guest_email, template: "guest_confirmation", email: guestConfirmation(ed), replyTo });
+  await sendToAdmins(db, "admin_new_booking", adminNewBooking(ed), b.id, b.guest_email);
 }
 
 async function handleExpired(db: Db, session: Stripe.Checkout.Session): Promise<void> {
@@ -223,11 +182,7 @@ async function handleRefunded(db: Db, charge: Stripe.Charge): Promise<void> {
       updated_at: new Date().toISOString(),
     }).eq("id", b.id);
     await log(db, "webhook", "info", "Booking cancelled after refund", { booking_id: b.id, refunded: charge.amount_refunded });
-    await emailOwner(
-      `Zermatt Lodge - booking cancelled ${b.check_in} to ${b.check_out}`,
-      `A refund of ${poundsFromPence(charge.amount_refunded)} was made, so booking ${b.id} is now cancelled and the nights are free again on the website.\n` +
-        `If you blocked these dates by hand on Airbnb, Booking.com or Vrbo, unblock them there too.`,
-    );
+    await sendToAdmins(db, "admin_cancelled", adminCancelled(emailDataFromBooking(b), charge.amount_refunded), b.id);
   } else {
     await log(db, "webhook", "info", "Small partial refund - booking kept", { booking_id: b.id, refunded: charge.amount_refunded });
   }

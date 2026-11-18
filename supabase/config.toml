@@ -20,3 +20,11 @@ verify_jwt = false
 # Called by pg_cron with the anon key + x-cron-secret
 [functions.zermatt-sync-availability]
 verify_jwt = true
+
+# Exit-intent popup sign-ups: public, own input checks, rate limits and CORS
+[functions.zermatt-signup]
+verify_jwt = false
+
+# Admin "Resend confirmation": verifies the user's token and zermatt.admins membership in code
+[functions.zermatt-admin-resend]
+verify_jwt = false

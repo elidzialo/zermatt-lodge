@@ -101,12 +101,12 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .ticks svg{width:18px;height:18px;color:var(--brand);flex-shrink:0}
 .fields{border:1px solid #a9aeaa;border-radius:12px;overflow:hidden}
 .fields .row{display:grid;grid-template-columns:1fr 1fr}
-.f{display:block;padding:10px 13px;cursor:pointer}
+.f{display:block;padding:10px 13px;cursor:pointer;min-width:0}
 .f:focus-within{background:var(--soft)}
 .fields .row .f+.f{border-left:1px solid #a9aeaa}
 .fields .g{border-top:1px solid #a9aeaa}
 .f small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:15px;width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:26px}
+.f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:16px;width:100%;min-width:0;max-width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:26px}
 .card .btn.block{margin-top:14px}
 .card .note{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
 .card .note a{color:var(--ink);font-weight:600}
@@ -141,7 +141,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
 /* Footer */
 footer{background:#111814;color:#c9d0cc;padding:56px 0 40px}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px}
 footer .logo{color:#fff}
 footer .logo small{color:#9aa39e}
 footer h2{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:12px}
@@ -172,7 +172,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   :root{--header:62px}
   .wrap{padding:0 18px}
   .top-right .phone{display:none}
-  .top-right .btn{min-height:40px;padding:8px 14px;font-size:14px}
+  .top-right .btn{min-height:44px;padding:8px 14px;font-size:14px}
   .logo{font-size:17px}.logo svg{width:30px;height:30px}
   .ahead{padding:24px 0 20px}
   .hero-fig{aspect-ratio:4/3;border-radius:0;margin:0 -18px}

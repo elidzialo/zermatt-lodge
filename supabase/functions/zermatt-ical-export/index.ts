@@ -1,6 +1,6 @@
 // GET /functions/v1/zermatt-ical-export?token=...&for=airbnb
 // An .ics calendar for Airbnb / Booking.com / Vrbo to import.
-//   - always contains direct website bookings (paid) and live 15-minute holds
+//   - always contains direct website bookings (paid), live 15-minute holds and owner blocks from /admin
 //   - with ?for=<channel name>, also contains the blocks imported from the OTHER channels
 //     (e.g. ?for=airbnb adds Booking.com + Vrbo bookings), so each platform only needs
 //     to import this one feed. The channel's own events are left out to avoid echoes.
@@ -46,6 +46,17 @@ Deno.serve(async (req: Request): Promise<Response> => {
       end: b.check_out,
       summary: b.status === "paid" ? "Zermatt Lodge - direct booking" : "Zermatt Lodge - checkout in progress",
     });
+  }
+
+  // Owner's manual blocks from /admin (always included, so every platform closes them too)
+  type BlockRow = { id: string; start_date: string; end_date: string };
+  const { data: blocks } = await db
+    .from("manual_blocks")
+    .select("id, start_date, end_date")
+    .eq("active", true)
+    .gte("end_date", today);
+  for (const m of (blocks ?? []) as BlockRow[]) {
+    events.push({ uid: `block-${m.id}@zermattlodge-direct`, start: m.start_date, end: m.end_date, summary: "Not available (owner block)" });
   }
 
   if (forChannel) {

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grand National Festival: A First-Timer&#x27;s Guide</title>
+<meta name="description" content="First time at the Grand National? The three festival days, choosing an enclosure, bags, cash, children&#x27;s tickets, what to wear and getting home.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/grand-national-first-timers-guide">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Grand National Festival: A First-Timer&#x27;s Guide">
+<meta property="og:description" content="First time at the Grand National? The three festival days, choosing an enclosure, bags, cash, children&#x27;s tickets, what to wear and getting home.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/grand-national-first-timers-guide">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/44fa5ff3-6c69-4c-4onXa">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Grand National Festival: A First-Timer's Guide", "description": "First time at the Grand National? The three festival days, choosing an enclosure, bags, cash, children's tickets, what to wear and getting home.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/44fa5ff3-6c69-4c-4onXa", "dateModified": "2026-11-18", "mainEntityOfPage": "https://bookhomes.co.uk/guides/grand-national-first-timers-guide", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides/"}, {"@type": "ListItem", "position": 3, "name": "Grand National Festival: A First-Timer's Guide", "item": "https://bookhomes.co.uk/guides/grand-national-first-timers-guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which day of the Grand National Festival is best for a first visit?", "acceptedAnswer": {"@type": "Answer", "text": "It depends what you want. Thursday is Opening Day, Friday is Ladies Day with the Style Awards, and Saturday is Grand National Day, the biggest and busiest. Many first-timers pick Saturday for the main race."}}, {"@type": "Question", "name": "Can I bring my own food and drink to Aintree?", "acceptedAnswer": {"@type": "Answer", "text": "No. The Jockey Club says outside food and drink aren't allowed and will be confiscated. Picnics can only be eaten in the car parks."}}, {"@type": "Question", "name": "Do I need cash at the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Only for betting with on-course bookmakers. The Jockey Club says its racecourses are cashless for food and drink. There are cash machines on site."}}, {"@type": "Question", "name": "Can children go to the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with a ticket. The Jockey Club's FAQs say child tickets are bought with a full-price adult ticket, with no more than 2 children per adult, and they're capped at 200 per day."}}, {"@type": "Question", "name": "What's the best way to leave after the last race?", "acceptedAnswer": {"@type": "Answer", "text": "Don't rush. The Jockey Club says festival trains run from Aintree until about 20:30, so many racegoers wait for the first wave to clear. Agree a meeting point beforehand."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/44fa5ff3-6c69-4c-4onXa" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Grand National Festival: A First-Timer&#x27;s Guide</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Grand National Festival: A First-Timer&#x27;s Guide</h1>
+      <p class="intro">First time at the Grand National? The three festival days, choosing an enclosure, bags, cash, children&#x27;s tickets, what to wear and getting home.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/44fa5ff3-6c69-4c-4onXa" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>If it's your first Grand National Festival, the essentials are simple: choose your day, pick an enclosure that fits your budget and how you want to watch, travel by train if you can, and leave big bags and cash at home. The 2027 festival runs from <strong>Thursday 8 to Saturday 10 April</strong> at Aintree Racecourse in Liverpool. This guide explains what each day is like, how the enclosures differ, the rules people get caught out by, and how to get home without the crush.</p>
+<h2>The three festival days</h2>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Date (2027)</th>
+<th>What it's like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opening Day</strong></td>
+<td>Thursday 8 April</td>
+<td>The first day of the festival, with a full day's racing</td>
+</tr>
+<tr>
+<td><strong>Ladies Day</strong></td>
+<td>Friday 9 April</td>
+<td>The style day, with the Style Awards. Busy, colourful and dressy</td>
+</tr>
+<tr>
+<td><strong>Grand National Day</strong></td>
+<td>Saturday 10 April</td>
+<td>The big one, with the Grand National itself. The biggest crowds</td>
+</tr>
+</tbody>
+</table>
+<p>Race times and gate opening times are on the Jockey Club's event schedule. The Jockey Club says car parks open at 6am, but you can only enter the racecourse once the gates open. Arrive early for security checks.</p>
+<p>If your group is going on the Friday, see our <a href="/guides/grand-national-ladies-day-group-stay">Ladies Day group stay guide</a>.</p>
+<h2>Choosing an enclosure</h2>
+<p>Your ticket decides where you can go on the course. The Jockey Club lists a wide range. A few examples, with the starting prices it listed when we checked:</p>
+<table>
+<thead>
+<tr>
+<th>Enclosure</th>
+<th>What you get</th>
+<th>From</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Festival Zone</strong></td>
+<td>Views of the closing stages of every race, a bar and live music in the Aintree Pavilion</td>
+<td>£39</td>
+</tr>
+<tr>
+<td><strong>The Embankment</strong></td>
+<td>Outdoor area by the first fences with bars, big screens and unreserved seating, but no access to the main course</td>
+<td>£47</td>
+</tr>
+<tr>
+<td><strong>Earl of Derby Terrace</strong></td>
+<td>Outdoor terrace beside the horsewalk, with access to the Red Rum Garden</td>
+<td>£61</td>
+</tr>
+<tr>
+<td><strong>Lord Daresbury Roof</strong></td>
+<td>Raised view above the finishing post, with a roof bar</td>
+<td>£71</td>
+</tr>
+<tr>
+<td><strong>Queen Mother Seats</strong></td>
+<td>Partly covered reserved seat near the finishing post</td>
+<td>£123</td>
+</tr>
+<tr>
+<td><strong>Princess Royal Seats and Gallery</strong></td>
+<td>Reserved seat near the finishing post with a champagne lounge. <strong>Over 21s only</strong></td>
+<td>£140</td>
+</tr>
+</tbody>
+</table>
+<p>Prices vary by day and change over time, so check the Jockey Club website when you book.</p>
+<h3>How to choose</h3>
+<ul>
+<li><strong>Want to see the finish?</strong> Pick an enclosure near the finishing post</li>
+<li><strong>Want a seat?</strong> Many enclosures are standing only. Choose a reserved seat if anyone in your group can't stand all day</li>
+<li><strong>Bringing under-21s?</strong> Avoid over-21 areas</li>
+<li><strong>On a budget?</strong> The cheaper outdoor areas rely on big screens for much of the race</li>
+</ul>
+<h2>Rules that catch first-timers out</h2>
+<p>From the Jockey Club's FAQs:</p>
+<ul>
+<li><strong>Bags:</strong> no bigger than a small handbag (30cm x 10cm x 20cm). There's <strong>no left luggage</strong></li>
+<li><strong>Food and drink:</strong> you can't bring your own in. Picnics are only allowed in the car parks</li>
+<li><strong>Cashless:</strong> food and drink are card or phone payment only. Cash is for the on-course bookies</li>
+<li><strong>Children:</strong> need a ticket at full price, bought with an adult ticket, maximum 2 per adult</li>
+<li><strong>Perfume:</strong> allowed, but you may be asked to spray some at security</li>
+</ul>
+<h2>What to wear</h2>
+<p>The Jockey Club says there's <strong>no official dress code</strong>. It encourages people to dress to feel their best, and asks you to avoid fancy dress, sportswear and team colours or kits.</p>
+<p>Practical advice for April in Liverpool:</p>
+<ul>
+<li>Layers and a smart waterproof</li>
+<li>Shoes you can stand in all day, ideally ones that cope with grass</li>
+<li>A spare pair of flat shoes in your small bag</li>
+</ul>
+<p>See our Grand National dress code guide for more.</p>
+<h2>Getting there</h2>
+<p>The Jockey Club's travel plan recommends public transport:</p>
+<ul>
+<li><strong>Train:</strong> festival trains run every seven and a half minutes between Liverpool Central/Moorfields and Aintree, roughly 11:00 to 13:00 going and 16:30 to 20:30 returning</li>
+<li><strong>Bus:</strong> services 300, 310 and 345 to and from Liverpool</li>
+<li><strong>Taxi or lift:</strong> road closures apply. Drop-offs are directed to a shuttle into the racecourse enclosures</li>
+<li><strong>Car:</strong> parking must be booked online in advance. At the Steeplechase Car Park, the course crossing closes 30 minutes before the feature race and reopens 30 minutes after</li>
+</ul>
+<p>If you're staying in north Liverpool near Fazakerley, note that Kirkby-line trains start and end at Sandhills during the busiest hours on festival days, so you change there. See <a href="/guides/getting-to-aintree-racecourse-from-fazakerley">getting to Aintree Racecourse from Fazakerley</a>.</p>
+<h2>Getting home without the crush</h2>
+<ol>
+<li><strong>Agree a meeting point</strong> in case you lose each other</li>
+<li><strong>Charge your phone</strong>. You'll use it for payments, tickets and maps</li>
+<li><strong>Don't rush the exit.</strong> Have a drink or food after the last race while the first wave clears</li>
+<li><strong>Know your last train.</strong> Festival trains run until about 20:30</li>
+<li><strong>Pre-book any taxi</strong> well in advance and expect delays around the closures</li>
+</ol>
+<h2>Where to stay for your first festival</h2>
+<p>Accommodation near Aintree books up months ahead for festival week. If you're a group or family of up to 7, a whole house is often easier than finding several hotel rooms.</p>
+<p>Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and a few miles from Aintree. It isn't in the city centre. It sleeps up to 7 (king master with en-suite, second king, queen and single), with 2 bathrooms, a big kitchen and dining room, a games room with a pool table, a 55" Smart TV with Netflix, a large private garden and free parking for 2 cars. Check-in is 3pm and checkout 11am.</p>
+<p>It's a quiet residential home: <strong>strictly no parties or events</strong>, no smoking and no pets.</p>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a>, or call +44 7479 905477. Our main <a href="/guides/grand-national-accommodation">Grand National accommodation guide</a> has more planning tips.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/grand-national-accommodation">Grand National accommodation: where to stay near Aintree</a></li>
+<li><a href="/guides/getting-to-aintree-racecourse-from-fazakerley">Getting to Aintree Racecourse from Fazakerley</a></li>
+<li>Taking the family to the Grand National Festival</li>
+<li>Aintree race day checklist</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Which day of the Grand National Festival is best for a first visit?</summary><p>It depends what you want. Thursday is Opening Day, Friday is Ladies Day with the Style Awards, and Saturday is Grand National Day, the biggest and busiest. Many first-timers pick Saturday for the main race.</p></details>
+<details><summary>Can I bring my own food and drink to Aintree?</summary><p>No. The Jockey Club says outside food and drink aren&#x27;t allowed and will be confiscated. Picnics can only be eaten in the car parks.</p></details>
+<details><summary>Do I need cash at the Grand National?</summary><p>Only for betting with on-course bookmakers. The Jockey Club says its racecourses are cashless for food and drink. There are cash machines on site.</p></details>
+<details><summary>Can children go to the Grand National?</summary><p>Yes, with a ticket. The Jockey Club&#x27;s FAQs say child tickets are bought with a full-price adult ticket, with no more than 2 children per adult, and they&#x27;re capped at 200 per day.</p></details>
+<details><summary>What&#x27;s the best way to leave after the last race?</summary><p>Don&#x27;t rush. The Jockey Club says festival trains run from Aintree until about 20:30, so many racegoers wait for the first wave to clear. Agree a meeting point beforehand.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/grand-national-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Grand National Accommodation: Stay Near Aintree</h3><p>Built on the Jockey Club&#x27;s official travel plan: festival dates, the Kirkby-line change at Sandhills on race days, car parking rules and why a house suits a group.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/getting-to-aintree-racecourse-from-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>How to Get to Aintree Racecourse: Train, Bus and Car</h3><p>Step-by-step: drive vs train via Sandhills, festival-day Merseyrail changes, the 300/310/345 buses and getting home after the last race.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/aintree-racecourse-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Aintree Racecourse Accommodation: Non-National Days</h3><p>Covers the quieter fixtures (November meeting, Becher Chase Day in December) when rooms are easier to find and you can drive in.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
