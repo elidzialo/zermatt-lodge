@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accommodation near Knowsley Business Park &amp; Kirkby</title>
+<meta name="description" content="Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/kirkby-knowsley-business-park-accommodation">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Accommodation near Knowsley Business Park &amp; Kirkby">
+<meta property="og:description" content="Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/kirkby-knowsley-business-park-accommodation">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Accommodation near Knowsley Business Park and Knowsley Industrial Park, Kirkby", "description": "Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/kirkby-knowsley-business-park-accommodation", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Accommodation near Knowsley Business Park & Kirkby", "item": "https://zermatt-lodge.vercel.app/guides/kirkby-knowsley-business-park-accommodation"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How big is Knowsley Business Park?", "acceptedAnswer": {"@type": "Answer", "text": "Knowsley Council describes it as one of the largest employment sites in Europe, with over 800 businesses employing around 18,000 people."}}, {"@type": "Question", "name": "Where are Knowsley Industrial Park and Knowsley Business Park?", "acceptedAnswer": {"@type": "Answer", "text": "Knowsley Industrial Park is on the eastern side of Kirkby, with addresses on roads such as South Boundary Road (L33). Units marketed as Knowsley Business Park, such as Unity Grove (L34), are about a mile from junction 4 of the M57, near the A580 East Lancashire Road. Check your exact unit address before you travel."}}, {"@type": "Question", "name": "Is there a train station near Knowsley Industrial Park?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Headbolt Lane station opened in 2023 beyond Kirkby on Merseyrail's Northern line, the first extension of the line since 1977. Kirkby station also serves the town."}}, {"@type": "Question", "name": "How do I get from Fazakerley to Kirkby?", "acceptedAnswer": {"@type": "Answer", "text": "By train, Fazakerley is on the same Merseyrail line as Kirkby and Headbolt Lane, so it's a short direct ride. By car, it's a short drive via the A506 or the M57."}}, {"@type": "Question", "name": "Can a shift team share Zermatt Lodge?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It sleeps up to 7 in 4 bedrooms, has 2 bathrooms and parking for 2 vehicles. Agree quiet hours if people are on different shifts."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Accommodation near Knowsley Business Park &amp; Kirkby</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Accommodation near Knowsley Business Park and Knowsley Industrial Park, Kirkby</h1>
+      <p class="intro">Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>If you're working at Knowsley Industrial Park or Knowsley Business Park, staying in neighbouring Fazakerley gives you a short drive or a direct train to Kirkby, without the cost of city-centre hotels. Zermatt Lodge is a whole 4-bedroom house in Fazakerley with free parking for two vehicles. It's near the M57 and Fazakerley station, which is on the same Merseyrail line as Kirkby and Headbolt Lane. It's a practical base for engineers, installers, auditors and shift teams.</p>
+<p>Here's what to know about the area and how to plan a work stay.</p>
+<h2>The Kirkby and Knowsley employment area</h2>
+<p>Knowsley Council describes <strong>Knowsley Business Park</strong> as one of the largest employment sites in Europe, with <strong>over 800 businesses employing 18,000 people</strong>. Manufacturing, logistics, distribution and engineering firms operate across the area, which means a steady stream of visiting contractors, installers and agency workers.</p>
+<p>Two names come up a lot, and they're easy to confuse:</p>
+<ul>
+<li><strong>Knowsley Industrial Park</strong> is on the eastern side of <strong>Kirkby</strong>, with units on roads such as South Boundary Road (L33 postcodes).</li>
+<li><strong>Knowsley Business Park</strong> is the name used both for the wider employment area and for units around Unity Grove (L34 postcode, Prescot), which industrial landlord Indurent places about <strong>a mile from junction 4 of the M57</strong>, near the A580 East Lancashire Road.</li>
+</ul>
+<p><strong>Tip:</strong> always get the full unit address and postcode from your client. A wrong turn between the two can cost you 15 minutes at shift change.</p>
+<h2>Getting there from Fazakerley</h2>
+<h3>By car</h3>
+<p>Fazakerley is next door to Kirkby. Depending on which part of the park you're going to, you'll use:</p>
+<ul>
+<li><strong>The A506 or M57 junction 6</strong> for Kirkby and Knowsley Industrial Park</li>
+<li><strong>The M57 to junction 4</strong> and the A580 for the Unity Grove side</li>
+</ul>
+<p>Outside rush hour it's a short drive. Shift-change times can be busy at the estate entrances, so allow a few extra minutes for 6am, 2pm and 10pm starts.</p>
+<h3>By train</h3>
+<p>Fazakerley, Kirkby and <strong>Headbolt Lane</strong> are all on the same Merseyrail Northern line branch. Merseyrail lists the stations as Liverpool Central, Moorfields, Sandhills, Kirkdale, Rice Lane, Fazakerley, Kirkby and Headbolt Lane. Headbolt Lane opened in <strong>2023</strong> and was the first extension to the line since 1977. It was built partly to improve access to jobs in the area.</p>
+<p>Trains run several times an hour in the daytime, with fewer in the evenings and on Sundays. Check times for your shift on the Merseyrail app. From the stations, some sites are a walk, and others need a short bus or taxi ride. See our Headbolt Lane station guide.</p>
+<h2>Planning a work stay in Kirkby</h2>
+<h3>For shift workers</h3>
+<ul>
+<li><strong>Sleep matters.</strong> A quiet house, your own room and blackout options are worth more than a lobby bar. See our night-shift sleep tips.</li>
+<li><strong>Meal prep.</strong> A big kitchen means proper food before a 12-hour shift, not service station sandwiches.</li>
+<li><strong>Parking.</strong> Two free spaces mean two cars for staggered shifts.</li>
+</ul>
+<h3>For installation and commissioning teams</h3>
+<ul>
+<li><strong>Kit and tools.</strong> Check storage and van parking with your host before you arrive.</li>
+<li><strong>Early access.</strong> Many sites want contractors on the gate by 7am. Being 10 to 15 minutes away helps.</li>
+<li><strong>One invoice.</strong> Booking a whole house for a team makes paperwork simpler.</li>
+</ul>
+<h3>For auditors, trainers and visiting managers</h3>
+<p>If you're only visiting for a couple of days, a hotel may be fine. If several colleagues are visiting together, or for a week or more, a shared house is often more comfortable and better value.</p>
+<h2>Questions to ask your client before you arrive</h2>
+<ol>
+<li><strong>What's the full unit address and postcode</strong>, and which gate do contractors use?</li>
+<li><strong>What time do we need to be on site</strong> for induction on day one?</li>
+<li><strong>Is there parking on site</strong> for vans, or do we need to unload and move?</li>
+<li><strong>What PPE is required</strong>, and is anything supplied?</li>
+<li><strong>What are the site hours</strong>, and is weekend working likely?</li>
+<li><strong>Who's our contact</strong> if we're running late or the gate's closed?</li>
+</ol>
+<p>Getting these answered before you travel saves a wasted first morning, and helps you plan who drives and who takes the train.</p>
+<h2>Around Kirkby after work</h2>
+<ul>
+<li><strong>Kirkby town centre</strong> has shops, food and services. See our Kirkby town guide.</li>
+<li><strong>Croxteth Hall and Country Park</strong> is close by for an evening walk.</li>
+<li><strong>Liverpool city centre</strong> is a direct train ride from Fazakerley for a night out or a match.</li>
+<li>Or simply stay in: pool, Netflix and a cooked dinner.</li>
+</ul>
+<h2>Why Zermatt Lodge works for Knowsley and Kirkby jobs</h2>
+<p>Zermatt Lodge is a whole house in Fazakerley, close to both the Kirkby and Knowsley sites.</p>
+<ul>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong> for early starts</li>
+<li><strong>Free parking for 2 vehicles</strong> (call ahead about large vans)</li>
+<li><strong>Near Fazakerley station</strong>, on the same line as Kirkby and Headbolt Lane</li>
+<li><strong>Near the M57 and M58</strong></li>
+<li><strong>Big kitchen and dining room</strong>, with a Lidl nearby for food shopping</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong> for evenings off</li>
+<li><strong>Large private back garden</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>House rules: <strong>no parties, no smoking, no pets</strong>. It stays quiet for people who need to sleep.</p>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477 to discuss crew sizes and longer stays.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li>Headbolt Lane station guide</li>
+<li>Kirkby town guide</li>
+<li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>How big is Knowsley Business Park?</summary><p>Knowsley Council describes it as one of the largest employment sites in Europe, with over 800 businesses employing around 18,000 people.</p></details>
+<details><summary>Where are Knowsley Industrial Park and Knowsley Business Park?</summary><p>Knowsley Industrial Park is on the eastern side of Kirkby, with addresses on roads such as South Boundary Road (L33). Units marketed as Knowsley Business Park, such as Unity Grove (L34), are about a mile from junction 4 of the M57, near the A580 East Lancashire Road. Check your exact unit address before you travel.</p></details>
+<details><summary>Is there a train station near Knowsley Industrial Park?</summary><p>Yes. Headbolt Lane station opened in 2023 beyond Kirkby on Merseyrail&#x27;s Northern line, the first extension of the line since 1977. Kirkby station also serves the town.</p></details>
+<details><summary>How do I get from Fazakerley to Kirkby?</summary><p>By train, Fazakerley is on the same Merseyrail line as Kirkby and Headbolt Lane, so it&#x27;s a short direct ride. By car, it&#x27;s a short drive via the A506 or the M57.</p></details>
+<details><summary>Can a shift team share Zermatt Lodge?</summary><p>Yes. It sleeps up to 7 in 4 bedrooms, has 2 bathrooms and parking for 2 vehicles. Agree quiet hours if people are on different shifts.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/locum-and-agency-nurse-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Locum &amp; Agency Nurse Accommodation in Liverpool</h3><p>Shift-worker angle: quiet bedrooms, own parking, train to the city hospitals, and the realities of placements at Aintree, the Royal and Alder Hey.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

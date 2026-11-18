@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fazakerley to Liverpool City Centre by Train</title>
+<meta name="description" content="Fazakerley to Liverpool city centre by Merseyrail: stations on the line, journey time, first and last trains, which stop to use and ticket tips.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/fazakerley-to-liverpool-city-centre-by-train">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fazakerley to Liverpool City Centre by Train">
+<meta property="og:description" content="Fazakerley to Liverpool city centre by Merseyrail: stations on the line, journey time, first and last trains, which stop to use and ticket tips.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/fazakerley-to-liverpool-city-centre-by-train">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Fazakerley to Liverpool City Centre by Train: A Simple Guide", "description": "Fazakerley to Liverpool city centre by Merseyrail: stations on the line, journey time, first and last trains, which stop to use and ticket tips.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/fazakerley-to-liverpool-city-centre-by-train", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Fazakerley to Liverpool City Centre by Train", "item": "https://zermatt-lodge.vercel.app/guides/fazakerley-to-liverpool-city-centre-by-train"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long is the train from Fazakerley to Liverpool Central?", "acceptedAnswer": {"@type": "Answer", "text": "About 15 minutes on a direct Merseyrail Northern line train, according to Trainline."}}, {"@type": "Question", "name": "What stations are between Fazakerley and Liverpool Central?", "acceptedAnswer": {"@type": "Answer", "text": "Heading into the city, the line runs Fazakerley, Rice Lane, Kirkdale, Sandhills, Moorfields, then Liverpool Central."}}, {"@type": "Question", "name": "What time is the first and last train from Fazakerley?", "acceptedAnswer": {"@type": "Answer", "text": "Trainline lists the first train from Fazakerley to Liverpool Central at 04:46 and the last at 23:36 on its standard timetable. Times differ at weekends and on holidays."}}, {"@type": "Question", "name": "How often do trains run?", "acceptedAnswer": {"@type": "Answer", "text": "Several trains an hour during the day, with fewer in the evening and on Sundays. Check the Merseyrail app for your date."}}, {"@type": "Question", "name": "Which station is best for Lime Street?", "acceptedAnswer": {"@type": "Answer", "text": "Get off at Liverpool Central and walk a few minutes to Lime Street, or use Moorfields for the business district and waterfront."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Fazakerley to Liverpool City Centre by Train</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Fazakerley to Liverpool City Centre by Train: A Simple Guide</h1>
+      <p class="intro">Fazakerley to Liverpool city centre by Merseyrail: stations on the line, journey time, first and last trains, which stop to use and ticket tips.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>Getting from Fazakerley to Liverpool city centre by train is easy. Merseyrail's Northern line runs direct from <strong>Fazakerley</strong> to <strong>Liverpool Central</strong> in about <strong>15 minutes</strong>, calling at Rice Lane, Kirkdale, Sandhills and Moorfields on the way. Trainline lists the first train at 04:46 and the last at 23:36 on its standard timetable. This guide explains the line, which stop to use for where you're going, and tips for evenings, Sundays and event days.</p>
+<h2>The line at a glance</h2>
+<p>Fazakerley is on the <strong>Kirkby branch</strong> of Merseyrail's <strong>Northern line</strong>. Merseyrail lists the stations on this route as:</p>
+<p><strong>Headbolt Lane - Kirkby - Fazakerley - Rice Lane - Kirkdale - Sandhills - Moorfields - Liverpool Central</strong></p>
+<p>Trains towards the city are usually shown as going to <strong>Liverpool Central</strong>. Trains in the other direction go to <strong>Kirkby</strong> or <strong>Headbolt Lane</strong>. Headbolt Lane opened in 2023 as an extension beyond Kirkby.</p>
+<p>Fazakerley station is also the station for <strong>Aintree University Hospital</strong>. The hospital says the station is across the road from its Longmoor Lane entrance.</p>
+<h2>Journey times</h2>
+<ul>
+<li><strong>Fazakerley to Liverpool Central:</strong> about 15 minutes, direct</li>
+<li><strong>Fazakerley to Sandhills:</strong> a few stops, for Everton's stadium and the Anfield Soccerbus</li>
+<li><strong>Fazakerley to Kirkdale:</strong> two stops, with walking routes to Anfield</li>
+<li><strong>Fazakerley to Kirkby:</strong> one stop the other way</li>
+</ul>
+<h2>Which city stop should you use?</h2>
+<table>
+<thead>
+<tr>
+<th>You're going to</th>
+<th>Get off at</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Liverpool ONE, Bold Street, Ropewalks</td>
+<td><strong>Liverpool Central</strong></td>
+<td>Right in the shopping and food area</td>
+</tr>
+<tr>
+<td>Lime Street (mainline trains), St George's Hall, World Museum</td>
+<td><strong>Liverpool Central</strong></td>
+<td>A few minutes' walk</td>
+</tr>
+<tr>
+<td>Business district, Pier Head, Three Graces</td>
+<td><strong>Moorfields</strong></td>
+<td>Closer to Old Hall Street and the waterfront</td>
+</tr>
+<tr>
+<td>Everton's stadium (Bramley-Moore Dock)</td>
+<td><strong>Sandhills</strong></td>
+<td>The closest station, about 15 minutes' walk</td>
+</tr>
+<tr>
+<td>Anfield</td>
+<td><strong>Sandhills</strong> (Soccerbus) or <strong>Kirkdale</strong> (walk)</td>
+<td>Official matchday options</td>
+</tr>
+<tr>
+<td>Royal Albert Dock, M&amp;S Bank Arena</td>
+<td><strong>Liverpool Central</strong></td>
+<td>Walk down through Liverpool ONE</td>
+</tr>
+</tbody>
+</table>
+<p>See our guide to Liverpool Central vs Moorfields vs Lime Street.</p>
+<h2>How often trains run</h2>
+<p>During the day there are several trains an hour. Frequency drops in the evening and on Sundays, when you might wait up to half an hour. Merseyrail has changed this route's timetable over the last few years, so always check the <strong>Merseyrail app or journey planner</strong> for your exact day. See our tips for evenings and Sundays.</p>
+<h2>Tickets</h2>
+<ul>
+<li>Buy at the station machine or ticket office, on the Merseyrail app, or use contactless where it's accepted.</li>
+<li>If you're making several trips in a day, a day ticket can work out cheaper. See our Merseyrail tickets guide.</li>
+<li>Children travel at reduced fares.</li>
+<li>Keep your ticket until you exit. Some city stations have barriers.</li>
+</ul>
+<h2>Event days and disruption</h2>
+<ul>
+<li><strong>Grand National Festival:</strong> the Jockey Club's travel plan says that on festival days, Kirkby-line trains start and end at <strong>Sandhills</strong> between about 11:00 and 14:00 and between 17:00 and 21:00. If you're travelling between Fazakerley and the city then, you'll need to change at Sandhills.</li>
+<li><strong>Football match days:</strong> Sandhills and Kirkdale get very busy before and after games. Allow extra time, or travel at a different time if you aren't going to the match.</li>
+<li><strong>Engineering works:</strong> Merseyrail sometimes replaces trains with buses, especially at weekends. Check before you travel.</li>
+</ul>
+<h2>Common trips, step by step</h2>
+<p><strong>Arriving at Lime Street by mainline train</strong>
+Walk a few minutes from Lime Street to Liverpool Central. Take a Northern line train towards Kirkby or Headbolt Lane and get off at Fazakerley, about 15 minutes later.</p>
+<p><strong>A day in the city centre</strong>
+Fazakerley to Liverpool Central, then walk to Liverpool ONE, Bold Street and down to the Royal Albert Dock. Come back from Central.</p>
+<p><strong>Visiting the Pier Head and the Three Graces</strong>
+Get off at Moorfields for a shorter walk to the waterfront, or at Central if you're shopping first.</p>
+<p><strong>Everton match day</strong>
+Fazakerley to Sandhills, then walk to Bramley-Moore Dock. Expect queues after the final whistle.</p>
+<p><strong>Liverpool match day</strong>
+Fazakerley to Sandhills for the Soccerbus, or to Kirkdale to walk.</p>
+<p><strong>Going to Kirkby</strong>
+Take a train in the other direction, towards Kirkby or Headbolt Lane. Kirkby is the next stop.</p>
+<h2>Tips for visitors</h2>
+<ol>
+<li><strong>Check the train's destination.</strong> Into town, you want Liverpool Central. Heading home, you want Kirkby or Headbolt Lane.</li>
+<li><strong>Plan your last train home</strong> on nights out, concerts or evening matches.</li>
+<li><strong>Use a taxi as a back-up</strong> for late nights. See taxis in Liverpool.</li>
+<li><strong>Travelling with luggage?</strong> There's space on the trains, but avoid rush hour if you can.</li>
+<li><strong>Step-free access:</strong> check station accessibility on Merseyrail's website before travelling.</li>
+</ol>
+<h2>Why stay near Fazakerley station?</h2>
+<p>Staying near a Merseyrail station gives you the best of both worlds: a quieter, residential base with parking, and the city centre 15 minutes away.</p>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, near the station.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Free parking for 2 cars</strong>, so you can leave them at the house and take the train</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Big kitchen, dining room and a large private back garden</strong></li>
+<li><strong>Near the M57/M58, Aintree Hospital and a Lidl</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+<li><strong>No parties, no smoking, no pets</strong></li>
+</ul>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Merseyrail guide for visitors</li>
+<li>Merseyrail tickets explained</li>
+<li>Fazakerley station guide</li>
+<li>Merseyrail evenings and Sundays</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>How long is the train from Fazakerley to Liverpool Central?</summary><p>About 15 minutes on a direct Merseyrail Northern line train, according to Trainline.</p></details>
+<details><summary>What stations are between Fazakerley and Liverpool Central?</summary><p>Heading into the city, the line runs Fazakerley, Rice Lane, Kirkdale, Sandhills, Moorfields, then Liverpool Central.</p></details>
+<details><summary>What time is the first and last train from Fazakerley?</summary><p>Trainline lists the first train from Fazakerley to Liverpool Central at 04:46 and the last at 23:36 on its standard timetable. Times differ at weekends and on holidays.</p></details>
+<details><summary>How often do trains run?</summary><p>Several trains an hour during the day, with fewer in the evening and on Sundays. Check the Merseyrail app for your date.</p></details>
+<details><summary>Which station is best for Lime Street?</summary><p>Get off at Liverpool Central and walk a few minutes to Lime Street, or use Moorfields for the business district and waterfront.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/liverpool-airport-to-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Liverpool Airport to Fazakerley: All Your Options</h3><p>Taxi, car hire and bus+Merseyrail routes from John Lennon Airport to Fazakerley with verified bus numbers.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-aintree-university-hospital"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Accommodation near Aintree University Hospital</h3><p>Whole house a short walk from the Longmoor Lane entrance via Fazakerley station, with verified parking tariffs, concessions and visiting logistics.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

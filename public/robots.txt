@@ -1,0 +1,22 @@
+# robots.txt - Zermatt Lodge
+# Search engines and AI assistants are welcome. Only private/booking-process URLs are blocked.
+# One group lists every named crawler so they all follow the same rules.
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /checkout/
+
+Sitemap: https://zermatt-lodge.vercel.app/sitemap.xml

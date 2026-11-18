@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accommodation near the M57 and M58 in Liverpool</title>
+<meta name="description" content="Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/accommodation-near-m57-m58-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Accommodation near the M57 and M58 in Liverpool">
+<meta property="og:description" content="Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/accommodation-near-m57-m58-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Accommodation near the M57 and M58: Liverpool Without the City Traffic", "description": "Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/accommodation-near-m57-m58-liverpool", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Accommodation near the M57 and M58 in Liverpool", "item": "https://zermatt-lodge.vercel.app/guides/accommodation-near-m57-m58-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where do the M57 and M58 go?", "acceptedAnswer": {"@type": "Answer", "text": "The M57 runs around the eastern side of Liverpool from the M62 to Switch Island in the north. The M58 runs from Switch Island east to the M6 near Wigan. Between them they link north Liverpool to Manchester, Warrington, Wigan, Preston and the wider motorway network."}}, {"@type": "Question", "name": "Why stay near the M57 instead of in Liverpool city centre?", "acceptedAnswer": {"@type": "Answer", "text": "If you're driving, staying near the motorway means less congestion and fewer bus lanes, and you don't pay for city-centre parking. You can still reach the centre by Merseyrail. Fazakerley station has direct trains to Liverpool Central in about 15 minutes."}}, {"@type": "Question", "name": "What's near junction 6 of the M57?", "acceptedAnswer": {"@type": "Answer", "text": "Aintree University Hospital is on the A506 near junction 6 of the M57, in Fazakerley. Kirkby and Fazakerley are both reached from this area."}}, {"@type": "Question", "name": "How close is Aintree Racecourse to the motorways?", "acceptedAnswer": {"@type": "Answer", "text": "The Jockey Club says the racecourse, on the A59, is about a mile from the M57 and M58."}}, {"@type": "Question", "name": "Does Zermatt Lodge have parking?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There's free parking for 2 cars at the house."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Accommodation near the M57 and M58 in Liverpool</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Accommodation near the M57 and M58: Liverpool Without the City Traffic</h1>
+      <p class="intro">Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>If you're driving to Liverpool, staying near the M57 and M58 in the north of the city lets you skip city-centre traffic and parking charges while keeping the whole region within reach. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to both motorways, with free parking for two cars. Fazakerley station is close by for trains into the centre.</p>
+<p>This guide explains where each motorway goes, what's near the key junctions and why a motorway-side base suits drivers, families and work teams.</p>
+<h2>The two motorways explained</h2>
+<h3>M57: Liverpool's eastern bypass</h3>
+<p>The M57 runs north to south around the eastern side of Liverpool. It links:</p>
+<ul>
+<li><strong>The M62</strong> at its southern end, for Warrington, Manchester, Leeds and the M6 south</li>
+<li><strong>Prescot and Knowsley</strong>: Knowsley Safari is signposted from <strong>junction 2</strong>, and units at Knowsley Business Park are about a mile from <strong>junction 4</strong></li>
+<li><strong>Kirkby and Fazakerley</strong> around <strong>junction 6</strong>, where Aintree University Hospital sits on the A506</li>
+<li><strong>Switch Island</strong> at its northern end, where it meets the M58</li>
+</ul>
+<h3>M58: north Liverpool to the M6</h3>
+<p>The M58 starts at Switch Island and runs east past Maghull and Skelmersdale to the <strong>M6 near Wigan</strong>. It's the quickest route from north Liverpool to:</p>
+<ul>
+<li><strong>Wigan, Preston and Lancashire</strong></li>
+<li><strong>The M6 north</strong> towards the Lake District and Scotland</li>
+<li><strong>Skelmersdale's industrial estates</strong></li>
+<li><strong>Ormskirk and Edge Hill University</strong>, via the nearby A59 and A570</li>
+</ul>
+<h3>Switch Island</h3>
+<p>Switch Island is the big interchange where the M57 and M58 meet several A roads. From here you can reach:</p>
+<ul>
+<li><strong>The north docks, Bootle and Seaforth</strong>, for the Port of Liverpool</li>
+<li><strong>Crosby, Formby and Southport</strong> along the Sefton coast</li>
+<li><strong>Aintree</strong> and the A59 into the city</li>
+</ul>
+<h2>Why drivers stay near the motorways</h2>
+<h3>Avoid city-centre driving</h3>
+<p>Liverpool city centre has bus lanes, one-way systems and event-day congestion. Parking can be expensive, especially overnight. Staying near the M57 means you arrive, park and leave without going near it.</p>
+<h3>Reach more of the region</h3>
+<p>From north Liverpool it's easy to cover a lot of the region from one base:</p>
+<ul>
+<li><strong>Football at Anfield or Everton:</strong> train from Fazakerley towards Sandhills</li>
+<li><strong>Aintree Racecourse:</strong> about a mile from the motorways, according to the Jockey Club</li>
+<li><strong>Knowsley Safari:</strong> via M57 junction 2</li>
+<li><strong>Southport and Formby beaches:</strong> via Switch Island</li>
+<li><strong>Manchester:</strong> via the M57 and M62</li>
+<li><strong>The Lake District or North Wales</strong> for day trips, depending on how far you're happy to drive</li>
+</ul>
+<h3>Keep the city within reach</h3>
+<p>When you do want the city centre, leave the car at home. Fazakerley station has direct Merseyrail trains to Liverpool Central in about 15 minutes. See our guide to <a href="/guides/fazakerley-to-liverpool-city-centre-by-train">Fazakerley to Liverpool city centre by train</a>.</p>
+<h2>Sample drives from Fazakerley</h2>
+<p>Rough guide only. Times vary a lot with traffic, so check a live route before you set off.</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Typical route</th>
+<th>Good to know</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aintree University Hospital</td>
+<td>Local roads</td>
+<td>It's in Fazakerley itself, near M57 junction 6</td>
+</tr>
+<tr>
+<td>Aintree Racecourse</td>
+<td>Local roads or the A59</td>
+<td>Road closures on Grand National days</td>
+</tr>
+<tr>
+<td>Knowsley Industrial Park, Kirkby</td>
+<td>A506 or M57</td>
+<td>Busy at shift changes</td>
+</tr>
+<tr>
+<td>Knowsley Safari</td>
+<td>M57 to junction 2</td>
+<td>Last entry to the Safari Drive is 3pm</td>
+</tr>
+<tr>
+<td>Crosby Beach</td>
+<td>Switch Island</td>
+<td>Check tide times</td>
+</tr>
+<tr>
+<td>Skelmersdale</td>
+<td>M58 east</td>
+<td>Industrial estates just off the motorway</td>
+</tr>
+<tr>
+<td>Manchester</td>
+<td>M57 then M62 east</td>
+<td>Peak-time congestion near Warrington</td>
+</tr>
+<tr>
+<td>Wigan and the M6</td>
+<td>M58 east</td>
+<td>Then the M6 north or south</td>
+</tr>
+</tbody>
+</table>
+<p>If you're new to driving around Merseyside, the main thing to remember is that you rarely need to go through the city centre to get between these places.</p>
+<h2>Who stays near the M57 and M58?</h2>
+<ul>
+<li><strong>Road trippers</strong> breaking a long journey, for example between Scotland and North Wales or the ferry ports</li>
+<li><strong>Families on a driving holiday</strong> who want the city one day and the beach the next. See our Liverpool weekend by car itinerary.</li>
+<li><strong>Contractors and engineers</strong> covering sites across Knowsley, Sefton and West Lancashire. See <a href="/guides/contractor-accommodation-liverpool">contractor accommodation in Liverpool</a>.</li>
+<li><strong>Hospital visitors</strong>, as Aintree University Hospital is right by junction 6</li>
+<li><strong>Racegoers</strong> heading to Aintree</li>
+</ul>
+<h2>Driving tips for north Liverpool</h2>
+<ul>
+<li><strong>Rush hour:</strong> the M57 and the routes into Kirkby and Aintree can be slow at peak times. The hospital also warns of congestion around its site.</li>
+<li><strong>Race and match days:</strong> expect closures and heavy traffic around Aintree on Grand National days, and around the stadiums on match days.</li>
+<li><strong>Tunnels:</strong> if you're heading to the Wirral, the Mersey tunnels are tolled. See our Mersey tunnel tolls guide.</li>
+<li><strong>Fuel and supplies:</strong> retail parks around Aintree and a Lidl near the house cover the basics.</li>
+</ul>
+<p>For more advice, see driving in Liverpool: a visitor's guide.</p>
+<h2>Why Zermatt Lodge suits drivers</h2>
+<p>Zermatt Lodge is a whole house in Fazakerley, near the M57 and M58.</p>
+<ul>
+<li><strong>Free parking for 2 cars</strong>, so you aren't paying city-centre rates</li>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Big kitchen and dining room</strong>, so you can cook after a long drive</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Large private back garden</strong></li>
+<li><strong>Near Fazakerley station</strong> for car-free days in the city</li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>It's a quiet residential home: <strong>no parties, no smoking and no pets</strong>.</p>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Driving in Liverpool: a visitor's guide</li>
+<li>Liverpool weekend by car: avoiding city parking</li>
+<li>Driving from Manchester to north Liverpool</li>
+<li>Driving from Scotland to Liverpool</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where do the M57 and M58 go?</summary><p>The M57 runs around the eastern side of Liverpool from the M62 to Switch Island in the north. The M58 runs from Switch Island east to the M6 near Wigan. Between them they link north Liverpool to Manchester, Warrington, Wigan, Preston and the wider motorway network.</p></details>
+<details><summary>Why stay near the M57 instead of in Liverpool city centre?</summary><p>If you&#x27;re driving, staying near the motorway means less congestion and fewer bus lanes, and you don&#x27;t pay for city-centre parking. You can still reach the centre by Merseyrail. Fazakerley station has direct trains to Liverpool Central in about 15 minutes.</p></details>
+<details><summary>What&#x27;s near junction 6 of the M57?</summary><p>Aintree University Hospital is on the A506 near junction 6 of the M57, in Fazakerley. Kirkby and Fazakerley are both reached from this area.</p></details>
+<details><summary>How close is Aintree Racecourse to the motorways?</summary><p>The Jockey Club says the racecourse, on the A59, is about a mile from the M57 and M58.</p></details>
+<details><summary>Does Zermatt Lodge have parking?</summary><p>Yes. There&#x27;s free parking for 2 cars at the house.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/kirkby-knowsley-business-park-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near Knowsley Business Park &amp; Kirkby</h3><p>One of Europe&#x27;s largest employment sites per Knowsley Council; short drive from Fazakerley, Headbolt Lane station and shift-pattern tips.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/locum-and-agency-nurse-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Locum &amp; Agency Nurse Accommodation in Liverpool</h3><p>Shift-worker angle: quiet bedrooms, own parking, train to the city hospitals, and the realities of placements at Aintree, the Royal and Alder Hey.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

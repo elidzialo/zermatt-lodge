@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Holiday House in Liverpool with a Games Room</title>
+<meta name="description" content="A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/holiday-house-liverpool-games-room">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday House in Liverpool with a Games Room">
+<meta property="og:description" content="A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/holiday-house-liverpool-games-room">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Holiday House in Liverpool with a Games Room and Pool Table", "description": "A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/holiday-house-liverpool-games-room", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Holiday House in Liverpool with a Games Room", "item": "https://zermatt-lodge.vercel.app/guides/holiday-house-liverpool-games-room"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there holiday accommodation in Liverpool with a pool table?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Zermatt Lodge in Fazakerley, north Liverpool, is a whole 4-bedroom house with a games room and pool table, plus board games and a 55-inch Smart TV with Netflix."}}, {"@type": "Question", "name": "How many people can stay?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 7 people, in a king master with en-suite, a second king, a queen and a single, with 2 bathrooms."}}, {"@type": "Question", "name": "Can we use the games room for a party?", "acceptedAnswer": {"@type": "Answer", "text": "No. The games room is for guests to enjoy relaxed evenings in. Zermatt Lodge has no parties, no smoking and no pets."}}, {"@type": "Question", "name": "What can we do in Liverpool on a rainy day?", "acceptedAnswer": {"@type": "Answer", "text": "Liverpool's national museums, such as the Museum of Liverpool, World Museum and Merseyside Maritime Museum, are free and indoors, and a short train ride from Fazakerley. Then come back for pool, board games and a film."}}, {"@type": "Question", "name": "Is the games room suitable for children?", "acceptedAnswer": {"@type": "Answer", "text": "Families enjoy it. Supervise younger children around the pool table and cues, and keep drinks away from the cloth."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Holiday House in Liverpool with a Games Room</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Holiday House in Liverpool with a Games Room and Pool Table</h1>
+      <p class="intro">A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>If you want a Liverpool holiday house where the evenings are as good as the days, look for one with a games room. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, with a games room and pool table, a cupboard of board games and a 55" Smart TV with Netflix. It sleeps 7, has a big kitchen, a dining room and a garden, and there's free parking for two cars. Trains reach the city centre in about 15 minutes.</p>
+<p>This page is about making the most of the time you spend at the house, whether that's a rainy afternoon, a post-match evening or a family games night.</p>
+<h2>Why a games room makes a group trip</h2>
+<p>Days out in Liverpool are full on: museums, the waterfront, football, racing, shopping. But the bit people often remember most is the evening when everyone's together. A games room gives you:</p>
+<ul>
+<li><strong>Something to do without spending money</strong> after a day of paying for everything</li>
+<li><strong>Mixed-age fun</strong>, so grandparents, parents and teenagers can all play</li>
+<li><strong>A rainy-day back-up</strong> when the weather turns</li>
+<li><strong>An alternative to a night out</strong>, especially if you have children, drivers or early starts</li>
+<li><strong>A bit of friendly competition</strong> that gets people talking</li>
+</ul>
+<h2>Pool night ideas</h2>
+<p>You don't need to be good at pool to have fun with it. Try these formats:</p>
+<ul>
+<li><strong>Doubles:</strong> pair a confident player with a beginner, and rotate partners each game.</li>
+<li><strong>Killer:</strong> everyone gets three lives. Pot a ball on your turn or lose a life. It's great with five to seven people.</li>
+<li><strong>Round-the-table handicap:</strong> better players have to pot with their weaker hand.</li>
+<li><strong>Family league:</strong> keep a scoreboard on the fridge for the whole stay, with a silly prize at the end.</li>
+</ul>
+<p>Our pool night ideas for families and friends explains the rules simply.</p>
+<p><strong>House tip:</strong> keep drinks on a side table, not the edge of the pool table, and chalk away from the cloth.</p>
+<h2>Board game evenings</h2>
+<p>Board games work for every age and need no screens. A good evening might look like this:</p>
+<ol>
+<li><strong>Quick warm-up</strong> with a card or dice game while dinner cooks</li>
+<li><strong>Main game</strong> after dinner, at the big dining table</li>
+<li><strong>Party-style game</strong> to finish, the kind where teams guess or draw</li>
+</ol>
+<p>There are board games at the house, and you're welcome to bring your own favourites. If your group loves games, see our board game weekend guide.</p>
+<h2>Film nights on the big screen</h2>
+<p>The 55" Smart TV has Netflix, which makes film nights easy. Ideas:</p>
+<ul>
+<li><strong>Liverpool-set or Liverpool-filmed films</strong> before a city day, so you can spot locations. See our films set in Liverpool.</li>
+<li><strong>Football documentaries</strong> before a match at Anfield or Everton</li>
+<li><strong>A family film</strong> with popcorn after a day at the safari</li>
+</ul>
+<p>More ideas are in our group movie night guide.</p>
+<h2>Pairing days out with nights in</h2>
+<h3>Rainy day</h3>
+<p>Morning: take the train from Fazakerley to Liverpool Central, then visit one of the free national museums, such as the Museum of Liverpool or World Museum.
+Afternoon: back to the house for pool and a board game.
+Evening: a big home-cooked meal and a film.</p>
+<p>See rainy day things to do in Liverpool.</p>
+<h3>Match day</h3>
+<p>Morning: a big breakfast at the house, then the train towards Sandhills.
+Afternoon: the match.
+Evening: back to watch the late game or highlights on the big TV, with a pool rematch.</p>
+<h3>Waterfront day</h3>
+<p>Morning: the Pier Head and a Mersey ferry River Explorer cruise. Mersey Ferries says it takes about 50 minutes with commentary.
+Afternoon: the Royal Albert Dock.
+Evening: board games and a takeaway at home.</p>
+<h2>Evening ideas for different groups</h2>
+<p><strong>Families with young children</strong>
+- An early "kids' cup" on the pool table, with a short cue and adult help
+- Simple card or picture games at the dining table
+- A family film with the lights down, then bed</p>
+<p><strong>Families with teenagers</strong>
+- A proper pool league with a scoreboard, where teens usually beat the adults
+- Strategy board games after dinner
+- Teens choose the film, adults choose the takeaway</p>
+<p><strong>Friends and couples</strong>
+- Doubles pool while dinner's in the oven
+- A big board game that runs all evening
+- The match, the highlights or a series binge on Netflix</p>
+<p><strong>Work crews and contractors</strong>
+- A quick game of killer to unwind after site
+- The football on the big screen
+- Early nights during the week, with a longer pool session on Thursday or Friday</p>
+<p>The point is that nobody has to go out, spend money or book a table to have a good evening together.</p>
+<h2>House rules for the games room</h2>
+<p>The games room is for relaxed, sociable evenings, not parties. Zermatt Lodge is a residential home with <strong>no parties, no smoking and no pets</strong>. Please keep noise sensible in the evening, look after the cues and cloth, and supervise children. That way the room stays in great shape for you and the next guests.</p>
+<h2>Why Zermatt Lodge suits games-loving groups</h2>
+<ul>
+<li><strong>Games room with a pool table</strong></li>
+<li><strong>Board games</strong></li>
+<li><strong>55" Smart TV with Netflix</strong></li>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Big kitchen and dining room</strong>, with a large table for board games</li>
+<li><strong>Large private back garden</strong></li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Near Fazakerley station and a Lidl</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Pool night ideas for families and friends</li>
+<li>Rainy day things to do in Liverpool</li>
+<li>Group movie night ideas</li>
+<li><a href="/guides/large-family-house-liverpool">Large family house to rent in Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Is there holiday accommodation in Liverpool with a pool table?</summary><p>Yes. Zermatt Lodge in Fazakerley, north Liverpool, is a whole 4-bedroom house with a games room and pool table, plus board games and a 55-inch Smart TV with Netflix.</p></details>
+<details><summary>How many people can stay?</summary><p>Up to 7 people, in a king master with en-suite, a second king, a queen and a single, with 2 bathrooms.</p></details>
+<details><summary>Can we use the games room for a party?</summary><p>No. The games room is for guests to enjoy relaxed evenings in. Zermatt Lodge has no parties, no smoking and no pets.</p></details>
+<details><summary>What can we do in Liverpool on a rainy day?</summary><p>Liverpool&#x27;s national museums, such as the Museum of Liverpool, World Museum and Merseyside Maritime Museum, are free and indoors, and a short train ride from Fazakerley. Then come back for pool, board games and a film.</p></details>
+<details><summary>Is the games room suitable for children?</summary><p>Families enjoy it. Supervise younger children around the pool table and cues, and keep drinks away from the cloth.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/large-family-house-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Large Family House to Rent in Liverpool</h3><p>Bed-by-bed layout for families (who sleeps where), kid-friendly days out nearby and practical family-stay tips.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/group-accommodation-liverpool-with-parking"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Group Accommodation in Liverpool with Parking</h3><p>Parking-led: why city-centre group stays get expensive with cars, what free off-street parking for two changes and how to reach the centre by train.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/where-to-stay-in-liverpool-for-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Where to Stay in Liverpool for a Group: Area Guide</h3><p>Area-by-area comparison (city centre, Baltic, waterfront, south Liverpool, north Liverpool) by noise, parking, cost drivers and purpose of trip.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

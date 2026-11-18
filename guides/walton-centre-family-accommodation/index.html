@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where to Stay When Visiting The Walton Centre</title>
+<meta name="description" content="Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/walton-centre-family-accommodation">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where to Stay When Visiting The Walton Centre">
+<meta property="og:description" content="Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/walton-centre-family-accommodation">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Where to Stay When Visiting The Walton Centre in Liverpool", "description": "Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/walton-centre-family-accommodation", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Where to Stay When Visiting The Walton Centre", "item": "https://zermatt-lodge.vercel.app/guides/walton-centre-family-accommodation"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is The Walton Centre?", "acceptedAnswer": {"@type": "Answer", "text": "The Walton Centre is on Lower Lane, Fazakerley, Liverpool, on the same site as Aintree University Hospital. The Main Building is L9 7LJ and the Sid Watkins Building is L9 7BB. Check the appointment letter to see which one you need."}}, {"@type": "Question", "name": "Does The Walton Centre have accommodation for relatives?", "acceptedAnswer": {"@type": "Answer", "text": "The Walton Centre's website mentions 'Home from Home' accommodation for people visiting patients but gives no details online. Ask the ward or call the switchboard on 0151 525 3611. If there's no space, or your whole family is travelling, a house nearby in Fazakerley is a practical alternative."}}, {"@type": "Question", "name": "How much does parking cost at The Walton Centre?", "acceptedAnswer": {"@type": "Answer", "text": "The Walton Centre's page lists free parking for under 30 minutes, then £4.50 up to 1 hour, £5 up to 2 hours, £6 up to 4 hours, £7 up to 6 hours and £8.50 over 6 hours. A 7-day pass is £22.50. The machines are card-only. Aintree University Hospital's own page shows different figures, so check on the day."}}, {"@type": "Question", "name": "What's the nearest train station to The Walton Centre?", "acceptedAnswer": {"@type": "Answer", "text": "Fazakerley station, on Merseyrail's Northern line. The Walton Centre says it's about a 10-minute walk away, with regular trains to central Liverpool."}}, {"@type": "Question", "name": "Is there a concession for families visiting long-term patients?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Walton Centre says there's a concession scheme for long-term patients and frequent visitors, valid only in designated car parks. Ask at reception or on the ward."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Where to Stay When Visiting The Walton Centre</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Where to Stay When Visiting The Walton Centre in Liverpool</h1>
+      <p class="intro">Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>The best place for families to stay when visiting The Walton Centre is close to its site in Fazakerley, north Liverpool. That way you can reach the ward quickly at any hour without paying city-centre parking. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to the Aintree hospital site and Fazakerley station, with free parking for two cars. It gives families supporting a neurology or neurosurgery patient a quiet base for a few nights or several weeks.</p>
+<p>The Walton Centre is a specialist neurosciences hospital that serves a wide region, so many families travel a long way and don't know how long they'll be staying. This guide covers the practical side.</p>
+<h2>The Walton Centre site explained</h2>
+<p>The Walton Centre shares a campus with Aintree University Hospital. There are two Walton Centre buildings to know about:</p>
+<ul>
+<li><strong>Main Building:</strong> Lower Lane, Fazakerley, Liverpool, L9 7LJ</li>
+<li><strong>Sid Watkins Building:</strong> Lower Lane, Fazakerley, Liverpool, L9 7BB</li>
+</ul>
+<p>The hospital asks you to check your appointment letter to see which building you need. Some patients are now seen closer to home, so check that too before you travel.</p>
+<p>Because Aintree University Hospital manages parking across the whole site, the car parks, pay machines and rules are shared. If you're also visiting someone in the main Aintree hospital, see our guide to <a href="/guides/accommodation-near-aintree-university-hospital">accommodation near Aintree University Hospital</a>.</p>
+<h2>Getting there</h2>
+<h3>By car</h3>
+<p>The site is in north Liverpool, close to the end of the M57 and M58 motorways. That makes it straightforward for families driving from North Wales, Lancashire, Cumbria or further afield, because you don't need to cross the city centre. The hospitals warn that roads around the site get congested at peak times, so leave extra time for morning arrivals.</p>
+<h3>By train</h3>
+<p>The Walton Centre says Fazakerley station is about a 10-minute walk away. It's on Merseyrail's Northern line, and direct trains reach Liverpool Central in about 15 minutes. Relatives arriving at Lime Street can walk to Central and be on the ward in well under an hour. See our guide to <a href="/guides/fazakerley-to-liverpool-city-centre-by-train">Fazakerley to Liverpool city centre by train</a>.</p>
+<h3>By bus</h3>
+<p>Several bus routes serve the site. The Walton Centre points visitors to Merseytravel for current times, and to Traveline for journeys from Cheshire, Wales and national services.</p>
+<h2>Parking at The Walton Centre</h2>
+<p>The Walton Centre's page lists these visitor charges:</p>
+<table>
+<thead>
+<tr>
+<th>Stay</th>
+<th>Charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Under 30 minutes</td>
+<td>Free</td>
+</tr>
+<tr>
+<td>Up to 1 hour</td>
+<td>£4.50</td>
+</tr>
+<tr>
+<td>Up to 2 hours</td>
+<td>£5</td>
+</tr>
+<tr>
+<td>Up to 4 hours</td>
+<td>£6</td>
+</tr>
+<tr>
+<td>Up to 6 hours</td>
+<td>£7</td>
+</tr>
+<tr>
+<td>Over 6 hours</td>
+<td>£8.50</td>
+</tr>
+<tr>
+<td>7-day pass</td>
+<td>£22.50</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Things to know:</strong></p>
+<ul>
+<li>Most car parks are ticketless, pay-on-foot, with number plate recognition. Note your registration.</li>
+<li>The machines take <strong>card payment only</strong>.</li>
+<li><strong>Blue Badge holders</strong> park free in marked bays. Tell reception when you arrive and leave, and give your registration and proof of your badge.</li>
+<li>There's a <strong>concession scheme for long-term patients and frequent visitors</strong>, valid in designated car parks only.</li>
+<li>Parking outside marked bays can get you a breach of contract notice.</li>
+</ul>
+<p>Aintree University Hospital's own page lists a lower tariff for the same site. Charges get reviewed, so check the signs when you arrive. If you're visiting daily for more than a few days, the weekly or 7-day option or a concession nearly always works out cheaper. Ask about it on day one.</p>
+<h2>What families of neuro patients often need</h2>
+<p>Neurology and neurosurgery admissions can be long and unpredictable. Families often find:</p>
+<ul>
+<li><strong>Visiting happens in shifts.</strong> One person stays at the bedside while others rest, so a base with separate bedrooms really helps.</li>
+<li><strong>Updates come at set times.</strong> Find out when the consultant's ward round is, so the right family member is there to hear it.</li>
+<li><strong>Rehabilitation can take weeks.</strong> A stay in a hotel room soon becomes tiring. Having a kitchen, a garden and a living room matters more than you'd expect.</li>
+<li><strong>There's paperwork.</strong> Keep a notebook of names, ward numbers and questions for the medical team.</li>
+<li><strong>Children may be with you.</strong> Space to play and a normal evening routine help them cope.</li>
+</ul>
+<p>For more ideas, see our tips for long hospital stays in Liverpool.</p>
+<h2>Checklist for your first visit</h2>
+<ol>
+<li>Check your letter or the ward for the right building (Main or Sid Watkins).</li>
+<li>Save the ward's phone number.</li>
+<li>Ask about the Home from Home accommodation and the frequent-visitor parking concession.</li>
+<li>Find the nearest supermarket. There's a Lidl near Zermatt Lodge, which helps when you arrive late.</li>
+<li>Agree a rota with family members.</li>
+<li>Pack a phone charger, comfortable shoes and a reusable water bottle.</li>
+</ol>
+<h2>Why Zermatt Lodge suits Walton Centre families</h2>
+<p>Zermatt Lodge is a whole house in Fazakerley, near the shared hospital site. It's built for families who need to stay together:</p>
+<ul>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong>, so early starts aren't a queue</li>
+<li><strong>Big kitchen and dining room</strong> for home-cooked meals whenever you get back from the ward</li>
+<li><strong>Free parking for 2 cars</strong>, useful when relatives arrive from different places</li>
+<li><strong>Large private back garden</strong> for fresh air and quiet phone calls</li>
+<li><strong>55" Smart TV with Netflix, board games and a pool table</strong> to help children and teenagers switch off</li>
+<li><strong>Near Fazakerley station</strong> for easy trips to Lime Street when relatives arrive by train</li>
+</ul>
+<p>Check-in is from 3pm and checkout is 11am. It's a quiet house: no parties, no smoking and no pets.</p>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees. If you're unsure how long you'll need, call +44 7479 905477 to talk it through.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Walton Centre appointment? Plan an overnight stay</li>
+<li>Hospital parking concessions in Liverpool compared</li>
+<li>Aintree hospital site: which building is which?</li>
+<li><a href="/guides/accommodation-near-aintree-university-hospital">Accommodation near Aintree University Hospital</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where is The Walton Centre?</summary><p>The Walton Centre is on Lower Lane, Fazakerley, Liverpool, on the same site as Aintree University Hospital. The Main Building is L9 7LJ and the Sid Watkins Building is L9 7BB. Check the appointment letter to see which one you need.</p></details>
+<details><summary>Does The Walton Centre have accommodation for relatives?</summary><p>The Walton Centre&#x27;s website mentions &#x27;Home from Home&#x27; accommodation for people visiting patients but gives no details online. Ask the ward or call the switchboard on 0151 525 3611. If there&#x27;s no space, or your whole family is travelling, a house nearby in Fazakerley is a practical alternative.</p></details>
+<details><summary>How much does parking cost at The Walton Centre?</summary><p>The Walton Centre&#x27;s page lists free parking for under 30 minutes, then £4.50 up to 1 hour, £5 up to 2 hours, £6 up to 4 hours, £7 up to 6 hours and £8.50 over 6 hours. A 7-day pass is £22.50. The machines are card-only. Aintree University Hospital&#x27;s own page shows different figures, so check on the day.</p></details>
+<details><summary>What&#x27;s the nearest train station to The Walton Centre?</summary><p>Fazakerley station, on Merseyrail&#x27;s Northern line. The Walton Centre says it&#x27;s about a 10-minute walk away, with regular trains to central Liverpool.</p></details>
+<details><summary>Is there a concession for families visiting long-term patients?</summary><p>Yes. The Walton Centre says there&#x27;s a concession scheme for long-term patients and frequent visitors, valid only in designated car parks. Ask at reception or on the ward.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/accommodation-near-aintree-university-hospital"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Accommodation near Aintree University Hospital</h3><p>Whole house a short walk from the Longmoor Lane entrance via Fazakerley station, with verified parking tariffs, concessions and visiting logistics.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/alder-hey-family-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Alder Hey Family Accommodation with Parking</h3><p>For whole families (siblings, grandparents) who can&#x27;t all use on-site parent rooms: route from Fazakerley, Alder Hey parking tariff and concessions, routine tips.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

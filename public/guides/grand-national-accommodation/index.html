@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grand National Accommodation: Stay Near Aintree</title>
+<meta name="description" content="Grand National accommodation for groups: a 4-bed house in Fazakerley near Aintree with free parking. Festival dates, race-day trains and parking explained.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/grand-national-accommodation">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grand National Accommodation: Stay Near Aintree">
+<meta property="og:description" content="Grand National accommodation for groups: a 4-bed house in Fazakerley near Aintree with free parking. Festival dates, race-day trains and parking explained.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/grand-national-accommodation">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Grand National Accommodation: Where to Stay Near Aintree for the Festival", "description": "Grand National accommodation for groups: a 4-bed house in Fazakerley near Aintree with free parking. Festival dates, race-day trains and parking explained.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/grand-national-accommodation", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Grand National Accommodation: Stay Near Aintree", "item": "https://zermatt-lodge.vercel.app/guides/grand-national-accommodation"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is the next Grand National Festival?", "acceptedAnswer": {"@type": "Answer", "text": "The Jockey Club lists the next Randox Grand National Festival as Thursday 8 to Saturday 10 April 2027. Thursday is Opening Day, Friday is Ladies Day and Saturday is Grand National Day."}}, {"@type": "Question", "name": "How close is Fazakerley to Aintree Racecourse?", "acceptedAnswer": {"@type": "Answer", "text": "Fazakerley is a neighbouring suburb, a couple of miles from the racecourse on Ormskirk Road (L9 5AS). On race days, road closures and crowds mean the trip takes longer than the distance suggests, so plan your route in advance."}}, {"@type": "Question", "name": "Can I get the train from Fazakerley to Aintree on race days?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with a change. Fazakerley is on the Kirkby branch and Aintree station is on the Ormskirk branch. On festival days, the Jockey Club says Kirkby-line trains start and end at Sandhills between 11:00 and 14:00 and between 17:00 and 21:00, so change at Sandhills for the frequent Aintree trains."}}, {"@type": "Question", "name": "Do I need to book parking for the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Jockey Club says car parking must be booked in advance online."}}, {"@type": "Question", "name": "When should I book Grand National accommodation?", "acceptedAnswer": {"@type": "Answer", "text": "As early as you can. Rooms near Aintree are in very high demand for festival week. Larger houses that sleep a whole group are especially scarce."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Grand National Accommodation: Stay Near Aintree</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Grand National Accommodation: Where to Stay Near Aintree for the Festival</h1>
+      <p class="intro">Grand National accommodation for groups: a 4-bed house in Fazakerley near Aintree with free parking. Festival dates, race-day trains and parking explained.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>The best Grand National accommodation for a group is somewhere close to Aintree but outside the race-day road closures, with your own parking and room for everyone under one roof. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, the suburb next to Aintree, sleeping up to 7, with free parking for two cars. Book early, because the festival is one of the busiest weeks of the year for accommodation in north Liverpool.</p>
+<p>This guide covers festival dates, how to get to the course from a north Liverpool base, parking rules and how to plan a group stay.</p>
+<h2>Grand National Festival dates and format</h2>
+<p>The Randox Grand National Festival runs over three days at Aintree Racecourse. According to the Jockey Club, the next festival is <strong>Thursday 8 to Saturday 10 April 2027</strong>.</p>
+<ul>
+<li><strong>Opening Day (Thursday):</strong> the first day of the festival</li>
+<li><strong>Ladies Day (Friday):</strong> when style and fashion take the spotlight, with the Style Award presented</li>
+<li><strong>Grand National Day (Saturday):</strong> the main event</li>
+</ul>
+<p>Many groups stay Thursday to Sunday so they aren't driving home on Saturday evening. If your group is going for Ladies Day, see our Ladies Day group stay guide.</p>
+<h2>Where Aintree Racecourse is</h2>
+<p>Aintree Racecourse is on <strong>Ormskirk Road, Aintree, Liverpool, L9 5AS</strong>, on the A59. The Jockey Club says it's about a mile from the M57 and M58. Fazakerley is the neighbouring suburb to the east, which makes it one of the closest residential areas to the course.</p>
+<h2>Getting to the races from Fazakerley</h2>
+<h3>By train (recommended on festival days)</h3>
+<p>Fazakerley station is on Merseyrail's Northern line (Kirkby branch). Aintree station is on the Ormskirk branch. The two branches meet south of Fazakerley, so you need <strong>one change at Sandhills</strong>.</p>
+<p>The Jockey Club's festival travel plan says:</p>
+<ul>
+<li>Trains run <strong>every seven and a half minutes</strong> between Liverpool Central/Moorfields and Aintree on each festival day.</li>
+<li>Going to the races, these run from about <strong>11:00 to 13:00</strong>. Coming back, they run from about <strong>16:30 to 20:30</strong>.</li>
+<li>On the <strong>Kirkby line</strong>, between 11:00 and 14:00 and between 17:00 and 21:00, services <strong>start and end at Sandhills</strong>. Passengers returning to Rice Lane, <strong>Fazakerley</strong>, Kirkby or Headbolt Lane must change there.</li>
+</ul>
+<p>So from Fazakerley you take a train towards the city, change at Sandhills onto an Aintree train, and reverse it on the way home. Check the Merseyrail journey planner or app before you go, because race-day timetables are amended. Our step-by-step guide to getting to Aintree from Fazakerley has more detail.</p>
+<h3>By bus</h3>
+<p>The Jockey Club lists services <strong>300, 310 and 345</strong> to and from Liverpool. Merseytravel has up-to-date times.</p>
+<h3>By car or taxi</h3>
+<p>There's a series of road closures around Aintree on festival days. If you're getting a lift or a taxi, you'll be dropped off and directed to the shuttle on the Mildmay Course, which runs to the Racecourse Enclosures. A short taxi ride from Fazakerley might sound easy, but closures and heavy traffic after the last race can make the train quicker.</p>
+<h2>Parking at the Grand National</h2>
+<p>The Jockey Club is clear: <strong>car parking must be booked in advance online.</strong> Other things to know:</p>
+<ul>
+<li>Follow the A59 towards Liverpool and the yellow tourism signs to your car park.</li>
+<li>At the <strong>Steeplechase Car Park</strong>, access via the Melling Road course crossing closes 30 minutes before the feature race and reopens 30 minutes after it.</li>
+<li>No vehicles can move while the course crossings are closed, so leaving early isn't always possible.</li>
+</ul>
+<p>Many groups staying nearby leave the cars at the house and take the train. Our Grand National parking guide goes into the options.</p>
+<h2>Planning a group stay for the festival</h2>
+<h3>Book early</h3>
+<p>Festival week is one of the busiest times for accommodation in north Liverpool. Whole houses for 6 or 7 people go first. If your group has tickets, sort your accommodation straight away.</p>
+<h3>Think about the morning</h3>
+<p>Getting a group ready for the races takes time: showers, outfits, hair and breakfast. Two bathrooms, an en-suite master and plenty of bedroom space make a real difference compared with sharing hotel rooms.</p>
+<h3>Plan the evening</h3>
+<p>Restaurants and pubs near Aintree get very busy on race evenings. Plenty of groups come back, cook a simple dinner and spend the evening at home with a pool table and board games instead. If you do want to eat out, book well ahead.</p>
+<h3>Make it a long weekend</h3>
+<p>Many visitors add a city day on the Sunday: the waterfront, the Albert Dock or a Mersey ferry. See <a href="/guides/things-to-do-in-liverpool-with-a-group">things to do in Liverpool with a group</a>.</p>
+<h2>Grand National checklist</h2>
+<ul>
+<li>Race tickets, plus pre-booked parking if you're driving</li>
+<li>Check the dress code for your enclosure (see our dress code guide)</li>
+<li>Layers and a waterproof. April weather in Liverpool can change quickly.</li>
+<li>Comfortable shoes for walking on grass, or a spare pair in a bag</li>
+<li>A fully charged phone and the Merseyrail app</li>
+<li>An agreed meeting point in case the group gets separated</li>
+</ul>
+<h2>Why Zermatt Lodge works for Grand National groups</h2>
+<p>Zermatt Lodge is a whole house in Fazakerley, next door to Aintree, with everything a race group needs.</p>
+<ul>
+<li><strong>Sleeps 7 in 4 bedrooms:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong> for getting ready on race mornings</li>
+<li><strong>Free parking for 2 cars</strong>, so you can leave them at the house and take the train</li>
+<li><strong>Near Fazakerley station</strong> for the Sandhills change to Aintree</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong> for a relaxed evening after racing</li>
+<li><strong>Big kitchen and dining room</strong>, so you can cook for the group if local restaurants are full</li>
+<li><strong>Large private back garden</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>Please note: Zermatt Lodge is a quiet residential home. There are <strong>no parties, no smoking and no pets</strong>. It's ideal for groups who want a comfortable base, but not for a party house.</p>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477 to check festival availability.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Getting to Aintree Racecourse from Fazakerley</li>
+<li>Grand National parking: how it works</li>
+<li>Grand National Festival: a first-timer's guide</li>
+<li><a href="/guides/aintree-racecourse-accommodation">Aintree Racecourse accommodation for non-National race days</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>When is the next Grand National Festival?</summary><p>The Jockey Club lists the next Randox Grand National Festival as Thursday 8 to Saturday 10 April 2027. Thursday is Opening Day, Friday is Ladies Day and Saturday is Grand National Day.</p></details>
+<details><summary>How close is Fazakerley to Aintree Racecourse?</summary><p>Fazakerley is a neighbouring suburb, a couple of miles from the racecourse on Ormskirk Road (L9 5AS). On race days, road closures and crowds mean the trip takes longer than the distance suggests, so plan your route in advance.</p></details>
+<details><summary>Can I get the train from Fazakerley to Aintree on race days?</summary><p>Yes, with a change. Fazakerley is on the Kirkby branch and Aintree station is on the Ormskirk branch. On festival days, the Jockey Club says Kirkby-line trains start and end at Sandhills between 11:00 and 14:00 and between 17:00 and 21:00, so change at Sandhills for the frequent Aintree trains.</p></details>
+<details><summary>Do I need to book parking for the Grand National?</summary><p>Yes. The Jockey Club says car parking must be booked in advance online.</p></details>
+<details><summary>When should I book Grand National accommodation?</summary><p>As early as you can. Rooms near Aintree are in very high demand for festival week. Larger houses that sleep a whole group are especially scarce.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/aintree-racecourse-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Aintree Racecourse Accommodation: Non-National Days</h3><p>Covers the quieter fixtures (November meeting, Becher Chase Day in December) when rooms are easier to find and you can drive in.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-aintree-university-hospital"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Accommodation near Aintree University Hospital</h3><p>Whole house a short walk from the Longmoor Lane entrance via Fazakerley station, with verified parking tariffs, concessions and visiting logistics.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

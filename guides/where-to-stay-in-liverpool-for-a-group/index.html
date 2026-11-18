@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where to Stay in Liverpool for a Group: Area Guide</title>
+<meta name="description" content="Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/where-to-stay-in-liverpool-for-a-group">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where to Stay in Liverpool for a Group: Area Guide">
+<meta property="og:description" content="Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/where-to-stay-in-liverpool-for-a-group">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Where to Stay in Liverpool for a Group: An Honest Area Guide", "description": "Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/where-to-stay-in-liverpool-for-a-group", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Where to Stay in Liverpool for a Group: Area Guide", "item": "https://zermatt-lodge.vercel.app/guides/where-to-stay-in-liverpool-for-a-group"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the best area to stay in Liverpool for a group?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your plans. For a nightlife-focused weekend without cars, the city centre (Ropewalks, Baltic, waterfront) is easiest. For families, groups with cars, football, racing or hospital visits, north Liverpool offers more space, free parking and quick trains into town."}}, {"@type": "Question", "name": "Is it noisy staying in Liverpool city centre?", "acceptedAnswer": {"@type": "Answer", "text": "Parts can be, especially around Concert Square, Seel Street and the Ropewalks at weekends. If sleep matters, choose a quieter street, ask for a room away from the street, or stay out of the centre."}}, {"@type": "Question", "name": "How far is north Liverpool from the city centre?", "acceptedAnswer": {"@type": "Answer", "text": "From Fazakerley station, Merseyrail's Northern line reaches Liverpool Central in about 15 minutes."}}, {"@type": "Question", "name": "Where should a group stay for a Liverpool or Everton match?", "acceptedAnswer": {"@type": "Answer", "text": "Anywhere on the Northern line's Kirkby branch (Fazakerley, Rice Lane, Kirkdale) works well. Sandhills, on the same line, is the closest station to Everton's stadium and has a Soccerbus to Anfield."}}, {"@type": "Question", "name": "Where should a group stay for the Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "As close to Aintree as you can, with a plan for race-day transport. Fazakerley, Aintree, Maghull and nearby suburbs are popular. Book early, because demand is very high."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">Where to Stay in Liverpool for a Group: Area Guide</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Where to Stay in Liverpool for a Group: An Honest Area Guide</h1>
+      <p class="intro">Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>The best area to stay in Liverpool for a group depends on why you're coming. For a car-free nightlife weekend, the city centre is hard to beat. For families, groups with cars, football, the Grand National or a hospital visit, north Liverpool gives you more space and free parking, with trains into town in about 15 minutes. This guide compares the main options honestly, including when somewhere other than our own house is the better choice.</p>
+<h2>Quick comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Best for</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>City centre (Ropewalks, Concert Square)</td>
+<td>Nightlife, walking everywhere</td>
+<td>Weekend noise, parking costs</td>
+</tr>
+<tr>
+<td>Waterfront and Albert Dock</td>
+<td>Sightseeing, arena gigs</td>
+<td>Prices, limited group-size options</td>
+</tr>
+<tr>
+<td>Baltic Triangle</td>
+<td>Food halls, bars, creative vibe</td>
+<td>Late-night noise, few big units</td>
+</tr>
+<tr>
+<td>Georgian Quarter and Hope Street</td>
+<td>Culture, theatres, quieter streets</td>
+<td>Hilly, limited parking</td>
+</tr>
+<tr>
+<td>South Liverpool (Sefton Park, Aigburth)</td>
+<td>Parks, Lark Lane, calmer stays</td>
+<td>Further from north Liverpool venues</td>
+</tr>
+<tr>
+<td>North Liverpool (Fazakerley, Aintree)</td>
+<td>Space, parking, football, racing, hospitals</td>
+<td>Not walkable to the city centre</td>
+</tr>
+<tr>
+<td>Anfield</td>
+<td>Being on the doorstep for LFC</td>
+<td>Match-day crowds and parking restrictions</td>
+</tr>
+</tbody>
+</table>
+<h2>City centre: Ropewalks and Concert Square</h2>
+<p><strong>Best for:</strong> groups who want to walk to bars and restaurants and don't have cars.</p>
+<p>The Ropewalks area, around Bold Street, Seel Street and Concert Square, is the heart of Liverpool's nightlife and independent food scene. Everything is walkable, and Liverpool Central and Lime Street are close.</p>
+<p><strong>Downsides:</strong> it's noisy at weekends, especially late at night. Most group options here are apartments, and very few come with parking. If you're arriving in two cars, add overnight car park costs to your budget.</p>
+<h2>Waterfront and Royal Albert Dock</h2>
+<p><strong>Best for:</strong> sightseeing and concerts at M&amp;S Bank Arena.</p>
+<p>Staying by the river puts you near the Pier Head, the Museum of Liverpool, the Albert Dock and the arena at King's Dock. It's lovely for a first visit.</p>
+<p><strong>Downsides:</strong> it's one of the pricier parts of the city, and large group units are limited. Parking is available in car parks around King's Dock and the Albert Dock, but at a cost. See our <a href="/guides/ms-bank-arena-concert-accommodation">M&amp;S Bank Arena concert guide</a>.</p>
+<h2>Baltic Triangle</h2>
+<p><strong>Best for:</strong> foodies and groups who like a creative, warehouse feel.</p>
+<p>Just south of the centre, the Baltic has food halls, bars and street art.</p>
+<p><strong>Downsides:</strong> it's lively late at night, and most accommodation is in apartments.</p>
+<h2>Georgian Quarter and Hope Street</h2>
+<p><strong>Best for:</strong> theatre, concerts at the Philharmonic and the two cathedrals.</p>
+<p>Elegant terraces and a slightly calmer feel, still walkable to the centre.</p>
+<p><strong>Downsides:</strong> it's hilly, and on-street parking is tight.</p>
+<h2>South Liverpool: Sefton Park, Aigburth, Lark Lane</h2>
+<p><strong>Best for:</strong> groups who like parks, brunch and a residential feel.</p>
+<p>Sefton Park and Lark Lane offer a village atmosphere. The Northern line's southern branch serves the area, for example from St Michaels and Aigburth stations.</p>
+<p><strong>Downsides:</strong> it's on the opposite side of the city from Aintree, Anfield and the M57/M58, so it suits a city-and-south-Liverpool trip better than football or racing.</p>
+<h2>North Liverpool: Fazakerley and Aintree</h2>
+<p><strong>Best for:</strong> families, groups with cars, football, the Grand National, hospital visits, contractors and anyone wanting a whole house.</p>
+<p>North Liverpool is residential and greener, with more houses and fewer apartments. That means more bedrooms, gardens and off-street parking.</p>
+<ul>
+<li><strong>City centre:</strong> direct trains from Fazakerley to Liverpool Central in about 15 minutes</li>
+<li><strong>Football:</strong> Sandhills, a few stops down the line, is the closest station to Everton's stadium and has the Soccerbus to Anfield</li>
+<li><strong>Racing:</strong> Aintree Racecourse is the next suburb along</li>
+<li><strong>Hospitals:</strong> Aintree University Hospital and The Walton Centre are in Fazakerley</li>
+<li><strong>Motorways:</strong> the M57 and M58 are close by for day trips</li>
+</ul>
+<p><strong>Downsides:</strong> you can't walk to the city centre, and the area's nightlife is local pubs rather than clubs. If your group mainly wants a big night out every night, staying in the centre makes more sense.</p>
+<p>Our Fazakerley vs city centre comparison goes into this in detail.</p>
+<h2>Anfield</h2>
+<p><strong>Best for:</strong> being right next to the ground for a Liverpool FC match.</p>
+<p><strong>Downsides:</strong> Liverpool FC says there's no paid parking at Anfield on match days, and the area is a residents' parking zone. Streets are very busy before and after games. Many groups prefer to stay a few stops up the line and come in by train or Soccerbus. See <a href="/guides/anfield-match-day-accommodation">Anfield match day accommodation</a>.</p>
+<h2>How to choose: four questions</h2>
+<ol>
+<li><strong>Are you bringing cars?</strong> If yes, prioritise free parking.</li>
+<li><strong>What's the main reason for the trip?</strong> Nightlife suits the centre. Football, racing or family time suits north Liverpool.</li>
+<li><strong>How important is sleep?</strong> Avoid nightlife streets if you have children or early starts.</li>
+<li><strong>Do you want to cook together?</strong> A whole house with a big kitchen beats hotel rooms for group meals.</li>
+</ol>
+<h2>Why Zermatt Lodge suits many groups</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Big kitchen, dining room and a large private back garden</strong></li>
+<li><strong>Near Fazakerley station, the M57/M58, Aintree Hospital and a Lidl</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+<li><strong>No parties, no smoking, no pets</strong></li>
+</ul>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a> with no platform fees, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/group-accommodation-liverpool-with-parking">Group accommodation in Liverpool with parking</a></li>
+<li><a href="/guides/house-vs-hotel-liverpool-groups">House vs hotel in Liverpool for groups</a></li>
+<li>Liverpool city centre: areas explained</li>
+<li><a href="/guides/things-to-do-in-liverpool-with-a-group">Things to do in Liverpool with a group</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>What&#x27;s the best area to stay in Liverpool for a group?</summary><p>It depends on your plans. For a nightlife-focused weekend without cars, the city centre (Ropewalks, Baltic, waterfront) is easiest. For families, groups with cars, football, racing or hospital visits, north Liverpool offers more space, free parking and quick trains into town.</p></details>
+<details><summary>Is it noisy staying in Liverpool city centre?</summary><p>Parts can be, especially around Concert Square, Seel Street and the Ropewalks at weekends. If sleep matters, choose a quieter street, ask for a room away from the street, or stay out of the centre.</p></details>
+<details><summary>How far is north Liverpool from the city centre?</summary><p>From Fazakerley station, Merseyrail&#x27;s Northern line reaches Liverpool Central in about 15 minutes.</p></details>
+<details><summary>Where should a group stay for a Liverpool or Everton match?</summary><p>Anywhere on the Northern line&#x27;s Kirkby branch (Fazakerley, Rice Lane, Kirkdale) works well. Sandhills, on the same line, is the closest station to Everton&#x27;s stadium and has a Soccerbus to Anfield.</p></details>
+<details><summary>Where should a group stay for the Grand National?</summary><p>As close to Aintree as you can, with a plan for race-day transport. Fazakerley, Aintree, Maghull and nearby suburbs are popular. Book early, because demand is very high.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/group-accommodation-liverpool-with-parking"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Group Accommodation in Liverpool with Parking</h3><p>Parking-led: why city-centre group stays get expensive with cars, what free off-street parking for two changes and how to reach the centre by train.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/house-vs-hotel-liverpool-groups"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Comparisons</span><h3>House vs Hotel in Liverpool for Groups</h3><p>Side-by-side comparison on space, parking, meals, privacy and when a hotel is genuinely the better pick.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/things-to-do-in-liverpool-with-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Things to do</span><h3>Things to Do in Liverpool with a Group</h3><p>A two-day group plan mixing waterfront sights, a ferry, competitive socialising and a self-catered night in.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

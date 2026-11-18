@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>House vs Hotel in Liverpool for Groups</title>
+<meta name="description" content="Whole house or hotel rooms for your group in Liverpool? Space, parking, food, privacy and total cost compared, plus when a hotel is the better pick.">
+<link rel="canonical" href="https://zermatt-lodge.vercel.app/guides/house-vs-hotel-liverpool-groups">
+<meta name="theme-color" content="#1f4d3a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="House vs Hotel in Liverpool for Groups">
+<meta property="og:description" content="Whole house or hotel rooms for your group in Liverpool? Space, parking, food, privacy and total cost compared, plus when a hotel is the better pick.">
+<meta property="og:url" content="https://zermatt-lodge.vercel.app/guides/house-vs-hotel-liverpool-groups">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "House vs Hotel in Liverpool: Which Is Better for Your Group?", "description": "Whole house or hotel rooms for your group in Liverpool? Space, parking, food, privacy and total cost compared, plus when a hotel is the better pick.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf", "dateModified": "2026-11-18", "mainEntityOfPage": "https://zermatt-lodge.vercel.app/guides/house-vs-hotel-liverpool-groups", "author": {"@type": "Organization", "name": "ZALO Stays"}, "publisher": {"@type": "Organization", "name": "ZALO Stays"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zermatt-lodge.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://zermatt-lodge.vercel.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "House vs Hotel in Liverpool for Groups", "item": "https://zermatt-lodge.vercel.app/guides/house-vs-hotel-liverpool-groups"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it cheaper to rent a house than hotel rooms in Liverpool for a group?", "acceptedAnswer": {"@type": "Answer", "text": "Often, for groups of 5 to 7 staying more than one night, especially once you add parking, breakfasts and dinners. But it depends on your dates, so compare the total cost of the trip, not just the nightly rate."}}, {"@type": "Question", "name": "When is a hotel better than a house?", "acceptedAnswer": {"@type": "Answer", "text": "For one night, for solo travellers or a couple, when you want daily housekeeping and a 24-hour reception, or when you plan to be out in the city centre every night and don't need a car."}}, {"@type": "Question", "name": "What do houses offer that hotels don't?", "acceptedAnswer": {"@type": "Answer", "text": "Shared living space, a full kitchen, a dining table for everyone, a garden, separate bedrooms under one roof and, at many houses, free parking."}}, {"@type": "Question", "name": "Are holiday houses in Liverpool party-friendly?", "acceptedAnswer": {"@type": "Answer", "text": "Many aren't, including Zermatt Lodge, which has no parties, no smoking and no pets. Always check the house rules. If your trip is all about a party, a city-centre hotel and a night out is the better option."}}, {"@type": "Question", "name": "Do I pay platform fees when booking a house?", "acceptedAnswer": {"@type": "Answer", "text": "On many booking platforms you pay a service fee. Booking Zermatt Lodge direct at /#book means no platform fees."}}]}]}</script>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/guide.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Zermatt Lodge by ZALO Stays - home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Zermatt Lodge<small>by ZALO Stays</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides/" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides/">Liverpool guides</a></li>
+          <li aria-current="page">House vs Hotel in Liverpool for Groups</li>
+        </ol>
+      </nav>
+      <h1 class="serif">House vs Hotel in Liverpool: Which Is Better for Your Group?</h1>
+      <p class="intro">Whole house or hotel rooms for your group in Liverpool? Space, parking, food, privacy and total cost compared, plus when a hotel is the better pick.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>ZALO Stays</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf" alt="" width="1600" height="686" fetchpriority="high" decoding="async"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <p>For a group of five to seven people staying more than a night in Liverpool, a whole house usually beats hotel rooms on space, shared time and total cost, especially if you're driving and want to eat together. A hotel is the better pick for a single night, for couples or solo travellers, or for groups who'll be out in the city centre every night and want daily housekeeping. Here's an honest side-by-side comparison to help you decide.</p>
+<h2>Side-by-side comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Whole house</th>
+<th>Hotel rooms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Group time together</td>
+<td>Shared lounge, kitchen, dining table, garden</td>
+<td>Bar or lobby, or squeezing into one room</td>
+</tr>
+<tr>
+<td>Sleeping</td>
+<td>Separate bedrooms under one roof</td>
+<td>Separate rooms, sometimes on different floors</td>
+</tr>
+<tr>
+<td>Bathrooms</td>
+<td>Shared (check how many)</td>
+<td>One per room</td>
+</tr>
+<tr>
+<td>Food</td>
+<td>Cook your own, eat together</td>
+<td>Restaurant, room service or eating out</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Often free (check)</td>
+<td>Often extra, or none in the city centre</td>
+</tr>
+<tr>
+<td>Housekeeping</td>
+<td>Usually none mid-stay</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td>Reception</td>
+<td>Host by phone</td>
+<td>24-hour desk</td>
+</tr>
+<tr>
+<td>Check-in</td>
+<td>Set times, often mid-afternoon</td>
+<td>Similar, sometimes more flexible</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Often residential, outside the centre</td>
+<td>Often central</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>Quieter residential street</td>
+<td>Depends on location and neighbours</td>
+</tr>
+<tr>
+<td>Fees</td>
+<td>Lower if you book direct</td>
+<td>Usually included in the room rate</td>
+</tr>
+</tbody>
+</table>
+<h2>Where a house wins</h2>
+<h3>Time together</h3>
+<p>The main reason groups pick a house is having somewhere to be together. Breakfast round one table, a film or a game in the evening, and a late chat after the kids are in bed. In a hotel, the group often ends up split across rooms or paying bar prices.</p>
+<h3>Food and budgets</h3>
+<p>Eating out three times a day for six or seven people adds up quickly. With a kitchen you can:</p>
+<ul>
+<li>Make breakfast and packed lunches</li>
+<li>Cook one or two big group dinners</li>
+<li>Cater for allergies, fussy eaters and different diets easily</li>
+<li>Eat out only when you really want to</li>
+</ul>
+<p>Our self-catering meal plan for a group of 7 shows how simple it can be.</p>
+<h3>Parking</h3>
+<p>Many city-centre hotels charge for parking or don't have any. Around the football grounds, parking is restricted on match days, and Liverpool FC says there's no paid parking at Anfield. A house with free off-street parking can save a lot over a weekend.</p>
+<h3>Space and privacy</h3>
+<p>Separate bedrooms, a living room and a garden mean introverts can recharge, children can sleep, and early risers don't wake everyone.</p>
+<h2>Where a hotel wins</h2>
+<p>Hotels are genuinely better in some situations:</p>
+<ul>
+<li><strong>One night only.</strong> Many houses have minimum stays, and you won't get much use from the kitchen.</li>
+<li><strong>Solo travellers or a couple.</strong> A whole house is more space than you need.</li>
+<li><strong>You want daily housekeeping</strong>, room service or a 24-hour desk.</li>
+<li><strong>You'll be out in the city centre every night.</strong> Being able to walk back from the Ropewalks has real value.</li>
+<li><strong>Specific accessibility needs</strong> that a hotel's adapted rooms meet. Always check the details with any property.</li>
+<li><strong>The trip is a party.</strong> Many houses, including ours, don't allow parties, and a hotel with nightlife on the doorstep suits that kind of trip better.</li>
+</ul>
+<h2>Doing the maths properly</h2>
+<p>Don't compare a house's nightly rate with a single hotel room's rate. Compare the <strong>total cost of the trip</strong> for everyone:</p>
+<ol>
+<li><strong>Accommodation:</strong> number of hotel rooms times nights, versus the house total</li>
+<li><strong>Fees:</strong> booking platform service fees, or none if you book direct</li>
+<li><strong>Parking:</strong> cars times nights times the daily rate</li>
+<li><strong>Breakfast:</strong> people times mornings, if it's not included</li>
+<li><strong>Dinners:</strong> how many you'll eat out versus cook</li>
+<li><strong>Transport:</strong> taxis back from the centre versus train fares</li>
+</ol>
+<p>Our hotel rooms vs one house worksheet walks you through it.</p>
+<h2>Location trade-offs</h2>
+<p>Most hotels are in the city centre. Most houses big enough for a group are in residential areas. In Liverpool, that often means a short train ride. From Fazakerley station, direct Merseyrail trains reach <strong>Liverpool Central in about 15 minutes</strong>. For many groups, especially families, football fans, racegoers and people visiting the hospital, that trade-off is worth it. See <a href="/guides/where-to-stay-in-liverpool-for-a-group">where to stay in Liverpool for a group</a>.</p>
+<h2>Our honest recommendation</h2>
+<ul>
+<li><strong>Two nights or more, five to seven people, at least one car, and you want time together:</strong> choose a house.</li>
+<li><strong>One night, two people, or a full-on nightlife trip:</strong> choose a city-centre hotel.</li>
+<li><strong>Somewhere in between:</strong> compare total costs and think about what your group will actually enjoy.</li>
+</ul>
+<h2>Why Zermatt Lodge suits groups choosing a house</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong></li>
+<li><strong>Big kitchen and dining room</strong> for group meals</li>
+<li><strong>Games room with a pool table, board games and a 55" Smart TV with Netflix</strong></li>
+<li><strong>Large private back garden</strong></li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Near Fazakerley station, the M57/M58 and a Lidl</strong></li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+<li><strong>No parties, no smoking, no pets</strong></li>
+</ul>
+<p>Book direct at <a href="/#book">Zermatt Lodge</a>, with no platform fees, or call +44 7479 905477.</p>
+<h2>Related guides</h2>
+<ul>
+<li>Three hotel rooms or one house? Doing the maths</li>
+<li><a href="/guides/group-accommodation-liverpool-with-parking">Group accommodation in Liverpool with parking</a></li>
+<li>Whole house vs serviced apartment in Liverpool</li>
+<li>Booking direct vs Airbnb or Booking.com</li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+          </div>
+          <a class="btn amber" href="/#book">See availability</a>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Entire 4-bed house in Fazakerley, north Liverpool</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Is it cheaper to rent a house than hotel rooms in Liverpool for a group?</summary><p>Often, for groups of 5 to 7 staying more than one night, especially once you add parking, breakfasts and dinners. But it depends on your dates, so compare the total cost of the trip, not just the nightly rate.</p></details>
+<details><summary>When is a hotel better than a house?</summary><p>For one night, for solo travellers or a couple, when you want daily housekeeping and a 24-hour reception, or when you plan to be out in the city centre every night and don&#x27;t need a car.</p></details>
+<details><summary>What do houses offer that hotels don&#x27;t?</summary><p>Shared living space, a full kitchen, a dining table for everyone, a garden, separate bedrooms under one roof and, at many houses, free parking.</p></details>
+<details><summary>Are holiday houses in Liverpool party-friendly?</summary><p>Many aren&#x27;t, including Zermatt Lodge, which has no parties, no smoking and no pets. Always check the house rules. If your trip is all about a party, a city-centre hotel and a night out is the better option.</p></details>
+<details><summary>Do I pay platform fees when booking a house?</summary><p>On many booking platforms you pay a service fee. Booking Zermatt Lodge direct at /#book means no platform fees.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/group-accommodation-liverpool-with-parking"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Group Accommodation in Liverpool with Parking</h3><p>Parking-led: why city-centre group stays get expensive with cars, what free off-street parking for two changes and how to reach the centre by train.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/where-to-stay-in-liverpool-for-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Where to Stay in Liverpool for a Group: Area Guide</h3><p>Area-by-area comparison (city centre, Baltic, waterfront, south Liverpool, north Liverpool) by noise, parking, cost drivers and purpose of trip.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-aintree-university-hospital"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Accommodation near Aintree University Hospital</h3><p>Whole house a short walk from the Longmoor Lane entrance via Fazakerley station, with verified parking tariffs, concessions and visiting logistics.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Zermatt Lodge<small>by ZALO Stays</small></span></a>
+        <p>A spacious 4-bed holiday and short-stay house in Fazakerley, north Liverpool. Sleeps 7.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides/">All guides</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> ZALO Stays · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
