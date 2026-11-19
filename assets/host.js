@@ -117,6 +117,23 @@ $$("[data-google]").forEach(function(b){ b.addEventListener("click", function(){
   lsSet(PENDING_KEY, "1"); setTrust(true);
   sb.auth.signInWithOAuth({provider: "google", options: {redirectTo: REDIRECT}}).then(function(r){ if (r.error){ var t = /not enabled|unsupported provider/i.test(r.error.message) ? "Google sign-in is not switched on yet. Please use email for now." : niceErr(r.error); msg(b.closest("#vSignup") ? "#signupMsg" : "#loginMsg", t); } });
 }); });
+/* Google sign-in on our own domain (Google Identity Services + ID token), so Google shows bookhomes.co.uk */
+var GOOGLE_CLIENT_ID = "977671037575-817egi2hb39lsc99ts4dr899j7qtetnj.apps.googleusercontent.com";
+function gsiInit(tries){
+  if (!(window.google && google.accounts && google.accounts.id)){ if ((tries || 0) < 40) setTimeout(function(){ gsiInit((tries || 0) + 1); }, 150); return; }
+  var raw = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(16)), function(b){ return ("0" + b.toString(16)).slice(-2); }).join("");
+  crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw)).then(function(buf){
+    var hashed = Array.prototype.map.call(new Uint8Array(buf), function(b){ return ("0" + b.toString(16)).slice(-2); }).join("");
+    google.accounts.id.initialize({client_id: GOOGLE_CLIENT_ID, nonce: hashed, ux_mode: "popup", itp_support: true, callback: function(resp){
+      var inSignup = !$("#vSignup").classList.contains("hidden");
+      if (inSignup && !$("#suTerms").checked){ msg("#signupMsg", "Please tick the host terms box first, then tap Google again."); return; }
+      lsSet(PENDING_KEY, "1"); setTrust(true); MODE = "local";
+      sb.auth.signInWithIdToken({provider: "google", token: resp.credential, nonce: raw}).then(function(r){ if (r.error) msg(inSignup ? "#signupMsg" : "#loginMsg", niceErr(r.error)); });
+    }});
+    $$(".gsi").forEach(function(el){ google.accounts.id.renderButton(el, {theme: "outline", size: "large", shape: "pill", text: "continue_with", width: Math.min(360, el.clientWidth || 320), logo_alignment: "center"}); });
+  });
+}
+gsiInit(0);
 /* branded email links: /host/?token_hash=...&type=... */
 (function(){
   var q = new URLSearchParams(location.search), th = q.get("token_hash"), ty = q.get("type");
