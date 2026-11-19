@@ -8,7 +8,8 @@
 <title>Host dashboard | Book Homes</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/bh.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="preconnect" href="https://kddhkuwnkkjcnbjegsmc.supabase.co" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin>
 <style>
 body{background:var(--cream)}
 .hp-top{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
@@ -559,9 +560,9 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="https://accounts.google.com/gsi/client" async></script>
+<!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes are set by build.py -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
+<script src="/assets/host-perf.js?v=1"></script>
 <script src="/assets/host.js?v=listing4"></script>
 <script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
 </body>

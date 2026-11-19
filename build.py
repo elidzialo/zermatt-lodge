@@ -266,4 +266,10 @@ for d in sorted(glob.glob(os.path.join(ROOT, "listings", "*"))):
     dst = os.path.join(PUB, os.path.basename(d))
     assert not os.path.exists(dst), f"listing path clashes with a site folder: {dst}"
     shutil.copytree(d, dst)
+# host-perf: /host assets get a content-hash ?v= so they can be cached for a year and still update at once
+_hp = os.path.join(PUB, "host", "index.html")
+if os.path.exists(_hp):
+    _h = open(_hp, encoding="utf-8").read()
+    _h = re.sub(r'/assets/(host[\w-]*\.(?:js|css))\?v=[^"\']*', lambda m: f"/assets/{m.group(1)}?v={build_listings.asset_v(m.group(1))}", _h)
+    open(_hp, "w", encoding="utf-8").write(_h)
 print("public/ ready")

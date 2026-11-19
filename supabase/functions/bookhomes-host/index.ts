@@ -42,37 +42,104 @@ async function trimBlocks(tx: any, schema: "bookhomes" | "zermatt", listingId: n
 }
 const FEED_NAMES = ["Airbnb", "Booking.com", "Vrbo", "Guesty", "Other"];
 
+// One round trip for the dashboard. Speed (host-perf): the queries inside the user transaction are pipelined
+// (Promise.all), the iCal tokens come from one query instead of one per listing, and the service-role reads run
+// alongside the transaction instead of after it.
 async function me(user: AuthUser) {
-  return await asUser(user, async (tx) => {
-    const profile = (await tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`)[0] ?? null;
-    const host = (await tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override from bookhomes.hosts where user_id = ${user.id}`)[0] ?? null;
-    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`) : [];
-    const ids = ls.map((l: { id: number }) => l.id);
-    const photos = ids.length ? await tx`select id, listing_id, url, storage_path, caption, sort from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by sort, created_at` : [];
-    const sources = ids.length ? await tx`select id, listing_id, name, url, enabled, last_fetched_at, last_status, last_error, last_event_count from bookhomes.listing_ical_sources where listing_id = any(${ids}::bigint[])` : [];
+  const cols = await listingCols();
+  const inTx = asUser(user, async (tx) => {
+    const [pr, hr, ls, photos, sources, toks] = await Promise.all([
+      tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`,
+      tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override, bookhomes.commission_for(id) as pct from bookhomes.hosts where user_id = ${user.id}`,
+      tx.unsafe(`select ${cols} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`),
+      tx`select p.id, p.listing_id, p.url, p.storage_path, p.caption, p.sort from bookhomes.listing_photos p join bookhomes.listings l on l.id = p.listing_id
+          where l.host_id = bookhomes.my_host_id() and l.status <> 'archived' order by p.sort, p.created_at`,
+      tx`select s.id, s.listing_id, s.name, s.url, s.enabled, s.last_fetched_at, s.last_status, s.last_error, s.last_event_count
+           from bookhomes.listing_ical_sources s join bookhomes.listings l on l.id = s.listing_id where l.host_id = bookhomes.my_host_id() and l.status <> 'archived'`,
+      tx`select l.id, bookhomes.my_ical_token(l.id) as t from bookhomes.listings l where l.host_id = bookhomes.my_host_id() and l.status <> 'archived'`,
+    ]);
+    const hostRow = hr[0] ?? null;
+    const pct = hostRow ? hostRow.pct : null;
+    const host = hostRow ? { ...hostRow, pct: undefined } : null;
     const tokens: Record<string, string | null> = {};
-    for (const id of ids) tokens[String(id)] = (await tx`select bookhomes.my_ical_token(${id}::bigint) as t`)[0].t;
-    const pct = host ? (await tx`select bookhomes.commission_for(${host.id}::uuid) as p`)[0].p : null;
-    return { profile, host, listings: ls, photos, sources, tokens, commission_pct: pct === null ? null : Number(pct) };
-  }).then(async (r) => {
-    const connect = (await sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`)[0]?.v ?? "unknown";
-    const site = siteUrl();
-    // deno-lint-ignore no-explicit-any
-    const extra = r.listings.length ? await sql`select id, case when status = 'rejected' then reject_reason end as reject_reason, host_edited_at from bookhomes.listings where id = any(${r.listings.map((l: any) => l.id)}::bigint[])` : [];
-    return {
-      ...r,
-      // deno-lint-ignore no-explicit-any
-      listings: r.listings.map((l: any) => ({
-        ...l, reject_reason: extra.find((x: { id: number }) => Number(x.id) === Number(l.id))?.reject_reason ?? null,
-        host_edited_at: extra.find((x: { id: number }) => Number(x.id) === Number(l.id))?.host_edited_at ?? null,
-        ical_export_url: !l.legacy_source && r.tokens[String(l.id)] ? `${site}/ical/${l.id}/${r.tokens[String(l.id)]}.ics` : null,
-      })),
-      tokens: undefined,
-      connect_platform: connect,
-      amenities: AMENITIES, categories: CATEGORIES, feed_names: FEED_NAMES,
-      fees_enabled: await feesEnabled(),
-    };
+    for (const t of toks) tokens[String(t.id)] = t.t;
+    return { profile: pr[0] ?? null, host, listings: host ? ls : [], photos: host ? photos : [], sources: host ? sources : [], tokens, commission_pct: pct === null || pct === undefined ? null : Number(pct) };
   });
+  const [r, connectRows, extra, fees] = await Promise.all([
+    inTx,
+    sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`,
+    sql`select l.id, case when l.status = 'rejected' then l.reject_reason end as reject_reason, l.host_edited_at
+          from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id where h.user_id = ${user.id} and l.status <> 'archived'`,
+    feesEnabled(),
+  ]);
+  const site = siteUrl();
+  // deno-lint-ignore no-explicit-any
+  const ex = new Map<number, any>(extra.map((x: { id: number }) => [Number(x.id), x]));
+  return {
+    ...r,
+    // deno-lint-ignore no-explicit-any
+    listings: r.listings.map((l: any) => ({
+      ...l, reject_reason: ex.get(Number(l.id))?.reject_reason ?? null,
+      host_edited_at: ex.get(Number(l.id))?.host_edited_at ?? null,
+      ical_export_url: !l.legacy_source && r.tokens[String(l.id)] ? `${site}/ical/${l.id}/${r.tokens[String(l.id)]}.ics` : null,
+    })),
+    tokens: undefined,
+    connect_platform: connectRows[0]?.v ?? "unknown",
+    amenities: AMENITIES, categories: CATEGORIES, feed_names: FEED_NAMES,
+    fees_enabled: fees,
+  };
+}
+
+// deno-lint-ignore no-explicit-any
+async function bookingRows(tx: any) {
+  const [rows, z] = await Promise.all([
+    tx`
+    select b.id, b.listing_id, l.title, b.check_in::text, b.check_out::text, b.nights, b.guests, b.guest_name, b.guest_email, b.guest_phone,
+           b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, b.status, b.paid_at
+      from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
+     where b.host_id = bookhomes.my_host_id()
+       and (b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now()))
+     order by b.check_in desc limit 500`,
+    tx`select id, title from bookhomes.listings where legacy_source = 'zermatt' and host_id = bookhomes.my_host_id()`,
+  ]);
+  return { rows, z };
+}
+// deno-lint-ignore no-explicit-any
+async function withZermatt(rows: any[], z: any[]) {
+  // Zermatt Lodge (listing #1) keeps its own booking table; its owner sees those bookings here too.
+  if (z.length) {
+    const zr = await sql`select id, ${z[0].id}::bigint as listing_id, ${z[0].title}::text as title, check_in::text, check_out::text, nights, guests, guest_name,
+                                guest_email, guest_phone, total_pence as amount_pence, 0 as fee_pence, total_pence as host_payout_pence, 'owner' as payout_mode,
+                                status, paid_at, 'zermatt' as source
+                           from zermatt.bookings where status in ('paid', 'cancelled') or (status = 'held' and hold_expires_at > now())
+                          order by check_in desc limit 500`;
+    rows.push(...zr);
+    rows.sort((a, b) => (a.check_in < b.check_in ? 1 : -1));
+  }
+  return rows;
+}
+// deno-lint-ignore no-explicit-any
+function payoutRows(tx: any) {
+  return tx`
+    select p.id, p.booking_id, p.amount_pence, p.status, p.paid_at, p.created_at, b.check_in::text, b.check_out::text, l.title
+      from bookhomes.payouts p join bookhomes.bookings b on b.id = p.booking_id join bookhomes.listings l on l.id = b.listing_id
+     where p.host_id = bookhomes.my_host_id()
+     order by p.created_at desc limit 500`;
+}
+async function bookings(user: AuthUser) {
+  const r = await asUser(user, (tx) => bookingRows(tx));
+  return { bookings: await withZermatt(r.rows, r.z) };
+}
+async function earnings(user: AuthUser) {
+  return { payouts: await asUser(user, (tx) => payoutRows(tx)) };
+}
+// bookings + payouts in one transaction (used by "boot")
+async function bookingsAndEarnings(user: AuthUser) {
+  const r = await asUser(user, async (tx) => {
+    const [bk, pays] = await Promise.all([bookingRows(tx), payoutRows(tx)]);
+    return { ...bk, pays };
+  });
+  return { bookings: await withZermatt(r.rows, r.z), payouts: r.pays };
 }
 
 Deno.serve(handle(async (req) => {
@@ -85,6 +152,12 @@ Deno.serve(handle(async (req) => {
   switch (action) {
     case "me":
       return jsonRes(await me(user));
+
+    // Dashboard boot (host-perf): me + bookings + earnings in one round trip, run side by side.
+    case "boot": {
+      const [m, be] = await Promise.all([me(user), bookingsAndEarnings(user).catch(() => null)]);
+      return jsonRes({ ...m, bookings: be ? be.bookings : null, payouts: be ? be.payouts : null });
+    }
 
     case "save_profile": {
       const name = str(b.name, 120), phone = str(b.phone, 30), wa = str(b.whatsapp, 30);
@@ -202,7 +275,9 @@ Deno.serve(handle(async (req) => {
       const r = await asUser(user, (tx) => tx`delete from bookhomes.listing_photos where id = ${String(b.id)} returning storage_path`);
       if (!r.length) throw new HttpError(404, "Photo not found");
       if (r[0].storage_path && String(r[0].storage_path).startsWith(user.id + "/")) {
-        await authAdmin().storage.from("listing-photos").remove([r[0].storage_path]).catch(() => {});
+        const sp = String(r[0].storage_path);
+        // host-perf: new uploads have a 640px thumbnail next to them (<name>-w.jpg -> <name>-w.t.jpg)
+        await authAdmin().storage.from("listing-photos").remove(/-w\.(jpg|png|webp)$/.test(sp) ? [sp, sp.replace(/\.(jpg|png|webp)$/, ".t.jpg")] : [sp]).catch(() => {});
       }
       return jsonRes({ ok: true });
     }
@@ -347,37 +422,11 @@ Deno.serve(handle(async (req) => {
       return jsonRes({ ok: true });
     }
 
-    case "bookings": {
-      const rows = await asUser(user, (tx) => tx`
-        select b.id, b.listing_id, l.title, b.check_in::text, b.check_out::text, b.nights, b.guests, b.guest_name, b.guest_email, b.guest_phone,
-               b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, b.status, b.paid_at
-          from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
-         where b.host_id = bookhomes.my_host_id()
-           and (b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now()))
-         order by b.check_in desc limit 500`);
-      // Zermatt Lodge (listing #1) keeps its own booking table; its owner sees those bookings here too.
-      const z = await asUser(user, (tx) => tx`select id, title from bookhomes.listings where legacy_source = 'zermatt' and host_id = bookhomes.my_host_id()`);
-      if (z.length) {
-        const zr = await sql`select id, ${z[0].id}::bigint as listing_id, ${z[0].title}::text as title, check_in::text, check_out::text, nights, guests, guest_name,
-                                    guest_email, guest_phone, total_pence as amount_pence, 0 as fee_pence, total_pence as host_payout_pence, 'owner' as payout_mode,
-                                    status, paid_at, 'zermatt' as source
-                               from zermatt.bookings where status in ('paid', 'cancelled') or (status = 'held' and hold_expires_at > now())
-                              order by check_in desc limit 500`;
-        rows.push(...zr);
-        // deno-lint-ignore no-explicit-any
-        rows.sort((a: any, b: any) => (a.check_in < b.check_in ? 1 : -1));
-      }
-      return jsonRes({ bookings: rows });
-    }
+    case "bookings":
+      return jsonRes(await bookings(user));
 
-    case "earnings": {
-      const rows = await asUser(user, (tx) => tx`
-        select p.id, p.booking_id, p.amount_pence, p.status, p.paid_at, p.created_at, b.check_in::text, b.check_out::text, l.title
-          from bookhomes.payouts p join bookhomes.bookings b on b.id = p.booking_id join bookhomes.listings l on l.id = b.listing_id
-         where p.host_id = bookhomes.my_host_id()
-         order by p.created_at desc limit 500`);
-      return jsonRes({ payouts: rows });
-    }
+    case "earnings":
+      return jsonRes(await earnings(user));
 
     default:
       throw new HttpError(400, "Unknown action");

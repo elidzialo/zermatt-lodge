@@ -47,9 +47,10 @@ var authStorage = {
   removeItem: function(k){ [LS, SS, memStore].forEach(function(s){ try { if (s) s.removeItem(k); } catch (e) {} }); }
 };
 var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit", storage: authStorage}});
+HP.useStore(store(MODE)); // host-perf: dashboard cache lives where the session lives
 
 var VIEWS = ["Login", "Signup", "Enrol", "Mfa", "SetPw", "Profile", "Dash"];
-function view(n){ VIEWS.forEach(function(v){ show("#v" + v, v === n); }); window.scrollTo(0, 0); }
+function view(n){ VIEWS.forEach(function(v){ show("#v" + v, v === n); }); window.scrollTo(0, 0); if (n === "Login" || n === "Signup") HP.gsi().then(function(){ gsiInit(0); }, function(){}); }
 function niceErr(e){
   var m = (e && e.message) || String(e || "Something went wrong.");
   if (/invalid login credentials/i.test(m)) return "Wrong email or password.";
@@ -76,10 +77,12 @@ function route(session){
   var my = ++routing; SESSION = session || null;
   if (!session){ show("#who", false); started = false; view(/signup=1/.test(location.search) ? "Signup" : "Login"); return; }
   $("#whoEmail").textContent = session.user.email || ""; show("#who", true);
+  if (!BOOT){ BOOT = bootCall(); BOOT.catch(function(){}); } // host-perf: the dashboard data loads while 2-step is checked
   sb.auth.mfa.getAuthenticatorAssuranceLevel().then(function(a){
     if (my !== routing) return;
     if (a.error) throw a.error;
     if (a.data.currentLevel === "aal2") return afterAuth();
+    if (a.data.nextLevel === "aal1" && lsGet(LATER_KEY) === session.user.id && !WANT_MFA) return afterAuth();
     return sb.auth.mfa.listFactors().then(function(f){
       if (my !== routing) return;
       if (f.error) throw f.error;
@@ -121,11 +124,14 @@ $$("[data-google]").forEach(function(b){ b.addEventListener("click", function(){
 }); });
 /* Google sign-in on our own domain (Google Identity Services + ID token), so Google shows bookhomes.co.uk */
 var GOOGLE_CLIENT_ID = "977671037575-817egi2hb39lsc99ts4dr899j7qtetnj.apps.googleusercontent.com";
+var gsiDone = false;
 function gsiInit(tries){
+  if (gsiDone) return;
   if (!(window.google && google.accounts && google.accounts.id)){ if ((tries || 0) < 40) setTimeout(function(){ gsiInit((tries || 0) + 1); }, 150); return; }
   var raw = Array.prototype.map.call(crypto.getRandomValues(new Uint8Array(16)), function(b){ return ("0" + b.toString(16)).slice(-2); }).join("");
   crypto.subtle.digest("SHA-256", new TextEncoder().encode(raw)).then(function(buf){
     var hashed = Array.prototype.map.call(new Uint8Array(buf), function(b){ return ("0" + b.toString(16)).slice(-2); }).join("");
+    gsiDone = true;
     google.accounts.id.initialize({client_id: GOOGLE_CLIENT_ID, nonce: hashed, ux_mode: "popup", itp_support: true, callback: function(resp){
       var inSignup = !$("#vSignup").classList.contains("hidden");
       if (inSignup && !$("#suTerms").checked){ msg("#signupMsg", "Please tick the host terms box first, then tap Google again."); return; }
@@ -135,7 +141,7 @@ function gsiInit(tries){
     $$(".gsi").forEach(function(el){ google.accounts.id.renderButton(el, {theme: "outline", size: "large", shape: "pill", text: "continue_with", width: Math.min(360, el.clientWidth || 320), logo_alignment: "center"}); });
   });
 }
-gsiInit(0);
+/* gsiInit runs from view() once the login or sign-up screen shows (host-perf: Google's script is not loaded for signed-in hosts) */
 /* branded email links: /host/?token_hash=...&type=... */
 (function(){
   var q = new URLSearchParams(location.search), th = q.get("token_hash"), ty = q.get("type");
@@ -209,24 +215,49 @@ $("#setPwForm").addEventListener("submit", function(e){
   var p = $("#newPw").value; if (p.length < 10){ msg("#setPwMsg", "Use at least 10 characters."); return; }
   sb.auth.updateUser({password: p}).then(function(r){ if (r.error){ msg("#setPwMsg", niceErr(r.error)); return; } route(SESSION); });
 });
-function signOut(){ setTrust(false); sb.auth.signOut().then(function(){ clearLocalSession(); location.replace("/host/"); }); }
+function signOut(){ setTrust(false); HP.drop(); sb.auth.signOut().then(function(){ clearLocalSession(); location.replace("/host/"); }); }
 $$("[data-signout]").forEach(function(b){ b.addEventListener("click", signOut); });
 
 /* ---------- after 2-step: profile -> dashboard ---------- */
+/* host-perf: one "boot" call (me + bookings + earnings). The last copy is kept on this device and painted at once
+   (stale-while-revalidate), then replaced when the fresh data arrives. */
+var BOOT = null;
+function ckey(k){ return k + ":" + ((SESSION && SESSION.user && SESSION.user.id) || ""); }
+function bootCall(){
+  return api("bookhomes-host", {action: "boot"}).catch(function(e){
+    if (/unknown action/i.test(e.message)) return api("bookhomes-host", {action: "me"}); // older function still deployed
+    throw e;
+  });
+}
+function profileDone(me){ return me && me.profile && me.profile.phone && me.profile.trader_status; }
+function showDash(fresh){
+  view("Dash"); renderDash();
+  if (LISTING_HOOK && !hooked){ hooked = true; LISTING_HOOK(); }
+  if (ME.bookings) loadBookings(ME); else if (fresh) loadBookings();
+  if (ME.payouts) loadEarnings(ME); else if (fresh) loadEarnings();
+}
+function keepMe(me){ var c = Object.assign({}, me); HP.put(ckey("boot"), c, true); return me; }
 function afterAuth(){
-  return api("bookhomes-host", {action: "me"}).then(function(me){
-    ME = me;
-    if (!me.profile || !me.profile.phone || !me.profile.trader_status){ fillProfile(); view("Profile"); return; }
-    view("Dash"); renderDash();
-    if (LISTING_HOOK && !hooked){ hooked = true; LISTING_HOOK(); }
-    if (!started){ started = true; loadBookings(); loadEarnings(); }
+  var cached = HP.get(ckey("boot")), painted = false;
+  if (cached && profileDone(cached.v) && !ME){ ME = cached.v; HP.mark("dash-cached"); showDash(false); painted = true; }
+  var p = BOOT || bootCall(); BOOT = null;
+  return p.then(function(me){
+    ME = me; keepMe(me); HP.mark("dash-fresh");
+    if (!profileDone(me)){ fillProfile(); view("Profile"); return; }
+    if (painted && !$("#vDash").classList.contains("hidden")){ renderDash(); if (me.bookings) loadBookings(me); if (me.payouts) loadEarnings(me); }
+    else showDash(true);
+    started = true;
     if (/connect=done/.test(location.search)){ api("bookhomes-connect-onboard", {action: "status"}).then(refresh).catch(function(){}); history.replaceState(null, "", location.pathname); }
   }).catch(function(e){
     if (/sign in|log in/i.test(e.message)) { view("Login"); msg("#loginMsg", e.message); return; }
+    if (painted) return; // keep the saved dashboard on screen if the network blips
     fillProfile(); view("Profile");
   });
 }
-function refresh(){ return api("bookhomes-host", {action: "me"}).then(function(me){ ME = me; renderDash(); }); }
+function refresh(){
+  if (ME && !$("#vDash").classList.contains("hidden")) renderDash(); // host-perf: show what we already know at once
+  return api("bookhomes-host", {action: "me"}).then(function(me){ ME = Object.assign({}, me, {bookings: ME && ME.bookings, payouts: ME && ME.payouts}); keepMe(ME); renderDash(); });
+}
 function fillProfile(){
   var p = (ME && ME.profile) || {}, md = (SESSION && SESSION.user && SESSION.user.user_metadata) || {};
   $("#pName").value = p.name || md.full_name || md.name || ""; $("#pPhone").value = p.phone || ""; $("#pWa").value = p.whatsapp || ""; $("#pCompany").value = p.company || "";
@@ -267,7 +298,7 @@ function renderDash(){
       (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
       (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "") +
       (l.status === "draft" ? '<button type="button" class="btn ghost sm" data-dellisting data-id="' + l.id + '">Delete</button>' : "");
-    return '<div class="lcard"><div class="ph">' + (ph ? '<img src="' + esc(ph.url) + '" alt="">' : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
+    return '<div class="lcard"><div class="ph">' + (ph ? HP.img(ph.url, 480, 'alt="" loading="lazy"') : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
       (l.reject_reason ? '<p class="m" style="font-size:13.5px;color:#b42318">' + esc(l.reject_reason) + '</p>' : "") +
       (l.ical_export_url ? '<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Calendar link for Airbnb / Booking.com:<code class="code-line">' + esc(l.ical_export_url) + '</code></p>' : "") +
       '<div class="acts">' + acts + '</div></div></div>';
@@ -290,7 +321,12 @@ document.addEventListener("click", function(e){
   var ed = e.target.closest && e.target.closest("[data-edit]");
   if (ed){ openListing(+ed.getAttribute("data-edit")); return; }
   var st = e.target.closest && e.target.closest("[data-status]");
-  if (st){ st.disabled = true; api("bookhomes-host", {action: "set_status", id: +st.getAttribute("data-id"), status: st.getAttribute("data-status")}).then(refresh).catch(function(err){ st.disabled = false; alert(err.message); }); }
+  if (st){
+    // host-perf: optimistic, the card changes at once and goes back if the server says no
+    var sl = findL(+st.getAttribute("data-id")), was = sl && sl.status;
+    if (sl){ sl.status = st.getAttribute("data-status"); renderDash(); } else st.disabled = true;
+    api("bookhomes-host", {action: "set_status", id: +st.getAttribute("data-id"), status: st.getAttribute("data-status")}).then(refresh).catch(function(err){ if (sl){ sl.status = was; renderDash(); } else st.disabled = false; alert(err.message); });
+  }
 });
 $("#newListing").addEventListener("click", function(){ openWizard(null); });
 $("#editProfile").addEventListener("click", function(){ fillProfile(); $("#profH").textContent = "Edit profile"; view("Profile"); });
@@ -310,8 +346,8 @@ $("#connectBtn").addEventListener("click", function(){
   }).catch(function(err){ b.disabled = false; $("#connectOut").textContent = err.message; });
 });
 
-function loadBookings(){
-  api("bookhomes-host", {action: "bookings"}).then(function(j){
+function loadBookings(pre){
+  (pre && pre.bookings ? Promise.resolve(pre) : api("bookhomes-host", {action: "bookings"})).then(function(j){
     var rows = j.bookings || [];
     try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "bookings", rows: rows}})); } catch (e) {}
     $("#bkList").innerHTML = rows.length ? rows.map(function(b){
@@ -322,8 +358,8 @@ function loadBookings(){
     }).join("") : '<p class="m">No bookings yet.</p>';
   }).catch(function(e){ $("#bkList").innerHTML = '<div class="msg err">' + esc(e.message) + "</div>"; });
 }
-function loadEarnings(){
-  api("bookhomes-host", {action: "earnings"}).then(function(j){
+function loadEarnings(pre){
+  (pre && pre.payouts ? Promise.resolve(pre) : api("bookhomes-host", {action: "earnings"})).then(function(j){
     var rows = j.payouts || [], paid = 0, due = 0, sched = 0;
     rows.forEach(function(p){ if (p.status === "paid") paid += p.amount_pence; else if (p.status === "manual_pending") due += p.amount_pence; else if (p.status === "connect_scheduled") sched += p.amount_pence; });
     $("#earnStats").innerHTML = '<div class="stat"><small>Paid to you</small><b>' + money(paid) + '</b></div><div class="stat"><small>Due by bank transfer</small><b>' + money(due) + '</b></div><div class="stat"><small>Paying by Stripe</small><b>' + money(sched) + "</b></div>";
@@ -340,8 +376,29 @@ function loadCal(){
   var id = +$("#calListing").value; if (!id){ $("#cal2").innerHTML = '<p class="m">Add a listing first.</p>'; return; }
   var from = CAL.month + "-01", to = shiftMonth(CAL.month, 1) + "-01";
   $("#calTitle").textContent = new Intl.DateTimeFormat("en-GB", {month: "long", year: "numeric", timeZone: "UTC"}).format(new Date(from + "T00:00:00Z"));
-  api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to}).then(function(j){ CAL.data = j; drawCal(); })
-    .catch(function(e){ $("#cal2").innerHTML = '<div class="msg err">' + esc(e.message) + "</div>"; });
+  // host-perf: show the cached month at once (or an empty grid), then refresh it; the next month is fetched ahead
+  var key = "cal:" + id + ":" + CAL.month, hit = HP.get(key), want = CAL.month;
+  CAL.data = hit ? hit.v : null; drawCal(); $("#cal2").classList.toggle("loading", !hit);
+  calFetch(id, CAL.month).then(function(j){ if (CAL.month !== want || +$("#calListing").value !== id) return; CAL.data = j; drawCal(); $("#cal2").classList.remove("loading"); calFetch(id, shiftMonth(want, 1), true); })
+    .catch(function(e){ if (CAL.month === want) $("#cal2").innerHTML = '<div class="msg err">' + esc(e.message) + "</div>"; });
+}
+var calInflight = {};
+function calFetch(id, month, ahead){
+  var key = "cal:" + id + ":" + month, hit = HP.get(key);
+  if (ahead && hit && Date.now() - hit.at < 60000) return Promise.resolve(hit.v);
+  if (calInflight[key]) return calInflight[key];
+  var from = month + "-01", to = shiftMonth(month, 1) + "-01";
+  return (calInflight[key] = api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to})
+    .then(function(j){ delete calInflight[key]; return HP.put(key, j); }, function(e){ delete calInflight[key]; throw e; }));
+}
+// optimistic calendar edit: change the nights on screen now, the server answer replaces it
+function calLocal(lo, hi, a, v){
+  var j = CAL.data; if (!j || !j.days) return;
+  j.days.forEach(function(d){ if (d.date < lo || d.date > hi) return;
+    if (a === "block" && d.status !== "reserved") d.status = "blocked";
+    else if (a === "open" && d.status === "blocked") d.status = "available";
+    else if (a === "price") d.price = v; });
+  drawCal();
 }
 function feedName(j, s){ var f = (j.feeds || []).filter(function(x){ return x.start_date <= s && s < x.end_date; })[0]; return f ? f.name : "Booked"; }
 function drawCal(){
@@ -420,8 +477,8 @@ $$("[data-ca]").forEach(function(btn){ btn.addEventListener("click", function(){
   else if (a === "open") p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, open: true});
   else if (a === "price"){ var v = +$("#calPrice").value; if (!(v >= 10)){ $("#calOut").textContent = "Enter a price of at least £10."; return; } p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: v}); }
   else p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null});
-  $("#calOut").textContent = "Saving...";
-  p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; loadCal(); }).catch(function(e){ $("#calOut").textContent = e.message; });
+  $("#calOut").textContent = "Saving..."; calLocal(lo, hi, a, a === "price" ? +$("#calPrice").value : null);
+  p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; loadCal(); }).catch(function(e){ $("#calOut").textContent = e.message; loadCal(); });
 }); });
 
 /* ---------- Listings: "Add your home" wizard (one question per screen) and the section editor ---------- */
@@ -635,6 +692,9 @@ $("#wzNext").addEventListener("click", function(){
   if (s.last){ submitListing(b, true); return; }
   var nx = W.i + 1; while (STEPS[nx].hide && STEPS[nx].hide()) nx++;
   var need = s.f || (STEPS[nx].needId && !W.id) ? save(s.f || []) : Promise.resolve();
+  // host-perf: once the listing exists, Next moves on at once and the save finishes in the background
+  // (the footer shows "Saving..." then "Saved", or "Not saved: ..." if it fails; nothing is lost, saves run in order)
+  if (W.id){ need.catch(function(){}); W.i = nx; drawStep(); return; }
   b.disabled = true; var lbl = b.textContent; b.innerHTML = '<span class="spin"></span>Saving';
   need.then(function(){ b.disabled = false; b.textContent = lbl; W.i = nx; drawStep(); }, function(e){ b.disabled = false; b.textContent = lbl; wzMsg(e.message); });
 });
@@ -715,7 +775,8 @@ function onChange(e){
 ["#wzIn", "#edBody"].forEach(function(id){ var el = $(id); el.addEventListener("click", onClick); el.addEventListener("input", onInput); el.addEventListener("change", onChange); });
 
 function pinMap(){
-  if (!window.L || !$("#pmap")) return;
+  if (!$("#pmap") || $("#pmap")._leaflet_id) return;
+  if (!window.L){ $("#pmap").classList.add("loading"); HP.leaflet().then(pinMap, function(){ $("#pinTxt").textContent = "The map could not load. Check your connection and try again."; }); return; } // host-perf: Leaflet loads only here
   var start = W.l.lat != null ? [+W.l.lat, +W.l.lng] : [53.41, -2.98];
   var m = L.map("pmap", {scrollWheelZoom: false}).setView(start, W.l.lat != null ? 14 : 11), circle = null;
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 17, attribution: "&copy; OpenStreetMap contributors"}).addTo(m);
@@ -814,7 +875,7 @@ function phCountText(){ var n = W.photos.length; return n >= MIN_PHOTOS ? n + " 
 function photoTiles(){
   var n = W.photos.length;
   return W.photos.map(function(p, i){
-    return '<figure data-pid="' + esc(p.id) + '"><div class="phimg"><img src="' + esc(p.url) + '" alt="' + esc(p.caption || "Photo " + (i + 1)) + '" loading="lazy" draggable="false">' + (i === 0 ? '<span class="cover">Cover photo</span>' : "") +
+    return '<figure data-pid="' + esc(p.id) + '"><div class="phimg">' + HP.img(p.url, 480, 'alt="' + esc(p.caption || "Photo " + (i + 1)) + '" loading="lazy" draggable="false"') + (i === 0 ? '<span class="cover">Cover photo</span>' : "") +
       '<span class="grip" aria-hidden="true" title="Drag to reorder">' + icon("grid") + '</span></div>' +
       '<input class="cap" type="text" maxlength="140" placeholder="Add a caption" value="' + esc(p.caption || "") + '" data-cap="' + esc(p.id) + '" aria-label="Caption for photo ' + (i + 1) + '">' +
       '<div class="phacts"><button type="button" data-mv="-1" data-id="' + esc(p.id) + '" aria-label="Move earlier"' + (i ? "" : " disabled") + ">" + icon("chev_l") + '</button><button type="button" data-mv="1" data-id="' + esc(p.id) + '" aria-label="Move later"' + (i < n - 1 ? "" : " disabled") + ">" + icon("chev_r") + "</button>" +
@@ -898,7 +959,10 @@ function prepare(file){
     var s = Math.min(1, 2048 / Math.max(d.w, d.h)), cv = document.createElement("canvas");
     cv.width = Math.max(1, Math.round(d.w * s)); cv.height = Math.max(1, Math.round(d.h * s));
     var cx = cv.getContext("2d"); cx.fillStyle = "#fff"; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(d.src, 0, 0, cv.width, cv.height); d.done();
-    return new Promise(function(res, rej){ cv.toBlob(function(b){ b ? res({blob: b, small: Math.max(d.w, d.h) < 800}) : rej(new Error("compress")); }, "image/jpeg", 0.82); });
+    // host-perf: also a 640px thumbnail for cards and photo grids (uploaded next to the photo as <name>.t.jpg)
+    var ts = Math.min(1, 640 / Math.max(cv.width, cv.height)), tc = document.createElement("canvas");
+    tc.width = Math.max(1, Math.round(cv.width * ts)); tc.height = Math.max(1, Math.round(cv.height * ts)); tc.getContext("2d").drawImage(cv, 0, 0, tc.width, tc.height);
+    return new Promise(function(res, rej){ cv.toBlob(function(b){ if (!b){ rej(new Error("compress")); return; } tc.toBlob(function(t){ res({blob: b, thumb: t || null, small: Math.max(d.w, d.h) < 800}); }, "image/jpeg", 0.78); }, "image/jpeg", 0.82); });
   }, function(){
     if (isHeic(file)) throw new Error("This iPhone photo (HEIC) can't be read in this browser. Open it in Photos and share or save it as JPEG, or set iPhone Settings > Camera > Formats to Most Compatible.");
     if (/^image\/(jpeg|png|webp)$/.test(file.type) && file.size <= 10485760) return {blob: file, small: false};
@@ -937,10 +1001,11 @@ function upload(files){
     st(rid, "Preparing", 0.02);
     return prepare(f).then(function(pr){
       if (pr.small) small++;
-      var path = uid + "/" + W.id + "/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7) + ".jpg";
+      var path = uid + "/" + W.id + "/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7) + (pr.thumb ? "-w" : "") + ".jpg";
       if (pr.blob.type && pr.blob.type !== "image/jpeg") path = path.replace(/\.jpg$/, pr.blob.type === "image/png" ? ".png" : ".webp");
       return withRetry(function(){ st(rid, "Uploading", 0.05); return putFile(path, pr.blob, function(p){ st(rid, Math.round(p * 100) + "%", 0.05 + p * 0.85); }); }, 3)
-        .then(function(){ st(rid, "Saving", 0.95); return withRetry(function(){ return api("bookhomes-host", {action: "add_photo", listing_id: W.id, path: path}); }, 2); })
+        .then(function(){ st(rid, "Saving", 0.95); return Promise.all([withRetry(function(){ return api("bookhomes-host", {action: "add_photo", listing_id: W.id, path: path}); }, 2),
+          pr.thumb ? withRetry(function(){ return putFile(HP.thumbPath(path), pr.thumb, function(){}); }, 1).catch(function(){}) : null]).then(function(r){ return r[0]; }); })
         .then(function(j){ W.photos.push({id: j.photo.id, url: j.photo.url, caption: null}); ok++; st(rid, "Done", 1, "ok"); redrawPhotos(); syncPhotosToMe(); setTimeout(function(){ var r = document.getElementById(rid); if (r) r.remove(); }, 1500); });
     }).catch(function(e){ bad++; st(rid, e.message || "Failed", 1, "bad"); }).then(one);
   }
@@ -990,7 +1055,7 @@ $("#wzIn").addEventListener("click", icalClick); $("#edBody").addEventListener("
 /* ----- review screen (last wizard step) ----- */
 function reviewStep(){
   var l = W.l, cover = W.photos[0], miss = missing();
-  return '<div class="rv"><div class="rv-card"><div class="rv-ph">' + (cover ? '<img src="' + esc(cover.url) + '" alt="">' : icon("camera")) + "</div><div class='rv-bd'><b>" + esc(l.title || "Untitled") + "</b><span>" + esc([l.area, l.city].filter(Boolean).join(", ")) + "</span><span><b>£" + esc(l.base_price || "-") + "</b> night</span></div></div>" +
+  return '<div class="rv"><div class="rv-card"><div class="rv-ph">' + (cover ? HP.img(cover.url, 720) : icon("camera")) + "</div><div class='rv-bd'><b>" + esc(l.title || "Untitled") + "</b><span>" + esc([l.area, l.city].filter(Boolean).join(", ")) + "</span><span><b>£" + esc(l.base_price || "-") + "</b> night</span></div></div>" +
     '<button type="button" class="btn ghost block" data-preview style="margin-top:12px">' + icon("search") + "Show full preview</button></div>" +
     (miss.length ? '<div class="miss"><b>Before you submit</b><ul>' + miss.map(function(m){ return '<li><button type="button" class="link" data-goto="' + m[0] + '">Add ' + esc(m[1]) + "</button></li>"; }).join("") + "</ul></div>" :
       '<h3 class="psec">What\'s next?</h3><ul class="nexts"><li>' + icon("shield") + "<span><b>We check your listing</b>Photos, text and that no street address is shown. Usually within one working day.</span></li><li>" + icon("calendar") + "<span><b>Set up your calendar</b>Block dates and set prices for busy days.</span></li><li>" + icon("bell") + "<span><b>We email you when it's live</b>Then guests can find and book it.</span></li></ul>") +
@@ -1063,8 +1128,10 @@ $("#edSaveBtn").addEventListener("click", function(){
   var orig = norm(findL(W.id)), cur = payload(s.f), old = (function(){ var t = W.l; W.l = orig; var o = payload(s.f); W.l = t; return o; })();
   var ch = s.f.filter(function(k){ return JSON.stringify(cur[k]) !== JSON.stringify(old[k]); });
   if (ch.indexOf("lat") >= 0 || ch.indexOf("lng") >= 0) ch = ch.filter(function(k){ return k !== "lat" && k !== "lng"; }).concat(["lat", "lng"]);
-  save(ch.length ? ch : s.f).then(function(j){ b.textContent = "Save"; W.dirty = false; if (j.live_edit){ var fl = findL(W.id); if (fl) fl.host_edited_at = new Date().toISOString(); } edDirty(); dropBackup(); saved("ok", j.live_edit ? "Saved. Your changes are live." : "Saved"); edHead(); edNav(); },
-    function(e){ b.textContent = "Save"; b.disabled = false; edErr(e.message); });
+  // host-perf: optimistic, the section counts as saved at once; if the server says no, it is marked unsaved again with the reason
+  b.textContent = "Save"; W.dirty = false; edDirty(); edNav();
+  save(ch.length ? ch : s.f).then(function(j){ if (j.live_edit){ var fl = findL(W.id); if (fl) fl.host_edited_at = new Date().toISOString(); } if (!W.dirty) dropBackup(); saved("ok", j.live_edit ? "Saved. Your changes are live." : "Saved"); edHead(); edNav(); },
+    function(e){ W.dirty = true; edDirty(); backup(); edErr(e.message); });
 });
 $("#edCancel").addEventListener("click", function(){ var l = findL(W.id); W.l = norm(l); dropBackup(); drawSection(W.sec); saved("", ""); });
 $("#edClose").addEventListener("click", function(){ if (W.dirty && !confirm("You have unsaved changes. Leave without saving?")) return; W.dirty = false; dropBackup(); closeAll(); });
