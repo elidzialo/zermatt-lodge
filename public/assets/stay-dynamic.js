@@ -18,6 +18,7 @@ function fail(msg){
   $("#lpTitle").textContent = msg;
   $(".lp-grid").innerHTML = '<p style="padding:24px 0 64px"><a class="btn" href="/">See all homes</a></p>';
   $(".lp-full").style.display = "none"; $("#gal").style.display = "none"; $("#mbook").style.display = "none";
+  var act = $(".lp-act"); if (act) act.style.display = "none";
 }
 /* Host preview (/stays/listing?preview=1): the host editor puts the draft in localStorage, so the host sees exactly this page. Booking is off. */
 var PREVIEW = /[?&]preview=1(&|$)/.test(location.search);

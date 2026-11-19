@@ -123,7 +123,7 @@ document.addEventListener("click", function(e){ var c = e.target.closest && e.ta
 function listingsSub(){
   if (!ME) return;
   var ls = ME.listings || [], live = ls.filter(function(l){ return l.status === "approved"; }).length;
-  var el = $("#lsSub"); if (el && ls.length) el.textContent = ls.length + (ls.length === 1 ? " home" : " homes") + ", " + live + " live. Tap a home to edit it.";
+  var el = $("#lsSub"); if (el) el.textContent = ls.length ? ls.length + (ls.length === 1 ? " home" : " homes") + ", " + live + " live. Tap a home to edit it." : "Tap a home to edit its photos, details, price and rules.";
 }
 function menuCard(){
   var p = (ME && ME.profile) || {}, card = $("#profSummary");

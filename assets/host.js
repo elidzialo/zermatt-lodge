@@ -56,6 +56,7 @@ function niceErr(e){
   if (/invalid login credentials/i.test(m)) return "Wrong email or password.";
   if (/email not confirmed/i.test(m)) return "Please confirm your email first: open the link we sent you.";
   if (/invalid totp|invalid.*code/i.test(m)) return "That code didn't work. Wait for a new code in the app and try again.";
+  if (/email rate limit|over_email_send_rate_limit/i.test(m)) return "We can't send emails just now because too many went out in the last hour. Please try again later, or continue with Google.";
   if (/rate limit|too many/i.test(m)) return "Too many tries. Please wait a minute and try again.";
   if (/signups? not allowed/i.test(m)) return "New host sign-ups are paused. Please contact us.";
   if (/already registered/i.test(m)) return "There's already an account with that email. Log in instead.";
@@ -621,7 +622,7 @@ var SECTIONS = [
   {k: "photos", t: "Photos", ic: "camera", r: photoStep, v: V.photos, after: photoAfter, instant: true, sum: function(){ return W.photos.length + " photo" + (W.photos.length === 1 ? "" : "s"); }},
   {k: "title", t: "Title and description", ic: "book", r: function(){ return titleR() + descR(); }, f: ["title", "description"], v: function(){ return V.title() || V.description(); }, sum: function(){ return W.l.title || "Add a title"; }},
   {k: "rooms", t: "Property type, guests and rooms", ic: "home", r: function(){ return '<h3 class="psec" style="margin-top:0">Property type</h3>' + typeR() + '<h3 class="psec">Guests and rooms</h3>' + stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + inp("baths", "Bathrooms", "number", 'min="0" max="20" step="0.5" inputmode="decimal"'); }, f: ["property_type", "max_guests", "bedrooms", "beds", "baths"], sum: function(){ var t = TYPES.filter(function(x){ return x[0] === W.l.property_type; })[0]; return (t ? t[1] : "Home") + " · " + W.l.max_guests + " guests · " + W.l.bedrooms + " bedrooms · " + W.l.beds + " beds · " + W.l.baths + " baths"; }},
-  {k: "amenities", t: "Amenities", ic: "wifi", r: function(){ return amenR() + '<h3 class="psec">Good for</h3>' + catR(); }, f: ["amenities", "categories"], sum: function(){ return W.l.amenities.length + " amenities"; }},
+  {k: "amenities", t: "Amenities", ic: "wifi", r: function(){ return amenR() + '<h3 class="psec">Good for</h3>' + catR(); }, f: ["amenities", "categories"], sum: function(){ var n = W.l.amenities.length; return n + (n === 1 ? " amenity" : " amenities"); }},
   {k: "location", t: "Location", ic: "pin", r: locR, f: ["area", "city", "lat", "lng"], v: V.location, after: pinMap, sum: function(){ return [W.l.area, W.l.city].filter(Boolean).join(", ") + (W.l.lat == null ? " · no map pin" : ""); }},
   {k: "rules", t: "House rules", ic: "list", r: rulesR, f: ["house_rules"], sum: function(){ return (W.l.house_rules || "None").slice(0, 60); }},
   {k: "checkin", t: "Check-in and checkout", ic: "clock", r: checkR, f: ["check_in_time", "check_out_time", "checkin_days", "checkout_days"], v: V.times, sum: function(){ return "Check-in from " + W.l.check_in_time + " · checkout by " + W.l.check_out_time; }},
