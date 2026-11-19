@@ -40,7 +40,7 @@ fetch("/api/bh/listings?action=get&slug=" + encodeURIComponent(slug), {headers: 
     if (k.kosher_shops) rows.push(["shop", "Kosher shops and restaurants nearby", k.kosher_shops]);
     if (k.mikvah) rows.push(["water", "Mikvah", k.mikvah]);
     if (rows.length){ $("#lpKosherList").innerHTML = rows.map(function(r){ return "<li>" + icon(r[0]) + "<div><b>" + esc(r[1]) + "</b>" + (r[2] ? "<span>" + esc(r[2]) + "</span>" : "") + "</div></li>"; }).join(""); $("#lpKosher").hidden = false; }
-    $(".bookcard .from").innerHTML = "From " + money(l.base_price) + " <small>a night</small>";
+    $(".bookcard .from").innerHTML = l.from_price ? "From " + money(l.from_price) + " <small>a night</small>" : "Add dates <small>for the total price</small>";
     var g = $("#bkGuests"); while (g.options.length > l.max_guests) g.remove(g.options.length - 1);
     window.STAY = {id: +l.id, slug: l.slug, max_guests: l.max_guests, cleaning_fee: +l.cleaning_fee || 0, weekly_discount_pct: l.weekly_discount_pct || 0, monthly_discount_pct: l.monthly_discount_pct || 0, lat: l.lat, lng: l.lng};
     load("/assets/stay.js"); load("/assets/stay-page.js");

@@ -1,5 +1,5 @@
 // POST /functions/v1/bookhomes-host   { action, ... }   - the /host/ portal API
-// Auth: the host's own access token (2-step verified, aal2). Every read/write runs AS that user, so the RLS
+// Auth: the host's own access token (verified with Supabase Auth). Every read/write runs AS that user, so the RLS
 // policies decide what they can see and change (their own profile, host row, listings, photos, calendars,
 // bookings and payouts only). Hosts can never approve their own listing (trigger in MARKETPLACE_setup.sql).
 import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/util.ts";
@@ -118,8 +118,8 @@ async function me(user: AuthUser) {
     const photos = ids.length ? await tx`select id, listing_id, url, storage_path, caption, sort from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by sort, created_at` : [];
     const sources = ids.length ? await tx`select id, listing_id, name, url, enabled, last_fetched_at, last_status, last_error, last_event_count from bookhomes.listing_ical_sources where listing_id = any(${ids}::bigint[])` : [];
     const tokens: Record<string, string | null> = {};
-    for (const id of ids) tokens[String(id)] = (await tx`select bookhomes.my_ical_token(${id}) as t`)[0].t;
-    const pct = host ? (await tx`select bookhomes.commission_for(${host.id}) as p`)[0].p : null;
+    for (const id of ids) tokens[String(id)] = (await tx`select bookhomes.my_ical_token(${id}::bigint) as t`)[0].t;
+    const pct = host ? (await tx`select bookhomes.commission_for(${host.id}::uuid) as p`)[0].p : null;
     return { profile, host, listings: ls, photos, sources, tokens, commission_pct: pct === null ? null : Number(pct) };
   }).then(async (r) => {
     const connect = (await sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`)[0]?.v ?? "unknown";

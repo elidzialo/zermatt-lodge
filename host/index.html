@@ -140,7 +140,8 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
     <li>In the app, tap <b>+</b> and scan this code. <img id="enrolQr" class="qr" alt="QR code for your authenticator app"><span class="muted" style="font-size:13.5px">On this phone? <a href="#" id="enrolUri">Open in your authenticator app</a>, or type this key:</span><code class="secret" id="enrolSecret"></code></li>
     <li>Type the 6-digit code the app shows.</li></ol>
   <form id="enrolForm" novalidate><label class="f2">6-digit code<input type="text" class="code" id="enrolCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label><button class="btn block" type="submit" id="enrolBtn">Verify</button></form>
-  <div class="links"><button type="button" class="linkbtn" data-signout>Cancel and sign out</button></div>
+  <div class="links"><button type="button" class="linkbtn" id="enrolLater">Set up later</button><button type="button" class="linkbtn" data-signout>Cancel and sign out</button></div>
+  <p style="font-size:13px;color:var(--muted);margin-top:6px">You'll need it before connecting payouts.</p>
 </div></div>
 
 <div id="vMfa" class="box hidden"><div class="cardx">

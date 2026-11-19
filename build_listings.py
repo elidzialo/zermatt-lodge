@@ -200,6 +200,14 @@ def guides_for(l, guides, n=4):
 
 
 # --------------------------------------------------------------------------- /stays
+def from_html(l):
+    """Honest 'from' price: the lowest nightly price bookable in the next 90 days (from the live calendar)."""
+    fp = l.get("from_price")
+    if not fp:
+        return "<b>Add dates</b> to see prices<small>Total shown with dates. No booking fees.</small>"
+    return f'<b>From {money(fp)}</b> a night<small>Plus cleaning {money(l.get("cleaning_fee"))}. No booking fees.</small>'
+
+
 def card_html(l, f):
     photo = (l.get("photos") or [{}])[0].get("url", "")
     rv = l.get("reviews") or {}
@@ -214,7 +222,7 @@ def card_html(l, f):
             f'<div class="ph"><img src="{esc(photo)}" alt="{esc(l["title"])}" loading="lazy" width="600" height="570">{tag}</div>'
             f'<div class="row1"><span>{esc(l["title"])}</span>{rating}</div>'
             f'<div class="sub">{esc(l.get("area") or l.get("city"))}</div><div class="sub">{stats}</div>'
-            f'<div class="price"><b>From {money(l.get("base_price"))}</b> a night<small>Plus cleaning {money(l.get("cleaning_fee"))}. No booking fees.</small></div></a>')
+            f'<div class="price">{from_html(l)}</div></a>')
 
 
 def stays_page(listings, path="/stays", preset=None, intro="", faq=None, title=None, desc=None):
@@ -389,7 +397,7 @@ def booking_card(l):
     opts = "".join(f'<option value="{i}"{" selected" if i == min(2, l["max_guests"]) else ""}>{i} guest{"s" if i > 1 else ""}</option>'
                    for i in range(1, l["max_guests"] + 1))
     return f"""<aside><div class="bookcard" id="bookcard">
-  <div class="from">From {money(l.get('base_price'))} <small>a night</small></div>
+  <div class="from">{('From ' + money(l['from_price']) + ' <small>a night</small>') if l.get('from_price') else 'Add dates <small>for the total price</small>'}</div>
   <div class="sum-box">
     <div class="sum-dates"><button type="button" id="sCiBtn"><small>Check-in</small><b id="sCi" class="ph">Add date</b></button><button type="button" id="sCoBtn"><small>Checkout</small><b id="sCo" class="ph">Add date</b></button></div>
     <label class="f"><small>Guests</small><select id="bkGuests" name="guests">{opts}</select></label>

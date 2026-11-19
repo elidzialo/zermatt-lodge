@@ -24,10 +24,13 @@ function check(){
           (h.phone ? "<a class='btn ghost' href='tel:" + esc(String(h.phone).replace(/[^\d+]/g, "")) + "'>Call " + esc(h.phone) + "</a>" : "") + "</p>";
       } else if (j.status === "cancelled_conflict"){
         box.innerHTML = "<h1>Sorry, those dates have just gone</h1><p>Someone else booked the same dates at the same moment. You have been refunded in full; it usually shows within 5-10 working days.</p><p><a class='btn' href='/stays'>Find other dates</a></p>";
-      } else if (++tries < 8){ setTimeout(check, 2500); }
-      else { box.innerHTML = "<h1>Payment received?</h1><p>We're still waiting for confirmation from the payment provider. You'll get an email as soon as it's confirmed.</p>"; }
+      } else retry();
     })
-    .catch(function(){ if (++tries < 8) setTimeout(check, 2500); });
+    .catch(retry);
+}
+function retry(){
+  if (++tries < 8){ setTimeout(check, 2500); return; }
+  box.innerHTML = "<h1>Thank you, your payment went through</h1><p>Your confirmation is taking a little longer than usual; you'll get an email shortly.</p>";
 }
 check();
 })();

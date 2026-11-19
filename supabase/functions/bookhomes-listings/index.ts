@@ -18,11 +18,16 @@ async function listAll(where?: { slug?: string }) {
   const photos = await sql`select listing_id, url, caption from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by listing_id, sort, created_at`;
   const stats = await sql`select listing_id, count(*)::int as n, round(avg(rating)::numeric, 2)::float8 as avg
                             from bookhomes.reviews where published and listing_id = any(${ids}::bigint[]) group by listing_id`;
+  // Honest "from" price: the lowest nightly price actually bookable in the next 90 days (null = add dates to see prices)
+  const froms = await sql`select x.id, (select min(c.price)::float8 from bookhomes.listing_calendar(x.id, bookhomes.uk_today(), bookhomes.uk_today() + 90) c
+                                         where c.status = 'available') as p
+                            from unnest(${ids}::bigint[]) as x(id)`;
   // deno-lint-ignore no-explicit-any
   return ls.map((l: any) => {
     const st = stats.find((s: { listing_id: number }) => Number(s.listing_id) === Number(l.id));
     return {
       ...l,
+      id: Number(l.id),
       base_price: l.base_price === null ? null : Number(l.base_price),
       weekend_price: l.weekend_price === null ? null : Number(l.weekend_price),
       cleaning_fee: Number(l.cleaning_fee),
@@ -32,6 +37,7 @@ async function listAll(where?: { slug?: string }) {
       url: l.page_url || `/stays/${l.slug}`,
       photos: photos.filter((p: { listing_id: number }) => Number(p.listing_id) === Number(l.id)).map((p: { url: string; caption: string }) => ({ url: p.url, caption: p.caption })),
       reviews: st ? { count: st.n, average: st.avg } : { count: 0, average: null },
+      from_price: froms.find((f: { id: number }) => Number(f.id) === Number(l.id))?.p ?? null,
       features: features(l),
     };
   });
