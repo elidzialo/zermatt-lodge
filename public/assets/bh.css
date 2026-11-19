@@ -200,9 +200,9 @@ ul,ol{list-style:none}
 .cnav .ic{width:14px;height:14px;stroke-width:2.6}
 .cnav.prev{left:12px}.cnav.next{right:12px}
 @media (hover:hover){.card:hover .cnav,.cnav:focus-visible{opacity:1}}
-.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:5px;pointer-events:none}
-.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);transition:background .15s}
-.dots i.on{background:#fff}
+.cdots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.cdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);transition:background .15s}
+.cdots i.on{background:#fff}
 .meta{display:block;text-decoration:none;padding-top:12px;font-size:15px;line-height:1.35}
 .meta>span{display:block}
 .l1{display:flex!important;justify-content:space-between;gap:8px}

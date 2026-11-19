@@ -171,7 +171,7 @@ function card(l, i){
     : l.from_price ? '<span class="from">From</span> <b>' + money(l.from_price) + "</b> night" : "<b>Add dates</b> for prices";
   return '<article class="card" data-id="' + l.id + '"><div class="cph"><div class="track">' + slides + "</div>" + nav +
     '<button type="button" class="heart" aria-pressed="' + (isSaved(l.id) ? "true" : "false") + '" aria-label="Save ' + esc(l.title) + '">' + icon("heart") + "</button>" +
-    '<div class="dots" aria-hidden="true">' + dots + "</div></div>" +
+    '<div class="cdots" aria-hidden="true">' + dots + "</div></div>" +
     '<a class="meta" href="' + href + '"><span class="l1"><b>' + esc(place) + "</b>" + (rv.count ? '<span class="rt">' + icon("star", "ic st") + (+rv.average).toFixed(2) + " (" + rv.count + ")</span>" : "") + "</span>" +
     '<span class="l2">' + esc(l.title) + '</span><span class="l2">' + plural(l.bedrooms, "bedroom") + " · " + plural(l.max_guests, "guest") + "</span>" +
     '<span class="l2 l-d">' + dates + '</span><span class="pr">' + price + "</span></a></article>";
@@ -250,7 +250,7 @@ grid.addEventListener("click", function(e){
 grid.addEventListener("scroll", function(e){
   var tr = e.target; if (!tr.classList || !tr.classList.contains("track")) return;
   var ph = tr.parentNode, i = Math.round(tr.scrollLeft / (tr.clientWidth || 1)), n = tr.children.length;
-  $$(".dots i", ph).forEach(function(d, k){ d.classList.toggle("on", k === i); });
+  $$(".cdots i", ph).forEach(function(d, k){ d.classList.toggle("on", k === i); });
   var p = $(".cnav.prev", ph), x = $(".cnav.next", ph); if (p) p.hidden = i <= 0; if (x) x.hidden = i >= n - 1;
 }, true);
 

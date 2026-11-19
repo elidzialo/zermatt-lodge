@@ -406,7 +406,7 @@ def card_html(l, eager=False):
              else '<b>Add dates</b> for prices')
     return (f'<article class="card" data-id="{l["id"]}"><div class="cph"><div class="track">{slides}</div>{nav}'
             f'<button type="button" class="heart" aria-pressed="false" aria-label="Save {esc(l["title"])}">{icon("heart")}</button>'
-            f'<div class="dots" aria-hidden="true">{dots}</div></div>'
+            f'<div class="cdots" aria-hidden="true">{dots}</div></div>'
             f'<a class="meta" href="{esc(l["url"])}"><span class="l1"><b>{esc(place)}</b>{rating}</span>'
             f'<span class="l2">{esc(l["title"])}</span>'
             f'<span class="l2">{plural(l.get("bedrooms") or 0, "bedroom")} · {plural(l.get("max_guests") or 0, "guest")}</span>'
