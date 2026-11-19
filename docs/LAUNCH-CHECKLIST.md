@@ -35,4 +35,5 @@ Last checked: 19 November 2026, live site, at 390px and 1280px.
 - Unknown URLs return HTTP 200 with a "This page could not be found" page (soft 404). The page is noindex, so search engines ignore it. A true 404 needs edge middleware.
 - New host listings approved after the last build show on a fallback page that is noindex until the next build. Builds cannot reach Supabase from the agent sandbox, so `data/listings.json` has to be refreshed by hand (or the build run where Supabase is reachable).
 - Listing photos from Airbnb imports are full size (up to 2048px) on cards, which slows the home page on phones. Thumbnails exist only for new uploads.
+- Launch QA leftovers to delete: the test host account test+launch@zelr.co.uk (auth user, bookhomes.hosts and bookhomes.profiles rows) and 3 expired, unpaid test holds with that email (1 in zermatt.bookings, 2 in bookhomes.bookings). The test listing and its photos are already deleted. The delete was not approved in this session.
 - Test listings 6, 7 and 8 (TEST hostperf) and 3, 4 are drafts or pending, so they are not public. Listing 5 is archived.
