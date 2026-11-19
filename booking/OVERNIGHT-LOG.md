@@ -20,3 +20,7 @@ Sent to builder:
 ## Merge 1 (00:05) - optimise bb6dd74 -> main
 SEO fixes: og:image/JSON-LD images now real (were 404 /images/*), logo + favicon, /guides links without trailing slash (no 308 hop), no empty FAQ blocks, shorter meta description.
 Checks: build.py clean and public/ in sync, node --check on all inline JS, all 67 JSON-LD blocks parse, no dashes, no secrets. No checkout/booking code touched.
+
+## Merge 2 (00:10) - optimise 338592a -> main
+Speed: responsive guide hero (srcset + alt text), non-blocking Google Fonts, homepage map loads on tap, hashed guide.css, nosniff + Referrer-Policy headers.
+Checks: build clean, JS syntax, JSON-LD, no dashes, no secrets. Booking card code untouched.
