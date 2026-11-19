@@ -24,6 +24,7 @@
 .hp-r{display:flex;align-items:center;gap:6px;margin-left:auto}
 .hp-switch{font-size:14px;font-weight:600;text-decoration:none;padding:11px 14px;border-radius:999px;white-space:nowrap;color:var(--ink)}
 .hp-switch:hover{background:var(--soft)}
+body:not(.dash-on) .hp-switch{display:none}
 .hp-top .who{display:none!important}
 .hp-top .umenu{position:relative}
 .hp-top .ubtn{cursor:pointer}
@@ -55,7 +56,7 @@
 .notice{background:var(--am-tint);border:1px solid var(--am-line);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14.5px;color:var(--ink)}
 
 /* ---------- status badges ---------- */
-.host .st{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px 3px 8px;margin:0;line-height:18px;background:#f1f1f1;color:#555;white-space:nowrap}
+.host .st{border:0;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px 3px 8px;margin:0;line-height:18px;background:#f1f1f1;color:#555;white-space:nowrap}
 .host .st:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0}
 .host .st.approved{background:var(--g-tint);color:var(--g)}
 .host .st.pending{background:var(--am-tint);color:var(--am-ink)}
@@ -190,7 +191,7 @@
   .hp-top .hp-row{min-height:var(--hd-h);gap:10px;padding:0 16px}
   .hp-top .logo .wm{display:none}
   .hp-switch{display:none}
-  .dash-on .hp-top nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;justify-content:space-around;gap:0;background:#fff;border-top:1px solid var(--line-2);padding:6px 4px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px rgba(0,0,0,.04)}
+  .dash-on .hp-top nav.tabs{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:45;margin:0;justify-content:space-around;gap:0;background:#fff;border-top:1px solid var(--line-2);padding:6px 4px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -2px 12px rgba(0,0,0,.04)}
   .hp-top nav.tabs button{flex:1;flex-direction:column;gap:3px;padding:6px 2px;border-radius:12px;font-size:11.5px;font-weight:600;min-height:52px;justify-content:center;max-width:96px}
   .hp-top nav.tabs button .ic{display:block;width:24px;height:24px;stroke-width:1.7}
   .hp-top nav.tabs button:hover{background:none}
@@ -212,7 +213,9 @@
   .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 14px;padding:0 16px;scrollbar-width:none}
   .chips::-webkit-scrollbar{display:none}
   .chip-b{white-space:nowrap}
-  .todo-i{flex-wrap:wrap}
+  .todo-i{flex-wrap:wrap;align-items:flex-start;row-gap:10px}
+  .todo-dot{margin-top:6px}
+  .todo-tx{flex:1 1 calc(100% - 30px)}
   .todo-i .btn{margin-left:24px}
   .lcards{grid-template-columns:1fr;gap:0}
   .lcard{display:grid;grid-template-columns:104px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line-2)}

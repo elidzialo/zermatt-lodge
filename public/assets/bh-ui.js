@@ -114,7 +114,10 @@ function items(acct){
 var ACCT = null;
 function render(){
   css();
-  Array.prototype.forEach.call(document.querySelectorAll(".umlist"), function(l){ if (!l.hasAttribute("data-static")) l.innerHTML = items(ACCT); });
+  Array.prototype.forEach.call(document.querySelectorAll(".umlist"), function(l){
+    if (l._orig == null) l._orig = l.innerHTML.trim();
+    l.innerHTML = !ACCT && l._orig ? l._orig : items(ACCT); // logged out: keep the page's own menu
+  });
   Array.prototype.forEach.call(document.querySelectorAll("a.hostlink"), function(a){
     if (ACCT){ a.textContent = "Switch to hosting"; a.href = "/host"; } else { a.textContent = "List your property"; a.href = "/become-a-host"; }
   });

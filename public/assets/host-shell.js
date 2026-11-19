@@ -62,9 +62,10 @@ function todo(){
     if (l.legacy_source) return;
     if (l.status === "rejected") out.push({tone: "warn", t: "Changes needed: " + l.title, s: l.reject_reason || "We left a note on this listing.", btn: '<button type="button" class="btn sm" data-edit="' + l.id + '">Fix it</button>'});
     else if (l.status === "draft") out.push({tone: "go", t: "Finish your listing: " + l.title, s: "Pick up where you left off.", btn: '<button type="button" class="btn sm" data-edit="' + l.id + '">Continue</button>'});
-    else if (l.status === "pending") out.push({tone: "wait", t: l.title + " is in review", s: "We check every listing, usually within one working day.", btn: '<button type="button" class="btn ghost sm" data-edit="' + l.id + '">Open</button>'});
   });
   if (h.connect_status !== "enabled") out.push({tone: "warn", t: h.has_stripe ? "Finish your payout setup" : "Get paid automatically", s: "Connect your bank through Stripe.", btn: '<button type="button" class="btn ghost sm" data-click="#connectBtn">Set up payouts</button>'});
+  out.sort(function(a, b){ return (a.tone === "warn" ? 0 : 1) - (b.tone === "warn" ? 0 : 1); });
+  $("#tdTodoWrap").classList.toggle("hidden", !out.length);
   $("#tdTodo").innerHTML = out.map(function(x){
     return '<div class="todo-i t-' + x.tone + '"><span class="todo-dot" aria-hidden="true"></span><span class="todo-tx"><b>' + esc(x.t) + "</b><small>" + esc(x.s) + "</small></span>" + x.btn + "</div>";
   }).join("");
@@ -74,6 +75,7 @@ document.addEventListener("click", function(e){ var c = e.target.closest && e.ta
 function bucket(b, today){
   if (b.status !== "paid") return b.status === "held" ? "pending" : "cancelled";
   if (b.check_out === today) return "out";
+  if (b.check_in === today) return "soon";
   if (b.check_in <= today && today < b.check_out) return "now";
   if (b.check_out < today) return "past";
   if (days(today, b.check_in) <= 7) return "soon";

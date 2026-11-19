@@ -265,7 +265,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-<link rel="stylesheet" href="/assets/host-ux.css?v=hux1">
+<link rel="stylesheet" href="/assets/host-ux.css?v=hux2">
 </head>
 <body class="host">
 <header class="hp-top" id="hpTop"><div class="wrap hp-row">
@@ -350,11 +350,11 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
   <section class="panel" data-panel="today" id="panel-today" role="tabpanel">
     <div class="pg-head"><div><h1 id="tdHi">Welcome back</h1><p class="pg-sub" id="tdSub"></p></div></div>
     <div id="approvalNote"></div>
-    <div class="todo" id="tdTodo"></div>
     <div class="sec-head"><h2>Your reservations</h2></div>
     <div class="chips" id="tdChips" role="group" aria-label="Show reservations"></div>
     <div class="res" id="tdRes"></div>
     <div id="bkList"></div>
+    <div class="todo-wrap" id="tdTodoWrap"><div class="sec-head"><h2>Needs your attention</h2></div><div class="todo" id="tdTodo"></div></div>
   </section>
   <section class="panel hidden" data-panel="listings" id="panel-listings" role="tabpanel">
     <div class="pg-head"><div><h1>Listings</h1><p class="pg-sub" id="lsSub">Tap a home to edit its photos, details, price and rules.</p></div><button type="button" class="btn add" id="newListing"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-plus"/></svg><span>Add a listing</span></button></div>
@@ -443,8 +443,8 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="https://accounts.google.com/gsi/client" async></script>
 <script src="/assets/host.js"></script>
-<script src="/assets/host-shell.js?v=hux1" defer></script>
-<script src="/assets/bh-ui.js?v=hux1" defer></script>
+<script src="/assets/host-shell.js?v=hux2" defer></script>
+<script src="/assets/bh-ui.js?v=hux2" defer></script>
 <script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
 </body>
 </html>
