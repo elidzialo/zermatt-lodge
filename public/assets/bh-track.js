@@ -70,7 +70,7 @@
     } catch (e) { ref = ""; }
     var u = q.get("utm_source") || q.get("utm_medium") || q.get("utm_campaign")
       ? { s: q.get("utm_source"), m: q.get("utm_medium"), c: q.get("utm_campaign") } : null;
-    send({ e: "pageview", id: pv, p: loc.pathname, r: ref || null, u: u, sw: screen.width, lg: nav.language, lt: lt });
+    send({ e: "pageview", id: pv, p: loc.pathname, r: ref || null, u: u, sw: screen.width || window.innerWidth, lg: nav.language, lt: lt });
     if (window.STAY) track("listing_view", { listing: slug });
   }
   function engagedMs() { return shown + (visibleSince ? Date.now() - visibleSince : 0); }

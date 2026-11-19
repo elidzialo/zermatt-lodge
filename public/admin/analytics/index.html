@@ -113,12 +113,11 @@ details.tbl th:first-child,details.tbl td:first-child{text-align:left}
 .seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
 /* funnel */
 .fun{list-style:none;display:flex;flex-direction:column;gap:12px}
-.fun li{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:13.5px}
-@media (max-width:520px){.fun li{grid-template-columns:110px minmax(0,1fr) 56px}}
-.fun .track{height:22px;background:var(--line-2);border-radius:0 4px 4px 0;position:relative}
+.fun li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;font-size:13.5px}
+.fun .track{grid-column:1/-1;grid-row:2;height:20px;background:var(--line-2);border-radius:0 4px 4px 0}
 .fun .track i{display:block;height:100%;border-radius:0 4px 4px 0;background:var(--s1);min-width:2px}
 .fun .num{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
-.fun .conv{grid-column:2/4;font-size:12px;color:var(--muted);margin-top:-8px}
+.fun .conv{grid-column:1/-1;font-size:12px;color:var(--muted)}
 /* gate */
 .gate{max-width:440px;margin:50px auto;padding:0 14px}
 .gate .card h2{margin-bottom:8px}.gate p{color:var(--muted);margin-bottom:14px}
@@ -241,7 +240,7 @@ var nf = new Intl.NumberFormat("en-GB");
 function num(n){ n = Number(n) || 0; return n >= 10000 ? (n / 1000).toFixed(n >= 100000 ? 0 : 1).replace(/\.0$/, "") + "K" : nf.format(n); }
 function dur(ms){ if (ms == null) return "-"; var s = Math.round(ms / 1000); return s < 60 ? s + "s" : Math.floor(s / 60) + "m " + (s % 60) + "s"; }
 var regionName = (function(){ try { var d = new Intl.DisplayNames(["en-GB"], {type: "region"}); return function(c){ try { return d.of(c) || c; } catch (e) { return c; } }; } catch (e) { return function(c){ return c; }; } })();
-function flag(cc){ return /^[A-Z]{2}$/.test(cc || "") ? String.fromCodePoint.apply(null, cc.split("").map(function(c){ return 127397 + c.charCodeAt(0); })) + " " : ""; }
+function flag(){ return ""; }  // flag emoji show as letters on Windows, so country names only
 var SRC_TYPE = {search: "Search", ai: "AI", social: "Social", ota: "Airbnb / OTA", direct: "Direct", referral: "Referral", email: "Email", campaign: "Campaign"};
 
 /* ---------- auth: reuse the /admin session ---------- */
@@ -409,7 +408,7 @@ function renderFunnel(f){
   $("#funnel").innerHTML = steps.map(function(s, i){
     var v = f[s[0]] || 0, prev = i ? (f[steps[i - 1][0]] || 0) : null;
     var conv = i ? (prev ? Math.round(100 * v / prev) + "% of the step before" : "-") + (i > 0 && f.listing_view ? ", " + (Math.round(1000 * v / f.listing_view) / 10) + "% of listing views" : "") : "";
-    return '<li><span>' + s[1] + '</span><span class="track" title="' + esc(s[1] + ": " + v) + '"><i style="width:' + Math.max(0.5, Math.min(100, 100 * v / top)).toFixed(1) + '%"></i></span><span class="num">' + nf.format(v) + '</span>' +
+    return '<li><span>' + s[1] + '</span><span class="num">' + nf.format(v) + '</span><span class="track" title="' + esc(s[1] + ": " + v) + '"><i style="width:' + Math.max(0.5, Math.min(100, 100 * v / top)).toFixed(1) + '%"></i></span>' +
       (conv ? '<span class="conv">' + conv + '</span>' : "") + '</li>';
   }).join("");
 }
