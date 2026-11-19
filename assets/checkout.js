@@ -91,7 +91,7 @@ function open(push){
   obs[1].observe($("#reserveBtn"), {childList: true, characterData: true, subtree: true, attributes: true});
   document.documentElement.classList.add("locked");
   cp.hidden = false; cp.scrollTop = 0;
-  requestAnimationFrame(function(){ cp.classList.add("in"); });
+  void cp.offsetWidth; cp.classList.add("in");
   if (push !== false) try { history.pushState({cpay: 1}, ""); } catch (e) {}
   setTimeout(function(){ var n = $("#bkName"); if (n && !n.value && window.matchMedia("(min-width:950px)").matches) n.focus({preventScroll: true}); else $("#cpH").focus({preventScroll: true}); }, 60);
 }

@@ -212,9 +212,9 @@ function emptyHtml(){
   if (miss.length){
     var when = S.flex ? flexTxt() : datesTxt();
     return '<div class="empty empty-alert"><span class="e-ic">' + icon("calendar") + '</span><h2>No homes free ' + esc(when) + "</h2>" +
-      '<p>' + plural(miss.length, "home") + " match everything else. Get one email if " + (miss.length === 1 ? "it frees" : "one frees") + " up.</p>" +
+      '<p>' + (miss.length === 1 ? "1 home matches" : miss.length + " homes match") + " everything else. " + (S.flex ? "Try other months or a different length of stay." : "Get one email if " + (miss.length === 1 ? "it frees" : "one frees") + " up.") + "</p>" +
       (S.ci && S.co ? '<form class="alert-in" id="emptyAlert" novalidate><input type="email" id="eaEmail" placeholder="Your email" autocomplete="email" inputmode="email" aria-label="Your email"><button class="btn" type="submit">Email me</button></form><p class="ea-msg" id="eaMsg" aria-live="polite"></p>' : "") +
-      '<div class="e-acts"><button type="button" class="chipbtn" id="tryFlex">' + icon("calendar") + "Try flexible dates</button>" +
+      '<div class="e-acts"><button type="button" class="chipbtn" id="tryFlex">' + icon("calendar") + (S.flex ? "Change dates" : "Try flexible dates") + "</button>" +
       '<button type="button" class="chipbtn" id="resetAll">' + icon("x") + "Clear dates and filters</button></div></div>";
   }
   var w = S.where ? " in " + esc(S.where) : "";
