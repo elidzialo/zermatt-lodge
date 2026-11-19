@@ -57,3 +57,8 @@ The site promises instant confirmation but /booking-confirmed said "We're confir
 Preview zermatt-lodge-8tqdh0izf-zelr1.vercel.app READY; /api/bh/listings returns Zermatt as listing #1 (no emails, phones, street or iCal token). Static checks pass; copy clean (no "was" prices, kosher = host-declared, street-address warnings for hosts and in admin).
 Live Supabase: zermatt-* functions unchanged; bookhomes-* deployed except stripe-webhook and ical-sync.
 Blockers sent: "From £149 a night" for Zermatt is not true (real nights from £89) -> use real min price; vercel.json conflict with main -> rebase; /stays/booked fallback wording. Asked: "Set up later" for host 2-step.
+
+## Merge 7 (00:38) - marketplace a5e9254 -> main (first marketplace release)
+Live: /stays (search, filters incl. kosher/work crew/business-ready, map), /stays/kosher, /become-a-host, /host (signup, listing wizard, calendar, iCal, payouts), admin marketplace tabs, guest/host terms + privacy drafts.
+Tested on preview: /api/bh/listings shows Zermatt 'From £89' (real min), search total for 11-14 Jan 2027, 4 guests = £410 = £101+£89+£91 nights + £129 cleaning, same as the homepage calendar. Merge was clean (builder rebased on main). Checks pass. Homepage changes are header/footer links only; Zermatt checkout code untouched.
+Safe to go live before setup: no host listing can take payment until Eli approves it, and Zermatt keeps its own checkout.
