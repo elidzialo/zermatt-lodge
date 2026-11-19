@@ -1,0 +1,22 @@
+{{/* Book Homes auth email: confirm-signup. Subject: Confirm your Book Homes account
+   Paste into Supabase > Authentication > Emails > Templates once custom SMTP (Resend) is on.
+   This Supabase project also serves Eli Hub, so the Book Homes design is used only for users created by Book Homes
+   (user metadata app = "bookhomes"); everyone else gets a plain email with the standard link. */}}{{ if eq (printf "%v" .Data.app) "bookhomes" }}<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Confirm your email</title></head>
+<body style="margin:0;padding:0;background:#fbf8f3;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;color:#1b1f1d">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fbf8f3"><tr><td align="center" style="padding:24px 12px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border:1px solid #e7e3dc;border-radius:16px;overflow:hidden">
+<tr><td style="background:#1f4d3a;padding:20px 28px;border-bottom:5px solid #c8873a"><div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#ffffff">Book Homes</div></td></tr>
+<tr><td style="padding:28px 28px 8px">
+<h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:23px;color:#1f4d3a">Confirm your email</h1>
+<p style="margin:0 0 20px;font-size:15px;line-height:1.55">Welcome to Book Homes. Please confirm your email address to finish setting up your host account.</p>
+<table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="border-radius:10px;background:#1f4d3a">
+<a href="{{ if .RedirectTo }}{{ .RedirectTo }}{{ else }}https://bookhomes.co.uk/host/{{ end }}?token_hash={{ .TokenHash }}&type=signup" style="display:inline-block;padding:13px 22px;font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:10px">Confirm my email</a>
+</td></tr></table>
+<p style="margin:20px 0 6px;font-size:13px;line-height:1.5;color:#5d6560">Button not working? Copy this link into your browser:</p>
+<p style="margin:0 0 20px;font-size:12.5px;line-height:1.5;word-break:break-all"><a href="{{ if .RedirectTo }}{{ .RedirectTo }}{{ else }}https://bookhomes.co.uk/host/{{ end }}?token_hash={{ .TokenHash }}&type=signup" style="color:#1f4d3a">{{ if .RedirectTo }}{{ .RedirectTo }}{{ else }}https://bookhomes.co.uk/host/{{ end }}?token_hash={{ .TokenHash }}&type=signup</a></p>
+</td></tr>
+<tr><td style="padding:16px 28px 24px;font-size:12.5px;color:#5d6560;border-top:1px solid #e7e3dc">Book Homes · <a href="https://bookhomes.co.uk" style="color:#1f4d3a">bookhomes.co.uk</a><br>You got this email because someone used this address on Book Homes. If it wasn't you, ignore it.</td></tr>
+</table></td></tr></table></body></html>{{ else }}<h2>Confirm your email</h2>
+<p>Follow this link to confirm your email address:</p>
+<p><a href="{{ .ConfirmationURL }}">Confirm your email</a></p>{{ end }}

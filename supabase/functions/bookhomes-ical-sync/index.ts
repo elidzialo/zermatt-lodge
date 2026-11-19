@@ -1,25 +1,15 @@
 // POST /functions/v1/bookhomes-ical-sync   (pg_cron every 15 minutes, header x-cron-secret = bookhomes.settings.cron_secret)
 // 1. frees expired holds and closes their Stripe pages
-// 2. imports every enabled channel calendar (Airbnb / Booking.com / Vrbo) of every marketplace listing.
+// 2. imports every enabled channel calendar (Airbnb / Booking.com / Vrbo / Guesty) of every marketplace listing.
 //    A feed that fails keeps its last good copy: we never unblock nights because of an error.
 // 3. sends the "how was your stay?" review email for completed paid stays (once per booking)
 // 4. emails guests whose "tell me if these dates free up" request is now bookable (once per request)
 import { stripeClient, optionalEnv, siteUrl, adminClient } from "../_shared/util.ts";
-import { parseIcal } from "../_shared/ical.ts";
+import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { jsonRes, sql } from "../_shared/bh.ts";
 import { loadBooking } from "../_shared/bh_booking.ts";
 import { adminNotice, reviewRequest } from "../_shared/bh_emails.ts";
 import { sendLogged } from "../_shared/mailer.ts";
-
-async function fetchText(url: string): Promise<string> {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), 20000);
-  try {
-    const r = await fetch(url, { signal: ctrl.signal, headers: { "User-Agent": "BookHomesCalendarSync/1.0" } });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    return await r.text();
-  } finally { clearTimeout(t); }
-}
 
 Deno.serve(async (req: Request): Promise<Response> => {
   if (req.method !== "POST" && req.method !== "GET") return jsonRes({ error: "Method not allowed" }, 405);
@@ -45,27 +35,10 @@ Deno.serve(async (req: Request): Promise<Response> => {
                              join bookhomes.listings l on l.id = s.listing_id where s.enabled and l.status <> 'rejected'`;
   const problems: string[] = [];
   for (const s of sources) {
-    try {
-      const blocks = parseIcal(await fetchText(s.url));
-      const n = await sql.begin(async (tx: typeof sql) => {
-        await tx`select pg_advisory_xact_lock(hashtext(${"bookhomes-listing-" + s.listing_id}))`;
-        await tx`delete from bookhomes.listing_ical_events where source_id = ${s.id}`;
-        for (const b of blocks) {
-          if (b.end > b.start) {
-            await tx`insert into bookhomes.listing_ical_events (source_id, listing_id, uid, start_date, end_date)
-                     values (${s.id}, ${s.listing_id}, ${b.uid.slice(0, 300)}, ${b.start}::date, ${b.end}::date)`;
-          }
-        }
-        await tx`update bookhomes.listing_ical_sources set last_fetched_at = now(), last_status = 'ok', last_error = null,
-                   last_event_count = ${blocks.length} where id = ${s.id}`;
-        return blocks.length;
-      });
-      report[`listing ${s.listing_id} ${s.name}`] = n;
-    } catch (e) {
-      const msg = (e as Error).message.slice(0, 300);
-      problems.push(`${s.listing_id} ${s.name}: ${msg}`);
-      await sql`update bookhomes.listing_ical_sources set last_fetched_at = now(), last_status = 'error', last_error = ${msg} where id = ${s.id}`;
-    }
+    const url = safeFeedUrl(s.url);
+    const r = url ? await syncSource(s, url) : { ok: false, count: 0, error: "Not a public https calendar link" };
+    if (r.ok) report[`listing ${s.listing_id} ${s.name}`] = r.count;
+    else problems.push(`${s.listing_id} ${s.name}: ${r.error}`);
   }
 
   // Review requests: completed paid stays, checked out in the last 14 days

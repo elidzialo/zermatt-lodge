@@ -83,7 +83,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
     }
   }
 
-  const body = buildIcal("Zermatt Lodge - direct bookings", events);
+  const body = buildIcal("Zermatt Lodge - direct bookings", events, "-//Zermatt Lodge//Direct Bookings//EN");
   return new Response(req.method === "HEAD" ? null : body, {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",

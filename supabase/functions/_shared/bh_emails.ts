@@ -1,6 +1,7 @@
 // Book Homes marketplace emails (guest, host, admin). Same look as the Zermatt emails.
 // Sent and logged through mailer.ts (zermatt.email_log), so the admin Emails tab shows them too.
 import { esc, longDate, money, type RenderedEmail } from "./emails.ts";
+import { lines } from "./bh_quote.ts";
 
 const GREEN = "#1f4d3a";
 const AMBER = "#c8873a";
@@ -46,6 +47,9 @@ export interface BhBooking {
   discount_pence: number;
   discount_label: string | null;
   cleaning_pence: number;
+  extra_guest_pence?: number;
+  pet_pence?: number;
+  pets?: number;
   amount_pence: number;
   fee_pence: number;
   host_payout_pence: number;
@@ -60,10 +64,10 @@ export interface BhBooking {
 }
 
 function priceRows(b: BhBooking): [string, string][] {
-  const r: [string, string][] = [[`${b.nights} night${b.nights === 1 ? "" : "s"}`, money(b.nights_pence)]];
-  if (b.discount_pence > 0) r.push([esc(b.discount_label ?? "Discount"), "-" + money(b.discount_pence)]);
-  if (b.cleaning_pence > 0) r.push(["Cleaning fee", money(b.cleaning_pence)]);
+  const r: [string, string][] = lines({ ...b, extra_guest_pence: b.extra_guest_pence ?? 0, pet_pence: b.pet_pence ?? 0 })
+    .map((x) => [esc(x.label), (x.pence < 0 ? "-" : "") + money(Math.abs(x.pence))]);
   r.push(["<b>Total paid</b>", `<b>${money(b.amount_pence)}</b>`]);
+  r.push(["Booking fee", "None"]);
   return r;
 }
 
@@ -77,11 +81,11 @@ export function guestBooked(b: BhBooking, site: string): RenderedEmail {
   const body = p(`Hi ${esc(b.guest_name.split(" ")[0])},`) +
     p(`Your stay at <b>${esc(b.listing_title)}</b> is confirmed and paid. There are no booking fees on Book Homes.`) +
     rows([["Reference", `<b>${ref(b.id)}</b>`], ["Check-in", `${esc(longDate(b.check_in))}, from ${esc(b.check_in_time)}`],
-      ["Checkout", `${esc(longDate(b.check_out))}, by ${esc(b.check_out_time)}`], ["Guests", String(b.guests)]]) +
+      ["Checkout", `${esc(longDate(b.check_out))}, by ${esc(b.check_out_time)}`], ["Guests", String(b.guests) + (b.pets ? `, ${b.pets} pet${b.pets === 1 ? "" : "s"}` : "")]]) +
     rows(priceRows(b)) +
     p(`<b>Your host:</b> ${esc(b.host_name)}<br>${contact || "Your host will contact you before arrival."}`) +
     p(`Your host sends the full address and access details before arrival.${b.company_name ? " Your receipt in the name of " + esc(b.company_name) + " comes from Stripe in a separate email." : ""}`) +
-    p(`<a href="${esc(site)}/stays/${esc(b.listing_slug)}/" style="color:${GREEN}">View the listing</a>`);
+    p(`<a href="${esc(site)}/${esc(b.listing_slug)}" style="color:${GREEN}">View the listing</a>`);
   const text = `Your stay at ${b.listing_title} is confirmed and paid.\nReference ${ref(b.id)}\nCheck-in ${longDate(b.check_in)} from ${b.check_in_time}\nCheckout ${longDate(b.check_out)} by ${b.check_out_time}\nGuests ${b.guests}\nTotal paid ${money(b.amount_pence)}\n\nYour host: ${b.host_name} ${b.host_phone ?? ""}\n${site}/${b.listing_slug}`;
   return { subject, html: layout("Your booking is confirmed", body, site), text };
 }

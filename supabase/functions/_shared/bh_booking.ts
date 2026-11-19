@@ -11,7 +11,8 @@ export async function loadBooking(id: string): Promise<BhBooking | null> {
   const r = await sql`
     select b.id, l.title as listing_title, l.slug as listing_slug, b.check_in::text, b.check_out::text, b.nights, b.guests,
            b.guest_name, b.guest_email, b.guest_phone, b.company_name, b.nights_pence, b.discount_pence, b.discount_label,
-           b.cleaning_pence, b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, l.check_in_time, l.check_out_time,
+           b.cleaning_pence, coalesce((to_jsonb(b) ->> 'extra_guest_pence')::int, 0) as extra_guest_pence,
+           coalesce((to_jsonb(b) ->> 'pet_pence')::int, 0) as pet_pence, coalesce((to_jsonb(b) ->> 'pets')::int, 0) as pets, b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, l.check_in_time, l.check_out_time,
            coalesce(nullif(h.display_name, ''), p.name, 'Your host') as host_name, p.phone as host_phone, p.whatsapp as host_whatsapp,
            p.email as host_email, b.review_token::text, b.status
       from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
@@ -55,7 +56,7 @@ export async function settlePaidSession(stripe: Stripe, session: Stripe.Checkout
     await sendLogged(db, { toRole: "guest", to: b.guest_email, template: "bh_guest_conflict",
       email: adminNotice("Sorry - those dates have just gone, and you have been refunded in full",
         [`The dates you picked at ${b.listing_title} (${b.check_in} to ${b.check_out}) were taken at the same moment, so we could not confirm your stay.`,
-         "Your payment has been refunded in full. It usually shows on your card within 5-10 working days."], site, "/stays/") });
+         "Your payment has been refunded in full. It usually shows on your card within 5-10 working days."], site, "/") });
     return { outcome, bookingId: booking_id };
   }
 

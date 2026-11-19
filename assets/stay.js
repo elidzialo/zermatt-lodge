@@ -331,6 +331,24 @@ function summary(){
   html += '<div class="bd-row bd-total"><span>Total, no booking fees</span><span>' + (q.total == null ? "Confirmed at checkout" : fmtMoney(q.total)) + '</span></div>';
   html += '<p class="bd-note">Includes the cleaning fee. Nothing else is added at checkout.</p>';
   bd.innerHTML = html;
+  if (!LEGACY) serverQuote();
+}
+/* Marketplace homes: the server's quote is the price Stripe will charge (extra guests, pets, discounts, cleaning). */
+var SQ = 0;
+function serverQuote(){
+  var my = ++SQ, key = [B.ci, B.co, B.guests, B.pets || 0].join("|");
+  fetch("/api/bh/availability?listing_id=" + encodeURIComponent(S.id) + "&check_in=" + B.ci + "&check_out=" + B.co + "&guests=" + encodeURIComponent(B.guests) + "&pets=" + (B.pets || 0), {headers: {"Accept": "application/json"}})
+    .then(function(r){ return r.json(); }).then(function(j){
+      if (my !== SQ || key !== [B.ci, B.co, B.guests, B.pets || 0].join("|")) return;
+      var bd = $("#breakdown"); if (!bd) return;
+      if (!j.ok){ if (j.error) bd.innerHTML = '<p class="bd-note bd-err">' + j.error.replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }) + "</p>"; return; }
+      var q = j.quote, h = "";
+      q.lines.forEach(function(l){ h += '<div class="bd-row' + (l.pence < 0 ? " bd-disc" : "") + '"><span>' + l.label.replace(/[&<>]/g, "") + "</span><span>" + (l.pence < 0 ? "-" : "") + fmtMoney(Math.abs(l.pence) / 100) + "</span></div>"; });
+      h += '<details><summary>Night-by-night breakdown</summary><ul>' + q.nightly.map(function(n){ return "<li><span>" + fmtShort.format(parse(n.date)) + "</span><span>" + fmtMoney(n.price) + "</span></li>"; }).join("") + "</ul></details>";
+      h += '<div class="bd-row bd-total"><span>Total, no booking fees</span><span>' + fmtMoney(q.total_pence / 100) + "</span></div>";
+      h += '<p class="bd-note">No guest service fee. This is exactly what you pay at checkout.</p>';
+      bd.innerHTML = h;
+    }).catch(function(){});
 }
 $("#bkGuests").addEventListener("change", function(){ B.guests = this.value; syncAll(B.ci, B.co, B.guests); });
 
@@ -374,6 +392,7 @@ rf.addEventListener("submit", function(e){
   if (bad){ showBkErr("Please check your details.", "We need your full name, a valid email address and a phone number."); bad.focus(); return; }
   setBusy(true);
   var payload = {checkIn: B.ci, checkOut: B.co, guests: +B.guests, name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim()};
+  if (!LEGACY && B.pets) payload.pets = +B.pets;
   if (LEGACY){ var pin = $("#bkPromo"), promoTyped = pin ? cleanCode(pin.value) : ""; if (promoTyped) payload.promo_code = promoTyped; }
   else {
     payload.listing_id = S.id;
@@ -492,7 +511,13 @@ var _setBusy = setBusy;
 setBusy = function(on){ _setBusy(on); if (!on) mbar(); };
 
 /* Boot */
-loadAvailability().then(function(j){
+// Back from Stripe without paying: free the held dates first, so they show as available again
+function releaseHold(){
+  var q0 = new URLSearchParams(location.search), hold = q0.get("hold");
+  if (LEGACY || !q0.get("cancelled") || !hold || !/^[0-9a-f-]{36}$/i.test(hold)) return Promise.resolve();
+  return fetch(CHECKOUT_API, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({release_hold: hold})}).catch(function(){});
+}
+releaseHold().then(loadAvailability).then(function(j){
   ingest(j);
   var q = new URLSearchParams(location.search);
   var c = q.get("check_in") || q.get("checkIn"), o = q.get("check_out") || q.get("checkOut"), g = q.get("guests");
