@@ -7,7 +7,7 @@ import {
   adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
   PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE,
 } from "../_shared/bh.ts";
-import { AMENITIES, CATEGORIES, feeFields, listingFields } from "../_shared/bh_listing.ts";
+import { AMENITIES, CATEGORIES, feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice } from "../_shared/bh_emails.ts";
@@ -46,7 +46,7 @@ async function me(user: AuthUser) {
   return await asUser(user, async (tx) => {
     const profile = (await tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`)[0] ?? null;
     const host = (await tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override from bookhomes.hosts where user_id = ${user.id}`)[0] ?? null;
-    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() order by created_at`) : [];
+    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`) : [];
     const ids = ls.map((l: { id: number }) => l.id);
     const photos = ids.length ? await tx`select id, listing_id, url, storage_path, caption, sort from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by sort, created_at` : [];
     const sources = ids.length ? await tx`select id, listing_id, name, url, enabled, last_fetched_at, last_status, last_error, last_event_count from bookhomes.listing_ical_sources where listing_id = any(${ids}::bigint[])` : [];
@@ -58,12 +58,13 @@ async function me(user: AuthUser) {
     const connect = (await sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`)[0]?.v ?? "unknown";
     const site = siteUrl();
     // deno-lint-ignore no-explicit-any
-    const reasons = r.listings.length ? await sql`select id, reject_reason from bookhomes.listings where id = any(${r.listings.map((l: any) => l.id)}::bigint[]) and status = 'rejected'` : [];
+    const extra = r.listings.length ? await sql`select id, case when status = 'rejected' then reject_reason end as reject_reason, host_edited_at from bookhomes.listings where id = any(${r.listings.map((l: any) => l.id)}::bigint[])` : [];
     return {
       ...r,
       // deno-lint-ignore no-explicit-any
       listings: r.listings.map((l: any) => ({
-        ...l, reject_reason: reasons.find((x: { id: number }) => Number(x.id) === Number(l.id))?.reject_reason ?? null,
+        ...l, reject_reason: extra.find((x: { id: number }) => Number(x.id) === Number(l.id))?.reject_reason ?? null,
+        host_edited_at: extra.find((x: { id: number }) => Number(x.id) === Number(l.id))?.host_edited_at ?? null,
         ical_export_url: !l.legacy_source && r.tokens[String(l.id)] ? `${site}/ical/${l.id}/${r.tokens[String(l.id)]}.ics` : null,
       })),
       tokens: undefined,
@@ -108,10 +109,27 @@ Deno.serve(handle(async (req) => {
       const f = { ...listingFields(raw), ...(await feeFields(raw)) };
       if (b.id) {
         const id = await ownListing(user, b.id);
+        let live = false;
         if (Object.keys(f).length) {
+          const before = (await sql`select status, title, host_edited_at from bookhomes.listings where id = ${id}`)[0];
           await asUser(user, (tx) => tx`update bookhomes.listings set ${tx(f)} where id = ${id} returning id`);
+          // Agreed rule: edits to a live (or paused) listing go live at once, and admin gets a flag to check them.
+          if (before && (before.status === "approved" || before.status === "paused")) {
+            live = before.status === "approved";
+            const keys = Object.keys(f);
+            await sql`update bookhomes.listings set host_edited_at = now(),
+                        host_edited_fields = (select array(select distinct unnest(coalesce(host_edited_fields, '{}') || ${keys}::text[]) order by 1))
+                       where id = ${id}`;
+            if (!before.host_edited_at) {
+              const db = adminClient();
+              for (const to of await adminEmailList()) {
+                await sendLogged(db, { toRole: "admin", to, template: "bh_admin_listing_edited",
+                  email: adminNotice(`Live listing edited: ${before.title}`, [`${user.email} changed "${before.title}" (${keys.join(", ")}).`, "The changes are already live. Check them in admin > Listings."], siteUrl()) }).catch(() => {});
+              }
+            }
+          }
         }
-        return jsonRes({ ok: true, id });
+        return jsonRes({ ok: true, id, live_edit: live });
       }
       const title = f.title ?? "New listing";
       const slug = `${slugify(title + " " + (f.area ?? f.city ?? "")) || "home"}-${crypto.randomUUID().slice(0, 5)}`.replace(/^-+/, "");
@@ -133,7 +151,8 @@ Deno.serve(handle(async (req) => {
       if (!l.area) missing.push("the area");
       if (!l.description || l.description.length < 60) missing.push("a description (a few sentences)");
       if (!l.base_price) missing.push("a nightly price");
-      if (l.photos < 3) missing.push("at least 3 photos");
+      if (l.photos < 5) missing.push(`at least 5 photos (you have ${l.photos})`);
+      if (!l.title || l.title.length < 3) missing.push("a title");
       if (l.lat === null || l.lng === null) missing.push("the map pin");
       if (missing.length) throw new HttpError(400, `Almost there. Please add ${missing.join(", ")}.`);
       await asUser(user, (tx) => tx`update bookhomes.listings set status = 'pending' where id = ${id} returning id`);
@@ -155,6 +174,13 @@ Deno.serve(handle(async (req) => {
         throw new HttpError(400, "That change is not possible. Listings go live once Book Homes approves them.");
       }
       return jsonRes({ ok: true });
+    }
+
+    case "delete_listing": {
+      // Drafts that were never live are deleted for good; anything that was live is archived (bookings kept).
+      const id = await ownListing(user, b.id);
+      const r = await removeListing(id, user.email ?? user.id);
+      return jsonRes({ ok: true, ...r });
     }
 
     case "add_photo": {
@@ -190,6 +216,13 @@ Deno.serve(handle(async (req) => {
                    where id = ${ids[i]} and listing_id = ${id}`;
         }
       });
+      return jsonRes({ ok: true });
+    }
+
+    case "set_caption": {
+      if (!UUID_RE.test(String(b.id))) throw new HttpError(400, "Invalid photo");
+      const r = await asUser(user, (tx) => tx`update bookhomes.listing_photos set caption = ${str(b.caption, 140)} where id = ${String(b.id)} returning id`);
+      if (!r.length) throw new HttpError(404, "Photo not found");
       return jsonRes({ ok: true });
     }
 

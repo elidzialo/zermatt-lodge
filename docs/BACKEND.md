@@ -25,7 +25,15 @@ UI still wanted from the UX agent:
 `set_nights` (`price` number = custom, `null` = default, missing = keep; `open:true` also lifts blocks), `bookings`, `earnings`.
 Zermatt Lodge (listing 1, legacy `zermatt`) shows in its owner's /host: calendar, blocks (written to `zermatt.manual_blocks`, so Guesty sees them through the Zermatt iCal) and bookings. Its prices stay with the channel manager.
 
-`bookhomes-import-airbnb {url, listing_id?}` imports a public Airbnb listing into the host's own draft. On failure it returns `{ok:false, manual:true, error}`.
+`bookhomes-import-airbnb {url, listing_id?}` imports a public Airbnb listing into the host's own draft (title, "About this space" text, type, rooms, amenities, house rules, approximate pin, up to 24 photos copied to our storage; never prices or reviews). It returns `check` (what the host still has to add, e.g. `area`, `price`, `photos`). On failure it returns `{ok:false, manual:true, error}` and the wizard switches to "paste your title and description".
+
+Listing editor (2026-11):
+- `save_listing` on a live or paused listing saves straight away and sets `host_edited_at` / `host_edited_fields` (admin flag; admins get one email per edit round). It returns `live_edit:true` when the listing is live. Admin can clear the flag by setting `host_edited_at = null` after checking.
+- `submit_listing` needs a title, a 60+ character description, the area, a map pin, a nightly price and at least 5 photos.
+- `set_caption {id, caption}` sets or clears one photo caption. `order_photos {listing_id, ids}` sets the order (first = cover).
+- `delete_listing {id}` (host) and `delete_listing {id}` (admin, audited): a listing that was never approved and has no bookings or reviews is deleted for good; otherwise it becomes `status = 'archived'` (`deleted_at`, `deleted_by`), photos rows removed, calendars unlinked, bookings and reviews kept. Photos (and any leftover uploads in `<user id>/<listing id>/`) are removed from storage either way. Refused while the listing has upcoming paid or held bookings.
+- `me` no longer returns archived listings.
+- Guest preview: the host page stores the draft in localStorage `bh_listing_preview` and opens `/stays/listing?preview=1` (the real listing page, booking switched off).
 
 ## Admin API (`bookhomes-admin`, POST `{action}`, aal2 admin only)
 
