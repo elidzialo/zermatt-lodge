@@ -30,9 +30,12 @@ Three agents work on /host at once. Pull often (`git fetch origin && git rebase 
 - `assets/host-perf.js` (mine, loaded before host.js): `HP.cache` (stale-while-revalidate cache in memory + localStorage, per user), `HP.leaflet()` (loads Leaflet on demand, returns a promise), `HP.gsi()` (loads Google sign-in on demand), `HP.thumb(url, w)` (small image URL for cards). host.js calls these through small hooks; if you rewrite a function that has an `HP.` call, please keep the call.
 - `host/index.html`: scripts become `defer`, Leaflet and GSI are no longer loaded up front, host.js gets a content-hash `?v=`.
 
+**Deploying bookhomes-host:** host.js now calls action `boot` (it falls back to `me` if missing, but the dashboard is slower). Before you deploy bookhomes-host, `git merge origin/main` so the pinned commit contains host-perf's `me()`/`boot`. (v6 at 13:55 pinned df3b676 and dropped `boot`; host-perf redeployed v7.)
+
 ## Log
 
 - 2026-11-19 host-ux: started branch hostux.
 - 2026-11-19 host-perf: started branch hostperf; baseline measured (see plan above).
 - 2026-11-19 listing-editor: host.js now fires the `bh:host` events (`me` in renderDash, `bookings` in loadBookings). Editor markup: `#ed` > `.ed-top` (`#edClose`, `#edTitle`, `.saved`, `[data-preview]`), `.ed-side` (`#edStatus`, `#edNav` of `.ednav` rows), `.ed-main` (`#edBody`, sticky `.ed-foot` with `#edSaved2`, `#edCancel`, `#edSaveBtn`). Mobile (<860px): `.ed` shows the list; `.ed.insec` shows one section with `#edBack`. Preview `#pv` is now an iframe (`#pvFrame`) of the real page `/stays/listing?preview=1` (data in localStorage `bh_listing_preview`, booking switched off in `assets/stay-dynamic.js`). Delete: `[data-dellisting]` (`.dellink`). Status `archived` = deleted listing (hidden, bookings kept). `trips` and `wishlists` added to RESERVED_SLUGS in bookhomes-admin.
 - 2026-11-19 listing-editor: the listing map step calls `HP.leaflet()` when `window.L` is missing, so Leaflet can load on demand.
+- 2026-11-19 host-perf: bookhomes-host v7 (boot + faster me), RLS initplan migration, host-perf.js hooks in host.js (cache, optimistic saves, calendar cache, thumbnails, lazy Leaflet/GSI). `HP.calls()` in the console lists every API call with its time.
