@@ -732,7 +732,9 @@ function onChange(e){
 ["#wzIn", "#edBody"].forEach(function(id){ var el = $(id); el.addEventListener("click", onClick); el.addEventListener("input", onInput); el.addEventListener("change", onChange); });
 
 function pinMap(){
-  if (!window.L || !$("#pmap")) return;
+  if (!$("#pmap")) return;
+  if (!window.L){ if (window.HP && HP.leaflet) HP.leaflet().then(function(){ if (window.L) pinMap(); }); else $("#pinTxt").textContent = "The map didn't load. Check your connection, then go back and forward to try again."; return; }
+  if ($("#pmap")._leaflet_id) return;
   var start = W.l.lat != null ? [+W.l.lat, +W.l.lng] : [53.41, -2.98];
   var m = L.map("pmap", {scrollWheelZoom: false}).setView(start, W.l.lat != null ? 14 : 11), circle = null;
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 17, attribution: "&copy; OpenStreetMap contributors"}).addTo(m);

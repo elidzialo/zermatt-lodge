@@ -58,6 +58,10 @@ function niceErr(e){
   if (/rate limit|too many/i.test(m)) return "Too many tries. Please wait a minute and try again.";
   if (/signups? not allowed/i.test(m)) return "New host sign-ups are paused. Please contact us.";
   if (/already registered/i.test(m)) return "There's already an account with that email. Log in instead.";
+  if (/email address .* is invalid|email_address_invalid/i.test(m)) return "We couldn't send an email to that address. Check it's typed correctly. If it keeps happening, contact us and we'll sort it.";
+  if (/email rate limit|over_email_send_rate_limit|security purposes/i.test(m)) return "We've just sent you an email. Please wait a minute before asking for another one.";
+  if (/password should|weak password|pwned/i.test(m)) return "Please choose a stronger password: at least 10 characters, not one used on other sites.";
+  if (/failed to fetch|network/i.test(m)) return "We couldn't reach Book Homes. Check your connection and try again.";
   return m;
 }
 var routing = 0, FACTOR = null, ENROL = null, SESSION = null, ME = null, started = false, WANT_MFA = false;
@@ -102,6 +106,7 @@ function startEnrol(all){
     $("#enrolQr").src = /^data:/.test(qr) ? qr : "data:image/svg+xml;charset=utf-8," + encodeURIComponent(qr);
     $("#enrolSecret").textContent = (r.data.totp.secret || "").replace(/(.{4})/g, "$1 ").trim();
     $("#enrolUri").href = r.data.totp.uri || "#";
+    $("#enrolTap").href = r.data.totp.uri || "#";
     msg("#enrolMsg", "");
   }).catch(function(e){ msg("#enrolMsg", "Could not start setup: " + niceErr(e)); });
 }
@@ -158,12 +163,15 @@ $("#loginForm").addEventListener("submit", function(e){
   if (!validEmail(em) || !pw){ msg("#loginMsg", "Enter your email and password."); return; }
   var trust = $("#trustBox").checked; lsSet(PENDING_KEY, trust ? "1" : "0"); MODE = trust ? "local" : "session"; setTrust(trust); if (!trust) clearLocalSession();
   busy(btn, true, "Logging in..."); msg("#loginMsg", "");
-  sb.auth.signInWithPassword({email: em, password: pw}).then(function(r){ busy(btn, false, "Log in"); if (r.error) msg("#loginMsg", niceErr(r.error)); else $("#loginPw").value = ""; });
+  sb.auth.signInWithPassword({email: em, password: pw}).then(function(r){ busy(btn, false, "Log in"); if (r.error){ msg("#loginMsg", niceErr(r.error)); if (/not confirmed/i.test(r.error.message)) resendBtn("#loginMsg", em); } else $("#loginPw").value = ""; },
+    function(e){ busy(btn, false, "Log in"); msg("#loginMsg", niceErr(e)); });
 });
 $("#forgotBtn").addEventListener("click", function(){
   var em = $("#loginEmail").value.trim().toLowerCase();
   if (!validEmail(em)){ msg("#loginMsg", "Type your email above first."); return; }
-  sb.auth.resetPasswordForEmail(em, {redirectTo: REDIRECT}).then(function(r){ msg("#loginMsg", r.error ? niceErr(r.error) : "If you have an account, a reset link is on its way.", !r.error); });
+  var fb = this; busy(fb, true, "Sending...");
+  sb.auth.resetPasswordForEmail(em, {redirectTo: REDIRECT}).then(function(r){ busy(fb, false, "Forgot password?"); msg("#loginMsg", r.error ? niceErr(r.error) : "If there's an account for " + em + ", a reset link is on its way. Check your spam folder too.", !r.error); },
+    function(e){ busy(fb, false, "Forgot password?"); msg("#loginMsg", niceErr(e)); });
 });
 $("#signupForm").addEventListener("submit", function(e){
   e.preventDefault();
@@ -173,7 +181,7 @@ $("#signupForm").addEventListener("submit", function(e){
   if (!$("#suTerms").checked){ msg("#signupMsg", "Please agree to the host terms."); return; }
   lsSet(PENDING_KEY, "1"); MODE = "local"; setTrust(true);
   busy(btn, true, "Creating..."); msg("#signupMsg", "");
-  sb.auth.signUp({email: em, password: pw, options: {emailRedirectTo: REDIRECT, data: {app: "bookhomes"}}}).then(function(r){
+  sb.auth.signUp({email: em, password: pw, options: {emailRedirectTo: REDIRECT, data: {app: "bookhomes"}}}).catch(function(e){ return {error: e, data: {}}; }).then(function(r){
     busy(btn, false, "Create account");
     if (r.error){ msg("#signupMsg", niceErr(r.error)); return; }
     var u = r.data && r.data.user;
@@ -182,9 +190,17 @@ $("#signupForm").addEventListener("submit", function(e){
       msg("#loginMsg", "You already have an account with this email. Log in below, or tap \"Forgot password?\" to set a new password.", true);
       return;
     }
-    if (!r.data.session) msg("#signupMsg", "Nearly there: we've emailed you a link. Open it on this device to confirm your email, then log in.", true);
+    if (!r.data.session){ msg("#signupMsg", "Nearly there: we've emailed you a link. Open it on this device to confirm your email, then log in. Check your spam folder too.", true); resendBtn("#signupMsg", em); }
   });
 });
+function resendBtn(where, em){
+  var box = $(where); if (!box) return;
+  box.insertAdjacentHTML("beforeend", '<button type="button" class="linkbtn" data-resend>Send the confirmation email again</button>');
+  $("[data-resend]", box).addEventListener("click", function(){
+    var b = this; busy(b, true, "Sending...");
+    sb.auth.resend({type: "signup", email: em, options: {emailRedirectTo: REDIRECT}}).then(function(r){ busy(b, false, "Send the confirmation email again"); msg(where, r.error ? niceErr(r.error) : "Sent again to " + em + ". It can take a minute or two.", !r.error); });
+  });
+}
 function digits(input, submit){ input.addEventListener("input", function(){ var v = input.value.replace(/\D/g, "").slice(0, 6); if (v !== input.value) input.value = v; if (v.length === 6) submit(); }); }
 function submitEnrol(){
   var code = $("#enrolCode").value, btn = $("#enrolBtn");
@@ -206,8 +222,9 @@ $("#mfaForm").addEventListener("submit", function(e){ e.preventDefault(); submit
 digits($("#enrolCode"), submitEnrol); digits($("#mfaCode"), submitMfa);
 $("#setPwForm").addEventListener("submit", function(e){
   e.preventDefault();
-  var p = $("#newPw").value; if (p.length < 10){ msg("#setPwMsg", "Use at least 10 characters."); return; }
-  sb.auth.updateUser({password: p}).then(function(r){ if (r.error){ msg("#setPwMsg", niceErr(r.error)); return; } route(SESSION); });
+  var p = $("#newPw").value, b = $("#setPwBtn"); if (p.length < 10){ msg("#setPwMsg", "Use at least 10 characters."); return; }
+  busy(b, true, "Saving...");
+  sb.auth.updateUser({password: p}).then(function(r){ busy(b, false, "Save password"); if (r.error){ msg("#setPwMsg", niceErr(r.error)); return; } $("#newPw").value = ""; route(SESSION); });
 });
 function signOut(){ setTrust(false); sb.auth.signOut().then(function(){ clearLocalSession(); location.replace("/host/"); }); }
 $$("[data-signout]").forEach(function(b){ b.addEventListener("click", signOut); });
@@ -715,7 +732,9 @@ function onChange(e){
 ["#wzIn", "#edBody"].forEach(function(id){ var el = $(id); el.addEventListener("click", onClick); el.addEventListener("input", onInput); el.addEventListener("change", onChange); });
 
 function pinMap(){
-  if (!window.L || !$("#pmap")) return;
+  if (!$("#pmap")) return;
+  if (!window.L){ if (window.HP && HP.leaflet) HP.leaflet().then(function(){ if (window.L) pinMap(); }); else $("#pinTxt").textContent = "The map didn't load. Check your connection, then go back and forward to try again."; return; }
+  if ($("#pmap")._leaflet_id) return;
   var start = W.l.lat != null ? [+W.l.lat, +W.l.lng] : [53.41, -2.98];
   var m = L.map("pmap", {scrollWheelZoom: false}).setView(start, W.l.lat != null ? 14 : 11), circle = null;
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 17, attribution: "&copy; OpenStreetMap contributors"}).addTo(m);
