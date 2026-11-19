@@ -109,15 +109,32 @@ export function parseAirbnb(html: string) {
   const rules: string[] = [];
   let desc: string | null = null, title: string | null = null, lat: number | null = null, lng: number | null = null;
   let capacity: number | null = null, ptype: string | null = null, city: string | null = null, price: string | null = null;
+  const about: string[] = [];
+  const isListingPhoto = (u: string) => /muscache\.com\/im\/pictures\//.test(u) && !/\/(user|users|airbnb-platform-assets|AirbnbPlatformAssets)[/-]/i.test(u);
 
   for (const root of blobs) {
     walk(root, (o) => {
       const tn = String(o.__typename ?? "");
       if (!title && tn === "PdpTitleSection" && typeof o.title === "string") title = o.title;
       if (!desc && o.htmlDescription && typeof o.htmlDescription.htmlText === "string") desc = htmlToText(o.htmlDescription.htmlText);
-      if (typeof o.baseUrl === "string" && /muscache\.com\/im\/pictures\//.test(o.baseUrl) && !/\/(user|users)\//.test(o.baseUrl)) {
-        const u = o.baseUrl.split("?")[0];
-        if (!photos.includes(u)) photos.push(u);
+      // Photos: older pages use baseUrl, 2026 pages use ImageEntity.uri (hero gallery, in the host's order)
+      for (const k of ["baseUrl", "uri"]) {
+        if (typeof o[k] === "string" && isListingPhoto(o[k]) && (k === "baseUrl" || tn === "ImageEntity")) {
+          const u = o[k].split("?")[0];
+          if (!photos.includes(u)) photos.push(u);
+        }
+      }
+      // "About this space": summary plus "The space", "Guest access", "Other things to note"
+      if (tn === "GeneralListContentSection" && /about this (space|place)/i.test(String(o.title ?? "")) && Array.isArray(o.items) && !about.length) {
+        for (const it of o.items) {
+          const t = it?.html?.htmlText;
+          if (typeof t !== "string" || !t.trim()) continue;
+          about.push((typeof it.title === "string" && it.title ? it.title + "\n" : "") + htmlToText(t));
+        }
+      }
+      // House rules groups (skip safety and property details)
+      if (tn === "StaysPdpDetailGroup" && !/safety|property|cancellation/i.test(String(o.title ?? "")) && Array.isArray(o.items)) {
+        for (const it of o.items) if (typeof it?.title === "string") rules.push(it.title + (typeof it.subtitle === "string" && it.subtitle ? ": " + it.subtitle : ""));
       }
       if (lat === null && typeof o.lat === "number" && typeof o.lng === "number") { lat = o.lat; lng = o.lng; }
       if (capacity === null && typeof o.personCapacity === "number") capacity = o.personCapacity;
@@ -149,6 +166,9 @@ export function parseAirbnb(html: string) {
   }
 
   const ogTitle = meta(html, "og:title") ?? "";
+  // The host's own title: <title>Cosy flat by the docks - Flats for Rent in Liverpool, England, United Kingdom - Airbnb</title>
+  const docTitle = decode((html.match(/<title[^>]*>([^<]{3,300})<\/title>/i) ?? [])[1] ?? "").replace(/\s+-\s+Airbnb\s*$/i, "").replace(/\s+-\s+[^-]*\bfor Rent in\b.*$/i, "").trim();
+  if (docTitle.length >= 3 && !/^airbnb\b/i.test(docTitle) && !/·/.test(docTitle)) title = docTitle;
   const ogDesc = meta(html, "og:description") ?? meta(html, "description");
   const ogImage = meta(html, "og:image");
   // og:title looks like "Home in Liverpool · ★4.88 · 3 bedrooms · 4 beds · 1.5 baths"
@@ -172,7 +192,7 @@ export function parseAirbnb(html: string) {
   if (!photos.length && ogImage) photos.push(ogImage.split("?")[0]);
   const cleanTitle = title ? String(title).split(/\s+·\s+/)[0].replace(/★\s*[\d.]+/g, "").trim() : null;
   if (cleanTitle && cleanTitle.length >= 3) out.title = cleanTitle.slice(0, 80);
-  const d = desc ?? ogDesc;
+  const d = about.length ? about.join("\n\n") : desc ?? ogDesc;
   if (d) out.description = cleanImportedText(d, 5000);
   const pt = ptype ? propertyType(ptype) : null;
   if (pt) out.property_type = pt;
@@ -182,7 +202,9 @@ export function parseAirbnb(html: string) {
   for (const r of rules) {
     if (/check-?in/i.test(r) && /after|from|:\d\d|\d\s*(am|pm)/i.test(r)) { const t = to24(r.replace(/^[^\d]*/, "")); if (t) out.check_in_time = t; continue; }
     if (/check-?out/i.test(r)) { const t = to24(r.replace(/^[^\d]*/, "")); if (t) out.check_out_time = t; continue; }
-    if (/guests? maximum/i.test(r)) continue;
+    const cap = r.match(/up to (\d{1,2}) (?:overnight )?guests/i);
+    if (cap && out.max_guests == null) out.max_guests = Number(cap[1]);
+    if (/guests? maximum|overnight guests|^during the stay$|^lock up at checkout$/i.test(r)) continue;
     ruleText.push(r.replace(/[\u2013\u2014]/g, "-"));
   }
   if (ruleText.length) out.house_rules = cleanImportedText([...new Set(ruleText)].join(". ") + ".", 2500);
