@@ -141,8 +141,9 @@ gsiInit(0);
   history.replaceState(null, "", location.pathname);
   sb.auth.verifyOtp({token_hash: th, type: ty}).then(function(r){
     if (r.error){ view("Login"); msg("#loginMsg", /expired|invalid/i.test(r.error.message) ? "That link has expired or was already used. Log in, or tap Forgot password to get a new one." : niceErr(r.error)); return; }
-    if (ty === "recovery") view("SetPw");
+    if (ty === "recovery" || ty === "invite") view("SetPw");
     else if (ty === "signup" || ty === "email") msg("#loginMsg", "Email confirmed. Welcome to Book Homes.", true);
+    else if (ty === "email_change") msg("#loginMsg", "Your new email address is confirmed.", true);
   });
 })();
 $("#toSignup").addEventListener("click", function(){ view("Signup"); });
@@ -170,7 +171,7 @@ $("#signupForm").addEventListener("submit", function(e){
   if (!$("#suTerms").checked){ msg("#signupMsg", "Please agree to the host terms."); return; }
   lsSet(PENDING_KEY, "1"); MODE = "local"; setTrust(true);
   busy(btn, true, "Creating..."); msg("#signupMsg", "");
-  sb.auth.signUp({email: em, password: pw, options: {emailRedirectTo: REDIRECT}}).then(function(r){
+  sb.auth.signUp({email: em, password: pw, options: {emailRedirectTo: REDIRECT, data: {app: "bookhomes"}}}).then(function(r){
     busy(btn, false, "Create account");
     if (r.error){ msg("#signupMsg", niceErr(r.error)); return; }
     var u = r.data && r.data.user;
@@ -224,8 +225,8 @@ function afterAuth(){
 }
 function refresh(){ return api("bookhomes-host", {action: "me"}).then(function(me){ ME = me; renderDash(); }); }
 function fillProfile(){
-  var p = (ME && ME.profile) || {};
-  $("#pName").value = p.name || ""; $("#pPhone").value = p.phone || ""; $("#pWa").value = p.whatsapp || ""; $("#pCompany").value = p.company || "";
+  var p = (ME && ME.profile) || {}, md = (SESSION && SESSION.user && SESSION.user.user_metadata) || {};
+  $("#pName").value = p.name || md.full_name || md.name || ""; $("#pPhone").value = p.phone || ""; $("#pWa").value = p.whatsapp || ""; $("#pCompany").value = p.company || "";
   $("#pDisplay").value = (ME && ME.host && ME.host.display_name) || "";
   $$("input[name=trader]").forEach(function(r){ r.checked = r.value === p.trader_status; });
 }
@@ -257,7 +258,7 @@ function renderDash(){
   $("#lcards").innerHTML = ls.length ? ls.map(function(l){
     var ph = (ME.photos || []).filter(function(x){ return String(x.listing_id) === String(l.id); })[0];
     var legacy = !!l.legacy_source;
-    var acts = legacy ? '<a class="btn ghost sm" href="/admin/">Managed in admin</a>' :
+    var acts = legacy ? '<button type="button" class="btn sm" data-calfor="' + l.id + '">Calendar</button><a class="btn ghost sm" href="' + esc(l.page_url || "/") + '" target="_blank" rel="noopener">View</a><span class="m" style="font-size:12.5px;display:block;margin-top:6px">Prices and details come from your channel manager. Block and open dates in Calendar.</span>' :
       '<button type="button" class="btn sm" data-edit="' + l.id + '">' + (l.status === "draft" || l.status === "rejected" ? "Continue" : "Edit") + '</button>' +
       (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
       (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "");
@@ -279,6 +280,8 @@ function renderDash(){
   if (cur) sel.value = cur;
 }
 document.addEventListener("click", function(e){
+  var cf = e.target.closest && e.target.closest("[data-calfor]");
+  if (cf){ $("#calListing").value = cf.getAttribute("data-calfor"); var tb = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "calendar"; })[0]; if (tb) tb.click(); return; }
   var ed = e.target.closest && e.target.closest("[data-edit]");
   if (ed){ openWizard(+ed.getAttribute("data-edit")); return; }
   var st = e.target.closest && e.target.closest("[data-status]");
@@ -334,6 +337,7 @@ function loadCal(){
   api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to}).then(function(j){ CAL.data = j; drawCal(); })
     .catch(function(e){ $("#cal2").innerHTML = '<div class="msg err">' + esc(e.message) + "</div>"; });
 }
+function feedName(j, s){ var f = (j.feeds || []).filter(function(x){ return x.start_date <= s && s < x.end_date; })[0]; return f ? f.name : "Booked"; }
 function drawCal(){
   var j = CAL.data || {days: [], bookings: [], blocks: []}, first = CAL.month + "-01", today = ukToday(), html = "";
   ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function(d){ html += '<div class="dw">' + d + "</div>"; });
@@ -344,11 +348,13 @@ function drawCal(){
     var cls = s < today ? "past" : bk ? "booked" : d && d.status === "blocked" ? "blocked" : d && d.status === "reserved" ? "reserved" : "";
     var lo = CAL.a && (CAL.b || CAL.a), sel = CAL.a && s >= (CAL.a < lo ? CAL.a : lo) && s <= (CAL.a < lo ? lo : CAL.a);
     html += '<button type="button" class="d ' + cls + (sel ? " sel" : "") + '" data-day="' + s + '"' + (s < today ? " disabled" : "") + '><span class="n">' + (+s.slice(8)) + "</span>" +
-      (bk ? esc(bk.guest_name.split(" ")[0]) : d && d.status === "reserved" ? "Other site" : d && d.price != null ? "£" + Math.round(d.price) : "") + "</button>";
+      (bk ? esc(bk.guest_name.split(" ")[0]) : d && d.status === "reserved" ? esc(feedName(j, s)) : d && d.status === "blocked" ? "Blocked" : d && d.price != null ? "£" + Math.round(d.price) : "") + "</button>";
   }
   $("#cal2").innerHTML = html;
   var lo2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.a : CAL.b) : CAL.a, hi2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.b : CAL.a) : CAL.a;
   $("#calSel").textContent = CAL.a ? (lo2 === hi2 ? "Night of " + dfmt(lo2) : dfmt(lo2) + " to " + dfmt(hi2) + " (last night)") : "No nights selected";
+  $$("[data-ca=price],[data-ca=reset],#calPrice").forEach(function(x){ x.closest("label") ? x.closest("label").classList.toggle("hidden", !!j.prices_managed_elsewhere) : x.classList.toggle("hidden", !!j.prices_managed_elsewhere); });
+  if (j.prices_managed_elsewhere && !$("#calOut").textContent) $("#calOut").textContent = "Zermatt Lodge prices come from your channel manager. Blocks you add here also close the dates there (through the iCal link).";
   $("#calBlocks").innerHTML = (j.blocks || []).length ? "<h3 style='margin:14px 0 8px'>Your blocks</h3>" + j.blocks.map(function(b){
     return '<div class="item"><div class="h"><span>' + dfmt(b.start_date) + " to " + dfmt(addDays(b.end_date, -1)) + '</span><button type="button" class="btn ghost sm" data-unblock="' + esc(b.id) + '">Unblock</button></div><div class="m">' + esc(b.reason) + "</div></div>";
   }).join("") : "";
@@ -370,9 +376,9 @@ $$("[data-ca]").forEach(function(btn){ btn.addEventListener("click", function(){
   if (!CAL.a){ $("#calOut").textContent = "Tap the first and last night first."; return; }
   var lo = CAL.b && CAL.b < CAL.a ? CAL.b : CAL.a, hi = CAL.b && CAL.b > CAL.a ? CAL.b : CAL.a, id = +$("#calListing").value, a = btn.getAttribute("data-ca"), p;
   if (a === "block") p = api("bookhomes-host", {action: "block", listing_id: id, start: lo, end: hi, reason: "Host block"});
-  else if (a === "open") p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null, closed: false});
-  else if (a === "price"){ var v = +$("#calPrice").value; if (!(v >= 10)){ $("#calOut").textContent = "Enter a price of at least £10."; return; } p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: v, closed: false}); }
-  else p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null, closed: false});
+  else if (a === "open") p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, open: true});
+  else if (a === "price"){ var v = +$("#calPrice").value; if (!(v >= 10)){ $("#calOut").textContent = "Enter a price of at least £10."; return; } p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: v}); }
+  else p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null});
   $("#calOut").textContent = "Saving...";
   p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; loadCal(); }).catch(function(e){ $("#calOut").textContent = e.message; });
 }); });
@@ -386,7 +392,8 @@ function blank(){ return {property_type: "house", area: "", city: "Liverpool", l
   kosher: {kitchen: false, kitchen_type: null, separate_sinks: false, separate_ovens: false, supervision: "", shabbat: {}, shul_name: "", shul_walk_mins: null, eruv: "unknown", kosher_shops: "", mikvah: ""},
   business: {desk: false, wifi_mbps: null, van_parking: false, separate_beds: false, monthly_rates: false},
   title: "", description: "", house_rules: "No parties or events. No smoking.", check_in_time: "15:00", check_out_time: "11:00", cancellation_policy: "moderate",
-  base_price: null, weekend_price: null, cleaning_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: ""}; }
+  base_price: null, weekend_price: null, cleaning_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: "",
+  guests_included: null, extra_guest_fee: 0, pets_allowed: false, pet_fee: 0, checkin_days: [], checkout_days: [], advance_notice_days: 0, prep_days: 0, booking_window_days: 365}; }
 function tiles(list, isOn, attr){ return '<div class="tiles">' + list.map(function(t){ return '<button type="button" class="tile" ' + attr + '="' + t[0] + '" aria-pressed="' + (isOn(t[0]) ? "true" : "false") + '">' + icon(t[2] || t[0]) + "<span>" + esc(t[1]) + "</span></button>"; }).join("") + "</div>"; }
 function stepper(key, label, min, max){ return '<div class="stepper"><span>' + label + '</span><div><button type="button" data-step="' + key + '" data-d="-1" aria-label="Fewer">-</button><b id="st_' + key + '">' + W.l[key] + '</b><button type="button" data-step="' + key + '" data-d="1" data-max="' + max + '" data-min="' + min + '" aria-label="More">+</button></div></div>'; }
 function sw(path, label, ic){ var v = get(path); return '<label class="switch"><span>' + icon(ic) + esc(label) + '</span><input type="checkbox" data-sw="' + path + '"' + (v ? " checked" : "") + "></label>"; }
@@ -394,7 +401,23 @@ function get(path){ return path.split(".").reduce(function(o, k){ return o == nu
 function set(path, v){ var ks = path.split("."), o = W.l; for (var i = 0; i < ks.length - 1; i++){ if (o[ks[i]] == null) o[ks[i]] = {}; o = o[ks[i]]; } o[ks[ks.length - 1]] = v; }
 function inp(path, label, type, extra){ var v = get(path); return '<label class="f2">' + label + '<input type="' + (type || "text") + '" data-in="' + path + '" value="' + esc(v == null ? "" : v) + '" ' + (extra || "") + "></label>"; }
 function area(path, label, extra){ return '<label class="f2">' + label + '<textarea data-in="' + path + '" ' + (extra || "") + ">" + esc(get(path) || "") + "</textarea></label>"; }
+var FEES = function(){ return !!(ME && ME.fees_enabled); };
+function sel(path, label, opts){ var v = String(get(path)); return '<label class="f2">' + label + '<select data-in="' + path + '">' + opts.map(function(o){ return '<option value="' + o[0] + '"' + (String(o[0]) === v ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>"; }
+function dayChips(path, label){ var on = get(path) || []; return '<div class="f2">' + label + '<div class="tiles" style="grid-template-columns:repeat(7,1fr)">' + ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(function(d, i){ return '<button type="button" class="tile" data-dayk="' + path + '" data-d="' + (i + 1) + '" aria-pressed="' + (on.indexOf(i + 1) >= 0 ? "true" : "false") + '"><span>' + d + "</span></button>"; }).join("") + '</div><small style="color:var(--muted)">None ticked = any day.</small></div>'; }
+function importStep(){
+  return '<label class="f2">Your Airbnb listing link<input type="url" id="abUrl" placeholder="https://www.airbnb.co.uk/rooms/12345678" value="' + esc(W.l.airbnb_url || "") + '"></label>' +
+    '<button type="button" class="btn" id="abGo">Import from Airbnb</button>' +
+    '<p class="m" style="font-size:13.5px;color:var(--muted);margin-top:8px">Only import listings you own or manage. We copy the public text, details and photos into a draft. You check every step before it goes anywhere, and we never copy reviews or ratings.</p>' +
+    '<div id="abOut" style="margin-top:12px"></div><p class="m" style="margin-top:14px">Not on Airbnb? Tap Next to start from scratch.</p>';
+}
+function rulesStep(){
+  return dayChips("checkin_days", "Check-in days") + dayChips("checkout_days", "Checkout days") +
+    sel("advance_notice_days", "How much notice do you need?", [[0, "Same day"], [1, "At least 1 day"], [2, "At least 2 days"], [3, "At least 3 days"], [7, "At least 7 days"]]) +
+    sel("prep_days", "Preparation time between stays", [[0, "None"], [1, "Block 1 night before and after each booking"], [2, "Block 2 nights before and after each booking"]]) +
+    sel("booking_window_days", "How far ahead can guests book?", [[90, "3 months"], [180, "6 months"], [365, "12 months"], [730, "24 months"]]);
+}
 var STEPS = [
+  {h: "Import from Airbnb (optional)", lead: "Already listed on Airbnb? Paste your listing link and we'll fill in the steps for you.", r: importStep, hide: function(){ return W.l.status && W.l.status !== "draft" && W.l.status !== "rejected"; }},
   {h: "Which of these best describes your place?", r: function(){ return tiles(TYPES, function(k){ return W.l.property_type === k; }, "data-type"); }, f: ["property_type"]},
   {h: "Where's your place?", lead: "Give the area, not the street address. Then tap the map near your home: guests only ever see a circle about 1 km wide.",
    r: function(){ return inp("area", "Area", "text", 'placeholder="e.g. Allerton, south Liverpool" maxlength="80"') + inp("city", "Town or city", "text", 'maxlength="60"') + '<div class="pmap" id="pmap"></div><p class="m" id="pinTxt" style="font-size:13.5px;color:var(--muted);margin-top:6px">' + (W.l.lat ? "Pin set." : "No pin yet.") + "</p>"; },
@@ -418,9 +441,13 @@ var STEPS = [
   {h: "House rules and check-in", r: function(){ return area("house_rules", "House rules", 'maxlength="2500"') + inp("check_in_time", "Check-in from", "time") + inp("check_out_time", "Checkout by", "time") +
      '<label class="f2">Cancellation policy<select data-in="cancellation_policy">' + [["flexible","Flexible: full refund up to 24 hours before"],["moderate","Moderate: full refund up to 5 days before, then 50%"],["strict","Strict: full refund up to 14 days before, 50% up to 7 days"]].map(function(o){ return '<option value="' + o[0] + '"' + (W.l.cancellation_policy === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>"; },
    f: ["house_rules", "check_in_time", "check_out_time", "cancellation_policy"]},
-  {h: "Set your price", lead: "Guests see one total with cleaning included and no booking fee.", r: function(){ return inp("base_price", "Price per night (£)", "number", 'min="10" max="10000" step="1"') + inp("weekend_price", "Friday and Saturday nights (£, optional)", "number", 'min="10" max="10000" step="1"') + inp("cleaning_fee", "Cleaning fee per stay (£)", "number", 'min="0" max="2000" step="1"') + inp("weekly_discount_pct", "Weekly discount, 7+ nights (%)", "number", 'min="0" max="50"') + inp("monthly_discount_pct", "Monthly discount, 28+ nights (%)", "number", 'min="0" max="60"') + inp("min_nights", "Minimum nights", "number", 'min="1" max="90"') + inp("max_nights", "Maximum nights", "number", 'min="1" max="365"') + '<div class="example" id="example"></div>'; },
-   f: ["base_price", "weekend_price", "cleaning_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights"], v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : ""; }, after: example},
-  {h: "Sync your other calendars", lead: "Stops double bookings. In Airbnb or Booking.com, find 'Export calendar' and paste the link here. We check them every 15 minutes.", r: icalStep, f: ["airbnb_url", "booking_url"], needId: true},
+  {h: "Set your price", lead: "Guests see a clear breakdown and pay no guest service fee. Book Homes takes a commission from your payout only.", r: function(){ return (W.priceHint ? '<p class="m" style="font-size:13.5px">Your Airbnb page showed about £' + esc(W.priceHint) + ' a night. Set whatever price you like here.</p>' : "") + inp("base_price", "Price per night (£)", "number", 'min="10" max="10000" step="1"') + inp("weekend_price", "Friday and Saturday nights (£, optional)", "number", 'min="10" max="10000" step="1"') + inp("cleaning_fee", "Cleaning fee per stay (£)", "number", 'min="0" max="2000" step="1"') +
+     (FEES() ? inp("guests_included", "Guests included in the nightly price (leave empty for no extra guest fee)", "number", 'min="1" max="30"') + inp("extra_guest_fee", "Extra guest fee, per guest per night (£)", "number", 'min="0" max="500" step="1"') + sw("pets_allowed", "Pets allowed", "pets") + (W.l.pets_allowed ? inp("pet_fee", "Pet fee per stay (£)", "number", 'min="0" max="500" step="1"') : "") : "") +
+     inp("weekly_discount_pct", "Weekly discount, 7+ nights (%)", "number", 'min="0" max="50"') + inp("monthly_discount_pct", "Monthly discount, 28+ nights (%)", "number", 'min="0" max="60"') + inp("min_nights", "Minimum nights", "number", 'min="1" max="90"') + inp("max_nights", "Maximum nights", "number", 'min="1" max="365"') + '<div class="example" id="example"></div>'; },
+   f: ["base_price", "weekend_price", "cleaning_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights", "guests_included", "extra_guest_fee", "pets_allowed", "pet_fee"], v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : ""; }, after: example, rerender: true},
+  {h: "Booking rules (optional)", lead: "Choose when guests can arrive and how far ahead they can book. Leave as they are to accept any day.", r: rulesStep,
+   f: ["checkin_days", "checkout_days", "advance_notice_days", "prep_days", "booking_window_days"], hide: function(){ return !FEES(); }},
+  {h: "Sync your other calendars", lead: "Stops double bookings. In Airbnb, Booking.com, Vrbo or Guesty, find 'Export calendar' and paste the link here. We check every 15 minutes, or tap Sync now.", r: icalStep, f: ["airbnb_url", "booking_url"], needId: true},
   {h: "Check and submit", r: reviewStep, last: true}
 ];
 function openWizard(id){
@@ -430,6 +457,8 @@ function openWizard(id){
   ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
   W.l.kosher.shabbat = W.l.kosher.shabbat || {};
   W.photos = (ME.photos || []).filter(function(p){ return +p.listing_id === id; });
+  W.priceHint = null;
+  if (STEPS[0].hide()) W.i = 1;
   if (l && l.status === "approved") W.i = STEPS.length - 1;
   show("#wz", true); document.body.style.overflow = "hidden"; drawStep();
 }
@@ -438,13 +467,13 @@ function drawStep(){
   var s = STEPS[W.i];
   $("#wzBar").style.width = Math.round((W.i + 1) / STEPS.length * 100) + "%";
   $("#wzIn").innerHTML = '<h2 id="wzH">' + esc(s.h) + "</h2>" + (s.lead ? '<p class="lead">' + esc(s.lead) + "</p>" : "") + s.r();
-  $("#wzBack").style.visibility = W.i ? "visible" : "hidden";
+  $("#wzBack").style.visibility = W.i > (STEPS[0].hide() ? 1 : 0) ? "visible" : "hidden";
   $("#wzNext").textContent = s.last ? "Submit for approval" : "Next";
   $("#wzMsg").textContent = "";
   if (s.after) s.after();
   $(".wz-body").scrollTop = 0;
 }
-function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
+function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths","guests_included","extra_guest_fee","pet_fee","advance_notice_days","prep_days","booking_window_days"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
 function save(fields){
   var body = {action: "save_listing", listing: payload(fields || [])};
   if (W.id) body.id = W.id; else body.listing.title = W.l.title || (W.l.area ? "Home in " + W.l.area : "My home");
@@ -460,12 +489,15 @@ $("#wzNext").addEventListener("click", function(){
       .catch(function(e){ b.disabled = false; $("#wzMsg").textContent = e.message; });
     return;
   }
-  (s.f || STEPS[W.i + 1].needId ? save(s.f || []) : Promise.resolve()).then(function(){ b.disabled = false; W.i++; drawStep(); })
+  var nx = W.i + 1; while (STEPS[nx].hide && STEPS[nx].hide()) nx++;
+  (s.f || STEPS[nx].needId ? save(s.f || []) : Promise.resolve()).then(function(){ b.disabled = false; W.i = nx; drawStep(); })
     .catch(function(e){ b.disabled = false; $("#wzMsg").textContent = e.message; });
 });
-$("#wzBack").addEventListener("click", function(){ if (W.i){ W.i--; $("#wzNext").style.visibility = "visible"; drawStep(); } });
+$("#wzBack").addEventListener("click", function(){ var pv = W.i - 1; while (pv > 0 && STEPS[pv].hide && STEPS[pv].hide()) pv--; if (pv >= 0 && !(STEPS[pv].hide && STEPS[pv].hide())){ W.i = pv; $("#wzNext").style.visibility = "visible"; drawStep(); } });
 $("#wzSave").addEventListener("click", function(){ var s = STEPS[W.i]; (s.f ? save(s.f) : Promise.resolve()).then(closeWizard).catch(function(e){ $("#wzMsg").textContent = e.message; }); });
 $("#wzIn").addEventListener("click", function(e){
+  var dk = e.target.closest("[data-dayk]");
+  if (dk){ var dp = dk.getAttribute("data-dayk"), dv = +dk.getAttribute("data-d"), da = (get(dp) || []).slice(), di = da.indexOf(dv); if (di >= 0) da.splice(di, 1); else da.push(dv); da.sort(); set(dp, da); dk.setAttribute("aria-pressed", di >= 0 ? "false" : "true"); return; }
   var t = e.target.closest("[data-type],[data-amen],[data-cat2],[data-step]");
   if (!t) return;
   if (t.hasAttribute("data-type")){ W.l.property_type = t.getAttribute("data-type"); drawStep(); }
@@ -551,21 +583,64 @@ function upload(files){
 function icalStep(){
   var src = (ME.sources || []).filter(function(s){ return +s.listing_id === W.id && s.enabled; });
   var l = (ME.listings || []).filter(function(x){ return +x.id === W.id; })[0];
-  return '<div id="icList">' + src.map(function(s){ return '<div class="item"><div class="h"><span>' + esc(s.name) + '</span><button type="button" class="btn ghost sm" data-rmical="' + esc(s.id) + '">Remove</button></div><div class="m">' + esc(s.url.slice(0, 70)) + "...</div></div>"; }).join("") + "</div>" +
-    '<label class="f2">Calendar name<select id="icName"><option>Airbnb</option><option>Booking.com</option><option>Vrbo</option><option>Other</option></select></label><label class="f2">Calendar link (iCal)<input type="url" id="icUrl" placeholder="https://..."></label><button type="button" class="btn ghost" id="icAdd">Add calendar</button><p class="m" id="icOut" style="margin:8px 0 16px"></p>' +
+  var names = ME.feed_names || ["Airbnb", "Booking.com", "Vrbo", "Guesty", "Other"];
+  return '<div id="icList">' + src.map(function(s){
+      var st = s.last_status === "ok" ? "Synced " + (s.last_fetched_at ? new Date(s.last_fetched_at).toLocaleString("en-GB", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"}) : "") + " · " + (s.last_event_count || 0) + " booked or blocked periods" : s.last_status === "error" ? "Problem: " + (s.last_error || "could not read it") : "Waiting for first sync";
+      return '<div class="item"><div class="h"><span>' + esc(s.name) + '</span><button type="button" class="btn ghost sm" data-rmical="' + esc(s.id) + '">Remove</button></div><div class="m">' + esc(s.url.slice(0, 70)) + '...</div><div class="m" style="font-size:13px;color:' + (s.last_status === "error" ? "#b42318" : "var(--muted)") + '">' + esc(st) + "</div></div>"; }).join("") + "</div>" +
+    (src.length ? '<button type="button" class="btn ghost sm" id="icSync">Sync now</button>' : "") +
+    '<label class="f2">Calendar from<select id="icName">' + names.map(function(n){ return "<option>" + esc(n) + "</option>"; }).join("") + '</select></label><label class="f2">Calendar link (iCal export)<input type="url" id="icUrl" placeholder="https://... .ics"></label><button type="button" class="btn ghost" id="icAdd">Add calendar</button><p class="m" id="icOut" style="margin:8px 0 16px"></p>' +
     inp("airbnb_url", "Your Airbnb listing page (optional)", "url", 'placeholder="https://www.airbnb.co.uk/rooms/..."') + inp("booking_url", "Your Booking.com page (optional)", "url", 'placeholder="https://www.booking.com/hotel/..."') +
-    (l && l.ical_export_url ? '<p class="m" style="font-size:14px">Paste this link into Airbnb and Booking.com ("Import calendar") so they close dates booked here:<code class="code-line">' + esc(l.ical_export_url) + "</code></p>" : '<p class="m" style="font-size:14px;color:var(--muted)">Your Book Homes calendar link appears here once the listing is saved.</p>');
+    (l && l.ical_export_url ? '<p class="m" style="font-size:14px">Your Book Homes calendar link. Paste it into Airbnb, Booking.com, Vrbo or Guesty ("Import calendar") so they close dates booked here:<code class="code-line">' + esc(l.ical_export_url) + "</code></p>" +
+      '<details style="margin-top:10px"><summary><b>Using Guesty?</b></summary><ol style="font-size:14px;line-height:1.6;padding-left:20px">' +
+      "<li>In Guesty, open this property and find its calendar sync (iCal) settings.</li>" +
+      "<li>Choose to import a calendar, paste your Book Homes link above and save. Guesty then blocks dates booked on Book Homes.</li>" +
+      "<li>Still in Guesty, copy the property's iCal export link.</li>" +
+      "<li>Back here, choose 'Guesty' above, paste that link and tap Add calendar. We check it every 15 minutes, or tap Sync now.</li></ol></details>"
+      : '<p class="m" style="font-size:14px;color:var(--muted)">Your Book Homes calendar link appears here once the listing is saved.</p>');
 }
 $("#wzIn").addEventListener("click", function(e){
+  if (e.target.id === "abGo"){
+    var ab = e.target, url = $("#abUrl").value.trim();
+    if (!/airbnb\.[a-z.]+\/rooms\/(plus\/)?\d+/i.test(url)){ $("#abOut").innerHTML = '<div class="msg err">Paste your Airbnb listing link. It looks like https://www.airbnb.co.uk/rooms/12345678</div>'; return; }
+    busy(ab, true, "Importing... this takes up to a minute");
+    api("bookhomes-import-airbnb", {url: url, listing_id: W.id || undefined}).then(function(j){
+      busy(ab, false, "Import from Airbnb");
+      if (!j.ok){
+        $("#abOut").innerHTML = '<div class="msg err">' + esc(j.error) + '</div><label class="f2">Paste your Airbnb description (optional)<textarea id="abDesc" maxlength="5000"></textarea></label>';
+        W.l.airbnb_url = url; return;
+      }
+      W.id = j.listing_id; W.priceHint = j.price_hint || null;
+      return api("bookhomes-host", {action: "me"}).then(function(me){
+        ME = me;
+        var l = (ME.listings || []).filter(function(x){ return +x.id === W.id; })[0];
+        W.l = Object.assign(blank(), JSON.parse(JSON.stringify(l)));
+        ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
+        W.l.kosher.shabbat = W.l.kosher.shabbat || {};
+        W.photos = (ME.photos || []).filter(function(p){ return +p.listing_id === W.id; });
+        $("#abOut").innerHTML = '<div class="msg ok">Imported ' + esc((j.imported || []).length) + " details and " + esc(j.photos) + " photos. Tap Next and check each step: fix anything that's wrong and set the map pin.</div>";
+      });
+    }).catch(function(err){ busy(ab, false, "Import from Airbnb"); $("#abOut").innerHTML = '<div class="msg err">' + esc(err.message) + "</div>"; });
+    return;
+  }
+  if (e.target.id === "icSync"){
+    var sb2 = e.target; busy(sb2, true, "Syncing...");
+    api("bookhomes-host", {action: "sync_now", listing_id: W.id}).then(function(j){
+      return refresh().then(function(){ drawStep(); $("#icOut").textContent = j.ok ? "All calendars synced." : "Some calendars could not be read. See the message under each one."; });
+    }).catch(function(err){ busy(sb2, false, "Sync now"); $("#icOut").textContent = err.message; });
+    return;
+  }
   if (e.target.id === "icAdd"){
     var url = $("#icUrl").value.trim();
-    if (!/^https:\/\//.test(url)){ $("#icOut").textContent = "Paste the full link (it starts with https://)."; return; }
-    api("bookhomes-host", {action: "add_ical", listing_id: W.id, name: $("#icName").value, url: url}).then(refresh).then(function(){ drawStep(); $("#icOut").textContent = "Added. It syncs within 15 minutes."; })
-      .catch(function(err){ $("#icOut").textContent = err.message; });
+    if (!/^(https|webcal):\/\//i.test(url)){ $("#icOut").textContent = "Paste the full link (it starts with https:// or webcal://)."; return; }
+    var add = e.target; busy(add, true, "Checking the link...");
+    api("bookhomes-host", {action: "add_ical", listing_id: W.id, name: $("#icName").value, url: url}).then(function(j){
+      return refresh().then(function(){ drawStep(); $("#icOut").textContent = j.synced ? "Linked and synced: " + j.events + " booked or blocked periods found. We re-check every 15 minutes." : "Linked, but we couldn't read it yet: " + (j.error || "unknown problem") + " We'll keep trying every 15 minutes."; });
+    }).catch(function(err){ busy(add, false, "Add calendar"); $("#icOut").textContent = err.message; });
   }
   var rm = e.target.closest && e.target.closest("[data-rmical]");
   if (rm) api("bookhomes-host", {action: "remove_ical", id: rm.getAttribute("data-rmical")}).then(refresh).then(drawStep);
 });
+$("#wzIn").addEventListener("input", function(e){ if (e.target.id === "abDesc") W.l.description = e.target.value; });
 function reviewStep(){
   var l = W.l, f = [];
   if (l.kosher.kitchen) f.push("Kosher kitchen");
