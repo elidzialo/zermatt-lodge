@@ -260,6 +260,23 @@ create table if not exists bookhomes.reviews (
 );
 create index if not exists bh_reviews_listing_idx on bookhomes.reviews (listing_id, created_at desc);
 
+-- "Tell me if these dates free up": one row per request; bookhomes-ical-sync emails once when the stay becomes bookable.
+-- (A copy also goes into zermatt.leads so it shows in admin > Sign-ups.)
+create table if not exists bookhomes.date_alerts (
+  id          uuid primary key default gen_random_uuid(),
+  email       text not null,
+  listing_id  bigint not null references bookhomes.listings(id) on delete cascade,
+  check_in    date not null,
+  check_out   date not null,
+  guests      integer not null default 1,
+  consent     boolean not null default false,
+  ip_hash     text,
+  created_at  timestamptz not null default now(),
+  notified_at timestamptz,
+  check (check_out > check_in)
+);
+create index if not exists bh_date_alerts_open_idx on bookhomes.date_alerts (check_in) where notified_at is null;
+
 create table if not exists bookhomes.audit_log (
   id          bigserial primary key,
   at          timestamptz not null default now(),
@@ -276,10 +293,10 @@ create index if not exists bh_audit_at_idx on bookhomes.audit_log (at desc);
 -- Helpers
 -- ---------------------------------------------------------------------------
 create or replace function bookhomes.uk_today() returns date
-language sql stable as $$ select (now() at time zone 'Europe/London')::date $$;
+language sql stable set search_path = bookhomes, public as $$ select (now() at time zone 'Europe/London')::date $$;
 
 create or replace function bookhomes.is_aal2() returns boolean
-language sql stable as $$ select coalesce(auth.jwt() ->> 'aal', '') = 'aal2' $$;
+language sql stable set search_path = bookhomes, public as $$ select coalesce(auth.jwt() ->> 'aal', '') = 'aal2' $$;
 
 -- Admin = email on the shared admin list (zermatt.admins) AND 2-step verified session.
 create or replace function bookhomes.is_admin() returns boolean
@@ -558,7 +575,7 @@ create or replace view bookhomes.public_listings with (security_invoker = false)
 -- To change a policy later, drop it by hand first.
 -- ---------------------------------------------------------------------------
 create or replace function bookhomes.ensure_policy(p_schema text, p_table text, p_name text, p_def text) returns void
-language plpgsql as $$
+language plpgsql set search_path = bookhomes, public as $$
 begin
   if not exists (select 1 from pg_policies where schemaname = p_schema and tablename = p_table and policyname = p_name) then
     execute format('create policy %I on %I.%I ', p_name, p_schema, p_table) || p_def;
@@ -569,7 +586,7 @@ do $$
 declare t text;
 begin
   foreach t in array array['settings','profiles','hosts','listings','listing_photos','listing_ical_sources','listing_ical_events',
-                           'availability','listing_blocks','bookings','holds','payouts','reviews','audit_log']
+                           'availability','listing_blocks','bookings','holds','payouts','reviews','audit_log','date_alerts']
   loop
     execute format('alter table bookhomes.%I enable row level security', t);
     perform bookhomes.ensure_policy('bookhomes', t, 'admin_all',
@@ -612,7 +629,7 @@ grant select on bookhomes.listing_photos, bookhomes.reviews, bookhomes.public_li
 grant select (id, host_id, slug, title, area, city, property_type, description, house_rules, max_guests, bedrooms, beds, baths, amenities, categories, kosher, business, base_price, weekend_price, cleaning_fee, weekly_discount_pct, monthly_discount_pct, min_nights, max_nights, check_in_time, check_out_time, cancellation_policy, status, lat, lng, airbnb_url, booking_url, legacy_source, page_url, submitted_at, approved_at, created_at, updated_at) on bookhomes.listings to anon, authenticated;
 grant select on bookhomes.profiles, bookhomes.hosts, bookhomes.listing_photos, bookhomes.listing_ical_sources,
   bookhomes.listing_ical_events, bookhomes.availability, bookhomes.listing_blocks, bookhomes.bookings, bookhomes.payouts,
-  bookhomes.reviews, bookhomes.settings, bookhomes.audit_log, bookhomes.all_bookings, bookhomes.public_listings to authenticated;
+  bookhomes.reviews, bookhomes.settings, bookhomes.audit_log, bookhomes.date_alerts, bookhomes.all_bookings, bookhomes.public_listings to authenticated;
 grant insert, update on bookhomes.listings to authenticated;
 grant insert, update, delete on bookhomes.listing_photos, bookhomes.listing_ical_sources, bookhomes.availability,
                                  bookhomes.listing_blocks to authenticated;

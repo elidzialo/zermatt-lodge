@@ -3,11 +3,12 @@
 // 2. imports every enabled channel calendar (Airbnb / Booking.com / Vrbo) of every marketplace listing.
 //    A feed that fails keeps its last good copy: we never unblock nights because of an error.
 // 3. sends the "how was your stay?" review email for completed paid stays (once per booking)
+// 4. emails guests whose "tell me if these dates free up" request is now bookable (once per request)
 import { stripeClient, optionalEnv, siteUrl, adminClient } from "../_shared/util.ts";
 import { parseIcal } from "../_shared/ical.ts";
 import { jsonRes, sql } from "../_shared/bh.ts";
 import { loadBooking } from "../_shared/bh_booking.ts";
-import { reviewRequest } from "../_shared/bh_emails.ts";
+import { adminNotice, reviewRequest } from "../_shared/bh_emails.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 
 async function fetchText(url: string): Promise<string> {
@@ -78,5 +79,24 @@ Deno.serve(async (req: Request): Promise<Response> => {
     await sql`update bookhomes.bookings set review_requested_at = now() where id = ${d.id}`;
   }
   report.review_requests = due.length;
+
+  // Date alerts: email once when the requested stay can be booked again
+  const alerts = await sql`select a.id, a.email, a.listing_id, a.check_in::text, a.check_out::text, a.guests, l.slug, l.title, l.legacy_source, l.page_url
+                             from bookhomes.date_alerts a join bookhomes.listings l on l.id = a.listing_id
+                            where a.notified_at is null and a.check_in > bookhomes.uk_today() and l.status = 'approved' limit 200`;
+  let alerted = 0;
+  for (const a of alerts) {
+    const c = await sql`select count(*)::int n, count(*) filter (where status <> 'available' or price is null)::int bad
+                          from bookhomes.listing_calendar(${a.listing_id}, ${a.check_in}::date, ${a.check_out}::date)`;
+    const nights = (Date.parse(a.check_out) - Date.parse(a.check_in)) / 864e5;
+    if (c[0].n !== nights || c[0].bad > 0) continue;
+    const link = `${siteUrl()}${a.page_url || `/stays/${a.slug}/`}?check_in=${a.check_in}&check_out=${a.check_out}&guests=${a.guests}`;
+    await sendLogged(db, { toRole: "guest", to: a.email, template: "bh_date_alert",
+      email: adminNotice(`Your dates are free at ${a.title}`, [`Good news: ${a.title} is available again for ${a.check_in} to ${a.check_out}.`,
+        "Dates can go quickly, and we can't hold them until you book.", `Book here: ${link}`], siteUrl(), a.page_url || `/stays/${a.slug}/`) });
+    await sql`update bookhomes.date_alerts set notified_at = now() where id = ${a.id}`;
+    alerted++;
+  }
+  report.date_alerts_sent = alerted;
   return jsonRes({ ok: problems.length === 0, ...report, problems });
 });

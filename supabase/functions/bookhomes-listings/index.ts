@@ -3,7 +3,7 @@
 // GET  ?action=get&slug=...                  one approved listing + its published reviews
 // GET  ?action=search&check_in&check_out&guests   availability + all-in total per listing for those dates
 // GET  ?action=review_info&t=<token>         for the review page (completed stays only)
-// POST {action:"alert", email, slug, check_in, check_out, consent}  "tell me if these dates free up" (zermatt.leads)
+// POST {action:"alert", email, slug, check_in, check_out, guests, consent}  "email me if these dates free up" (bookhomes.date_alerts; emailed by bookhomes-ical-sync)
 // POST {action:"review", t, rating, comment}                         one review per completed, paid stay
 // Never returns host emails/phones, street addresses or iCal tokens.
 import { isValidIsoDate, ukToday } from "../_shared/util.ts";
@@ -29,7 +29,7 @@ async function listAll(where?: { slug?: string }) {
       baths: Number(l.baths),
       lat: l.lat === null ? null : Number(l.lat),
       lng: l.lng === null ? null : Number(l.lng),
-      url: l.page_url || `/stays/${l.slug}/`,
+      url: l.page_url || `/stays/${l.slug}`,
       photos: photos.filter((p: { listing_id: number }) => Number(p.listing_id) === Number(l.id)).map((p: { url: string; caption: string }) => ({ url: p.url, caption: p.caption })),
       reviews: st ? { count: st.n, average: st.avg } : { count: 0, average: null },
       features: features(l),
@@ -104,11 +104,16 @@ Deno.serve(handle(async (req) => {
     const ipHash = ip ? Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode("bh-alert:" + ip))))
       .map((x) => x.toString(16).padStart(2, "0")).join("").slice(0, 32) : null;
     if (ipHash) {
-      const recent = await sql`select count(*)::int n from zermatt.leads where ip_hash = ${ipHash} and created_at > now() - interval '1 hour'`;
+      const recent = await sql`select count(*)::int n from bookhomes.date_alerts where ip_hash = ${ipHash} and created_at > now() - interval '1 hour'`;
       if (recent[0].n >= 8) throw new HttpError(429, "Too many requests. Please try again later.");
     }
+    const l = await sql`select id from bookhomes.public_listings where slug = ${slug}`;
+    if (!l.length) throw new HttpError(404, "Listing not found");
+    const guests = int(body.guests, 1, 30) ?? 1;
+    await sql`insert into bookhomes.date_alerts (email, listing_id, check_in, check_out, guests, consent, ip_hash)
+              values (${email}, ${l[0].id}, ${ci}::date, ${co}::date, ${guests}, ${body.consent === true}, ${ipHash})`;
     await sql`insert into zermatt.leads (email, consent, source_page, ip_hash)
-              values (${email}, ${body.consent === true}, ${`price-alert /stays/${slug}/ ${ci} to ${co}`}, ${ipHash})`;
+              values (${email}, ${body.consent === true}, ${`date alert /stays/${slug}/ ${ci} to ${co}`}, ${ipHash})`;
     return jsonRes({ ok: true });
   }
   if (body.action === "review") {
