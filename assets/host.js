@@ -36,6 +36,7 @@ function trustUntil(){ try { var v = JSON.parse(lsGet(TRUST_KEY) || "null"); ret
 function setTrust(on){ if (on) lsSet(TRUST_KEY, JSON.stringify({until: Date.now() + 30 * 864e5})); else lsDel(TRUST_KEY); }
 function store(mode){ return (mode === "local" ? LS : SS) || memStore; }
 function clearLocalSession(){ if (!LS) return; try { Object.keys(LS).forEach(function(k){ if (/^sb-.*-auth-token/.test(k)) LS.removeItem(k); }); } catch (e) {} }
+var START_HASH = location.hash; // e.g. #wizard=12 or #edit=12:photos, to reopen the listing after a refresh
 var fromEmail = /(access_token|token_hash|error_description)=|[?&]code=/.test(location.hash + location.search);
 var MODE = fromEmail ? (lsGet(PENDING_KEY) === "0" ? "session" : "local") : (trustUntil() ? "local" : "session");
 if (fromEmail) setTrust(MODE === "local");
@@ -107,7 +108,7 @@ function startEnrol(all){
 sb.auth.onAuthStateChange(function(evt, session){
   if (evt === "PASSWORD_RECOVERY"){ setTimeout(function(){ view("SetPw"); }, 0); return; }
   if (/^(INITIAL_SESSION|SIGNED_IN|SIGNED_OUT|MFA_CHALLENGE_VERIFIED)$/.test(evt)) setTimeout(function(){ route(session); }, 0);
-  if (evt === "SIGNED_IN" && (location.hash || /access_token|code=/.test(location.search))) history.replaceState(null, "", location.pathname);
+  if (evt === "SIGNED_IN" && (/access_token|error_description|token_hash/.test(location.hash) || /access_token|code=/.test(location.search))) history.replaceState(null, "", location.pathname);
 });
 
 /* show / hide password */
@@ -556,8 +557,7 @@ function setHash(h){ try { history.replaceState(null, "", location.pathname + lo
 var chain = Promise.resolve(), autoT = null;
 function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (NUMS.indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
 function saved(state, text){
-  var el = $("#wzSaved"), el2 = $("#edSaved");
-  [el, el2].forEach(function(x){ if (!x) return; x.className = "saved " + state; x.textContent = text || ""; });
+  $$(".saved").forEach(function(x){ x.className = "saved " + state; x.textContent = text || ""; });
 }
 function save(fields){
   var snap = payload(fields || []);
@@ -596,7 +596,8 @@ function load(id, useBackup){
 function openListing(id, sec){ var l = id ? findL(id) : null; if (!l || l.status === "draft") openWizard(id); else openEditor(id, sec); }
 function openWizard(id, stepK){
   var r = load(id, true); W.mode = "wizard"; W.pasteMode = false;
-  var want = stepK || (r.bk && r.bk.step) || lsGet("bh_step_" + (id || "new"));
+  var want = stepK || lsGet("bh_step_" + (id || "new")) || (r.bk && r.bk.step);
+  if (want === "import" && id && W.l.airbnb_url) want = "type";
   var idx = STEPS.map(function(s){ return s.k; }).indexOf(want);
   if (idx < 0 && id){ idx = 1; for (var i = 1; i < STEPS.length; i++){ if (STEPS[i].v && STEPS[i].v()){ idx = i; break; } idx = i; } }
   W.i = idx < 0 ? 0 : idx;
@@ -613,7 +614,7 @@ function drawStep(){
   $("#wzStep").textContent = "Step " + pos + " of " + vis.length;
   $("#wzIn").innerHTML = '<h2 id="wzH" tabindex="-1">' + esc(s.h) + "</h2>" + (s.lead ? '<p class="lead">' + esc(s.lead) + "</p>" : "") + s.r();
   $("#wzBack").style.visibility = pos > 1 ? "visible" : "hidden";
-  $("#wzNext").textContent = s.last ? "Submit for approval" : s.imp && !W.imported ? "Skip, start from scratch" : "Next";
+  $("#wzNext").textContent = s.last ? "Submit for approval" : s.imp && !W.imported && !W.id ? "Skip, start from scratch" : "Next";
   $("#wzNext").style.visibility = "visible"; $("#wzNext").disabled = false;
   $("#wzIn").classList.remove("in"); void $("#wzIn").offsetWidth; $("#wzIn").classList.add("in");
   wzMsg("");
@@ -671,7 +672,7 @@ function missing(){
 }
 
 /* ----- input handling (shared by wizard and editor bodies) ----- */
-function changed(){ if (W.mode === "editor"){ W.dirty = true; edDirty(); backup(); } else autosave(); }
+function changed(){ if (W.mode === "editor"){ W.dirty = true; edDirty(); backup(); edErr(""); } else { wzMsg(""); autosave(); } }
 function rerenderBody(){ if (W.mode === "editor") drawSection(); else drawStep(); }
 function onClick(e){
   var t = e.target.closest && e.target.closest("[data-dayk],[data-type],[data-amen],[data-cat2],[data-step],[data-ge]");
@@ -813,7 +814,7 @@ function photoTiles(){
       '<span class="grip" aria-hidden="true" title="Drag to reorder">' + icon("grid") + '</span></div>' +
       '<input class="cap" type="text" maxlength="140" placeholder="Add a caption" value="' + esc(p.caption || "") + '" data-cap="' + esc(p.id) + '" aria-label="Caption for photo ' + (i + 1) + '">' +
       '<div class="phacts"><button type="button" data-mv="-1" data-id="' + esc(p.id) + '" aria-label="Move earlier"' + (i ? "" : " disabled") + ">" + icon("chev_l") + '</button><button type="button" data-mv="1" data-id="' + esc(p.id) + '" aria-label="Move later"' + (i < n - 1 ? "" : " disabled") + ">" + icon("chev_r") + "</button>" +
-      (i ? '<button type="button" data-cover="' + esc(p.id) + '">Make cover</button>' : "<span></span>") + '<button type="button" data-delph="' + esc(p.id) + '" aria-label="Delete photo ' + (i + 1) + '">' + icon("x") + "</button></div></figure>";
+      (i ? '<button type="button" data-cover="' + esc(p.id) + '" aria-label="Make this the cover photo">' + icon("star") + "Cover</button>" : "<span></span>") + '<button type="button" data-delph="' + esc(p.id) + '" aria-label="Delete photo ' + (i + 1) + '">' + icon("x") + "</button></div></figure>";
   }).join("");
 }
 function redrawPhotos(){ var g = $("#phGrid"); if (g) g.innerHTML = photoTiles(); var c = $("#phCount"); if (c) c.textContent = phCountText(); if (W.mode === "editor") edNav(); }
@@ -1106,7 +1107,7 @@ document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !$("
 /* ----- reopen what was open before a refresh ----- */
 window.addEventListener("beforeunload", function(e){ if ((W.mode === "editor" && W.dirty && !$("#ed").classList.contains("hidden")) || (DRAG && DRAG.on)){ backup(); e.preventDefault(); e.returnValue = ""; } });
 function resumeFromHash(){
-  var h = location.hash.slice(1), m = h.match(/^(wizard|edit)=(new|\d+)(?::([a-z]+))?$/);
+  var h = (location.hash || START_HASH).slice(1), m = h.match(/^(wizard|edit)=(new|\d+)(?::([a-z]+))?$/);
   if (!m) return;
   var id = m[2] === "new" ? null : +m[2];
   if (id && !findL(id)){ setHash(""); return; }

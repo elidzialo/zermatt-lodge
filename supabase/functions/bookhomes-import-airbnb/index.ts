@@ -68,7 +68,7 @@ function walk(root: J, fn: (o: J) => void) {
 }
 
 const AMEN_MAP: [RegExp, string][] = [
-  [/hair ?dryer/i, "hairdryer"], [/\bwi-?fi\b|wireless internet/i, "wifi"], [/free (street )?parking|parking on premises|free driveway|garage/i, "parking"],
+  [/hair ?dryer/i, "hairdryer"], [/\bwi-?fi\b|wireless internet/i, "wifi"], [/free (street )?parking|parking on premises|car park|free driveway|garage/i, "parking"],
   [/^kitchen$|^kitchenette$/i, "kitchen"], [/washer|washing machine/i, "washer"], [/\bdryer\b|tumble/i, "dryer"], [/^(hd)?tv\b|television/i, "tv"],
   [/heating/i, "heating"], [/air con/i, "aircon"], [/garden|backyard|patio or balcony/i, "garden"], [/dedicated workspace|workspace/i, "workspace"],
   [/\bcrib\b|\bcot\b|travel cot/i, "cot"], [/high chair/i, "highchair"], [/bath ?tub|^bath$/i, "bath"], [/ev charger/i, "ev_charger"],
