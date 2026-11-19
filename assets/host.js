@@ -485,7 +485,9 @@ function rowNum(path, label, sub, min, max){ return '<label class="prow"><span><
 function typeR(){ return tiles(TYPES, function(k){ return W.l.property_type === k; }, "data-type"); }
 function roomsR(){ return stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + stepper("baths", "Bathrooms", 0, 20) + '<p class="pnote">Half bathrooms: type 1.5 in the editor later if you need it.</p>'; }
 function locR(){ return inp("area", "Area or neighbourhood", "text", 'placeholder="e.g. Allerton, south Liverpool" maxlength="80" autocomplete="off"', "Not the street address. Guests get the address after they book.") + inp("city", "Town or city", "text", 'maxlength="60"') +
-  '<p class="pnote" style="margin-top:0">Tap the map near your home. Guests only see a circle about 1 km wide, never the exact spot.</p><div class="pmap" id="pmap"></div><p class="m" id="pinTxt" style="font-size:13.5px;color:var(--muted);margin-top:6px">' + (W.l.lat != null ? "Pin set. Tap again to move it." : "No pin yet.") + "</p>"; }
+  '<p class="pnote" style="margin-top:0">Find your home on the map: search, then drag the pin if needed. Guests only see a circle about 1 km wide, never the exact spot.</p>' +
+  '<div class="geo"><label class="sr-only" for="geoQ">Search for your address or postcode</label><input type="search" id="geoQ" placeholder="Postcode or street, e.g. L18 1EE" autocomplete="off" enterkeyhint="search"><button type="button" class="btn ghost" id="geoGo">Search</button></div><div id="geoOut" aria-live="polite"></div>' +
+  '<div class="pmap" id="pmap"></div><p class="m" id="pinTxt" style="font-size:13.5px;color:var(--muted);margin-top:6px">' + (W.l.lat != null ? "Pin set. Tap again to move it." : "No pin yet.") + "</p>"; }
 function amenR(){ return tiles(Object.keys(AMEN).map(function(k){ return [k, AMEN[k]]; }), function(k){ return W.l.amenities.indexOf(k) >= 0; }, "data-amen"); }
 function catR(){ return tiles(CAT, function(k){ return W.l.categories.indexOf(k) >= 0; }, "data-cat2"); }
 function kosherR(){ var k = W.l.kosher; return '<p class="pnote" style="margin-top:0">Only tick what is true. Guests see "Details provided by the host". Please don\'t claim a certification or use a hechsher logo.</p>' + sw("kosher.kitchen", "Kosher kitchen", "kosher") +
@@ -731,18 +733,74 @@ function onChange(e){
 }
 ["#wzIn", "#edBody"].forEach(function(id){ var el = $(id); el.addEventListener("click", onClick); el.addEventListener("input", onInput); el.addEventListener("change", onChange); });
 
+/* Location map: search an address (OpenStreetMap Nominatim, max 1 request a second), tap the map or drag the pin.
+   We store the spot rounded to about 1 km; guests only ever see a circle. */
+var MAPX = {map: null, pin: null, circle: null, lastGeo: 0, ro: null};
 function pinMap(){
-  if (!$("#pmap")) return;
-  if (!window.L){ if (window.HP && HP.leaflet) HP.leaflet().then(function(){ if (window.L) pinMap(); }); else $("#pinTxt").textContent = "The map didn't load. Check your connection, then go back and forward to try again."; return; }
-  if ($("#pmap")._leaflet_id) return;
-  var start = W.l.lat != null ? [+W.l.lat, +W.l.lng] : [53.41, -2.98];
-  var m = L.map("pmap", {scrollWheelZoom: false}).setView(start, W.l.lat != null ? 14 : 11), circle = null;
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 17, attribution: "&copy; OpenStreetMap contributors"}).addTo(m);
-  function put(ll){ if (circle) circle.remove(); circle = L.circle(ll, {radius: 900, color: "#1f4d3a", weight: 1.5, fillOpacity: .15}).addTo(m); }
-  if (W.l.lat != null) put(start);
-  m.on("click", function(e){ W.l.lat = Math.round(e.latlng.lat * 100) / 100; W.l.lng = Math.round(e.latlng.lng * 100) / 100; put([W.l.lat, W.l.lng]); $("#pinTxt").textContent = "Pin set. Guests see this approximate area only."; changed(); });
-  setTimeout(function(){ m.invalidateSize(); }, 250);
+  var el = $("#pmap"); if (!el) return;
+  if (!window.L){
+    $("#pinTxt").textContent = "Loading the map...";
+    var p = window.HP && HP.leaflet ? HP.leaflet() : loadLeaflet();
+    p.then(function(){ if (window.L && $("#pmap") === el) pinMap(); }, function(){ $("#pinTxt").textContent = "The map didn't load. Check your connection and try again. You can still search for your area above."; });
+    return;
+  }
+  if (el._leaflet_id) return;
+  if (MAPX.ro){ MAPX.ro.disconnect(); MAPX.ro = null; }
+  var has = W.l.lat != null && W.l.lng != null, start = has ? [+W.l.lat, +W.l.lng] : [53.41, -2.98];
+  var m = L.map(el, {scrollWheelZoom: false, tap: true}).setView(start, has ? 14 : 11);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'}).addTo(m);
+  var icon = L.divIcon({className: "bh-pin", html: '<span></span>', iconSize: [34, 44], iconAnchor: [17, 42]});
+  MAPX = {map: m, pin: null, circle: null, lastGeo: MAPX.lastGeo, ro: null};
+  function put(ll, from){
+    W.l.lat = Math.round(ll.lat * 100) / 100; W.l.lng = Math.round(ll.lng * 100) / 100;
+    if (!MAPX.pin){ MAPX.pin = L.marker(ll, {draggable: true, icon: icon, keyboard: true, title: "Drag to move"}).addTo(m); MAPX.pin.on("dragend", function(){ put(MAPX.pin.getLatLng(), "drag"); }); }
+    else MAPX.pin.setLatLng(ll);
+    if (MAPX.circle) MAPX.circle.setLatLng([W.l.lat, W.l.lng]); else MAPX.circle = L.circle([W.l.lat, W.l.lng], {radius: 900, color: "#1f4d3a", weight: 1.5, fillOpacity: .12, interactive: false}).addTo(m);
+    $("#pinTxt").textContent = "Pin set. Drag it or tap the map to move it. Guests only see the shaded circle.";
+    if (from) changed();
+  }
+  if (has) put(L.latLng(start[0], start[1]));
+  m.on("click", function(e){ put(e.latlng, "tap"); });
+  // the map may first be drawn while the step slides in or a panel opens: fix its size once it settles
+  [0, 200, 450, 900].forEach(function(t){ setTimeout(function(){ if (MAPX.map === m) m.invalidateSize(); }, t); });
+  if (window.ResizeObserver){ MAPX.ro = new ResizeObserver(function(){ if (MAPX.map === m) m.invalidateSize(); }); MAPX.ro.observe(el); }
+  MAPX.put = put;
 }
+function loadLeaflet(){
+  return new Promise(function(res, rej){
+    if (!document.querySelector('link[href*="leaflet.css"]')){ var c = document.createElement("link"); c.rel = "stylesheet"; c.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"; document.head.appendChild(c); }
+    var s = document.createElement("script"); s.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"; s.onload = res; s.onerror = rej; document.body.appendChild(s);
+  });
+}
+function geoSearch(){
+  var q = ($("#geoQ").value || "").trim(), out = $("#geoOut"), b = $("#geoGo");
+  if (q.length < 3){ out.innerHTML = '<p class="m">Type a postcode, street or area.</p>'; return; }
+  var wait = Math.max(0, 1100 - (Date.now() - MAPX.lastGeo));
+  busy(b, true, "Searching...");
+  setTimeout(function(){
+    MAPX.lastGeo = Date.now();
+    fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=gb&accept-language=en-GB&q=" + encodeURIComponent(q), {headers: {"Accept": "application/json"}})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(rows){
+        busy(b, false, "Search");
+        if (!rows.length){ out.innerHTML = '<p class="m">No match. Try a postcode or a nearby street, or tap the map.</p>'; return; }
+        out.innerHTML = '<ul class="geolist">' + rows.map(function(r, i){ return '<li><button type="button" data-geo="' + i + '">' + icon("pin") + "<span>" + esc(r.display_name) + "</span></button></li>"; }).join("") + "</ul>";
+        out._rows = rows;
+      })
+      .catch(function(){ busy(b, false, "Search"); out.innerHTML = '<p class="m">Search isn\'t working right now. Tap the map near your home instead.</p>'; });
+  }, wait);
+}
+document.addEventListener("click", function(e){
+  if (!e.target.closest) return;
+  if (e.target.closest("#geoGo")){ geoSearch(); return; }
+  var g = e.target.closest("[data-geo]"); if (!g) return;
+  var r = ($("#geoOut")._rows || [])[+g.getAttribute("data-geo")]; if (!r || !MAPX.map || !MAPX.put) return;
+  var ll = L.latLng(+r.lat, +r.lon); MAPX.map.setView(ll, 15); MAPX.put(ll, "search");
+  $("#geoOut").innerHTML = ""; $("#geoQ").value = "";
+  // fill the town if empty; never copy the street into the public area field
+  var a = r.address || {}, town = a.city || a.town || a.village; if (town && !W.l.city){ W.l.city = town; var ci = $('[data-in="city"]'); if (ci) ci.value = town; }
+});
+document.addEventListener("keydown", function(e){ if (e.key === "Enter" && e.target && e.target.id === "geoQ"){ e.preventDefault(); geoSearch(); } });
 function example(){
   var el = $("#example"); if (!el) return;
   var p = +W.l.base_price || 0, wk = +W.l.weekend_price || 0, c = +W.l.cleaning_fee || 0, pct = ME.commission_pct != null ? ME.commission_pct : 15;
