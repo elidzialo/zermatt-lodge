@@ -15,7 +15,7 @@ import { isValidIsoDate, optionalEnv, stripeClient } from "../_shared/util.ts";
 import { clientIp, connectFlagEnabled, EMAIL_RE, feesEnabled, handle, HttpError, int, jsonRes, NAME_RE, PHONE_RE, rateLimit, readBody, returnBase, sql, str, UUID_RE } from "../_shared/bh.ts";
 import { settlePaidSession, loadBooking } from "../_shared/bh_booking.ts";
 import { ref } from "../_shared/bh_emails.ts";
-import { lines, quote, quoteError } from "../_shared/bh_quote.ts";
+import { lines, quoteError } from "../_shared/bh_quote.ts";
 
 const POLICIES: Record<string, string> = {
   flexible: "Flexible: full refund up to 24 hours before check-in.",
@@ -108,7 +108,7 @@ Deno.serve(handle(async (req) => {
       payment_method_types: ["card"],
       customer_email: email,
       client_reference_id: hold.booking_id,
-      expires_at: Math.floor(Date.parse(hold.hold_expires_at) / 1000) + 60,
+      expires_at: Math.floor(Date.parse(String(hold.hold_expires_at instanceof Date ? (hold.hold_expires_at as Date).toISOString() : hold.hold_expires_at)) / 1000) + 60,
       line_items: items,
       custom_text: { submit: { message: `No booking fees. Cancellation policy ${POLICIES[info.cancellation_policy] ?? ""} Book Homes is the booking platform; your stay is with the host.` } },
       payment_intent_data: {

@@ -319,7 +319,8 @@ Deno.serve(handle(async (req) => {
         select b.id, b.listing_id, l.title, b.check_in::text, b.check_out::text, b.nights, b.guests, b.guest_name, b.guest_email, b.guest_phone,
                b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, b.status, b.paid_at
           from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
-         where b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now())
+         where b.host_id = bookhomes.my_host_id()
+           and (b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now()))
          order by b.check_in desc limit 500`);
       // Zermatt Lodge (listing #1) keeps its own booking table; its owner sees those bookings here too.
       const z = await asUser(user, (tx) => tx`select id, title from bookhomes.listings where legacy_source = 'zermatt' and host_id = bookhomes.my_host_id()`);
@@ -340,6 +341,7 @@ Deno.serve(handle(async (req) => {
       const rows = await asUser(user, (tx) => tx`
         select p.id, p.booking_id, p.amount_pence, p.status, p.paid_at, p.created_at, b.check_in::text, b.check_out::text, l.title
           from bookhomes.payouts p join bookhomes.bookings b on b.id = p.booking_id join bookhomes.listings l on l.id = b.listing_id
+         where p.host_id = bookhomes.my_host_id()
          order by p.created_at desc limit 500`);
       return jsonRes({ payouts: rows });
     }
