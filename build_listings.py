@@ -51,7 +51,7 @@ EMAIL = _SITE_CONTACT.get("email", "")
 # Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
 RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
-            "listing", "listings", "data", "public", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+            "listing", "listings", "data", "public", "saved", "wishlists", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
 HOME_TITLE = "Book Homes - Holiday Homes & Serviced Accommodation in Liverpool | Book Direct, No Booking Fees"
 HOME_DESC = ("Book whole holiday homes and serviced accommodation in Liverpool direct with the host. "
@@ -305,7 +305,7 @@ def menu_html():
     return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
             f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
             f'<div class="umlist" id="umList" hidden><a href="/host"><b>Host login</b></a><a href="/become-a-host">List your property</a><hr>'
-            f'<a href="/">All homes</a><a href="/guides">Liverpool guides</a><a href="/kosher-homes">Kosher homes</a>{contact}</div></div>')
+            f'<a href="/">All homes</a><a href="/saved">Saved homes</a><a href="/guides">Liverpool guides</a><a href="/kosher-homes">Kosher homes</a>{contact}</div></div>')
 
 
 def header(kind="page"):
@@ -358,6 +358,7 @@ def load_guides():
         meta = yaml.safe_load(open(f, encoding="utf-8").read().split("---", 2)[1])
         t = topics.get(meta["slug"], {})
         out.append({"slug": meta["slug"], "title": meta["title"], "cluster": t.get("cluster", ""),
+                    "updated": str(meta.get("last_updated") or ""), "desc": meta.get("meta_description") or "",
                     "priority": int(t.get("priority") or 9), "words": (meta["title"] + " " + t.get("primary_keyword", "")).lower()})
     return out
 
@@ -437,8 +438,12 @@ def search_ui():
   <div class="spc-body"><h2>Where to?</h2><label class="sp-in">{icon("search")}<input id="whereIn" type="search" placeholder="Search destinations" autocomplete="off" enterkeyhint="search" aria-label="Search destinations"></label><ul class="sugg" id="sugg"></ul></div></section>
 <section class="spc" data-p="when"><button type="button" class="spc-sum" data-open="when"><span>When</span><b id="sumWhen">Any week</b></button>
   <div class="spc-body"><h2>When's your trip?</h2>
+  <div class="seg" role="tablist" aria-label="Date type"><button type="button" role="tab" id="tabDates" aria-selected="true" data-mode="dates">Dates</button><button type="button" role="tab" id="tabFlex" aria-selected="false" data-mode="flex">Flexible</button></div>
+  <div id="flexPane" hidden><h3 class="fx-h">Stay for a</h3><div class="fx-kind" id="fxKind"><button type="button" data-kind="weekend" aria-pressed="false">Weekend</button><button type="button" data-kind="week" aria-pressed="false">Week</button><button type="button" data-kind="month" aria-pressed="false">Month</button></div>
+  <h3 class="fx-h" id="fxGoH">Go in</h3><div class="fx-months" id="fxMonths" role="group" aria-labelledby="fxGoH"></div></div>
+  <div id="datesPane">
   <div class="cal-top"><button type="button" class="cal-nav" id="spPrev" aria-label="Previous month">{icon("chev_l")}</button><p id="spStatus" aria-live="polite">Select your check-in date</p><button type="button" class="cal-nav" id="spNext" aria-label="Next month">{icon("chev_r")}</button></div>
-  <div class="months" id="spMonths" aria-label="Choose dates"></div></div></section>
+  <div class="months" id="spMonths" aria-label="Choose dates"></div></div></div></section>
 <section class="spc" data-p="who"><button type="button" class="spc-sum" data-open="who"><span>Who</span><b id="sumWho">Add guests</b></button>
   <div class="spc-body"><h2>Who's coming?</h2>{steppers}</div></section>
 </div>
@@ -470,6 +475,55 @@ def filters_ui(listings):
 </div>
 <div class="fs-foot"><button type="button" class="link" id="fsClear">Clear all</button><button type="button" class="btn" id="fsGo">Show homes</button></div>
 </div></div>"""
+
+
+EVENT_CLUSTERS = {"seasonal": "Seasonal", "venues-events": "Event", "football": "Football", "racing": "Racing", "things-to-do": "Things to do"}
+MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+SEASON_WORDS = {"christmas": 12, "boxing-day": 12, "panto": 12, "new-year": 1, "winter": 12, "becher": 12, "ice-skating": 12, "grand-national": 4, "beatleweek": 8, "half-term": None}
+
+
+def whats_on(guides, today=None, n=8):
+    """Newest event and seasonal guides for this month and next: the homepage "What's on in Liverpool" rail."""
+    import datetime
+    today = today or datetime.date.today()
+    soon = {today.month, today.month % 12 + 1}
+
+    def month_of(g):
+        words = g["slug"] + " " + g["title"].lower()
+        for i, m in enumerate(MONTHS):
+            if m in words:
+                return i + 1
+        for w, m in SEASON_WORDS.items():
+            if w in words:
+                return m
+        return None
+
+    picks = []
+    for g in guides:
+        if g["cluster"] not in EVENT_CLUSTERS and not month_of(g):
+            continue
+        m = month_of(g)
+        timely = m in soon
+        if m and not timely:
+            continue
+        picks.append((0 if m == today.month else 1 if timely else 2, -int(g["updated"].replace("-", "") or 0), g["priority"], g, m))
+    picks.sort(key=lambda x: x[:3])
+    out = []
+    for *_, g, m in picks[:n]:
+        out.append({"slug": g["slug"], "title": g["title"], "desc": g["desc"], "cluster": g["cluster"],
+                    "kind": EVENT_CLUSTERS.get(g["cluster"], "Guide"), "mon": (MONTHS[(m or today.month) - 1][:3]).capitalize() if m else "Now"})
+    return out
+
+
+def whats_on_html(guides):
+    items = whats_on(guides)
+    if len(items) < 3:
+        return ""
+    cards = "".join(
+        f'<a class="ev" href="/guides/{esc(e["slug"])}" data-k="{esc(e["cluster"])}"><span class="ev-top"><span class="ev-mon">{esc(e["mon"])}</span><span class="ev-kind">{esc(e["kind"])}</span></span>'
+        f'<span class="ev-b"><b>{esc(e["title"])}</b><span>{esc(e["desc"])}</span></span></a>' for e in items)
+    return (f'<section class="whatson" aria-labelledby="woH"><div class="rail-h"><div><h2 id="woH">What\'s on in Liverpool</h2><p>Match days, race days and seasonal events to plan your stay around</p></div>'
+            f'<a href="/guides#venues-events">All guides</a></div><div class="rail">{cards}</div></section>')
 
 
 def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HOME_DESC, h1="Holiday homes in Liverpool", intro="", faq=None):
@@ -540,6 +594,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
 {intro}
 <div class="results" id="results"><div class="grid" id="grid">{cards or empty}</div><div class="mapview" id="mapview" hidden><div id="map" role="region" aria-label="Map of approximate locations"></div></div></div>
 {faq_html}
+{whats_on_html(guides) if path == "/" else ""}
 {explore}
 </main>
 <button type="button" class="mapbtn" id="mapBtn" aria-pressed="false"><span>Show map</span>{icon("map")}</button>
@@ -946,6 +1001,7 @@ def stay_config(l, ex):
 LISTING_ASSETS = '<link rel="stylesheet" href="/assets/bh-booking.css?v={v}">\n'
 LISTING_SCRIPTS = """<script src="/assets/stay.js?v={v1}" defer></script>
 <script src="/assets/stay-page.js?v={v2}" defer></script>
+<script src="/assets/checkout.js?v={v3}" defer></script>
 """
 
 
@@ -954,7 +1010,7 @@ def listing_assets():
 
 
 def listing_scripts():
-    return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"))
+    return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"), v3=asset_v("checkout.js"))
 
 
 def listing_page(l, reviews, guides, ex):
@@ -1043,6 +1099,22 @@ function lock(on){ document.body.style.overflow = on ? "hidden" : ""; }
     write("assets/stay.js", head_js + core + "\n" + tail)
 
 
+# --------------------------------------------------------------------------- /saved (wishlist, stored in the browser, shareable by link)
+def saved_page(listings):
+    data = {"listings": [{k: l.get(k) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "from_price", "reviews", "url", "card_photos")} for l in listings]}
+    data_js = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    body = f"""<main class="wrap" id="content">
+<div class="saved-top"><h1 id="svH">Saved homes</h1><div class="saved-acts"><button type="button" class="tbtn" id="svShare" hidden>{icon("share")}<span>Share list</span></button></div></div>
+<div class="saved-note" id="svShared" hidden><span>Someone shared these homes with you.</span><button type="button" class="btn" id="svKeep">Save all to my list</button></div>
+<div class="grid saved-grid" id="svGrid" aria-live="polite"></div>
+<div class="saved-empty" id="svEmpty" hidden><span class="e-ic">{icon("heart")}</span><h2>No saved homes yet</h2><p>Tap the heart on any home to save it here. Your list stays on this device, and you can share it with your group.</p><a class="btn" href="/">Browse homes</a></div>
+</main>
+<script id="bh-data" type="application/json">{data_js}</script>
+<script src="/assets/saved.js?v={asset_v('saved.js')}" defer></script>
+"""
+    return head("Saved homes | Book Homes", "Your saved homes on Book Homes.", "/saved", robots="noindex, follow", body_class="saved") + header() + body + footer() + end()
+
+
 # --------------------------------------------------------------------------- build
 def build():
     data = fetch_listings()
@@ -1060,6 +1132,7 @@ def build():
     gen_stay_js()
     write("index.html", home_page(listings, guides))
     write("kosher-homes/index.html", kosher_page(listings, guides))
+    write("saved/index.html", saved_page(listings))
     import shutil
     shutil.rmtree(os.path.join(ROOT, "listings"), ignore_errors=True)  # rebuilt from approved listings every time
     shutil.rmtree(os.path.join(ROOT, "stays/kosher"), ignore_errors=True)

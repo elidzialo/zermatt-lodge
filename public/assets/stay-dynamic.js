@@ -61,7 +61,7 @@ get(slug).catch(function(e){ if (/-liverpool$/.test(slug)) return get(slug.repla
     $("#lpSave").setAttribute("data-save", l.id);
     var g = $("#bkGuests"); while (g.options.length > l.max_guests) g.remove(g.options.length - 1);
     window.STAY = {id: +l.id, slug: l.slug, max_guests: l.max_guests, cleaning_fee: +l.cleaning_fee || 0, weekly_discount_pct: l.weekly_discount_pct || 0, monthly_discount_pct: l.monthly_discount_pct || 0, lat: l.lat, lng: l.lng, legacy: false, from_price: l.from_price, title: l.title};
-    load("/assets/stay.js"); load("/assets/stay-page.js");
+    load("/assets/stay.js"); load("/assets/stay-page.js"); load("/assets/checkout.js");
   })
   .catch(function(){ fail("This page could not be found."); });
 })();

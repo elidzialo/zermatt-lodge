@@ -24,7 +24,7 @@ var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var D = JSON.parse($("#bh-data").textContent);
 var TAGS = D.tags, PRESET = D.preset || [];
 var S = {listings: D.listings, tag: "", where: "", ci: null, co: null, adults: 0, children: 0, infants: 0, pets: 0,
-  f: {pmin: 0, pmax: null, bedrooms: 0, beds: 0, baths: 0, tags: {}, amen: {}}, results: null, map: false};
+  f: {pmin: 0, pmax: null, bedrooms: 0, beds: 0, baths: 0, tags: {}, amen: {}}, results: null, map: false, flex: null};
 
 /* ---------- tags: same rules as listing_tags() in build_listings.py ---------- */
 function slugify(s){ return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
@@ -85,6 +85,9 @@ var dre = /^\d{4}-\d{2}-\d{2}$/;
 if (q.get("tag")) S.tag = q.get("tag");
 if (q.get("where")) S.where = q.get("where").slice(0, 60);
 if (dre.test(q.get("check_in") || "") && dre.test(q.get("check_out") || "") && q.get("check_in") >= today && q.get("check_out") > q.get("check_in")){ S.ci = q.get("check_in"); S.co = q.get("check_out"); }
+if (!S.ci && /^(weekend|week|month)$/.test(q.get("flex") || "")){
+  S.flex = {kind: q.get("flex"), months: (q.get("months") || "").split(",").filter(function(m){ return /^\d{4}-\d{2}$/.test(m) && m >= today.slice(0, 7); }).slice(0, 6)};
+}
 ["adults", "children", "infants", "pets"].forEach(function(k){ var v = q.get(k); if (/^\d{1,2}$/.test(v || "")) S[k] = Math.min(16, +v); });
 if (!S.adults && /^\d{1,2}$/.test(q.get("guests") || "")) S.adults = Math.min(16, +q.get("guests"));
 ["bedrooms", "beds", "baths"].forEach(function(k){ var v = q.get(k); if (/^\d$/.test(v || "")) S.f[k] = +v; });
@@ -98,6 +101,7 @@ function pushUrl(){
   if (S.tag) p.set("tag", S.tag);
   if (S.where) p.set("where", S.where);
   if (S.ci && S.co){ p.set("check_in", S.ci); p.set("check_out", S.co); }
+  else if (S.flex){ p.set("flex", S.flex.kind); if (S.flex.months.length) p.set("months", S.flex.months.join(",")); }
   ["adults", "children", "infants", "pets"].forEach(function(k){ if (S[k]) p.set(k, S[k]); });
   ["bedrooms", "beds", "baths"].forEach(function(k){ if (S.f[k]) p.set(k, S.f[k]); });
   if (S.f.pmin) p.set("min_price", S.f.pmin);
@@ -150,7 +154,9 @@ function img(u, w){ return /assets\.guesty\.com/.test(u || "") && /\/w_\d+,/.tes
 function srcset(u){ return /assets\.guesty\.com/.test(u || "") ? [480, 720, 1080].map(function(w){ return img(u, w) + " " + w + "w"; }).join(", ") : ""; }
 function linkFor(l){
   var p = new URLSearchParams();
-  if (S.ci && S.co){ p.set("check_in", S.ci); p.set("check_out", S.co); }
+  var r = S.results && S.results !== "loading" && S.results[l.id];
+  if (r && r.ci && r.co){ p.set("check_in", r.ci); p.set("check_out", r.co); }
+  else if (S.ci && S.co){ p.set("check_in", S.ci); p.set("check_out", S.co); }
   if (guests()) p.set("guests", Math.min(guests(), l.max_guests));
   var s = p.toString(); return l.url + (s ? "?" + s : "");
 }
@@ -166,33 +172,65 @@ function card(l, i){
   var dots = ph.length > 1 ? ph.map(function(p, k){ return k ? "<i></i>" : '<i class="on"></i>'; }).join("") : "";
   var nav = ph.length > 1 ? '<button type="button" class="cnav prev" aria-label="Previous photo" hidden>' + icon("chev_l") + '</button><button type="button" class="cnav next" aria-label="Next photo">' + icon("chev_r") + "</button>" : "";
   var place = [l.city, areaName(l)].filter(Boolean).join(", ");
-  var dates = r && S.ci && S.co ? fmtShort.format(parse(S.ci)) + " to " + fmtShort.format(parse(S.co)) : "No booking fees";
-  var price = r && r.total_pence ? "<b>" + money(r.total_pence / 100) + "</b> total" + (r.nights ? " for " + plural(r.nights, "night") : "")
-    : l.from_price ? '<span class="from">From</span> <b>' + money(l.from_price) + "</b> night" : "<b>Add dates</b> for prices";
+  var rci = r && (r.ci || S.ci), rco = r && (r.co || S.co);
+  var dates = r && rci && rco ? fmtShort.format(parse(rci)) + " to " + fmtShort.format(parse(rco)) : "No booking fees";
+  var price = r && r.total_pence ? "" : l.from_price ? '<span class="from">From</span> <b>' + money(l.from_price) + "</b> night" : "<b>Add dates</b> for prices";
+  var pbtn = r && r.total_pence ? '<button type="button" class="prbtn" aria-expanded="false" aria-label="Price details: ' + money(r.total_pence / 100) + ' total"><b>' + money(r.total_pence / 100) + "</b> total" + (r.nights ? " for " + plural(r.nights, "night") : "") + "</button>" : "";
   return '<article class="card" data-id="' + l.id + '"><div class="cph"><div class="track">' + slides + "</div>" + nav +
     '<button type="button" class="heart" aria-pressed="' + (isSaved(l.id) ? "true" : "false") + '" aria-label="Save ' + esc(l.title) + '">' + icon("heart") + "</button>" +
     '<div class="cdots" aria-hidden="true">' + dots + "</div></div>" +
     '<a class="meta" href="' + href + '"><span class="l1"><b>' + esc(place) + "</b>" + (rv.count ? '<span class="rt">' + icon("star", "ic st") + (+rv.average).toFixed(2) + " (" + rv.count + ")</span>" : "") + "</span>" +
     '<span class="l2">' + esc(l.title) + '</span><span class="l2">' + plural(l.bedrooms, "bedroom") + " · " + plural(l.max_guests, "guest") + "</span>" +
-    '<span class="l2 l-d">' + dates + '</span><span class="pr">' + price + "</span></a></article>";
+    '<span class="l2 l-d">' + dates + "</span>" + (price ? '<span class="pr">' + price + "</span>" : "") + "</a>" + (pbtn ? '<div class="pr">' + pbtn + "</div>" : "") + "</article>";
 }
 function saved(){ try { return JSON.parse(localStorage.getItem("bh_saved") || "[]"); } catch (e) { return []; } }
 function isSaved(id){ return saved().indexOf(+id) >= 0; }
-function toggleSaved(id){ var s = saved(), k = s.indexOf(+id); if (k >= 0) s.splice(k, 1); else s.push(+id); try { localStorage.setItem("bh_saved", JSON.stringify(s)); } catch (e) {} return k < 0; }
+function toggleSaved(id){ var s = saved(), k = s.indexOf(+id); if (k >= 0) s.splice(k, 1); else s.push(+id); try { localStorage.setItem("bh_saved", JSON.stringify(s)); } catch (e) {} toast(k < 0 ? "Saved to your list" : "Removed from your list", k < 0); return k < 0; }
+var toastT = null;
+function toast(msg, link){
+  var t = $("#bhToast");
+  if (!t){ t = document.createElement("div"); t.id = "bhToast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+  t.innerHTML = "<span>" + esc(msg) + "</span>" + (link ? '<a href="/saved">View</a>' : "");
+  t.classList.remove("show"); void t.offsetWidth; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("show"); }, 3200);
+}
 
 /* ---------- render ---------- */
 var grid = $("#grid");
+function skeletons(n){
+  var h = ""; for (var i = 0; i < n; i++) h += '<div class="card sk" aria-hidden="true"><div class="sk-ph"></div><div class="sk-l w60"></div><div class="sk-l w40"></div><div class="sk-l w30"></div></div>';
+  return h;
+}
+function dateMisses(){
+  /* homes that fit everything except the dates: candidates for a date alert */
+  if (!S.results || S.results === "loading") return [];
+  var r = S.results; S.results = null; var v = visible(); S.results = r;
+  return v;
+}
 function emptyHtml(){
+  var miss = (S.ci && S.co) || S.flex ? dateMisses() : [];
+  if (miss.length){
+    var when = S.flex ? flexTxt() : datesTxt();
+    return '<div class="empty empty-alert"><span class="e-ic">' + icon("calendar") + '</span><h2>No homes free ' + esc(when) + "</h2>" +
+      '<p>' + plural(miss.length, "home") + " match everything else. Get one email if " + (miss.length === 1 ? "it frees" : "one frees") + " up.</p>" +
+      (S.ci && S.co ? '<form class="alert-in" id="emptyAlert" novalidate><input type="email" id="eaEmail" placeholder="Your email" autocomplete="email" inputmode="email" aria-label="Your email"><button class="btn" type="submit">Email me</button></form><p class="ea-msg" id="eaMsg" aria-live="polite"></p>' : "") +
+      '<div class="e-acts"><button type="button" class="chipbtn" id="tryFlex">' + icon("calendar") + "Try flexible dates</button>" +
+      '<button type="button" class="chipbtn" id="resetAll">' + icon("x") + "Clear dates and filters</button></div></div>";
+  }
   var w = S.where ? " in " + esc(S.where) : "";
   return '<div class="empty"><h2>No homes match' + w + '</h2><p>' + (S.where && !S.listings.some(whereMatch) ? "There are no homes listed" + w + " yet. New homes appear as soon as hosts are approved." : "Try other dates, fewer filters or another category.") +
     '</p><p><button type="button" class="btn ghost" id="resetAll">Clear search and filters</button> <a class="btn" href="/become-a-host">List your property</a></p></div>';
 }
 function render(){
   var v = visible();
-  grid.innerHTML = v.length ? v.map(card).join("") : emptyHtml();
+  var loading = S.results === "loading";
+  grid.setAttribute("aria-busy", loading ? "true" : "false");
+  grid.innerHTML = loading ? skeletons(Math.max(1, Math.min(v.length || 3, 8))) : v.length ? v.map(card).join("") : emptyHtml();
   var rb = $("#resetAll"); if (rb) rb.addEventListener("click", resetAll);
+  var tf = $("#tryFlex"); if (tf) tf.addEventListener("click", function(){ setMode("flex"); openSearch("when"); });
+  var ea = $("#emptyAlert"); if (ea) ea.addEventListener("submit", sendAlert);
   var c = $("#count");
-  c.textContent = S.results === "loading" ? "Checking availability..." : plural(v.length, "home") + (S.ci && S.co ? " available " + fmtShort.format(parse(S.ci)) + " to " + fmtShort.format(parse(S.co)) : "");
+  c.textContent = loading ? "Checking availability..." : plural(v.length, "home") + (S.ci && S.co ? " available " + fmtShort.format(parse(S.ci)) + " to " + fmtShort.format(parse(S.co)) : S.flex && S.results ? " free " + flexTxt() : "");
   $$(".cat").forEach(function(b){ b.setAttribute("aria-pressed", (b.getAttribute("data-tag") || "") === S.tag ? "true" : "false"); });
   var fc = filterCount();
   $$(".fcount").forEach(function(x){ x.textContent = fc; x.hidden = !fc; });
@@ -200,7 +238,7 @@ function render(){
   if (S.map) drawMap(v);
 }
 function resetAll(){
-  S.tag = ""; S.where = ""; S.ci = S.co = null; S.adults = S.children = S.infants = S.pets = 0; S.results = null;
+  S.tag = ""; S.where = ""; S.ci = S.co = null; S.flex = null; S.adults = S.children = S.infants = S.pets = 0; S.results = null;
   S.f = {pmin: 0, pmax: null, bedrooms: 0, beds: 0, baths: 0, tags: {}, amen: {}};
   syncFilterUI(); pushUrl(); render();
 }
@@ -242,6 +280,8 @@ $("#catNext").addEventListener("click", function(){ catsScroll.scrollBy({left: c
 
 /* ---------- card carousels and hearts ---------- */
 grid.addEventListener("click", function(e){
+  var pb = e.target.closest(".prbtn");
+  if (pb){ e.preventDefault(); togglePop(pb); return; }
   var h = e.target.closest(".heart");
   if (h){ e.preventDefault(); var id = h.closest(".card").getAttribute("data-id"); h.setAttribute("aria-pressed", toggleSaved(id) ? "true" : "false"); return; }
   var n = e.target.closest(".cnav");
@@ -263,16 +303,23 @@ function guestTxt(){
   if (S.pets) t += (t ? ", " : "") + (S.pets === 1 ? "1 pet" : S.pets + " pets");
   return t;
 }
+var fmtMon = new Intl.DateTimeFormat("en-GB", {month: "short"});
+function flexTxt(){
+  if (!S.flex || !S.flex.kind) return "";
+  var m = S.flex.months.map(function(x){ return fmtMon.format(parse(x + "-01")); });
+  return "for a " + S.flex.kind + (m.length ? " in " + (m.length > 2 ? m.slice(0, 2).join(", ") + " +" + (m.length - 2) : m.join(" or ")) : "");
+}
+function whenTxt(){ return datesTxt() || (S.flex && S.flex.kind ? "Any " + flexTxt().replace(/^for a /, "") : ""); }
 function datesTxt(){ return S.ci && S.co ? fmtShort.format(parse(S.ci)) + " to " + fmtShort.format(parse(S.co)) : S.ci ? fmtShort.format(parse(S.ci)) + " to ..." : ""; }
 function paintSearch(){
   $("#sbWhere").value = document.activeElement === $("#sbWhere") ? $("#sbWhere").value : S.where;
-  $("#sbCi").textContent = S.ci ? fmtShort.format(parse(S.ci)) : "Add dates";
-  $("#sbCo").textContent = S.co ? fmtShort.format(parse(S.co)) : "Add dates";
+  $("#sbCi").textContent = S.ci ? fmtShort.format(parse(S.ci)) : S.flex && S.flex.kind ? "Any " + S.flex.kind : "Add dates";
+  $("#sbCo").textContent = S.co ? fmtShort.format(parse(S.co)) : S.flex && S.flex.months.length ? flexTxt().replace(/^for a \w+ in /, "") : "Add dates";
   $("#sbWho").textContent = guestTxt() || "Add guests";
   $("#mpWhere").textContent = S.where || "Where to?";
-  $("#mpSub").textContent = (datesTxt() || "Any week") + " · " + (guestTxt() || "Add guests");
+  $("#mpSub").textContent = (whenTxt() || "Any week") + " · " + (guestTxt() || "Add guests");
   $("#sumWhere").textContent = S.where || "Anywhere";
-  $("#sumWhen").textContent = datesTxt() || "Any week";
+  $("#sumWhen").textContent = whenTxt() || "Any week";
   $("#sumWho").textContent = guestTxt() || "Add guests";
   ["adults", "children", "infants", "pets"].forEach(function(k){
     $("#n_" + k).textContent = S[k];
@@ -288,7 +335,7 @@ function setActive(a){
   active = a;
   $$(".spc", sp).forEach(function(c){ c.classList.toggle("on", c.getAttribute("data-p") === a); });
   sp.setAttribute("data-active", a);
-  if (a === "when") drawCal();
+  if (a === "when"){ drawCal(); drawFlex(); }
   if (a === "where") drawSugg();
   paintSearch();
 }
@@ -312,7 +359,7 @@ function closeSearch(){
 }
 function runSearch(){
   closeSearch(); pushUrl();
-  if (S.ci && S.co) search(); else { S.results = null; render(); }
+  if (S.ci && S.co) search(); else if (S.flex && S.flex.kind) flexSearch(); else { S.results = null; render(); }
   if (!mqDesk.matches) window.scrollTo({top: 0, behavior: reduce ? "auto" : "smooth"});
 }
 $("#mpill").addEventListener("click", function(){
@@ -336,7 +383,7 @@ $("#whereIn").addEventListener("keydown", whereEnter);
 sbar.addEventListener("submit", function(e){ e.preventDefault(); var w = $("#sbWhere").value.trim(); if (w !== S.where) S.where = w; runSearch(); });
 $("#spGo").addEventListener("click", runSearch);
 $("#spClose").addEventListener("click", closeSearch);
-$("#spClear").addEventListener("click", function(){ S.where = ""; S.ci = S.co = null; S.adults = S.children = S.infants = S.pets = 0; S.results = null; $("#whereIn").value = ""; calPick = "ci"; setActive(active); render(); });
+$("#spClear").addEventListener("click", function(){ S.where = ""; S.ci = S.co = null; S.flex = null; setMode("dates"); S.adults = S.children = S.infants = S.pets = 0; S.results = null; $("#whereIn").value = ""; calPick = "ci"; setActive(active); render(); });
 $$(".spc-sum", sp).forEach(function(b){ b.addEventListener("click", function(){ setActive(b.getAttribute("data-open")); }); });
 scrim.addEventListener("click", function(){ closeSearch(); closeFilters(); });
 document.addEventListener("keydown", function(e){ if (e.key === "Escape"){ closeSearch(); closeFilters(); } });
@@ -401,7 +448,7 @@ function drawCal(){
 }
 $("#spMonths").addEventListener("click", function(e){
   var b = e.target.closest(".day"); if (!b || b.getAttribute("aria-disabled") === "true") return;
-  var s = b.getAttribute("data-date");
+  var s = b.getAttribute("data-date"); S.flex = null;
   if (calPick === "co" && S.ci && s > S.ci){ S.co = s; }
   else if (!S.ci || S.co || s <= S.ci){ S.ci = s; S.co = null; calPick = "co"; }
   else S.co = s;
@@ -432,6 +479,102 @@ function search(){
 }
 var _visible = visible;
 visible = function(f){ if (S.results === "loading"){ var r = S.results; S.results = null; var v = _visible(f); S.results = r; return v; } return _visible(f); };
+
+/* ---------- flexible dates: a weekend, week or month in the months you pick ---------- */
+var mode = "dates";
+function setMode(m){
+  mode = m;
+  $("#tabDates").setAttribute("aria-selected", m === "dates" ? "true" : "false");
+  $("#tabFlex").setAttribute("aria-selected", m === "flex" ? "true" : "false");
+  $("#datesPane").hidden = m !== "dates"; $("#flexPane").hidden = m !== "flex";
+  if (m === "flex" && !S.flex){ S.flex = {kind: "weekend", months: []}; S.ci = S.co = null; S.results = null; }
+  if (m === "dates" && S.flex){ S.flex = null; S.results = null; }
+  drawFlex(); paintSearch();
+}
+function drawFlex(){
+  var f = S.flex || {kind: "", months: []}, h = "", now = parse(today);
+  $$("#fxKind button").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-kind") === f.kind ? "true" : "false"); });
+  for (var i = 0; i < 6; i++){
+    var d = new Date(now.getFullYear(), now.getMonth() + i, 1), k = iso(d).slice(0, 7);
+    h += '<button type="button" data-month="' + k + '" aria-pressed="' + (f.months.indexOf(k) >= 0 ? "true" : "false") + '">' + icon("calendar") + "<b>" + fmtMon.format(d) + "</b><small>" + d.getFullYear() + "</small></button>";
+  }
+  $("#fxMonths").innerHTML = h;
+}
+$$(".seg [data-mode]").forEach(function(b){ b.addEventListener("click", function(){ setMode(b.getAttribute("data-mode")); }); });
+$("#fxKind").addEventListener("click", function(e){ var b = e.target.closest("[data-kind]"); if (!b) return; S.flex = S.flex || {months: []}; S.flex.kind = b.getAttribute("data-kind"); S.results = null; drawFlex(); paintSearch(); });
+$("#fxMonths").addEventListener("click", function(e){
+  var b = e.target.closest("[data-month]"); if (!b) return; S.flex = S.flex || {kind: "weekend", months: []};
+  var k = b.getAttribute("data-month"), i = S.flex.months.indexOf(k);
+  if (i >= 0) S.flex.months.splice(i, 1); else S.flex.months.push(k);
+  S.flex.months.sort(); S.results = null; drawFlex(); paintSearch();
+});
+function addD(s, n){ var d = parse(s); d.setDate(d.getDate() + n); return iso(d); }
+function flexRanges(){
+  var f = S.flex, out = [], start = addD(today, 1), months = f.months.length ? f.months : [today.slice(0, 7), iso(new Date(parse(today).getFullYear(), parse(today).getMonth() + 1, 1)).slice(0, 7)];
+  months.forEach(function(m){
+    var first = m + "-01", d = first < start ? start : first;
+    if (f.kind === "month"){ out.push([d, addD(d, 28)]); return; }
+    while (d.slice(0, 7) === m){
+      if (parse(d).getDay() === 5) out.push([d, addD(d, f.kind === "week" ? 7 : 2)]);
+      d = addD(d, 1);
+    }
+  });
+  /* keep at most 6 checks, spread across the chosen months */
+  if (out.length > 6){ var step = out.length / 6, pick = []; for (var i = 0; i < 6; i++) pick.push(out[Math.floor(i * step)]); out = pick; }
+  return out;
+}
+function flexSearch(){
+  var ranges = flexRanges(); if (!ranges.length){ S.results = null; render(); return; }
+  S.results = "loading"; render();
+  Promise.all(ranges.map(function(rg){
+    return fetch("/api/bh/listings?action=search&check_in=" + rg[0] + "&check_out=" + rg[1] + "&guests=" + Math.max(1, guests()), {headers: {"Accept": "application/json"}})
+      .then(function(r){ return r.ok ? r.json() : {results: []}; }).then(function(j){ return {rg: rg, res: j.results || []}; }).catch(function(){ return {rg: rg, res: []}; });
+  })).then(function(all){
+    var out = {};
+    all.sort(function(a, b){ return a.rg[0] < b.rg[0] ? -1 : 1; }).forEach(function(x){
+      x.res.forEach(function(r){ if (r.available && !(out[r.id] && out[r.id].available)) out[r.id] = Object.assign({}, r, {ci: x.rg[0], co: x.rg[1]}); });
+    });
+    S.results = out; render();
+  });
+}
+
+/* ---------- price details popover on a card ---------- */
+function closePops(except){ $$(".prpop").forEach(function(p){ if (p !== except){ var b = p.parentNode.querySelector(".prbtn"); if (b) b.setAttribute("aria-expanded", "false"); p.remove(); } }); }
+function togglePop(btn){
+  var wrap = btn.parentNode, ex = $(".prpop", wrap);
+  if (ex){ closePops(); return; }
+  closePops();
+  var id = +btn.closest(".card").getAttribute("data-id"), r = S.results && S.results[id], l = S.listings.filter(function(x){ return x.id === id; })[0];
+  if (!r || !l) return;
+  var total = r.total_pence / 100, clean = +l.cleaning_fee || 0, disc = (r.discount_pence || 0) / 100, nightsAmt = Math.round((total - clean + disc) * 100) / 100;
+  var avg = r.nights ? Math.round(nightsAmt / r.nights * 100) / 100 : 0;
+  var row = function(a, b, c){ return '<div class="pp-row' + (c ? " " + c : "") + '"><span>' + a + "</span><span>" + b + "</span></div>"; };
+  var h = '<div class="prpop" role="dialog" aria-label="Price details"><h3>Price details</h3>' +
+    row(r.nights ? plural(r.nights, "night") + " x " + money(avg) : "Nights", money(nightsAmt)) +
+    (disc > 0 ? row("Length-of-stay discount", "-" + money(disc), "pp-disc") : "") +
+    (clean ? row("Cleaning fee", money(clean)) : "") +
+    row("Booking fee", "£0", "pp-free") +
+    row("<b>Total</b>", "<b>" + money(total) + "</b>", "pp-total") + "</div>";
+  wrap.insertAdjacentHTML("beforeend", h);
+  btn.setAttribute("aria-expanded", "true");
+}
+document.addEventListener("click", function(e){ if (!e.target.closest(".pr")) closePops(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closePops(); });
+
+/* ---------- date alert from the empty state (one per close-match home, max 3) ---------- */
+function sendAlert(e){
+  e.preventDefault();
+  var em = $("#eaEmail").value.trim(), out = $("#eaMsg");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){ out.textContent = "Please enter a valid email."; $("#eaEmail").focus(); return; }
+  out.textContent = "Saving...";
+  var homes = dateMisses().slice(0, 3);
+  Promise.all(homes.map(function(l){
+    return fetch("/api/bh/listings", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({action: "alert", email: em, slug: l.slug, check_in: S.ci, check_out: S.co, guests: Math.max(1, guests()), consent: false})}).then(function(r){ return r.ok; }).catch(function(){ return false; });
+  })).then(function(ok){
+    if (ok.some(Boolean)){ $("#emptyAlert").hidden = true; out.className = "ea-msg ok"; out.textContent = "Done. We'll email you once if " + datesTxt() + " frees up."; }
+    else out.textContent = "That didn't save. Please try again.";
+  });
+}
 
 /* ---------- filters sheet ---------- */
 var fs = $("#fs"), draft = null;
@@ -534,7 +677,9 @@ fetch("/api/bh/listings?action=list", {headers: {"Accept": "application/json"}})
 
 if (S.tag && !$('.cat[data-tag="' + S.tag + '"]')) S.tag = "";
 syncFilterUI(); drawSugg(""); spaceCats();
+if (S.flex) setMode("flex");
 if (S.ci && S.co) search();
+else if (S.flex && S.flex.kind) flexSearch();
 else if (location.search.length > 1) render();
 else { paintSearch(); $$(".card").forEach(function(c){ var h = $(".heart", c); if (h) h.setAttribute("aria-pressed", isSaved(c.getAttribute("data-id")) ? "true" : "false"); }); }
 })();

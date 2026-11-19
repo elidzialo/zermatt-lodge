@@ -156,7 +156,7 @@
       ]
     },
     {
-      "source": "/assets/(stay|stays|host|booked|review|stay-page|stay-dynamic)\\.js",
+      "source": "/assets/(stay|stays|host|booked|review|stay-page|stay-dynamic|checkout|saved)\\.js",
       "headers": [
         {
           "key": "Cache-Control",
