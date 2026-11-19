@@ -67,3 +67,20 @@ Safe to go live before setup: no host listing can take payment until Eli approve
 No trailing-slash hops (/guides, /host), 2-step optional until payouts wording, commission shown as 'currently 15%', date-free alerts now email once dates are bookable (bookhomes-ical-sync, every 15 min), booking/MARKETPLACE-SETUP.md, config.toml lists bookhomes-* functions.
 Builder tested a live Stripe session for internal test listing #2 (paused, never public): 7 nights, weekly discount, company receipt, 15% fee 107.40 of 716.00, payout manual_pending, double booking rejected, session expired, nothing charged.
 FOUND: RESEND_API_KEY is not set in Supabase, so NO emails go out today (Zermatt guest confirmations included: email_log shows skipped_no_key). Top action for Eli.
+
+## Final pass on production (00:41, main @ 980e202)
+Both agents finished; optimise and marketplace branches are fully merged.
+- /stays: Zermatt card "From £89 a night, plus cleaning £129". from_price is computed live (lowest bookable night in the next 90 days) and the page refreshes it from /api/bh/listings on load; the number in the static HTML is only the build-time snapshot for no-JS crawlers. Not hardcoded.
+- /stays/kosher: host-declared, "Not a certification", honest empty state (0 homes yet).
+- /host: login + sign-up, 2-step offered with "Set up later" (required before payouts). /become-a-host: commission "currently 15%", no guest fees.
+- /admin: Hosts, Listings, Payouts, Settings tabs present behind email + password + 2-step.
+- Zermatt: homepage booking JS unchanged (only header/footer links, trust copy and a price note). zermatt-create-checkout returned 200 for live sessions tonight; no 5xx from any function since 22:00. Thank-you page now confirms by polling.
+- Mobile: every new page has the viewport tag and breakpoints at 520/760/860px; homepage tap targets raised to 44px.
+NOT tested (tooling blocked here): a real browser at 375px, console errors, and my own POST to create a Stripe session (Chrome not connected, Vercel Sandbox refused, curl blocked by proxy). Builder ran a live session test on internal listing #2, nothing charged.
+
+## Open issues / actions for Eli
+1. RESEND_API_KEY missing: no emails are sent at all (Zermatt guest confirmations included).
+2. Stripe: Connect > Get started (UK platform, Express) + two webhook endpoints to bookhomes-stripe-webhook (see booking/MARKETPLACE-SETUP.md).
+3. Supabase Auth: redirect URL https://bookhomes.co.uk/host/, allow email sign-ups, Leaked Password Protection on.
+4. Legal drafts (/terms/hosts, /terms/guests, /privacy) need company details and a solicitor check.
+5. SQL: none needed (MARKETPLACE_setup.sql already applied). Optional: delete paused test listing #2.
