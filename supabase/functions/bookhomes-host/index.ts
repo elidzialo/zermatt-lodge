@@ -7,7 +7,7 @@ import {
   adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
   PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE,
 } from "../_shared/bh.ts";
-import { AMENITIES, CATEGORIES, feeFields, listingFields } from "../_shared/bh_listing.ts";
+import { AMENITIES, CATEGORIES, feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice } from "../_shared/bh_emails.ts";
@@ -46,7 +46,7 @@ async function me(user: AuthUser) {
   return await asUser(user, async (tx) => {
     const profile = (await tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`)[0] ?? null;
     const host = (await tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override from bookhomes.hosts where user_id = ${user.id}`)[0] ?? null;
-    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() order by created_at`) : [];
+    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`) : [];
     const ids = ls.map((l: { id: number }) => l.id);
     const photos = ids.length ? await tx`select id, listing_id, url, storage_path, caption, sort from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by sort, created_at` : [];
     const sources = ids.length ? await tx`select id, listing_id, name, url, enabled, last_fetched_at, last_status, last_error, last_event_count from bookhomes.listing_ical_sources where listing_id = any(${ids}::bigint[])` : [];
@@ -174,6 +174,13 @@ Deno.serve(handle(async (req) => {
         throw new HttpError(400, "That change is not possible. Listings go live once Book Homes approves them.");
       }
       return jsonRes({ ok: true });
+    }
+
+    case "delete_listing": {
+      // Drafts that were never live are deleted for good; anything that was live is archived (bookings kept).
+      const id = await ownListing(user, b.id);
+      const r = await removeListing(id, user.email ?? user.id);
+      return jsonRes({ ok: true, ...r });
     }
 
     case "add_photo": {
