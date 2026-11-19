@@ -40,6 +40,13 @@ PHOTO_ALT = {
 def hero_srcset(photo):
     return ", ".join(f"{CDN.replace('w_1600', f'w_{w}')}{photo} {w}w" for w in (480, 800, 1200, 1600))
 
+import build_listings
+from bh_icons import sprite as _sprite
+SITE_HEADER = _sprite(["menu", "user"]) + build_listings.header("page")
+SITE_FOOTER = build_listings.footer()
+TPL = TPL.replace("</head>", f'<link rel="stylesheet" href="/assets/bh-chrome.css?v={build_listings.asset_v("bh-chrome.css")}">\n</head>', 1)
+TPL = TPL.replace("{{SITE_HEADER}}", SITE_HEADER).replace("{{SITE_FOOTER}}", SITE_FOOTER)
+
 topics = {r["slug"]: r for r in csv.DictReader(open(os.path.join(ROOT, "content/topic-map.csv"), encoding="utf-8"))}
 pages = {}
 for f in sorted(glob.glob(os.path.join(ROOT, "content/pages/*.md"))):
@@ -142,6 +149,7 @@ def strip_empty_faq(h):
 
 urls = [f"{DOMAIN}/", f"{DOMAIN}/guides"]
 for slug, (meta, body) in pages.items():
+    body = body.replace("](/#book)", "](/zermatt-lodge#book)").replace("](/stays/kosher)", "](/kosher-homes)").replace("](/stays)", "](/)")
     body_html = fix_links(markdown.markdown(body, extensions=["tables", "sane_lists"]))
     body_html = re.sub(r"<h1>.*?</h1>", "", body_html, count=1, flags=re.S)
     faqs = meta.get("faqs") or []
@@ -207,8 +215,7 @@ hub = re.sub(r'\s*<section class="related sec".*?</section>', "", hub, count=1, 
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
 open(os.path.join(ROOT, "guides/index.html"), "w", encoding="utf-8").write(hub)
 
-# Marketplace: /stays, listing pages, kosher landing, host landing, legal pages (build_listings.py)
-import build_listings
+# Marketplace: "/" (all listings), /<slug> listing pages, kosher landing, host landing, legal pages (build_listings.py)
 urls += build_listings.build()
 
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -223,8 +230,13 @@ import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
 for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
-            "stays", "host", "become-a-host", "terms", "privacy"]:
+            "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)
+# Listing pages live at the site root: listings/<slug>/index.html -> public/<slug>/index.html (/<slug>)
+for d in sorted(glob.glob(os.path.join(ROOT, "listings", "*"))):
+    dst = os.path.join(PUB, os.path.basename(d))
+    assert not os.path.exists(dst), f"listing path clashes with a site folder: {dst}"
+    shutil.copytree(d, dst)
 print("public/ ready")

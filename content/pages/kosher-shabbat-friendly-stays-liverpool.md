@@ -34,7 +34,7 @@ sources:
   - https://www.mbd.org.uk/licensees
 ---
 
-If you keep kosher or Shabbat and you're visiting Liverpool, the key facts are these: the city's Jewish community, about 2,000 people, lives mainly in south Liverpool around Childwall and Allerton; there are active synagogues in Childwall, Allerton and Toxteth, plus a Reform synagogue in Wavertree; and kosher food is limited, so most visitors bring or order supplies. For Shabbat, the most important choice is staying within walking distance of the shul you plan to use. On Book Homes you can filter for homes where hosts have declared kosher kitchens, Shabbat set-ups and a nearby shul on our [kosher stays page](/stays/kosher).
+If you keep kosher or Shabbat and you're visiting Liverpool, the key facts are these: the city's Jewish community, about 2,000 people, lives mainly in south Liverpool around Childwall and Allerton; there are active synagogues in Childwall, Allerton and Toxteth, plus a Reform synagogue in Wavertree; and kosher food is limited, so most visitors bring or order supplies. For Shabbat, the most important choice is staying within walking distance of the shul you plan to use. On Book Homes you can filter for homes where hosts have declared kosher kitchens, Shabbat set-ups and a nearby shul on our [kosher stays page](/kosher-homes).
 
 This guide uses published sources only. Things change, so always confirm details with the community before you travel.
 
@@ -112,7 +112,7 @@ A home that suits Shabbat isn't just about the kitchen. Before you book, ask:
 5. **How far is the nearest shul on foot,** and is the route well lit?
 6. **Is the home inside an eruv?** We couldn't find a published eruv for Liverpool. Ask the local community rather than assuming.
 
-On Book Homes, homes on the [kosher stays page](/stays/kosher) show what the host has declared, such as a kosher kitchen, Shabbat features, the nearest shul and eruv status. These are host declarations, not a certification, so check anything important directly.
+On Book Homes, homes on the [kosher stays page](/kosher-homes) show what the host has declared, such as a kosher kitchen, Shabbat features, the nearest shul and eruv status. These are host declarations, not a certification, so check anything important directly.
 
 ## Where to stay
 
@@ -137,6 +137,6 @@ It can still work for a weekday family visit if you bring your own supplies and 
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/#book), or see homes where hosts have declared kosher features on our [kosher stays page](/stays/kosher). You can also browse all [stays](/stays).
+[Book direct](/zermatt-lodge#book), or see homes where hosts have declared kosher features on our [kosher stays page](/kosher-homes). You can also browse all [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)

@@ -125,7 +125,7 @@ Zermatt Lodge is a whole house in Fazakerley, north Liverpool, near Aintree, Wal
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
-Insurers, accommodation providers and families can book direct at [Zermatt Lodge](/#book) with no platform fees, or call +44 7479 905477 to discuss availability and longer stays.
+Insurers, accommodation providers and families can book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to discuss availability and longer stays.
 
 ## Related guides
 

@@ -119,7 +119,7 @@ Zermatt Lodge is a whole house in Fazakerley, a short train ride from the Sandhi
 
 It's a quiet residential home: **no parties, no smoking and no pets**.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees, or call +44 7479 905477 to check dates against the fixture list.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to check dates against the fixture list.
 
 ## Related guides
 

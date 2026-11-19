@@ -128,7 +128,7 @@ Zermatt Lodge is a whole house in Fazakerley, so you aren't sharing it with anyo
 
 It's a calm, residential house. There are no parties, no smoking and no pets, so it stays quiet for people who need to rest.
 
-When you book direct at [Zermatt Lodge](/#book), there are no platform fees. If your dates are uncertain because of a discharge date, call us on +44 7479 905477 and we'll talk through what's possible.
+When you book direct at [Zermatt Lodge](/zermatt-lodge#book), there are no platform fees. If your dates are uncertain because of a discharge date, call us on +44 7479 905477 and we'll talk through what's possible.
 
 ## Related guides
 

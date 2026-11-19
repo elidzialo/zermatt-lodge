@@ -1,0 +1,33 @@
+/* Book Homes header and footer for the guide pages (same look as the marketplace; scoped so guide.css is untouched). */
+.hd,.ft{--ink:#222;--ink-2:#3d3d3d;--muted:#6a6a6a;--line:#ddd;--line-2:#ebebeb;--soft:#f7f7f7;--brand:#1f4d3a;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink)}
+.hd{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line-2)}
+.hd .wrap,.ft .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.hd .hd-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;height:auto}
+.hd .logo{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.03em;color:var(--brand);white-space:nowrap;line-height:1}
+.hd .logo svg{width:32px;height:32px}
+.hd .hd-r{display:flex;align-items:center;gap:8px}
+.hd .hostlink{font-size:14px;font-weight:600;text-decoration:none;padding:12px 14px;border-radius:999px;white-space:nowrap;color:var(--ink)}
+.hd .hostlink:hover{background:var(--soft)}
+.hd .umenu{position:relative}
+.hd .ubtn{display:flex;align-items:center;gap:10px;padding:5px 5px 5px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;color:var(--ink)}
+.hd .ubtn:hover{box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.hd .ic{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;flex-shrink:0}
+.hd .uav{width:30px;height:30px;border-radius:50%;background:#717171;color:#fff;display:grid;place-items:center}
+.hd .uav .ic{width:18px;height:18px;stroke-width:2}
+.hd .umlist{position:absolute;right:0;top:calc(100% + 8px);width:240px;background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.14);padding:8px 0;z-index:90}
+.hd .umlist[hidden]{display:none}
+.hd .umlist a{display:block;padding:11px 16px;font-size:14px;text-decoration:none;color:var(--ink)}
+.hd .umlist a:hover{background:var(--soft)}
+.hd .umlist hr{border:0;border-top:1px solid var(--line-2);margin:8px 0}
+footer.ft{background:var(--soft);border-top:1px solid var(--line-2);padding:48px 0 32px;font-size:14px;color:var(--ink)}
+footer.ft .ft-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+footer.ft h2{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--ink);letter-spacing:0;text-transform:none}
+footer.ft .ft-cols a{display:block;padding:5px 0;text-decoration:none;color:var(--ink-2)}
+footer.ft .ft-cols a:hover{text-decoration:underline;color:var(--ink)}
+footer.ft .ft-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;border-top:1px solid var(--line);margin-top:32px;padding-top:24px;color:var(--ink-2)}
+@media (max-width:640px){
+  .hd .hostlink{display:none}
+  footer.ft .ft-cols{grid-template-columns:1fr;gap:0}
+  footer.ft .ft-cols>div{padding:20px 0;border-bottom:1px solid var(--line)}
+  footer.ft .ft-legal{border-top:0;flex-direction:column}
+}

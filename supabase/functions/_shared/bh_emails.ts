@@ -82,7 +82,7 @@ export function guestBooked(b: BhBooking, site: string): RenderedEmail {
     p(`<b>Your host:</b> ${esc(b.host_name)}<br>${contact || "Your host will contact you before arrival."}`) +
     p(`Your host sends the full address and access details before arrival.${b.company_name ? " Your receipt in the name of " + esc(b.company_name) + " comes from Stripe in a separate email." : ""}`) +
     p(`<a href="${esc(site)}/stays/${esc(b.listing_slug)}/" style="color:${GREEN}">View the listing</a>`);
-  const text = `Your stay at ${b.listing_title} is confirmed and paid.\nReference ${ref(b.id)}\nCheck-in ${longDate(b.check_in)} from ${b.check_in_time}\nCheckout ${longDate(b.check_out)} by ${b.check_out_time}\nGuests ${b.guests}\nTotal paid ${money(b.amount_pence)}\n\nYour host: ${b.host_name} ${b.host_phone ?? ""}\n${site}/stays/${b.listing_slug}/`;
+  const text = `Your stay at ${b.listing_title} is confirmed and paid.\nReference ${ref(b.id)}\nCheck-in ${longDate(b.check_in)} from ${b.check_in_time}\nCheckout ${longDate(b.check_out)} by ${b.check_out_time}\nGuests ${b.guests}\nTotal paid ${money(b.amount_pence)}\n\nYour host: ${b.host_name} ${b.host_phone ?? ""}\n${site}/${b.listing_slug}`;
   return { subject, html: layout("Your booking is confirmed", body, site), text };
 }
 

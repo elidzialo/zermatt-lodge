@@ -109,7 +109,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's about 15 minut
 
 **Strictly no parties or events.** The house is for sleeping, getting ready and relaxing, not for after-parties or pre-wedding gatherings. No smoking and no pets. Check-in is 3pm and checkout is 11am. The Moderate cancellation policy gives a full refund up to 5 days before check-in.
 
-[Book direct for the wedding weekend](/#book), or call +44 7479 905477 to check dates.
+[Book direct for the wedding weekend](/zermatt-lodge#book), or call +44 7479 905477 to check dates.
 
 ## Related guides
 

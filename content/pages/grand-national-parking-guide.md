@@ -115,7 +115,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley sta
 
 The house rules are strict, festival week included: **no parties or events**, no smoking and no pets. Check-in is 3pm and checkout is 11am.
 
-Festival dates book up early. [Check availability and book direct](/#book), or call +44 7479 905477.
+Festival dates book up early. [Check availability and book direct](/zermatt-lodge#book), or call +44 7479 905477.
 
 ## Related guides
 

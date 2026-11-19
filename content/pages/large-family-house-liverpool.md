@@ -123,7 +123,7 @@ Give each adult a night to cook and get the children to set the table. See our [
 
 House rules: **no parties, no smoking, no pets**, so it's a calm family home.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees, or call +44 7479 905477 with any questions about the house.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 with any questions about the house.
 
 ## Related guides
 

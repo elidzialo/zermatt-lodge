@@ -119,7 +119,7 @@ Zermatt Lodge is in north Liverpool, near Fazakerley station and the M57/M58. It
 
 House rules: **strictly no parties or events**, no smoking and no pets.
 
-Book direct at [Zermatt Lodge](/#book), or call +44 7479 905477 to check dates around your sailing.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477 to check dates around your sailing.
 
 ## Related guides
 

@@ -125,7 +125,7 @@ Zermatt Lodge is a whole house, not a room, in Fazakerley, a short drive from Al
 
 It's a calm house: no parties, no smoking and no pets.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees. If you don't yet know how long your child will be in, call us on +44 7479 905477 and we'll talk it through.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. If you don't yet know how long your child will be in, call us on +44 7479 905477 and we'll talk it through.
 
 ## Related guides
 

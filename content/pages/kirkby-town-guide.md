@@ -128,7 +128,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, one sto
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-[Book direct](/#book) or see all our [stays](/stays).
+[Book direct](/zermatt-lodge#book) or see all our [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

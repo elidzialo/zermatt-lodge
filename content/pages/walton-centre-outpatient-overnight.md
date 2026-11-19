@@ -118,7 +118,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the Aintre
 
 Check-in is from 3pm and checkout is 11am, which suits arriving the afternoon before. It's a calm residential house: no parties or events, no smoking and no pets. Moderate cancellation gives a full refund up to 5 days before check-in, helpful if an appointment is moved.
 
-[Book direct](/#book), or call +44 7479 905477 to check dates around your appointment.
+[Book direct](/zermatt-lodge#book), or call +44 7479 905477 to check dates around your appointment.
 
 ## Related guides
 

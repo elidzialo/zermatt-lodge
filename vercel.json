@@ -14,6 +14,26 @@
       ],
       "destination": "https://bookhomes.co.uk/:path*",
       "permanent": true
+    },
+    {
+      "source": "/stays",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/stays/kosher",
+      "destination": "/kosher-homes",
+      "permanent": true
+    },
+    {
+      "source": "/stays/:slug((?!listing$|booked$|review$)[a-z0-9-]+)",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -46,7 +66,7 @@
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-create-checkout"
     },
     {
-      "source": "/stays/:slug",
+      "source": "/:slug([a-z0-9-]+)",
       "destination": "/stays/listing/index.html"
     }
   ],

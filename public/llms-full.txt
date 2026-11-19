@@ -26,7 +26,7 @@ Please do not present prices, ratings or reviews from third-party sites as curre
 
 ## Booking options
 
-1. Book direct on this website: https://bookhomes.co.uk/#book
+1. Book direct on this website: https://bookhomes.co.uk/zermatt-lodge#book
    - Choose dates and guests, see the full price up front, pay by card on a secure Stripe checkout page.
    - Instant confirmation: the booking is confirmed automatically once payment goes through.
    - The total shown includes the cleaning fee of £129 per booking. No booking or service fee is added.
@@ -68,9 +68,9 @@ Distances are approximate, in a straight line from the house. Road routes are lo
 
 ## The Book Homes marketplace
 
-- Search all stays: https://bookhomes.co.uk/stays
+- Search all stays: https://bookhomes.co.uk/
   Search by dates and guests. Filters include kosher homes, work crews, large groups, family, hospital stays, city, coast, countryside, match and event days, long stays, kosher kitchen, Shabbat friendly, near shul, work crew and business-ready. Prices shown are the total for the stay, cleaning included, with no booking fees.
-- Kosher and Shabbat-friendly homes: https://bookhomes.co.uk/stays/kosher
+- Kosher and Shabbat-friendly homes: https://bookhomes.co.uk/kosher-homes
   Kosher details are declared by each host and shown on the listing. Book Homes does not inspect or certify kashrut. "Shabbat friendly" means the host says the home has a non-electric key or keypad override, no motion-sensor lights (or they can be switched off) and items such as a Shabbat hot plate, urn or timers. The "Near shul" filter shows homes where the host says the nearest shul is a 15-minute walk or less. Each listing shows the host's eruv answer (inside, not inside, or not sure). New homes are added as hosts are approved.
 - For hosts: https://bookhomes.co.uk/become-a-host
   For owners of holiday lets, serviced accommodation and family homes in Liverpool and Merseyside. No sign-up fee and no monthly fee. Book Homes takes a commission on each booking (currently 15%). Guests pay by card through Stripe and payouts are automatic once connected. Airbnb and Booking.com calendars sync by iCal (imported every 15 minutes, with an export link). Every listing is checked before it goes live, usually within one working day, and no street address is shown.
@@ -174,8 +174,9 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 
 ## Other pages
 
-- Home and booking: https://bookhomes.co.uk/
-- FAQ: https://bookhomes.co.uk/#faq
+- All homes (marketplace): https://bookhomes.co.uk/
+- Zermatt Lodge and booking: https://bookhomes.co.uk/zermatt-lodge
+- FAQ: https://bookhomes.co.uk/zermatt-lodge#faq
 - Guest terms: https://bookhomes.co.uk/terms/guests
 - Host terms: https://bookhomes.co.uk/terms/hosts
 - Privacy: https://bookhomes.co.uk/privacy

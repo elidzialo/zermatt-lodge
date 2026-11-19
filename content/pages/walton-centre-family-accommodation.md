@@ -121,7 +121,7 @@ Zermatt Lodge is a whole house in Fazakerley, near the shared hospital site. It'
 
 Check-in is from 3pm and checkout is 11am. It's a quiet house: no parties, no smoking and no pets.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees. If you're unsure how long you'll need, call +44 7479 905477 to talk it through.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. If you're unsure how long you'll need, call +44 7479 905477 to talk it through.
 
 ## Related guides
 
