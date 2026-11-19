@@ -62,3 +62,8 @@ Blockers sent: "From £149 a night" for Zermatt is not true (real nights from £
 Live: /stays (search, filters incl. kosher/work crew/business-ready, map), /stays/kosher, /become-a-host, /host (signup, listing wizard, calendar, iCal, payouts), admin marketplace tabs, guest/host terms + privacy drafts.
 Tested on preview: /api/bh/listings shows Zermatt 'From £89' (real min), search total for 11-14 Jan 2027, 4 guests = £410 = £101+£89+£91 nights + £129 cleaning, same as the homepage calendar. Merge was clean (builder rebased on main). Checks pass. Homepage changes are header/footer links only; Zermatt checkout code untouched.
 Safe to go live before setup: no host listing can take payment until Eli approves it, and Zermatt keeps its own checkout.
+
+## Merge 8 (00:40) - marketplace 6c17e8a -> main
+No trailing-slash hops (/guides, /host), 2-step optional until payouts wording, commission shown as 'currently 15%', date-free alerts now email once dates are bookable (bookhomes-ical-sync, every 15 min), booking/MARKETPLACE-SETUP.md, config.toml lists bookhomes-* functions.
+Builder tested a live Stripe session for internal test listing #2 (paused, never public): 7 nights, weekly discount, company receipt, 15% fee 107.40 of 716.00, payout manual_pending, double booking rejected, session expired, nothing charged.
+FOUND: RESEND_API_KEY is not set in Supabase, so NO emails go out today (Zermatt guest confirmations included: email_log shows skipped_no_key). Top action for Eli.
