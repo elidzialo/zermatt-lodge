@@ -1154,7 +1154,7 @@ $("#edSaveBtn").addEventListener("click", function(){
   var ch = s.f.filter(function(k){ return JSON.stringify(cur[k]) !== JSON.stringify(old[k]); });
   if (ch.indexOf("lat") >= 0 || ch.indexOf("lng") >= 0) ch = ch.filter(function(k){ return k !== "lat" && k !== "lng"; }).concat(["lat", "lng"]);
   // host-perf: optimistic, the section counts as saved at once; if the server says no, it is marked unsaved again with the reason
-  b.textContent = "Save"; W.dirty = false; edDirty(); edNav();
+  b.textContent = "Save"; W.dirty = false; edDirty(); edNav(); saved("ing", "Saving...");
   save(ch.length ? ch : s.f).then(function(j){ if (j.live_edit){ var fl = findL(W.id); if (fl) fl.host_edited_at = new Date().toISOString(); } if (!W.dirty) dropBackup(); saved("ok", j.live_edit ? "Saved. Your changes are live." : "Saved"); edHead(); edNav(); },
     function(e){ W.dirty = true; edDirty(); backup(); edErr(e.message); });
 });
