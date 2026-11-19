@@ -52,3 +52,8 @@ The site promises instant confirmation but /booking-confirmed said "We're confir
 - New read-only Edge Function zermatt-booking-status (deployed, verify_jwt off): looks up the guest's own Stripe Checkout session id, returns status + reference + dates only (no name/email/phone). Rewrite /api/booking-status.
 - /booking-confirmed polls every 2s: "Booking confirmed" + reference + dates once the webhook marks it paid; after 20s shows "taking a little longer, email on its way"; clash shows the refund message.
 - Zermatt checkout, webhook and booking JS untouched.
+
+## Review 3 (00:33) - marketplace 41a4139 (front end)
+Preview zermatt-lodge-8tqdh0izf-zelr1.vercel.app READY; /api/bh/listings returns Zermatt as listing #1 (no emails, phones, street or iCal token). Static checks pass; copy clean (no "was" prices, kosher = host-declared, street-address warnings for hosts and in admin).
+Live Supabase: zermatt-* functions unchanged; bookhomes-* deployed except stripe-webhook and ical-sync.
+Blockers sent: "From £149 a night" for Zermatt is not true (real nights from £89) -> use real min price; vercel.json conflict with main -> rebase; /stays/booked fallback wording. Asked: "Set up later" for host 2-step.
