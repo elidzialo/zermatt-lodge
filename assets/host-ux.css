@@ -53,7 +53,7 @@ body:not(.dash-on) .hp-switch{display:none}
 .sec-head h2,.rows-h{font-size:22px;font-weight:700;letter-spacing:-.015em}
 .panel h2{margin:0}
 .rows-h{margin:36px 0 12px}
-.notice{background:var(--am-tint);border:1px solid var(--am-line);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14.5px;color:var(--ink)}
+.host .notice{display:block;background:var(--am-tint);border:1px solid var(--am-line);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14.5px;color:var(--ink)}
 
 /* ---------- status badges ---------- */
 .host .st{border:0;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px 3px 8px;margin:0;line-height:18px;background:#f1f1f1;color:#555;white-space:nowrap}
@@ -158,6 +158,7 @@ body:not(.dash-on) .hp-switch{display:none}
 /* ---------- listing editor (markup by listing-editor, look by host-ux) ---------- */
 .ed-top{gap:12px;padding:10px 20px;min-height:64px}
 .ed-title{font-size:17px;font-weight:700}
+.host .wz-top .btn[data-preview]{background:var(--g);color:#fff;border:0;border-radius:999px;font-weight:700}
 .host .ed-top .btn[data-preview]{margin-left:auto;background:var(--g);color:#fff;border:0;border-radius:999px;min-height:42px;padding:8px 18px 8px 14px;font-weight:700;box-shadow:0 2px 8px rgba(31,77,58,.25)}
 .host .ed-top .btn[data-preview]:hover{background:var(--g-2)}
 .host .ed-top .btn[data-preview] .ic{width:17px;height:17px;stroke-width:2.2}
