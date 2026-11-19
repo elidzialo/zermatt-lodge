@@ -66,6 +66,10 @@
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-create-checkout"
     },
     {
+      "source": "/api/collect",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-collect"
+    },
+    {
       "source": "/ical/zermatt-lodge.ics",
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-ical-export"
     },

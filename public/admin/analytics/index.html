@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<title>Analytics | Book Homes admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+/* Book Homes analytics: first-party, cookie-free. Brand chrome from /admin; chart colours from the validated dataviz palette
+   (series 1 blue = this period, series 2 orange = previous period). Text never wears the series colour. */
+:root{
+  --ink:#222; --ink-2:#3d3d3d; --muted:#6a6a6a; --line:#e6e6e6; --line-2:#efefef; --soft:#f7f7f7; --cream:#f7f7f5; --surface:#fff;
+  --brand:#1f4d3a; --brand-ink:#163a2b; --brand-tint:#e9f1ec; --accent:#c8873a; --red:#b42318; --red-tint:#fdeceb;
+  --s1:#2a78d6; --s1-wash:rgba(42,120,214,.10); --s1-tint:#cde2fb; --s2:#eb6834; --grid:#eeeeec;
+  --good:#0a7a3d; --bad:#b42318;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--brand)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:6px}
+.hidden{display:none!important}
+.top{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--line);height:60px;padding:0 12px;display:flex;align-items:center;gap:10px}
+.top a.back{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:22px;line-height:1}
+.top h1{font-size:16px;font-weight:800;flex:1;min-width:0;letter-spacing:-.01em}
+.top h1 small{display:block;font-size:12.5px;font-weight:500;color:var(--muted)}
+.top button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;min-height:36px}
+main{max-width:1240px;margin:0 auto;padding:16px 14px 60px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px;color:var(--ink-2);min-height:36px}
+.filters button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.filters .upd{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.demo{background:#fff4cc;color:#6b5000;border-radius:10px;padding:8px 12px;font-size:13.5px;margin-bottom:12px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
+.card h2{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.card .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.card .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}.c5{grid-column:span 5}.c7{grid-column:span 7}
+@media (max-width:980px){.c8,.c4,.c5,.c7{grid-column:span 12}.c6{grid-column:span 6}}
+@media (max-width:680px){.c6{grid-column:span 12} main{padding:12px 10px 50px} .card{padding:14px}}
+.loading .card{opacity:.55;transition:opacity .2s}
+/* live */
+.live{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) minmax(0,1fr);gap:18px}
+@media (max-width:980px){.live{grid-template-columns:1fr}}
+.livebig{display:flex;flex-direction:column;gap:6px}
+.livebig b{font-size:44px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.livebig span{font-size:13px;color:var(--muted)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#12a150;margin-right:6px;box-shadow:0 0 0 0 rgba(18,161,80,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(18,161,80,.45)}70%{box-shadow:0 0 0 8px rgba(18,161,80,0)}100%{box-shadow:0 0 0 0 rgba(18,161,80,0)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.minis{display:flex;align-items:flex-end;gap:2px;height:44px;margin-top:8px}
+.minis i{flex:1;background:var(--s1);border-radius:2px 2px 0 0;min-height:1px}
+.minis i.z{background:var(--line)}
+.ppl{list-style:none;max-height:210px;overflow:auto}
+.ppl li{display:flex;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line-2);font-size:13.5px}
+.ppl li:last-child{border-bottom:0}
+.ppl .pth{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.ppl .m{color:var(--muted);font-size:12.5px;white-space:nowrap}
+/* KPI tiles */
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-align:left;min-width:0}
+button.kpi{cursor:pointer}
+button.kpi[aria-pressed="true"]{border-color:var(--s1);box-shadow:inset 0 0 0 1px var(--s1)}
+.kpi small{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+.kpi b{display:block;font-size:24px;font-weight:700;letter-spacing:-.02em;margin:2px 0}
+.kpi .d{font-size:12.5px;font-weight:600;color:var(--muted)}
+.kpi .d.up{color:var(--good)}.kpi .d.down{color:var(--bad)}
+/* line chart */
+.legend{display:flex;gap:14px;font-size:12.5px;color:var(--ink-2);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:16px;height:2px;border-radius:2px}
+.chart{position:relative;height:260px}
+.chart svg{display:block;width:100%;height:100%;overflow:visible}
+.chart text{font-size:11px;fill:var(--muted);font-family:var(--font)}
+.tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12.5px;box-shadow:0 6px 20px rgba(0,0,0,.08);min-width:150px;z-index:5;white-space:nowrap}
+.tip .t{color:var(--muted);margin-bottom:4px}
+.tip .r{display:flex;align-items:center;gap:6px}
+.tip .r i{width:12px;height:2px;border-radius:2px;display:inline-block}
+.tip .r b{font-weight:700}
+details.tbl{margin-top:10px;font-size:13px}
+details.tbl summary{cursor:pointer;color:var(--brand);font-weight:600}
+details.tbl table{width:100%;border-collapse:collapse;margin-top:8px}
+details.tbl th,details.tbl td{text-align:right;padding:4px 6px;border-bottom:1px solid var(--line-2)}
+details.tbl th:first-child,details.tbl td:first-child{text-align:left}
+/* bar lists */
+.bl{list-style:none}
+.bl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:6px 0;font-size:13.5px;position:relative}
+.bl .lb{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bl .lb a{color:var(--ink);text-decoration:none}.bl .lb a:hover{text-decoration:underline}
+.bl .v{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.bl .v small{font-weight:500;color:var(--muted);margin-left:6px}
+.bl .bar{grid-column:1/-1;height:6px;background:var(--line-2);border-radius:0 3px 3px 0}
+.bl .bar i{display:block;height:100%;background:var(--s1);border-radius:0 3px 3px 0;min-width:2px}
+.bl li:hover .bar i{background:#256abf}
+.chip{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:0 7px;line-height:18px;background:var(--soft);color:var(--ink-2);margin-left:6px;vertical-align:1px}
+.chip.ai{background:#efeafe;color:#4a3aa7}
+.empty{color:var(--muted);font-size:13.5px;padding:10px 0}
+.thead{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding-bottom:4px;border-bottom:1px solid var(--line-2);margin-bottom:2px}
+/* map */
+#map{height:380px;border-radius:10px;border:1px solid var(--line);z-index:1}
+@media (max-width:680px){#map{height:300px}}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{border:0;background:#fff;padding:5px 10px;font-size:13px;font-weight:600;min-height:32px}
+.seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+/* funnel */
+.fun{list-style:none;display:flex;flex-direction:column;gap:12px}
+.fun li{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:10px;align-items:center;font-size:13.5px}
+@media (max-width:520px){.fun li{grid-template-columns:110px minmax(0,1fr) 56px}}
+.fun .track{height:22px;background:var(--line-2);border-radius:0 4px 4px 0;position:relative}
+.fun .track i{display:block;height:100%;border-radius:0 4px 4px 0;background:var(--s1);min-width:2px}
+.fun .num{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.fun .conv{grid-column:2/4;font-size:12px;color:var(--muted);margin-top:-8px}
+/* gate */
+.gate{max-width:440px;margin:50px auto;padding:0 14px}
+.gate .card h2{margin-bottom:8px}.gate p{color:var(--muted);margin-bottom:14px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:46px;width:100%;background:var(--brand);color:#fff;border:0;border-radius:10px;font-weight:700;text-decoration:none}
+.err{background:var(--red-tint);color:var(--red);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+.leaflet-container{font-family:var(--font)}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="back" href="/admin/" aria-label="Back to admin">&#8249;</a>
+  <h1>Analytics<small>Book Homes website, first-party and cookie-free</small></h1>
+  <button type="button" id="refresh">Refresh</button>
+</header>
+
+<div id="gate" class="gate hidden"><div class="card">
+  <h2>Sign in to admin first</h2>
+  <p id="gateText">This page uses your admin sign-in (password and 6-digit code). Sign in, then come back here.</p>
+  <a class="btn" href="/admin/">Sign in</a>
+</div></div>
+
+<main id="app" class="hidden">
+  <div id="demoNote" class="demo hidden">Demo data: made-up numbers to preview the layout. Remove <b>?demo=1</b> from the address to see real data.</div>
+  <div id="err"></div>
+
+  <section class="card c12" style="margin-bottom:14px" aria-labelledby="liveH">
+    <div class="hd"><div><h2 id="liveH"><span class="dot" aria-hidden="true"></span>Live now</h2><p class="sub">Visitors active in the last 5 minutes. Updates every 15 seconds.</p></div></div>
+    <div class="live">
+      <div class="livebig"><b id="liveN">0</b><span id="liveLbl">visitors right now</span>
+        <div class="minis" id="liveMin" role="img" aria-label="Pageviews per minute, last 30 minutes"></div>
+        <span style="font-size:11.5px">Pageviews per minute, last 30 min</span></div>
+      <div><p class="sub" style="margin-bottom:6px;font-weight:600">Pages they're on</p><ul class="bl" id="livePages"></ul></div>
+      <div><p class="sub" style="margin-bottom:6px;font-weight:600">Who's here</p><ul class="ppl" id="livePeople"></ul></div>
+    </div>
+  </section>
+
+  <nav class="filters" aria-label="Date range">
+    <button type="button" data-r="today" aria-pressed="false">Today</button>
+    <button type="button" data-r="7d" aria-pressed="true">Last 7 days</button>
+    <button type="button" data-r="30d" aria-pressed="false">Last 30 days</button>
+    <button type="button" data-r="90d" aria-pressed="false">Last 90 days</button>
+    <span class="upd" id="upd"></span>
+  </nav>
+
+  <div id="report">
+  <div class="kpis" id="kpis" style="margin-bottom:14px"></div>
+
+  <div class="grid">
+    <section class="card c12" aria-labelledby="trendH">
+      <div class="hd"><div><h2 id="trendH">Visitors over time</h2><p class="sub" id="trendSub">Compared with the previous period</p></div>
+        <div class="legend"><span><i style="background:var(--s1)"></i>This period</span><span><i style="background:var(--s2)"></i>Previous period</span></div></div>
+      <div class="chart" id="trend"></div>
+      <details class="tbl"><summary>Show as table</summary><div id="trendTbl"></div></details>
+    </section>
+
+    <section class="card c8" aria-labelledby="mapH">
+      <div class="hd"><div><h2 id="mapH">Where visitors are</h2><p class="sub">Circle size = visitors. Rough location only (town or city).</p></div>
+        <div class="seg" role="group" aria-label="Map zoom"><button type="button" data-z="uk" aria-pressed="true">UK</button><button type="button" data-z="world" aria-pressed="false">World</button></div></div>
+      <div id="map" role="region" aria-label="Map of visitor locations"></div>
+    </section>
+    <section class="card c4" aria-labelledby="cityH">
+      <div class="hd"><div><h2 id="cityH">Cities</h2><p class="sub">Unique visitors</p></div></div>
+      <ul class="bl" id="cities"></ul>
+    </section>
+
+    <section class="card c6" aria-labelledby="srcH">
+      <div class="hd"><div><h2 id="srcH">Where visits come from</h2><p class="sub">First page of each visit</p></div></div>
+      <ul class="bl" id="sources"></ul>
+    </section>
+    <section class="card c6" aria-labelledby="funH">
+      <div class="hd"><div><h2 id="funH">Booking funnel</h2><p class="sub">Visits that reached each step. Paid = bookings paid in this period.</p></div></div>
+      <ul class="fun" id="funnel"></ul>
+      <div style="margin-top:18px"><p class="sub" style="font-weight:600;margin-bottom:6px">AI assistants</p><ul class="bl" id="ai"></ul></div>
+    </section>
+
+    <section class="card c7" aria-labelledby="pagesH">
+      <div class="hd"><div><h2 id="pagesH">Top pages</h2><p class="sub">Pageviews, unique visitors and average time on page</p></div></div>
+      <ul class="bl" id="pages"></ul>
+    </section>
+    <section class="card c5" aria-labelledby="lstH">
+      <div class="hd"><div><h2 id="lstH">Top listings</h2><p class="sub">Listing views, with reserve clicks and checkouts</p></div></div>
+      <ul class="bl" id="listings"></ul>
+    </section>
+
+    <section class="card c6" aria-labelledby="guidesH">
+      <div class="hd"><div><h2 id="guidesH">Top guides</h2><p class="sub">Pageviews and average time on page</p></div></div>
+      <ul class="bl" id="guides"></ul>
+    </section>
+    <section class="card c6" aria-labelledby="refH">
+      <div class="hd"><div><h2 id="refH">Referring sites</h2><p class="sub">Visits from other websites</p></div></div>
+      <ul class="bl" id="referrers"></ul>
+    </section>
+
+    <section class="card c4" aria-labelledby="devH"><div class="hd"><div><h2 id="devH">Devices</h2><p class="sub">Unique visitors</p></div></div><ul class="bl" id="devices"></ul></section>
+    <section class="card c4" aria-labelledby="brH"><div class="hd"><div><h2 id="brH">Browsers</h2><p class="sub">Unique visitors</p></div></div><ul class="bl" id="browsers"></ul></section>
+    <section class="card c4" aria-labelledby="ctH"><div class="hd"><div><h2 id="ctH">Countries</h2><p class="sub">Unique visitors</p></div></div><ul class="bl" id="countries"></ul></section>
+    <section class="card c6" aria-labelledby="campH"><div class="hd"><div><h2 id="campH">Campaigns</h2><p class="sub">Links tagged with utm_campaign</p></div></div><ul class="bl" id="campaigns"></ul></section>
+    <section class="card c6" aria-labelledby="evH"><div class="hd"><div><h2 id="evH">Events</h2><p class="sub">Searches, listing views, reserve clicks, checkouts</p></div></div><ul class="bl" id="events"></ul></section>
+  </div>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+"use strict";
+// Same sign-in as /admin (its saved session is reused). Data comes from the bookhomes-analytics function,
+// which checks 2-step verification (aal2) and the admin list before it reads anything.
+var SUPABASE_URL = "https://kddhkuwnkkjcnbjegsmc.supabase.co";
+var SUPABASE_KEY = "sb_publishable_zASd1ua4ZuknbOatR4MnTA_nVwqRZlR";
+var FN = SUPABASE_URL + "/functions/v1/bookhomes-analytics";
+var DEMO = /[?&]demo=1\b/.test(location.search);
+
+var $ = function(s){ return document.querySelector(s); };
+var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+function show(el, on){ $(el).classList.toggle("hidden", !on); }
+var nf = new Intl.NumberFormat("en-GB");
+function num(n){ n = Number(n) || 0; return n >= 10000 ? (n / 1000).toFixed(n >= 100000 ? 0 : 1).replace(/\.0$/, "") + "K" : nf.format(n); }
+function dur(ms){ if (ms == null) return "-"; var s = Math.round(ms / 1000); return s < 60 ? s + "s" : Math.floor(s / 60) + "m " + (s % 60) + "s"; }
+var regionName = (function(){ try { var d = new Intl.DisplayNames(["en-GB"], {type: "region"}); return function(c){ try { return d.of(c) || c; } catch (e) { return c; } }; } catch (e) { return function(c){ return c; }; } })();
+function flag(cc){ return /^[A-Z]{2}$/.test(cc || "") ? String.fromCodePoint.apply(null, cc.split("").map(function(c){ return 127397 + c.charCodeAt(0); })) + " " : ""; }
+var SRC_TYPE = {search: "Search", ai: "AI", social: "Social", ota: "Airbnb / OTA", direct: "Direct", referral: "Referral", email: "Email", campaign: "Campaign"};
+
+/* ---------- auth: reuse the /admin session ---------- */
+function probe(n){ try { var s = window[n]; s.setItem("__bh", "1"); s.removeItem("__bh"); return s; } catch (e) { return null; } }
+var LS = probe("localStorage"), SS = probe("sessionStorage"), MEM = {};
+function trusted(){ try { var v = JSON.parse((LS && LS.getItem("bh_admin_trust")) || "null"); return !!(v && v.until > Date.now()); } catch (e) { return false; } }
+var PRIMARY = trusted() ? LS : SS, OTHER = PRIMARY === LS ? SS : LS;
+var authStorage = {
+  getItem: function(k){ try { var v = PRIMARY && PRIMARY.getItem(k); if (v) return v; v = OTHER && OTHER.getItem(k); if (v) return v; } catch (e) {} return Object.prototype.hasOwnProperty.call(MEM, k) ? MEM[k] : null; },
+  setItem: function(k, v){ try { var w = (OTHER && OTHER.getItem(k) && !(PRIMARY && PRIMARY.getItem(k))) ? OTHER : PRIMARY; if (w) w.setItem(k, v); else MEM[k] = String(v); } catch (e) { MEM[k] = String(v); } },
+  removeItem: function(k){ [LS, SS].forEach(function(s){ try { if (s) s.removeItem(k); } catch (e) {} }); delete MEM[k]; }
+};
+var sb = window.supabase && window.supabase.createClient ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storage: authStorage}
+}) : null;
+function claims(tok){
+  try { var p = tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"); while (p.length % 4) p += "="; return JSON.parse(atob(p)); } catch (e) { return {}; }
+}
+function gate(text){ show("#gate", true); show("#app", false); if (text) $("#gateText").textContent = text; }
+function api(body){
+  if (DEMO) return Promise.resolve(body.action === "live" ? demoLive() : demoReport(body.range));
+  return sb.auth.getSession().then(function(r){
+    var s = r.data && r.data.session;
+    if (!s) { var e = new Error("signin"); e.status = 401; throw e; }
+    return fetch(FN, {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + s.access_token, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
+  }).then(function(res){
+    return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok){ var e = new Error(j.error || ("Error " + res.status)); e.status = res.status; throw e; } return j; });
+  });
+}
+function fail(e){
+  if (e.status === 401 || e.status === 403) return gate(e.status === 403 && /2-step/.test(e.message) ? "Enter your 6-digit code on the admin page, then come back here." : e.status === 403 ? "This account isn't on the admin list." : null);
+  $("#err").innerHTML = '<div class="err">Could not load: ' + esc(e.message) + '</div>';
+}
+
+/* ---------- bar list ---------- */
+function barList(el, rows, opt){
+  opt = opt || {};
+  if (!rows.length){ $(el).innerHTML = '<li class="empty">' + esc(opt.empty || "No data yet for this period.") + '</li>'; return; }
+  var max = Math.max.apply(null, rows.map(function(r){ return r.value; })) || 1;
+  $(el).innerHTML = rows.map(function(r){
+    var lbl = r.href ? '<a href="' + esc(r.href) + '" target="_blank" rel="noopener">' + esc(r.label) + '</a>' : esc(r.label);
+    var title = r.label + ": " + nf.format(r.value) + (r.extraText ? ", " + r.extraText : "");
+    return '<li title="' + esc(title) + '"><span class="lb">' + lbl + (r.chip ? '<span class="chip' + (r.chipCls ? " " + r.chipCls : "") + '">' + esc(r.chip) + '</span>' : "") + '</span>' +
+      '<span class="v">' + num(r.value) + (r.extra ? '<small>' + esc(r.extra) + '</small>' : "") + '</span>' +
+      '<span class="bar" aria-hidden="true"><i style="width:' + Math.max(0.5, 100 * r.value / max).toFixed(1) + '%"></i></span></li>';
+  }).join("");
+}
+
+/* ---------- KPI tiles ---------- */
+var METRIC = "v";
+var KPI = [
+  {k: "visitors", s: "v", label: "Visitors", f: num},
+  {k: "pageviews", s: "pv", label: "Pageviews", f: num},
+  {k: "sessions", s: "s", label: "Visits", f: num},
+  {k: "bounce", label: "Bounce rate", f: function(v){ return v == null ? "-" : v + "%"; }, lowGood: true},
+  {k: "avg_ms", label: "Avg time on page", f: dur},
+  {k: "load_ms", label: "Avg load time", f: function(v){ return v == null ? "-" : (v / 1000).toFixed(1) + "s"; }, lowGood: true}
+];
+function delta(cur, prev, lowGood){
+  if (cur == null || prev == null) return {t: "No earlier data", c: ""};
+  if (!prev) return cur ? {t: "New this period", c: lowGood ? "" : "up"} : {t: "No change", c: ""};
+  var p = Math.round(100 * (cur - prev) / prev);
+  if (!p) return {t: "No change vs previous", c: ""};
+  var good = lowGood ? p < 0 : p > 0;
+  return {t: (p > 0 ? "▲ +" : "▼ ") + p + "% vs previous", c: good ? "up" : "down"};
+}
+function renderKpis(t){
+  var c = t.cur || {}, p = t.prev || {};
+  $("#kpis").innerHTML = KPI.map(function(m){
+    var d = delta(c[m.k], p[m.k], m.lowGood);
+    var tag = m.s ? "button" : "div";
+    return '<' + tag + (m.s ? ' type="button" data-m="' + m.s + '" aria-pressed="' + (METRIC === m.s) + '"' : "") + ' class="kpi"><small>' + m.label + '</small><b>' + m.f(c[m.k]) + '</b><span class="d ' + d.c + '">' + d.t + '</span></' + tag + '>';
+  }).join("");
+  $$("#kpis button").forEach(function(b){ b.addEventListener("click", function(){ METRIC = b.dataset.m; renderKpis(t); renderTrend(LAST); }); });
+}
+
+/* ---------- line chart (this period vs previous), crosshair tooltip ---------- */
+var MNAME = {v: "Visitors", pv: "Pageviews", s: "Visits"};
+function keyLabel(k, unit, long){
+  var d = new Date(k.replace(" ", "T"));
+  if (unit === "hour") return String(d.getHours()).padStart(2, "0") + ":00";
+  return d.toLocaleDateString("en-GB", long ? {weekday: "short", day: "numeric", month: "short"} : {day: "numeric", month: "short"});
+}
+function niceMax(v){ if (v <= 4) return 4; var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p; return (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * p; }
+function renderTrend(R){
+  var el = $("#trend"), ser = R.series || [], m = METRIC, unit = R.unit;
+  $("#trendH").textContent = MNAME[m] + " over time";
+  $("#trendSub").textContent = (unit === "hour" ? "By hour, today vs yesterday" : "By day, compared with the previous " + ser.length + " days");
+  var W = el.clientWidth || 600, H = el.clientHeight || 260, L = 36, Rr = 10, T = 10, B = 26;
+  var cur = ser.map(function(x){ return x[m]; }), prev = ser.map(function(x){ return x["pv_" + m]; });
+  var nowIdx = cur.length - 1;
+  var ymax = niceMax(Math.max.apply(null, cur.concat(prev).concat([1])));
+  var n = Math.max(ser.length - 1, 1);
+  var X = function(i){ return L + (W - L - Rr) * i / n; }, Y = function(v){ return T + (H - T - B) * (1 - v / ymax); };
+  var g = "";
+  for (var i = 0; i <= 4; i++){ var v = ymax * i / 4, y = Y(v); g += '<line x1="' + L + '" x2="' + (W - Rr) + '" y1="' + y + '" y2="' + y + '" stroke="var(--grid)" stroke-width="1"/><text x="' + (L - 6) + '" y="' + (y + 3.5) + '" text-anchor="end">' + num(v) + '</text>'; }
+  var every = Math.ceil(ser.length / Math.max(2, Math.floor((W - L) / 70)));
+  ser.forEach(function(x, i){ if (i % every === 0 || i === ser.length - 1 && ser.length < 12) g += '<text x="' + X(i) + '" y="' + (H - 6) + '" text-anchor="middle">' + esc(keyLabel(x.k, unit)) + '</text>'; });
+  function path(arr){ return arr.map(function(v, i){ return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); }).join(""); }
+  var area = ser.length ? path(cur) + "L" + X(cur.length - 1) + " " + Y(0) + "L" + X(0) + " " + Y(0) + "Z" : "";
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(MNAME[m]) + ' this period and previous period">' + g +
+    '<path d="' + area + '" fill="var(--s1-wash)"/>' +
+    '<path d="' + path(prev) + '" fill="none" stroke="var(--s2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>' +
+    '<path d="' + path(cur) + '" fill="none" stroke="var(--s1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>' +
+    (ser.length ? '<circle cx="' + X(nowIdx) + '" cy="' + Y(cur[nowIdx]) + '" r="4" fill="var(--s1)" stroke="#fff" stroke-width="2"/>' : "") +
+    '<line id="xh" y1="' + T + '" y2="' + (H - B) + '" stroke="#bbb" stroke-width="1" visibility="hidden"/>' +
+    '<circle id="xd1" r="4" fill="var(--s1)" stroke="#fff" stroke-width="2" visibility="hidden"/><circle id="xd2" r="4" fill="var(--s2)" stroke="#fff" stroke-width="2" visibility="hidden"/>' +
+    '<rect x="' + L + '" y="0" width="' + (W - L - Rr) + '" height="' + H + '" fill="transparent" id="hit" tabindex="0" aria-label="Chart, use arrow keys"/></svg><div class="tip hidden" id="tip"></div>';
+  el.innerHTML = svg;
+  var hit = el.querySelector("#hit"), tip = el.querySelector("#tip"), xh = el.querySelector("#xh"), d1 = el.querySelector("#xd1"), d2 = el.querySelector("#xd2"), at = -1;
+  function point(i){
+    if (i < 0 || i >= ser.length){ [xh, d1, d2].forEach(function(e){ e.setAttribute("visibility", "hidden"); }); tip.classList.add("hidden"); return; }
+    at = i; var x = X(i);
+    xh.setAttribute("x1", x); xh.setAttribute("x2", x); xh.setAttribute("visibility", "visible");
+    d1.setAttribute("cx", x); d1.setAttribute("cy", Y(cur[i])); d1.setAttribute("visibility", "visible");
+    d2.setAttribute("cx", x); d2.setAttribute("cy", Y(prev[i])); d2.setAttribute("visibility", "visible");
+    tip.innerHTML = '<div class="t"></div><div class="r"><i style="background:var(--s1)"></i><b></b><span>this period</span></div><div class="r"><i style="background:var(--s2)"></i><b></b><span>previous</span></div>';
+    tip.querySelector(".t").textContent = keyLabel(ser[i].k, unit, true);
+    var bs = tip.querySelectorAll("b"); bs[0].textContent = nf.format(cur[i]); bs[1].textContent = nf.format(prev[i]);
+    tip.classList.remove("hidden");
+    var tw = tip.offsetWidth; tip.style.left = Math.min(Math.max(0, x + 12), W - tw) + "px"; tip.style.top = "8px";
+    if (x + 12 + tw > W) tip.style.left = Math.max(0, x - tw - 12) + "px";
+  }
+  hit.addEventListener("pointermove", function(e){ var r = el.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width; point(Math.round((x - L) / (W - L - Rr) * n)); });
+  hit.addEventListener("pointerleave", function(){ point(-1); });
+  hit.addEventListener("blur", function(){ point(-1); });
+  hit.addEventListener("keydown", function(e){ if (e.key === "ArrowRight" || e.key === "ArrowLeft"){ e.preventDefault(); point(Math.max(0, Math.min(ser.length - 1, (at < 0 ? nowIdx : at) + (e.key === "ArrowRight" ? 1 : -1)))); } });
+  $("#trendTbl").innerHTML = '<table><thead><tr><th>' + (unit === "hour" ? "Hour" : "Day") + '</th><th>Visitors</th><th>Pageviews</th><th>Visits</th><th>Prev. visitors</th></tr></thead><tbody>' +
+    ser.slice().reverse().map(function(x){ return '<tr><td>' + esc(keyLabel(x.k, unit, true)) + '</td><td>' + x.v + '</td><td>' + x.pv + '</td><td>' + x.s + '</td><td>' + x.pv_v + '</td></tr>'; }).join("") + '</tbody></table>';
+}
+
+/* ---------- map ---------- */
+var MAP = null, LAYER = null, ZOOM = "uk";
+function initMap(){
+  if (MAP || !window.L) return;
+  MAP = L.map("map", {scrollWheelZoom: false, worldCopyJump: true}).setView([54.3, -3.2], 5);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 12, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(MAP);
+  LAYER = L.layerGroup().addTo(MAP);
+}
+function setZoom(z){
+  ZOOM = z; $$(".seg button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.z === z ? "true" : "false"); });
+  if (!MAP) return;
+  if (z === "uk") MAP.setView([54.3, -3.2], window.innerWidth < 680 ? 4 : 5); else MAP.setView([30, 5], window.innerWidth < 680 ? 1 : 2);
+}
+function renderMap(points){
+  initMap(); if (!MAP) { $("#map").innerHTML = '<p class="empty" style="padding:16px">The map library did not load.</p>'; return; }
+  LAYER.clearLayers();
+  var max = Math.max.apply(null, points.map(function(p){ return p.visitors; }).concat([1]));
+  points.forEach(function(p){
+    var r = 5 + 20 * Math.sqrt(p.visitors / max);
+    var c = L.circleMarker([p.lat, p.lng], {radius: r, color: "#fff", weight: 2, fillColor: "#2a78d6", fillOpacity: .55});
+    var t = document.createElement("div");
+    var b = document.createElement("b"); b.textContent = (p.city || "Unknown") + (p.country ? ", " + regionName(p.country) : ""); t.appendChild(b);
+    t.appendChild(document.createElement("br")); t.appendChild(document.createTextNode(nf.format(p.visitors) + " visitors, " + nf.format(p.views) + " pageviews"));
+    c.bindTooltip(t); c.addTo(LAYER);
+  });
+  setTimeout(function(){ MAP.invalidateSize(); }, 50);
+}
+$$(".seg button").forEach(function(b){ b.addEventListener("click", function(){ setZoom(b.dataset.z); }); });
+
+/* ---------- funnel ---------- */
+function renderFunnel(f){
+  var steps = [["listing_view", "Viewed a listing"], ["reserve_click", "Clicked Reserve"], ["checkout_start", "Started checkout"], ["paid", "Paid booking"]];
+  var top = Math.max(f.listing_view || 0, 1);
+  $("#funnel").innerHTML = steps.map(function(s, i){
+    var v = f[s[0]] || 0, prev = i ? (f[steps[i - 1][0]] || 0) : null;
+    var conv = i ? (prev ? Math.round(100 * v / prev) + "% of the step before" : "-") + (i > 0 && f.listing_view ? ", " + (Math.round(1000 * v / f.listing_view) / 10) + "% of listing views" : "") : "";
+    return '<li><span>' + s[1] + '</span><span class="track" title="' + esc(s[1] + ": " + v) + '"><i style="width:' + Math.max(0.5, Math.min(100, 100 * v / top)).toFixed(1) + '%"></i></span><span class="num">' + nf.format(v) + '</span>' +
+      (conv ? '<span class="conv">' + conv + '</span>' : "") + '</li>';
+  }).join("");
+}
+
+/* ---------- render a report ---------- */
+var LAST = null;
+var EVN = {search: "Searches", listing_view: "Listing views", reserve_click: "Reserve clicks", checkout_start: "Checkouts started", booking_paid: "Bookings paid", pageview: "Pageviews"};
+function render(R){
+  LAST = R;
+  renderKpis(R.totals || {});
+  renderTrend(R);
+  renderMap(R.map || []);
+  barList("#pages", (R.pages || []).map(function(p){ return {label: p.path, href: p.path, value: p.views, extra: p.visitors + " visitors" + (p.avg_ms ? ", " + dur(p.avg_ms) : "")}; }));
+  barList("#guides", (R.guides || []).map(function(p){ return {label: p.path.replace(/^\/guides\//, ""), href: p.path, value: p.views, extra: p.avg_ms ? dur(p.avg_ms) : ""}; }), {empty: "No guide views in this period."});
+  barList("#listings", (R.listings || []).map(function(p){ return {label: p.title || p.listing, href: "/" + p.listing, value: p.views, extra: p.reserve + " reserve, " + p.checkout + " checkout"}; }), {empty: "No listing views in this period."});
+  barList("#sources", (R.sources || []).map(function(s){ return {label: s.source === "direct" ? "Direct / unknown" : s.source, value: s.sessions, chip: SRC_TYPE[s.type] || s.type, chipCls: s.type === "ai" ? "ai" : ""}; }));
+  barList("#ai", (R.sources || []).filter(function(s){ return s.type === "ai"; }).map(function(s){ return {label: s.source, value: s.sessions, extra: "visits"}; }), {empty: "No visits from ChatGPT, Perplexity, Claude or Gemini yet."});
+  barList("#referrers", (R.referrers || []).map(function(s){ return {label: s.referrer, value: s.sessions}; }), {empty: "No visits from other websites in this period."});
+  barList("#devices", (R.devices || []).map(function(s){ return {label: s.name.charAt(0).toUpperCase() + s.name.slice(1), value: s.visitors}; }));
+  barList("#browsers", (R.browsers || []).map(function(s){ return {label: s.name, value: s.visitors}; }));
+  barList("#countries", (R.countries || []).map(function(s){ return {label: s.name === "??" ? "Unknown" : flag(s.name) + regionName(s.name), value: s.visitors}; }));
+  barList("#cities", (R.cities || []).map(function(s){ return {label: flag(s.country) + s.name, value: s.visitors}; }));
+  barList("#campaigns", (R.campaigns || []).map(function(s){ return {label: s.campaign, value: s.sessions, extra: [s.source, s.medium].filter(Boolean).join(" / ")}; }), {empty: "No tagged campaign links in this period. Add ?utm_campaign=... to links you share."});
+  var ev = R.events || {};
+  barList("#events", ["search", "listing_view", "reserve_click", "checkout_start", "booking_paid"].map(function(k){ return {label: EVN[k], value: ev[k] || 0}; }).filter(function(r, i){ return r.value || i < 4; }));
+  renderFunnel(R.funnel || {});
+  $("#upd").textContent = "Updated " + new Date().toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
+}
+
+/* ---------- live ---------- */
+function renderLive(Lv){
+  $("#liveN").textContent = nf.format(Lv.visitors || 0);
+  $("#liveLbl").textContent = (Lv.visitors === 1 ? "visitor" : "visitors") + " right now";
+  var mins = Lv.minutes || [], mx = Math.max.apply(null, mins.map(function(x){ return x.pv; }).concat([1]));
+  $("#liveMin").innerHTML = mins.map(function(x){
+    var t = new Date(x.m).toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"});
+    return '<i class="' + (x.pv ? "" : "z") + '" style="height:' + (x.pv ? Math.max(8, 100 * x.pv / mx) : 4) + '%" title="' + t + ": " + x.pv + ' pageviews"></i>';
+  }).join("");
+  barList("#livePages", (Lv.pages || []).map(function(p){ return {label: p.path, href: p.path, value: p.visitors}; }), {empty: "Nobody on the site right now."});
+  var ppl = Lv.people || [];
+  $("#livePeople").innerHTML = ppl.length ? ppl.map(function(p){
+    var where = [p.city, p.country ? regionName(p.country) : ""].filter(Boolean).join(", ") || "Unknown location";
+    var ago = p.ago_s < 60 ? "just now" : Math.round(p.ago_s / 60) + " min ago";
+    return '<li><span class="pth">' + esc(flag(p.country)) + esc(where) + '<br><span class="m">' + esc(p.path) + '</span></span><span class="m">' + esc(p.device || "") + ' &middot; ' + esc(p.source === "direct" ? "direct" : p.source) + '<br>' + ago + '</span></li>';
+  }).join("") : '<li class="empty">Nobody on the site right now.</li>';
+}
+function loadLive(){ return api({action: "live"}).then(renderLive).catch(function(e){ if (e.status === 401 || e.status === 403) fail(e); }); }
+
+var RANGE = "7d";
+function loadReport(){
+  $("#report").classList.add("loading");
+  return api({action: "report", range: RANGE}).then(function(R){ $("#err").innerHTML = ""; render(R); }).catch(fail)
+    .then(function(){ $("#report").classList.remove("loading"); });
+}
+$$(".filters button").forEach(function(b){ b.addEventListener("click", function(){
+  RANGE = b.dataset.r; $$(".filters button").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); loadReport();
+}); });
+$("#refresh").addEventListener("click", function(){ loadLive(); loadReport(); });
+var rz; window.addEventListener("resize", function(){ clearTimeout(rz); rz = setTimeout(function(){ if (LAST) renderTrend(LAST); }, 150); });
+
+function start(){
+  show("#gate", false); show("#app", true); show("#demoNote", DEMO);
+  setZoom("uk");
+  loadLive(); loadReport();
+  setInterval(function(){ if (document.visibilityState === "visible") loadLive(); }, 15000);
+  setInterval(function(){ if (document.visibilityState === "visible") loadReport(); }, 5 * 60000);
+}
+
+/* ---------- demo data (?demo=1): made-up numbers to check the layout without signing in ---------- */
+function rnd(seed){ return function(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
+function demoReport(range){
+  var r = rnd(range.length * 77 + 3), n = range === "today" ? 24 : parseInt(range, 10), hour = range === "today", ser = [], now = new Date();
+  for (var i = 0; i < n; i++){
+    var d = new Date(now); if (hour) d.setHours(i, 0, 0, 0); else { d.setDate(now.getDate() - (n - 1 - i)); d.setHours(0, 0, 0, 0); }
+    var base = hour ? (i < 7 ? 1 : 6) : 40, v = Math.round(base + r() * base * (hour ? 1.5 : .8) + (hour ? 0 : i * .4));
+    if (hour && i > now.getHours()) v = 0;
+    var pvv = Math.round(base + r() * base * .8);
+    var k = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0") + "T" + String(d.getHours()).padStart(2, "0") + ":00:00";
+    ser.push({k: k, v: v, pv: Math.round(v * 2.6), s: Math.round(v * 1.2), pv_v: pvv, pv_pv: Math.round(pvv * 2.4), pv_s: Math.round(pvv * 1.15)});
+  }
+  var sum = function(f){ return ser.reduce(function(a, x){ return a + x[f]; }, 0); };
+  return {range: range, unit: hour ? "hour" : "day", series: ser,
+    totals: {cur: {visitors: sum("v"), pageviews: sum("pv"), sessions: sum("s"), bounce: 41.5, avg_ms: 52000, load_ms: 1350}, prev: {visitors: sum("pv_v"), pageviews: sum("pv_pv"), sessions: sum("pv_s"), bounce: 44.2, avg_ms: 47000, load_ms: 1480}},
+    pages: [["/", 820], ["/zermatt-lodge", 540], ["/guides", 210], ["/guides/aintree-grand-national-accommodation", 160], ["/kosher-homes", 120], ["/guides/where-to-stay-in-liverpool-for-a-group", 95], ["/become-a-host", 60]].map(function(p){ return {path: p[0], views: p[1], visitors: Math.round(p[1] * .7), avg_ms: 30000 + p[1] * 40}; }),
+    guides: [["/guides/aintree-grand-national-accommodation", 160], ["/guides/where-to-stay-in-liverpool-for-a-group", 95], ["/guides/visiting-aintree-hospital-practical-guide", 70], ["/guides/west-derby-village-guide", 33]].map(function(p){ return {path: p[0], views: p[1], visitors: Math.round(p[1] * .8), avg_ms: 70000}; }),
+    listings: [{listing: "zermatt-lodge", title: "Zermatt Lodge", views: 540, visitors: 380, reserve: 46, checkout: 21}, {listing: "stylish-liverpool-apartment-with-parking-balcony-merseyside-95ea9", title: "Stylish Liverpool apartment", views: 140, visitors: 110, reserve: 9, checkout: 3}],
+    sources: [["Google", "search", 410], ["direct", "direct", 300], ["ChatGPT", "ai", 64], ["Airbnb", "ota", 40], ["Facebook", "social", 35], ["Perplexity", "ai", 12], ["Bing", "search", 11], ["Claude", "ai", 4]].map(function(s){ return {source: s[0], type: s[1], sessions: s[2], visitors: s[2]}; }),
+    referrers: [["google.com", 410], ["chatgpt.com", 64], ["airbnb.co.uk", 40], ["facebook.com", 35], ["perplexity.ai", 12]].map(function(s){ return {referrer: s[0], sessions: s[1]}; }),
+    campaigns: [{campaign: "winter-offer", source: "newsletter", medium: "email", sessions: 22}],
+    devices: [{name: "mobile", visitors: 620}, {name: "desktop", visitors: 310}, {name: "tablet", visitors: 40}],
+    browsers: [{name: "Safari", visitors: 400}, {name: "Chrome", visitors: 380}, {name: "Edge", visitors: 70}, {name: "Samsung Internet", visitors: 50}, {name: "Firefox", visitors: 20}],
+    countries: [{name: "GB", visitors: 820}, {name: "IE", visitors: 40}, {name: "US", visitors: 33}, {name: "IL", visitors: 21}, {name: "DE", visitors: 9}],
+    cities: [["Liverpool", 260, 53.4, -3], ["Manchester", 150, 53.5, -2.2], ["London", 120, 51.5, -0.1], ["Leeds", 40, 53.8, -1.5], ["Birmingham", 38, 52.5, -1.9], ["Dublin", 30, 53.3, -6.3], ["Glasgow", 18, 55.9, -4.3], ["Bolton", 25, 53.6, -2.4], ["New York", 15, 40.7, -74], ["Jerusalem", 12, 31.8, 35.2]].map(function(c){ return {name: c[0], country: c[0] === "Dublin" ? "IE" : c[0] === "New York" ? "US" : c[0] === "Jerusalem" ? "IL" : "GB", visitors: c[1], views: c[1] * 2, lat: c[2], lng: c[3]}; }),
+    map: [], events: {search: 140, listing_view: 680, reserve_click: 55, checkout_start: 24, booking_paid: 6},
+    funnel: {listing_view: 520, reserve_click: 55, checkout_start: 24, paid: 6}};
+}
+var _dr = demoReport; demoReport = function(r){ var R = _dr(r); R.map = R.cities.map(function(c){ return {lat: c.lat, lng: c.lng, city: c.name, country: c.country, visitors: c.visitors, views: c.views}; }); return R; };
+function demoLive(){
+  var r = rnd(Math.floor(Date.now() / 15000)), mins = [];
+  for (var i = 29; i >= 0; i--) mins.push({m: new Date(Date.now() - i * 60000).toISOString(), pv: Math.round(r() * 6)});
+  return {visitors: 4, minutes: mins, pages: [{path: "/zermatt-lodge", visitors: 2}, {path: "/", visitors: 1}, {path: "/guides/aintree-grand-national-accommodation", visitors: 1}],
+    people: [{path: "/zermatt-lodge", country: "GB", city: "Liverpool", device: "mobile", source: "Google", ago_s: 20}, {path: "/zermatt-lodge", country: "GB", city: "Manchester", device: "desktop", source: "ChatGPT", ago_s: 75}, {path: "/", country: "IE", city: "Dublin", device: "mobile", source: "direct", ago_s: 130}, {path: "/guides/aintree-grand-national-accommodation", country: "GB", city: "Leeds", device: "tablet", source: "Bing", ago_s: 200}]};
+}
+
+if (DEMO) return start();
+if (!sb){ gate("The sign-in library did not load. Check your connection and reload."); return; }
+sb.auth.getSession().then(function(r){
+  var s = r.data && r.data.session;
+  if (!s) return gate();
+  if (claims(s.access_token).aal !== "aal2") return gate("Enter your 6-digit code on the admin page, then come back here.");
+  start();
+});
+})();
+</script>
+</body>
+</html>

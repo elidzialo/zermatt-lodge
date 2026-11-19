@@ -129,7 +129,8 @@ PRIVACY = f"""{DRAFT}<h1>Privacy notice</h1><p>Last updated: 19 November 2026</p
 <h2>Who we share it with</h2><p>The host of your booking; Stripe (payments); Supabase (database and sign-in); Vercel (website hosting); our email provider; and authorities where the law requires. Some providers process data outside the UK under approved safeguards.</p>
 <h2>How long we keep it</h2><p>Booking and payment records for 6 years for tax. Alerts until sent or 12 months. Accounts until closed, then as needed for legal claims.</p>
 <h2>Your rights</h2><p>You can ask for a copy of your data, to correct it, delete it, restrict or object to its use, and to move it. Contact us using the details on the contact page. You can also complain to the Information Commissioner's Office (ico.org.uk).</p>
-<h2>Cookies</h2><p>We use only the storage needed to keep you signed in and to run the booking calendar. We don't use advertising cookies.</p>"""
+<h2>Cookies</h2><p>We use only the storage needed to keep you signed in and to run the booking calendar. We don't use advertising cookies.</p>
+<h2>Analytics</h2><p>We count visits with our own cookie-free analytics, so no data goes to Google or other trackers. Your browser keeps a random ID so we can count unique visitors, and we record the page, the site you came from, your device type and a rough location (town or city) worked out from your connection. We never store your IP address. Raw visit data is deleted after 13 months. If your browser sends Do Not Track or Global Privacy Control, we don't count you at all.</p>"""
 
 
 TRIPS = """<h1>Trips</h1>

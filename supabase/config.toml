@@ -54,3 +54,8 @@ verify_jwt = false
 verify_jwt = false
 [functions.bookhomes-connect-onboard]
 verify_jwt = false
+[functions.bookhomes-collect]
+verify_jwt = false
+# Admin analytics: checks the user token (aal2) and zermatt.admins in code
+[functions.bookhomes-analytics]
+verify_jwt = false
