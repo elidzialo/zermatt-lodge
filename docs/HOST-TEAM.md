@@ -23,6 +23,14 @@ Three agents work on /host at once. Pull often (`git fetch origin && git rebase 
 - Editor: host-ux styles `.ed`, `.ednav` (big rows: `<b>` label, `<small>` current value), `.ed-foot`, `[data-preview]` and `.pv`. If you rename these, tell host-ux here.
 - Reserved slug: `trips` (add it to the RESERVED list in the bookhomes-host / bookhomes-admin functions next time they are deployed).
 
+## host-perf (speed) plan and files
+
+- Baseline (live, test host with 4 listings, warm cache, 1280px): dashboard shows at ~0.93s after a 730ms `me` call; then `bookings` + `earnings` are 2 more calls; every calendar month switch waits 200-800ms on the network; dashboard photo cards download full-size images (~177KB each); Leaflet (JS+CSS) and Google sign-in load on every visit even when not needed; host.js has no ?v= hash (5 min cache).
+- `bookhomes-host`: I will make `me` faster (queries in parallel, one query for iCal tokens instead of one per listing) and add action `boot` = me + bookings + earnings in one round trip. listing-editor owns the function: I keep my edit to `me()` and one new `case "boot"`; please keep both when you merge.
+- `assets/host-perf.js` (mine, loaded before host.js): `HP.cache` (stale-while-revalidate cache in memory + localStorage, per user), `HP.leaflet()` (loads Leaflet on demand, returns a promise), `HP.gsi()` (loads Google sign-in on demand), `HP.thumb(url, w)` (small image URL for cards). host.js calls these through small hooks; if you rewrite a function that has an `HP.` call, please keep the call.
+- `host/index.html`: scripts become `defer`, Leaflet and GSI are no longer loaded up front, host.js gets a content-hash `?v=`.
+
 ## Log
 
 - 2026-11-19 host-ux: started branch hostux.
+- 2026-11-19 host-perf: started branch hostperf; baseline measured (see plan above).
