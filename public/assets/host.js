@@ -1209,7 +1209,14 @@ function resumeFromHash(){
   if (id && !findL(id)){ setHash(""); return; }
   if (m[1] === "wizard" && (!id || findL(id).status === "draft")) openWizard(id);
   else openEditor(id, m[3]);
-  if (m[1] === "edit" && W.mode === "editor"){ var bk = readBackup(id); if (bk && bk.l && W.sec){ W.l = norm(Object.assign({}, W.l, bk.l, {status: W.l.status})); drawSection(W.sec); W.dirty = true; edDirty(); saved("ing", "We kept your unsaved changes. Save or Cancel."); } }
+  if (m[1] === "edit" && W.mode === "editor"){
+    var bk = readBackup(id), sec = SECTIONS.filter(function(x){ return x.k === W.sec; })[0];
+    if (bk && bk.l && sec && sec.f){
+      var mine = norm(Object.assign({}, W.l, bk.l, {status: W.l.status})), t = W.l, a1 = payload(sec.f); W.l = mine; var a2 = payload(sec.f); W.l = t;
+      if (JSON.stringify(a1) !== JSON.stringify(a2)){ W.l = mine; drawSection(W.sec); W.dirty = true; edDirty(); saved("ing", "We kept your unsaved changes. Save or Cancel."); }
+      else dropBackup();
+    }
+  }
 }
 LISTING_HOOK = resumeFromHash;
 })();
