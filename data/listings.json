@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T00:00:00Z",
+ "updated": "2026-11-19T14:24:46.201Z",
  "listings": [
   {
    "id": 1,
@@ -55,11 +55,21 @@
    "airbnb_url": "https://www.airbnb.co.uk/rooms/1801505261909570677",
    "booking_url": "https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html",
    "legacy_source": "zermatt",
-   "page_url": "/",
-   "approved_at": "2026-11-18T23:52:07Z",
-   "updated_at": "2026-11-18T23:52:07Z",
+   "page_url": "/zermatt-lodge",
+   "approved_at": "2026-11-18T23:52:07.478Z",
+   "updated_at": "2026-11-19T12:28:07.344Z",
    "host_name": "ZALO Stays",
    "trader_status": "trader",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/zermatt-lodge",
    "photos": [
     {
      "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85",
@@ -94,8 +104,216 @@
     "count": 0,
     "average": null
    },
-   "url": "/",
-   "from_price": 89
+   "from_price": 89,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": true
+   },
+   "featured": false
+  },
+  {
+   "id": 11,
+   "slug": "stylish-liverpool-apartment-with-parking-balcony-merseyside-95ea9",
+   "title": "Stylish Liverpool Apartment with Parking & Balcony",
+   "area": "Merseyside",
+   "city": "Merseyside",
+   "property_type": "flat",
+   "description": "Discover Liverpool in style in this charming two-bedroom apartment, ideally located near the Hilton Hotel and John Lewis. It features a private balcony, two bathrooms, a sofa bed, superfast WiFi, Smart TV and a fully equipped kitchen. Secure underground parking is included. Perfect for families, couples or professionals, with easy access to Liverpool ONE, Albert Dock and the city’s shops, restaurants and attractions.\n\nThe space\nThe living room is designed for relaxation, featuring a large corner sofa that converts into a comfortable bed, allowing the apartment to sleep up to six guests in total. Entertainment is provided with a 50” Samsung Smart TV, while superfast Hyperoptic Wi-Fi is available throughout the apartment, ideal for both remote working and streaming your favourite apps and shows.\n\nThe bright open-plan living space also offers direct access to the balcony through impressive floor-to-ceiling windows, allowing natural light to fill the apartment and creating a bright, airy atmosphere throughout the day.\n\nSharing the same open-plan space is the modern kitchen and dining area. A stylish breakfast bar doubles as a dining table, complete with five matching chairs, making it perfect for casual dining, morning coffee, or socialising while cooking. The kitchen is well-equipped with modern appliances including an oven, hob, microwave, toaster, kettle, washing machine, dishwasher, and Nespresso coffee machine, providing everything needed for a convenient self-catered stay.\n\nThe apartment features two spacious bedrooms, each furnished with a comfortable double bed and ample storage including wardrobes and drawers. Both bedrooms are carpeted for added comfort and finished with elegant grey-accented furnishings, creating a modern yet timeless aesthetic. The master bedroom also benefits from private balcony access, offering a peaceful outdoor space to enjoy fresh air and city views. It further includes a contemporary en-suite bathroom complete with a rain shower, handheld shower attachment, washbasin, and WC.\n\nThe main bathroom is equally stylish and includes a full-sized bath with an overhead rain shower and additional handheld shower, alongside a WC, washbasin, and mirror with vanity space.\n\nIdeal for families, couples, and professionals alike, the apartment offers easy access to Liverpool ONE, the Albert Dock, and the city’s excellent selection of shops, restaurants, bars, and attractions, making it a convenient and comfortable base for any stay in Liverpool.\n\nGuest access\nYou'll have exclusive access to the entire apartment during your stay. This includes both bedrooms, the living room, two full bathrooms, the kitchen, and the patio or balcony. We offer a remote check-in process, but we're always available via phone or message if you need anything. You'll receive key collection instructions the day before your arrival.\n\nOther things to note\nOur support hours are from 9am to 9pm, with limited emergency assistance available outside these times.\n\nThe apartment is on the first floor within a residential complex. Parties, loud music, and events are strictly not permitted.\n\nBookings for groups where all guests are under 25 cannot be accepted.\n\nSmoking is not allowed and will result in an additional charge.\n\nLost Property: Any items left behind after check-out will be stored for up to 10 days. If they are not claimed or arrangements for collection or postage are not made within this time, they will be disposed of. Any postage costs for returning lost items are the responsibility of the guest.\n\nCheck-in is from 3pm and check-out is by 11am. Late check-outs without prior approval may incur a fee.\n\nLinens and towels are provided for each guest.\n\nWhile the building does have a lift, we cannot guarantee it will be operational during your stay. This has not been an issue to date, but we want to be transparent.\n\nPlease do not have parcels sent to the apartment. We cannot take responsibility for missing or damaged deliveries.\n\nIn rare cases of essential maintenance, access may be required during your stay. We’ll always give at least 24 hours’ notice unless immediate attention is required.",
+   "house_rules": "No pets. No smoking. No parties or events.",
+   "max_guests": 6,
+   "bedrooms": 2,
+   "beds": 3,
+   "baths": 2,
+   "amenities": [
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "cot",
+    "heating",
+    "wifi",
+    "workspace",
+    "kitchen",
+    "coffee",
+    "garden",
+    "parking",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 199,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.4,
+   "lng": -2.99,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1420091282306227577",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-19T14:03:55.692Z",
+   "updated_at": "2026-11-19T14:03:55.692Z",
+   "host_name": "Elimelech Dzialoszynski",
+   "trader_status": "trader",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/stylish-liverpool-apartment-with-parking-balcony-merseyside-95ea9",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8e2c-0.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8e2c-1.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8e2c-2.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8e2d-3.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8efw-4.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8efx-5.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8efx-6.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8efx-7.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8f11-8.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8f11-9.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8f11-10.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8f11-11.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8ffx-12.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8ffx-13.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8ffx-14.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8ffx-15.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8fzi-16.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8fzj-17.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8fzj-18.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8fzj-19.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8g7a-20.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8g7a-21.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8g7a-22.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/ba0bb98a-93ec-4838-be2d-8a6df4ea7334/11/airbnb-mwnm8g7a-23.jpg",
+     "caption": null
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 199,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
   }
  ],
  "reviews": {}

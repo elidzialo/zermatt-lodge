@@ -1,12 +1,17 @@
 /* Book Homes conversion events (optimiser). Privacy-friendly: Vercel Web Analytics only, first-party
    (/_vercel/insights), no cookies, no third-party trackers. Events: search, listing_view, reserve_click,
-   checkout_start. If Web Analytics is not switched on for the project the script 404s and nothing is sent. */
+   checkout_start. Events queue in window.vaq until ANALYTICS_ON is true.
+   To switch on: enable Web Analytics in Vercel (project > Analytics), then set ANALYTICS_ON = true and rebuild.
+   While it is off the script is not requested, so there is no 404 in the console. */
 (function () {
   "use strict";
+  var ANALYTICS_ON = false;
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  var s = document.createElement("script");
-  s.defer = true; s.src = "/_vercel/insights/script.js";
-  document.head.appendChild(s);
+  if (ANALYTICS_ON) {
+    var s = document.createElement("script");
+    s.defer = true; s.src = "/_vercel/insights/script.js";
+    document.head.appendChild(s);
+  }
 
   function track(name, data) {
     try { window.va("event", { name: name, data: data || {} }); } catch (e) {}
