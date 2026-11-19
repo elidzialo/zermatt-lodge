@@ -41,7 +41,7 @@ const page = (b: Record<string, unknown>) => ({ limit: int(b.limit, 1, 500) ?? 1
 // Keep in step with RESERVED in build_listings.py.
 const RESERVED_SLUGS = new Set(["guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
   "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms", "listing", "listings", "data",
-  "public", "index", "booking-confirmed", "booking-cancelled", "favicon", "saved", "ical", "wishlist", "account"]);
+  "public", "index", "booking-confirmed", "booking-cancelled", "favicon", "saved", "ical", "wishlist", "wishlists", "account", "trips"]);
 
 async function safeSlug(id: number, slug: string): Promise<string> {
   if (!RESERVED_SLUGS.has(slug)) return slug;
