@@ -79,7 +79,7 @@ function layout(preheader: string, heading: string, body: string, siteUrl: strin
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fbf8f3"><tr><td align="center" style="padding:24px 12px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border:1px solid ${LINE};border-radius:16px;overflow:hidden">
 <tr><td style="background:${GREEN};padding:22px 28px;border-bottom:5px solid ${AMBER}">
-<div style="font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#ffffff">Book Homes</div>
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:bold;letter-spacing:-0.5px;color:#ffffff">Book<span style="font-weight:normal">Homes</span></div>
 <div style="font-size:13px;color:#d9e6de;margin-top:2px">Zermatt Lodge · Liverpool</div></td></tr>
 <tr><td style="padding:28px 28px 8px">
 <h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:24px;line-height:1.25;color:${GREEN}">${esc(heading)}</h1>

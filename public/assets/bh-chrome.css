@@ -34,3 +34,8 @@ footer.ft .ft-legal{display:flex;justify-content:space-between;flex-wrap:wrap;ga
 /* footer with "What's on this month" column (optimiser) */
 @media (min-width:901px){.ft-cols.ft-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (min-width:641px) and (max-width:900px){.ft-cols.ft-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Wordmark: "BookHomes" as one word; "Homes" lighter so both words read */
+.wm{letter-spacing:-.035em}
+.wm b{font-weight:500;margin-left:-.01em}
+.ft-wm b{font-weight:500}

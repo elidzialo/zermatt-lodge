@@ -326,7 +326,7 @@ def menu_html():
 def header(kind="page"):
     """Logo left, 'List your property' and the menu right. kind="page" | "listing" (hidden on phones; the photo carousel has its own buttons)."""
     return f"""<header class="hd hd-{kind}"><div class="wrap hd-row">
-  <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a>
+  <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span class="wm">Book<b>Homes</b></span></a>
   <div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div>
 </div></header>
 """
@@ -371,7 +371,7 @@ def footer():
     sup = (f'<a href="tel:{tel}">{esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">{esc(EMAIL)}</a>' if EMAIL else "")
     return f"""<footer class="ft"><div class="wrap">
   <div class="ft-cols{' ft-4' if wo_html else ''}">
-    <div><h2>Book Homes</h2><a href="/">All homes</a><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
+    <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
     <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
     {wo_html}
@@ -636,10 +636,10 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     first = shown[0]["card_photos"][0]["url"] if shown and shown[0]["card_photos"] else None
     pre = lcp_preload(first, (480, 720, 1080), "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw")
     return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home", preload=pre) +
-            f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>
+            f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span class="wm">Book<b>Homes</b></span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>
 <header class="top" id="top">
   <div class="wrap top-row">
-    <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a>
+    <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span class="wm">Book<b>Homes</b></span></a>
     <div class="top-mid">{pill}<button type="button" class="iconbtn fbtn-m" data-filters aria-label="Filters">{icon("sliders")}<span class="fcount" hidden></span></button></div>
     <div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html().replace('id="umBtn"', 'id="umBtn2"').replace('id="umList"', 'id="umList2"').replace('aria-controls="umList"', 'aria-controls="umList2"')}</div>
   </div>
