@@ -7,8 +7,11 @@
 <meta name="theme-color" content="#1f4d3a">
 <title>Host dashboard | Book Homes</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="/assets/bh.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="preconnect" href="https://kddhkuwnkkjcnbjegsmc.supabase.co" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin>
 <style>
 body{background:var(--cream)}
 .hp-top{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
@@ -135,7 +138,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 .wz-body{padding:40px 24px 48px}
 .wz-in{max-width:620px}
 .wz-in.in{animation:wzIn .28s ease-out}
-@keyframes wzIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes wzIn{from{transform:translateX(16px)}to{transform:none}}
 .wz-in h2{font-size:clamp(26px,4vw,32px);font-weight:800;letter-spacing:-.02em}
 .wz-in .lead{font-size:16px;margin-bottom:28px}
 .wz-foot{padding:16px 24px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line-2)}
@@ -261,13 +264,162 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
   .ge-cols{grid-template-columns:1fr}
   .tabs{gap:20px;overflow-x:auto}
 }
+
+/* ---------- listing wizard + editor (2026-11) ---------- */
+.saved{font-size:13px;color:var(--muted);margin-left:auto;margin-right:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:45vw}
+.saved.ok{color:var(--brand)}.saved.ok:before{content:"\2713  "}
+.saved.err{color:#b42318}.saved.ing{color:var(--muted)}
+.wz-top{gap:8px}
+.wz-foot{flex-direction:column;align-items:stretch;gap:8px}
+.wz-btns{display:flex;justify-content:space-between;align-items:center}
+.wz-msg{background:#fdeceb;color:#b42318;border-radius:10px;padding:10px 12px;font-size:14px;margin:0}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;margin-right:8px;vertical-align:-2px}
+.cnt{display:block;text-align:right;font-size:12.5px;color:var(--muted);margin-top:-6px;margin-bottom:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dchips{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px}
+.dchips .tile{min-height:44px;padding:8px 0;align-items:center;justify-content:center;font-size:13px}
+.radios{display:grid;gap:10px}
+.radio{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer}
+.radio:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.radio input{width:20px;height:20px;margin-top:2px;accent-color:var(--ink)}
+.radio b{display:block}.radio small{display:block;color:var(--muted);font-size:13.5px}
+.switch .tg{margin-left:auto}
+.stepper button{display:grid;place-items:center}.stepper button .ic{width:16px;height:16px}
+.imp-chk{display:grid;gap:8px}.imp-chk li{display:flex;gap:10px;align-items:center;font-size:15px}.imp-chk .ic{width:18px;height:18px;color:var(--accent-ink,#9a5b12)}
+.drop{transition:border-color .15s,background .15s}.drop.hot,.drop:hover{border-color:var(--ink);background:var(--soft)}
+.qrow{display:grid;grid-template-columns:minmax(0,1fr) 90px 90px;gap:10px;align-items:center;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line-2)}
+.qrow .qn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qbar{height:6px;background:var(--line-2);border-radius:99px;overflow:hidden}.qbar i{display:block;height:100%;width:0;background:var(--ink);transition:width .2s}
+.qrow.ok .qbar i{background:var(--brand)}.qrow.bad{grid-template-columns:minmax(0,1fr) 0 minmax(0,2fr)}.qrow.bad .qs{color:#b42318}.qrow.bad .qbar{display:none}
+.qs{text-align:right;color:var(--muted)}
+.errtxt{color:#b42318}
+.phcount{font-weight:600;margin:16px 0 0;font-size:14px}
+.phgrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.phgrid figure{aspect-ratio:auto;background:none;overflow:visible;border-radius:12px;transition:transform .05s;touch-action:auto;user-select:none}
+.phgrid figure:first-child{grid-column:1/-1}
+.phgrid figure:first-child .phimg{aspect-ratio:16/9;max-height:380px}
+.phgrid figure.dragging{z-index:5;opacity:.85;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:none}
+.phgrid figure.over .phimg{outline:3px solid var(--ink);outline-offset:2px}
+.phgrid figure.busy{opacity:.4;pointer-events:none}
+.phimg{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--soft);cursor:grab}
+.phimg img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.phgrid .cover{position:absolute;left:8px;top:8px;background:#fff;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.grip{position:absolute;right:8px;top:8px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.95);display:grid;place-items:center;touch-action:none;cursor:grab;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.grip .ic{width:18px;height:18px}
+.cap{width:100%;margin-top:6px;font:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);border-radius:8px}
+.phacts{display:flex;gap:4px;align-items:center;margin-top:6px;flex-wrap:wrap}.phgrid figure{min-width:0}
+.phacts button{min-height:34px;min-width:34px;border:1px solid var(--line);border-radius:999px;font-size:12.5px;font-weight:600;padding:0 10px;display:grid;place-items:center;background:#fff}
+.phacts button:disabled{opacity:.35}
+.phacts button .ic{width:15px;height:15px}.phacts [data-cover]{display:inline-flex;gap:4px;padding:0 9px}.phacts [data-cover] .ic{width:13px;height:13px}
+.phacts [data-delph]{margin-left:auto;color:#b42318}
+.rv-card{display:flex;gap:16px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.rv-ph{width:120px;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--soft);display:grid;place-items:center;flex-shrink:0}.rv-ph img{width:100%;height:100%;object-fit:cover}
+.rv-bd{display:flex;flex-direction:column;gap:4px;font-size:15px}.rv-bd span{color:var(--muted)}
+.miss{background:#fdeceb;border-radius:12px;padding:14px 16px;margin-top:16px}.miss ul{margin-top:6px;display:grid;gap:4px}.miss .link{color:#b42318;font-weight:600;text-align:left}
+.nexts{display:grid;gap:14px;margin-top:8px}.nexts li{display:flex;gap:14px}.nexts .ic{width:26px;height:26px;flex-shrink:0}.nexts b{display:block}.nexts span{color:var(--muted);font-size:14.5px}
+.done{text-align:center;padding-top:20px}.done>.ic{width:56px;height:56px;color:var(--brand);stroke-width:2.4;margin:0 auto 10px}.done .acts{justify-content:center}
+/* editor */
+.ed{position:fixed;inset:0;z-index:100;background:#fff;display:flex;flex-direction:column}
+.ed-top{display:flex;align-items:center;gap:10px;padding:10px 20px;border-bottom:1px solid var(--line-2);min-height:60px}
+.ed-top .btn .ic{width:16px;height:16px;margin-right:4px}
+.ed-title{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:0 1 auto}
+.ed-wrap{flex:1;display:grid;grid-template-columns:380px minmax(0,1fr);min-height:0}
+.ed-side{overflow:auto;border-right:1px solid var(--line-2);padding:20px}
+.ed-h{font-size:20px;font-weight:800;margin:20px 0 8px}
+.edst{border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.edst p{font-size:14px;color:var(--muted);margin-top:4px}
+.edst .why{color:#b42318}.edst .why2{color:var(--accent-ink,#9a5b12)}
+.edst .st{margin:0}
+.edst.st-rejected{border-color:#f1b8b2;background:#fff8f7}.edst.st-approved{border-color:var(--brand);background:var(--brand-tint)}
+#edStMsg .msg{margin:10px 0 0}#edStMsg .acts{margin-top:8px}
+.ednav{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 12px;border-radius:12px;border:1px solid transparent;margin-bottom:4px;position:relative}
+.ednav:hover{background:var(--soft)}
+.ednav.on{border-color:var(--ink);background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.ednav>.ic{width:22px;height:22px;flex-shrink:0}
+.ednav>.ic:last-child{width:16px;height:16px;color:var(--muted)}
+.ednav span{flex:1;min-width:0}.ednav b{display:block;font-size:15px}
+.ednav small{display:block;color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ednav .dot{width:8px;height:8px;border-radius:50%;background:#d92d20;flex-shrink:0}
+.ed-main{overflow:auto;display:flex;flex-direction:column;min-height:0}
+.ed-in{flex:1;width:100%;max-width:720px;margin:0 auto;padding:32px 24px 40px}
+.ed-in h2{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.edback{display:none;align-items:center;gap:6px;margin-bottom:12px;font-weight:600}.edback .ic{width:16px;height:16px}
+.ed-foot{position:sticky;bottom:0;display:flex;justify-content:flex-end;align-items:center;gap:16px;padding:12px 24px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line-2);background:#fff}
+.ed-foot .saved{margin-right:auto;display:none}.ed-foot .btn{min-width:120px;background:var(--ink);border-radius:8px}
+.ed-foot .btn:disabled{background:#ddd;color:#888;cursor:not-allowed}
+/* preview */
+.pv{position:fixed;inset:0;z-index:120;background:#fff;overflow:auto}
+.pv-top{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line-2);padding:10px 20px;display:flex;justify-content:flex-end}
+.pv-in{max-width:1120px;margin:0 auto;padding:20px 24px 80px}
+.pvnote{display:flex;gap:8px;align-items:center;background:var(--accent-tint);border-radius:10px;padding:10px 14px;font-size:14px;margin-bottom:16px}.pvnote .ic{width:16px;height:16px}
+.pv-in h1{font-size:clamp(24px,3vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.pvgal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:16px;overflow:hidden}
+.pvgal img{width:100%;height:100%;object-fit:cover}.pvgal img:first-child{grid-row:1/3}
+.pvgal.few{grid-template-columns:1fr;grid-template-rows:380px}.pvgal.few img:not(:first-child){display:none}
+.pvnoph{grid-column:1/-1;grid-row:1/-1;background:var(--soft);display:grid;place-items:center;color:var(--muted)}
+.pvgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;margin-top:28px}
+.pvgrid h2{font-size:22px;font-weight:700}
+.pvgrid h3{font-size:20px;font-weight:700;margin:32px 0 12px;padding-top:24px;border-top:1px solid var(--line-2)}
+.pvhost{display:flex;align-items:center;gap:12px;font-weight:600;margin:18px 0;padding:18px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.pvhost .av{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.pvdesc{line-height:1.6}
+.pvam{display:grid;grid-template-columns:1fr 1fr;gap:12px}.pvam li{display:flex;gap:12px;align-items:center}.pvam .ic{width:22px;height:22px}
+.pvknow{display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:14.5px}.pvknow p{color:var(--ink-2,#444);margin-top:6px}
+.pvbook{position:sticky;top:80px;align-self:start;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.pvbook>b{font-size:22px}.pvbook .m{font-size:13.5px;margin:6px 0}.pvbook .btn{margin-top:12px}
+@media (max-width:860px){
+  .ed-wrap{grid-template-columns:1fr}
+  .ed-side{border:0;padding:16px}
+  .ed-main{display:none}
+  .ed.insec .ed-side{display:none}
+  .ed.insec .ed-main{display:flex}
+  .edback{display:inline-flex}
+  .ed-in{padding:16px 16px 32px}
+  .ed-in h2{font-size:24px}
+  .ed-top{padding:8px 12px}
+  .ed-top .btn{padding:6px 10px}
+  .ed-top .saved{display:none}.ed-foot .saved{display:block;max-width:45vw}
+  .saved{max-width:30vw;margin-right:4px}
+  .pvgal{grid-template-columns:1fr;grid-template-rows:260px}.pvgal img:not(:first-child){display:none}
+  .pvgrid{grid-template-columns:1fr;gap:20px}
+  .pvbook{position:static}
+  .pvam,.pvknow{grid-template-columns:1fr}
+  .phgrid{grid-template-columns:1fr 1fr;gap:10px}
+  .qrow{grid-template-columns:minmax(0,1fr) 60px 60px}
+  .two{grid-template-columns:1fr}
+}
+
+/* preview frame + delete */
+.pv{display:flex;flex-direction:column;overflow:hidden}
+.pv-top{align-items:center;gap:10px}.pv-top b{margin-right:auto;font-size:15px}
+#pvFrame{flex:1;width:100%;border:0;background:#fff}
+.dellink{display:inline-flex;align-items:center;gap:6px;margin:12px 4px 0;color:#b42318;font-size:14px;font-weight:600}.dellink .ic{width:14px;height:14px}
+.wz-top #wzPrev{margin-right:6px}
+#wzPrev{display:none}.wz.has-id #wzPrev{display:inline-flex}
+
+.enrol-tap,.enrol-tap-note{display:none}
+@media (pointer:coarse){.enrol-tap{display:flex;margin-bottom:8px}.enrol-tap-note{display:block;font-size:13.5px;color:var(--muted);margin-bottom:14px}}
+
+/* location map */
+.pmap{height:340px;min-height:260px;width:100%;position:relative;z-index:0}
+.pmap .leaflet-container,.pmap.leaflet-container{font:inherit}
+.geo{display:flex;gap:8px;margin:4px 0 6px}.geo input{flex:1;min-width:0;font:inherit;font-size:16px;padding:11px 13px;border:1px solid #c4c4c4;border-radius:8px}
+.geolist{display:grid;gap:4px;margin:4px 0 8px;border:1px solid var(--line);border-radius:12px;padding:4px}
+.geolist button{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;padding:10px;border-radius:8px;font-size:14px}.geolist button:hover{background:var(--soft)}.geolist .ic{width:18px;height:18px;flex-shrink:0;margin-top:1px}
+.bh-pin{background:none;border:0}.bh-pin span{display:block;width:34px;height:34px;border-radius:50% 50% 50% 0;background:var(--ink,#222);transform:rotate(-45deg);box-shadow:0 2px 6px rgba(0,0,0,.35);border:3px solid #fff}
+@media (max-width:560px){.pmap{height:300px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<link rel="stylesheet" href="/assets/host-ux.css?v=hux4">
 </head>
-<body>
-<header class="hp-top"><div class="wrap">
-  <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 26V14.6L16 7l9 7.6V26z" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linejoin="round"/><path d="M20.8 10.5V6.5" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linecap="round"/><path d="M11.8 19.2c2.2 2.9 6.2 2.9 8.4 0" fill="none" stroke="#e3a35a" stroke-width="3.4" stroke-linecap="round"/></svg><span class="wm">Book<b>Homes</b></span><small style="font-size:13px;color:var(--muted);font-weight:500;margin-left:2px">for hosts</small></a>
-  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" class="btn ghost sm" data-signout>Sign out</button></div>
+<body class="host">
+<header class="hp-top" id="hpTop"><div class="wrap hp-row">
+  <a class="logo" href="/" aria-label="Book Homes home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 26V14.6L16 7l9 7.6V26z" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linejoin="round"/><path d="M20.8 10.5V6.5" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linecap="round"/><path d="M11.8 19.2c2.2 2.9 6.2 2.9 8.4 0" fill="none" stroke="#e3a35a" stroke-width="3.4" stroke-linecap="round"/></svg><span class="wm">Book<b>Homes</b></span></a><span class="hp-mode">Hosting</span>
+  <nav class="tabs" role="tablist" aria-label="Host sections"><button type="button" role="tab" data-tab="today" aria-selected="true" aria-controls="panel-today"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-home"/></svg><span>Today</span></button><button type="button" role="tab" data-tab="listings" aria-selected="false" aria-controls="panel-listings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-grid"/></svg><span>Listings</span></button><button type="button" role="tab" data-tab="calendar" aria-selected="false" aria-controls="panel-calendar"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-calendar"/></svg><span>Calendar</span></button><button type="button" role="tab" data-tab="messages" aria-selected="false" aria-controls="panel-messages"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chat"/></svg><span>Messages</span></button><button type="button" role="tab" data-tab="earnings" aria-selected="false" aria-controls="panel-earnings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-receipt"/></svg><span>Earnings</span></button><button type="button" role="tab" data-tab="menu" aria-selected="false" aria-controls="panel-menu"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-menu"/></svg><span>Menu</span></button></nav>
+  <div class="hp-r"><a class="hp-switch" href="/">Switch to travelling</a>
+    <div class="umenu"><button type="button" class="ubtn" id="hmBtn" aria-haspopup="true" aria-expanded="false" aria-controls="hmList" aria-label="Menu"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-menu"/></svg><span class="uav"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-user"/></svg></span></button><div class="umlist" id="hmList" hidden></div></div>
+    <div class="who hidden" id="who"><span id="whoEmail"></span></div>
+  </div>
 </div></header>
 
 <div id="vLogin" class="box hidden"><div class="cardx">
@@ -299,7 +451,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <div id="vEnrol" class="box hidden"><div class="cardx">
   <h1>Protect your account</h1><p class="lead">One-time setup: a 6-digit code from an app on your phone keeps your bookings and payouts safe.</p>
   <div id="enrolMsg" role="status" aria-live="polite"></div>
-  <ol class="steps"><li>Install an authenticator app, for example Google Authenticator or Microsoft Authenticator.</li>
+  <a class="btn block enrol-tap" id="enrolTap" href="#">Open in my authenticator app</a><p class="enrol-tap-note">On this phone? Tap above to add Book Homes to Google Authenticator or Microsoft Authenticator, then come back and type the code. Or follow the steps below.</p><ol class="steps"><li>Install an authenticator app, for example Google Authenticator or Microsoft Authenticator.</li>
     <li>In the app, tap <b>+</b> and scan this code. <img id="enrolQr" class="qr" alt="QR code for your authenticator app"><span class="muted" style="font-size:13.5px">On this phone? <a href="#" id="enrolUri">Open in your authenticator app</a>, or type this key:</span><code class="secret" id="enrolSecret"></code></li>
     <li>Type the 6-digit code the app shows.</li></ol>
   <form id="enrolForm" novalidate><label class="f2">6-digit code<input type="text" class="code" id="enrolCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label><button class="btn block" type="submit" id="enrolBtn">Verify</button></form>
@@ -339,21 +491,22 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 </div></div>
 
 <div id="vDash" class="hidden"><div class="wrap dash">
-  <nav class="tabs" role="tablist" aria-label="Host sections">
-    <button type="button" role="tab" data-tab="listings" aria-selected="true">Listings</button>
-    <button type="button" role="tab" data-tab="calendar" aria-selected="false">Calendar</button>
-    <button type="button" role="tab" data-tab="bookings" aria-selected="false">Bookings</button>
-    <button type="button" role="tab" data-tab="earnings" aria-selected="false">Earnings</button>
-    <button type="button" role="tab" data-tab="account" aria-selected="false">Account</button>
-  </nav>
   <div id="dashMsg"></div>
-  <section class="panel" data-panel="listings">
+  <section class="panel" data-panel="today" id="panel-today" role="tabpanel">
+    <div class="pg-head"><div><h1 id="tdHi">Welcome back</h1><p class="pg-sub" id="tdSub"></p></div></div>
     <div id="approvalNote"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2>Your listings</h2><button type="button" class="btn" id="newListing">Add a listing</button></div>
+    <div class="sec-head"><h2>Your reservations</h2></div>
+    <div class="chips" id="tdChips" role="group" aria-label="Show reservations"></div>
+    <div class="res" id="tdRes"></div>
+    <div id="bkList"></div>
+    <div class="todo-wrap" id="tdTodoWrap"><div class="sec-head"><h2>Needs your attention</h2></div><div class="todo" id="tdTodo"></div></div>
+  </section>
+  <section class="panel hidden" data-panel="listings" id="panel-listings" role="tabpanel">
+    <div class="pg-head"><div><h1>Listings</h1><p class="pg-sub" id="lsSub">Tap a home to edit its photos, details, price and rules.</p></div><button type="button" class="btn add" id="newListing"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-plus"/></svg><span>Add a listing</span></button></div>
     <div class="lcards" id="lcards"></div>
   </section>
-  <section class="panel hidden" data-panel="calendar">
-    <div class="cal-head"><h2>Calendar</h2><label class="selpill"><span class="sr-only">Listing</span><select id="calListing"></select></label></div>
+  <section class="panel hidden" data-panel="calendar" id="panel-calendar" role="tabpanel">
+    <div class="cal-head"><h1>Calendar</h1><label class="selpill"><span class="sr-only">Listing</span><select id="calListing"></select></label></div>
     <div class="cal-wrap">
       <div class="cal-main">
         <div class="cal-nav"><button type="button" class="iconbtn" id="calPrev" aria-label="Previous month">&lsaquo;</button><b id="calTitle"></b><button type="button" class="iconbtn" id="calNext" aria-label="Next month">&rsaquo;</button></div>
@@ -392,29 +545,67 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
       </details>
     </section>
   </section>
-  <section class="panel hidden" data-panel="bookings"><h2>Bookings</h2><div id="bkList"></div></section>
-  <section class="panel hidden" data-panel="earnings"><h2>Earnings</h2><div class="statgrid" id="earnStats"></div><div id="earnList"></div></section>
-  <section class="panel hidden" data-panel="account">
-    <h2>Payouts</h2>
-    <div class="item"><div id="payoutState"></div><div class="acts"><button type="button" class="btn" id="connectBtn">Connect payouts with Stripe</button></div><p class="m" id="connectOut"></p></div>
-    <h2>Profile</h2>
-    <div class="item"><div id="profSummary"></div><div class="acts"><button type="button" class="btn ghost sm" id="editProfile">Edit profile</button></div></div>
-    <h2>Security</h2>
-    <div class="item"><p class="m" id="trustStatus"></p><div class="acts"><button type="button" class="btn ghost sm" data-signout>Sign out</button></div></div>
+  <section class="panel hidden" data-panel="messages" id="panel-messages" role="tabpanel">
+    <div class="pg-head"><div><h1>Messages</h1></div></div>
+    <div class="empty"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chat"/></svg><h2>Messages are on the way</h2><p>Soon you'll chat with guests here. For now, guests get your phone and WhatsApp number when they book, and you'll find theirs on each reservation in Today.</p><button type="button" class="btn ghost" data-go="today">See reservations</button></div>
+  </section>
+  <section class="panel hidden" data-panel="earnings" id="panel-earnings" role="tabpanel">
+    <div class="pg-head"><div><h1>Earnings</h1><p class="pg-sub">Your share after commission, for each stay.</p></div></div>
+    <div class="statgrid" id="earnStats"></div><div id="earnList"></div>
+  </section>
+  <section class="panel hidden" data-panel="menu" id="panel-menu" role="tabpanel">
+    <div class="pg-head"><div><h1>Menu</h1></div></div>
+    <div class="me-card" id="profSummary"></div>
+    <div class="rows">
+      <button type="button" class="row" id="editProfile"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-user"/></svg><span><b>Personal info</b><small>Name, phone and host name</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></button>
+      <button type="button" class="row" data-go="earnings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-receipt"/></svg><span><b>Earnings</b><small>Payouts for each stay</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></button>
+      <a class="row" href="/"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-search"/></svg><span><b>Switch to travelling</b><small>Browse and book homes</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row hidden" href="/admin" id="mnAdmin"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-shield"/></svg><span><b>Admin portal <i class="chip">Admin</i></b><small>Needs your 6-digit code</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row hidden" href="/admin/feedback/" id="mnBug" data-bugreport><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-sparkle"/></svg><span><b>Report a bug</b><small>Tell us what went wrong on this page</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+    </div>
+    <h2 class="rows-h">Payouts</h2>
+    <div class="box2"><div id="payoutState"></div><div class="acts"><button type="button" class="btn" id="connectBtn">Connect payouts with Stripe</button></div><p class="m" id="connectOut"></p></div>
+    <h2 class="rows-h">Security</h2>
+    <div class="box2"><p class="m" id="trustStatus"></p></div>
+    <h2 class="rows-h">Help</h2>
+    <div class="rows">
+      <a class="row" href="tel:+447479905477"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-phone"/></svg><span><b>Call us</b><small>+44 7479 905477</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row" href="mailto:eli@zelr.co.uk"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-mail"/></svg><span><b>Email us</b><small>eli@zelr.co.uk</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row" href="/terms/hosts"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-book"/></svg><span><b>Host terms</b><small>Plain-English rules for hosts</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+    </div>
+    <button type="button" class="btn ghost block logout" data-signout>Log out</button>
   </section>
 </div></div>
 
 <div class="wz hidden" id="wz" role="dialog" aria-modal="true" aria-labelledby="wzH">
-  <div class="wz-top"><span class="wz-st" id="wzStep"></span><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
-  <div class="wz-bar"><i id="wzBar" style="width:0"></i></div>
+  <div class="wz-top"><span class="wz-st" id="wzStep"></span><span class="saved" id="wzSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" data-preview id="wzPrev">Preview</button><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
+  <div class="wz-bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100"><i id="wzBar" style="width:0"></i></div>
   <div class="wz-body"><div class="wz-in" id="wzIn"></div></div>
-  <div class="wz-foot"><button type="button" class="link" id="wzBack">Back</button><span id="wzMsg" style="font-size:14px;color:#b42318"></span><button type="button" class="btn" id="wzNext">Next</button></div>
+  <div class="wz-foot"><p class="wz-msg hidden" id="wzMsg" role="alert"></p><div class="wz-btns"><button type="button" class="link" id="wzBack">Back</button><button type="button" class="btn" id="wzNext">Next</button></div></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<script src="https://accounts.google.com/gsi/client" async></script>
-<script src="/assets/host.js"></script>
-<script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
+<div class="ed hidden" id="ed" role="dialog" aria-modal="true" aria-labelledby="edTitle">
+  <div class="ed-top"><button type="button" class="iconbtn" id="edClose" aria-label="Back to your listings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-arrow_l"/></svg></button><b id="edTitle" class="ed-title"></b><span class="saved" id="edSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" data-preview><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-search"/></svg>Preview as guest</button></div>
+  <div class="ed-wrap">
+    <nav class="ed-side" aria-label="Listing sections"><div id="edStatus"></div><h2 class="ed-h">Your listing</h2><div id="edNav"></div></nav>
+    <main class="ed-main" id="edMain"><div class="ed-in" id="edBody"></div>
+      <div class="ed-foot" id="edFoot"><span class="saved" id="edSaved2" aria-live="off"></span><button type="button" class="link hidden" id="edCancel">Cancel</button><button type="button" class="btn" id="edSaveBtn" disabled>Save</button></div>
+    </main>
+  </div>
+</div>
+
+<div class="pv hidden" id="pv" role="dialog" aria-modal="true" aria-label="Preview as a guest">
+  <div class="pv-top"><b>Preview as a guest</b><a class="btn ghost sm hidden" id="pvLive" target="_blank" rel="noopener">Open live page</a><button type="button" class="btn sm" id="pvClose">Close preview</button></div>
+  <iframe id="pvFrame" title="Guest view of your listing" src="about:blank"></iframe>
+</div>
+</div>
+
+<!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes for host*.js are set by build.py -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
+<script src="/assets/host-perf.js?v=1"></script>
+<script src="/assets/host.js?v=1"></script>
+<script src="/assets/host-shell.js?v=hux3" defer></script>
+<script src="/assets/bh-ui.js?v=hux3" defer></script>
+<script src="/assets/bh-feedback.js?v=063b82dd" defer></script>
 </body>
 </html>

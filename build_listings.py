@@ -51,7 +51,7 @@ EMAIL = _SITE_CONTACT.get("email", "")
 # Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
 RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
-            "listing", "listings", "data", "public", "saved", "wishlists", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+            "listing", "listings", "data", "public", "saved", "wishlists", "trips", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
 HOME_TITLE = "Holiday Homes in Liverpool | Book Direct, No Booking Fees | Book Homes"
 HOME_DESC = ("Book whole holiday homes and serviced accommodation in Liverpool direct with the host. "
@@ -319,7 +319,7 @@ def menu_html():
     contact = (f'<hr><a href="tel:{tel}">Call {esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">Email us</a>' if EMAIL else "")
     return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
             f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
-            f'<div class="umlist" id="umList" hidden><a href="/host"><b>Host login</b></a><a href="/become-a-host">List your property</a><hr>'
+            f'<div class="umlist" id="umList" hidden><a href="/host"><b>Log in</b></a><a href="/become-a-host">List your property</a><hr>'
             f'<a href="/">All homes</a><a href="/saved">Saved homes</a><a href="/guides">Liverpool guides</a><a href="/kosher-homes">Kosher homes</a>{contact}</div></div>')
 
 

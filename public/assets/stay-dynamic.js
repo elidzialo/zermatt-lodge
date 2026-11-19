@@ -3,6 +3,7 @@
 (function(){
 "use strict";
 var $ = function(s, r){ return (r || document).querySelector(s); };
+var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
 function icon(n){ return '<svg class="ic" aria-hidden="true"><use href="#i-' + n + '"/></svg>'; }
 function money(n){ n = +n || 0; return "£" + (n % 1 ? n.toFixed(2) : n); }
@@ -18,9 +19,12 @@ function fail(msg){
   $(".lp-grid").innerHTML = '<p style="padding:24px 0 64px"><a class="btn" href="/">See all homes</a></p>';
   $(".lp-full").style.display = "none"; $("#gal").style.display = "none"; $("#mbook").style.display = "none";
 }
-if (!slug || slug === "listing"){ fail("This page could not be found."); return; }
+/* Host preview (/stays/listing?preview=1): the host editor puts the draft in localStorage, so the host sees exactly this page. Booking is off. */
+var PREVIEW = /[?&]preview=1(&|$)/.test(location.search);
+function previewData(){ return new Promise(function(res, rej){ try { var j = JSON.parse(localStorage.getItem("bh_listing_preview") || "null"); if (j && j.listing) res(j); else rej(new Error("none")); } catch (e) { rej(e); } }); }
+if (!PREVIEW && (!slug || slug === "listing")){ fail("This page could not be found."); return; }
 function get(s){ return fetch("/api/bh/listings?action=get&slug=" + encodeURIComponent(s), {headers: {"Accept": "application/json"}}).then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); }); }
-get(slug).catch(function(e){ if (/-liverpool$/.test(slug)) return get(slug.replace(/-liverpool$/, "")); throw e; })
+(PREVIEW ? previewData() : get(slug).catch(function(e){ if (/-liverpool$/.test(slug)) return get(slug.replace(/-liverpool$/, "")); throw e; }))
   .then(function(j){
     var l = j.listing;
     if (l.legacy_source && l.page_url && l.page_url !== "/" && l.page_url !== path){ location.replace(l.page_url); return; }
@@ -66,7 +70,21 @@ get(slug).catch(function(e){ if (/-liverpool$/.test(slug)) return get(slug.repla
       pl.className = "f f-pets"; pl.innerHTML = "<small>Pets" + (+l.pet_fee ? " (£" + (+l.pet_fee) + " a stay)" : "") + '</small><select id="bkPets" name="pets"><option value="0">No pets</option><option value="1">1 pet</option><option value="2">2 pets</option><option value="3">3 pets</option></select>';
       gl.parentNode.insertBefore(pl, gl.nextSibling);
     }
+    if (PREVIEW){
+      document.title = "Preview: " + l.title + " | Book Homes";
+      var bar = document.createElement("div");
+      bar.setAttribute("role", "status");
+      bar.style.cssText = "position:sticky;top:0;z-index:60;background:#fff4e5;color:#7a4b00;font:600 14px/1.4 Inter,system-ui,sans-serif;padding:10px 16px;text-align:center;border-bottom:1px solid #f0d9b5";
+      bar.textContent = "Preview: this is how guests see your listing. Booking is switched off here.";
+      document.body.insertBefore(bar, document.body.firstChild);
+      $("#bookcard").querySelectorAll("input,select,button,textarea").forEach(function(x){ x.disabled = true; });
+      var mb = $("#mbookBtn"); if (mb) mb.disabled = true;
+      var mo = $("#months"); if (mo) mo.innerHTML = '<p class="bd-empty">Your availability calendar shows here once the listing is live.</p>';
+      $$("a[href]").forEach(function(a){ if (!a.closest("#lpAmenWrap,#gal")) { a.addEventListener("click", function(e){ e.preventDefault(); }); } });
+      load("/assets/stay-page.js");
+      return;
+    }
     load("/assets/stay.js"); load("/assets/stay-page.js"); load("/assets/checkout.js");
   })
-  .catch(function(){ fail("This page could not be found."); });
+  .catch(function(){ fail(PREVIEW ? "Open the preview again from your host dashboard." : "This page could not be found."); });
 })();

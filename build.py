@@ -257,7 +257,7 @@ PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
 INDEXNOW_KEY = "00d622ef355b6708bc52633c7be81118"  # IndexNow (Bing, Yandex, Seznam...): key file served at /00d622ef355b6708bc52633c7be81118.txt
 for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "googlec5a5ee698941ade7.html", "index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
-            "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes", "saved"]:
+            "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes", "saved", "trips"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)
@@ -266,4 +266,10 @@ for d in sorted(glob.glob(os.path.join(ROOT, "listings", "*"))):
     dst = os.path.join(PUB, os.path.basename(d))
     assert not os.path.exists(dst), f"listing path clashes with a site folder: {dst}"
     shutil.copytree(d, dst)
+# host-perf: /host assets get a content-hash ?v= so they can be cached for a year and still update at once
+_hp = os.path.join(PUB, "host", "index.html")
+if os.path.exists(_hp):
+    _h = open(_hp, encoding="utf-8").read()
+    _h = re.sub(r'/assets/(host[\w-]*\.(?:js|css))\?v=[^"\']*', lambda m: f"/assets/{m.group(1)}?v={build_listings.asset_v(m.group(1))}", _h)
+    open(_hp, "w", encoding="utf-8").write(_h)
 print("public/ ready")

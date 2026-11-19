@@ -1032,7 +1032,7 @@ function mpAct(body, btn, done){
   return mpApi(body).then(function(){ MP = null; return mpLoad(true); }).then(function(){ if (done) done(); })
     .catch(function(e){ if (btn) btn.disabled = false; alert(e.message); });
 }
-var MP_ST = {draft: "draft", pending: "pending", approved: "live", rejected: "rejected", paused: "paused"};
+var MP_ST = {draft: "draft", pending: "pending", approved: "live", rejected: "rejected", paused: "paused", archived: "deleted (archived)"};
 function mpRender(){
   if (!MP) return;
   var pendHosts = MP.hosts.filter(function(h){ return !h.approved && h.role === "host"; });
@@ -1064,7 +1064,8 @@ function mpRender(){
       (l.legacy_source ? '<div class="m">Runs on the Zermatt Lodge booking system (page "/").</div>' : '<div class="acts">' +
         (l.status !== "approved" ? '<button type="button" class="btn sm" data-mp="approve_listing" data-id="' + esc(l.id) + '">Approve</button>' : '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a>') +
         '<button type="button" class="btn ghost sm" data-mp="reject_listing" data-id="' + esc(l.id) + '">Reject with note</button>' +
-        (l.status === "approved" ? '<button type="button" class="btn ghost sm" data-mp="pause_listing" data-id="' + esc(l.id) + '">Pause</button>' : "") + '</div>') + '</div>';
+        (l.status === "approved" ? '<button type="button" class="btn ghost sm" data-mp="pause_listing" data-id="' + esc(l.id) + '">Pause</button>' : "") +
+        (l.status !== "archived" ? '<button type="button" class="btn ghost sm" data-mp="delete_listing" data-id="' + esc(l.id) + '" style="color:#b42318">Delete</button>' : "") + '</div>') + '</div>';
   }, "Nothing here.");
   var bf = $("#mpBkFilter").value;
   var bks = MP.bookings.filter(function(b){ return !bf || b.status === bf; });
@@ -1207,6 +1208,7 @@ document.addEventListener("click", function(e){
   } else if (/_listing$/.test(a)){
     body.id = +b.getAttribute("data-id");
     if (a === "reject_listing"){ var n = prompt("What should the host change? (sent to them)", "Please remove the street address from the description."); if (n === null) return; body.reason = n; }
+    if (a === "delete_listing" && !confirm("Delete this listing?\n\nNever booked or approved: deleted for good.\nOtherwise: archived and hidden, bookings and reviews kept.\nPhotos are removed from storage. This can't be undone.")) return;
     if (a === "approve_listing" && !confirm("Approve and publish this listing now? Check photos and text for street addresses first.")) return;
   } else if (a === "set_host_commission"){
     var v = prompt("Commission % for this host (blank = use the standard rate):", ""); if (v === null) return;
@@ -1240,6 +1242,6 @@ $("#mpCommission").addEventListener("submit", function(e){
 });
 })();
 </script>
-<script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
+<script src="/assets/bh-feedback.js?v=063b82dd" defer></script>
 </body>
 </html>

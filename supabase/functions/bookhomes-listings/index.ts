@@ -10,6 +10,11 @@ import { isValidIsoDate, ukToday } from "../_shared/util.ts";
 import { EMAIL_RE, features, getSetting, handle, HttpError, int, jsonRes, readBody, slugify, sql, str, UUID_RE } from "../_shared/bh.ts";
 import { lines, quote } from "../_shared/bh_quote.ts";
 
+// Lookup key for an existing slug: same cleaning as slugify but no length cut (older slugs can be longer than 60).
+function slugKey(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9-]/g, "").replace(/-+/g, "-").replace(/^-+|-+$/g, "").slice(0, 150);
+}
+
 async function listAll(where?: { slug?: string }) {
   const ls = where?.slug
     ? await sql`select * from bookhomes.public_listings where slug = ${where.slug}`
@@ -55,7 +60,7 @@ Deno.serve(handle(async (req) => {
       return jsonRes({ updated: new Date().toISOString(), listings: await listAll() }, 200, { "Cache-Control": "public, max-age=60" });
     }
     if (action === "get") {
-      const slug = slugify(u.searchParams.get("slug") ?? "");
+      const slug = slugKey(u.searchParams.get("slug") ?? "");
       const [l] = await listAll({ slug });
       if (!l) throw new HttpError(404, "Listing not found");
       const reviews = await sql`select rating, comment, guest_first_name, to_char(created_at, 'Month YYYY') as when
@@ -108,7 +113,7 @@ Deno.serve(handle(async (req) => {
   const body = await readBody(req, 4000);
   if (body.action === "alert") {
     const email = (str(body.email, 200) ?? "").toLowerCase();
-    const slug = slugify(String(body.slug ?? ""));
+    const slug = slugKey(String(body.slug ?? ""));
     const ci = body.check_in, co = body.check_out;
     if (!EMAIL_RE.test(email)) throw new HttpError(400, "Please enter a valid email.");
     if (!slug || !isValidIsoDate(ci) || !isValidIsoDate(co) || co <= ci) throw new HttpError(400, "Choose your dates first.");
