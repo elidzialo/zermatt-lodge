@@ -265,7 +265,7 @@ def asset_v(name):
 
 
 # --------------------------------------------------------------------------- shared chrome
-LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule=\"evenodd\" fill=\"#1f4d3a\" d=\"M7 27.5V12.4L15 4.6l6.5 6.2c2.6 2.4 2.1 5.2-.3 6 3.3.9 5 3.3 5 5.9 0 3-2.2 4.8-5.6 4.8z M11.6 14.7h6c1.3 0 1.6-1.3.7-2.1L15 9.5l-3.4 3.2z\"/><path fill=\"#e3a35a\" d=\"M16 18.1a2.5 2.5 0 0 1 1.45 4.54l.85 3.36h-4.6l.85-3.36A2.5 2.5 0 0 1 16 18.1z\"/></svg>')
+LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><path d=\"M7 26V14.6L16 7l9 7.6V26z\" fill=\"none\" stroke=\"#1f4d3a\" stroke-width=\"3.4\" stroke-linejoin=\"round\"/><path d=\"M20.8 10.5V6.5\" fill=\"none\" stroke=\"#1f4d3a\" stroke-width=\"3.4\" stroke-linecap=\"round\"/><path d=\"M11.8 19.2c2.2 2.9 6.2 2.9 8.4 0\" fill=\"none\" stroke=\"#e3a35a\" stroke-width=\"3.4\" stroke-linecap=\"round\"/></svg>')
 _FONT_CSS = "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
 # Fonts load without blocking first paint (system font shows until Plus Jakarta Sans arrives, display=swap).
 FONTS = ('<link rel="preconnect" href="https://assets.guesty.com" crossorigin>'
