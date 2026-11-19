@@ -132,6 +132,12 @@ PRIVACY = f"""{DRAFT}<h1>Privacy notice</h1><p>Last updated: 19 November 2026</p
 <h2>Cookies</h2><p>We use only the storage needed to keep you signed in and to run the booking calendar. We don't use advertising cookies.</p>"""
 
 
+TRIPS = """<h1>Trips</h1>
+<p>Your trips will show here soon: every booking made with your email, with dates, the address and the host's contact details.</p>
+<p>Until then, your booking confirmation email has everything you need. Can't find it? Check your spam folder, or get in touch and we'll resend it.</p>
+<p><a class="btn" href="/">Find a home</a> <a class="btn ghost" href="/saved">Saved homes</a></p>"""
+
+
 def write_all():
     write("stays/listing/index.html", dynamic_listing())
     write("stays/booked/index.html", text_page("/stays/booked", "Your booking | Book Homes", "Your Book Homes booking.", BOOKED, robots="noindex, nofollow"))
@@ -139,5 +145,6 @@ def write_all():
     write("become-a-host/index.html", host_landing())
     write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English host terms for Book Homes. Draft.", TERMS_HOSTS))
     write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English guest terms for Book Homes. Draft.", TERMS_GUESTS))
+    write("trips/index.html", text_page("/trips", "Trips | Book Homes", "Your Book Homes trips.", TRIPS, robots="noindex, nofollow"))
     write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes uses personal data. Draft.", PRIVACY))
     return [f"{DOMAIN}/become-a-host", f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]
