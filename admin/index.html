@@ -202,6 +202,12 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
     <button type="button" role="tab" data-tab="blocks" aria-selected="false">Block dates</button>
     <button type="button" role="tab" data-tab="emails" aria-selected="false">Emails</button>
     <button type="button" role="tab" data-tab="log" aria-selected="false">Sync log</button>
+    <button type="button" role="tab" data-tab="mphosts" aria-selected="false">Hosts<span class="newb hidden" id="mpHostsN"></span></button>
+    <button type="button" role="tab" data-tab="mplistings" aria-selected="false">Listings<span class="newb hidden" id="mpListN"></span></button>
+    <button type="button" role="tab" data-tab="mpbookings" aria-selected="false">All bookings</button>
+    <button type="button" role="tab" data-tab="mppayouts" aria-selected="false">Payouts</button>
+    <button type="button" role="tab" data-tab="mpusers" aria-selected="false">Users</button>
+    <button type="button" role="tab" data-tab="mpsettings" aria-selected="false">Settings</button>
   </nav>
   <main>
     <div id="appErr"></div>
@@ -288,6 +294,45 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
         <div class="row"><label class="f">Show<select id="logFilter"><option value="">Everything</option><option value="conflict">Conflicts</option><option value="error">Errors</option><option value="warn">Warnings</option></select></label></div>
         <div id="logList" class="list"></div>
       </div>
+    </section>
+    <!-- Marketplace (bookhomes schema), loaded through the bookhomes-admin Edge Function -->
+    <div id="mpErr"></div>
+    <section data-panel="mphosts" class="hidden">
+      <div class="card"><h2>Hosts waiting for approval</h2><div id="mpHostsPending" class="list"></div></div>
+      <div class="card"><h2>All hosts</h2><div id="mpHostsAll" class="list"></div></div>
+    </section>
+    <section data-panel="mplistings" class="hidden">
+      <div class="card">
+        <div class="row"><label class="f">Show<select id="mpListFilter"><option value="pending" selected>Waiting for approval</option><option value="">All</option><option value="approved">Live</option><option value="paused">Paused</option><option value="rejected">Rejected</option><option value="draft">Drafts</option><option value="edited">Edited since approval</option></select></label></div>
+        <div id="mpListings" class="list"></div>
+      </div>
+    </section>
+    <section data-panel="mpbookings" class="hidden">
+      <div class="card">
+        <div class="row"><label class="f">Status<select id="mpBkFilter"><option value="paid" selected>Paid</option><option value="">All</option><option value="held">In checkout</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Clash, refunded</option></select></label></div>
+        <div id="mpBookings" class="list"></div>
+      </div>
+    </section>
+    <section data-panel="mppayouts" class="hidden">
+      <div class="grid" id="mpPayStats"></div>
+      <div class="card"><h2>Payouts</h2><div id="mpPayouts" class="list"></div></div>
+    </section>
+    <section data-panel="mpusers" class="hidden">
+      <div class="card"><h2>Invite a host or admin</h2><div id="mpInvMsg"></div>
+        <form id="mpInvite" novalidate><div class="row">
+          <label class="f">Email<input type="email" id="mpInvEmail" required></label>
+          <label class="f">Name<input type="text" id="mpInvName" maxlength="120"></label>
+          <label class="f">Role<select id="mpInvRole"><option value="host">Host</option><option value="admin">Admin</option></select></label>
+        </div><button class="btn" type="submit">Send invite</button>
+        <p class="muted" style="margin-top:8px">New people get an email to set a password. Invited hosts are approved straight away; their listings still need approval.</p></form></div>
+      <div class="card"><h2>Users</h2><div id="mpUsers" class="list"></div></div>
+    </section>
+    <section data-panel="mpsettings" class="hidden">
+      <div class="card"><h2>Commission</h2><div id="mpSetMsg"></div>
+        <form id="mpCommission" novalidate><label class="f">Standard commission (% of each booking)<input type="number" id="mpPct" min="0" max="50" step="0.5"></label><button class="btn" type="submit">Save</button></form>
+        <p class="muted" style="margin-top:8px">Applies to new bookings. Per-host overrides are on the Hosts tab. Also update the % on the "List your property" page (build_listings.py COMMISSION_TEXT).</p></div>
+      <div class="card"><h2>Stripe Connect</h2><p class="muted" id="mpConnect"></p></div>
+      <div class="card"><h2>Recent changes</h2><div id="mpAudit" class="list"></div></div>
     </section>
   </main>
 </div>
@@ -610,6 +655,7 @@ $$("nav.tabs button").forEach(function(b){
     $$("nav.tabs button").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
     $$("[data-panel]").forEach(function(p){ p.classList.toggle("hidden", p.getAttribute("data-panel") !== b.getAttribute("data-tab")); });
     if (b.getAttribute("data-tab") === "calendar") renderCal();
+    if (/^mp/.test(b.getAttribute("data-tab"))) mpLoad();
   });
 });
 
@@ -842,6 +888,133 @@ function renderLog(){
   $("#logList").innerHTML = listOr(D.log.filter(function(l){ return !f || l.level === f; }), logItem, "Nothing logged.");
 }
 $("#logFilter").addEventListener("change", renderLog);
+
+/* ---------- marketplace (Book Homes hosts, listings, bookings, payouts, users, settings) ---------- */
+var MP = null, MP_LOADING = null;
+function mpApi(body){
+  return sb.auth.getSession().then(function(r){
+    var tok = r.data && r.data.session && r.data.session.access_token;
+    if (!tok) throw new Error("Please sign in again.");
+    return fetch(SUPABASE_URL + "/functions/v1/bookhomes-admin", {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
+  }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok) throw new Error(j.error || ("Error " + res.status)); return j; }); });
+}
+function mpLoad(force){
+  if (MP && !force) return Promise.resolve(mpRender());
+  if (MP_LOADING) return MP_LOADING;
+  errBox("#mpErr", "");
+  MP_LOADING = mpApi({action: "overview"}).then(function(j){ MP = j; MP_LOADING = null; mpRender(); })
+    .catch(function(e){ MP_LOADING = null; errBox("#mpErr", "Marketplace: " + e.message); });
+  return MP_LOADING;
+}
+function mpAct(body, btn, done){
+  if (btn) btn.disabled = true;
+  return mpApi(body).then(function(){ MP = null; return mpLoad(true); }).then(function(){ if (done) done(); })
+    .catch(function(e){ if (btn) btn.disabled = false; alert(e.message); });
+}
+var MP_ST = {draft: "draft", pending: "pending", approved: "live", rejected: "rejected", paused: "paused"};
+function mpRender(){
+  if (!MP) return;
+  var pendHosts = MP.hosts.filter(function(h){ return !h.approved && h.role === "host"; });
+  var pendList = MP.listings.filter(function(l){ return l.status === "pending"; });
+  $("#mpHostsN").textContent = pendHosts.length; $("#mpHostsN").classList.toggle("hidden", !pendHosts.length);
+  $("#mpListN").textContent = pendList.length; $("#mpListN").classList.toggle("hidden", !pendList.length);
+  function hostItem(h){
+    return '<div class="item"><div class="h"><span>' + esc(h.name || h.email) + (h.company ? " · " + esc(h.company) : "") + '</span><span class="pill ' + (h.approved ? "ok" : "warn") + '">' + (h.approved ? "approved" : "waiting") + '</span></div>' +
+      '<div class="m">' + esc(h.email) + (h.phone ? " · " + esc(h.phone) : "") + " · " + (h.trader_status === "private" ? "private individual" : h.trader_status === "trader" ? "business (trader)" : "status not chosen") + " · " + (h.listings || 0) + " listing(s) · joined " + esc(tfmt(h.created_at)) + '</div>' +
+      '<div class="m">Payouts: ' + esc(h.connect_status || "not_started") + (h.commission_override != null ? " · commission override " + esc(h.commission_override) + "%" : "") + '</div>' +
+      (h.rejected_reason ? '<div class="m">Note: ' + esc(h.rejected_reason) + '</div>' : "") +
+      '<div class="acts">' + (h.approved ? "" : '<button type="button" class="btn sm" data-mp="approve_host" data-uid="' + esc(h.user_id) + '">Approve</button>') +
+      '<button type="button" class="btn ghost sm" data-mp="reject_host" data-uid="' + esc(h.user_id) + '">' + (h.approved ? "Suspend" : "Reject") + '</button>' +
+      (h.host_id ? '<button type="button" class="btn ghost sm" data-mp="set_host_commission" data-hid="' + esc(h.host_id) + '">Commission override</button>' : "") + '</div></div>';
+  }
+  $("#mpHostsPending").innerHTML = listOr(pendHosts, hostItem, "No hosts waiting.");
+  $("#mpHostsAll").innerHTML = listOr(MP.hosts.filter(function(h){ return h.role !== "guest"; }), hostItem, "No hosts yet.");
+  var lf = $("#mpListFilter").value;
+  var ls = MP.listings.filter(function(l){ return !lf || (lf === "edited" ? l.edited_since_approval && l.status === "approved" : l.status === lf); });
+  $("#mpListings").innerHTML = listOr(ls, function(l){
+    var ph = MP.photos.filter(function(p){ return String(p.listing_id) === String(l.id); });
+    var k = l.kosher || {}, b = l.business || {};
+    return '<div class="item"><div class="h"><span>#' + esc(l.id) + " " + esc(l.title) + (l.edited_since_approval ? '<span class="newb">EDITED SINCE APPROVAL</span>' : "") + '</span><span class="pill ' + (l.status === "approved" ? "ok" : l.status === "pending" ? "warn" : l.status === "rejected" ? "error" : "") + '">' + esc(MP_ST[l.status] || l.status) + '</span></div>' +
+      '<div class="m">' + esc(l.area || "") + ", " + esc(l.city || "") + " · host " + esc(l.host_name) + " (" + esc(l.host_email) + ")" + (l.host_approved ? "" : " · <b>host not approved yet</b>") + '</div>' +
+      '<div class="m">' + l.max_guests + " guests · " + l.bedrooms + " bedrooms · £" + esc(l.base_price) + "/night" + (l.weekend_price ? ", £" + esc(l.weekend_price) + " Fri/Sat" : "") + " · cleaning £" + esc(l.cleaning_fee) + " · " + ph.length + " photos" + (l.lat != null ? " · map " + esc(l.lat) + ", " + esc(l.lng) : " · no map pin") + '</div>' +
+      (ph.length ? '<div style="display:flex;gap:6px;overflow-x:auto;margin-top:8px">' + ph.slice(0, 8).map(function(p){ return '<img src="' + esc(p.url) + '" alt="" style="height:70px;border-radius:8px">'; }).join("") + '</div>' : "") +
+      '<details style="margin-top:6px"><summary class="m">Text, kosher and business details</summary><div class="m" style="white-space:pre-line">' + esc(l.description || "") + "\n\nRules: " + esc(l.house_rules || "") + "\n\nKosher (host-declared): " + esc(JSON.stringify(k)) + "\nBusiness: " + esc(JSON.stringify(b)) + '</div></details>' +
+      (l.reject_reason ? '<div class="m">Last note to host: ' + esc(l.reject_reason) + '</div>' : "") +
+      (l.legacy_source ? '<div class="m">Runs on the Zermatt Lodge booking system (page "/").</div>' : '<div class="acts">' +
+        (l.status !== "approved" ? '<button type="button" class="btn sm" data-mp="approve_listing" data-id="' + esc(l.id) + '">Approve</button>' : '<a class="btn ghost sm" href="/stays/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a>') +
+        '<button type="button" class="btn ghost sm" data-mp="reject_listing" data-id="' + esc(l.id) + '">Reject with note</button>' +
+        (l.status === "approved" ? '<button type="button" class="btn ghost sm" data-mp="pause_listing" data-id="' + esc(l.id) + '">Pause</button>' : "") + '</div>') + '</div>';
+  }, "Nothing here.");
+  var bf = $("#mpBkFilter").value;
+  var bks = MP.bookings.filter(function(b){ return !bf || b.status === bf; });
+  $("#mpBookings").innerHTML = '<p class="empty">' + bks.length + ' booking(s)</p>' + listOr(bks, function(b){
+    return '<div class="item"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.listing_title) + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + '</span></div>' +
+      '<div class="m">' + dfmt(String(b.check_in).slice(0, 10)) + " to " + dfmt(String(b.check_out).slice(0, 10)) + " · " + b.nights + " nights · " + b.guests + " guests · " + (b.source === "zermatt" ? "Zermatt system" : "marketplace") + '</div>' +
+      '<div class="m"><b>' + money(b.amount_pence) + '</b>' + (b.source === "bookhomes" ? " · commission " + money(b.fee_pence) + " · host " + money(b.host_payout_pence) + " (" + esc(b.payout_mode) + ")" : "") + " · " + esc(b.guest_email) + (b.stripe_payment_intent_id ? " · " + stripeLink(b.stripe_payment_intent_id) : "") + '</div></div>';
+  }, "No bookings.");
+  var due = 0, paidOut = 0, sched = 0;
+  MP.payouts.forEach(function(p){ if (p.status === "manual_pending") due += p.amount_pence; else if (p.status === "paid") paidOut += p.amount_pence; else if (p.status === "connect_scheduled") sched += p.amount_pence; });
+  $("#mpPayStats").innerHTML = '<div class="stat"><small>Due by bank transfer</small><b style="color:' + (due ? "var(--accent-ink)" : "var(--brand-ink)") + '">' + money(due) + '</b><span>Hosts without Stripe payouts</span></div>' +
+    '<div class="stat"><small>Paid by you</small><b>' + money(paidOut) + '</b><span>Marked paid</span></div><div class="stat"><small>Paid by Stripe</small><b>' + money(sched) + '</b><span>Connect destination charges</span></div>';
+  $("#mpPayouts").innerHTML = listOr(MP.payouts, function(p){
+    return '<div class="item"><div class="h"><span>' + esc(p.host_name) + " · " + esc(p.title) + '</span><span class="pill ' + (p.status === "manual_pending" ? "warn" : p.status === "cancelled" ? "cancelled" : "ok") + '">' + esc(p.status.replace("_", " ")) + '</span></div>' +
+      '<div class="m">' + money(p.amount_pence) + " · stay " + dfmt(p.check_in) + " to " + dfmt(p.check_out) + " · " + esc(p.host_email) + (p.note ? " · " + esc(p.note) : "") + (p.paid_at ? " · paid " + esc(tfmt(p.paid_at)) : "") + '</div>' +
+      (p.status === "manual_pending" ? '<div class="acts"><button type="button" class="btn sm" data-mp="mark_payout_paid" data-pid="' + esc(p.id) + '">Mark as paid</button></div>' : "") + '</div>';
+  }, "No payouts yet.");
+  $("#mpUsers").innerHTML = listOr(MP.hosts, function(h){
+    return '<div class="item"><div class="h"><span>' + esc(h.name || h.email) + '</span><span class="pill">' + esc(h.role) + '</span></div><div class="m">' + esc(h.email) + '</div>' +
+      '<div class="acts"><label class="muted" style="font-size:13px">Role <select data-role="' + esc(h.user_id) + '">' + ["host", "admin", "guest"].map(function(r){ return '<option' + (r === h.role ? " selected" : "") + '>' + r + '</option>'; }).join("") + '</select></label></div></div>';
+  }, "No users yet.");
+  var set = {}; MP.settings.forEach(function(x){ set[x.key] = x.value; });
+  if (document.activeElement !== $("#mpPct")) $("#mpPct").value = set.commission_pct != null ? set.commission_pct : 15;
+  $("#mpConnect").textContent = set.connect_status === "enabled" ? "Connect is working: hosts can connect payouts." : set.connect_status === "not_enabled"
+    ? "Stripe Connect is not switched on for this Stripe account yet. Bookings charge to Book Homes and host payouts are recorded as 'manual_pending'. Turn it on in Stripe: Dashboard > Connect > Get started (platform, UK)."
+    : "Not tested yet. It is checked the first time a host taps 'Connect payouts with Stripe'.";
+  $("#mpAudit").innerHTML = listOr(MP.audit.slice(0, 40), function(a){ return '<div class="item"><div class="h"><span>' + esc(a.action) + " · " + esc(a.entity) + " " + esc(a.entity_id || "") + '</span><span class="muted">' + esc(tfmt(a.at)) + '</span></div><div class="m">' + esc(a.actor_email || "system") + (a.details ? " · " + esc(JSON.stringify(a.details)) : "") + '</div></div>'; }, "Nothing yet.");
+}
+$("#mpListFilter").addEventListener("change", mpRender);
+$("#mpBkFilter").addEventListener("change", mpRender);
+document.addEventListener("click", function(e){
+  var b = e.target.closest ? e.target.closest("[data-mp]") : null;
+  if (!b) return;
+  var a = b.getAttribute("data-mp"), body = {action: a};
+  if (a === "approve_host" || a === "reject_host"){
+    body.user_id = b.getAttribute("data-uid");
+    if (a === "reject_host"){ var r = prompt("Reason (sent to the host):", ""); if (r === null) return; body.reason = r; }
+  } else if (/_listing$/.test(a)){
+    body.id = +b.getAttribute("data-id");
+    if (a === "reject_listing"){ var n = prompt("What should the host change? (sent to them)", "Please remove the street address from the description."); if (n === null) return; body.reason = n; }
+    if (a === "approve_listing" && !confirm("Approve and publish this listing now? Check photos and text for street addresses first.")) return;
+  } else if (a === "set_host_commission"){
+    var v = prompt("Commission % for this host (blank = use the standard rate):", ""); if (v === null) return;
+    body.host_id = b.getAttribute("data-hid"); body.pct = v.trim() === "" ? null : +v;
+  } else if (a === "mark_payout_paid"){
+    var note = prompt("Payment note (e.g. bank transfer reference):", ""); if (note === null) return;
+    body.id = b.getAttribute("data-pid"); body.note = note;
+  }
+  mpAct(body, b);
+});
+document.addEventListener("change", function(e){
+  var s = e.target.closest ? e.target.closest("[data-role]") : null;
+  if (!s) return;
+  if (!confirm("Change this user's role to " + s.value + "? Admins can see everything.")){ mpRender(); return; }
+  mpAct({action: "set_role", user_id: s.getAttribute("data-role"), role: s.value}, s);
+});
+$("#mpInvite").addEventListener("submit", function(e){
+  e.preventDefault();
+  var em = $("#mpInvEmail").value.trim();
+  if (!validEmail(em)){ $("#mpInvMsg").innerHTML = '<div class="err">Enter a valid email.</div>'; return; }
+  mpApi({action: "invite_user", email: em, name: $("#mpInvName").value.trim() || null, role: $("#mpInvRole").value}).then(function(j){
+    $("#mpInvMsg").innerHTML = '<div class="okmsg">' + (j.invited ? "Invite sent." : "Existing account updated.") + '</div>'; $("#mpInvite").reset(); MP = null; mpLoad(true);
+  }).catch(function(err){ $("#mpInvMsg").innerHTML = '<div class="err">' + esc(err.message) + '</div>'; });
+});
+$("#mpCommission").addEventListener("submit", function(e){
+  e.preventDefault();
+  var v = +$("#mpPct").value;
+  if (!(v >= 0 && v <= 50)){ $("#mpSetMsg").innerHTML = '<div class="err">Enter 0 to 50.</div>'; return; }
+  mpApi({action: "set_commission", pct: v}).then(function(){ $("#mpSetMsg").innerHTML = '<div class="okmsg">Saved. New bookings use ' + v + '%.</div>'; MP = null; mpLoad(true); })
+    .catch(function(err){ $("#mpSetMsg").innerHTML = '<div class="err">' + esc(err.message) + '</div>'; });
+});
 })();
 </script>
 </body>
