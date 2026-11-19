@@ -264,7 +264,8 @@ function renderDash(){
     var acts = legacy ? '<button type="button" class="btn sm" data-calfor="' + l.id + '">Calendar</button><a class="btn ghost sm" href="' + esc(l.page_url || "/") + '" target="_blank" rel="noopener">View</a><span class="m" style="font-size:12.5px;display:block;margin-top:6px">Prices and details come from your channel manager. Block and open dates in Calendar.</span>' :
       '<button type="button" class="btn sm" data-edit="' + l.id + '">' + (l.status === "draft" ? "Continue" : l.status === "rejected" ? "Make changes" : "Edit") + '</button>' +
       (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
-      (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "");
+      (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "") +
+      (l.status === "draft" ? '<button type="button" class="btn ghost sm" data-dellisting data-id="' + l.id + '">Delete</button>' : "");
     return '<div class="lcard"><div class="ph">' + (ph ? '<img src="' + esc(ph.url) + '" alt="">' : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
       (l.reject_reason ? '<p class="m" style="font-size:13.5px;color:#b42318">' + esc(l.reject_reason) + '</p>' : "") +
       (l.ical_export_url ? '<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Calendar link for Airbnb / Booking.com:<code class="code-line">' + esc(l.ical_export_url) + '</code></p>' : "") +
@@ -619,6 +620,7 @@ function drawStep(){
   $("#wzIn").classList.remove("in"); void $("#wzIn").offsetWidth; $("#wzIn").classList.add("in");
   wzMsg("");
   if (W.id) lsSet("bh_step_" + W.id, s.k);
+  $("#wz").classList.toggle("has-id", !!W.id);
   setHash("wizard=" + (W.id || "new"));
   if (s.after) s.after();
   $(".wz-body").scrollTop = 0;
@@ -989,7 +991,8 @@ function reviewStep(){
   return '<div class="rv"><div class="rv-card"><div class="rv-ph">' + (cover ? '<img src="' + esc(cover.url) + '" alt="">' : icon("camera")) + "</div><div class='rv-bd'><b>" + esc(l.title || "Untitled") + "</b><span>" + esc([l.area, l.city].filter(Boolean).join(", ")) + "</span><span><b>£" + esc(l.base_price || "-") + "</b> night</span></div></div>" +
     '<button type="button" class="btn ghost block" data-preview style="margin-top:12px">' + icon("search") + "Show full preview</button></div>" +
     (miss.length ? '<div class="miss"><b>Before you submit</b><ul>' + miss.map(function(m){ return '<li><button type="button" class="link" data-goto="' + m[0] + '">Add ' + esc(m[1]) + "</button></li>"; }).join("") + "</ul></div>" :
-      '<h3 class="psec">What\'s next?</h3><ul class="nexts"><li>' + icon("shield") + "<span><b>We check your listing</b>Photos, text and that no street address is shown. Usually within one working day.</span></li><li>" + icon("calendar") + "<span><b>Set up your calendar</b>Block dates and set prices for busy days.</span></li><li>" + icon("bell") + "<span><b>We email you when it's live</b>Then guests can find and book it.</span></li></ul>");
+      '<h3 class="psec">What\'s next?</h3><ul class="nexts"><li>' + icon("shield") + "<span><b>We check your listing</b>Photos, text and that no street address is shown. Usually within one working day.</span></li><li>" + icon("calendar") + "<span><b>Set up your calendar</b>Block dates and set prices for busy days.</span></li><li>" + icon("bell") + "<span><b>We email you when it's live</b>Then guests can find and book it.</span></li></ul>") +
+    (W.id ? '<button type="button" class="link dellink" data-dellisting>' + icon("x") + "Delete this draft</button>" : "");
 }
 $("#wzIn").addEventListener("click", function(e){
   var g = e.target.closest && e.target.closest("[data-goto]"); if (!g) return;
@@ -1023,7 +1026,8 @@ function edHead(){
     (l.status === "pending" ? '<button type="button" class="btn ghost sm" data-ests="draft">Withdraw (back to draft)</button>' : "") +
     (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">Open live page</a><button type="button" class="btn ghost sm" data-ests="paused">Pause listing</button>' : "") +
     (l.status === "paused" && l.approved_at ? '<button type="button" class="btn sm" data-ests="approved">Unpause</button>' : "") +
-    '</div><div id="edStMsg" aria-live="polite"></div></div>';
+    '</div><div id="edStMsg" aria-live="polite"></div></div>' +
+    '<button type="button" class="link dellink" data-dellisting>' + icon("x") + (l.approved_at ? "Delete listing" : "Delete draft") + "</button>";
   setHash("edit=" + W.id + (W.sec ? ":" + W.sec : ""));
 }
 function edStatusMsg(t, miss){
@@ -1053,7 +1057,11 @@ $("#edSaveBtn").addEventListener("click", function(){
   var s = SECTIONS.filter(function(x){ return x.k === W.sec; })[0], b = this, err = s.v ? s.v() : "";
   if (err){ edErr(err); return; }
   edErr(""); b.disabled = true; b.innerHTML = '<span class="spin"></span>Saving';
-  save(s.f).then(function(j){ b.textContent = "Save"; W.dirty = false; edDirty(); dropBackup(); saved("ok", j.live_edit ? "Saved. Your changes are live." : "Saved"); edHead(); edNav(); },
+  // Send only what changed, so the "edited since approval" flag names the right fields (lat and lng always travel together)
+  var orig = norm(findL(W.id)), cur = payload(s.f), old = (function(){ var t = W.l; W.l = orig; var o = payload(s.f); W.l = t; return o; })();
+  var ch = s.f.filter(function(k){ return JSON.stringify(cur[k]) !== JSON.stringify(old[k]); });
+  if (ch.indexOf("lat") >= 0 || ch.indexOf("lng") >= 0) ch = ch.filter(function(k){ return k !== "lat" && k !== "lng"; }).concat(["lat", "lng"]);
+  save(ch.length ? ch : s.f).then(function(j){ b.textContent = "Save"; W.dirty = false; if (j.live_edit){ var fl = findL(W.id); if (fl) fl.host_edited_at = new Date().toISOString(); } edDirty(); dropBackup(); saved("ok", j.live_edit ? "Saved. Your changes are live." : "Saved"); edHead(); edNav(); },
     function(e){ b.textContent = "Save"; b.disabled = false; edErr(e.message); });
 });
 $("#edCancel").addEventListener("click", function(){ var l = findL(W.id); W.l = norm(l); dropBackup(); drawSection(W.sec); saved("", ""); });
@@ -1075,34 +1083,43 @@ $("#ed").addEventListener("click", function(e){
   }
 });
 
-/* ----- guest preview ----- */
+/* ----- guest preview: the real public listing page, filled with this draft (booking switched off) ----- */
 function preview(){
-  var l = W.l, ph = W.photos, where = [String(l.area || "").split(",")[0].trim(), l.city].filter(Boolean).join(", ");
-  var t = TYPES.filter(function(x){ return x[0] === l.property_type; })[0];
-  var k = l.kosher || {}, sh = k.shabbat || {}, kos = [k.kitchen && "Kosher kitchen" + (k.kitchen_type ? " (" + ({meat: "meat", milk: "milk", both: "separate meat and milk", parev: "parev"}[k.kitchen_type]) + ")" : ""), k.separate_sinks && "Separate sinks", k.separate_ovens && "Separate ovens", sh.hotplate && "Shabbat hot plate", sh.urn && "Shabbat urn", sh.lamp_timers && "Shabbat lamp or timers", sh.non_electric_key && "Non-electric key", sh.no_motion_sensors && "No motion-sensor lights", k.shul_name && "Shul: " + k.shul_name + (k.shul_walk_mins ? ", " + k.shul_walk_mins + " min walk" : ""), k.eruv === "yes" && "Inside an eruv"].filter(Boolean);
-  var b = l.business || {}, work = [b.desk && "Desk", b.wifi_mbps && "Wifi " + b.wifi_mbps + " Mbps", b.van_parking && "Van parking", b.separate_beds && "Separate beds", b.monthly_rates && "Monthly stays welcome"].filter(Boolean);
-  var pol = POLICIES.filter(function(x){ return x[0] === l.cancellation_policy; })[0] || POLICIES[1];
-  var host = (ME.host && ME.host.display_name) || (ME.profile && ME.profile.name) || "your host";
-  var pl = function(n, w){ n = +n || 0; return n + " " + w + (n === 1 ? "" : "s"); };
-  $("#pvIn").innerHTML = '<p class="pvnote">' + icon("search") + "Preview: this is how guests will see your listing" + (findL(W.id) && findL(W.id).status !== "approved" ? " once it's live" : "") + ".</p>" +
-    "<h1>" + esc(l.title || "Your title") + "</h1>" +
-    '<div class="pvgal' + (ph.length < 5 ? " few" : "") + '">' + (ph.length ? ph.slice(0, 5).map(function(p, i){ return '<img src="' + esc(p.url) + '" alt="' + esc(p.caption || "") + '"' + (i ? ' loading="lazy"' : "") + ">"; }).join("") : '<div class="pvnoph">' + icon("camera") + "No photos yet</div>") + "</div>" +
-    '<div class="pvgrid"><div><h2>' + (l.property_type === "room" ? "Private room" : "Entire " + esc(t ? t[1].toLowerCase() : "home")) + (where ? " in " + esc(where) : "") + "</h2><p class='m'>" + pl(l.max_guests, "guest") + " · " + pl(l.bedrooms, "bedroom") + " · " + pl(l.beds, "bed") + " · " + pl(+l.baths, "bath") + "</p>" +
-    '<p class="pvhost"><span class="av">' + esc(host.charAt(0).toUpperCase()) + "</span>Hosted by " + esc(host) + "</p>" +
-    '<div class="pvdesc">' + esc(l.description || "No description yet.").replace(/\n/g, "<br>") + "</div>" +
-    (l.amenities.length ? "<h3>What this place offers</h3><ul class='pvam'>" + l.amenities.map(function(a){ return "<li>" + icon(a) + esc(AMEN[a] || a) + "</li>"; }).join("") + "</ul>" : "") +
-    (kos.length ? "<h3>Kosher and Shabbat</h3><ul class='pvam'>" + kos.map(function(x){ return "<li>" + icon("kosher") + esc(x) + "</li>"; }).join("") + "</ul><p class='m' style='font-size:13px'>Details provided by the host.</p>" : "") +
-    (work.length ? "<h3>For work stays</h3><ul class='pvam'>" + work.map(function(x){ return "<li>" + icon("work") + esc(x) + "</li>"; }).join("") + "</ul>" : "") +
-    "<h3>Where you'll be</h3><div class='pmap' id='pvmap'></div><p class='m' style='font-size:13px'>Exact location provided after booking.</p>" +
-    "<h3>Things to know</h3><div class='pvknow'><div><b>House rules</b><p>Check-in from " + esc(l.check_in_time) + "<br>Checkout by " + esc(l.check_out_time) + "<br>" + esc(l.house_rules || "").replace(/\n/g, "<br>") + "</p></div><div><b>Cancellation</b><p>" + esc(pol[1] + ": " + pol[2]) + "</p></div></div></div>" +
-    '<aside class="pvbook"><b>' + (l.base_price ? "£" + esc(l.base_price) + "</b> night" : "Price not set</b>") + (l.cleaning_fee ? "<p class='m'>Cleaning fee £" + esc(l.cleaning_fee) + ", shown in the total</p>" : "") + "<p class='m'>No booking fee. Total shown before you pay.</p><button type='button' class='btn block' disabled>Reserve</button></aside></div>";
-  show("#pv", true); $("#pv").scrollTop = 0;
-  if (window.L && l.lat != null){ var m = L.map("pvmap", {scrollWheelZoom: false, dragging: !L.Browser.mobile}).setView([+l.lat, +l.lng], 13); L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 15, attribution: "&copy; OpenStreetMap contributors"}).addTo(m); L.circle([+l.lat, +l.lng], {radius: 900, color: "#1f4d3a", weight: 1.5, fillOpacity: .15}).addTo(m); setTimeout(function(){ m.invalidateSize(); }, 200); }
-  $("#pvClose").focus();
+  var l = W.l, host = (ME.host && ME.host.display_name) || (ME.profile && ME.profile.name) || "your host";
+  var data = {listing: Object.assign({}, payload(Object.keys(blank())), {id: W.id || 0, slug: (findL(W.id) || {}).slug || "preview", title: l.title || "Your title", host_name: host,
+    trader_status: (ME.profile && ME.profile.trader_status) || "trader", from_price: +l.base_price || null, legacy_source: null,
+    photos: W.photos.map(function(p){ return {url: p.url, caption: p.caption || ""}; })})};
+  try { localStorage.setItem("bh_listing_preview", JSON.stringify(data)); } catch (e) { alert("Preview needs browser storage. Please allow it and try again."); return; }
+  var live = findL(W.id) && findL(W.id).status === "approved";
+  $("#pvLive").classList.toggle("hidden", !live); if (live) $("#pvLive").href = "/" + findL(W.id).slug;
+  $("#pvFrame").src = "/stays/listing?preview=1&t=" + Date.now();
+  show("#pv", true); document.body.style.overflow = "hidden"; $("#pvClose").focus();
 }
+function closePreview(){ show("#pv", false); $("#pvFrame").src = "about:blank"; if ($("#wz").classList.contains("hidden") && $("#ed").classList.contains("hidden")) document.body.style.overflow = ""; }
 document.addEventListener("click", function(e){ if (e.target.closest && e.target.closest("[data-preview]")) preview(); });
-$("#pvClose").addEventListener("click", function(){ show("#pv", false); });
-document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !$("#pv").classList.contains("hidden")) show("#pv", false); });
+$("#pvClose").addEventListener("click", closePreview);
+document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !$("#pv").classList.contains("hidden")) closePreview(); });
+
+/* ----- delete a listing (drafts: for good; listings that were live: archived, bookings kept) ----- */
+function deleteListing(btn){
+  var l = findL(W.id) || {}, everLive = !!l.approved_at;
+  var q = everLive ? "Delete \"" + (l.title || "this listing") + "\"?\n\nIt disappears from Book Homes and your dashboard straight away. Past bookings and payouts stay in your records. Photos are deleted. This can't be undone."
+    : "Delete this draft for good?\n\nAll its details and photos are removed. This can't be undone.";
+  if (!confirm(q)) return;
+  var lbl = btn.textContent; btn.disabled = true; btn.innerHTML = '<span class="spin"></span>Deleting';
+  clearTimeout(autoT);
+  chain.catch(function(){}).then(function(){ return api("bookhomes-host", {action: "delete_listing", id: W.id}); }).then(function(j){
+    lsDel("bh_step_" + W.id); dropBackup(); W.dirty = false;
+    closeAll();
+    msg("#dashMsg", j.mode === "archived" ? "Listing deleted. Your booking history is kept." : "Draft deleted.", true);
+    setTimeout(function(){ msg("#dashMsg", ""); }, 6000);
+  }, function(e){ btn.disabled = false; btn.textContent = lbl; if (W.mode === "editor") edStatusMsg(e.message); else if (W.mode === "wizard") wzMsg(e.message); else msg("#dashMsg", e.message); });
+}
+document.addEventListener("click", function(e){
+  var d = e.target.closest && e.target.closest("[data-dellisting]"); if (!d) return;
+  if (d.getAttribute("data-id")){ W.id = +d.getAttribute("data-id"); W.mode = "dash"; }
+  if (W.id) deleteListing(d);
+});
 
 /* ----- reopen what was open before a refresh ----- */
 window.addEventListener("beforeunload", function(e){ if ((W.mode === "editor" && W.dirty && !$("#ed").classList.contains("hidden")) || (DRAG && DRAG.on)){ backup(); e.preventDefault(); e.returnValue = ""; } });

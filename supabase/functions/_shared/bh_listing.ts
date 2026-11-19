@@ -1,5 +1,5 @@
 // Listing fields from the host wizard and the Airbnb importer: whitelisted and validated in one place.
-import { bool, FEE_COLS, feesEnabled, HttpError, int, num, sql, str } from "./bh.ts";
+import { authAdmin, bool, FEE_COLS, feesEnabled, HttpError, int, num, sql, str } from "./bh.ts";
 
 export const AMENITIES = ["wifi", "parking", "kitchen", "washer", "dryer", "tv", "heating", "aircon", "garden", "workspace", "cot", "highchair",
   "bath", "ev_charger", "pool_table", "bbq", "self_checkin", "step_free", "dishwasher", "coffee", "iron", "hairdryer", "fireplace", "pets"];
@@ -118,4 +118,37 @@ export async function feeFields(b: Record<string, unknown>): Promise<Record<stri
 export function cleanImportedText(t: string, max: number): string {
   return t.split(/\n/).map((line) => line.split(/(?<=[.!?])\s+/).filter((x) => !ADDRESS_RE.test(x) && !MONEY_WORDS_RE.test(x)).join(" ").trim())
     .join("\n").replace(/\n{3,}/g, "\n\n").replace(/[\u2013\u2014]/g, "-").replace(/[ \t]+/g, " ").trim().slice(0, max);
+}
+
+/** Delete a listing (host or admin). Never booked or approved: deleted for good. Otherwise archived: hidden everywhere,
+ *  calendars unlinked, bookings and reviews kept. Photos are removed from storage in both cases. */
+export async function removeListing(id: number, by: string): Promise<{ mode: "deleted" | "archived"; photos: number }> {
+  const l = (await sql`select l.id, l.status, l.approved_at, l.legacy_source, h.user_id::text as uid,
+                              (select count(*)::int from bookhomes.bookings b where b.listing_id = l.id) as bookings,
+                              (select count(*)::int from bookhomes.bookings b where b.listing_id = l.id and b.status in ('paid', 'held') and b.check_out >= current_date) as upcoming,
+                              (select count(*)::int from bookhomes.reviews r where r.listing_id = l.id) as reviews
+                         from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id where l.id = ${id}`)[0];
+  if (!l) throw new HttpError(404, "Listing not found");
+  if (l.legacy_source) throw new HttpError(400, "Zermatt Lodge runs on its own booking system and can't be deleted here.");
+  if (l.status === "archived") return { mode: "archived", photos: 0 };
+  if (l.upcoming > 0) throw new HttpError(409, `This home has ${l.upcoming} upcoming booking${l.upcoming === 1 ? "" : "s"}. Pause it instead, or contact us to cancel those bookings first.`, "HAS_BOOKINGS");
+  // Storage: every file in the listing's folder (also uploads that never finished), plus any photo rows elsewhere
+  const rows = await sql`select storage_path from bookhomes.listing_photos where listing_id = ${id} and storage_path is not null`;
+  const paths = new Set<string>(rows.map((r: { storage_path: string }) => r.storage_path));
+  const bucket = authAdmin().storage.from("listing-photos");
+  const listed = await bucket.list(`${l.uid}/${id}`, { limit: 1000 }).catch(() => ({ data: null }));
+  for (const f of listed?.data ?? []) if (f?.name) paths.add(`${l.uid}/${id}/${f.name}`);
+  const all = [...paths];
+  for (let i = 0; i < all.length; i += 100) await bucket.remove(all.slice(i, i + 100)).catch(() => {});
+  if (!l.bookings && !l.reviews && !l.approved_at) {
+    await sql`delete from bookhomes.listings where id = ${id}`; // photos, calendars, blocks and prices cascade
+    return { mode: "deleted", photos: all.length };
+  }
+  await sql.begin(async (tx) => {
+    await tx`update bookhomes.listings set status = 'archived', deleted_at = now(), deleted_by = ${by} where id = ${id}`;
+    await tx`delete from bookhomes.listing_photos where listing_id = ${id}`;
+    await tx`update bookhomes.listing_ical_sources set enabled = false where listing_id = ${id}`;
+    await tx`delete from bookhomes.listing_ical_events where listing_id = ${id}`;
+  });
+  return { mode: "archived", photos: all.length };
 }

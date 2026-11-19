@@ -6,7 +6,7 @@ import { audit, authAdmin, EMAIL_RE, getSetting, handle, HttpError, int, jsonRes
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice, guestBooked, hostBooked, ref } from "../_shared/bh_emails.ts";
 import { loadBooking } from "../_shared/bh_booking.ts";
-import { feeFields, listingFields } from "../_shared/bh_listing.ts";
+import { feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { money } from "../_shared/bh_quote.ts";
 
 // Refund maths for a guest cancellation, by the listing's policy (same wording as checkout):
@@ -384,6 +384,14 @@ Deno.serve(handle(async (req) => {
       if (host?.email) await sendLogged(db, { toRole: "admin", to: host.email, template: "bh_host_cancelled",
         email: adminNotice(`Booking cancelled: ${bk.title}, ${bk.ci}`, [`The booking ${ref(bk.id)} (${bk.guest_name}) is cancelled and the dates are open again.`, `Guest refund ${money(refund)}. Your payout is now ${money(newPayout)}.`], siteUrl(), "/host/") });
       return jsonRes({ ok: true, ...calc, refund_id: refundId });
+    }
+
+    case "delete_listing": {
+      const id = int(b.id, 1, 1e12);
+      if (!id) throw new HttpError(400, "Invalid listing");
+      const r = await removeListing(id, admin.email);
+      await audit(admin, "delete_listing", "listing", String(id), r);
+      return jsonRes({ ok: true, ...r });
     }
 
     case "feature_listing": {
