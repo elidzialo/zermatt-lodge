@@ -253,8 +253,8 @@ $$(".tabs button").forEach(function(b){ b.addEventListener("click", function(){
 }); });
 var STATUS = {draft: "Draft", pending: "Waiting for approval", approved: "Live", rejected: "Changes needed", paused: "Paused"};
 function renderDash(){
+  try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "me", me: ME}})); } catch (e) {}
   var p = ME.profile || {}, ls = ME.listings || [];
-  try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "me", me: ME}})); } catch (e) {} // host-shell.js (Today, Menu)
   $("#approvalNote").innerHTML = p.approved ? "" : '<div class="notice"><b>Your host account is waiting for approval.</b> You can add and submit listings now. We check every host and listing, usually within one working day.' + (p.rejected_reason ? "<br>Note from us: " + esc(p.rejected_reason) : "") + "</div>";
   $("#lcards").innerHTML = ls.length ? ls.map(function(l){
     var ph = (ME.photos || []).filter(function(x){ return String(x.listing_id) === String(l.id); })[0];
