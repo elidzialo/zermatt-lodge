@@ -137,6 +137,12 @@ $("#signupForm").addEventListener("submit", function(e){
   sb.auth.signUp({email: em, password: pw, options: {emailRedirectTo: REDIRECT}}).then(function(r){
     busy(btn, false, "Create account");
     if (r.error){ msg("#signupMsg", niceErr(r.error)); return; }
+    var u = r.data && r.data.user;
+    if (u && Array.isArray(u.identities) && u.identities.length === 0){
+      view("Login"); $("#loginEmail").value = em;
+      msg("#loginMsg", "You already have an account with this email. Log in below, or tap \"Forgot password?\" to set a new password.", true);
+      return;
+    }
     if (!r.data.session) msg("#signupMsg", "Nearly there: we've emailed you a link. Open it on this device to confirm your email, then log in.", true);
   });
 });
