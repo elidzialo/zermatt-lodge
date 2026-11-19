@@ -24,3 +24,7 @@ Checks: build.py clean and public/ in sync, node --check on all inline JS, all 6
 ## Merge 2 (00:10) - optimise 338592a -> main
 Speed: responsive guide hero (srcset + alt text), non-blocking Google Fonts, homepage map loads on tap, hashed guide.css, nosniff + Referrer-Policy headers.
 Checks: build clean, JS syntax, JSON-LD, no dashes, no secrets. Booking card code untouched.
+
+## Merge 3 (00:14) - optimise d2f2ea8 -> main
+Conversion + mobile: trust strip uses real facts (4.75 from 4 Airbnb reviews, already shown on the page), one star not five, price note says total includes cleaning, Book on Airbnb on guides, 44px tap targets.
+Checked claims are true (rating/review count match the reviews section; booking is confirmed on payment). Checks pass.
