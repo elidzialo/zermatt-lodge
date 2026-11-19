@@ -78,6 +78,8 @@ function get(s){ return fetch("/api/bh/listings?action=get&slug=" + encodeURICom
       bar.textContent = "Preview: this is how guests see your listing. Booking is switched off here.";
       document.body.insertBefore(bar, document.body.firstChild);
       $("#bookcard").querySelectorAll("input,select,button,textarea").forEach(function(x){ x.disabled = true; });
+      var mb = $("#mbookBtn"); if (mb) mb.disabled = true;
+      var mo = $("#months"); if (mo) mo.innerHTML = '<p class="bd-empty">Your availability calendar shows here once the listing is live.</p>';
       $$("a[href]").forEach(function(a){ if (!a.closest("#lpAmenWrap,#gal")) { a.addEventListener("click", function(e){ e.preventDefault(); }); } });
       load("/assets/stay-page.js");
       return;

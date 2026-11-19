@@ -7,6 +7,8 @@
 <meta name="theme-color" content="#1f4d3a">
 <title>Host dashboard | Book Homes</title>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="/assets/bh.css">
 <link rel="preconnect" href="https://kddhkuwnkkjcnbjegsmc.supabase.co" crossorigin>
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin>
@@ -295,7 +297,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 .phgrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
 .phgrid figure{aspect-ratio:auto;background:none;overflow:visible;border-radius:12px;transition:transform .05s;touch-action:auto;user-select:none}
 .phgrid figure:first-child{grid-column:1/-1}
-.phgrid figure:first-child .phimg{aspect-ratio:16/9}
+.phgrid figure:first-child .phimg{aspect-ratio:16/9;max-height:380px}
 .phgrid figure.dragging{z-index:5;opacity:.85;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:none}
 .phgrid figure.over .phimg{outline:3px solid var(--ink);outline-offset:2px}
 .phgrid figure.busy{opacity:.4;pointer-events:none}
@@ -399,11 +401,16 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 @media (pointer:coarse){.enrol-tap{display:flex;margin-bottom:8px}.enrol-tap-note{display:block;font-size:13.5px;color:var(--muted);margin-bottom:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+<link rel="stylesheet" href="/assets/host-ux.css?v=eb28c5b5">
 </head>
-<body>
-<header class="hp-top"><div class="wrap">
-  <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" fill="#1f4d3a" d="M7 27.5V12.4L15 4.6l6.5 6.2c2.6 2.4 2.1 5.2-.3 6 3.3.9 5 3.3 5 5.9 0 3-2.2 4.8-5.6 4.8z M11.6 14.7h6c1.3 0 1.6-1.3.7-2.1L15 9.5l-3.4 3.2z"/><path fill="#e3a35a" d="M16 18.1a2.5 2.5 0 0 1 1.45 4.54l.85 3.36h-4.6l.85-3.36A2.5 2.5 0 0 1 16 18.1z"/></svg><span class="wm">Book<b>Homes</b></span><small style="font-size:13px;color:var(--muted);font-weight:500;margin-left:2px">for hosts</small></a>
-  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" class="btn ghost sm" data-signout>Sign out</button></div>
+<body class="host">
+<header class="hp-top" id="hpTop"><div class="wrap hp-row">
+  <a class="logo" href="/" aria-label="Book Homes home"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" fill="#1f4d3a" d="M7 27.5V12.4L15 4.6l6.5 6.2c2.6 2.4 2.1 5.2-.3 6 3.3.9 5 3.3 5 5.9 0 3-2.2 4.8-5.6 4.8z M11.6 14.7h6c1.3 0 1.6-1.3.7-2.1L15 9.5l-3.4 3.2z"/><path fill="#e3a35a" d="M16 18.1a2.5 2.5 0 0 1 1.45 4.54l.85 3.36h-4.6l.85-3.36A2.5 2.5 0 0 1 16 18.1z"/></svg><span class="wm">Book<b>Homes</b></span></a><span class="hp-mode">Hosting</span>
+  <nav class="tabs" role="tablist" aria-label="Host sections"><button type="button" role="tab" data-tab="today" aria-selected="true" aria-controls="panel-today"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-home"/></svg><span>Today</span></button><button type="button" role="tab" data-tab="listings" aria-selected="false" aria-controls="panel-listings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-grid"/></svg><span>Listings</span></button><button type="button" role="tab" data-tab="calendar" aria-selected="false" aria-controls="panel-calendar"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-calendar"/></svg><span>Calendar</span></button><button type="button" role="tab" data-tab="messages" aria-selected="false" aria-controls="panel-messages"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chat"/></svg><span>Messages</span></button><button type="button" role="tab" data-tab="earnings" aria-selected="false" aria-controls="panel-earnings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-receipt"/></svg><span>Earnings</span></button><button type="button" role="tab" data-tab="menu" aria-selected="false" aria-controls="panel-menu"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-menu"/></svg><span>Menu</span></button></nav>
+  <div class="hp-r"><a class="hp-switch" href="/">Switch to travelling</a>
+    <div class="umenu"><button type="button" class="ubtn" id="hmBtn" aria-haspopup="true" aria-expanded="false" aria-controls="hmList" aria-label="Menu"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-menu"/></svg><span class="uav"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-user"/></svg></span></button><div class="umlist" id="hmList" hidden></div></div>
+    <div class="who hidden" id="who"><span id="whoEmail"></span></div>
+  </div>
 </div></header>
 
 <div id="vLogin" class="box hidden"><div class="cardx">
@@ -475,21 +482,22 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 </div></div>
 
 <div id="vDash" class="hidden"><div class="wrap dash">
-  <nav class="tabs" role="tablist" aria-label="Host sections">
-    <button type="button" role="tab" data-tab="listings" aria-selected="true">Listings</button>
-    <button type="button" role="tab" data-tab="calendar" aria-selected="false">Calendar</button>
-    <button type="button" role="tab" data-tab="bookings" aria-selected="false">Bookings</button>
-    <button type="button" role="tab" data-tab="earnings" aria-selected="false">Earnings</button>
-    <button type="button" role="tab" data-tab="account" aria-selected="false">Account</button>
-  </nav>
   <div id="dashMsg"></div>
-  <section class="panel" data-panel="listings">
+  <section class="panel" data-panel="today" id="panel-today" role="tabpanel">
+    <div class="pg-head"><div><h1 id="tdHi">Welcome back</h1><p class="pg-sub" id="tdSub"></p></div></div>
     <div id="approvalNote"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2>Your listings</h2><button type="button" class="btn" id="newListing">Add a listing</button></div>
+    <div class="sec-head"><h2>Your reservations</h2></div>
+    <div class="chips" id="tdChips" role="group" aria-label="Show reservations"></div>
+    <div class="res" id="tdRes"></div>
+    <div id="bkList"></div>
+    <div class="todo-wrap" id="tdTodoWrap"><div class="sec-head"><h2>Needs your attention</h2></div><div class="todo" id="tdTodo"></div></div>
+  </section>
+  <section class="panel hidden" data-panel="listings" id="panel-listings" role="tabpanel">
+    <div class="pg-head"><div><h1>Listings</h1><p class="pg-sub" id="lsSub">Tap a home to edit its photos, details, price and rules.</p></div><button type="button" class="btn add" id="newListing"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-plus"/></svg><span>Add a listing</span></button></div>
     <div class="lcards" id="lcards"></div>
   </section>
-  <section class="panel hidden" data-panel="calendar">
-    <div class="cal-head"><h2>Calendar</h2><label class="selpill"><span class="sr-only">Listing</span><select id="calListing"></select></label></div>
+  <section class="panel hidden" data-panel="calendar" id="panel-calendar" role="tabpanel">
+    <div class="cal-head"><h1>Calendar</h1><label class="selpill"><span class="sr-only">Listing</span><select id="calListing"></select></label></div>
     <div class="cal-wrap">
       <div class="cal-main">
         <div class="cal-nav"><button type="button" class="iconbtn" id="calPrev" aria-label="Previous month">&lsaquo;</button><b id="calTitle"></b><button type="button" class="iconbtn" id="calNext" aria-label="Next month">&rsaquo;</button></div>
@@ -528,15 +536,35 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
       </details>
     </section>
   </section>
-  <section class="panel hidden" data-panel="bookings"><h2>Bookings</h2><div id="bkList"></div></section>
-  <section class="panel hidden" data-panel="earnings"><h2>Earnings</h2><div class="statgrid" id="earnStats"></div><div id="earnList"></div></section>
-  <section class="panel hidden" data-panel="account">
-    <h2>Payouts</h2>
-    <div class="item"><div id="payoutState"></div><div class="acts"><button type="button" class="btn" id="connectBtn">Connect payouts with Stripe</button></div><p class="m" id="connectOut"></p></div>
-    <h2>Profile</h2>
-    <div class="item"><div id="profSummary"></div><div class="acts"><button type="button" class="btn ghost sm" id="editProfile">Edit profile</button></div></div>
-    <h2>Security</h2>
-    <div class="item"><p class="m" id="trustStatus"></p><div class="acts"><button type="button" class="btn ghost sm" data-signout>Sign out</button></div></div>
+  <section class="panel hidden" data-panel="messages" id="panel-messages" role="tabpanel">
+    <div class="pg-head"><div><h1>Messages</h1></div></div>
+    <div class="empty"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chat"/></svg><h2>Messages are on the way</h2><p>Soon you'll chat with guests here. For now, guests get your phone and WhatsApp number when they book, and you'll find theirs on each reservation in Today.</p><button type="button" class="btn ghost" data-go="today">See reservations</button></div>
+  </section>
+  <section class="panel hidden" data-panel="earnings" id="panel-earnings" role="tabpanel">
+    <div class="pg-head"><div><h1>Earnings</h1><p class="pg-sub">Your share after commission, for each stay.</p></div></div>
+    <div class="statgrid" id="earnStats"></div><div id="earnList"></div>
+  </section>
+  <section class="panel hidden" data-panel="menu" id="panel-menu" role="tabpanel">
+    <div class="pg-head"><div><h1>Menu</h1></div></div>
+    <div class="me-card" id="profSummary"></div>
+    <div class="rows">
+      <button type="button" class="row" id="editProfile"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-user"/></svg><span><b>Personal info</b><small>Name, phone and host name</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></button>
+      <button type="button" class="row" data-go="earnings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-receipt"/></svg><span><b>Earnings</b><small>Payouts for each stay</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></button>
+      <a class="row" href="/"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-search"/></svg><span><b>Switch to travelling</b><small>Browse and book homes</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row hidden" href="/admin" id="mnAdmin"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-shield"/></svg><span><b>Admin portal <i class="chip">Admin</i></b><small>Needs your 6-digit code</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row hidden" href="/admin/feedback/" id="mnBug" data-bugreport><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-sparkle"/></svg><span><b>Report a bug</b><small>Tell us what went wrong on this page</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+    </div>
+    <h2 class="rows-h">Payouts</h2>
+    <div class="box2"><div id="payoutState"></div><div class="acts"><button type="button" class="btn" id="connectBtn">Connect payouts with Stripe</button></div><p class="m" id="connectOut"></p></div>
+    <h2 class="rows-h">Security</h2>
+    <div class="box2"><p class="m" id="trustStatus"></p></div>
+    <h2 class="rows-h">Help</h2>
+    <div class="rows">
+      <a class="row" href="tel:+447479905477"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-phone"/></svg><span><b>Call us</b><small>+44 7479 905477</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row" href="mailto:eli@zelr.co.uk"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-mail"/></svg><span><b>Email us</b><small>eli@zelr.co.uk</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+      <a class="row" href="/terms/hosts"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-book"/></svg><span><b>Host terms</b><small>Plain-English rules for hosts</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
+    </div>
+    <button type="button" class="btn ghost block logout" data-signout>Log out</button>
   </section>
 </div></div>
 
@@ -563,10 +591,12 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 </div>
 </div>
 
-<!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes are set by build.py -->
+<!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes for host*.js are set by build.py -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
 <script src="/assets/host-perf.js?v=47bb6aa9"></script>
 <script src="/assets/host.js?v=3ba69fbb"></script>
-<script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
+<script src="/assets/host-shell.js?v=1c65d7b7" defer></script>
+<script src="/assets/bh-ui.js?v=hux3" defer></script>
+<script src="/assets/bh-feedback.js?v=063b82dd" defer></script>
 </body>
 </html>
