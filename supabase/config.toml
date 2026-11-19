@@ -28,3 +28,7 @@ verify_jwt = false
 # Admin "Resend confirmation": verifies the user's token and zermatt.admins membership in code
 [functions.zermatt-admin-resend]
 verify_jwt = false
+
+# Thank-you page status check: read-only, status + dates only, looked up by the guest's own Checkout session id
+[functions.zermatt-booking-status]
+verify_jwt = false

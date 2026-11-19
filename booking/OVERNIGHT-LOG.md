@@ -46,3 +46,9 @@ Builder done from review: ical_token hidden, hosts aal1 (2-step offered, require
 
 ## Merge 6 (00:15) - optimise ecb3257 -> main
 Booking result pages: 44px home link in header. Optimiser finished; its branch is fully on main. Checks pass.
+
+## Fix (00:17) - thank-you page now confirms the booking
+The site promises instant confirmation but /booking-confirmed said "We're confirming your booking now".
+- New read-only Edge Function zermatt-booking-status (deployed, verify_jwt off): looks up the guest's own Stripe Checkout session id, returns status + reference + dates only (no name/email/phone). Rewrite /api/booking-status.
+- /booking-confirmed polls every 2s: "Booking confirmed" + reference + dates once the webhook marks it paid; after 20s shows "taking a little longer, email on its way"; clash shows the refund message.
+- Zermatt checkout, webhook and booking JS untouched.

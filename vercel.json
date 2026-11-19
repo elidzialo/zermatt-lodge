@@ -28,6 +28,10 @@
     {
       "source": "/api/signup",
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-signup"
+    },
+    {
+      "source": "/api/booking-status",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-booking-status"
     }
   ],
   "headers": [
