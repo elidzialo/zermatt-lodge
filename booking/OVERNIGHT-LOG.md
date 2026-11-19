@@ -43,3 +43,6 @@ llms.txt booking facts (Stripe checkout, confirmed on payment, total includes cl
 ## Builder first push (00:05) - marketplace 6eee563
 SQL + bookhomes-* function sources only (no front end yet). Builder reports it already applied the bookhomes schema to the live Supabase DB and deployed bookhomes-availability, -listings, -create-checkout. Additive only (zermatt schema untouched); verified Zermatt availability still live after this.
 Builder done from review: ical_token hidden, hosts aal1 (2-step offered, required for Stripe payouts), identity GENERATED ALWAYS, 'edited since approval' flag, calendar range capped.
+
+## Merge 6 (00:15) - optimise ecb3257 -> main
+Booking result pages: 44px home link in header. Optimiser finished; its branch is fully on main. Checks pass.
