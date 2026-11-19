@@ -256,6 +256,7 @@ $$(".tabs button").forEach(function(b){ b.addEventListener("click", function(){
 }); });
 var STATUS = {draft: "Draft", pending: "Waiting for approval", approved: "Live", rejected: "Changes needed", paused: "Paused"};
 function renderDash(){
+  try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "me", me: ME}})); } catch (e) {}
   var p = ME.profile || {}, ls = ME.listings || [];
   $("#approvalNote").innerHTML = p.approved ? "" : '<div class="notice"><b>Your host account is waiting for approval.</b> You can add and submit listings now. We check every host and listing, usually within one working day.' + (p.rejected_reason ? "<br>Note from us: " + esc(p.rejected_reason) : "") + "</div>";
   $("#lcards").innerHTML = ls.length ? ls.map(function(l){
@@ -312,6 +313,7 @@ $("#connectBtn").addEventListener("click", function(){
 function loadBookings(){
   api("bookhomes-host", {action: "bookings"}).then(function(j){
     var rows = j.bookings || [];
+    try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "bookings", rows: rows}})); } catch (e) {}
     $("#bkList").innerHTML = rows.length ? rows.map(function(b){
       return '<div class="item"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.title) + '</span><span class="st ' + (b.status === "paid" ? "approved" : b.status === "held" ? "pending" : "draft") + '">' + esc(b.status === "paid" ? "Confirmed" : b.status === "held" ? "Paying now" : "Cancelled") + '</span></div>' +
         '<div class="m">' + dfmt(b.check_in) + " to " + dfmt(b.check_out) + " · " + b.nights + " nights · " + b.guests + " guests</div>" +
