@@ -17,6 +17,7 @@
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
                           <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
     SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
 -->
 <meta charset="utf-8">
@@ -41,7 +42,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/guide.css?v=80bbecfa">
+<link rel="stylesheet" href="/assets/guide.css?v=75a29145">
 </head>
 <body>
 <a class="skip" href="#content">Skip to main content</a>
@@ -264,6 +265,7 @@
 <a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
 <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
       </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Contractor, business and work stays</h3><ul><li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58 in Liverpool</a></li><li><a href="/guides/contractor-accommodation-liverpool">Contractor Accommodation in Liverpool with Parking</a></li><li><a href="/guides/film-crew-accommodation-liverpool">Film Crew Accommodation in Liverpool: A House for Your Unit</a></li><li><a href="/guides/kirkby-knowsley-business-park-accommodation">Accommodation near Knowsley Business Park &amp; Kirkby</a></li><li><a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport and Port Work Stays: Where to Base</a></li><li><a href="/guides/locum-and-agency-nurse-accommodation-liverpool">Locum &amp; Agency Nurse Accommodation in Liverpool</a></li><li><a href="/guides/long-stay-accommodation-liverpool">Long Stay Accommodation in Liverpool: A Practical Guide</a></li><li><a href="/guides/skelmersdale-work-accommodation">Skelmersdale Work Accommodation: Stay on the Liverpool Side</a></li></ul><a class="all" href="/guides#work-stays">All guides by topic ›</a></nav>
     </div>
   </section>
 </main>
@@ -288,6 +290,9 @@
         <h2>Liverpool guides</h2>
         <ul>
           <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>
