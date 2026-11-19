@@ -32,7 +32,8 @@
 <link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1920,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" imagesrcset="https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85 800w, https://assets.guesty.com/image/upload/w_1280,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85 1280w, https://assets.guesty.com/image/upload/w_1920,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85 1920w, https://assets.guesty.com/image/upload/w_2560,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <script>document.documentElement.classList.add("js")</script>
 <style>
 :root{
@@ -329,6 +330,13 @@ button.link{min-height:44px}
 .near .nt small{font-size:13px;color:var(--muted)}
 .map{border-radius:20px;overflow:hidden;min-height:380px;border:1px solid var(--line);background:var(--soft)}
 .map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+.map{display:flex}
+.map-load{flex:1;min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:24px;text-align:center;color:var(--brand-ink);background:radial-gradient(circle at 50% 45%,#fff 0,var(--brand-tint) 70%)}
+.map-load svg{width:40px;height:40px;color:var(--brand)}
+.map-load b{font-size:16px;text-decoration:underline;text-underline-offset:3px}
+.map-load small{font-size:13px;color:var(--muted);max-width:280px}
+.map-load:hover b{color:var(--brand)}
+.map iframe{flex:1}
 
 /* Guides */
 .guides-sec{background:var(--soft)}
@@ -983,7 +991,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       <h2 class="serif h2" id="locH">Where you'll be</h2>
       <p class="lead" style="margin-top:12px">The house is in Fazakerley, a residential area of north Liverpool next to Aintree, about 15 minutes from Liverpool city centre by Merseyrail and close to the M57 and M58. The exact address is shared after booking.</p>
     </div>
-    <div class="map"><iframe title="Map of Fazakerley, north Liverpool" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Fazakerley,%20Liverpool,%20UK&amp;t=m&amp;z=13&amp;output=embed"></iframe></div>
+    <div class="map" id="mapBox"><button type="button" class="map-load" id="mapLoad" data-src="https://maps.google.com/maps?q=Fazakerley,%20Liverpool,%20UK&amp;t=m&amp;z=13&amp;output=embed"><svg aria-hidden="true"><use href="#i-map"/></svg><b>Show map of Fazakerley, north Liverpool</b><small>Loads Google Maps. The exact address is shared after booking.</small></button></div>
   </div>
   <!-- SEO:NEARBY -->
   <div class="nearby reveal" id="nearby">
@@ -1268,6 +1276,15 @@ document.addEventListener("keydown", function(e){
 var tx = 0;
 v.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive:true});
 v.addEventListener("touchend", function(e){ var d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 40) show(cur + (d < 0 ? 1 : -1)); });
+
+/* Map: load Google Maps only when asked (saves several hundred KB of third-party JS on most visits) */
+var mapBtn = $("#mapLoad");
+if (mapBtn) mapBtn.addEventListener("click", function(){
+  var f = document.createElement("iframe");
+  f.title = "Map of Fazakerley, north Liverpool"; f.src = mapBtn.getAttribute("data-src");
+  f.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+  mapBtn.parentNode.replaceChild(f, mapBtn); f.focus();
+});
 
 /* Show more */
 var moreBtn = $("#moreBtn");
