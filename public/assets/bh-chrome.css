@@ -31,3 +31,6 @@ footer.ft .ft-legal{display:flex;justify-content:space-between;flex-wrap:wrap;ga
   footer.ft .ft-cols>div{padding:20px 0;border-bottom:1px solid var(--line)}
   footer.ft .ft-legal{border-top:0;flex-direction:column}
 }
+/* footer with "What's on this month" column (optimiser) */
+@media (min-width:901px){.ft-cols.ft-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:641px) and (max-width:900px){.ft-cols.ft-4{grid-template-columns:repeat(2,minmax(0,1fr))}}

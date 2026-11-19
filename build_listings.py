@@ -53,9 +53,9 @@ RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "beco
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
             "listing", "listings", "data", "public", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
-HOME_TITLE = "Book Homes - Holiday Homes & Serviced Accommodation in Liverpool | Book Direct, No Booking Fees"
+HOME_TITLE = "Holiday Homes in Liverpool | Book Direct, No Booking Fees | Book Homes"
 HOME_DESC = ("Book whole holiday homes and serviced accommodation in Liverpool direct with the host. "
-             "Total prices with no booking fees, instant confirmation and secure card checkout.")
+             "Total prices, no booking fees, secure card checkout.")
 
 
 def esc(s):
@@ -267,17 +267,32 @@ def asset_v(name):
 # --------------------------------------------------------------------------- shared chrome
 LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/>'
         '<path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>')
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">\n')
+_FONT_CSS = "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+# Fonts load without blocking first paint (system font shows until Plus Jakarta Sans arrives, display=swap).
+FONTS = ('<link rel="preconnect" href="https://assets.guesty.com" crossorigin>'
+         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+         f'<link rel="preload" as="style" href="{_FONT_CSS}" onload="this.onload=null;this.rel=\'stylesheet\'">'
+         f'<noscript><link rel="stylesheet" href="{_FONT_CSS}"></noscript>\n')
 
 
-def head(title, desc, path, robots="index, follow", extra="", schema=None, og_image=None, body_class=""):
+def lcp_preload(url, widths, sizes, w=720):
+    """<link rel=preload> for the first (LCP) photo, matching the <img> srcset/sizes so the browser fetches one file."""
+    if not url:
+        return ""
+    ss = srcset(url, widths)
+    return (f'<link rel="preload" as="image" href="{esc(img(url, w))}"'
+            + (f' imagesrcset="{esc(ss)}" imagesizes="{sizes}"' if ss else "") + ' fetchpriority="high">\n')
+
+
+def head(title, desc, path, robots="index, follow", extra="", schema=None, og_image=None, body_class="", preload=""):
     canon = DOMAIN + path
     ld = ""
     if schema:
         ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
     bc = f' class="{body_class}"' if body_class else ""
+    if path == "/":  # Google Search Console ownership (URL-prefix property https://bookhomes.co.uk/); keep it
+        extra = '<meta name="google-site-verification" content="iocZScMiB0yr7m73VVQrB4McHqrM8MyLEgvAAMcwBj4">\n' + extra
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -292,7 +307,8 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
 <meta property="og:type" content="website"><meta property="og:site_name" content="Book Homes"><meta property="og:locale" content="en_GB">
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canon)}">{og}
 <meta name="twitter:card" content="summary_large_image">
-{FONTS}<link rel="stylesheet" href="/assets/bh.css?v={asset_v('bh.css')}">
+{preload}{FONTS}<link rel="stylesheet" href="/assets/bh.css?v={asset_v('bh.css')}">
+<script src="/assets/bh-track.js?v={asset_v('bh-track.js')}" defer></script>
 {extra}{ld}</head>
 <body{bc}>
 {sprite()}
@@ -317,14 +333,49 @@ def header(kind="page"):
 """
 
 
+# "What's on" footer links: guides that match this month or next (by words in the slug), so the
+# links rotate with the season every time the site is rebuilt.
+MONTH_WORDS = {
+    1: ["january", "new-year", "winter"], 2: ["february", "half-term", "winter"], 3: ["march", "easter", "grand-national"],
+    4: ["april", "easter", "grand-national"], 5: ["may", "bank-holiday"], 6: ["june", "summer"], 7: ["july", "summer"],
+    8: ["august", "beatleweek", "summer"], 9: ["september", "graduation"], 10: ["october", "half-term", "halloween", "light-night"],
+    11: ["november", "christmas", "winter", "ice-skating", "lights"],
+    12: ["december", "christmas", "panto", "boxing-day", "new-year", "winter", "becher"],
+}
+MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+
+
+def whats_on(n=5, today=None):
+    import datetime
+    today = today or datetime.date.today()
+    cur, nxt = today.month, today.month % 12 + 1
+    other = [m for i, m in enumerate(MONTHS, 1) if i not in (cur, nxt)]
+    scored = []
+    for g in _guides_cached():
+        s = g["slug"]
+        years = [int(y) for y in re.findall(r"(20\d\d)", s)]
+        if any(m in s.split("-") for m in other) or (years and max(years) < today.year):
+            continue  # about another month, or a past year
+        parts = s.split("-")
+        score = (2 * sum(w in s for w in MONTH_WORDS[cur]) + sum(w in s for w in MONTH_WORDS[nxt])
+                 + 3 * (MONTHS[cur - 1] in parts) + 2 * (MONTHS[nxt - 1] in parts))  # dated "what's on" guides first
+        if score:
+            scored.append((-score, g["priority"], s, g))
+    return [g for *_, g in sorted(scored)[:n]]
+
+
 def footer():
     tel = PHONE.replace(" ", "")
+    wo = whats_on()
+    wo_html = ("<div><h2>What's on this month</h2>" + "".join(f'<a href="/guides/{esc(g["slug"])}">{esc(g["title"])}</a>' for g in wo)
+               + "</div>") if wo else ""
     sup = (f'<a href="tel:{tel}">{esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">{esc(EMAIL)}</a>' if EMAIL else "")
     return f"""<footer class="ft"><div class="wrap">
-  <div class="ft-cols">
+  <div class="ft-cols{' ft-4' if wo_html else ''}">
     <div><h2>Book Homes</h2><a href="/">All homes</a><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
     <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
+    {wo_html}
   </div>
   <div class="ft-legal"><span>© 2026 Book Homes, Liverpool</span><span>A booking platform. Each stay is provided by its host. No booking fees for guests.</span></div>
 </div></footer>
@@ -349,6 +400,13 @@ CAT_CLUSTERS = {
     "long_stay": ["work-stays", "practical"], "family": ["groups-families"], "groups": ["groups-families"],
     "city": ["things-to-do", "food-drink"], "coast": ["day-trips"], "countryside": ["day-trips"],
 }
+
+
+def _guides_cached():
+    global _GUIDES
+    if "_GUIDES" not in globals():
+        _GUIDES = load_guides()
+    return _GUIDES
 
 
 def load_guides():
@@ -495,6 +553,8 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
               "isPartOf": {"@id": DOMAIN + "/#website"}, "inLanguage": "en-GB",
               "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown), "itemListElement": [
                   {"@type": "ListItem", "position": i + 1, "url": DOMAIN + l["url"], "name": l["title"]} for i, l in enumerate(shown)]}}]
+    if not shown:
+        graph[-1].pop("mainEntity", None)  # no empty ItemList (Search Console flags it)
     if path != "/":
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Book Homes", "item": DOMAIN + "/"},
@@ -520,7 +580,9 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     count = f'{len(shown)} home{"s" if len(shown) != 1 else ""}'
     extra = f'<link rel="stylesheet" href="/assets/bh-booking.css?v={asset_v("bh-booking.css")}">\n'
     og = img(shown[0]["card_photos"][0]["url"], 1200) if shown and shown[0]["card_photos"] else None
-    return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home") +
+    first = shown[0]["card_photos"][0]["url"] if shown and shown[0]["card_photos"] else None
+    pre = lcp_preload(first, (480, 720, 1080), "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw")
+    return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home", preload=pre) +
             f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>
 <header class="top" id="top">
   <div class="wrap top-row">
@@ -965,7 +1027,8 @@ def listing_page(l, reviews, guides, ex):
     og = ex.get("og_image") or (img(photos[0]["url"], 1200) if photos else None)
     cfg = json.dumps(stay_config(l, ex))
     offer = OFFER + f'<script src="/assets/offer.js?v={asset_v("offer.js")}" defer></script>\n' if ex.get("offer") else ""
-    return (head(title, desc, path, extra=listing_assets(), schema=vacation_schema(l, path, reviews, ex), og_image=og, body_class="has-mbook listing")
+    pre = lcp_preload(photos[0]["url"], (480, 720, 1080, 1600), "(max-width:860px) 100vw, 50vw", 1080) if photos else ""
+    return (head(title, desc, path, extra=listing_assets(), schema=vacation_schema(l, path, reviews, ex), og_image=og, body_class="has-mbook listing", preload=pre)
             + header("listing") + listing_body(l, reviews, guides, ex) + f"<script>window.STAY = {cfg};</script>\n" + listing_scripts()
             + offer + footer() + end())
 

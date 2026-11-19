@@ -519,3 +519,6 @@ details>p{margin-top:10px;color:var(--ink-2)}
   .hostlink{display:none}
 }
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* footer with "What's on this month" column (optimiser) */
+@media (min-width:901px){.ft-cols.ft-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:641px) and (max-width:900px){.ft-cols.ft-4{grid-template-columns:repeat(2,minmax(0,1fr))}}

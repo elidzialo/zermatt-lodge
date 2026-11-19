@@ -8,6 +8,7 @@ import markdown, yaml
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = os.environ.get("SITE_DOMAIN", "https://bookhomes.co.uk").rstrip("/")
 TPL = open(os.path.join(ROOT, "design/guide-template.html"), encoding="utf-8").read()
+TPL = re.sub(r"<!--.*?-->\s*", "", TPL, count=1, flags=re.S)  # template docs comment: not shipped to visitors
 # Move shared CSS + icon sprite out of each guide page into cached files
 os.makedirs(os.path.join(ROOT, "assets"), exist_ok=True)
 _css = re.search(r"<style[^>]*>(.*?)</style>", TPL, re.S)
@@ -45,6 +46,7 @@ from bh_icons import sprite as _sprite
 SITE_HEADER = _sprite(["menu", "user"]) + build_listings.header("page")
 SITE_FOOTER = build_listings.footer()
 TPL = TPL.replace("</head>", f'<link rel="stylesheet" href="/assets/bh-chrome.css?v={build_listings.asset_v("bh-chrome.css")}">\n</head>', 1)
+TPL = TPL.replace("</head>", f'<script src="/assets/bh-track.js?v={build_listings.asset_v("bh-track.js")}" defer></script>\n</head>', 1)
 TPL = TPL.replace("{{SITE_HEADER}}", SITE_HEADER).replace("{{SITE_FOOTER}}", SITE_FOOTER)
 
 topics = {r["slug"]: r for r in csv.DictReader(open(os.path.join(ROOT, "content/topic-map.csv"), encoding="utf-8"))}
@@ -185,14 +187,14 @@ for slug, (meta, body) in pages.items():
               .replace("{{SCHEMA_JSON}}", json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")))
     if not faqs:
         out = strip_empty_faq(out)
-    assert "{{" not in out.split("-->", 1)[1], slug
+    assert "{{" not in out, slug
     d = os.path.join(ROOT, "guides", slug); os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(out)
     urls.append(canon)
 
 # Guides hub page, built from the same template
-hub_meta_desc = "Practical Liverpool guides from the hosts of Zermatt Lodge: hospital visits, Grand National, match days, contractor and group stays."
-hub = (TPL.replace("{{TITLE}}", "Liverpool Guides | Zermatt Lodge")
+hub_meta_desc = "Practical Liverpool guides from Book Homes hosts: hospital visits, Grand National, match days, events, contractor and group stays."
+hub = (TPL.replace("{{TITLE}}", "Liverpool Guides for Groups, Families and Work Stays | Book Homes")
           .replace("{{META_DESCRIPTION}}", hub_meta_desc).replace("{{CANONICAL}}", f"{DOMAIN}/guides")
           .replace("{{H1}}", "Liverpool guides for groups, families and work stays")
           .replace("{{BREADCRUMB}}", "All guides").replace("{{INTRO}}", hub_meta_desc)
@@ -215,11 +217,35 @@ hub = re.sub(r'\s*<section class="related sec".*?</section>', "", hub, count=1, 
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
 open(os.path.join(ROOT, "guides/index.html"), "w", encoding="utf-8").write(hub)
 
+# llms-full.txt / llms.txt: keep the guide list in step with the published guides (AI assistants read these)
+def _llms_guides():
+    out = []
+    for anchor, label, members in CLUSTERS:
+        sl = [x for x in pages if topics.get(x, {}).get("cluster") in members]
+        if sl:
+            out.append(f"### {label}\n\n" + "\n".join(f"- {pages[x][0]['title']}: {DOMAIN}/guides/{x}" for x in sl))
+    rest = [x for x in pages if not cluster_of(x)]
+    if rest:
+        out.append("### Neighbourhoods, food and more\n\n" + "\n".join(f"- {pages[x][0]['title']}: {DOMAIN}/guides/{x}" for x in rest))
+    return "\n\n".join(out) + "\n\n"
+_lf = os.path.join(ROOT, "llms-full.txt")
+_txt = open(_lf, encoding="utf-8").read()
+_m = re.search(r"(## Liverpool guides\n.*?\n)(### .*?)(## Other pages)", _txt, re.S)
+if _m:
+    _txt = _txt[:_m.start(2)] + _llms_guides() + _txt[_m.start(3):]
+    open(_lf, "w", encoding="utf-8").write(_txt)
+_l = os.path.join(ROOT, "llms.txt")
+_txt = re.sub(r"\[All [0-9+]+ guides by topic\]", f"[All {len(pages)} guides by topic]", open(_l, encoding="utf-8").read())
+open(_l, "w", encoding="utf-8").write(_txt)
+
 # Marketplace: "/" (all listings), /<slug> listing pages, kosher landing, host landing, legal pages (build_listings.py)
 urls += build_listings.build()
 
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-sm += [f"  <url><loc>{u}</loc><lastmod>2026-11-18</lastmod></url>" for u in urls]
+# lastmod: each guide's own last_updated; other pages get the newest guide date (keeps the build deterministic)
+_lm = {f"{DOMAIN}/guides/{sl}": str(m.get("last_updated") or "") for sl, (m, _) in pages.items()}
+_newest = max([d for d in _lm.values() if d] or ["2026-11-18"])
+sm += [f"  <url><loc>{u}</loc><lastmod>{_lm.get(u) or _newest}</lastmod></url>" for u in dict.fromkeys(urls)]
 sm.append("</urlset>")
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(sm) + "\n")
 print(f"built {len(pages)} guides + hub, sitemap {len(urls)} urls")
@@ -229,7 +255,8 @@ print(f"built {len(pages)} guides + hub, sitemap {len(urls)} urls")
 import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
-for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
+INDEXNOW_KEY = "00d622ef355b6708bc52633c7be81118"  # IndexNow (Bing, Yandex, Seznam...): key file served at /00d622ef355b6708bc52633c7be81118.txt
+for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
             "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
