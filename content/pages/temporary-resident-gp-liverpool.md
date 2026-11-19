@@ -3,6 +3,7 @@ title: "Seeing a GP as a Temporary Resident in Liverpool"
 meta_description: "Need a doctor while staying in Liverpool? Registering as a temporary GP patient, NHS 111, the city's urgent treatment centres and when to use A&E."
 slug: temporary-resident-gp-liverpool
 h1: "Seeing a GP as a Temporary Resident in Liverpool: GPs, 111, Walk-in Centres and A&E"
+quick_answer: "You can register with a Liverpool GP surgery as a temporary patient for up to three months, without ID or proof of address. For anything that cannot wait, use NHS 111, an urgent treatment or walk-in centre (open 8am to 8pm every day), or A&E for emergencies."
 primary_keyword: "temporary resident gp liverpool"
 secondary_keywords:
   - "walk-in centre liverpool"

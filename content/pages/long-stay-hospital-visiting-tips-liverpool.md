@@ -3,6 +3,7 @@ title: "Long Hospital Stays in Liverpool: Tips for Families"
 meta_description: "Relative in a Liverpool hospital for weeks? Parking concessions compared, visiting rotas, meals, laundry and keeping children in a routine."
 slug: long-stay-hospital-visiting-tips-liverpool
 h1: "Long Hospital Stays in Liverpool: Practical Tips for Families"
+quick_answer: "When a relative is in a Liverpool hospital for weeks, sort the parking concession on day one, agree a visiting rota and stay somewhere you can cook, sleep and do laundry. Zermatt Lodge is a whole house near Aintree University Hospital with free parking for two cars."
 primary_keyword: "long hospital stay family tips liverpool"
 secondary_keywords:
   - "weekly hospital parking liverpool"

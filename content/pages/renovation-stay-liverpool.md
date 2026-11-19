@@ -3,6 +3,7 @@ title: "Staying Elsewhere During a Renovation in Liverpool"
 meta_description: "Moving out while your Liverpool home is renovated? How to plan timings, allow for slippage, handle party wall notices, and book a 4-bed house nearby."
 slug: renovation-stay-liverpool
 h1: "Renovating Your Liverpool Home? How to Plan a Stay Elsewhere"
+quick_answer: "During a major renovation, moving into a furnished house nearby lets the family live normally while the work is done. Zermatt Lodge is a whole 4-bedroom house in north Liverpool with a full kitchen, two bathrooms and free parking for two cars."
 primary_keyword: "accommodation during renovation liverpool"
 secondary_keywords:
   - "where to live during house renovation liverpool"

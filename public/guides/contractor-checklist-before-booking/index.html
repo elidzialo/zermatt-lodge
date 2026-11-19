@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contractor Accommodation Checklist: 12 Questions to Ask</title>
+<meta name="description" content="Booking accommodation for a work crew in Liverpool? 12 questions to ask about beds, parking, laundry, cleaning, invoices and rules before you pay.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/contractor-checklist-before-booking">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Contractor Accommodation Checklist: 12 Questions to Ask">
+<meta property="og:description" content="Booking accommodation for a work crew in Liverpool? 12 questions to ask about beds, parking, laundry, cleaning, invoices and rules before you pay.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/contractor-checklist-before-booking">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Contractor Accommodation Checklist: 12 Questions to Ask Before You Book", "description": "Booking accommodation for a work crew in Liverpool? 12 questions to ask about beds, parking, laundry, cleaning, invoices and rules before you pay.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/contractor-checklist-before-booking", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Contractor Accommodation Checklist: 12 Questions to Ask", "item": "https://bookhomes.co.uk/guides/contractor-checklist-before-booking"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the most important thing to check for a work crew?", "acceptedAnswer": {"@type": "Answer", "text": "Real beds for every worker, not sofa beds, and parking for your vans. After that, laundry, a full kitchen and a clear invoice."}}, {"@type": "Question", "name": "Can contractors claim accommodation costs?", "acceptedAnswer": {"@type": "Answer", "text": "Often, when working at a temporary workplace. LITRG explains that travel expenses can include accommodation where there's an overnight stay, and that a workplace stops being temporary after more than 24 months of continuous work there. Check HMRC guidance for your circumstances."}}, {"@type": "Question", "name": "Why do some hosts ask for ID and a rental agreement?", "acceptedAnswer": {"@type": "Answer", "text": "To confirm who's staying and agree the house rules and responsibility for damage in writing. It's normal for whole-home rentals and protects both sides."}}, {"@type": "Question", "name": "Is a house better than a hotel for contractors?", "acceptedAnswer": {"@type": "Answer", "text": "For crews of 3 or more on stays of several nights, a house often works better: one booking, parking, a kitchen and laundry. For one or two people on a single night, a hotel is simpler."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Contractor Accommodation Checklist: 12 Questions to Ask</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Contractor Accommodation Checklist: 12 Questions to Ask Before You Book</h1>
+      <p class="intro">Booking accommodation for a work crew in Liverpool? 12 questions to ask about beds, parking, laundry, cleaning, invoices and rules before you pay.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Living room seating area at Zermatt Lodge holiday house" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Before you book accommodation for a work crew, check twelve things: real beds for everyone, parking for your vans, a full kitchen, laundry, cleaning during long stays, quiet hours, Wi-Fi, check-in times that suit shifts, the cancellation policy, how payment works, whether you'll get a proper invoice, and the house rules. Getting these right avoids the most common problems: tired workers, parking tickets and expense claims that bounce. This checklist works for any provider. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for 2 cars, about 15 minutes by train from Liverpool city centre and minutes from the M57 and M58.</p></div>
+          <p>Before you book accommodation for a work crew, check twelve things: real beds for everyone, parking for your vans, a full kitchen, laundry, cleaning during long stays, quiet hours, Wi-Fi, check-in times that suit shifts, the cancellation policy, how payment works, whether you'll get a proper invoice, and the house rules. Getting these right avoids the most common problems: tired workers, parking tickets and expense claims that bounce. This checklist works for any provider. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for 2 cars, about 15 minutes by train from Liverpool city centre and minutes from the M57 and M58.</p>
+<h2>The 12 questions</h2>
+<h3>1. Does every worker get a real bed?</h3>
+<p>Ask exactly how many beds there are and what size. "Sleeps 8" can mean six beds and a sofa bed. After a 10-hour shift, nobody wants the sofa.</p>
+<p><strong>Good answer:</strong> a bedroom-by-bedroom list, with bed sizes.</p>
+<h3>2. How many people per room?</h3>
+<p>Some crews are happy to share; many aren't. Ask whether any rooms are shared and whether there's a single room for a supervisor.</p>
+<h3>3. Where do the vans go?</h3>
+<p>This catches out more crews than anything else.</p>
+<ul>
+<li>How many vehicles can park <strong>off-street</strong>?</li>
+<li>Is there <strong>height clearance</strong> for high-top vans?</li>
+<li>Are there <strong>residents' parking zones</strong> nearby?</li>
+<li>Is the area safe to leave <strong>tools</strong> in vans overnight, or is there space to bring them inside?</li>
+</ul>
+<h3>4. Is there a full kitchen?</h3>
+<p>Eating out every night is expensive and gets old fast. Ask about:</p>
+<ul>
+<li>A proper <strong>oven and hob</strong>, not just a microwave</li>
+<li>A <strong>fridge-freezer</strong> big enough for a crew's food</li>
+<li>A <strong>dining table</strong> that seats everyone</li>
+<li>Where the nearest <strong>supermarket</strong> is</li>
+</ul>
+<h3>5. Is there a washing machine and dryer?</h3>
+<p>Work clothes need washing, often daily. A <strong>washing machine and tumble dryer</strong> in the property is close to essential for stays over a few nights.</p>
+<h3>6. How does cleaning work on long stays?</h3>
+<p>For stays of a week or more, ask:</p>
+<ul>
+<li>Is there a <strong>mid-stay clean</strong> or linen change, and does it cost extra?</li>
+<li>Can you get <strong>fresh towels</strong> during the stay?</li>
+<li>Who takes the <strong>bins</strong> out and when is collection day?</li>
+</ul>
+<h3>7. What are the house rules and quiet hours?</h3>
+<p>Crews often keep different hours to neighbours. Ask about quiet hours, smoking (usually banned inside), and whether there are rules on visitors. A property that's clear about rules is usually well managed.</p>
+<h3>8. Does check-in work with your shifts?</h3>
+<p>If your crew arrives at 9pm after a long drive, a 3pm reception check-in that closes at 6pm won't work. <strong>Self check-in</strong> with a lockbox or keypad is easier.</p>
+<p>Also ask about <strong>checkout time</strong> and whether a late checkout is possible on your last day.</p>
+<h3>9. Is the Wi-Fi good enough?</h3>
+<p>Supervisors need to send reports, and everyone wants to stream in the evening. Ask whether there's Wi-Fi and roughly what speed.</p>
+<h3>10. What's the cancellation policy?</h3>
+<p>Jobs move. Ask:</p>
+<ul>
+<li>How much notice do you need to give for a <strong>full refund</strong>?</li>
+<li>Can you <strong>shorten or extend</strong> the stay if the job changes?</li>
+<li>What happens if the <strong>start date slips</strong>?</li>
+</ul>
+<h3>11. How do you pay, and is it protected?</h3>
+<ul>
+<li>Pay by <strong>card on a secure checkout</strong>, or on a <strong>company account with an invoice</strong></li>
+<li>Avoid <strong>bank transfers</strong> to people you don't know. MoneySavingExpert warns that bank transfers give you very little protection if something goes wrong</li>
+<li>Ask whether there's a <strong>damage deposit or waiver</strong>, and how it's handled</li>
+</ul>
+<h3>12. Can you get a proper invoice?</h3>
+<p>Your accounts team will need one. Ask for:</p>
+<ul>
+<li>An invoice in your <strong>company's name</strong></li>
+<li>The <strong>dates, address and number of guests</strong></li>
+<li>A breakdown of the <strong>total</strong></li>
+<li><strong>VAT details</strong> if your provider is VAT-registered</li>
+</ul>
+<h2>A note on expenses and tax</h2>
+<p>If your workers are travelling to a <strong>temporary workplace</strong>, accommodation costs are often allowable. The Low Incomes Tax Reform Group (LITRG) explains:</p>
+<ul>
+<li>Travel expenses can include <strong>accommodation and subsistence</strong> where there's an overnight stay</li>
+<li>A workplace stops being temporary if someone works there continuously for <strong>more than 24 months</strong></li>
+<li>HMRC treats duties as significant at a workplace if someone spends <strong>40% or more</strong> of their time there</li>
+</ul>
+<p>HMRC's manual also says the 24-month rule is overridden for <strong>fixed-term appointments</strong> where someone works at one site for all, or almost all, of their employment. This is general information, not tax advice. Speak to your accountant about your crew's position.</p>
+<h2>Red flags</h2>
+<ul>
+<li><strong>No address until after payment</strong>, or photos that don't match street views</li>
+<li><strong>Pressure to pay by bank transfer</strong></li>
+<li><strong>No written house rules</strong> or terms</li>
+<li><strong>"Sleeps 10" with four bedrooms</strong></li>
+<li><strong>No phone number</strong>, or a host who won't speak on the phone</li>
+</ul>
+<h2>How Zermatt Lodge answers the checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Zermatt Lodge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beds</td>
+<td>4 bedrooms: king with en-suite, second king, queen and a single. Sleeps 7</td>
+</tr>
+<tr>
+<td>Bathrooms</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Free parking on the premises for 2 cars. Ask us before booking if you have large or high-top vans</td>
+</tr>
+<tr>
+<td>Kitchen</td>
+<td>Big, fully equipped kitchen and a separate dining room</td>
+</tr>
+<tr>
+<td>Laundry</td>
+<td>Washing machine and tumble dryer</td>
+</tr>
+<tr>
+<td>Check-in</td>
+<td>Self check-in with a lockbox from 3pm; checkout by 11am</td>
+</tr>
+<tr>
+<td>Wi-Fi</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Fazakerley, north Liverpool, minutes from the M57 and M58</td>
+</tr>
+<tr>
+<td>Payment</td>
+<td>Secure card payment via Stripe, no booking fees when booking direct</td>
+</tr>
+<tr>
+<td>Rules</td>
+<td>No parties or events, no smoking, no pets. Guest ID and a signed rental agreement required</td>
+</tr>
+</tbody>
+</table>
+<p>For crews of more than 7, or with more than two vans, you'd need a second property. Ask us about mid-stay cleaning and invoicing when you book.</p>
+<p>Aintree Shopping Park, with an M&amp;S Foodhall, B&amp;Q and Halfords, is a short drive away for food and supplies.</p>
+<h2>Staying at Zermatt Lodge</h2>
+<p>Zermatt Lodge is a whole house in a quiet residential part of Fazakerley, north Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre and close to the motorways for sites around Merseyside.</p>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled. Please respect the neighbours, especially with early starts.</p>
+<p><a href="/#book">Book direct</a> or see all our <a href="/stays">stays</a>, including homes filtered for work crews.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58</a></li>
+<li><a href="/guides/kirkby-knowsley-business-park-accommodation">Kirkby and Knowsley Business Park accommodation</a></li>
+<li><a href="/guides/long-stay-accommodation-liverpool">Long stay accommodation in Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>What&#x27;s the most important thing to check for a work crew?</summary><p>Real beds for every worker, not sofa beds, and parking for your vans. After that, laundry, a full kitchen and a clear invoice.</p></details>
+<details><summary>Can contractors claim accommodation costs?</summary><p>Often, when working at a temporary workplace. LITRG explains that travel expenses can include accommodation where there&#x27;s an overnight stay, and that a workplace stops being temporary after more than 24 months of continuous work there. Check HMRC guidance for your circumstances.</p></details>
+<details><summary>Why do some hosts ask for ID and a rental agreement?</summary><p>To confirm who&#x27;s staying and agree the house rules and responsibility for damage in writing. It&#x27;s normal for whole-home rentals and protects both sides.</p></details>
+<details><summary>Is a house better than a hotel for contractors?</summary><p>For crews of 3 or more on stays of several nights, a house often works better: one booking, parking, a kitchen and laundry. For one or two people on a single night, a hotel is simpler.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/kirkby-knowsley-business-park-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near Knowsley Business Park &amp; Kirkby</h3><p>One of Europe&#x27;s largest employment sites per Knowsley Council; short drive from Fazakerley, Headbolt Lane station and shift-pattern tips.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Contractor, business and work stays</h3><ul><li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58 in Liverpool</a></li><li><a href="/guides/contractor-accommodation-liverpool">Contractor Accommodation in Liverpool with Parking</a></li><li><a href="/guides/corporate-team-stay-liverpool">Corporate Team Stays in Liverpool: Booking a Whole House</a></li><li><a href="/guides/film-crew-accommodation-liverpool">Film Crew Accommodation in Liverpool: A House for Your Unit</a></li><li><a href="/guides/kirkby-knowsley-business-park-accommodation">Accommodation near Knowsley Business Park &amp; Kirkby</a></li><li><a href="/guides/liverpool-business-travel-guide">Business Travel to Liverpool: A Practical Guide</a></li><li><a href="/guides/liverpool-construction-pipeline-overview">Liverpool Construction Projects 2026-27: Where the Work Is</a></li><li><a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport and Port Work Stays: Where to Base</a></li><li><a href="/guides/locum-and-agency-nurse-accommodation-liverpool">Locum &amp; Agency Nurse Accommodation in Liverpool</a></li><li><a href="/guides/long-stay-accommodation-liverpool">Long Stay Accommodation in Liverpool: A Practical Guide</a></li><li><a href="/guides/nhs-agency-booking-accommodation-guide">Booking Accommodation for NHS Agency Staff in Liverpool: A Guide</a></li><li><a href="/guides/skelmersdale-work-accommodation">Skelmersdale Work Accommodation: Stay on the Liverpool Side</a></li><li><a href="/guides/van-parking-accommodation-liverpool">Accommodation with Van Parking in Liverpool: An Honest Guide</a></li></ul><a class="all" href="/guides#work-stays">All guides by topic ›</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

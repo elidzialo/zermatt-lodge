@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accommodation with Van Parking in Liverpool: An Honest Guide</title>
+<meta name="description" content="Need a Liverpool work stay with space for vans? What to ask hosts, car park height limits, tunnel tolls, tool security and why many crews park on site.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/van-parking-accommodation-liverpool">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Accommodation with Van Parking in Liverpool: An Honest Guide">
+<meta property="og:description" content="Need a Liverpool work stay with space for vans? What to ask hosts, car park height limits, tunnel tolls, tool security and why many crews park on site.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/van-parking-accommodation-liverpool">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Accommodation with Van Parking in Liverpool: What Tradespeople Should Check", "description": "Need a Liverpool work stay with space for vans? What to ask hosts, car park height limits, tunnel tolls, tool security and why many crews park on site.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/van-parking-accommodation-liverpool", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Accommodation with Van Parking in Liverpool: An Honest Guide", "item": "https://bookhomes.co.uk/guides/van-parking-accommodation-liverpool"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I park a van in Liverpool city centre car parks?", "acceptedAnswer": {"@type": "Answer", "text": "Many multi-storeys have low height limits. Liverpool City Council lists 2.1m for Paddington Village and Victoria Street, 2.06m for Mount Pleasant, and King's Dock at 3.1m on the ground floor only, with 2.1m on upper levels. Check your van's height, including roof racks."}}, {"@type": "Question", "name": "Does Liverpool have a Clean Air Zone charge for vans?", "acceptedAnswer": {"@type": "Answer", "text": "No. Liverpool City Council moved away from a charging Clean Air Zone in 2022 and chose other measures instead, such as traffic signal changes and idling enforcement."}}, {"@type": "Question", "name": "How do I keep tools safe in a van overnight?", "acceptedAnswer": {"@type": "Answer", "text": "Police advice is to take tools out overnight where possible or use a tool vault, mark tools with your postcode and register serial numbers, park on a driveway or in a well-lit spot, and use extra locks, an alarm and a tracker."}}, {"@type": "Question", "name": "Does Zermatt Lodge have van parking?", "acceptedAnswer": {"@type": "Answer", "text": "Zermatt Lodge has free off-street parking for 2 cars. We don't list it as having van parking, so please ask us about your vehicle's size before booking."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Accommodation with Van Parking in Liverpool: An Honest Guide</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Accommodation with Van Parking in Liverpool: What Tradespeople Should Check</h1>
+      <p class="intro">Need a Liverpool work stay with space for vans? What to ask hosts, car park height limits, tunnel tolls, tool security and why many crews park on site.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Big fitted kitchen at Zermatt Lodge, Liverpool" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>If your crew is coming to Liverpool with vans, don't just look for "free parking" on a listing. Ask the host how many vehicles fit off-street, how long and high the space is, and whether vans are allowed. Many homes have driveways sized for cars, and city-centre multi-storeys often have height limits of around 2.1m. The good news is that Liverpool has no Clean Air Zone charge, and the suburbs near the M57 and M58 give quicker access to sites across the city region than the centre does. This guide covers what to ask, where vans can and can't go, and how to keep tools safe.</p></div>
+          <p>If your crew is coming to Liverpool with vans, don't just look for "free parking" on a listing. Ask the host how many vehicles fit off-street, how long and high the space is, and whether vans are allowed. Many homes have driveways sized for cars, and city-centre multi-storeys often have height limits of around 2.1m. The good news is that Liverpool has no Clean Air Zone charge, and the suburbs near the M57 and M58 give quicker access to sites across the city region than the centre does. This guide covers what to ask, where vans can and can't go, and how to keep tools safe.</p>
+<p>We'll be upfront about our own house too: Zermatt Lodge in north Liverpool has free off-street parking for <strong>2 cars</strong>. We don't list it as having van parking, so if you're bringing vans, please ask before booking.</p>
+<h2>Why van parking matters more than people think</h2>
+<p>For a tradesperson, the van is the office, the stores and the toolbox. A bad parking set-up costs you time and money:</p>
+<ul>
+<li><strong>Overnight risk:</strong> a van left on a dark street is a target for tool theft.</li>
+<li><strong>Lost time:</strong> driving round looking for a space at the end of a shift is the last thing you want.</li>
+<li><strong>Fines:</strong> parking on yellow lines, in permit zones or across a neighbour's drive can mean penalty charges.</li>
+<li><strong>Neighbour complaints:</strong> large vans on narrow residential streets can cause friction, especially if they block light or access.</li>
+</ul>
+<h2>Questions to ask any host</h2>
+<p>Send these before you book.</p>
+<ol>
+<li><strong>How many vehicles can park off-street?</strong> Is that cars, or vans?</li>
+<li><strong>What are the dimensions</strong> of the parking space: length, width and any height limit, such as a carport or gate?</li>
+<li><strong>Is it a private drive,</strong> a shared car park or on-street?</li>
+<li><strong>Are there permit or residents' parking restrictions</strong> on the street?</li>
+<li><strong>Is the space lit at night?</strong> Is there CCTV?</li>
+<li><strong>Can a van be loaded and unloaded</strong> without blocking the road or a neighbour?</li>
+<li><strong>Is commercial vehicle parking allowed</strong> under the property's rules or lease?</li>
+<li><strong>What time do people usually leave</strong> in the morning, and will vans block each other in?</li>
+</ol>
+<p>Ask for a photo of the parking area. If the host is vague, assume there's room for cars only.</p>
+<h2>Height limits in Liverpool car parks</h2>
+<p>If you can't park at your accommodation, or you need to park in town for a job, height is the big issue. Liverpool City Council lists these limits for its multi-storey car parks:</p>
+<table>
+<thead>
+<tr>
+<th>Car park</th>
+<th>Height limit</th>
+<th>Hours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>King's Dock</td>
+<td>3.1m on the ground floor only, 2.1m on upper levels</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td>Mount Pleasant</td>
+<td>2.06m</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td>Paddington Village</td>
+<td>2.1m</td>
+<td>24 hours</td>
+</tr>
+<tr>
+<td>Victoria Street</td>
+<td>2.1m</td>
+<td>24 hours</td>
+</tr>
+</tbody>
+</table>
+<p>Most medium and large panel vans, especially with a roof rack or ladders, won't fit under 2.1m. The council's surface car parks have no height limit listed, but several of them only open from 7.30am to 7.30pm, so they're no use for overnight parking.</p>
+<p><strong>Always measure your van, including roof racks and ladders,</strong> and check the sign at the entrance.</p>
+<h2>Driving a van around Liverpool</h2>
+<h3>No Clean Air Zone charge</h3>
+<p>Liverpool City Council decided in 2022 to move away from a charging Clean Air Zone. It chose other measures instead, such as changing traffic signals, improving bus stops and enforcing engine idling rules. So there's no daily charge for older vans in Liverpool.</p>
+<h3>Mersey Tunnel tolls</h3>
+<p>If your work takes you to the Wirral, the Mersey tunnels are tolled. Merseytravel lists the standard car toll at £2.00. Vans can fall into a higher class, so check the class for your vehicle on Merseytravel's site. Payment is by cash or card at the booths, or with a T-FLOW pre-paid account. Merseytravel says older Fast Tags are being replaced by T-FLOW.</p>
+<h3>Using the motorways</h3>
+<p>North Liverpool sits near the ends of the <strong>M57</strong> and <strong>M58</strong>, which link to the M62 and M6. For sites at Knowsley, Kirkby, Aintree and Skelmersdale, or further out in Lancashire and Cheshire, starting from the north of the city means you avoid the city-centre traffic. Knowsley Safari's own directions, for example, use junction 6 of the M62 to join the M57, then junction 2. See our <a href="/guides/accommodation-near-m57-m58-liverpool">M57 and M58 accommodation guide</a>.</p>
+<h2>Keeping tools safe</h2>
+<p>Police advice on van security, from Avon and Somerset Police's guidance for tradespeople, includes:</p>
+<ul>
+<li><strong>Take tools out overnight,</strong> or fit a tool safe or van vault with approved locks.</li>
+<li><strong>Mark tools and boxes</strong> with your postcode and house number, and register serial numbers on immobilise.com.</li>
+<li><strong>Park on a driveway or in a garage</strong> overnight if possible. Otherwise choose somewhere well lit and busy, ideally in view of CCTV.</li>
+<li><strong>Park close to a wall or hedge</strong> to block access to some doors.</li>
+<li><strong>Fit extra locks,</strong> such as deadlocks and slam locks, and use the factory deadlocks.</li>
+<li><strong>Use a Thatcham-approved alarm and immobiliser,</strong> and set it every time.</li>
+<li><strong>Consider a tracker,</strong> especially for leased vans.</li>
+<li><strong>Keep keys in an RFID-blocking pouch</strong> to prevent relay attacks.</li>
+<li><strong>Tell your insurer</strong> if you park overnight on private property, as it may lower your premium.</li>
+</ul>
+<p>If your accommodation has space indoors for tools, ask whether you can bring them in overnight. Many hosts are fine with it if you're careful with floors and walls.</p>
+<h2>Options if your accommodation is car-only</h2>
+<p>If the place you like only fits cars:</p>
+<ul>
+<li><strong>Swap vans for cars</strong> for the commute and leave the vans at the yard or site compound, if your site allows it.</li>
+<li><strong>Bring one van</strong> and car-share in a crew car.</li>
+<li><strong>Rent a secure parking space nearby</strong> through a parking app.</li>
+<li><strong>Look for a different property</strong> with a yard or wide drive.</li>
+</ul>
+<p>Be honest with the host about how many vehicles you're bringing. Turning up with three vans when the drive fits two cars causes problems for everyone.</p>
+<h2>Zermatt Lodge for work crews</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.</p>
+<ul>
+<li><strong>Sleeps 7</strong> in 4 bedrooms with <strong>separate beds</strong>: a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong> for early starts</li>
+<li><strong>Free off-street parking for 2 cars</strong> (please ask about vans before booking)</li>
+<li><strong>Washer and dryer</strong> for work clothes</li>
+<li><strong>Wi-Fi</strong> and a big kitchen and dining room</li>
+<li><strong>Monthly rates available</strong> for longer jobs</li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.</p>
+<p><a href="/#book">Book direct</a> with no platform fees, or see our <a href="/stays">work crew stays</a>.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li><a href="/guides/contractor-checklist-before-booking">Contractor accommodation checklist</a></li>
+<li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58</a></li>
+<li><a href="/guides/kirkby-knowsley-business-park-accommodation">Kirkby and Knowsley Business Park accommodation</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Can I park a van in Liverpool city centre car parks?</summary><p>Many multi-storeys have low height limits. Liverpool City Council lists 2.1m for Paddington Village and Victoria Street, 2.06m for Mount Pleasant, and King&#x27;s Dock at 3.1m on the ground floor only, with 2.1m on upper levels. Check your van&#x27;s height, including roof racks.</p></details>
+<details><summary>Does Liverpool have a Clean Air Zone charge for vans?</summary><p>No. Liverpool City Council moved away from a charging Clean Air Zone in 2022 and chose other measures instead, such as traffic signal changes and idling enforcement.</p></details>
+<details><summary>How do I keep tools safe in a van overnight?</summary><p>Police advice is to take tools out overnight where possible or use a tool vault, mark tools with your postcode and register serial numbers, park on a driveway or in a well-lit spot, and use extra locks, an alarm and a tracker.</p></details>
+<details><summary>Does Zermatt Lodge have van parking?</summary><p>Zermatt Lodge has free off-street parking for 2 cars. We don&#x27;t list it as having van parking, so please ask us about your vehicle&#x27;s size before booking.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/accommodation-near-m57-m58-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near the M57 and M58 in Liverpool</h3><p>Junction-level guide to where north Liverpool&#x27;s motorways go and why staying beside the M57/M58 avoids city-centre traffic.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/kirkby-knowsley-business-park-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Accommodation near Knowsley Business Park &amp; Kirkby</h3><p>One of Europe&#x27;s largest employment sites per Knowsley Council; short drive from Fazakerley, Headbolt Lane station and shift-pattern tips.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Contractor, business and work stays</h3><ul><li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58 in Liverpool</a></li><li><a href="/guides/contractor-accommodation-liverpool">Contractor Accommodation in Liverpool with Parking</a></li><li><a href="/guides/contractor-checklist-before-booking">Contractor Accommodation Checklist: 12 Questions to Ask</a></li><li><a href="/guides/corporate-team-stay-liverpool">Corporate Team Stays in Liverpool: Booking a Whole House</a></li><li><a href="/guides/film-crew-accommodation-liverpool">Film Crew Accommodation in Liverpool: A House for Your Unit</a></li><li><a href="/guides/kirkby-knowsley-business-park-accommodation">Accommodation near Knowsley Business Park &amp; Kirkby</a></li><li><a href="/guides/liverpool-business-travel-guide">Business Travel to Liverpool: A Practical Guide</a></li><li><a href="/guides/liverpool-construction-pipeline-overview">Liverpool Construction Projects 2026-27: Where the Work Is</a></li><li><a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport and Port Work Stays: Where to Base</a></li><li><a href="/guides/locum-and-agency-nurse-accommodation-liverpool">Locum &amp; Agency Nurse Accommodation in Liverpool</a></li><li><a href="/guides/long-stay-accommodation-liverpool">Long Stay Accommodation in Liverpool: A Practical Guide</a></li><li><a href="/guides/nhs-agency-booking-accommodation-guide">Booking Accommodation for NHS Agency Staff in Liverpool: A Guide</a></li><li><a href="/guides/skelmersdale-work-accommodation">Skelmersdale Work Accommodation: Stay on the Liverpool Side</a></li></ul><a class="all" href="/guides#work-stays">All guides by topic ›</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

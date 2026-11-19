@@ -3,6 +3,7 @@ title: "Where to Stay When Visiting The Walton Centre"
 meta_description: "Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby."
 slug: walton-centre-family-accommodation
 h1: "Where to Stay When Visiting The Walton Centre in Liverpool"
+quick_answer: "Families visiting The Walton Centre do best staying close to its Fazakerley site, so they can reach the ward quickly without city-centre parking costs. Zermatt Lodge is a whole 4-bedroom house nearby, close to Fazakerley station, with free parking for two cars."
 primary_keyword: "walton centre accommodation for relatives"
 secondary_keywords:
   - "walton centre liverpool family accommodation"

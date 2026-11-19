@@ -3,6 +3,7 @@ title: "How to Get to Aintree Racecourse: Train, Bus and Car"
 meta_description: "How to get to Aintree Racecourse from Liverpool city centre, Lime Street, the airport or north Liverpool, with race-day train changes, buses and parking."
 slug: getting-to-aintree-racecourse-from-fazakerley
 h1: "How to Get to Aintree Racecourse: Trains, Buses, Driving and Race-Day Changes"
+quick_answer: "The easiest way to Aintree Racecourse is the Merseyrail train to Aintree station, under a five-minute walk from the course. Trains from Liverpool Central take about 17 to 18 minutes, running about every 15 minutes normally and every 7.5 minutes on Grand National Festival days."
 primary_keyword: "how to get to aintree racecourse"
 secondary_keywords:
   - "train to aintree races"

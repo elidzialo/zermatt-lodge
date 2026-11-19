@@ -3,6 +3,7 @@ title: "Anfield Match Day Accommodation: Stay Nearby"
 meta_description: "Match day accommodation for Anfield: a 4-bed house in Fazakerley with free parking. How to reach Anfield via Sandhills and the Soccerbus, plus tips."
 slug: anfield-match-day-accommodation
 h1: "Anfield Match Day Accommodation: A Stress-Free Base for Liverpool FC Games"
+quick_answer: "For a Liverpool FC match, stay just outside the Anfield parking zone near a Merseyrail station that links to the matchday buses. Zermatt Lodge in Fazakerley is a short train ride from Sandhills, where the Soccerbus runs to Anfield, sleeps up to 7 and has free parking for two cars."
 primary_keyword: "anfield accommodation"
 secondary_keywords:
   - "places to stay near anfield"

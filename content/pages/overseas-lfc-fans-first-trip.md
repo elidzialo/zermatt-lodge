@@ -3,6 +3,7 @@ title: "First Trip to Anfield from Abroad: A Fan's Guide"
 meta_description: "Flying in to see Liverpool at Anfield? How LFC tickets really work, avoiding touts, getting from the airport, match day travel and a two-day plan."
 slug: overseas-lfc-fans-first-trip
 h1: "Your First Trip to Anfield from Overseas: A Practical Guide"
+quick_answer: "Sort your Liverpool FC ticket through official channels before booking flights, because home tickets go mainly to club members. Then book travel and accommodation around the match date."
 primary_keyword: "overseas liverpool fan first trip anfield"
 secondary_keywords:
   - "how to get liverpool tickets from abroad"

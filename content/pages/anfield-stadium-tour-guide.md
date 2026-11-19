@@ -3,6 +3,7 @@ title: "Anfield Stadium Tour: Types, Timings and Tips"
 meta_description: "Planning the Anfield Stadium Tour? Tour types, how long it takes, what you see, quoted prices, getting there by bus or train and planning a day around it."
 slug: anfield-stadium-tour-guide
 h1: "Anfield Stadium Tour and Museum: A Practical Guide for Visitors"
+quick_answer: "The Anfield Stadium Tour takes about 70 to 90 minutes, plus time in the LFC Museum, so allow two to three hours. Tours usually run daily from 10am to 3pm; book ahead and check times around match days."
 primary_keyword: "anfield stadium tour"
 secondary_keywords:
   - "liverpool fc stadium tour"

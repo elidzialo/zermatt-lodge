@@ -3,6 +3,7 @@ title: "Clatterbridge Cancer Centre Liverpool: Family Stays"
 meta_description: "Here for Clatterbridge Cancer Centre Liverpool treatment? Free Paddington Village parking, the shuttle bus and a 4-bed family house in north Liverpool."
 slug: clatterbridge-cancer-centre-liverpool-family-stay
 h1: "Family Stays for Clatterbridge Cancer Centre Liverpool"
+quick_answer: "During treatment at Clatterbridge Cancer Centre Liverpool, a base with free parking and a kitchen helps families rest between appointments. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, sleeping up to 7."
 primary_keyword: "clatterbridge cancer centre liverpool accommodation"
 secondary_keywords:
   - "clatterbridge liverpool parking"

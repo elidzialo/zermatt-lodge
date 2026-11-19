@@ -3,6 +3,7 @@ title: "Ladies Day at Aintree: Planning a Group Stay"
 meta_description: "Ladies Day at Aintree is Friday 9 April 2027. Plan getting ready, bags, travel and the trip home, plus a quiet 4-bed house in north Liverpool."
 slug: grand-national-ladies-day-group-stay
 h1: "Ladies Day at Aintree: Planning a Group Stay in Liverpool"
+quick_answer: "Ladies Day at Aintree is Friday 9 April 2027. A good group stay has enough bathrooms, a kitchen for breakfast and a short trip to the course; Zermatt Lodge has two bathrooms, sleeps up to 7 and is a calm base, not a party house."
 primary_keyword: "ladies day aintree accommodation"
 secondary_keywords:
   - "ladies day aintree group"

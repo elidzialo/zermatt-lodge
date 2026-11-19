@@ -3,6 +3,7 @@ title: "Dublin to Liverpool by Ferry: Current Options and Stays"
 meta_description: "Is there still a Liverpool to Dublin ferry? The passenger route has gone. Options via Holyhead and Birkenhead, plus a house for Irish groups to stay in."
 slug: dublin-ferry-liverpool-stay
 h1: "Dublin to Liverpool by Ferry: What Still Runs, and Where to Stay When You Arrive"
+quick_answer: "There is currently no passenger ferry between Dublin and Liverpool: P&O closed its route at the end of 2023, and the Stena Line Dublin to Birkenhead service launched in 2024 as a freight route. Most people with a car now sail to Holyhead and drive across North Wales, or fly."
 primary_keyword: "liverpool dublin ferry"
 secondary_keywords:
   - "ferry from dublin to liverpool"

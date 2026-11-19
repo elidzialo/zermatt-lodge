@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Booking Direct vs Airbnb or Booking.com: What to Know</title>
+<meta name="description" content="Book a holiday home direct or via Airbnb or Booking.com? How platform fees work, what protection you get and how to check a direct site is safe.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/book-direct-vs-airbnb">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Booking Direct vs Airbnb or Booking.com: What to Know">
+<meta property="og:description" content="Book a holiday home direct or via Airbnb or Booking.com? How platform fees work, what protection you get and how to check a direct site is safe.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/book-direct-vs-airbnb">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Booking Direct vs Airbnb or Booking.com: An Honest Comparison", "description": "Book a holiday home direct or via Airbnb or Booking.com? How platform fees work, what protection you get and how to check a direct site is safe.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/book-direct-vs-airbnb", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Booking Direct vs Airbnb or Booking.com: What to Know", "item": "https://bookhomes.co.uk/guides/book-direct-vs-airbnb"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it cheaper to book a holiday home direct?", "acceptedAnswer": {"@type": "Answer", "text": "Often, because there's no platform commission to cover. Airbnb's single-fee model for many professional hosts deducts a 15.5% service fee from the host's price, and hosts usually build platform fees into their rates. Always compare the total price for the same dates."}}, {"@type": "Question", "name": "Is it safe to book direct?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, if you check the site properly: a real business with a working phone number, a secure card payment page and clear terms. Never pay a host by bank transfer for a booking you found on social media."}}, {"@type": "Question", "name": "What protection do I get paying by card?", "acceptedAnswer": {"@type": "Answer", "text": "MoneySavingExpert explains that credit card purchases over £100 may be covered by Section 75, and debit card or lower-value credit card payments may be covered by chargeback. Bank transfers give you very little protection."}}, {"@type": "Question", "name": "Can I still book Zermatt Lodge on Airbnb?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The same house is listed on Airbnb. Book direct on our site if you'd rather avoid platform fees, or use Airbnb if you prefer its system."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Booking Direct vs Airbnb or Booking.com: What to Know</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Booking Direct vs Airbnb or Booking.com: An Honest Comparison</h1>
+      <p class="intro">Book a holiday home direct or via Airbnb or Booking.com? How platform fees work, what protection you get and how to check a direct site is safe.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Games room with pool table at Zermatt Lodge, Liverpool" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Booking a holiday home direct with the host is often cheaper than booking through Airbnb or Booking.com, because no platform commission has to be built into the price. The trade-off is that you rely on the host's own terms instead of the platform's, so you need to check the site is genuine and pay by card. If you do those checks, booking direct is a sensible way to save money, especially for longer or larger group stays. Zermatt Lodge, a whole 4-bedroom house in north Liverpool, can be booked either way: direct on this site with no booking fees, or on Airbnb.</p></div>
+          <p>Booking a holiday home direct with the host is often cheaper than booking through Airbnb or Booking.com, because no platform commission has to be built into the price. The trade-off is that you rely on the host's own terms instead of the platform's, so you need to check the site is genuine and pay by card. If you do those checks, booking direct is a sensible way to save money, especially for longer or larger group stays. Zermatt Lodge, a whole 4-bedroom house in north Liverpool, can be booked either way: direct on this site with no booking fees, or on Airbnb.</p>
+<p>This guide explains how platform fees work, what each route gives you, and how to book direct safely anywhere.</p>
+<h2>How platform fees work</h2>
+<p>Booking platforms make money by taking a cut of each booking. How that shows up for guests has changed.</p>
+<h3>Airbnb</h3>
+<p>Airbnb has used two fee models:</p>
+<ul>
+<li><strong>Split fee:</strong> the guest pays a service fee on top of the price, and the host pays a smaller fee</li>
+<li><strong>Single fee:</strong> the host pays the whole fee and the guest sees no separate service fee</li>
+</ul>
+<p>From <strong>27 October 2025</strong>, Airbnb moved hosts who use property or channel management software to the <strong>single-fee model</strong>, with a <strong>15.5% service fee</strong> deducted from the host's price, according to Rentals United's summary of the change.</p>
+<p>What this means for you as a guest: you may no longer see a separate service fee line, but the fee hasn't disappeared. Hosts usually raise their nightly rate to cover it. On a stay of several nights for a group, that adds up.</p>
+<h3>Booking.com and other platforms</h3>
+<p>Booking.com and similar sites also charge hosts commission. Exact rates vary by property and agreement, so we won't quote a figure, but the principle is the same: the commission is reflected somewhere in the price you pay.</p>
+<h3>Booking direct</h3>
+<p>When you book direct, the host keeps the whole payment, so there's room to charge less than on a platform and still earn the same. On Book Homes, the price you see is the total for the stay, including cleaning, with <strong>no guest booking fees</strong>.</p>
+<h2>What each route gives you</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Airbnb or Booking.com</th>
+<th>Booking direct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Price</td>
+<td>Includes platform commission</td>
+<td>No platform commission</td>
+</tr>
+<tr>
+<td>Payment</td>
+<td>Through the platform</td>
+<td>Through the host's payment system</td>
+</tr>
+<tr>
+<td>Reviews</td>
+<td>Verified reviews on the platform</td>
+<td>Check the host's reviews elsewhere too</td>
+</tr>
+<tr>
+<td>Disputes</td>
+<td>Platform's own process</td>
+<td>Host's terms, plus your card protection</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>Platform messaging</td>
+<td>Direct with the host</td>
+</tr>
+<tr>
+<td>Flexibility</td>
+<td>Platform rules</td>
+<td>Can be easier to arrange invoices, long stays or special requests</td>
+</tr>
+</tbody>
+</table>
+<p>Neither route is right for everyone. Platforms suit people who want a familiar system and a big choice of homes. Direct booking suits people who've found the place they want and would rather not pay extra.</p>
+<h2>The real risk: fake listings and scams</h2>
+<p>Holiday booking fraud is real. <strong>MoneySavingExpert</strong>, citing Action Fraud, reported that just over <strong>£11 million</strong> was lost to holiday booking scams in a year, with July the peak month for reports.</p>
+<p>Common tricks include:</p>
+<ul>
+<li><strong>Cloned websites</strong> with addresses that look almost identical to the real one</li>
+<li><strong>Social media posts</strong> advertising homes that don't exist, or that belong to someone else</li>
+<li><strong>Hosts asking for a bank transfer</strong> to "secure" a booking or get a discount</li>
+<li><strong>Deals that seem too good to be true</strong></li>
+</ul>
+<h2>How to book direct safely: a checklist</h2>
+<p>Use this for any direct booking site, not just ours.</p>
+<ol>
+<li><strong>Check the web address.</strong> Make sure it matches the site you meant to visit.</li>
+<li><strong>Look for a real business.</strong> A working phone number and an email address that gets answered are basic signs.</li>
+<li><strong>Cross-check the property.</strong> Is the same home listed on a major platform with reviews? Do the photos match?</li>
+<li><strong>Pay by card on a secure checkout.</strong> MoneySavingExpert says credit card purchases over £100 may be covered by <strong>Section 75</strong>, and debit card or smaller credit card payments may be covered by <strong>chargeback</strong>.</li>
+<li><strong>Avoid bank transfers</strong> and money transfer services. You have very little protection if something goes wrong.</li>
+<li><strong>Read the terms.</strong> Cancellation policy, damage deposit, house rules and what's included.</li>
+<li><strong>Get written confirmation</strong> of your dates, guest numbers and total price.</li>
+<li><strong>Call the host</strong> if anything feels off. A genuine host will be happy to talk.</li>
+</ol>
+<h2>How booking Zermatt Lodge direct works</h2>
+<p>Zermatt Lodge is listed on Book Homes and on Airbnb. It's the same house and the same hosts either way.</p>
+<p>When you book direct here:</p>
+<ul>
+<li><strong>No booking fees.</strong> The price shown is the total for the stay</li>
+<li><strong>Secure card payment</strong> through Stripe's checkout page. We never ask for a bank transfer</li>
+<li><strong>Instant confirmation</strong> once you pay</li>
+<li><strong>You deal with the host</strong> from start to finish, by phone or email</li>
+<li><strong>Guest ID and a signed rental agreement</strong> are required, as with many whole-home rentals</li>
+</ul>
+<p>If you need an invoice in a company name for a work stay, it's easier to arrange when you book direct.</p>
+<h2>When Airbnb might suit you better</h2>
+<p>Be honest with yourself about what you value:</p>
+<ul>
+<li>You already have Airbnb credit or a gift card</li>
+<li>You want everything in one app with your other trips</li>
+<li>You're more comfortable with the platform's own processes</li>
+</ul>
+<p>That's fine. We list there too.</p>
+<h2>About the house</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre, near Aintree, with free parking for 2 cars.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> king with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong>, big kitchen, dining room</li>
+<li><strong>Games room</strong> with pool table, board games and a 55" Smart TV</li>
+<li><strong>Large, fully fenced private garden</strong></li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled.</p>
+<p><a href="/#book">Book direct</a> or browse all our <a href="/stays">stays</a>.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/house-vs-hotel-liverpool-groups">House vs hotel for groups in Liverpool</a></li>
+<li><a href="/guides/where-to-stay-in-liverpool-for-a-group">Where to stay in Liverpool for a group</a></li>
+<li><a href="/guides/group-accommodation-liverpool-with-parking">Group accommodation in Liverpool with parking</a></li>
+<li><a href="/guides/large-family-house-liverpool">Large family house in Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Is it cheaper to book a holiday home direct?</summary><p>Often, because there&#x27;s no platform commission to cover. Airbnb&#x27;s single-fee model for many professional hosts deducts a 15.5% service fee from the host&#x27;s price, and hosts usually build platform fees into their rates. Always compare the total price for the same dates.</p></details>
+<details><summary>Is it safe to book direct?</summary><p>It can be, if you check the site properly: a real business with a working phone number, a secure card payment page and clear terms. Never pay a host by bank transfer for a booking you found on social media.</p></details>
+<details><summary>What protection do I get paying by card?</summary><p>MoneySavingExpert explains that credit card purchases over £100 may be covered by Section 75, and debit card or lower-value credit card payments may be covered by chargeback. Bank transfers give you very little protection.</p></details>
+<details><summary>Can I still book Zermatt Lodge on Airbnb?</summary><p>Yes. The same house is listed on Airbnb. Book direct on our site if you&#x27;d rather avoid platform fees, or use Airbnb if you prefer its system.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/house-vs-hotel-liverpool-groups"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Comparisons</span><h3>House vs Hotel in Liverpool for Groups</h3><p>Side-by-side comparison on space, parking, meals, privacy and when a hotel is genuinely the better pick.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/where-to-stay-in-liverpool-for-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Where to Stay in Liverpool for a Group: Area Guide</h3><p>Area-by-area comparison (city centre, Baltic, waterfront, south Liverpool, north Liverpool) by noise, parking, cost drivers and purpose of trip.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/group-accommodation-liverpool-with-parking"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Group Accommodation in Liverpool with Parking</h3><p>Parking-led: why city-centre group stays get expensive with cars, what free off-street parking for two changes and how to reach the centre by train.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Group and family stays</h3><ul><li><a href="/guides/babies-and-toddlers-liverpool-stay">Liverpool with a Baby or Toddler: Stay and Day Out Checklist</a></li><li><a href="/guides/golf-group-trip-liverpool">Golf Group Trip to Liverpool: Courses, Routes and a Base</a></li><li><a href="/guides/group-accommodation-liverpool-with-parking">Group Accommodation in Liverpool with Parking</a></li><li><a href="/guides/group-booking-checklist">Group Booking Checklist for Holiday Houses in Liverpool</a></li><li><a href="/guides/holiday-house-liverpool-games-room">Holiday House in Liverpool with a Games Room</a></li><li><a href="/guides/house-vs-hotel-liverpool-groups">House vs Hotel in Liverpool for Groups</a></li><li><a href="/guides/house-vs-serviced-apartment-liverpool">Whole House vs Serviced Apartment in Liverpool</a></li><li><a href="/guides/large-family-house-liverpool">Large Family House to Rent in Liverpool</a></li><li><a href="/guides/multi-generational-family-trip-liverpool">Multi-Generational Family Trip to Liverpool: A Planning Guide</a></li><li><a href="/guides/where-to-stay-in-liverpool-for-a-group">Where to Stay in Liverpool for a Group: Area Guide</a></li></ul><a class="all" href="/guides#groups-families">All guides by topic ›</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

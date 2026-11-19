@@ -3,6 +3,7 @@ title: "Aintree Racecourse Accommodation: Non-National Days"
 meta_description: "Going to Aintree outside Grand National week? Becher Chase Day, autumn meetings, getting there by train or car, and a 4-bed house nearby in Fazakerley."
 slug: aintree-racecourse-accommodation
 h1: "Aintree Racecourse Accommodation for Race Days Beyond the Grand National"
+quick_answer: "Aintree runs jump racing through autumn and winter, including Becher Chase Day in December, and accommodation is much easier to find than in Grand National week. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree, with free parking for two cars."
 primary_keyword: "aintree racecourse accommodation"
 secondary_keywords:
   - "becher chase accommodation"

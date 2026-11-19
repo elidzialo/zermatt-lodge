@@ -1,10 +1,13 @@
-# robots.txt - Zermatt Lodge
+# robots.txt - Book Homes (bookhomes.co.uk)
 # Search engines and AI assistants are welcome. Only private/booking-process URLs are blocked.
 # One group lists every named crawler so they all follow the same rules.
+# AI summaries: https://bookhomes.co.uk/llms.txt and https://bookhomes.co.uk/llms-full.txt
 
 User-agent: Googlebot
 User-agent: Bingbot
 User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
@@ -16,7 +19,8 @@ User-agent: Perplexity-User
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /admin/
+Disallow: /admin
+Disallow: /host
 Disallow: /checkout/
 
 Sitemap: https://bookhomes.co.uk/sitemap.xml

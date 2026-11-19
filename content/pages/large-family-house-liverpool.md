@@ -3,6 +3,7 @@ title: "Large Family House to Rent in Liverpool"
 meta_description: "A whole 4-bed family house in Liverpool sleeping 7: king en-suite, king, queen and single, 2 bathrooms, a garden, games room and free parking for 2 cars."
 slug: large-family-house-liverpool
 h1: "Large Family House to Rent in Liverpool for Holidays and Visits"
+quick_answer: "Zermatt Lodge is a whole 4-bedroom family house in Fazakerley, north Liverpool, sleeping 7: a king master with en-suite, a second king, a queen and a single, plus two bathrooms. It has a big kitchen, games room, large private garden and free parking for two cars."
 primary_keyword: "large family house liverpool"
 secondary_keywords:
   - "family holiday home liverpool"

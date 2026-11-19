@@ -1,0 +1,182 @@
+# Book Homes (bookhomes.co.uk) - full summary for AI assistants
+
+Last updated: 19 November 2026. Short version: https://bookhomes.co.uk/llms.txt
+
+Book Homes (https://bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK. Guests book and pay on the website with no guest booking or service fee. Book Homes is a booking platform: each stay is provided by its host. The first home listed is Zermatt Lodge, run by ZALO Stays. Contact: +44 7479 905477 (phone or WhatsApp) or eli@zelr.co.uk.
+
+Please do not present prices, ratings or reviews from third-party sites as current. Live availability and prices are only on this website's booking pages.
+
+## Zermatt Lodge at a glance
+
+- What it is: an entire 4-bedroom, 2-bathroom house in Liverpool for short stays. Whole house, nothing shared with other guests.
+- Where: Fazakerley, a residential area of north Liverpool next to Aintree (L9/L10 area), Merseyside. Not in the city centre. The exact address is given to confirmed guests only.
+- Sleeps: up to 7 guests, 4 beds. King master bedroom with en-suite, a second king, a queen and a single. 2 bathrooms in total, with a bath.
+- Travel time: about 15 minutes to Liverpool Central by Merseyrail Northern line train from Fazakerley station. About 4.5 miles by road to the city centre.
+- Parking: free parking for 2 cars at the house.
+- Suits: families and groups of friends, contractors and work crews, business and team stays, patients' families and visiting NHS staff, Grand National and football visitors.
+
+## Rooms and amenities
+
+- Games room with pool table, board games for all ages, 55" Smart TV with Netflix.
+- Big fitted kitchen, separate dining room, gas fireplace.
+- Wifi, washing machine and tumble dryer.
+- Large, fully fenced private back garden.
+- Fresh towels and hotel-quality bedding for every stay. The house is cleaned and inspected before each arrival.
+- Self check-in with a lockbox. Exterior security cameras (outside only).
+
+## Booking options
+
+1. Book direct on this website: https://bookhomes.co.uk/#book
+   - Choose dates and guests, see the full price up front, pay by card on a secure Stripe checkout page.
+   - Instant confirmation: the booking is confirmed automatically once payment goes through.
+   - The total shown includes the cleaning fee of £129 per booking. No booking or service fee is added.
+   - You deal with the host, ZALO Stays, from start to finish.
+2. Airbnb: https://www.airbnb.co.uk/rooms/1801505261909570677
+3. Booking.com: https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html
+4. Weekly and monthly stays for work crews: call +44 7479 905477 or email eli@zelr.co.uk.
+
+It is the same house and the same hosts on every channel. Booking direct avoids the platforms' guest service fees.
+
+Reviews (as shown on the website in November 2026): 4.75 out of 5 on Airbnb from 4 reviews. Check Airbnb for the current rating.
+
+## Policies
+
+- Check-in from 3pm, check-out by 11am.
+- Maximum 7 guests.
+- Strictly no parties or events. Bookings found to be for parties are cancelled. It is a home in a residential area.
+- No smoking anywhere in the house. No pets.
+- Guests provide ID, sign a rental agreement, and either pay a damage deposit or take a damage waiver. These are requested after booking.
+- Cancellation policy (Moderate): full refund if you cancel up to 5 days before check-in, 50% refund if you cancel after that, no refund after check-in.
+
+## Area and travel times
+
+Distances are approximate, in a straight line from the house. Road routes are longer.
+
+- Aintree University Hospital and The Walton Centre (same hospital site): about 0.6 miles.
+- Aintree Racecourse, home of the Grand National: about 0.5 to 1 mile. Aintree station (Ormskirk branch) is the closest station to the course.
+- Fazakerley station: Merseyrail Northern line, about 15 minutes by train to Liverpool Central.
+- Shops: Lidl, Tesco Express and Co-op on Longmoor Lane.
+- Walton Hall Park (130 acres, two lakes): about 1 to 2 miles.
+- Croxteth Hall and Country Park (working farm, walled garden, free Saturday parkrun): about 2.5 miles.
+- Anfield: about 3 miles.
+- Hill Dickinson Stadium (Everton), Bramley-Moore Dock: about 4 miles. Train from Fazakerley to Sandhills takes around 8 minutes, then walk.
+- Liverpool city centre and Lime Street: about 4.5 miles.
+- Royal Albert Dock, ACC Liverpool and M&S Bank Arena: about 5.5 miles.
+- M57 (J6 and J7 Switch Island) and M58: M57 J6 is about 1.5 miles away.
+- Liverpool John Lennon Airport: about 10 miles.
+- Southport: about 12.5 miles.
+
+## The Book Homes marketplace
+
+- Search all stays: https://bookhomes.co.uk/stays
+  Search by dates and guests. Filters include kosher homes, work crews, large groups, family, hospital stays, city, coast, countryside, match and event days, long stays, kosher kitchen, Shabbat friendly, near shul, work crew and business-ready. Prices shown are the total for the stay, cleaning included, with no booking fees.
+- Kosher and Shabbat-friendly homes: https://bookhomes.co.uk/stays/kosher
+  Kosher details are declared by each host and shown on the listing. Book Homes does not inspect or certify kashrut. "Shabbat friendly" means the host says the home has a non-electric key or keypad override, no motion-sensor lights (or they can be switched off) and items such as a Shabbat hot plate, urn or timers. The "Near shul" filter shows homes where the host says the nearest shul is a 15-minute walk or less. Each listing shows the host's eruv answer (inside, not inside, or not sure). New homes are added as hosts are approved.
+- For hosts: https://bookhomes.co.uk/become-a-host
+  For owners of holiday lets, serviced accommodation and family homes in Liverpool and Merseyside. No sign-up fee and no monthly fee. Book Homes takes a commission on each booking (currently 15%). Guests pay by card through Stripe and payouts are automatic once connected. Airbnb and Booking.com calendars sync by iCal (imported every 15 minutes, with an export link). Every listing is checked before it goes live, usually within one working day, and no street address is shown.
+
+## Liverpool guides
+
+All guides by topic: https://bookhomes.co.uk/guides
+First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short quick answer at the top and an FAQ section.
+
+### Contractor, business and work stays
+
+- Contractor accommodation in Liverpool: https://bookhomes.co.uk/guides/contractor-accommodation-liverpool
+- Accommodation near the M57 and M58: https://bookhomes.co.uk/guides/accommodation-near-m57-m58-liverpool
+- Corporate team stays: https://bookhomes.co.uk/guides/corporate-team-stay-liverpool
+- Long stay accommodation in Liverpool: https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool
+- Locum and agency nurse accommodation: https://bookhomes.co.uk/guides/locum-and-agency-nurse-accommodation-liverpool
+- Film crew accommodation: https://bookhomes.co.uk/guides/film-crew-accommodation-liverpool
+- Knowsley Business Park and Kirkby: https://bookhomes.co.uk/guides/kirkby-knowsley-business-park-accommodation
+- Liverpool Freeport and port work stays: https://bookhomes.co.uk/guides/liverpool-freeport-business-stays
+- Skelmersdale work accommodation: https://bookhomes.co.uk/guides/skelmersdale-work-accommodation
+
+### Group and family stays
+
+- Group accommodation with parking: https://bookhomes.co.uk/guides/group-accommodation-liverpool-with-parking
+- Where to stay in Liverpool for a group: https://bookhomes.co.uk/guides/where-to-stay-in-liverpool-for-a-group
+- House vs hotel for groups: https://bookhomes.co.uk/guides/house-vs-hotel-liverpool-groups
+- Large family house to rent: https://bookhomes.co.uk/guides/large-family-house-liverpool
+- Holiday house with a games room: https://bookhomes.co.uk/guides/holiday-house-liverpool-games-room
+- Golf group trip: https://bookhomes.co.uk/guides/golf-group-trip-liverpool
+
+### Hospital visits and medical stays
+
+- Accommodation near Aintree University Hospital: https://bookhomes.co.uk/guides/accommodation-near-aintree-university-hospital
+- Visiting Aintree Hospital, practical guide: https://bookhomes.co.uk/guides/visiting-aintree-hospital-practical-guide
+- Aintree Hospital parking: https://bookhomes.co.uk/guides/aintree-hospital-parking-guide
+- Aintree Major Trauma Centre, guide for families: https://bookhomes.co.uk/guides/aintree-major-trauma-centre-family-guide
+- Where to stay when visiting The Walton Centre: https://bookhomes.co.uk/guides/walton-centre-family-accommodation
+- Walton Centre appointment, overnight stay: https://bookhomes.co.uk/guides/walton-centre-outpatient-overnight
+- Alder Hey family accommodation: https://bookhomes.co.uk/guides/alder-hey-family-accommodation
+- Clatterbridge Cancer Centre Liverpool, family stays: https://bookhomes.co.uk/guides/clatterbridge-cancer-centre-liverpool-family-stay
+- Woodlands Hospice visitor stay: https://bookhomes.co.uk/guides/woodlands-hospice-visitor-stay
+- Early hospital appointment, stay the night before: https://bookhomes.co.uk/guides/hospital-appointment-early-morning-stay
+- Long hospital stays, tips for families: https://bookhomes.co.uk/guides/long-stay-hospital-visiting-tips-liverpool
+- Seeing a GP as a temporary resident: https://bookhomes.co.uk/guides/temporary-resident-gp-liverpool
+
+### Aintree and the Grand National
+
+- Grand National accommodation: https://bookhomes.co.uk/guides/grand-national-accommodation
+- Grand National first-timer's guide: https://bookhomes.co.uk/guides/grand-national-first-timers-guide
+- Getting to Aintree Racecourse: https://bookhomes.co.uk/guides/getting-to-aintree-racecourse-from-fazakerley
+- Grand National parking: https://bookhomes.co.uk/guides/grand-national-parking-guide
+- Ladies Day group stay: https://bookhomes.co.uk/guides/grand-national-ladies-day-group-stay
+- Grand National from Ireland: https://bookhomes.co.uk/guides/grand-national-from-ireland
+- Aintree Racecourse accommodation, non-National days: https://bookhomes.co.uk/guides/aintree-racecourse-accommodation
+- Becher Chase weekend: https://bookhomes.co.uk/guides/becher-chase-weekend-liverpool
+
+### Football, Anfield and Everton
+
+- Anfield match day accommodation: https://bookhomes.co.uk/guides/anfield-match-day-accommodation
+- Accommodation near Everton's new stadium: https://bookhomes.co.uk/guides/everton-stadium-accommodation
+- Liverpool match day parking: https://bookhomes.co.uk/guides/liverpool-match-day-parking-guide
+- Away fans guide to Anfield: https://bookhomes.co.uk/guides/away-fans-guide-anfield
+- Away fans guide to Hill Dickinson Stadium: https://bookhomes.co.uk/guides/away-fans-guide-everton-stadium
+- Merseyside derby weekend: https://bookhomes.co.uk/guides/merseyside-derby-weekend
+- European nights at Anfield: https://bookhomes.co.uk/guides/european-nights-anfield-stay
+- First trip to Anfield from overseas: https://bookhomes.co.uk/guides/overseas-lfc-fans-first-trip
+- Football trip with kids: https://bookhomes.co.uk/guides/football-tour-liverpool-with-kids
+- Anfield stadium tour: https://bookhomes.co.uk/guides/anfield-stadium-tour-guide
+- Anfield concert accommodation: https://bookhomes.co.uk/guides/anfield-concert-accommodation
+
+### Events, venues, weddings and graduations
+
+- M&S Bank Arena concerts: https://bookhomes.co.uk/guides/ms-bank-arena-concert-accommodation
+- ACC Liverpool conference accommodation: https://bookhomes.co.uk/guides/acc-liverpool-conference-accommodation
+- Exhibition Centre Liverpool exhibitor stays: https://bookhomes.co.uk/guides/exhibition-centre-liverpool-exhibitor-stay
+- Wedding guest accommodation: https://bookhomes.co.uk/guides/wedding-guest-accommodation-liverpool
+- Croxteth Hall wedding accommodation: https://bookhomes.co.uk/guides/croxteth-hall-wedding-accommodation
+- Liverpool graduation family stay: https://bookhomes.co.uk/guides/liverpool-graduation-family-stay
+- Edge Hill University graduation stay: https://bookhomes.co.uk/guides/edge-hill-university-graduation-stay
+- Liverpool Cruise Terminal, night before: https://bookhomes.co.uk/guides/liverpool-cruise-terminal-stay
+
+### Getting to and around Liverpool
+
+- Fazakerley to Liverpool city centre by train: https://bookhomes.co.uk/guides/fazakerley-to-liverpool-city-centre-by-train
+- Liverpool John Lennon Airport to Fazakerley: https://bookhomes.co.uk/guides/liverpool-airport-to-fazakerley
+- Isle of Man ferry from Liverpool: https://bookhomes.co.uk/guides/isle-of-man-ferry-liverpool-stay
+- Dublin to Liverpool by ferry: https://bookhomes.co.uk/guides/dublin-ferry-liverpool-stay
+
+### Things to do and seasonal trips
+
+- Things to do in Liverpool with a group: https://bookhomes.co.uk/guides/things-to-do-in-liverpool-with-a-group
+- Family days out in north Liverpool: https://bookhomes.co.uk/guides/family-days-out-north-liverpool
+- Liverpool Christmas market 2026: https://bookhomes.co.uk/guides/liverpool-christmas-markets-guide
+- Christmas family stay in Liverpool: https://bookhomes.co.uk/guides/christmas-family-stay-liverpool
+
+### Relocation, insurance and renovation stays
+
+- Insurance alternative accommodation: https://bookhomes.co.uk/guides/insurance-temporary-accommodation-liverpool
+- Relocating to Liverpool, short-stay house as a base: https://bookhomes.co.uk/guides/relocating-to-liverpool-temporary-house
+- Staying elsewhere during a renovation: https://bookhomes.co.uk/guides/renovation-stay-liverpool
+
+## Other pages
+
+- Home and booking: https://bookhomes.co.uk/
+- FAQ: https://bookhomes.co.uk/#faq
+- Guest terms: https://bookhomes.co.uk/terms/guests
+- Host terms: https://bookhomes.co.uk/terms/hosts
+- Privacy: https://bookhomes.co.uk/privacy
+- Sitemap: https://bookhomes.co.uk/sitemap.xml

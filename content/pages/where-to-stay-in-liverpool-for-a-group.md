@@ -3,6 +3,7 @@ title: "Where to Stay in Liverpool for a Group: Area Guide"
 meta_description: "Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly."
 slug: where-to-stay-in-liverpool-for-a-group
 h1: "Where to Stay in Liverpool for a Group: An Honest Area Guide"
+quick_answer: "For a car-free nightlife weekend, Liverpool city centre is hard to beat. For families, groups with cars, football, the Grand National or hospital visits, north Liverpool offers more space and free parking, with trains into town in about 15 minutes."
 primary_keyword: "where to stay in liverpool for a group"
 secondary_keywords:
   - "best area to stay in liverpool group"

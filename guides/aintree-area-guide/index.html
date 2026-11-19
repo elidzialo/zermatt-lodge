@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aintree Area Guide: Racecourse, Canal and Retail Park</title>
+<meta name="description" content="A visitor&#x27;s guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park, stations and where to stay.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/aintree-area-guide">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Aintree Area Guide: Racecourse, Canal and Retail Park">
+<meta property="og:description" content="A visitor&#x27;s guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park, stations and where to stay.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/aintree-area-guide">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Aintree Area Guide: More Than Just the Grand National", "description": "A visitor's guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park, stations and where to stay.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/aintree-area-guide", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Aintree Area Guide: Racecourse, Canal and Retail Park", "item": "https://bookhomes.co.uk/guides/aintree-area-guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is Aintree?", "acceptedAnswer": {"@type": "Answer", "text": "Aintree is a village and civil parish in the borough of Sefton, Merseyside. It sits on the A59 between Walton and Maghull, about 6 miles north-east of Liverpool city centre."}}, {"@type": "Question", "name": "Which station is best for Aintree?", "acceptedAnswer": {"@type": "Answer", "text": "Aintree station serves the racecourse and Old Roan station is closer to the village and Aintree Shopping Park. Both are on Merseyrail's Northern line (Ormskirk branch) into Liverpool Central."}}, {"@type": "Question", "name": "Did Aintree really host Formula One?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The motor racing circuit built around the racecourse hosted the British Grand Prix five times: 1955, 1957, 1959, 1961 and 1962. Stirling Moss won his first British Grand Prix there in 1955. A shorter club circuit is still used for sprints, track days and motorcycle racing."}}, {"@type": "Question", "name": "When is the next Grand National?", "acceptedAnswer": {"@type": "Answer", "text": "The Jockey Club lists the 2027 Randox Grand National Festival as Thursday 8 to Saturday 10 April 2027, with the Grand National itself at 4pm on the Saturday."}}, {"@type": "Question", "name": "Is Aintree Hospital in Aintree?", "acceptedAnswer": {"@type": "Answer", "text": "Not quite. Aintree University Hospital is in neighbouring Fazakerley, across the road from Fazakerley station, which is on the Kirkby branch of the Northern line."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Aintree Area Guide: Racecourse, Canal and Retail Park</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Aintree Area Guide: More Than Just the Grand National</h1>
+      <p class="intro">A visitor&#x27;s guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park, stations and where to stay.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Pool table and board games in the games room at Zermatt Lodge" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Aintree is a village in north Liverpool, best known for the Grand National, but it also has a canal towpath, a historic motor racing circuit, a large shopping park with free parking, and fast trains into the city. If you're staying in the area, you're about 6 miles from Liverpool city centre with the motorway network on your doorstep. Zermatt Lodge is a whole 4-bedroom house in neighbouring Fazakerley, sleeping up to 7, with free parking for 2 cars and trains to Liverpool city centre in about 15 minutes.</p></div>
+          <p>Aintree is a village in north Liverpool, best known for the Grand National, but it also has a canal towpath, a historic motor racing circuit, a large shopping park with free parking, and fast trains into the city. If you're staying in the area, you're about 6 miles from Liverpool city centre with the motorway network on your doorstep. Zermatt Lodge is a whole 4-bedroom house in neighbouring Fazakerley, sleeping up to 7, with free parking for 2 cars and trains to Liverpool city centre in about 15 minutes.</p>
+<p>This guide covers what Aintree is like, what there is to do beyond race week, and how to get around.</p>
+<h2>Where Aintree is</h2>
+<p>Aintree is a village and civil parish in the <strong>Metropolitan Borough of Sefton</strong>, historically part of Lancashire. It sits on the <strong>A59</strong> between Walton and Maghull, about <strong>6 miles (10 km) north-east of Liverpool city centre</strong>. The 2011 census counted 6,689 residents.</p>
+<p>People use "Aintree" loosely. Locals might mean the village, the racecourse, or the wider district that runs into Fazakerley, Orrell Park and Walton. You'll also see "Aintree" on hospital signs, but <strong>Aintree University Hospital is actually in Fazakerley</strong>, next to Fazakerley station.</p>
+<h3>Roads</h3>
+<p>Aintree is close to <strong>Switch Island</strong>, the junction between Aintree and Maghull where the <strong>M57, M58, A59 and A5036</strong> meet. That makes it a handy base if you're driving:</p>
+<ul>
+<li>The <strong>M57</strong> heads south towards the M62 and Knowsley</li>
+<li>The <strong>M58</strong> heads north-east towards Skelmersdale and the M6</li>
+<li>The <strong>A5036</strong> runs west to Bootle, Crosby and the docks</li>
+<li>The <strong>A59</strong> runs south into the city centre</li>
+</ul>
+<p>Our guide to <a href="/guides/accommodation-near-m57-m58-liverpool">accommodation near the M57 and M58</a> has more on driving routes.</p>
+<h3>Trains</h3>
+<p>Aintree has two Merseyrail stations on the <strong>Northern line (Ormskirk branch)</strong>:</p>
+<ul>
+<li><strong>Aintree station</strong> serves the racecourse</li>
+<li><strong>Old Roan station</strong> is closer to the village and the shopping park</li>
+</ul>
+<p>Both run direct to <strong>Liverpool Central</strong> via Sandhills and Moorfields. Fazakerley, where Zermatt Lodge is, is on the <strong>Kirkby branch</strong> of the same line. The two branches split north of the city, so travelling between Fazakerley and Aintree by train means changing at a shared station nearer town (check the Merseyrail journey planner for the best change). By road it's a short drive.</p>
+<h2>The racecourse</h2>
+<p><strong>Aintree Racecourse</strong> has hosted the Grand National since the 19th century. The next festival is:</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Date</th>
+<th>Gates open</th>
+<th>First race</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opening Day</td>
+<td>Thursday 8 April 2027</td>
+<td>11:00am</td>
+<td>1:45pm</td>
+</tr>
+<tr>
+<td>Ladies Day</td>
+<td>Friday 9 April 2027</td>
+<td>10:30am</td>
+<td>1:45pm</td>
+</tr>
+<tr>
+<td>Grand National Day</td>
+<td>Saturday 10 April 2027</td>
+<td>10:00am</td>
+<td>12:45pm</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Randox Grand National</strong> itself is scheduled for <strong>4:00pm on Saturday 10 April 2027</strong>, according to the Jockey Club's event schedule. Note that the 2027 festival falls in the Easter school holidays for Liverpool schools, so expect accommodation to be busy.</p>
+<p>For full race-week planning, see our <a href="/guides/grand-national-accommodation">Grand National accommodation guide</a> and <a href="/guides/getting-to-aintree-racecourse-from-fazakerley">how to get to the racecourse from Fazakerley</a>.</p>
+<h2>Aintree's Formula One history</h2>
+<p>Few visitors realise Aintree was once a Grand Prix venue. In the 1950s and 1960s a three-mile circuit ran around the racecourse, using its grandstands. It hosted the <strong>British Grand Prix five times: 1955, 1957, 1959, 1961 and 1962</strong>. <strong>Stirling Moss</strong> won his first British Grand Prix there in 1955, driving a Mercedes.</p>
+<p>The full circuit closed in 1964, but a <strong>1.535-mile club circuit</strong> is still in use:</p>
+<ul>
+<li><strong>Liverpool Motor Club</strong> runs car sprints (typically May, June and September) and track days (typically April and August)</li>
+<li><strong>Aintree Motor Cycle Racing Club</strong> has run motorcycle race meetings there since 1982, around six a year</li>
+</ul>
+<p>If you're into motorsport, check the clubs' calendars for 2027 dates before you book.</p>
+<h2>The Leeds and Liverpool Canal</h2>
+<p>The <strong>Leeds and Liverpool Canal</strong> runs right through Aintree. The towpath is flat and easy, good for:</p>
+<ul>
+<li>A morning walk or run if you're in the area for work</li>
+<li>A gentle stroll with grandparents or a buggy</li>
+<li>A cycle ride, with National Cycle Route 62 and the Liverpool Loop Line close by</li>
+</ul>
+<p>It's a quieter side of Aintree that race-day visitors rarely see.</p>
+<h2>Aintree Shopping Park</h2>
+<p><strong>Aintree Shopping Park</strong>, on Ormskirk Road, is a big out-of-town retail park managed by The Crown Estate. It's useful if you're self-catering or forgot something at home. Shops include:</p>
+<ul>
+<li><strong>M&amp;S with a Foodhall</strong>, Boots, Next and Pets at Home</li>
+<li><strong>B&amp;Q</strong>, Halfords and Hobbycraft</li>
+<li>Furniture stores including DFS and Furniture Village</li>
+<li>Food and drink from Greggs, Costa, Tim Hortons, McDonald's and Nando's</li>
+</ul>
+<p>Practical details from The Crown Estate:</p>
+<ul>
+<li><strong>Parking is free all day</strong>, with Blue Badge spaces and EV charging bays near Next</li>
+<li><strong>Core opening hours</strong> are 7am to 11pm Monday to Friday, 9am to 8pm Saturday and 9am to 11pm Sunday (individual stores vary)</li>
+<li>It's about a <strong>10-minute walk from Old Roan station</strong></li>
+<li>Buses <strong>300, 310 and 345</strong> stop within 150 metres</li>
+<li>By car it's off <strong>M57 junction 7</strong> or <strong>M58 junction 0</strong>, via the A59</li>
+</ul>
+<h2>Who stays in the Aintree area</h2>
+<ul>
+<li><strong>Racegoers</strong> for the Grand National and other race meetings</li>
+<li><strong>Hospital visitors</strong> for Aintree University Hospital and The Walton Centre in Fazakerley. See our <a href="/guides/accommodation-near-aintree-university-hospital">Aintree hospital accommodation guide</a></li>
+<li><strong>Contractors and work crews</strong> who need quick motorway access</li>
+<li><strong>Football fans</strong> who want a base on the north side of the city, a short train ride from Anfield and Everton's stadium</li>
+<li><strong>Families</strong> who want a quieter base with parking and space</li>
+</ul>
+<h3>Aintree vs the city centre</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Aintree and Fazakerley</th>
+<th>City centre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parking</td>
+<td>Easier, often free</td>
+<td>Paid car parks</td>
+</tr>
+<tr>
+<td>Noise at night</td>
+<td>Quieter residential streets</td>
+<td>Busier, especially weekends</td>
+</tr>
+<tr>
+<td>Getting to the waterfront</td>
+<td>Train, about 15-20 minutes</td>
+<td>Walk</td>
+</tr>
+<tr>
+<td>Grand National</td>
+<td>Close by</td>
+<td>Train out</td>
+</tr>
+<tr>
+<td>Motorways</td>
+<td>Minutes away</td>
+<td>Through city traffic</td>
+</tr>
+</tbody>
+</table>
+<p>The trade-off is simple: you give up walking to bars and the waterfront, and in return get space, parking and a quieter night's sleep.</p>
+<h2>Tips for visiting Aintree</h2>
+<ol>
+<li><strong>Check race-day road closures</strong> if you're driving anywhere near the racecourse during a meeting.</li>
+<li><strong>Use Old Roan</strong> for the shopping park and village, and <strong>Aintree</strong> for the racecourse.</li>
+<li><strong>Book early for April.</strong> The Grand National festival fills accommodation across north Liverpool.</li>
+<li><strong>Pack for the weather.</strong> The canal towpath and racecourse are exposed in wind and rain.</li>
+</ol>
+<h2>Staying at Zermatt Lodge</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree. It's not in the city centre: you're in a quiet residential area, about 15 minutes by train from Liverpool city centre, with Fazakerley station nearby.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> king master with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong>, a big kitchen and a separate dining room</li>
+<li><strong>Games room with a pool table</strong>, board games and a 55" Smart TV with Netflix</li>
+<li><strong>Large, fully fenced private garden</strong></li>
+<li><strong>Free parking for 2 cars</strong>, minutes from the M57 and M58</li>
+<li><strong>Self check-in</strong> from 3pm, checkout by 11am</li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.</p>
+<p><a href="/#book">Book direct</a> to avoid platform service fees, or browse all our <a href="/stays">stays</a>.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/aintree-racecourse-accommodation">Aintree Racecourse accommodation</a></li>
+<li><a href="/guides/getting-to-aintree-racecourse-from-fazakerley">Getting to Aintree Racecourse from Fazakerley</a></li>
+<li><a href="/guides/grand-national-accommodation">Grand National accommodation</a></li>
+<li><a href="/guides/family-days-out-north-liverpool">Family days out in north Liverpool</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where is Aintree?</summary><p>Aintree is a village and civil parish in the borough of Sefton, Merseyside. It sits on the A59 between Walton and Maghull, about 6 miles north-east of Liverpool city centre.</p></details>
+<details><summary>Which station is best for Aintree?</summary><p>Aintree station serves the racecourse and Old Roan station is closer to the village and Aintree Shopping Park. Both are on Merseyrail&#x27;s Northern line (Ormskirk branch) into Liverpool Central.</p></details>
+<details><summary>Did Aintree really host Formula One?</summary><p>Yes. The motor racing circuit built around the racecourse hosted the British Grand Prix five times: 1955, 1957, 1959, 1961 and 1962. Stirling Moss won his first British Grand Prix there in 1955. A shorter club circuit is still used for sprints, track days and motorcycle racing.</p></details>
+<details><summary>When is the next Grand National?</summary><p>The Jockey Club lists the 2027 Randox Grand National Festival as Thursday 8 to Saturday 10 April 2027, with the Grand National itself at 4pm on the Saturday.</p></details>
+<details><summary>Is Aintree Hospital in Aintree?</summary><p>Not quite. Aintree University Hospital is in neighbouring Fazakerley, across the road from Fazakerley station, which is on the Kirkby branch of the Northern line.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/aintree-racecourse-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Aintree Racecourse Accommodation: Non-National Days</h3><p>Covers the quieter fixtures (November meeting, Becher Chase Day in December) when rooms are easier to find and you can drive in.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/getting-to-aintree-racecourse-from-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>How to Get to Aintree Racecourse: Train, Bus and Car</h3><p>Step-by-step: drive vs train via Sandhills, festival-day Merseyrail changes, the 300/310/345 buses and getting home after the last race.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/grand-national-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Racing</span><h3>Grand National Accommodation: Stay Near Aintree</h3><p>Built on the Jockey Club&#x27;s official travel plan: festival dates, the Kirkby-line change at Sandhills on race days, car parking rules and why a house suits a group.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

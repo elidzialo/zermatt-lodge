@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Liverpool Nightlife for Groups: Where to Go and How to Get Home</title>
+<meta name="description" content="Liverpool nightlife for groups: Concert Square, Seel Street, Mathew Street, the Baltic Triangle and Lark Lane, plus safety tips and getting home.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/liverpool-nightlife-guide-groups">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Liverpool Nightlife for Groups: Where to Go and How to Get Home">
+<meta property="og:description" content="Liverpool nightlife for groups: Concert Square, Seel Street, Mathew Street, the Baltic Triangle and Lark Lane, plus safety tips and getting home.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/liverpool-nightlife-guide-groups">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Liverpool Nightlife for Groups: Areas, Safety and Getting Home", "description": "Liverpool nightlife for groups: Concert Square, Seel Street, Mathew Street, the Baltic Triangle and Lark Lane, plus safety tips and getting home.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/liverpool-nightlife-guide-groups", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Liverpool Nightlife for Groups: Where to Go and How to Get Home", "item": "https://bookhomes.co.uk/guides/liverpool-nightlife-guide-groups"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is the main nightlife area in Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "The busiest area is the Ropewalks, around Concert Square, Seel Street and Wood Street, close to Liverpool Central station. Mathew Street in the Cavern Quarter is the other big late-night area, with live music bars."}}, {"@type": "Question", "name": "Is Liverpool safe at night?", "acceptedAnswer": {"@type": "Answer", "text": "Liverpool has held Purple Flag status, an award for safe and well-run night-time economies, every year since 2010. In May 2026 Merseyside Police launched nine Halo Points, well-lit safe spaces linked to 999 and CCTV, around Concert Square, Seel Street and Mathew Street."}}, {"@type": "Question", "name": "How do we get back to north Liverpool after a night out?", "acceptedAnswer": {"@type": "Answer", "text": "Take the Merseyrail Northern line from Liverpool Central or Moorfields towards Kirkby or Headbolt Lane, and check the last train in the Merseyrail app. After that, use a licensed black cab from a rank or a pre-booked private hire car."}}, {"@type": "Question", "name": "Can private hire taxis pick you up off the street in Liverpool?", "acceptedAnswer": {"@type": "Answer", "text": "No. Liverpool City Council says private hire journeys must be booked in advance. Only hackney carriages (black cabs) can be hailed or taken from a rank, and the meter should be on for trips within Liverpool."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Liverpool Nightlife for Groups: Where to Go and How to Get Home</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Liverpool Nightlife for Groups: Areas, Safety and Getting Home</h1>
+      <p class="intro">Liverpool nightlife for groups: Concert Square, Seel Street, Mathew Street, the Baltic Triangle and Lark Lane, plus safety tips and getting home.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Kitchen worktops and appliances at Zermatt Lodge" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Liverpool is one of the best cities in the UK for a group night out. The main areas are the Ropewalks (Concert Square, Seel Street and Wood Street) for bars and clubs, Mathew Street for live music and Beatles bars, the Baltic Triangle for warehouse venues and street food, and Lark Lane in the south for a more relaxed pub crawl. The city has held Purple Flag status for safe nightlife since 2010, and in 2026 police added nine Halo Points as safe spaces in the busiest streets. If you're staying in north Liverpool, Fazakerley is about 15 minutes from Liverpool Central by train, so plan your last train or a taxi home.</p></div>
+          <p>Liverpool is one of the best cities in the UK for a group night out. The main areas are the Ropewalks (Concert Square, Seel Street and Wood Street) for bars and clubs, Mathew Street for live music and Beatles bars, the Baltic Triangle for warehouse venues and street food, and Lark Lane in the south for a more relaxed pub crawl. The city has held Purple Flag status for safe nightlife since 2010, and in 2026 police added nine Halo Points as safe spaces in the busiest streets. If you're staying in north Liverpool, Fazakerley is about 15 minutes from Liverpool Central by train, so plan your last train or a taxi home.</p>
+<h2>The main nightlife areas</h2>
+<h3>Concert Square, Seel Street and the Ropewalks</h3>
+<p>This is the heart of Liverpool's nightlife, a few minutes' walk from <strong>Liverpool Central</strong> station. Concert Square is a small square lined with bars, busy with students, hen and stag groups and locals from early evening. Seel Street and Wood Street run alongside, with a wider mix of cocktail bars, pubs, clubs and late venues.</p>
+<p><strong>Good for:</strong> groups who want lots of choice within a few streets, and dancing later.
+<strong>Bear in mind:</strong> it gets very busy on Friday and Saturday nights. Pick a meeting point in case people get separated.</p>
+<h3>Mathew Street and the Cavern Quarter</h3>
+<p>Home of the <strong>Cavern Club</strong>, Mathew Street is packed with bars that have live music most nights, much of it Beatles and 60s covers. It's lively and touristy in a good way, especially for groups who want to sing along.</p>
+<p><strong>Good for:</strong> live music, visitors, mixed-age groups.
+<strong>Bear in mind:</strong> some evening shows at the Cavern are 18+, so bring ID.</p>
+<h3>Bold Street</h3>
+<p>Liverpool's best-known food street runs from Liverpool Central up towards the bombed-out church of St Luke's. It's ideal for dinner before heading into the Ropewalks.</p>
+<p><strong>Good for:</strong> a group dinner and early drinks.</p>
+<h3>The Baltic Triangle</h3>
+<p>South of the city centre, the Baltic Triangle is a former warehouse district with bars, street-food halls, music venues and creative spaces. It feels more independent than the city centre.</p>
+<p><strong>Good for:</strong> groups who like street food and a more alternative feel.
+<strong>Bear in mind:</strong> it's a walk from the main stations, so plan how you'll get back.</p>
+<h3>Lark Lane, Aigburth</h3>
+<p>Lark Lane, near Sefton Park in south Liverpool, is a street of pubs, bars and restaurants with a village feel. It's quieter than town.</p>
+<p><strong>Good for:</strong> a relaxed evening, or a group with mixed tastes.
+<strong>Bear in mind:</strong> it's on the opposite side of the city from north Liverpool, so you'll want a taxi.</p>
+<h2>Which area suits your group?</h2>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Try</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hen or stag party</td>
+<td>Concert Square and Seel Street</td>
+</tr>
+<tr>
+<td>Friends who love live music</td>
+<td>Mathew Street</td>
+</tr>
+<tr>
+<td>Foodies</td>
+<td>Bold Street, then the Baltic Triangle</td>
+</tr>
+<tr>
+<td>Mixed ages or a calmer night</td>
+<td>Lark Lane or dinner on Bold Street</td>
+</tr>
+<tr>
+<td>Football fans after a match</td>
+<td>Mathew Street or the Ropewalks, depending on the result</td>
+</tr>
+</tbody>
+</table>
+<h2>Staying safe</h2>
+<p>Liverpool takes night-time safety seriously.</p>
+<ul>
+<li><strong>Purple Flag:</strong> the city was re-accredited for the 15th year in a row in 2025, an award run by the Association of Town and City Management for safe, well-managed nightlife.</li>
+<li><strong>Halo Points:</strong> in May 2026, Merseyside Police launched <strong>nine Halo Points</strong>, well-lit safe spaces with a direct link to 999 and the City Watch CCTV system. There are five around the <strong>Concert Square</strong> area (including on Seel Street, Slater Street, Wood Street and St Peter's Square) and four around <strong>Mathew Street</strong>, Stanley Street and Victoria Street. Anyone who feels unsafe can go to one for help.</li>
+<li><strong>CCTV:</strong> the council's CCTV network helped deal with over 3,000 incidents in 2024.</li>
+</ul>
+<p>Our group tips:</p>
+<ol>
+<li><strong>Agree a meeting point and a time</strong> in case phones die.</li>
+<li><strong>Keep an eye on drinks</strong> and on each other.</li>
+<li><strong>Stay together on the way home.</strong> No one walks back alone.</li>
+<li><strong>Charge your phone</strong> before you go out and carry a small power bank.</li>
+<li><strong>Pace it.</strong> Eat a proper dinner before the bars.</li>
+</ol>
+<h2>Getting home to north Liverpool</h2>
+<h3>By train</h3>
+<p>From <strong>Liverpool Central</strong> or <strong>Moorfields</strong>, take a Merseyrail Northern line train <strong>towards Kirkby or Headbolt Lane</strong>. Fazakerley is about <strong>15 minutes</strong> from Central, according to Trainline. Trains run less often late in the evening, so <strong>check the last train in the Merseyrail app</strong> before you go out, and set a reminder.</p>
+<h3>By taxi</h3>
+<p>Liverpool City Council's rules are clear:</p>
+<ul>
+<li><strong>Black cabs (hackney carriages)</strong> can be hailed or picked up from a rank. Within Liverpool, the meter must be on and the driver can only charge what it shows.</li>
+<li><strong>Private hire cars</strong> must be <strong>booked in advance</strong>. A private hire car that picks you up without a booking is breaking the rules, and you may not be insured.</li>
+</ul>
+<p>For a group of up to 7, you'll usually need two cars, or a larger vehicle booked in advance. Book early on busy nights, such as after big concerts and matches.</p>
+<p>If you have a problem with a taxi, the council's licensing enforcement team can be reached on <strong>0151 233 3015</strong>.</p>
+<h2>Coming back to a quiet street</h2>
+<p>A house outside the centre is a great base for a night out, but remember you're coming back to a residential street where people are asleep. Keep it quiet getting out of the taxi, and save the after-party for another trip. Most hosts, including us, have house rules about this.</p>
+<h2>Zermatt Lodge for a group night out</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre. It suits groups who want a calm, comfortable base to come back to after a night in town.</p>
+<ul>
+<li><strong>Sleeps 7</strong> in 4 bedrooms: a king master with en-suite, a second king, a queen and a single</li>
+<li><strong>2 bathrooms</strong> for getting ready</li>
+<li><strong>Free parking for 2 cars</strong>, so you can leave them at the house and take the train</li>
+<li><strong>Big kitchen</strong> for a recovery breakfast</li>
+<li><strong>Games room with a pool table</strong> for a quiet night in</li>
+<li><strong>Check-in 3pm, checkout 11am</strong></li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled. Night out in town, quiet night back at the house. No smoking and no pets.</p>
+<p><a href="/#book">Book direct</a> with no platform fees, or browse our <a href="/stays">group stays</a>.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/things-to-do-in-liverpool-with-a-group">Things to do in Liverpool with a group</a></li>
+<li><a href="/guides/fazakerley-to-liverpool-city-centre-by-train">Fazakerley to Liverpool city centre by train</a></li>
+<li><a href="/guides/group-booking-checklist">Group booking checklist</a></li>
+<li><a href="/guides/house-vs-hotel-liverpool-groups">House vs hotel for groups</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where is the main nightlife area in Liverpool?</summary><p>The busiest area is the Ropewalks, around Concert Square, Seel Street and Wood Street, close to Liverpool Central station. Mathew Street in the Cavern Quarter is the other big late-night area, with live music bars.</p></details>
+<details><summary>Is Liverpool safe at night?</summary><p>Liverpool has held Purple Flag status, an award for safe and well-run night-time economies, every year since 2010. In May 2026 Merseyside Police launched nine Halo Points, well-lit safe spaces linked to 999 and CCTV, around Concert Square, Seel Street and Mathew Street.</p></details>
+<details><summary>How do we get back to north Liverpool after a night out?</summary><p>Take the Merseyrail Northern line from Liverpool Central or Moorfields towards Kirkby or Headbolt Lane, and check the last train in the Merseyrail app. After that, use a licensed black cab from a rank or a pre-booked private hire car.</p></details>
+<details><summary>Can private hire taxis pick you up off the street in Liverpool?</summary><p>No. Liverpool City Council says private hire journeys must be booked in advance. Only hackney carriages (black cabs) can be hailed or taken from a rank, and the meter should be on for trips within Liverpool.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/things-to-do-in-liverpool-with-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Things to do</span><h3>Things to Do in Liverpool with a Group</h3><p>A two-day group plan mixing waterfront sights, a ferry, competitive socialising and a self-catered night in.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/where-to-stay-in-liverpool-for-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Groups families</span><h3>Where to Stay in Liverpool for a Group: Area Guide</h3><p>Area-by-area comparison (city centre, Baltic, waterfront, south Liverpool, north Liverpool) by noise, parking, cost drivers and purpose of trip.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/fazakerley-to-liverpool-city-centre-by-train"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Fazakerley to Liverpool City Centre by Train</h3><p>Merseyrail Northern line how-to: stops, journey time, first/last trains, tickets and which city stop to use.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Things to do and seasonal trips</h3><ul><li><a href="/guides/christmas-family-stay-liverpool">Christmas in Liverpool: Self-Catering Family Stay</a></li><li><a href="/guides/family-days-out-north-liverpool">Family Days Out in North Liverpool and Merseyside</a></li><li><a href="/guides/half-term-liverpool-family">Half Term in Liverpool: A Five-Day Family Plan for 2027</a></li><li><a href="/guides/liverpool-by-season-what-to-do">Best Time to Visit Liverpool: A Season-by-Season Guide</a></li><li><a href="/guides/liverpool-christmas-markets-guide">Liverpool Christmas Market 2026: Where, When and Tips</a></li><li><a href="/guides/things-to-do-in-liverpool-with-a-group">Things to Do in Liverpool with a Group</a></li></ul><a class="all" href="/guides#things-to-do">All guides by topic ›</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

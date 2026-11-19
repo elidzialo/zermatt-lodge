@@ -3,6 +3,7 @@ title: "Group Accommodation in Liverpool with Parking"
 meta_description: "Group accommodation in Liverpool with free parking for 2 cars: a whole 4-bed house that sleeps 7, 15 minutes by train from the city centre. What to check."
 slug: group-accommodation-liverpool-with-parking
 h1: "Group Accommodation in Liverpool with Free Parking"
+quick_answer: "If your group is driving, check parking first, as many city-centre group stays have none. Zermatt Lodge is a whole 4-bedroom house in Fazakerley that sleeps 7, with free parking for two cars and direct trains to the city centre in about 15 minutes."
 primary_keyword: "group accommodation liverpool"
 secondary_keywords:
   - "large group accommodation liverpool"

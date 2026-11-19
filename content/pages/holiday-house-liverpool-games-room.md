@@ -3,6 +3,7 @@ title: "Holiday House in Liverpool with a Games Room"
 meta_description: "A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups."
 slug: holiday-house-liverpool-games-room
 h1: "Holiday House in Liverpool with a Games Room and Pool Table"
+quick_answer: "Zermatt Lodge is a whole 4-bedroom holiday house in Fazakerley, north Liverpool, with a games room and pool table, board games and a 55-inch Smart TV with Netflix. It sleeps 7, has a garden and free parking for two cars, and trains reach the city centre in about 15 minutes."
 primary_keyword: "holiday house liverpool games room"
 secondary_keywords:
   - "liverpool accommodation pool table"

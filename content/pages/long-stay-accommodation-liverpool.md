@@ -3,6 +3,7 @@ title: "Long Stay Accommodation in Liverpool: A Practical Guide"
 meta_description: "Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking."
 slug: long-stay-accommodation-liverpool
 h1: "Long Stay Accommodation in Liverpool: What to Ask Before You Book"
+quick_answer: "For a stay of a month or more in Liverpool, agree cleaning, linen, bills, parking and invoices upfront. Zermatt Lodge is a whole 4-bedroom house about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
 primary_keyword: "long stay accommodation liverpool"
 secondary_keywords:
   - "monthly let liverpool"

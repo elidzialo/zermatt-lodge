@@ -3,6 +3,7 @@ title: "Accommodation near Everton's New Stadium"
 meta_description: "Staying for an Everton game at Hill Dickinson Stadium? A 4-bed house in Fazakerley, a short train ride to Sandhills, with free parking for 2 cars."
 slug: everton-stadium-accommodation
 h1: "Accommodation near Everton's New Stadium at Bramley-Moore Dock"
+quick_answer: "For Everton at Bramley-Moore Dock, stay on the Merseyrail Northern line, as Sandhills is the closest station to the ground. Zermatt Lodge in Fazakerley is a few stops up the same line, sleeps up to 7 and has free parking for two cars."
 primary_keyword: "everton stadium accommodation"
 secondary_keywords:
   - "hill dickinson stadium accommodation"

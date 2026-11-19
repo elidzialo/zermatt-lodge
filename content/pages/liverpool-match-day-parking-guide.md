@@ -3,6 +3,7 @@ title: "Liverpool Match Day Parking: Anfield & Everton"
 meta_description: "Where to park for Anfield and Everton's new stadium. Residents' zones, why there's no stadium parking, pre-booked options and train-in alternatives."
 slug: liverpool-match-day-parking-guide
 h1: "Liverpool Match Day Parking Guide: Anfield and Everton's New Stadium"
+quick_answer: "You cannot park at Anfield or Everton's stadium on match days, and the streets around both have parking restrictions. Leave the car somewhere you can stay all day and travel in by Merseyrail or the official matchday buses; Sandhills station serves both clubs."
 primary_keyword: "liverpool match day parking"
 secondary_keywords:
   - "anfield parking"

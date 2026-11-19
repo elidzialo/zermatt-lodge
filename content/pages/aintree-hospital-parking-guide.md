@@ -3,6 +3,7 @@ title: "Aintree Hospital Parking: Prices, Concessions and Tips"
 meta_description: "Aintree University Hospital parking explained: visitor and short stay tariffs, the weekly ticket, free parking concessions, Blue Badges and avoiding fines."
 slug: aintree-hospital-parking-guide
 h1: "Aintree Hospital Parking: What It Costs and How to Pay Less"
+quick_answer: "Parking at Aintree University Hospital is free for under 30 minutes, then charged by the hour: the hospital lists £3 for up to 1.5 hours rising to £5.50 for over 4.5 hours, with a weekly ticket at £17.50. Some patients and visitors can park free."
 primary_keyword: "aintree hospital parking"
 secondary_keywords:
   - "aintree hospital car park cost"

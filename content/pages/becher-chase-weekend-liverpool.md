@@ -3,6 +3,7 @@ title: "Becher Chase Weekend: Aintree Racing and Christmas Liverpool"
 meta_description: "Becher Chase Day is Saturday 5 December 2026 at Aintree. Race times, the National fences, Christmas in Liverpool and planning a winter weekend for a group."
 slug: becher-chase-weekend-liverpool
 h1: "Becher Chase Weekend: National Fences at Aintree, Then Christmas in Liverpool"
+quick_answer: "Becher Chase Day 2026 is on Saturday 5 December at Aintree Racecourse, with gates at 10am and the first race at 11.50am, according to the Jockey Club. It is the best chance outside April to see horses jump the Grand National fences, during Liverpool's Christmas season."
 primary_keyword: "becher chase"
 secondary_keywords:
   - "becher chase day 2026"

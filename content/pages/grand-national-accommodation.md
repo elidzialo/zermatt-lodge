@@ -3,6 +3,7 @@ title: "Grand National Accommodation: Stay Near Aintree"
 meta_description: "Grand National accommodation for groups: a 4-bed house in Fazakerley near Aintree with free parking. Festival dates, race-day trains and parking explained."
 slug: grand-national-accommodation
 h1: "Grand National Accommodation: Where to Stay Near Aintree for the Festival"
+quick_answer: "The best Grand National base for a group is close to Aintree but outside the race-day road closures, with parking and room for everyone. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree, sleeping up to 7 with free parking for two cars; book early for festival week."
 primary_keyword: "grand national accommodation"
 secondary_keywords:
   - "aintree accommodation grand national"

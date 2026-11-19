@@ -3,6 +3,7 @@ title: "European Nights at Anfield: Where to Stay Over"
 meta_description: "Champions League at Anfield? Kick-off times, getting home after a late midweek finish, travel tips and a house for your group a short train ride away."
 slug: european-nights-anfield-stay
 h1: "European Nights at Anfield: Why Staying Over Beats the Late Drive Home"
+quick_answer: "For a Champions League night at Anfield, stay over rather than drive home. Most European home games kick off at 8pm UK time, so the final whistle comes close to 10pm."
 primary_keyword: "champions league anfield accommodation"
 secondary_keywords:
   - "european night anfield where to stay"

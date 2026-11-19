@@ -3,6 +3,7 @@ title: "Contractor Accommodation in Liverpool with Parking"
 meta_description: "Contractor and work crew accommodation in Liverpool: a 4-bed house near the M57/M58 with free parking for 2 vehicles, separate beds and a full kitchen."
 slug: contractor-accommodation-liverpool
 h1: "Contractor Accommodation in Liverpool: A Whole House for Your Crew"
+quick_answer: "Good contractor accommodation gives each worker a proper bed, free vehicle parking, a kitchen and quick motorway access. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to the M57 and M58, with free parking for two vehicles, two bathrooms and beds for up to 7."
 primary_keyword: "contractor accommodation liverpool"
 secondary_keywords:
   - "work crew accommodation liverpool"

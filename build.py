@@ -124,6 +124,18 @@ def hub_body():
     return ('<p>Local, first-hand guides to staying in north Liverpool, written by the hosts of Zermatt Lodge. Pick a topic:</p>'
             f'<ul class="hub-jump">{"".join(jump)}</ul>' + "".join(secs))
 
+def quick_answer_html(meta, body_html):
+    """Short 'Quick answer' box at the top of a guide: front-matter quick_answer, else the first paragraph."""
+    qa = str(meta.get("quick_answer") or "").strip()
+    if qa:
+        text = esc(qa)
+    else:
+        m = re.search(r"<p>(.*?)</p>", body_html, re.S)
+        if not m:
+            return ""
+        text = m.group(1).strip()
+    return f'<div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>{text}</p></div>'
+
 def strip_empty_faq(h):
     """Drop the FAQ section when a page has no questions (no empty heading, no empty FAQPage)."""
     return re.sub(r'\s*<section class="wrap sec" aria-labelledby="faqH">.*?</section>', "", h, count=1, flags=re.S)
@@ -157,6 +169,7 @@ for slug, (meta, body) in pages.items():
               .replace("{{HERO_SRCSET}}", hero_srcset(photo))
               .replace("{{HERO_ALT}}", esc(PHOTO_ALT.get(photo, "Zermatt Lodge, Liverpool")))
               .replace("{{HERO_IMAGE}}", hero)
+              .replace("{{QUICK_ANSWER_HTML}}", quick_answer_html(meta, body_html))
               .replace("{{BODY_HTML}}", body_html)
               .replace("{{FAQ_HTML}}", faq_html)
               .replace("{{RELATED_HTML}}", "\n".join(card(s) for s in related_for(slug, meta)))
@@ -178,6 +191,7 @@ hub = (TPL.replace("{{TITLE}}", "Liverpool Guides | Zermatt Lodge")
           .replace("{{HERO_SRCSET}}", hero_srcset(PHOTOS[0]))
           .replace("{{HERO_ALT}}", esc(PHOTO_ALT[PHOTOS[0]]))
           .replace("{{HERO_IMAGE}}", CDN + PHOTOS[0])
+          .replace("{{QUICK_ANSWER_HTML}}", "")
           .replace("{{BODY_HTML}}", hub_body())
           .replace("{{FAQ_HTML}}", "")
           .replace("{{RELATED_HTML}}", "").replace("{{CLUSTER_HTML}}", "")
@@ -208,7 +222,7 @@ print(f"built {len(pages)} guides + hub, sitemap {len(urls)} urls")
 import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
-for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
+for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
             "stays", "host", "become-a-host", "terms", "privacy"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)

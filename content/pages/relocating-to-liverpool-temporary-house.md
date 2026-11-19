@@ -3,6 +3,7 @@ title: "Relocating to Liverpool? Use a Short-Stay House as Base"
 meta_description: "Moving to Liverpool? How to use a furnished short-stay house as your relocation base: viewings, school transfers, GP registration and areas to research."
 slug: relocating-to-liverpool-temporary-house
 h1: "Relocating to Liverpool: Using a Short-Stay House as Your Base"
+quick_answer: "A furnished short-stay house gives a relocating family a calm base for the first few weeks while viewing homes, starting work and sorting schools. Zermatt Lodge in Fazakerley sleeps up to 7, with a full kitchen, two bathrooms, a garden and free parking for two cars."
 primary_keyword: "temporary accommodation relocating to liverpool"
 secondary_keywords:
   - "moving to liverpool short term rental"

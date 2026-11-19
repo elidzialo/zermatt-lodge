@@ -3,6 +3,7 @@ title: "Alder Hey Family Accommodation with Parking"
 meta_description: "Where whole families can stay near Alder Hey Children's Hospital. Parking tariff, frequent-visitor concession, buses and a 4-bed house with free parking."
 slug: alder-hey-family-accommodation
 h1: "Alder Hey Family Accommodation: Where the Whole Family Can Stay"
+quick_answer: "When the whole family needs to stay near Alder Hey, a self-catering house a short drive away is often easiest, as on-site parent rooms are usually limited to one or two parents. Zermatt Lodge in Fazakerley sleeps up to 7 with free parking for two cars."
 primary_keyword: "alder hey family accommodation"
 secondary_keywords:
   - "where to stay near alder hey"

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Business Travel to Liverpool: A Practical Guide</title>
+<meta name="description" content="Travelling to Liverpool for work? Where the business districts are, getting between them, contactless trains, expenses rules and where teams can stay.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/liverpool-business-travel-guide">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Business Travel to Liverpool: A Practical Guide">
+<meta property="og:description" content="Travelling to Liverpool for work? Where the business districts are, getting between them, contactless trains, expenses rules and where teams can stay.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/liverpool-business-travel-guide">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Business Travel to Liverpool: A Practical Guide", "description": "Travelling to Liverpool for work? Where the business districts are, getting between them, contactless trains, expenses rules and where teams can stay.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/liverpool-business-travel-guide", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Business Travel to Liverpool: A Practical Guide", "item": "https://bookhomes.co.uk/guides/liverpool-business-travel-guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where is Liverpool's main business district?", "acceptedAnswer": {"@type": "Answer", "text": "The Commercial District sits in the north-west of the city centre, around Old Hall Street, Tithebarn Street and the waterfront. Moorfields station is the closest Merseyrail stop."}}, {"@type": "Question", "name": "What is the Knowledge Quarter?", "acceptedAnswer": {"@type": "Answer", "text": "KQ Liverpool is the city's innovation district around the universities and hospitals east of the centre. Paddington Village, at its eastern gateway, is a 30-acre development for science, technology, education and health, home to The Spine and the Royal College of Physicians."}}, {"@type": "Question", "name": "Can I pay for Merseyrail with a contactless card?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Liverpool City Region Combined Authority's Tap and Go scheme lets passengers use contactless cards or digital wallets, with daily and weekly fare caps. It was piloted from December 2025, with full service planned for later in 2026, so check Merseyrail for current coverage."}}, {"@type": "Question", "name": "Can my employer pay for my accommodation tax-free?", "acceptedAnswer": {"@type": "Answer", "text": "Often, if you're travelling to a temporary workplace. LITRG explains that travel expenses can include accommodation and subsistence for overnight stays, and that a workplace stops being temporary after more than 24 months of continuous work there. Check HMRC guidance for your situation."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Business Travel to Liverpool: A Practical Guide</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Business Travel to Liverpool: A Practical Guide</h1>
+      <p class="intro">Travelling to Liverpool for work? Where the business districts are, getting between them, contactless trains, expenses rules and where teams can stay.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Pool table and board games in the games room at Zermatt Lodge" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Business travel to Liverpool is straightforward: the main office district, the conference venues on the waterfront and the Knowledge Quarter are all within a compact city centre, linked by Merseyrail trains you can pay for with a contactless card. The main decisions are where to base yourself and how to get between sites if you're also visiting business parks on the outskirts. Solo travellers often stay in town; teams and crews often prefer a house with parking. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for 2 cars and quick access to the M57 and M58.</p></div>
+          <p>Business travel to Liverpool is straightforward: the main office district, the conference venues on the waterfront and the Knowledge Quarter are all within a compact city centre, linked by Merseyrail trains you can pay for with a contactless card. The main decisions are where to base yourself and how to get between sites if you're also visiting business parks on the outskirts. Solo travellers often stay in town; teams and crews often prefer a house with parking. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for 2 cars and quick access to the M57 and M58.</p>
+<h2>Where business happens in Liverpool</h2>
+<h3>The Commercial District</h3>
+<p>Liverpool's main office district is in the north-west of the city centre, around <strong>Old Hall Street</strong>, Tithebarn Street and the waterfront. It's home to insurers, law firms, public sector offices and professional services. Old Hall Street buildings include <strong>New Hall Place</strong>, used by the Home Office and RSA, and the <strong>Cotton Exchange</strong>.</p>
+<ul>
+<li><strong>Nearest station: Moorfields</strong>, which has an entrance on Old Hall Street</li>
+<li><strong>Coming up:</strong> <strong>Pall Mall</strong>, described by the city as Liverpool's first major Grade A office scheme in a decade</li>
+</ul>
+<h3>The Knowledge Quarter and Paddington Village</h3>
+<p><strong>KQ Liverpool</strong> is the innovation district around the universities and hospitals to the east of the centre. At its eastern gateway is <strong>Paddington Village</strong>, a 30-acre, £1 billion development:</p>
+<ul>
+<li><strong>The Spine</strong>, a 14-storey Grade A office building where the <strong>Royal College of Physicians</strong> occupies seven floors</li>
+<li>A <strong>221-bed Novotel</strong> and a <strong>1,200-space multi-storey car park</strong></li>
+<li>The University of Liverpool International College and a community diagnostic centre</li>
+<li><strong>HEMISPHERE</strong>, a planned office and laboratory building</li>
+</ul>
+<p>If your work is in life sciences, health or the universities, this is likely where you'll be.</p>
+<h3>The waterfront and conference campus</h3>
+<p>The convention and exhibition halls on Kings Dock are the city's main venue for conferences and trade shows. See our guides for <a href="/guides/acc-liverpool-conference-accommodation">conference delegates</a> and <a href="/guides/exhibition-centre-liverpool-exhibitor-stay">exhibitors</a>.</p>
+<h3>The north docks</h3>
+<p>The north docks are the city's biggest regeneration area. The proposed <strong>North Docks Mayoral Development Corporation</strong> covers about 174 hectares, with potential for more than 17,500 homes and 5 million sq ft of commercial space over 15 years, according to Liverpool Express. Everton's Hill Dickinson Stadium sits at Liverpool Waters here.</p>
+<h3>Business parks on the outskirts</h3>
+<ul>
+<li><strong>Knowsley Business Park and Kirkby:</strong> manufacturing, logistics and distribution. See our <a href="/guides/kirkby-knowsley-business-park-accommodation">Kirkby and Knowsley guide</a></li>
+<li><strong>The Freeport and port areas:</strong> see <a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport business stays</a></li>
+<li><strong>Skelmersdale:</strong> up the M58. See <a href="/guides/skelmersdale-work-accommodation">Skelmersdale work accommodation</a></li>
+</ul>
+<h2>Getting around</h2>
+<h3>Merseyrail</h3>
+<p>Merseyrail is the quickest way around the city centre and out to the suburbs. The underground stations in the centre are <strong>Moorfields</strong>, <strong>Liverpool Central</strong>, <strong>Lime Street</strong> (Wirral line) and <strong>James Street</strong>.</p>
+<p><strong>Tap and Go:</strong> the Liverpool City Region Combined Authority's scheme lets you pay with a <strong>contactless card or digital wallet</strong>, with <strong>daily and weekly fare capping</strong>. It was piloted on the Headbolt Lane line from December 2025, with full service later in 2026. For business travellers, that means no paper tickets to keep for expenses. Download statements from your card provider.</p>
+<h3>Driving</h3>
+<p>Driving into the centre is fine outside peak hours, but parking costs add up over a week. If you're visiting business parks or several sites in a day, a car is often essential. A base near the <strong>M57 and M58</strong> saves time compared with crossing the city centre.</p>
+<h3>Lime Street for mainline trains</h3>
+<p><strong>Lime Street</strong> is the mainline station for trains from London, Manchester and Birmingham. Liverpool Central is a short walk away for connections.</p>
+<h2>Where to stay: city centre or outside?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>City-centre hotel or apartment</th>
+<th>House outside the centre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Best for</td>
+<td>Solo travellers, short trips</td>
+<td>Teams, crews, longer stays</td>
+</tr>
+<tr>
+<td>Commute to Commercial District</td>
+<td>Walk</td>
+<td>Train to Moorfields</td>
+</tr>
+<tr>
+<td>Parking</td>
+<td>Paid</td>
+<td>Often free</td>
+</tr>
+<tr>
+<td>Visitor charge</td>
+<td>£2 a night at larger city-centre hotels and serviced blocks</td>
+<td>Not applicable to a private house</td>
+</tr>
+<tr>
+<td>Evening work space</td>
+<td>Hotel desk</td>
+<td>Dining table for a team</td>
+</tr>
+<tr>
+<td>Food</td>
+<td>Eating out</td>
+<td>Full kitchen</td>
+</tr>
+</tbody>
+</table>
+<p>Since <strong>1 June 2025</strong>, Liverpool's Accommodation BID has applied a <strong>£2 a night</strong> visitor charge at larger hotels and serviced accommodation blocks in the city centre. It's minor for one night, more noticeable for a team over a week.</p>
+<p>From Fazakerley, Trainline lists direct trains to Liverpool Central in <strong>about 15 minutes</strong>, calling at <strong>Moorfields</strong> for the Commercial District.</p>
+<h2>Expenses and tax: the basics</h2>
+<p>If your employer is paying, or you're claiming expenses, the rules on <strong>temporary workplaces</strong> matter. The Low Incomes Tax Reform Group (LITRG) explains:</p>
+<ul>
+<li>A <strong>temporary workplace</strong> is one you attend for a limited time or irregularly, for example being sent to work at another site for a year</li>
+<li>Travel between home and a temporary workplace may be allowable; travel to a permanent workplace isn't</li>
+<li>Travel expenses can include <strong>subsistence and accommodation</strong> where there's an overnight stay</li>
+<li>A workplace stops being temporary if you work there continuously for <strong>more than 24 months</strong>, and HMRC treats your duties as significant there if you spend <strong>40% or more</strong> of your time at that place</li>
+</ul>
+<p>This is general information, not tax advice. Check HMRC's guidance or ask your finance team about your situation.</p>
+<h3>Practical expenses tips</h3>
+<ol>
+<li><strong>Ask for an invoice</strong> in your company's name when you book.</li>
+<li><strong>Keep contactless statements</strong> for train journeys.</li>
+<li><strong>Note mileage</strong> if you're driving your own car between sites.</li>
+<li><strong>Check your company's policy</strong> on house rentals vs hotels. Many now accept both.</li>
+</ol>
+<h2>Tips for a smooth work trip</h2>
+<ul>
+<li><strong>Book early for big event weeks.</strong> The Grand National in April, major concerts and big conferences push up prices across the city</li>
+<li><strong>Check match days.</strong> Liverpool and Everton home games affect traffic and trains in north Liverpool</li>
+<li><strong>Plan meetings around Moorfields or Central.</strong> Both are easy to reach by train</li>
+<li><strong>Bring layers and an umbrella.</strong> The waterfront is windy</li>
+</ul>
+<h2>Staying at Zermatt Lodge for work</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the business district: it's a quiet residential base about 15 minutes by train from Liverpool city centre, near the M57 and M58.</p>
+<ul>
+<li><strong>4 bedrooms, sleeps 7</strong>, so a team gets their own rooms</li>
+<li><strong>2 bathrooms</strong> for early starts</li>
+<li><strong>Dining room and big kitchen</strong> for team breakfasts and evening prep</li>
+<li><strong>Wifi</strong> and a 55" Smart TV</li>
+<li><strong>Washing machine and tumble dryer</strong> for longer stays</li>
+<li><strong>Free parking for 2 cars</strong></li>
+<li><strong>Self check-in</strong> from 3pm</li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled. If you need an invoice in your company's name, mention it when you book.</p>
+<p><a href="/#book">Book direct</a>, or browse all our <a href="/stays">stays</a>.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/corporate-team-stay-liverpool">Corporate team stays in Liverpool</a></li>
+<li><a href="/guides/contractor-accommodation-liverpool">Contractor accommodation in Liverpool</a></li>
+<li><a href="/guides/kirkby-knowsley-business-park-accommodation">Kirkby and Knowsley Business Park accommodation</a></li>
+<li><a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport business stays</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>Where is Liverpool&#x27;s main business district?</summary><p>The Commercial District sits in the north-west of the city centre, around Old Hall Street, Tithebarn Street and the waterfront. Moorfields station is the closest Merseyrail stop.</p></details>
+<details><summary>What is the Knowledge Quarter?</summary><p>KQ Liverpool is the city&#x27;s innovation district around the universities and hospitals east of the centre. Paddington Village, at its eastern gateway, is a 30-acre development for science, technology, education and health, home to The Spine and the Royal College of Physicians.</p></details>
+<details><summary>Can I pay for Merseyrail with a contactless card?</summary><p>Yes. The Liverpool City Region Combined Authority&#x27;s Tap and Go scheme lets passengers use contactless cards or digital wallets, with daily and weekly fare caps. It was piloted from December 2025, with full service planned for later in 2026, so check Merseyrail for current coverage.</p></details>
+<details><summary>Can my employer pay for my accommodation tax-free?</summary><p>Often, if you&#x27;re travelling to a temporary workplace. LITRG explains that travel expenses can include accommodation and subsistence for overnight stays, and that a workplace stops being temporary after more than 24 months of continuous work there. Check HMRC guidance for your situation.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/corporate-team-stay-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Corporate Team Stays in Liverpool: Booking a Whole House</h3><p>Invoicing, Wi-Fi and workspace considerations for teams on multi-day projects.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/contractor-accommodation-liverpool"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Work stays</span><h3>Contractor Accommodation in Liverpool with Parking</h3><p>What crews actually need (separate beds, parking, kitchen, motorway access) mapped to north Liverpool&#x27;s M57/M58 position and current regional project pipeline.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/acc-liverpool-conference-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Venues events</span><h3>ACC Liverpool Conference Accommodation for Teams</h3><p>For exhibitor teams with kit in a car: unloading, parking and a shared house vs pricey waterfront hotels during big conferences.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Contractor, business and work stays</h3><ul><li><a href="/guides/accommodation-near-m57-m58-liverpool">Accommodation near the M57 and M58 in Liverpool</a></li><li><a href="/guides/contractor-accommodation-liverpool">Contractor Accommodation in Liverpool with Parking</a></li><li><a href="/guides/contractor-checklist-before-booking">Contractor Accommodation Checklist: 12 Questions to Ask</a></li><li><a href="/guides/corporate-team-stay-liverpool">Corporate Team Stays in Liverpool: Booking a Whole House</a></li><li><a href="/guides/film-crew-accommodation-liverpool">Film Crew Accommodation in Liverpool: A House for Your Unit</a></li><li><a href="/guides/kirkby-knowsley-business-park-accommodation">Accommodation near Knowsley Business Park &amp; Kirkby</a></li><li><a href="/guides/liverpool-construction-pipeline-overview">Liverpool Construction Projects 2026-27: Where the Work Is</a></li><li><a href="/guides/liverpool-freeport-business-stays">Liverpool Freeport and Port Work Stays: Where to Base</a></li><li><a href="/guides/locum-and-agency-nurse-accommodation-liverpool">Locum &amp; Agency Nurse Accommodation in Liverpool</a></li><li><a href="/guides/long-stay-accommodation-liverpool">Long Stay Accommodation in Liverpool: A Practical Guide</a></li><li><a href="/guides/nhs-agency-booking-accommodation-guide">Booking Accommodation for NHS Agency Staff in Liverpool: A Guide</a></li><li><a href="/guides/skelmersdale-work-accommodation">Skelmersdale Work Accommodation: Stay on the Liverpool Side</a></li><li><a href="/guides/van-parking-accommodation-liverpool">Accommodation with Van Parking in Liverpool: An Honest Guide</a></li></ul><a class="all" href="/guides#work-stays">All guides by topic ›</a></nav>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

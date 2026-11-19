@@ -3,6 +3,7 @@ title: "Locum & Agency Nurse Accommodation in Liverpool"
 meta_description: "Short-term accommodation for locum doctors, agency nurses and NHS contractors in Liverpool. Shift-friendly house near Aintree Hospital with free parking."
 slug: locum-and-agency-nurse-accommodation-liverpool
 h1: "Locum and Agency Nurse Accommodation in Liverpool"
+quick_answer: "Locum doctors, agency nurses and other NHS contractors usually do best somewhere quiet near their hospital, with parking and a kitchen. Zermatt Lodge in Fazakerley is close to Aintree University Hospital, The Walton Centre and Fazakerley station."
 primary_keyword: "locum accommodation liverpool"
 secondary_keywords:
   - "agency nurse accommodation liverpool"

@@ -3,6 +3,7 @@ title: "Liverpool Graduation Accommodation for the Whole Family"
 meta_description: "Where to stay for a Liverpool graduation: ceremony venues for Liverpool, LJMU and Hope, parking near each, guest tickets and a house for the whole family."
 slug: liverpool-graduation-family-stay
 h1: "Liverpool Graduation Accommodation: Venues, Parking and Where the Family Can Stay"
+quick_answer: "Book Liverpool graduation accommodation as soon as ceremony dates are announced, because most ceremonies fall in the same few weeks of July. For a whole family, a house a short train ride from the city centre with parking is often easier than several hotel rooms."
 primary_keyword: "liverpool graduation accommodation"
 secondary_keywords:
   - "where to stay for graduation liverpool"

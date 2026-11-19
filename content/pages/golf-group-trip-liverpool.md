@@ -3,6 +3,7 @@ title: "Golf Group Trip to Liverpool: Courses, Routes and a Base"
 meta_description: "Planning a golf trip to Liverpool? The Golf Coast links from Hoylake to Southport, booking rules at the big clubs, routes for two cars and a house for 7."
 slug: golf-group-trip-liverpool
 h1: "Golf Group Trip to Liverpool: Playing England's Golf Coast from One Base"
+quick_answer: "Base a golf group between the Wirral and the Sefton coast, with parking for two cars, to play several famous links without changing hotels. Royal Liverpool, Royal Birkdale, Hillside and Formby are all within reach of north Liverpool by car."
 primary_keyword: "golf trip liverpool group"
 secondary_keywords:
   - "golf break liverpool"

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!--
+  Zermatt Lodge - guide / landing page template
+  Placeholders (each written in the markup below wrapped in double curly braces, e.g. TITLE; replace at build time):
+    TITLE             <title> text, also og:title
+    META_DESCRIPTION  meta description, also og:description
+    CANONICAL         absolute canonical URL, e.g. https://example.com/guides/accommodation-near-aintree-hospital
+    H1                page heading (one h1 per page)
+    BREADCRUMB        short label for the current page in the breadcrumb (plain text)
+    INTRO             1-2 sentence lede shown under the h1 (plain text or inline HTML). If you don't have one, reuse META_DESCRIPTION.
+    HERO_IMAGE        absolute image URL (ideally 1600px+ wide), also og:image
+    HERO_SRCSET       responsive srcset for the hero (built from the same photo)
+    HERO_ALT          alt text describing the hero photo
+    BODY_HTML         article body: h2/h3/p/ul/ol/table/figure/blockquote. Do not include an h1.
+    FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
+    RELATED_HTML      guide cards, same markup as the homepage guides grid:
+                          <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
+    SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anfield Area Guide: Beyond Match Day</title>
+<meta name="description" content="Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area&#x27;s regeneration and how to visit from north Liverpool.">
+<link rel="canonical" href="https://bookhomes.co.uk/guides/anfield-area-guide">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Book Homes">
+<meta property="og:title" content="Anfield Area Guide: Beyond Match Day">
+<meta property="og:description" content="Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area&#x27;s regeneration and how to visit from north Liverpool.">
+<meta property="og:url" content="https://bookhomes.co.uk/guides/anfield-area-guide">
+<meta property="og:image" content="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Anfield Area Guide: What to See Beyond Match Day", "description": "Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area's regeneration and how to visit from north Liverpool.", "image": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04", "dateModified": "2026-11-19", "mainEntityOfPage": "https://bookhomes.co.uk/guides/anfield-area-guide", "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bookhomes.co.uk/"}, {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": "https://bookhomes.co.uk/guides"}, {"@type": "ListItem", "position": 3, "name": "Anfield Area Guide: Beyond Match Day", "item": "https://bookhomes.co.uk/guides/anfield-area-guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is there to do in Anfield apart from football?", "acceptedAnswer": {"@type": "Answer", "text": "Stanley Park, a Victorian park opened in 1870, and its restored Isla Gladstone Conservatory; Homebaked, the community bakery near the stadium; and stadium tours and concerts at Anfield itself."}}, {"@type": "Question", "name": "How big is Anfield stadium now?", "acceptedAnswer": {"@type": "Answer", "text": "Liverpool FC confirmed a capacity of 61,276 for the 2024-25 season, after the Anfield Road Stand redevelopment."}}, {"@type": "Question", "name": "Is Goodison Park still used?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Everton's men's team moved to the Hill Dickinson Stadium at Bramley-Moore Dock, and Goodison Park became the permanent home of Everton Women from the 2025-26 season."}}, {"@type": "Question", "name": "Is Anfield a good place to stay?", "acceptedAnswer": {"@type": "Answer", "text": "It's very convenient for match days, but much of the high street is quiet between games and accommodation choice is limited. Many visitors stay elsewhere in north Liverpool or the city centre and travel in."}}]}]}</script>
+<link rel="preconnect" href="https://assets.guesty.com" crossorigin>
+<link rel="preload" as="image" href="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" imagesrcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1600w" imagesizes="(max-width:1200px) 100vw, 1144px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/guide.css?v=851cd58a">
+</head>
+<body>
+<a class="skip" href="#content">Skip to main content</a>
+
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Book Homes - Zermatt Lodge home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>
+      <span>Book Homes<small>Zermatt Lodge, Liverpool</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#house">The house</a>
+      <a href="/#photos">Photos</a>
+      <a href="/#location">Location</a>
+      <a href="/guides" aria-current="true">Liverpool guides</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="top-right">
+      <a class="phone" href="tel:+447479905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg>+44 7479 905477</a>
+      <a class="btn" href="/#book">Book direct</a>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="wrap">
+    <header class="ahead">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/guides">Liverpool guides</a></li>
+          <li aria-current="page">Anfield Area Guide: Beyond Match Day</li>
+        </ol>
+      </nav>
+      <h1 class="serif">Anfield Area Guide: What to See Beyond Match Day</h1>
+      <p class="intro">Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area&#x27;s regeneration and how to visit from north Liverpool.</p>
+      <div class="byline"><span class="av" aria-hidden="true">Z</span><span>By <b>Book Homes</b>, hosts of Zermatt Lodge, Liverpool</span></div>
+    </header>
+    <figure class="hero-fig"><img src="https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04" srcset="https://assets.guesty.com/image/upload/w_480,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 480w, https://assets.guesty.com/image/upload/w_800,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 800w, https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1200w, https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Kitchen worktops and appliances at Zermatt Lodge" width="1600" height="686" fetchpriority="high"></figure>
+
+    <div class="layout">
+      <article>
+        <div class="prose">
+          <div class="quick-answer" role="note" aria-label="Quick answer"><p class="qa-label">Quick answer</p><p>Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house elsewhere in north Liverpool, in Fazakerley, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.</p></div>
+          <p>Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house elsewhere in north Liverpool, in Fazakerley, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.</p>
+<h2>Where Anfield is</h2>
+<p>Anfield is a district about 2 miles north-east of Liverpool city centre. It sits next to <strong>Everton</strong> and <strong>Walton</strong>, with <strong>Stanley Park</strong> between Anfield stadium and Goodison Park. Walton Breck Road and Oakfield Road are the main streets around the stadium.</p>
+<h2>Anfield stadium</h2>
+<p>Liverpool FC's ground dominates the area. After the Anfield Road Stand redevelopment, the club confirmed a <strong>capacity of 61,276</strong> for the 2024-25 season. Away from match days you can:</p>
+<ul>
+<li>Take a <strong>stadium tour</strong> and visit the museum. See our <a href="/guides/anfield-stadium-tour-guide">Anfield stadium tour guide</a></li>
+<li>See <strong>summer concerts</strong>. Anfield hosted major stadium gigs in June 2026, including Foo Fighters. See <a href="/guides/anfield-concert-accommodation">Anfield concert accommodation</a></li>
+<li>Visit the club shop</li>
+</ul>
+<p>On match days the area changes completely, with road closures, a residents' parking zone and heavy crowds. Our <a href="/guides/anfield-match-day-accommodation">Anfield match day guide</a> covers that side.</p>
+<h2>Stanley Park</h2>
+<p><strong>Stanley Park</strong> is the best reason to spend time in Anfield on a non-match day.</p>
+<ul>
+<li><strong>Opened:</strong> 14 May 1870</li>
+<li><strong>Designer:</strong> Edward Kemp</li>
+<li><strong>Size:</strong> about 45 hectares (110 acres)</li>
+<li><strong>Famous for:</strong> sitting between the home grounds of Liverpool and Everton</li>
+</ul>
+<h3>The Isla Gladstone Conservatory</h3>
+<p>The park's glasshouse was built in <strong>1899</strong> by Mackenzie &amp; Moncur of Edinburgh. It's <strong>Grade II listed</strong> and was restored and renamed the <strong>Isla Gladstone Conservatory</strong>. It's worth a look even if you're only passing on the way to the stadium.</p>
+<h3>The stadium that never was</h3>
+<p>Plans to build a new stadium on part of Stanley Park were first announced in <strong>2000</strong>. After a change of club ownership, the project was scrapped in <strong>October 2012</strong> in favour of expanding Anfield instead, which is what you see today.</p>
+<h3>Using the park</h3>
+<ul>
+<li><strong>A pre-match walk</strong> if you arrive early</li>
+<li><strong>A run or a kickabout</strong> on a quiet day</li>
+<li><strong>A walk between the two grounds</strong>, with Goodison Park on the far side</li>
+</ul>
+<h2>Goodison Park</h2>
+<p>Across Stanley Park is <strong>Goodison Park</strong>, Everton's home for well over a century. Everton's men's team moved to the <strong>Hill Dickinson Stadium</strong> at Bramley-Moore Dock, and Goodison became the <strong>permanent home of Everton Women from the 2025-26 season</strong>. If you're a football fan, seeing both grounds on one walk across the park is a classic Liverpool experience. For Everton's new ground, see our <a href="/guides/everton-stadium-accommodation">Everton stadium accommodation guide</a>.</p>
+<h2>Homebaked</h2>
+<p><strong>Homebaked</strong> is a bakery on the corner of <strong>Oakfield Road and Donaldson Road</strong>, a short walk from the stadium. It opened in <strong>2012</strong> on the site of the old Mitchell's bakery, starting as part of the Liverpool Biennial, and became a <strong>community land trust</strong> the same year. It sells bread, pies and buns, and has become one of the city's best-known social enterprises.</p>
+<p>Practical tip: on match days expect queues, so go early or on a quieter day.</p>
+<h2>The regeneration story</h2>
+<p>Anfield's streets tell a long story. According to reporting on the area:</p>
+<ul>
+<li>Victorian terraces were cleared from <strong>2004</strong> under the Housing Market Renewal Initiative, leading to hundreds of new and refurbished homes, a new primary school and work on Stanley Park</li>
+<li>The programme was cancelled nationally in <strong>2011</strong>, leaving gaps</li>
+<li>In <strong>2014</strong> the council adopted a Strategic Regeneration Framework, with the council, Liverpool FC, Your Housing Group and Keepmoat Homes working on key sites</li>
+<li>At the time of that reporting, about 60% of the regeneration was complete, with sites such as <strong>Anfield Square</strong> on Walton Breck Road still to be developed</li>
+</ul>
+<p>The honest picture for visitors is that some shops and pubs on the main roads rely heavily on match days and can be quiet in between. That's changing slowly, but don't expect a busy high street on a Tuesday.</p>
+<h2>Getting to Anfield from north Liverpool</h2>
+<p>From Fazakerley, the usual route on match days is the Merseyrail Northern line to <strong>Sandhills</strong>, then the matchday <strong>Soccerbus</strong> to Anfield. On non-match days, a bus or a short drive is simplest, and parking is easier when there's no game. See our <a href="/guides/liverpool-match-day-parking-guide">match day parking guide</a> before driving on a game day.</p>
+<h2>Should you stay in Anfield?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Staying in Anfield</th>
+<th>Staying elsewhere in north Liverpool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk to the stadium</td>
+<td>Yes</td>
+<td>Train and bus, or a drive</td>
+</tr>
+<tr>
+<td>Match day noise and crowds</td>
+<td>Right outside</td>
+<td>Further away</td>
+</tr>
+<tr>
+<td>Choice of accommodation</td>
+<td>Limited</td>
+<td>Wider</td>
+</tr>
+<tr>
+<td>Parking on match days</td>
+<td>Restricted zone</td>
+<td>Often easier</td>
+</tr>
+<tr>
+<td>Other things to do</td>
+<td>Park, bakery, stadium</td>
+<td>City centre a short train ride away</td>
+</tr>
+</tbody>
+</table>
+<p>For a match, being close is convenient. For a longer stay, many people prefer a quieter base with parking.</p>
+<h2>A half-day in Anfield</h2>
+<ol>
+<li><strong>Morning:</strong> stadium tour (book ahead).</li>
+<li><strong>Late morning:</strong> walk through Stanley Park and see the Isla Gladstone Conservatory.</li>
+<li><strong>Lunch:</strong> pies from Homebaked.</li>
+<li><strong>Afternoon:</strong> walk past Goodison Park, then head into the city or back to your base.</li>
+</ol>
+<h2>Staying at Zermatt Lodge</h2>
+<p>Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in Anfield and not walking distance to the stadium, but it's on the same side of the city, about 15 minutes by train from Liverpool city centre.</p>
+<ul>
+<li><strong>Sleeps 7:</strong> king with en-suite, second king, queen and single</li>
+<li><strong>2 bathrooms</strong>, big kitchen, dining room</li>
+<li><strong>Games room</strong> with pool table and 55" Smart TV for watching the other games</li>
+<li><strong>Large private garden</strong></li>
+<li><strong>Free parking for 2 cars</strong>, so you can leave the car and take the train on match day</li>
+</ul>
+<p>Strictly no parties or events - bookings found to be for parties are cancelled.</p>
+<p><a href="/#book">Book direct</a> or browse our <a href="/stays">stays</a>, including homes filtered for match and event days.</p>
+<p>Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677">Book Zermatt Lodge on Airbnb</a></p>
+<h2>Related guides</h2>
+<ul>
+<li><a href="/guides/anfield-match-day-accommodation">Anfield match day accommodation</a></li>
+<li><a href="/guides/anfield-stadium-tour-guide">Anfield stadium tour guide</a></li>
+<li><a href="/guides/anfield-concert-accommodation">Anfield concert accommodation</a></li>
+<li><a href="/guides/everton-stadium-accommodation">Everton stadium accommodation</a></li>
+</ul>
+        </div>
+
+        <aside class="cta-band" aria-label="Book Zermatt Lodge">
+          <div>
+            <h2 class="serif">Need a place to stay in Liverpool?</h2>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
+          </div>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
+        </aside>
+      </article>
+
+      <aside class="aside" aria-labelledby="stayH">
+        <div class="card">
+          <div class="thumb"><img src="https://assets.guesty.com/image/upload/w_720,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85" alt="Zermatt Lodge, a 4-bedroom house in Fazakerley, Liverpool" width="720" height="405" loading="lazy" decoding="async"></div>
+          <div class="in">
+            <span class="badge">Book direct - no service fees</span>
+            <h2 class="serif" id="stayH">Stay at Zermatt Lodge</h2>
+            <p class="sub">Spacious, luxury 4-bed Liverpool house, about 15 minutes from the city centre by train</p>
+            <ul class="ticks">
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-users"/></svg>Sleeps 7 · 4 bedrooms · 2 bathrooms</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-pool"/></svg>Games room with pool table</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-car"/></svg>Free parking for 2 cars</li>
+              <li><svg aria-hidden="true"><use href="/assets/icons.svg#i-tree"/></svg>Large private garden</li>
+            </ul>
+            <form id="stayForm" action="/" method="get">
+              <div class="fields">
+                <div class="row">
+                  <label class="f"><small>Check-in</small><input type="date" name="checkIn" id="gCi"></label>
+                  <label class="f"><small>Checkout</small><input type="date" name="checkOut" id="gCo"></label>
+                </div>
+                <label class="f g"><small>Guests</small>
+                  <select name="guests" id="gGs">
+                    <option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option><option value="7">7 guests</option>
+                  </select>
+                </label>
+              </div>
+              <button class="btn block" type="submit">Check availability</button>
+            </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
+            <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="wrap sec" aria-labelledby="faqH">
+    <div class="faq">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="serif h2" id="faqH">Frequently asked questions</h2>
+      <details><summary>What is there to do in Anfield apart from football?</summary><p>Stanley Park, a Victorian park opened in 1870, and its restored Isla Gladstone Conservatory; Homebaked, the community bakery near the stadium; and stadium tours and concerts at Anfield itself.</p></details>
+<details><summary>How big is Anfield stadium now?</summary><p>Liverpool FC confirmed a capacity of 61,276 for the 2024-25 season, after the Anfield Road Stand redevelopment.</p></details>
+<details><summary>Is Goodison Park still used?</summary><p>Yes. Everton&#x27;s men&#x27;s team moved to the Hill Dickinson Stadium at Bramley-Moore Dock, and Goodison Park became the permanent home of Everton Women from the 2025-26 season.</p></details>
+<details><summary>Is Anfield a good place to stay?</summary><p>It&#x27;s very convenient for match days, but much of the high street is quiet between games and accommodation choice is limited. Many visitors stay elsewhere in north Liverpool or the city centre and travel in.</p></details>
+    </div>
+  </section>
+
+  <section class="related sec" aria-labelledby="relH">
+    <div class="wrap">
+      <span class="eyebrow">Keep planning</span>
+      <h2 class="serif h2" id="relH">Related Liverpool guides</h2>
+      <div class="guides">
+        <a class="guide" href="/guides/anfield-match-day-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Football</span><h3>Anfield Match Day Accommodation: Stay Nearby</h3><p>Uses LFC&#x27;s own matchday travel guidance (917, Soccerbus from Sandhills, no stadium parking) to show how a Fazakerley house works on match days.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/anfield-stadium-tour-guide"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Football</span><h3>Anfield Stadium Tour: Types, Timings and Tips</h3><p>Tour types, timing, combining with Stanley Park and Everton&#x27;s area on the same day.</p><span class="more">Read guide ›</span></span></a>
+<a class="guide" href="/guides/anfield-concert-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Football</span><h3>Anfield Concert Accommodation: Where to Stay for a Gig</h3><p>Concert-night travel plan (shuttles and rail from Sandhills/Kirkdale), late finishes and staying with your group close by.</p><span class="more">Read guide ›</span></span></a>
+      </div>
+      
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2c6a50"/><path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg><span>Book Homes<small>Zermatt Lodge, Liverpool</small></span></a>
+        <p>Zermatt Lodge: a spacious, luxury 4-bed holiday and short-stay house in Liverpool. Sleeps 7. Strictly no parties or events.</p>
+      </div>
+      <nav aria-label="Footer - the house">
+        <h2>The house</h2>
+        <ul>
+          <li><a href="/#house">About the house</a></li>
+          <li><a href="/#photos">Photos</a></li>
+          <li><a href="/#location">Location</a></li>
+          <li><a href="/#book">Book direct</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - guides">
+        <h2>Liverpool guides</h2>
+        <ul>
+          <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer - also listed on">
+        <h2>Also listed on</h2>
+        <ul>
+          <li><a href="https://www.airbnb.com/rooms/1801505261909570677" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html" target="_blank" rel="noopener">Booking.com</a></li>
+        </ul>
+        <p>Booking direct here avoids their service fees.</p>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <p>Phone: <a href="tel:+447479905477">+44 7479 905477</a></p>
+        <p>Email: <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
+      </div>
+    </div>
+    <div class="legal">© <span id="yr">2026</span> Book Homes · Liverpool, United Kingdom</div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <div><b>Stay at Zermatt Lodge</b><span>Sleeps 7 · no service fees</span></div>
+  <div class="r">
+    <a class="call" href="tel:+447479905477" aria-label="Call +44 7479 905477"><svg aria-hidden="true"><use href="/assets/icons.svg#i-phone"/></svg></a>
+    <a class="btn" href="/#book">Check availability</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function iso(d){ return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function addDays(s, n){ var p = s.split("-").map(Number), d = new Date(p[0], p[1] - 1, p[2]); d.setDate(d.getDate() + n); return iso(d); }
+  var ci = document.getElementById("gCi"), co = document.getElementById("gCo"), gs = document.getElementById("gGs");
+  var today = iso(new Date());
+  ci.min = today; co.min = addDays(today, 1);
+  ci.addEventListener("change", function(){
+    if (!ci.value) return;
+    co.min = addDays(ci.value, 1);
+    if (!co.value || co.value <= ci.value) co.value = addDays(ci.value, 1);
+  });
+  document.getElementById("stayForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = [];
+    if (ci.value) q.push("checkIn=" + encodeURIComponent(ci.value));
+    if (ci.value && co.value && co.value > ci.value) q.push("checkOut=" + encodeURIComponent(co.value));
+    q.push("guests=" + encodeURIComponent(gs.value));
+    window.location.href = "/?" + q.join("&") + "#book";
+  });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

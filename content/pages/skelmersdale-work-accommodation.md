@@ -3,6 +3,7 @@ title: "Skelmersdale Work Accommodation: Stay on the Liverpool Side"
 meta_description: "Working in Skelmersdale? Why crews stay on the Liverpool side of the M58, the main estates and employers, the lack of a station, and a 4-bed house option."
 slug: skelmersdale-work-accommodation
 h1: "Skelmersdale Work Accommodation: Why Crews Stay on the Liverpool End of the M58"
+quick_answer: "Skelmersdale sits on the M58 about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island in north Liverpool. Crews working in Skelmersdale can stay near there for a short commute and more choice of shops, food and accommodation."
 primary_keyword: "skelmersdale accommodation"
 secondary_keywords:
   - "contractor accommodation skelmersdale"

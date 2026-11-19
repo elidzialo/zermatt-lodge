@@ -3,6 +3,7 @@ title: "Grand National Parking: How It Works at Aintree"
 meta_description: "Driving to the Grand National? Why parking must be pre-booked, the Steeplechase car park crossing, road closures, park and ride and when not to drive."
 slug: grand-national-parking-guide
 h1: "Grand National Parking: Pre-Booking, Road Closures and Smarter Alternatives"
+quick_answer: "During the Grand National Festival you can only park at Aintree Racecourse with a space booked in advance. Roads around the course close on race days, so many racegoers leave the car at their accommodation and take the train."
 primary_keyword: "grand national parking"
 secondary_keywords:
   - "aintree racecourse car parks"

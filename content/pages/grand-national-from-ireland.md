@@ -3,6 +3,7 @@ title: "Grand National from Ireland: Flights, Ferries and Stays"
 meta_description: "Travelling from Ireland for the Grand National? Flights into Liverpool, the Belfast and Holyhead ferries, driving to Aintree, and a 4-bed house for groups."
 slug: grand-national-from-ireland
 h1: "Going to the Grand National from Ireland: Getting There and Where to Stay"
+quick_answer: "Irish racegoers can fly direct into Liverpool from Dublin, Belfast and the west of Ireland, take the Belfast to Birkenhead ferry, or sail Dublin to Holyhead and drive. The 2027 festival runs Thursday 8 to Saturday 10 April, and Zermatt Lodge sleeps up to 7 with free parking for two cars."
 primary_keyword: "grand national from ireland"
 secondary_keywords:
   - "grand national trip from dublin"

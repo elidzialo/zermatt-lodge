@@ -3,6 +3,7 @@ title: "Things to Do in Liverpool with a Group"
 meta_description: "Group activities in Liverpool: a two-day plan with the waterfront, a Mersey ferry, stadium tours, food halls, games and a relaxed night in."
 slug: things-to-do-in-liverpool-with-a-group
 h1: "Things to Do in Liverpool with a Group: A Two-Day Plan"
+quick_answer: "The best group activities in Liverpool mix big sights with shared fun: a Mersey ferry cruise, the waterfront and its free museums, a stadium tour, a food hall and a games night. This guide sets them out as a two-day plan for five to seven people."
 primary_keyword: "things to do in liverpool with a group"
 secondary_keywords:
   - "group activities liverpool"

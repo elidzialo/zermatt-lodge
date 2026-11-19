@@ -3,6 +3,7 @@ title: "Christmas in Liverpool: Self-Catering Family Stay"
 meta_description: "Spending Christmas in Liverpool with family? Festive events, Christmas Day transport, cooking dinner for 7 and a 4-bed house in Fazakerley with parking."
 slug: christmas-family-stay-liverpool
 h1: "Christmas in Liverpool with the Family: A Self-Catering Stay Guide"
+quick_answer: "A Liverpool family Christmas works best from a whole house with a big kitchen and dining table. Zermatt Lodge in Fazakerley sleeps 7, with a dining room, games room, free parking for two cars and trains to the city centre in about 15 minutes."
 primary_keyword: "christmas accommodation liverpool family"
 secondary_keywords:
   - "liverpool christmas house rental"

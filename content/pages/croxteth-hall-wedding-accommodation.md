@@ -3,6 +3,7 @@ title: "Croxteth Hall Wedding Accommodation for Families"
 meta_description: "Going to a wedding at Croxteth Hall? Venue facts, getting there and back, timing the day, and a 4-bed house in north Liverpool for the family."
 slug: croxteth-hall-wedding-accommodation
 h1: "Croxteth Hall Wedding Accommodation: Where the Family Can Stay"
+quick_answer: "For a wedding at Croxteth Hall, stay in north Liverpool with parking so you are not crossing the city on the day. Zermatt Lodge sleeps up to 7, with two bathrooms for getting ready and free parking for two cars."
 primary_keyword: "croxteth hall wedding accommodation"
 secondary_keywords:
   - "where to stay near croxteth hall"

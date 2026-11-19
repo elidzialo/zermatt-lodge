@@ -3,6 +3,7 @@ title: "Liverpool Freeport and Port Work Stays: Where to Base"
 meta_description: "Working at the Port of Liverpool or a Liverpool City Region Freeport site? Where the sites are, travel from north Liverpool and a 4-bed house for crews."
 slug: liverpool-freeport-business-stays
 h1: "Liverpool Freeport and Port of Liverpool Work Stays"
+quick_answer: "For work at the Port of Liverpool's north docks, a base in north Liverpool keeps you close to Seaforth. Zermatt Lodge is a 4-bedroom house near the M57 and M58 with free parking for two vehicles and beds for up to 7."
 primary_keyword: "liverpool freeport accommodation"
 secondary_keywords:
   - "port of liverpool contractor accommodation"

@@ -3,6 +3,7 @@ title: "Corporate Team Stays in Liverpool: Booking a Whole House"
 meta_description: "Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues."
 slug: corporate-team-stay-liverpool
 h1: "Corporate Team Stays in Liverpool: How to Book a House for Colleagues"
+quick_answer: "For colleagues in Liverpool for several days, one whole house means one booking, one invoice, a table to work at and a kitchen. Zermatt Lodge is a 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7."
 primary_keyword: "corporate team accommodation liverpool"
 secondary_keywords:
   - "business accommodation liverpool for teams"

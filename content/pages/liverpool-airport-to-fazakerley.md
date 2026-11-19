@@ -3,6 +3,7 @@ title: "Liverpool Airport to Fazakerley: All Your Options"
 meta_description: "How to get from Liverpool John Lennon Airport to Fazakerley: taxi, car hire, the 500 bus plus Merseyrail, or the 86A via South Parkway. Times and tips."
 slug: liverpool-airport-to-fazakerley
 h1: "Liverpool John Lennon Airport to Fazakerley: How to Get There"
+quick_answer: "The quickest way from Liverpool John Lennon Airport to Fazakerley is by taxi or hire car, around 20 to 40 minutes depending on traffic. By public transport, take the 500 bus to the city centre, then a Merseyrail Northern line train from Liverpool Central, roughly an hour and a quarter in total."
 primary_keyword: "liverpool airport to fazakerley"
 secondary_keywords:
   - "john lennon airport to aintree"

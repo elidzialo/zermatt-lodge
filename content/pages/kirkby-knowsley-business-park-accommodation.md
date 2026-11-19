@@ -3,6 +3,7 @@ title: "Accommodation near Knowsley Business Park & Kirkby"
 meta_description: "Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby."
 slug: kirkby-knowsley-business-park-accommodation
 h1: "Accommodation near Knowsley Business Park and Knowsley Industrial Park, Kirkby"
+quick_answer: "For work at Knowsley Industrial Park or Knowsley Business Park, neighbouring Fazakerley offers a short drive or a direct train to Kirkby. Zermatt Lodge there has free parking for two vehicles and is near the M57 and Fazakerley station, on the same Merseyrail line as Kirkby and Headbolt Lane."
 primary_keyword: "accommodation near knowsley business park"
 secondary_keywords:
   - "knowsley industrial park accommodation"

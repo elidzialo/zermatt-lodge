@@ -3,6 +3,7 @@ title: "Fazakerley to Liverpool City Centre by Train"
 meta_description: "Fazakerley to Liverpool city centre by Merseyrail: stations on the line, journey time, first and last trains, which stop to use and ticket tips."
 slug: fazakerley-to-liverpool-city-centre-by-train
 h1: "Fazakerley to Liverpool City Centre by Train: A Simple Guide"
+quick_answer: "Merseyrail's Northern line runs direct from Fazakerley to Liverpool Central in about 15 minutes, calling at Rice Lane, Kirkdale, Sandhills and Moorfields. Trainline lists the first train at 04:46 and the last at 23:36 on its standard timetable."
 primary_keyword: "fazakerley to liverpool central"
 secondary_keywords:
   - "fazakerley train times"

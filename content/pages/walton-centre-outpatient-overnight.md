@@ -3,6 +3,7 @@ title: "Walton Centre Appointment? Planning an Overnight Stay"
 meta_description: "Travelling far for a Walton Centre clinic or scan? Check where it is, plan the night before, parking, trains and a quiet house near the Fazakerley site."
 slug: walton-centre-outpatient-overnight
 h1: "Travelling to a Walton Centre Appointment: When and How to Stay Overnight"
+quick_answer: "If you have an early appointment at The Walton Centre and live more than a couple of hours away, stay in Liverpool the night before. The hospital is in Fazakerley, north Liverpool, and serves patients from Lancashire, Cheshire, North Wales and the Isle of Man."
 primary_keyword: "walton centre appointment travel"
 secondary_keywords:
   - "walton centre outpatient accommodation"

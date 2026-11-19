@@ -3,6 +3,7 @@ title: "Grand National Festival: A First-Timer's Guide"
 meta_description: "First time at the Grand National? The three festival days, choosing an enclosure, bags, cash, children's tickets, what to wear and getting home."
 slug: grand-national-first-timers-guide
 h1: "Grand National Festival: A First-Timer's Guide"
+quick_answer: "The 2027 Grand National Festival runs from Thursday 8 to Saturday 10 April at Aintree Racecourse. First-timers should choose a day and an enclosure, travel by train if they can, and leave big bags and cash at home."
 primary_keyword: "grand national first time guide"
 secondary_keywords:
   - "what to expect grand national"

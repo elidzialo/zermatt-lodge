@@ -3,6 +3,7 @@ title: "Edge Hill Graduation 2027: Where Families Can Stay"
 meta_description: "Edge Hill University graduation week is planned for 19-23 July 2027. Timings, getting to Ormskirk and a 4-bed family house in north Liverpool."
 slug: edge-hill-university-graduation-stay
 h1: "Edge Hill University Graduation: A Family Stay Guide"
+quick_answer: "Edge Hill University's 2027 graduations are planned for Monday 19 to Friday 23 July 2027 at its Ormskirk campus, where accommodation is scarce. North Liverpool, near the start of the M58, gives more choice; Zermatt Lodge sleeps up to 7 with free parking for two cars."
 primary_keyword: "edge hill graduation accommodation"
 secondary_keywords:
   - "edge hill university graduation 2027"

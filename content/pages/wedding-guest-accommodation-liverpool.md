@@ -3,6 +3,7 @@ title: "Wedding Guest Accommodation in Liverpool for Groups"
 meta_description: "Guests coming to a Liverpool wedding? How to keep your group together, getting ready, taxis to the venue, St George's Hall parking and a house for up to 7."
 slug: wedding-guest-accommodation-liverpool
 h1: "Wedding Guest Accommodation in Liverpool: Staying Together Instead of Scattered Hotel Rooms"
+quick_answer: "A group of guests going to a Liverpool wedding can book one house instead of several hotel rooms, so you get ready together and share transport. A city-centre ceremony suits a base on a direct train line; venues on the edge of the city suit a base with parking."
 primary_keyword: "wedding guest accommodation liverpool"
 secondary_keywords:
   - "where to stay for a wedding in liverpool"

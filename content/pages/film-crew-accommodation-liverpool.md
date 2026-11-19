@@ -3,6 +3,7 @@ title: "Film Crew Accommodation in Liverpool: A House for Your Unit"
 meta_description: "Housing a film or TV crew in Liverpool? Why the city is so busy for filming, The Depot studios, getting around for location shoots and a 4-bed crew house."
 slug: film-crew-accommodation-liverpool
 h1: "Film Crew Accommodation in Liverpool: Housing a Small Crew Together"
+quick_answer: "For a small film or TV crew in Liverpool, a whole house gives everyone a bedroom, a kitchen for early calls and parking outside. The best base depends on the shoot: The Depot studios off Edge Lane, city-centre locations and wider Merseyside each suit different areas."
 primary_keyword: "film crew accommodation liverpool"
 secondary_keywords:
   - "tv production accommodation liverpool"

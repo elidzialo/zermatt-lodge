@@ -3,6 +3,7 @@ title: "Away Fans Guide to Everton's Hill Dickinson Stadium"
 meta_description: "Away at Everton? The away end, turnstiles, shuttle buses, Sandhills station, coach parking, the bag policy and staying over after an evening kick-off."
 slug: away-fans-guide-everton-stadium
 h1: "Away Fans' Guide to Hill Dickinson Stadium: Getting In, Getting Out and Staying Over"
+quick_answer: "Away fans at Hill Dickinson Stadium sit in the north-east corner and enter through turnstile block 24 on the North Stand. The easiest route is the train to Sandhills, about a 15-minute walk, or a matchday shuttle bus from the city centre; there is no general parking at the ground."
 primary_keyword: "away fans everton new stadium"
 secondary_keywords:
   - "hill dickinson stadium away end"

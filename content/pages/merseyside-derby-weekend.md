@@ -3,6 +3,7 @@ title: "Merseyside Derby Weekend: Where to Stay in Liverpool"
 meta_description: "Planning a Merseyside derby weekend? 2026/27 derby dates, how to reach Anfield and Hill Dickinson Stadium, parking, and a 4-bed house in north Liverpool."
 slug: merseyside-derby-weekend
 h1: "Merseyside Derby Weekend: Planning Your Stay in Liverpool"
+quick_answer: "Everton host Liverpool at Hill Dickinson Stadium on Sunday 29 November 2026 at 12pm, and Liverpool host Everton at Anfield on Saturday 30 January 2027 (listed for 3pm, subject to change). Book early, as hotels fill fast for derby weekends."
 primary_keyword: "merseyside derby weekend"
 secondary_keywords:
   - "merseyside derby accommodation"

@@ -80,6 +80,9 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .prose th{font-weight:600;background:var(--soft);color:var(--ink)}
 .prose hr{border:0;border-top:1px solid var(--line);margin:2.2em 0}
 .prose .callout{background:var(--brand-tint);border-radius:16px;padding:20px 22px;font-size:16.5px}
+.prose .quick-answer{background:var(--brand-tint);border-left:4px solid var(--brand);border-radius:0 14px 14px 0;padding:16px 22px;font-size:17px;line-height:1.65}
+.prose .quick-answer .qa-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:0 0 4px}
+.prose .quick-answer p{margin:0}
 
 /* Inline CTA between body and FAQ */
 .cta-band{margin-top:48px;background:var(--brand);color:#fff;border-radius:22px;padding:28px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:720px;position:relative;overflow:hidden}

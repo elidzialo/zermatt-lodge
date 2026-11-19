@@ -3,6 +3,7 @@ title: "ACC Liverpool Conference Accommodation for Teams"
 meta_description: "Attending a conference at ACC Liverpool, now Liverpool Experience Campus? Parking prices, trains to James Street and a 4-bed house for your team."
 slug: acc-liverpool-conference-accommodation
 h1: "Conference Accommodation for ACC Liverpool (Liverpool Experience Campus)"
+quick_answer: "For a team at ACC Liverpool (now branded Liverpool Experience Campus), one shared house can replace several waterfront hotel rooms. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, sleeping up to 7 with free parking for two cars."
 primary_keyword: "acc liverpool conference accommodation"
 secondary_keywords:
   - "liverpool experience campus accommodation"

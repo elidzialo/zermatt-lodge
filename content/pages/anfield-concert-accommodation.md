@@ -3,6 +3,7 @@ title: "Anfield Concert Accommodation: Where to Stay for a Gig"
 meta_description: "Going to a concert at Anfield? Concert shuttle buses, road closures, the no-bags rule, getting back after the show and a house for your group nearby."
 slug: anfield-concert-accommodation
 h1: "Anfield Concert Accommodation: Planning Your Gig Night and Where to Stay"
+quick_answer: "For an Anfield concert, stay somewhere with an easy route to the official concert shuttles, because there is no parking at the stadium. The two practical choices are the city centre, near the Commutation Row shuttle, or the Merseyrail Northern line, which links to the Sandhills shuttle."
 primary_keyword: "anfield concert accommodation"
 secondary_keywords:
   - "where to stay for anfield concert"

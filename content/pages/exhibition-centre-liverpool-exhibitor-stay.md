@@ -3,6 +3,7 @@ title: "Exhibition Centre Liverpool: Exhibitor Team Stays"
 meta_description: "Exhibiting at Exhibition Centre Liverpool? Loading bay and hall facts, build-up tips, parking costs and a 4-bed house with parking for your stand team."
 slug: exhibition-centre-liverpool-exhibitor-stay
 h1: "Exhibiting at Exhibition Centre Liverpool: Build-Up, Breakdown and Where to Stay"
+quick_answer: "Exhibitors at Exhibition Centre Liverpool do best with the stand team under one roof, vans parked free overnight and a kitchen for early build-up. Zermatt Lodge is a 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two vehicles and beds for up to 7."
 primary_keyword: "exhibition centre liverpool exhibitor accommodation"
 secondary_keywords:
   - "exhibition centre liverpool loading bay"

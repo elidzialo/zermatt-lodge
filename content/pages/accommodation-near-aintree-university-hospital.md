@@ -3,6 +3,7 @@ title: "Accommodation near Aintree University Hospital"
 meta_description: "Staying near Aintree University Hospital? A whole 4-bed house in Fazakerley near Fazakerley station, with free parking for 2 cars. Visitor tips inside."
 slug: accommodation-near-aintree-university-hospital
 h1: "Accommodation near Aintree University Hospital: A Practical Guide for Families"
+quick_answer: "The closest option for a family or group is to stay in Fazakerley, the suburb Aintree University Hospital sits in. Zermatt Lodge is a whole 4-bedroom house there, close to Fazakerley station by the hospital's Longmoor Lane entrance, with free parking for two cars and a full kitchen."
 primary_keyword: "accommodation near aintree hospital"
 secondary_keywords:
   - "places to stay near aintree university hospital"

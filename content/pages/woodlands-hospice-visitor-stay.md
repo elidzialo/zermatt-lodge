@@ -3,6 +3,7 @@ title: "Staying Nearby While Visiting Woodlands Hospice"
 meta_description: "Travelling to be with someone at Woodlands Hospice in Liverpool? Where it is, getting there, parking and a quiet house nearby where the family can stay."
 slug: woodlands-hospice-visitor-stay
 h1: "Staying Nearby While Visiting Woodlands Hospice, Liverpool"
+quick_answer: "Woodlands Hospice is on the Aintree University Hospital campus in Fazakerley, north Liverpool. Zermatt Lodge is a whole 4-bedroom house nearby where family travelling from further away can stay together and be there quickly if needed."
 primary_keyword: "accommodation near woodlands hospice liverpool"
 secondary_keywords:
   - "woodlands hospice aintree visiting"

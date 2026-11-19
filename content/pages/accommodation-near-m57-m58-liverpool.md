@@ -3,6 +3,7 @@ title: "Accommodation near the M57 and M58 in Liverpool"
 meta_description: "Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars."
 slug: accommodation-near-m57-m58-liverpool
 h1: "Accommodation near the M57 and M58: Liverpool Without the City Traffic"
+quick_answer: "Staying near the M57 and M58 in north Liverpool lets drivers skip city-centre traffic and parking charges. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to both motorways, with free parking for two cars and Fazakerley station nearby."
 primary_keyword: "accommodation near m57 liverpool"
 secondary_keywords:
   - "stay near switch island"

@@ -3,6 +3,7 @@ title: "Liverpool Christmas Market 2026: Where, When and Tips"
 meta_description: "Liverpool Christmas Market 2026: Skate St George's and its market from 21 November, the Pier Head Wonderland, pop-up markets and getting there by train."
 slug: liverpool-christmas-markets-guide
 h1: "Liverpool Christmas Market 2026: Skating, Markets and How to Plan Your Visit"
+quick_answer: "Liverpool's 2026 Christmas market is on St George's Plateau, opposite Lime Street station, as part of Skate St George's, which Underbelly lists from 21 November 2026 to 3 January 2027. There is also an ice rink, a Big Wheel, a Christmas Wonderland at the Pier Head and pop-up markets on selected dates."
 primary_keyword: "liverpool christmas market"
 secondary_keywords:
   - "liverpool christmas market 2026 dates"

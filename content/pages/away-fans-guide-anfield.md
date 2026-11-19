@@ -3,6 +3,7 @@ title: "Away Fans Guide to Anfield: Travel, Entry and Stays"
 meta_description: "Following your team to Anfield? Where away fans sit, entrances, bag rules, trains from Lime Street, parking, and staying over in Liverpool after the match."
 slug: away-fans-guide-anfield
 h1: "Away Fans Guide to Anfield"
+quick_answer: "Away fans at Anfield sit in the lower tier of the Anfield Road End, with around 3,000 tickets for league games and Premier League away tickets capped at £30. Most travelling fans arrive by train to Sandhills or Kirkdale, by club coach or by taxi."
 primary_keyword: "away fans guide anfield"
 secondary_keywords:
   - "anfield away end"

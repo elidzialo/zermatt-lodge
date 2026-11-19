@@ -3,6 +3,7 @@ title: "M&S Bank Arena Concerts: Where to Stay as a Group"
 meta_description: "Going to a gig at M&S Bank Arena Liverpool with friends or family? Getting there, parking, the journey home and a 4-bed house in Fazakerley."
 slug: ms-bank-arena-concert-accommodation
 h1: "M&S Bank Arena Concerts: Where to Stay with a Group"
+quick_answer: "For an M&S Bank Arena concert with a group, stay somewhere with an easy route to the waterfront and home again. Zermatt Lodge in Fazakerley sleeps up to 7, about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena."
 primary_keyword: "m&s bank arena accommodation"
 secondary_keywords:
   - "places to stay near m&s bank arena"

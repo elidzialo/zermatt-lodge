@@ -3,6 +3,7 @@ title: "Aintree Major Trauma Centre: A Guide for Families"
 meta_description: "A loved one taken to Aintree's Major Trauma Centre? First-day checklist, parking concessions, getting there from across Liverpool and somewhere to stay."
 slug: aintree-major-trauma-centre-family-guide
 h1: "Aintree Major Trauma Centre: What Families Need to Know in the First Few Days"
+quick_answer: "The Major Trauma Centre for adults across Cheshire, Merseyside and the Isle of Man is at Aintree University Hospital on Lower Lane, north Liverpool. Families should get there safely, find the ward or unit, then sort parking and somewhere to sleep for what may be a longer stay."
 primary_keyword: "aintree major trauma centre"
 secondary_keywords:
   - "major trauma liverpool family support"

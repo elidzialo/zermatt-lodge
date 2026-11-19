@@ -3,6 +3,7 @@ title: "Insurance Alternative Accommodation in Liverpool"
 meta_description: "Displaced by a flood, fire or leak in Liverpool? How insurance alternative accommodation works, what to ask your insurer, and a 4-bed house with parking."
 slug: insurance-temporary-accommodation-liverpool
 h1: "Insurance Alternative Accommodation in Liverpool: A Guide for Displaced Families"
+quick_answer: "If a flood, fire or major leak makes your Liverpool home unliveable, home insurance may pay for alternative accommodation, usually arranged by your insurer or its provider. Zermatt Lodge, a 4-bedroom house in Fazakerley sleeping 7, can be booked by insurers and families for these stays."
 primary_keyword: "insurance temporary accommodation liverpool"
 secondary_keywords:
   - "alternative accommodation insurance claim liverpool"

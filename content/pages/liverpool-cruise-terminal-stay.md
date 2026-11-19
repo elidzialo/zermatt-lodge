@@ -3,6 +3,7 @@ title: "Staying the Night Before a Cruise from Liverpool"
 meta_description: "Sailing from Liverpool Cruise Terminal? Where it is, drop-off rules, cruise parking, luggage tips and a family house to stay in the night before or after."
 slug: liverpool-cruise-terminal-stay
 h1: "Liverpool Cruise Terminal: Where to Stay the Night Before (or After) Your Cruise"
+quick_answer: "If you are travelling more than a couple of hours to Liverpool Cruise Terminal at Prince's Dock, stay the night before. Cruise lines give each passenger a set embarkation time, so arriving the evening before protects you from delays."
 primary_keyword: "liverpool cruise terminal accommodation"
 secondary_keywords:
   - "stay night before cruise liverpool"

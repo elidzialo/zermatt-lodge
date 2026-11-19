@@ -3,6 +3,7 @@ title: "Family Days Out in North Liverpool and Merseyside"
 meta_description: "Family days out north of Liverpool: Croxteth Hall, Knowsley Safari, Crosby Beach, Formby, Southport and free museums, with drive times from Fazakerley."
 slug: family-days-out-north-liverpool
 h1: "Family Days Out in North Liverpool and Merseyside"
+quick_answer: "North Liverpool is a good base for family days out, with a country park with a farm, a drive-through safari, a beach with 100 iron statues, red squirrel woods and free museums within a short drive or train ride. Drive times from Fazakerley vary with traffic, so check a live route."
 primary_keyword: "family days out north liverpool"
 secondary_keywords:
   - "things to do with kids north liverpool"

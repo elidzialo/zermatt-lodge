@@ -3,6 +3,7 @@ title: "Isle of Man Ferry from Liverpool: Stay the Night Before"
 meta_description: "Catching the Isle of Man ferry from Liverpool? Terminal address, check-in times, parking, TT 2027 dates and a 4-bed house with parking the night before."
 slug: isle-of-man-ferry-liverpool-stay
 h1: "Isle of Man Ferry from Liverpool: Where to Stay the Night Before"
+quick_answer: "Staying in Liverpool the night before an Isle of Man sailing means no rush up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
 primary_keyword: "isle of man ferry liverpool accommodation"
 secondary_keywords:
   - "liverpool isle of man ferry terminal"

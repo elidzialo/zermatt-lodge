@@ -3,6 +3,7 @@ title: "Early Hospital Appointment in Liverpool? Stay the Night"
 meta_description: "Got a 7am admission or early scan in Liverpool? How to plan the night before: check-in timing, route rehearsal, fasting rules, parking and companions."
 slug: hospital-appointment-early-morning-stay
 h1: "Early Hospital Appointment in Liverpool? Stay the Night Before"
+quick_answer: "If your hospital letter says to arrive at 7am, staying in Liverpool the night before is usually the calmest option. Zermatt Lodge is a whole house near Aintree University Hospital, with check-in from 3pm."
 primary_keyword: "stay night before hospital appointment liverpool"
 secondary_keywords:
   - "pre-surgery overnight stay liverpool"
