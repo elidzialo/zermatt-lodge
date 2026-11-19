@@ -193,6 +193,10 @@ hub = re.sub(r'\s*<section class="related sec".*?</section>', "", hub, count=1, 
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
 open(os.path.join(ROOT, "guides/index.html"), "w", encoding="utf-8").write(hub)
 
+# Marketplace: /stays, listing pages, kosher landing, host landing, legal pages (build_listings.py)
+import build_listings
+urls += build_listings.build()
+
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sm += [f"  <url><loc>{u}</loc><lastmod>2026-11-18</lastmod></url>" for u in urls]
 sm.append("</urlset>")
@@ -204,7 +208,8 @@ print(f"built {len(pages)} guides + hub, sitemap {len(urls)} urls")
 import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
-for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin"]:
+for rel in ["index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
+            "stays", "host", "become-a-host", "terms", "privacy"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)

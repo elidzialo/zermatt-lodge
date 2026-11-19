@@ -1,0 +1,102 @@
+{
+ "updated": "2026-11-19T00:00:00Z",
+ "listings": [
+  {
+   "id": 1,
+   "slug": "zermatt-lodge",
+   "title": "Zermatt Lodge",
+   "area": "Fazakerley, north Liverpool",
+   "city": "Liverpool",
+   "property_type": "house",
+   "description": "Spacious 4-bedroom, 2-bathroom house in north Liverpool for groups, families and work stays. Games room with pool table, big kitchen, dining room, large private garden and free parking for 2 cars. About 15 minutes to Liverpool city centre by Merseyrail.",
+   "house_rules": "Strictly no parties or events - bookings found to be for parties are cancelled. No pets. No smoking. Check-in from 3pm, checkout by 11am.",
+   "max_guests": 7,
+   "bedrooms": 4,
+   "beds": 4,
+   "baths": 2,
+   "amenities": [
+    "wifi",
+    "parking",
+    "kitchen",
+    "washer",
+    "dryer",
+    "tv",
+    "heating",
+    "garden",
+    "pool_table",
+    "bath",
+    "self_checkin",
+    "workspace"
+   ],
+   "categories": [
+    "groups",
+    "family",
+    "hospital"
+   ],
+   "kosher": {},
+   "business": {
+    "desk": false,
+    "van_parking": false,
+    "monthly_rates": true,
+    "separate_beds": true
+   },
+   "base_price": 149,
+   "weekend_price": 189,
+   "cleaning_fee": 129,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 2,
+   "max_nights": 30,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.47,
+   "lng": -2.94,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1801505261909570677",
+   "booking_url": "https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html",
+   "legacy_source": "zermatt",
+   "page_url": "/",
+   "approved_at": "2026-11-18T23:52:07Z",
+   "updated_at": "2026-11-18T23:52:07Z",
+   "host_name": "ZALO Stays",
+   "trader_status": "trader",
+   "photos": [
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85",
+     "caption": "Front of Zermatt Lodge"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf",
+     "caption": "Living room with Smart TV"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY",
+     "caption": "Games room with pool table"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY",
+     "caption": "Big fitted kitchen"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/f191e01b-94eb-47-v15NJ",
+     "caption": "Dining room"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/ee9c770c-7a3e-4f-uH1ZG",
+     "caption": "King master bedroom"
+    },
+    {
+     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/b53ff2db-98d3-41-Z4m2T",
+     "caption": "Large private back garden"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "url": "/",
+   "from_price": 89
+  }
+ ],
+ "reviews": {}
+}

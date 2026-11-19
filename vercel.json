@@ -32,6 +32,22 @@
     {
       "source": "/api/booking-status",
       "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/zermatt-booking-status"
+    },
+    {
+      "source": "/api/bh/availability",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-availability"
+    },
+    {
+      "source": "/api/bh/listings",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-listings"
+    },
+    {
+      "source": "/api/bh/create-checkout",
+      "destination": "https://kddhkuwnkkjcnbjegsmc.supabase.co/functions/v1/bookhomes-create-checkout"
+    },
+    {
+      "source": "/stays/:slug",
+      "destination": "/stays/listing/index.html"
     }
   ],
   "headers": [
@@ -90,6 +106,46 @@
     },
     {
       "source": "/(sitemap.xml|robots.txt|llms.txt)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/host(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/stays/(booked|review|listing)(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(stay|stays|host|booked|review|stay-page|stay-dynamic)\\.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300"
+        }
+      ]
+    },
+    {
+      "source": "/assets/bh(.*)",
       "headers": [
         {
           "key": "Cache-Control",
