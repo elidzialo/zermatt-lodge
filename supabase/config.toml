@@ -32,3 +32,25 @@ verify_jwt = false
 # Thank-you page status check: read-only, status + dates only, looked up by the guest's own Checkout session id
 [functions.zermatt-booking-status]
 verify_jwt = false
+
+# Book Homes marketplace: every function checks its own caller (user token, Stripe signature, cron secret or ical token)
+[functions.bookhomes-availability]
+verify_jwt = false
+[functions.bookhomes-listings]
+verify_jwt = false
+[functions.bookhomes-create-checkout]
+verify_jwt = false
+[functions.bookhomes-stripe-webhook]
+verify_jwt = false
+[functions.bookhomes-ical-export]
+verify_jwt = false
+[functions.bookhomes-ical-sync]
+verify_jwt = false
+[functions.bookhomes-host-signup]
+verify_jwt = false
+[functions.bookhomes-host]
+verify_jwt = false
+[functions.bookhomes-admin]
+verify_jwt = false
+[functions.bookhomes-connect-onboard]
+verify_jwt = false

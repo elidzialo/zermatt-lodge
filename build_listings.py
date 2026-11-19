@@ -134,7 +134,7 @@ def header(search=False):
 </form></div></div>"""
     return f"""<header class="bh-top"><div class="wrap">
   <a class="logo" href="/stays" aria-label="Book Homes - all stays">{LOGO}<span>Book Homes</span></a>
-  <nav class="bh-nav" aria-label="Main"><a href="/stays">Stays</a><a href="/stays/kosher">Kosher homes</a><a href="/guides/">Liverpool guides</a><a class="host-cta" href="/become-a-host">List your property</a></nav>
+  <nav class="bh-nav" aria-label="Main"><a href="/stays">Stays</a><a href="/stays/kosher">Kosher homes</a><a href="/guides">Liverpool guides</a><a class="host-cta" href="/become-a-host">List your property</a></nav>
 </div>{s}</header>
 """
 
@@ -142,8 +142,8 @@ def header(search=False):
 def footer():
     return """<footer class="bh-foot"><div class="wrap">
   <div class="cols">
-    <div><h3>Book Homes</h3><a href="/stays">All stays</a><a href="/stays/kosher">Kosher homes</a><a href="/">Zermatt Lodge</a><a href="/guides/">Liverpool guides</a></div>
-    <div><h3>Hosting</h3><a href="/become-a-host">List your property</a><a href="/host/">Host login</a><a href="/terms/hosts">Host terms</a></div>
+    <div><h3>Book Homes</h3><a href="/stays">All stays</a><a href="/stays/kosher">Kosher homes</a><a href="/">Zermatt Lodge</a><a href="/guides">Liverpool guides</a></div>
+    <div><h3>Hosting</h3><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h3>Legal</h3><a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
     <div><h3>Contact</h3><a href="/#contact">Contact us</a><a href="tel:+447479905477">+44 7479 905477</a></div>
   </div>
