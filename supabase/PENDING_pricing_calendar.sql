@@ -262,3 +262,12 @@ revoke all on function bookhomes.quote(bigint, date, date, integer, integer) fro
 revoke all on function bookhomes.create_hold2(bigint, date, date, integer, integer, text, text, text, text, integer) from public, anon, authenticated;
 revoke all on function bookhomes.release_hold(text) from public, anon, authenticated;
 revoke all on function bookhomes.rate_hit(text, text, integer, integer) from public, anon, authenticated;
+
+-- ---------------------------------------------------------------------------
+-- 6. Advisor fixes (performance), bookhomes schema only
+-- ---------------------------------------------------------------------------
+create index if not exists date_alerts_listing_idx on bookhomes.date_alerts (listing_id);
+create index if not exists listing_ical_events_source_idx on bookhomes.listing_ical_events (source_id);
+alter policy own_select on bookhomes.profiles using (user_id = (select auth.uid()));
+alter policy own_update on bookhomes.profiles using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+alter policy own_select on bookhomes.hosts using (user_id = (select auth.uid()));
