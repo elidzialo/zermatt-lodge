@@ -17,6 +17,7 @@
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
                           <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
     SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
 -->
 <meta charset="utf-8">
@@ -41,7 +42,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/guide.css?v=80bbecfa">
+<link rel="stylesheet" href="/assets/guide.css?v=75a29145">
 </head>
 <body>
 <a class="skip" href="#content">Skip to main content</a>
@@ -230,6 +231,7 @@
 <a class="guide" href="/guides/hospital-appointment-early-morning-stay"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Early Hospital Appointment in Liverpool? Stay the Night</h3><p>For 7am admissions: timing a 3pm check-in the day before, route rehearsal, nil-by-mouth meal planning and companion logistics.</p><span class="more">Read guide ›</span></span></a>
 <a class="guide" href="/guides/fazakerley-to-liverpool-city-centre-by-train"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Fazakerley to Liverpool City Centre by Train</h3><p>Merseyrail Northern line how-to: stops, journey time, first/last trains, tickets and which city stop to use.</p><span class="more">Read guide ›</span></span></a>
       </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Hospital visits and medical stays</h3><ul><li><a href="/guides/accommodation-near-aintree-university-hospital">Accommodation near Aintree University Hospital</a></li><li><a href="/guides/aintree-hospital-parking-guide">Aintree Hospital Parking: Prices, Concessions and Tips</a></li><li><a href="/guides/aintree-major-trauma-centre-family-guide">Aintree Major Trauma Centre: A Guide for Families</a></li><li><a href="/guides/alder-hey-family-accommodation">Alder Hey Family Accommodation with Parking</a></li><li><a href="/guides/hospital-appointment-early-morning-stay">Early Hospital Appointment in Liverpool? Stay the Night</a></li><li><a href="/guides/long-stay-hospital-visiting-tips-liverpool">Long Hospital Stays in Liverpool: Tips for Families</a></li><li><a href="/guides/temporary-resident-gp-liverpool">Seeing a GP as a Temporary Resident in Liverpool</a></li><li><a href="/guides/visiting-aintree-hospital-practical-guide">Visiting Aintree Hospital: A Practical Guide</a></li><li><a href="/guides/walton-centre-family-accommodation">Where to Stay When Visiting The Walton Centre</a></li><li><a href="/guides/walton-centre-outpatient-overnight">Walton Centre Appointment? Planning an Overnight Stay</a></li><li><a href="/guides/woodlands-hospice-visitor-stay">Staying Nearby While Visiting Woodlands Hospice</a></li></ul><a class="all" href="/guides#hospitals">All guides by topic ›</a></nav>
     </div>
   </section>
 </main>
@@ -254,6 +256,9 @@
         <h2>Liverpool guides</h2>
         <ul>
           <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>

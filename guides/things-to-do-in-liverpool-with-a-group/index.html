@@ -17,6 +17,7 @@
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
                           <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
     SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
 -->
 <meta charset="utf-8">
@@ -41,7 +42,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/guide.css?v=80bbecfa">
+<link rel="stylesheet" href="/assets/guide.css?v=75a29145">
 </head>
 <body>
 <a class="skip" href="#content">Skip to main content</a>
@@ -223,6 +224,7 @@
 <a class="guide" href="/guides/acc-liverpool-conference-accommodation"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Venues events</span><h3>ACC Liverpool Conference Accommodation for Teams</h3><p>For exhibitor teams with kit in a car: unloading, parking and a shared house vs pricey waterfront hotels during big conferences.</p><span class="more">Read guide ›</span></span></a>
 <a class="guide" href="/guides/accommodation-near-aintree-university-hospital"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Hospitals</span><h3>Accommodation near Aintree University Hospital</h3><p>Whole house a short walk from the Longmoor Lane entrance via Fazakerley station, with verified parking tariffs, concessions and visiting logistics.</p><span class="more">Read guide ›</span></span></a>
       </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Things to do and seasonal trips</h3><ul><li><a href="/guides/christmas-family-stay-liverpool">Christmas in Liverpool: Self-Catering Family Stay</a></li><li><a href="/guides/family-days-out-north-liverpool">Family Days Out in North Liverpool and Merseyside</a></li><li><a href="/guides/liverpool-christmas-markets-guide">Liverpool Christmas Market 2026: Where, When and Tips</a></li></ul><a class="all" href="/guides#things-to-do">All guides by topic ›</a></nav>
     </div>
   </section>
 </main>
@@ -247,6 +249,9 @@
         <h2>Liverpool guides</h2>
         <ul>
           <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>

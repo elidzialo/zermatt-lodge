@@ -17,6 +17,7 @@
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
                           <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
     SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
 -->
 <meta charset="utf-8">
@@ -41,7 +42,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/guide.css?v=80bbecfa">
+<link rel="stylesheet" href="/assets/guide.css?v=75a29145">
 </head>
 <body>
 <a class="skip" href="#content">Skip to main content</a>
@@ -265,6 +266,7 @@
 <a class="guide" href="/guides/house-vs-hotel-liverpool-groups"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Comparisons</span><h3>House vs Hotel in Liverpool for Groups</h3><p>Side-by-side comparison on space, parking, meals, privacy and when a hotel is genuinely the better pick.</p><span class="more">Read guide ›</span></span></a>
 <a class="guide" href="/guides/things-to-do-in-liverpool-with-a-group"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Things to do</span><h3>Things to Do in Liverpool with a Group</h3><p>A two-day group plan mixing waterfront sights, a ferry, competitive socialising and a self-catered night in.</p><span class="more">Read guide ›</span></span></a>
       </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Group and family stays</h3><ul><li><a href="/guides/golf-group-trip-liverpool">Golf Group Trip to Liverpool: Courses, Routes and a Base</a></li><li><a href="/guides/group-accommodation-liverpool-with-parking">Group Accommodation in Liverpool with Parking</a></li><li><a href="/guides/holiday-house-liverpool-games-room">Holiday House in Liverpool with a Games Room</a></li><li><a href="/guides/house-vs-hotel-liverpool-groups">House vs Hotel in Liverpool for Groups</a></li><li><a href="/guides/large-family-house-liverpool">Large Family House to Rent in Liverpool</a></li></ul><a class="all" href="/guides#groups-families">All guides by topic ›</a></nav>
     </div>
   </section>
 </main>
@@ -289,6 +291,9 @@
         <h2>Liverpool guides</h2>
         <ul>
           <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>

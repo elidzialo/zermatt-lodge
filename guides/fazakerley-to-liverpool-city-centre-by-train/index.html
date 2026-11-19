@@ -17,6 +17,7 @@
     FAQ_HTML          <details><summary>Question</summary><p>Answer</p></details> repeated
     RELATED_HTML      guide cards, same markup as the homepage guides grid:
                           <a class="guide" href="/guides/slug"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Category</span><h3>Title</h3><p>Summary</p><span class="more">Read guide ›</span></span></a>
+    CLUSTER_HTML      'More guides on this topic' link list (every guide in the same topic cluster), or empty
     SCHEMA_JSON       JSON-LD object or array (Article, BreadcrumbList, FAQPage)
 -->
 <meta charset="utf-8">
@@ -41,7 +42,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/guide.css?v=80bbecfa">
+<link rel="stylesheet" href="/assets/guide.css?v=75a29145">
 </head>
 <body>
 <a class="skip" href="#content">Skip to main content</a>
@@ -268,6 +269,7 @@ Take a train in the other direction, towards Kirkby or Headbolt Lane. Kirkby is 
 <a class="guide" href="/guides/isle-of-man-ferry-liverpool-stay"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Isle of Man Ferry from Liverpool: Stay the Night Before</h3><p>TT-season pressure, early sailings and a base with parking for vans and bikes.</p><span class="more">Read guide ›</span></span></a>
 <a class="guide" href="/guides/liverpool-airport-to-fazakerley"><span class="art"><svg aria-hidden="true"><use href="/assets/icons.svg#i-pin"/></svg></span><span class="body"><span class="eyebrow">Transport</span><h3>Liverpool Airport to Fazakerley: All Your Options</h3><p>Taxi, car hire and bus+Merseyrail routes from John Lennon Airport to Fazakerley with verified bus numbers.</p><span class="more">Read guide ›</span></span></a>
       </div>
+      <nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: Getting to and around Liverpool</h3><ul><li><a href="/guides/dublin-ferry-liverpool-stay">Dublin to Liverpool by Ferry: Current Options and Stays</a></li><li><a href="/guides/isle-of-man-ferry-liverpool-stay">Isle of Man Ferry from Liverpool: Stay the Night Before</a></li><li><a href="/guides/liverpool-airport-to-fazakerley">Liverpool Airport to Fazakerley: All Your Options</a></li></ul><a class="all" href="/guides#transport">All guides by topic ›</a></nav>
     </div>
   </section>
 </main>
@@ -292,6 +294,9 @@ Take a train in the other direction, towards Kirkby or Headbolt Lane. Kirkby is 
         <h2>Liverpool guides</h2>
         <ul>
           <li><a href="/guides">All guides</a></li>
+          <li><a href="/guides#work-stays">Contractor and work stays</a></li>
+          <li><a href="/guides#groups-families">Group and family stays</a></li>
+          <li><a href="/guides#hospitals">Hospital visits</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
       </nav>

@@ -130,6 +130,18 @@ label.f input,label.f select{margin-bottom:-10px;padding-bottom:10px;min-height:
 .faq details p{color:var(--muted);padding:0 44px 22px 0;margin-top:-4px}
 .faq details p a{color:var(--brand);font-weight:600}
 .related{background:var(--soft)}
+.cluster{margin-top:28px;padding-top:20px;border-top:1px solid var(--line)}
+.cluster h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.cluster ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px 24px}
+.cluster li a{display:flex;align-items:center;min-height:44px;padding:6px 0;color:var(--brand-ink);font-weight:500}
+.cluster .all{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-weight:600;color:var(--brand)}
+.hub-jump{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0!important;margin-top:16px}
+.hub-jump a{display:inline-flex;align-items:center;min-height:44px;padding:4px 14px;border:1px solid #cfd5d1;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--brand-ink);background:#fff}
+.hub-jump a:hover{border-color:var(--accent)}
+.hub-list{list-style:none;padding:0!important}
+.hub-list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.hub-list li a{font-weight:600}
+.hub-list li span{display:block;font-size:14.5px;color:var(--muted)}
 .guides{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .guide{display:flex;flex-direction:column;text-decoration:none;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
 .guide:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}

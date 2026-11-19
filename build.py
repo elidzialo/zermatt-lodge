@@ -77,6 +77,53 @@ def related_for(slug, meta):
         if s != slug and s not in rel: rel.append(s)
     return rel[:3]
 
+# Topic clusters, in the order shown on the hub. Several topic-map clusters can share one hub section.
+CLUSTERS = [
+    ("work-stays", "Contractor, business and work stays", ["work-stays"]),
+    ("groups-families", "Group and family stays", ["groups-families", "comparisons"]),
+    ("hospitals", "Hospital visits and medical stays", ["hospitals"]),
+    ("racing", "Aintree and the Grand National", ["racing"]),
+    ("football", "Football, Anfield and Everton", ["football"]),
+    ("venues-events", "Events, venues, weddings and graduations", ["venues-events"]),
+    ("transport", "Getting to and around Liverpool", ["transport"]),
+    ("things-to-do", "Things to do and seasonal trips", ["things-to-do", "seasonal"]),
+    ("practical", "Relocation, insurance and renovation stays", ["practical"]),
+]
+def cluster_of(slug):
+    c = topics.get(slug, {}).get("cluster")
+    for anchor, label, members in CLUSTERS:
+        if c in members:
+            return anchor, label, members
+    return None
+
+def cluster_html(slug):
+    cl = cluster_of(slug)
+    if not cl:
+        return ""
+    anchor, label, members = cl
+    sibs = [s for s in pages if s != slug and topics.get(s, {}).get("cluster") in members]
+    if not sibs:
+        return ""
+    items = "".join(f'<li><a href="/guides/{s}">{esc(pages[s][0]["title"])}</a></li>' for s in sibs)
+    return (f'<nav class="cluster" aria-labelledby="clH"><h3 id="clH">More guides: {esc(label)}</h3><ul>{items}</ul>'
+            f'<a class="all" href="/guides#{anchor}">All guides by topic ›</a></nav>')
+
+def hub_body():
+    jump, secs = [], []
+    for anchor, label, members in CLUSTERS:
+        sl = [s for s in pages if topics.get(s, {}).get("cluster") in members]
+        if not sl:
+            continue
+        jump.append(f'<li><a href="#{anchor}">{esc(label)}</a></li>')
+        items = "".join(f'<li><a href="/guides/{s}">{esc(pages[s][0]["title"])}</a><span>{esc(topics.get(s, {}).get("angle") or pages[s][0]["meta_description"])}</span></li>' for s in sl)
+        secs.append(f'<h2 id="{anchor}">{esc(label)}</h2><ul class="hub-list">{items}</ul>')
+    rest = [s for s in pages if not cluster_of(s)]
+    if rest:
+        items = "".join(f'<li><a href="/guides/{s}">{esc(pages[s][0]["title"])}</a></li>' for s in rest)
+        secs.append(f'<h2 id="more">More guides</h2><ul class="hub-list">{items}</ul>')
+    return ('<p>Local, first-hand guides to staying in north Liverpool, written by the hosts of Zermatt Lodge. Pick a topic:</p>'
+            f'<ul class="hub-jump">{"".join(jump)}</ul>' + "".join(secs))
+
 def strip_empty_faq(h):
     """Drop the FAQ section when a page has no questions (no empty heading, no empty FAQPage)."""
     return re.sub(r'\s*<section class="wrap sec" aria-labelledby="faqH">.*?</section>', "", h, count=1, flags=re.S)
@@ -113,6 +160,7 @@ for slug, (meta, body) in pages.items():
               .replace("{{BODY_HTML}}", body_html)
               .replace("{{FAQ_HTML}}", faq_html)
               .replace("{{RELATED_HTML}}", "\n".join(card(s) for s in related_for(slug, meta)))
+              .replace("{{CLUSTER_HTML}}", cluster_html(slug))
               .replace("{{SCHEMA_JSON}}", json.dumps(schema, ensure_ascii=False).replace("</", "<\\/")))
     if not faqs:
         out = strip_empty_faq(out)
@@ -130,11 +178,18 @@ hub = (TPL.replace("{{TITLE}}", "Liverpool Guides | Zermatt Lodge")
           .replace("{{HERO_SRCSET}}", hero_srcset(PHOTOS[0]))
           .replace("{{HERO_ALT}}", esc(PHOTO_ALT[PHOTOS[0]]))
           .replace("{{HERO_IMAGE}}", CDN + PHOTOS[0])
-          .replace("{{BODY_HTML}}", "<p>Local, first-hand guides to staying in north Liverpool. Pick a guide below.</p>")
+          .replace("{{BODY_HTML}}", hub_body())
           .replace("{{FAQ_HTML}}", "")
-          .replace("{{RELATED_HTML}}", "\n".join(card(s) for s in pages))
-          .replace("{{SCHEMA_JSON}}", json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": "Liverpool guides", "url": f"{DOMAIN}/guides"})))
+          .replace("{{RELATED_HTML}}", "").replace("{{CLUSTER_HTML}}", "")
+          .replace("{{SCHEMA_JSON}}", json.dumps({"@context": "https://schema.org", "@graph": [
+              {"@type": "CollectionPage", "name": "Liverpool guides", "url": f"{DOMAIN}/guides", "description": hub_meta_desc,
+               "mainEntity": {"@type": "ItemList", "numberOfItems": len(pages), "itemListElement": [
+                   {"@type": "ListItem", "position": i, "url": f"{DOMAIN}/guides/{s}", "name": pages[s][0]["title"]} for i, s in enumerate(pages, 1)]}},
+              {"@type": "BreadcrumbList", "itemListElement": [
+                  {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
+                  {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides"}]}]}, ensure_ascii=False).replace("</", "<\\/")))
 hub = strip_empty_faq(hub)
+hub = re.sub(r'\s*<section class="related sec".*?</section>', "", hub, count=1, flags=re.S)  # the hub lists every guide by topic above
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
 open(os.path.join(ROOT, "guides/index.html"), "w", encoding="utf-8").write(hub)
 
