@@ -39,9 +39,11 @@ What we already promise: no guest booking fee, total price shown up front, koshe
 
 ## Backend needed (for the backend agent)
 
-- **Date alert without a listing:** `POST /api/bh/listings {action:"alert"}` needs `slug`. The homepage empty state sends one alert per close-match home (max 3). A `slug`-less "any home in Liverpool" alert would be cleaner.
-- **Flexible search in one call:** `GET ?action=search_flex&kind=weekend|week|month&months=2026-12,2027-01` returning the first available stay per listing. Today the front end makes up to 6 normal `search` calls.
-- **Price breakdown in search results:** add `nightly_subtotal_pence` and `cleaning_fee_pence` to `action=search` so the popover doesn't have to work it out.
-- **Shared wishlists:** fine as a link for now (`/saved?ids=1,2`). Accounts would store them server side.
-- **Reserved paths:** add `saved` to the reserved slug list in the bookhomes-host and bookhomes-admin functions (front end list already updated).
-- **Guest name/phone on Stripe:** the "Confirm and pay" screen sends the same payload as before, nothing new needed.
+Done by the backend agent: search returns price lines, pets and fee fields, check-in/checkout day rules, Airbnb import, iCal sync now, feedback chat.
+
+Still open:
+- **Date alert without a listing:** `POST /api/bh/listings {action:"alert"}` needs `slug`. The homepage empty state sends one alert per close-match home (max 3). A "any home in Liverpool" alert would be cleaner.
+- **Flexible search in one call:** `GET ?action=search_flex&kind=weekend|week|month&months=2026-12,2027-01` returning the first free stay per listing. Today the front end makes up to 6 normal `search` calls.
+- **Shared wishlists across devices:** needs guest accounts. For now the list is a link (`/saved?ids=1,2`).
+- **Reserved paths:** add `saved` and `wishlists` to the reserved slug list in bookhomes-host and bookhomes-admin (front-end list already updated).
+- **Admin overview:** KPIs are worked out in the browser from `overview`. A `stats` action (revenue, commission, occupancy by month) would keep it fast as bookings grow.
