@@ -87,13 +87,14 @@ function route(session){
     if (my !== routing) return;
     if (a.error) throw a.error;
     if (a.data.currentLevel === "aal2") return afterAuth();
-    if (a.data.nextLevel === "aal1" && lsGet(LATER_KEY) === session.user.id && !WANT_MFA) return afterAuth();
+    if (a.data.nextLevel === "aal1" && !WANT_MFA) return afterAuth();
     return sb.auth.mfa.listFactors().then(function(f){
       if (my !== routing) return;
       if (f.error) throw f.error;
       var ok = (f.data.totp || []).filter(function(x){ return x.status === "verified"; });
       if (ok.length){ FACTOR = ok[0].id; msg("#mfaMsg", ""); $("#mfaCode").value = ""; view("Mfa"); $("#mfaCode").focus(); return; }
-      if (lsGet(LATER_KEY) === session.user.id && !WANT_MFA) return afterAuth();
+      // 2-step is optional for hosts: only set it up when they choose to (Menu) or when connecting payouts
+      if (!WANT_MFA) return afterAuth();
       WANT_MFA = false;
       return startEnrol(f.data.all || []);
     });
@@ -354,6 +355,10 @@ document.addEventListener("click", function(e){
     api("bookhomes-host", {action: "set_status", id: +st.getAttribute("data-id"), status: st.getAttribute("data-status")}).then(refresh).catch(function(err){ if (sl){ sl.status = was; renderDash(); } else st.disabled = false; alert(err.message); });
   }
 });
+(function(){ var b = document.getElementById("mfaOptIn"); if (!b) return;
+  b.addEventListener("click", function(){ if (aal() === "aal2"){ b.textContent = "2-step login is on"; b.disabled = true; return; } WANT_MFA = true; lsDel(LATER_KEY); route(SESSION); });
+  setInterval(function(){ if (SESSION && aal() === "aal2" && !b.disabled){ b.textContent = "2-step login is on"; b.disabled = true; } }, 3000);
+})();
 $("#newListing").addEventListener("click", function(){ openWizard(null); });
 $("#editProfile").addEventListener("click", function(){ fillProfile(); $("#profH").textContent = "Edit profile"; view("Profile"); });
 $("#connectBtn").addEventListener("click", function(){
