@@ -309,8 +309,19 @@ Deno.serve(handle(async (req) => {
     });
   }
 
+  // What the host still has to check or add (shown on the import summary screen)
+  const total = existing.n + saved.length;
+  const check: string[] = [];
+  if (!safe.area || safe.area === safe.city) check.push("area");
+  if (safe.lat == null) check.push("map_pin");
+  check.push("price");
+  if (total < 5) check.push("photos");
+  if (!safe.description) check.push("description");
+  if (!safe.title) check.push("title");
+  if (!safe.house_rules) check.push("house_rules");
+
   return jsonRes({
-    ok: true, listing_id: listingId, imported: Object.keys(safe).filter((k) => k !== "airbnb_url"), photos: saved.length, photos_found: parsed.photos.length,
+    ok: true, listing_id: listingId, check, photos_total: total, imported: Object.keys(safe).filter((k) => k !== "airbnb_url"), photos: saved.length, photos_found: parsed.photos.length,
     price_hint: parsed.priceHint,
     note: "Check every step: we copied what Airbnb shows publicly. Please don't add your street address: guests get it after booking.",
   });
