@@ -202,8 +202,10 @@ export function bool(v: unknown): boolean {
   return v === true || v === "true" || v === 1 || v === "yes";
 }
 
+// Stripe Connect stays OFF until Eli enables Connect on the Stripe account and sets the secret BOOKHOMES_CONNECT=on.
+// Until then every marketplace booking is a normal charge to Book Homes with the host payout recorded "manual_pending".
 export function connectFlagEnabled(): boolean {
-  return (optionalEnv("BOOKHOMES_CONNECT") ?? "on") !== "off";
+  return (optionalEnv("BOOKHOMES_CONNECT") ?? "off") === "on";
 }
 
 export function slugify(s: string): string {
@@ -224,6 +226,43 @@ export function features(l: any) {
     business_ready: b.desk === true && typeof b.wifi_mbps === "number" && (b.wifi_mbps as number) >= 30,
     work_crew: b.separate_beds === true && (b.van_parking === true || Number(l.max_guests) >= 4),
   };
+}
+
+// ---- Optional features that need supabase/PENDING_pricing_calendar.sql. Until Eli runs it, everything keeps
+// working with the original pricing (nights, weekly/monthly discount, cleaning) and no rate-limit table.
+export const FEE_COLS = ["guests_included", "extra_guest_fee", "pets_allowed", "pet_fee", "checkin_days", "checkout_days",
+  "advance_notice_days", "prep_days", "booking_window_days"];
+let feesCache: { at: number; on: boolean } | null = null;
+export async function feesEnabled(): Promise<boolean> {
+  if (feesCache && Date.now() - feesCache.at < 60000) return feesCache.on;
+  const r = await sql`select to_regprocedure('bookhomes.quote(bigint,date,date,integer,integer)') is not null as on`;
+  feesCache = { at: Date.now(), on: !!r[0]?.on };
+  return feesCache.on;
+}
+export async function listingCols(prefix = ""): Promise<string> {
+  const cols = (await feesEnabled()) ? [...LISTING_COLS, ...FEE_COLS] : LISTING_COLS;
+  return cols.map((c) => prefix + c).join(", ");
+}
+
+export function clientIp(req: Request): string {
+  return (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || req.headers.get("cf-connecting-ip") || "unknown";
+}
+
+// Rate limiting: database counter (bookhomes.rate_hit) shared by all function instances, with a per-instance
+// memory fallback until the table exists. Fails open on database errors so a hiccup never blocks a booking.
+const memHits = new Map<string, { start: number; n: number }>();
+export async function rateLimit(bucket: string, key: string, limit: number, windowSecs: number, message?: string) {
+  let allowed = true;
+  try {
+    const r = await sql`select bookhomes.rate_hit(${bucket}, ${key}, ${limit}, ${windowSecs}) as ok`;
+    allowed = r[0].ok !== false;
+  } catch {
+    const k = `${bucket}:${key}`, now = Date.now(), cur = memHits.get(k);
+    if (!cur || now - cur.start > windowSecs * 1000) memHits.set(k, { start: now, n: 1 });
+    else { cur.n++; allowed = cur.n <= limit; }
+    if (memHits.size > 5000) memHits.clear();
+  }
+  if (!allowed) throw new HttpError(429, message ?? "Too many tries. Please wait a minute and try again.", "RATE_LIMITED");
 }
 
 export const LISTING_COLS = [

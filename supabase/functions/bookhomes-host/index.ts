@@ -4,116 +4,49 @@
 // bookings and payouts only). Hosts can never approve their own listing (trigger in MARKETPLACE_setup.sql).
 import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/util.ts";
 import {
-  adminEmailList, asUser, authAdmin, type AuthUser, bool, getUser, handle, HttpError, int, jsonRes, LISTING_COLS, NAME_RE, num,
-  PHONE_RE, readBody, slugify, sql, str, UUID_RE,
+  adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
+  PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE,
 } from "../_shared/bh.ts";
+import { AMENITIES, CATEGORIES, feeFields, listingFields } from "../_shared/bh_listing.ts";
+import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice } from "../_shared/bh_emails.ts";
 
-const AMENITIES = ["wifi", "parking", "kitchen", "washer", "dryer", "tv", "heating", "aircon", "garden", "workspace", "cot", "highchair",
-  "bath", "ev_charger", "pool_table", "bbq", "self_checkin", "step_free", "dishwasher", "coffee", "iron", "hairdryer", "fireplace", "pets"];
-const CATEGORIES = ["city", "coast", "countryside", "family", "groups", "hospital", "events", "long_stay"];
-const TYPES = ["house", "flat", "cottage", "townhouse", "bungalow", "studio", "room"];
-const ADDRESS_RE = /\b\d+[a-z]?\s+[a-z' ]+\s(street|st|road|rd|avenue|ave|lane|ln|close|drive|dr|way|crescent|grove|terrace|place|court)\b/i;
-const MONEY_WORDS_RE = /\bwas\s*£|\bnow only\b|\bwas \d/i;
-
-function cleanKosher(k: unknown) {
-  const o = (k && typeof k === "object" ? k : {}) as Record<string, unknown>;
-  const sh = (o.shabbat && typeof o.shabbat === "object" ? o.shabbat : {}) as Record<string, unknown>;
-  const kt = ["meat", "milk", "both", "parev"].includes(String(o.kitchen_type)) ? String(o.kitchen_type) : null;
-  return {
-    kitchen: bool(o.kitchen), kitchen_type: bool(o.kitchen) ? kt : null,
-    separate_sinks: bool(o.separate_sinks), separate_ovens: bool(o.separate_ovens),
-    supervision: str(o.supervision, 300),
-    shabbat: { hotplate: bool(sh.hotplate), urn: bool(sh.urn), lamp_timers: bool(sh.lamp_timers),
-      non_electric_key: bool(sh.non_electric_key), no_motion_sensors: bool(sh.no_motion_sensors) },
-    shul_name: str(o.shul_name, 120), shul_walk_mins: int(o.shul_walk_mins, 1, 120),
-    eruv: ["yes", "no", "unknown"].includes(String(o.eruv)) ? String(o.eruv) : "unknown",
-    kosher_shops: str(o.kosher_shops, 400), mikvah: str(o.mikvah, 300),
-  };
-}
-function cleanBusiness(b: unknown) {
-  const o = (b && typeof b === "object" ? b : {}) as Record<string, unknown>;
-  return { desk: bool(o.desk), wifi_mbps: int(o.wifi_mbps, 1, 10000), van_parking: bool(o.van_parking),
-    separate_beds: bool(o.separate_beds), monthly_rates: bool(o.monthly_rates) };
-}
-function httpsUrl(v: unknown, hosts: RegExp): string | null {
-  const s = str(v, 400);
-  if (!s) return null;
-  try {
-    const u = new URL(s);
-    if (u.protocol !== "https:" || !hosts.test(u.hostname)) throw new Error("x");
-    return u.toString();
-  } catch {
-    throw new HttpError(400, "Please paste the full link from your listing page.");
-  }
-}
-const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
-
-/** Whitelisted, validated listing fields from the wizard. Only keys that were sent are returned. */
-// deno-lint-ignore no-explicit-any
-function listingFields(b: Record<string, unknown>): Record<string, any> {
-  // deno-lint-ignore no-explicit-any
-  const f: Record<string, any> = {};
-  const has = (k: string) => Object.prototype.hasOwnProperty.call(b, k);
-  if (has("title")) { const t = str(b.title, 80); if (!t || t.length < 3) throw new HttpError(400, "Give your place a short title."); f.title = t; }
-  if (has("area")) {
-    const a = str(b.area, 80);
-    if (a && ADDRESS_RE.test(a)) throw new HttpError(400, "Please give the area only (for example 'Allerton, south Liverpool'), not the street address.");
-    f.area = a;
-  }
-  if (has("city")) f.city = str(b.city, 60) ?? "Liverpool";
-  if (has("property_type")) f.property_type = TYPES.includes(String(b.property_type)) ? String(b.property_type) : "house";
-  for (const k of ["description", "house_rules"]) {
-    if (has(k)) {
-      const v = str(b[k], k === "description" ? 5000 : 2500);
-      if (v && MONEY_WORDS_RE.test(v)) throw new HttpError(400, "Please don't use 'was' prices or 'now only' wording.");
-      if (v && ADDRESS_RE.test(v)) throw new HttpError(400, "Please remove the street address. Guests get it after booking.");
-      f[k] = v;
-    }
-  }
-  if (has("max_guests")) f.max_guests = int(b.max_guests, 1, 30) ?? 2;
-  if (has("bedrooms")) f.bedrooms = int(b.bedrooms, 0, 30) ?? 1;
-  if (has("beds")) f.beds = int(b.beds, 0, 50) ?? 1;
-  if (has("baths")) f.baths = num(b.baths, 0, 20) ?? 1;
-  if (has("amenities")) f.amenities = sql.json(Array.isArray(b.amenities) ? [...new Set(b.amenities.map(String).filter((a) => AMENITIES.includes(a)))] : []);
-  if (has("categories")) f.categories = Array.isArray(b.categories) ? [...new Set(b.categories.map(String).filter((a) => CATEGORIES.includes(a)))] : [];
-  if (has("kosher")) f.kosher = sql.json(cleanKosher(b.kosher));
-  if (has("business")) f.business = sql.json(cleanBusiness(b.business));
-  if (has("base_price")) f.base_price = num(b.base_price, 10, 10000);
-  if (has("weekend_price")) f.weekend_price = b.weekend_price === null || b.weekend_price === "" ? null : num(b.weekend_price, 10, 10000);
-  if (has("cleaning_fee")) f.cleaning_fee = num(b.cleaning_fee, 0, 2000) ?? 0;
-  if (has("weekly_discount_pct")) f.weekly_discount_pct = int(b.weekly_discount_pct, 0, 50) ?? 0;
-  if (has("monthly_discount_pct")) f.monthly_discount_pct = int(b.monthly_discount_pct, 0, 60) ?? 0;
-  if (has("min_nights")) f.min_nights = int(b.min_nights, 1, 90) ?? 1;
-  if (has("max_nights")) f.max_nights = int(b.max_nights, 1, 365) ?? 28;
-  if (has("check_in_time")) f.check_in_time = TIME_RE.test(String(b.check_in_time)) ? String(b.check_in_time) : "15:00";
-  if (has("check_out_time")) f.check_out_time = TIME_RE.test(String(b.check_out_time)) ? String(b.check_out_time) : "11:00";
-  if (has("cancellation_policy")) f.cancellation_policy = ["flexible", "moderate", "strict"].includes(String(b.cancellation_policy)) ? String(b.cancellation_policy) : "moderate";
-  if (has("lat") || has("lng")) {
-    const lat = num(b.lat, 49, 61), lng = num(b.lng, -9, 2.5);
-    f.lat = lat; f.lng = lng; // rounded to ~1 km by the database trigger
-  }
-  if (has("airbnb_url")) f.airbnb_url = httpsUrl(b.airbnb_url, /(^|\.)airbnb\.[a-z.]+$/);
-  if (has("booking_url")) f.booking_url = httpsUrl(b.booking_url, /(^|\.)booking\.com$/);
-  return f;
-}
-
-async function ownListing(user: AuthUser, id: unknown): Promise<number> {
+async function ownListing(user: AuthUser, id: unknown, allowLegacy = false): Promise<number> {
   const lid = int(id, 1, 1e12);
   if (!lid) throw new HttpError(400, "Invalid listing");
-  const r = await asUser(user, (tx) => tx`select id from bookhomes.listings where id = ${lid} and host_id = bookhomes.my_host_id()`);
+  const r = await asUser(user, (tx) => tx`select id, legacy_source from bookhomes.listings where id = ${lid} and host_id = bookhomes.my_host_id()`);
   if (!r.length) throw new HttpError(404, "Listing not found");
+  if (r[0].legacy_source && !allowLegacy) throw new HttpError(400, "Zermatt Lodge's details and prices are managed through its channel manager. You can block and open dates here.");
   return lid;
 }
-
-const COLS = LISTING_COLS.join(", ");
+async function isZermatt(id: number): Promise<boolean> {
+  return (await sql`select legacy_source from bookhomes.listings where id = ${id}`)[0]?.legacy_source === "zermatt";
+}
+// Opens nights [first, last] inside host blocks: the block is ended before, and restarted after, those nights.
+// deno-lint-ignore no-explicit-any
+async function trimBlocks(tx: any, schema: "bookhomes" | "zermatt", listingId: number | null, first: string, last: string) {
+  const end = addDays(last, 1);
+  const rows = schema === "zermatt"
+    ? await tx`update zermatt.manual_blocks set active = false where active and start_date < ${end}::date and end_date > ${first}::date returning start_date::text, end_date::text, reason, created_by`
+    : await tx`update bookhomes.listing_blocks set active = false where listing_id = ${listingId} and active and start_date < ${end}::date and end_date > ${first}::date returning start_date::text, end_date::text, reason`;
+  for (const r of rows) {
+    const parts: [string, string][] = [];
+    if (r.start_date < first) parts.push([r.start_date, first]);
+    if (r.end_date > end) parts.push([end, r.end_date]);
+    for (const [a, z] of parts) {
+      if (schema === "zermatt") await tx`insert into zermatt.manual_blocks (start_date, end_date, reason, created_by) values (${a}::date, ${z}::date, ${r.reason}, ${r.created_by})`;
+      else await tx`insert into bookhomes.listing_blocks (listing_id, start_date, end_date, reason) values (${listingId}, ${a}::date, ${z}::date, ${r.reason})`;
+    }
+  }
+}
+const FEED_NAMES = ["Airbnb", "Booking.com", "Vrbo", "Guesty", "Other"];
 
 async function me(user: AuthUser) {
   return await asUser(user, async (tx) => {
     const profile = (await tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`)[0] ?? null;
     const host = (await tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override from bookhomes.hosts where user_id = ${user.id}`)[0] ?? null;
-    const ls = host ? await tx.unsafe(`select ${COLS} from bookhomes.listings where host_id = bookhomes.my_host_id() order by created_at`) : [];
+    const ls = host ? await tx.unsafe(`select ${await listingCols()} from bookhomes.listings where host_id = bookhomes.my_host_id() order by created_at`) : [];
     const ids = ls.map((l: { id: number }) => l.id);
     const photos = ids.length ? await tx`select id, listing_id, url, storage_path, caption, sort from bookhomes.listing_photos where listing_id = any(${ids}::bigint[]) order by sort, created_at` : [];
     const sources = ids.length ? await tx`select id, listing_id, name, url, enabled, last_fetched_at, last_status, last_error, last_event_count from bookhomes.listing_ical_sources where listing_id = any(${ids}::bigint[])` : [];
@@ -123,7 +56,7 @@ async function me(user: AuthUser) {
     return { profile, host, listings: ls, photos, sources, tokens, commission_pct: pct === null ? null : Number(pct) };
   }).then(async (r) => {
     const connect = (await sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`)[0]?.v ?? "unknown";
-    const fnBase = `${env("SUPABASE_URL")}/functions/v1/bookhomes-ical-export`;
+    const site = siteUrl();
     // deno-lint-ignore no-explicit-any
     const reasons = r.listings.length ? await sql`select id, reject_reason from bookhomes.listings where id = any(${r.listings.map((l: any) => l.id)}::bigint[]) and status = 'rejected'` : [];
     return {
@@ -131,11 +64,12 @@ async function me(user: AuthUser) {
       // deno-lint-ignore no-explicit-any
       listings: r.listings.map((l: any) => ({
         ...l, reject_reason: reasons.find((x: { id: number }) => Number(x.id) === Number(l.id))?.reject_reason ?? null,
-        ical_export_url: !l.legacy_source && r.tokens[String(l.id)] ? `${fnBase}?listing=${l.id}&token=${r.tokens[String(l.id)]}` : null,
+        ical_export_url: !l.legacy_source && r.tokens[String(l.id)] ? `${site}/ical/${l.id}/${r.tokens[String(l.id)]}.ics` : null,
       })),
       tokens: undefined,
       connect_platform: connect,
-      amenities: AMENITIES, categories: CATEGORIES,
+      amenities: AMENITIES, categories: CATEGORIES, feed_names: FEED_NAMES,
+      fees_enabled: await feesEnabled(),
     };
   });
 }
@@ -170,7 +104,8 @@ Deno.serve(handle(async (req) => {
     }
 
     case "save_listing": {
-      const f = listingFields((b.listing ?? {}) as Record<string, unknown>);
+      const raw = (b.listing ?? {}) as Record<string, unknown>;
+      const f = { ...listingFields(raw), ...(await feeFields(raw)) };
       if (b.id) {
         const id = await ownListing(user, b.id);
         if (Object.keys(f).length) {
@@ -260,62 +195,122 @@ Deno.serve(handle(async (req) => {
 
     case "add_ical": {
       const id = await ownListing(user, b.listing_id);
-      const url = str(b.url, 600) ?? "";
-      if (!/^https:\/\/[^\s]+$/.test(url)) throw new HttpError(400, "Paste the full calendar link (it starts with https://).");
-      const name = str(b.name, 40) ?? "Calendar";
-      await asUser(user, (tx) => tx`insert into bookhomes.listing_ical_sources (listing_id, name, url) values (${id}, ${name}, ${url}) returning id`);
-      return jsonRes({ ok: true });
+      await rateLimit("add_ical", user.id, 20, 3600);
+      const url = safeFeedUrl(str(b.url, 600) ?? "");
+      if (!url) throw new HttpError(400, "Paste the full calendar link. It starts with https:// (or webcal://) and usually ends in .ics.");
+      const name = FEED_NAMES.includes(String(b.name)) ? String(b.name) : "Other";
+      const dupe = await asUser(user, (tx) => tx`select id from bookhomes.listing_ical_sources where listing_id = ${id} and url = ${url} and enabled`);
+      if (dupe.length) throw new HttpError(400, "That calendar is already linked.");
+      const r = await asUser(user, (tx) => tx`insert into bookhomes.listing_ical_sources (listing_id, name, url) values (${id}, ${name}, ${url}) returning id`);
+      // Check it straight away, so the host knows at once whether the link works (like Airbnb does)
+      const res = await syncSource({ id: r[0].id, listing_id: id }, url);
+      return jsonRes({ ok: true, id: r[0].id, synced: res.ok, events: res.count, error: res.error ?? null });
+    }
+
+    case "sync_now": {
+      const id = await ownListing(user, b.listing_id);
+      await rateLimit("sync_now", `${user.id}:${id}`, 6, 600, "Calendars were just synced. Please wait a few minutes before syncing again.");
+      const srcs = await asUser(user, (tx) => tx`select id, listing_id, name, url from bookhomes.listing_ical_sources where listing_id = ${id} and enabled`);
+      const results = [];
+      for (const src of srcs) {
+        const url = safeFeedUrl(src.url);
+        const r = url ? await syncSource({ id: src.id, listing_id: id }, url) : { ok: false, count: 0, error: "Not a public https calendar link" };
+        results.push({ id: src.id, name: src.name, ...r });
+      }
+      return jsonRes({ ok: results.every((x) => x.ok), results });
     }
 
     case "remove_ical": {
       if (!UUID_RE.test(String(b.id))) throw new HttpError(400, "Invalid calendar");
-      await asUser(user, (tx) => tx`update bookhomes.listing_ical_sources set enabled = false where id = ${String(b.id)} returning id`);
+      const r = await asUser(user, (tx) => tx`update bookhomes.listing_ical_sources set enabled = false where id = ${String(b.id)} returning id`);
+      if (!r.length) throw new HttpError(404, "Calendar not found");
+      await sql`delete from bookhomes.listing_ical_events where source_id = ${String(b.id)}`;
       return jsonRes({ ok: true });
     }
 
     case "calendar": {
-      const id = await ownListing(user, b.listing_id);
+      const id = await ownListing(user, b.listing_id, true);
       const from = isValidIsoDate(b.from) ? b.from : ukToday();
       const maxTo = addDays(from, 400);
       const to = isValidIsoDate(b.to) && b.to > from ? (b.to > maxTo ? maxTo : b.to) : addDays(from, 62);
-      const days = await sql`select date::text, status, price::float8, min_stay from bookhomes.listing_calendar(${id}, ${from}::date, ${to}::date)`;
-      const [blocks, bookings] = await asUser(user, async (tx) => [
+      const days = await sql`select date::text, status, price::float8, min_stay, closed_to_arrival from bookhomes.listing_calendar(${id}, ${from}::date, ${to}::date)`;
+      if (await isZermatt(id)) {
+        // Zermatt Lodge: its own tables (live checkout + Guesty iCal stay exactly as they are)
+        const blocks = await sql`select id, start_date::text, end_date::text, reason from zermatt.manual_blocks where active and end_date >= ${from}::date order by start_date`;
+        const bookings = await sql`select id, check_in::text, check_out::text, guest_name, guests, status from zermatt.bookings
+                                    where status in ('paid', 'held') and (status = 'paid' or hold_expires_at > now()) and check_out >= ${from}::date order by check_in`;
+        const feeds = await sql`select e.start_date::text, e.end_date::text, s.name from zermatt.ical_events e join zermatt.ical_sources s on s.id = e.source_id
+                                 where s.enabled and e.end_date >= ${from}::date and e.start_date < ${to}::date`;
+        return jsonRes({ days, blocks, bookings, overrides: [], feeds, legacy: "zermatt", prices_managed_elsewhere: true });
+      }
+      const [blocks, bookings, overrides, feeds] = await asUser(user, async (tx) => [
         await tx`select id, start_date::text, end_date::text, reason from bookhomes.listing_blocks where listing_id = ${id} and active and end_date >= ${from}::date order by start_date`,
-        await tx`select id, check_in::text, check_out::text, guest_name, guests, status from bookhomes.bookings where listing_id = ${id} and status in ('paid', 'held') and check_out >= ${from}::date order by check_in`,
+        await tx`select id, check_in::text, check_out::text, guest_name, guests, status from bookhomes.bookings where listing_id = ${id} and status in ('paid', 'held') and (status = 'paid' or hold_expires_at > now()) and check_out >= ${from}::date order by check_in`,
+        await tx`select date::text, price::float8, closed, min_stay from bookhomes.availability where listing_id = ${id} and date >= ${from}::date and date < ${to}::date`,
+        await tx`select e.start_date::text, e.end_date::text, s.name from bookhomes.listing_ical_events e join bookhomes.listing_ical_sources s on s.id = e.source_id
+                  where e.listing_id = ${id} and s.enabled and e.end_date >= ${from}::date and e.start_date < ${to}::date`,
       ]);
-      const closed = await asUser(user, (tx) => tx`select date::text, price::float8, closed, min_stay from bookhomes.availability where listing_id = ${id} and date >= ${from}::date and date < ${to}::date`);
-      return jsonRes({ days, blocks, bookings, overrides: closed });
+      return jsonRes({ days, blocks, bookings, overrides, feeds });
     }
 
     case "block": {
-      const id = await ownListing(user, b.listing_id);
+      const id = await ownListing(user, b.listing_id, true);
       const s = b.start, e = b.end; // e = last night (inclusive)
       if (!isValidIsoDate(s) || !isValidIsoDate(e) || e < s || s < ukToday()) throw new HttpError(400, "Choose the first and last night.");
+      const reason = str(b.reason, 120) ?? "Host block";
+      if (await isZermatt(id)) {
+        await sql`insert into zermatt.manual_blocks (start_date, end_date, reason, created_by) values (${s}::date, ${addDays(e, 1)}::date, ${reason}, ${user.email})`;
+        return jsonRes({ ok: true });
+      }
       await asUser(user, (tx) => tx`insert into bookhomes.listing_blocks (listing_id, start_date, end_date, reason)
-                                    values (${id}, ${s}::date, ${addDays(e, 1)}::date, ${str(b.reason, 120) ?? "Host block"}) returning id`);
+                                    values (${id}, ${s}::date, ${addDays(e, 1)}::date, ${reason}) returning id`);
       return jsonRes({ ok: true });
     }
 
     case "unblock": {
       if (!UUID_RE.test(String(b.id))) throw new HttpError(400, "Invalid block");
-      await asUser(user, (tx) => tx`update bookhomes.listing_blocks set active = false where id = ${String(b.id)} returning id`);
+      const r = await asUser(user, (tx) => tx`update bookhomes.listing_blocks set active = false where id = ${String(b.id)} returning id`);
+      if (!r.length) {
+        // Zermatt Lodge block: only its owner (host of listing #1) may lift it
+        const z = await asUser(user, (tx) => tx`select 1 from bookhomes.listings where legacy_source = 'zermatt' and host_id = bookhomes.my_host_id()`);
+        if (!z.length) throw new HttpError(404, "Block not found");
+        const zr = await sql`update zermatt.manual_blocks set active = false where id = ${String(b.id)} returning id`;
+        if (!zr.length) throw new HttpError(404, "Block not found");
+      }
       return jsonRes({ ok: true });
     }
 
     case "set_nights": {
-      // price / min stay / open-close for a range of nights (inclusive). price null = back to the default price.
-      const id = await ownListing(user, b.listing_id);
+      // Airbnb-style: tap nights, then open them, set a price, or go back to the default price.
+      // price: number = custom price, null = default price, missing = keep. closed / min_stay: same idea.
+      // open: true also lifts any host block covering those nights.
+      const id = await ownListing(user, b.listing_id, true);
       const s = b.start, e = b.end;
       if (!isValidIsoDate(s) || !isValidIsoDate(e) || e < s) throw new HttpError(400, "Choose the first and last night.");
       if ((Date.parse(e) - Date.parse(s)) / 864e5 > 366) throw new HttpError(400, "Choose up to a year at a time.");
-      const price = b.price === null || b.price === "" || b.price === undefined ? null : num(b.price, 10, 10000);
+      const has = (k: string) => Object.prototype.hasOwnProperty.call(b, k);
+      const open = bool(b.open);
+      if (await isZermatt(id)) {
+        if (has("price") || has("min_stay")) throw new HttpError(400, "Zermatt Lodge prices come from its channel manager. You can block and open dates here.");
+        if (open) await trimBlocks(sql, "zermatt", null, s, e);
+        return jsonRes({ ok: true });
+      }
+      const price = b.price === null || b.price === "" ? null : num(b.price, 10, 10000);
+      if (has("price") && b.price !== null && b.price !== "" && price === null) throw new HttpError(400, "Enter a price of at least £10.");
       const minStay = b.min_stay === null || b.min_stay === "" || b.min_stay === undefined ? null : int(b.min_stay, 1, 90);
-      const closed = bool(b.closed);
-      await asUser(user, (tx) => tx`
-        insert into bookhomes.availability (listing_id, date, price, min_stay, closed, updated_at)
-        select ${id}, g::date, ${price}, ${minStay}, ${closed}, now() from generate_series(${s}::date, ${e}::date, interval '1 day') g
-        on conflict (listing_id, date) do update set price = excluded.price, min_stay = excluded.min_stay, closed = excluded.closed, updated_at = now()
-        returning date`);
+      const closed = open ? false : has("closed") ? bool(b.closed) : null;
+      await asUser(user, async (tx) => {
+        await tx`
+          insert into bookhomes.availability as a (listing_id, date, price, min_stay, closed, updated_at)
+          select ${id}, g::date, ${price}, ${minStay}, ${closed ?? false}, now() from generate_series(${s}::date, ${e}::date, interval '1 day') g
+          on conflict (listing_id, date) do update set
+            price = case when ${has("price")} then excluded.price else a.price end,
+            min_stay = case when ${has("min_stay")} then excluded.min_stay else a.min_stay end,
+            closed = case when ${closed !== null} then excluded.closed else a.closed end,
+            updated_at = now()
+          returning date`;
+        if (open) await trimBlocks(tx, "bookhomes", id, s, e);
+      });
       return jsonRes({ ok: true });
     }
 
@@ -324,8 +319,21 @@ Deno.serve(handle(async (req) => {
         select b.id, b.listing_id, l.title, b.check_in::text, b.check_out::text, b.nights, b.guests, b.guest_name, b.guest_email, b.guest_phone,
                b.amount_pence, b.fee_pence, b.host_payout_pence, b.payout_mode, b.status, b.paid_at
           from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
-         where b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now())
+         where b.host_id = bookhomes.my_host_id()
+           and (b.status in ('paid', 'cancelled', 'cancelled_conflict') or (b.status = 'held' and b.hold_expires_at > now()))
          order by b.check_in desc limit 500`);
+      // Zermatt Lodge (listing #1) keeps its own booking table; its owner sees those bookings here too.
+      const z = await asUser(user, (tx) => tx`select id, title from bookhomes.listings where legacy_source = 'zermatt' and host_id = bookhomes.my_host_id()`);
+      if (z.length) {
+        const zr = await sql`select id, ${z[0].id}::bigint as listing_id, ${z[0].title}::text as title, check_in::text, check_out::text, nights, guests, guest_name,
+                                    guest_email, guest_phone, total_pence as amount_pence, 0 as fee_pence, total_pence as host_payout_pence, 'owner' as payout_mode,
+                                    status, paid_at, 'zermatt' as source
+                               from zermatt.bookings where status in ('paid', 'cancelled') or (status = 'held' and hold_expires_at > now())
+                              order by check_in desc limit 500`;
+        rows.push(...zr);
+        // deno-lint-ignore no-explicit-any
+        rows.sort((a: any, b: any) => (a.check_in < b.check_in ? 1 : -1));
+      }
       return jsonRes({ bookings: rows });
     }
 
@@ -333,6 +341,7 @@ Deno.serve(handle(async (req) => {
       const rows = await asUser(user, (tx) => tx`
         select p.id, p.booking_id, p.amount_pence, p.status, p.paid_at, p.created_at, b.check_in::text, b.check_out::text, l.title
           from bookhomes.payouts p join bookhomes.bookings b on b.id = p.booking_id join bookhomes.listings l on l.id = b.listing_id
+         where p.host_id = bookhomes.my_host_id()
          order by p.created_at desc limit 500`);
       return jsonRes({ payouts: rows });
     }

@@ -128,3 +128,14 @@
 .sp.sheet #spMonths{grid-template-columns:minmax(0,1fr)}
 .sp.pop #spMonths{grid-template-columns:repeat(2,minmax(0,1fr))}
 .day.range{margin:0;height:auto}
+/* No layout shift on hover: fixed column sizes and a fixed-height status line */
+.months{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wk,.days{grid-template-columns:repeat(7,minmax(0,1fr))}
+.month,.days,.day{min-width:0}
+.day.range{margin:0;height:auto}
+.cal-top p,.dp-head p{height:2.9em;line-height:1.45;overflow:hidden;display:flex;align-items:center}
+.cal-top p{justify-content:center}
+@media (max-width:760px){.months,.dp.sheet .months{grid-template-columns:minmax(0,1fr)}}
+.sp.sheet #spMonths{grid-template-columns:minmax(0,1fr)}
+.sp.pop #spMonths{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sp.sheet .cal-top p{justify-content:flex-start}

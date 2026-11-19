@@ -7,7 +7,8 @@
 // POST {action:"review", t, rating, comment}                         one review per completed, paid stay
 // Never returns host emails/phones, street addresses or iCal tokens.
 import { isValidIsoDate, ukToday } from "../_shared/util.ts";
-import { EMAIL_RE, features, handle, HttpError, int, jsonRes, readBody, slugify, sql, str, UUID_RE } from "../_shared/bh.ts";
+import { EMAIL_RE, features, getSetting, handle, HttpError, int, jsonRes, readBody, slugify, sql, str, UUID_RE } from "../_shared/bh.ts";
+import { lines, quote } from "../_shared/bh_quote.ts";
 
 async function listAll(where?: { slug?: string }) {
   const ls = where?.slug
@@ -22,6 +23,7 @@ async function listAll(where?: { slug?: string }) {
   const froms = await sql`select x.id, (select min(c.price)::float8 from bookhomes.listing_calendar(x.id, bookhomes.uk_today(), bookhomes.uk_today() + 90) c
                                          where c.status = 'available') as p
                             from unnest(${ids}::bigint[]) as x(id)`;
+  const featured = await getSetting<number[]>("featured_listings", []);
   // deno-lint-ignore no-explicit-any
   return ls.map((l: any) => {
     const st = stats.find((s: { listing_id: number }) => Number(s.listing_id) === Number(l.id));
@@ -39,6 +41,8 @@ async function listAll(where?: { slug?: string }) {
       reviews: st ? { count: st.n, average: st.avg } : { count: 0, average: null },
       from_price: froms.find((f: { id: number }) => Number(f.id) === Number(l.id))?.p ?? null,
       features: features(l),
+      featured: featured.includes(Number(l.id)),
+      ...(l.extra_guest_fee !== undefined ? { extra_guest_fee: Number(l.extra_guest_fee), pet_fee: Number(l.pet_fee) } : {}),
     };
   });
 }
@@ -74,14 +78,16 @@ Deno.serve(handle(async (req) => {
                                 from bookhomes.listing_calendar(${l.id}, ${ci}::date, ${co}::date)`;
           const n = (Date.parse(co) - Date.parse(ci)) / 864e5;
           const ok = c[0].n === n && c[0].bad === 0 && !c[0].cta && n >= (c[0].first_min ?? 1);
-          out.push({ id: Number(l.id), available: ok, total_pence: ok ? Math.round((c[0].total + Number(l.cleaning_fee)) * 100) : null, nights: n });
+          out.push({ id: Number(l.id), available: ok, total_pence: ok ? Math.round((c[0].total + Number(l.cleaning_fee)) * 100) : null, nights: n,
+            nightly_subtotal_pence: ok ? Math.round(c[0].total * 100) : null, cleaning_fee_pence: ok ? Math.round(Number(l.cleaning_fee) * 100) : null });
           continue;
         }
         try {
-          const q = await sql`select * from bookhomes.quote_stay(${l.id}, ${ci}::date, ${co}::date, ${guests})`;
-          out.push({ id: Number(l.id), available: true, total_pence: q[0].amount_pence, nights: q[0].nights, discount_pence: q[0].discount_pence });
+          const q = await quote(Number(l.id), ci, co, guests, 0);
+          out.push({ id: Number(l.id), available: true, total_pence: q.amount_pence, nights: q.nights, discount_pence: q.discount_pence,
+            nightly_subtotal_pence: q.nights_pence, cleaning_fee_pence: q.cleaning_pence, extra_guest_pence: q.extra_guest_pence, lines: lines(q) });
         } catch (e) {
-          out.push({ id: Number(l.id), available: false, reason: String((e as Error).message).split(":")[0] });
+          out.push({ id: Number(l.id), available: false, reason: (e as { code?: string }).code ?? "NOT_AVAILABLE", message: e instanceof HttpError && e.status < 500 ? e.message : undefined });
         }
       }
       return jsonRes({ check_in: ci, check_out: co, guests, results: out }, 200, { "Cache-Control": "public, max-age=60" });

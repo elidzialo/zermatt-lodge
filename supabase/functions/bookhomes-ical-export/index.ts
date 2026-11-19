@@ -20,14 +20,14 @@ Deno.serve(async (req: Request): Promise<Response> => {
   const bookings = await sql`select id::text, check_in::text, check_out::text, status from bookhomes.bookings
                               where listing_id = ${id} and check_out >= ${today}::date
                                 and (status = 'paid' or (status = 'held' and hold_expires_at > now()))`;
-  for (const b of bookings) events.push({ uid: `${b.id}@bookhomes`, start: b.check_in, end: b.check_out, summary: b.status === "paid" ? "Book Homes booking" : "Book Homes checkout in progress" });
+  for (const b of bookings) events.push({ uid: `${b.id}@bookhomes.co.uk`, start: b.check_in, end: b.check_out, summary: b.status === "paid" ? "Book Homes booking" : "Book Homes checkout in progress" });
   const blocks = await sql`select id::text, start_date::text, end_date::text from bookhomes.listing_blocks
                             where listing_id = ${id} and active and end_date >= ${today}::date`;
-  for (const m of blocks) events.push({ uid: `block-${m.id}@bookhomes`, start: m.start_date, end: m.end_date, summary: "Not available" });
+  for (const m of blocks) events.push({ uid: `block-${m.id}@bookhomes.co.uk`, start: m.start_date, end: m.end_date, summary: "Not available" });
   const closed = await sql`select date::text from bookhomes.availability where listing_id = ${id} and closed and date >= ${today}::date order by date`;
   // merge consecutive closed nights into ranges
   let start: string | null = null, prev: string | null = null;
-  const flush = () => { if (start && prev) events.push({ uid: `closed-${id}-${start}@bookhomes`, start, end: addDays(prev, 1), summary: "Not available" }); };
+  const flush = () => { if (start && prev) events.push({ uid: `closed-${id}-${start}@bookhomes.co.uk`, start, end: addDays(prev, 1), summary: "Not available" }); };
   for (const c of closed) {
     if (prev && addDays(prev, 1) === c.date) { prev = c.date; continue; }
     flush(); start = c.date; prev = c.date;

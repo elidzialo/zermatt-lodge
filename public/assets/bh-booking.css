@@ -116,6 +116,7 @@
 .f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:16px;width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:28px;-webkit-appearance:none;appearance:none}
 .f select{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6560' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center/16px no-repeat;padding-right:20px}
 .bd-note{font-size:12.5px;color:var(--muted);margin-top:6px}
+<<<<<<< HEAD
 /* No layout shift on hover: the status line has a fixed two-line height, so hover hints never resize the picker */
 .cal-top p,.dp-head p{height:2.9em;line-height:1.45;overflow:hidden;display:flex;align-items:center}
 .cal-top p{justify-content:center}
@@ -128,3 +129,16 @@
 .sp.sheet #spMonths{grid-template-columns:minmax(0,1fr)}
 .sp.pop #spMonths{grid-template-columns:repeat(2,minmax(0,1fr))}
 .day.range{margin:0;height:auto}
+=======
+/* No layout shift on hover: fixed column sizes and a fixed-height status line */
+.months{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wk,.days{grid-template-columns:repeat(7,minmax(0,1fr))}
+.month,.days,.day{min-width:0}
+.day.range{margin:0;height:auto}
+.cal-top p,.dp-head p{height:2.9em;line-height:1.45;overflow:hidden;display:flex;align-items:center}
+.cal-top p{justify-content:center}
+@media (max-width:760px){.months,.dp.sheet .months{grid-template-columns:minmax(0,1fr)}}
+.sp.sheet #spMonths{grid-template-columns:minmax(0,1fr)}
+.sp.pop #spMonths{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sp.sheet .cal-top p{justify-content:flex-start}
+>>>>>>> origin/main

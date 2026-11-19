@@ -92,15 +92,19 @@ function fold(line: string): string {
 export function buildIcal(
   calName: string,
   events: { uid: string; start: string; end: string; summary: string }[],
+  prodId = "-//Book Homes//Availability Calendar 1.0//EN",
 ): string {
   const now = stamp(new Date());
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Zermatt Lodge//Direct Bookings//EN",
+    `PRODID:${prodId}`,
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${escapeText(calName)}`,
+    "X-WR-TIMEZONE:Europe/London",
+    "REFRESH-INTERVAL;VALUE=DURATION:PT15M",
+    "X-PUBLISHED-TTL:PT15M",
   ];
   for (const ev of events) {
     lines.push(
@@ -110,6 +114,7 @@ export function buildIcal(
       `DTSTART;VALUE=DATE:${compact(ev.start)}`,
       `DTEND;VALUE=DATE:${compact(ev.end)}`,
       `SUMMARY:${escapeText(ev.summary)}`,
+      "STATUS:CONFIRMED",
       "TRANSP:OPAQUE",
       "END:VEVENT",
     );
