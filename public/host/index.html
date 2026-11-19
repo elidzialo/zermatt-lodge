@@ -385,6 +385,14 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
   .qrow{grid-template-columns:minmax(0,1fr) 60px 60px}
   .two{grid-template-columns:1fr}
 }
+
+/* preview frame + delete */
+.pv{display:flex;flex-direction:column;overflow:hidden}
+.pv-top{align-items:center;gap:10px}.pv-top b{margin-right:auto;font-size:15px}
+#pvFrame{flex:1;width:100%;border:0;background:#fff}
+.dellink{display:inline-flex;align-items:center;gap:6px;margin:12px 4px 0;color:#b42318;font-size:14px;font-weight:600}.dellink .ic{width:14px;height:14px}
+.wz-top #wzPrev{margin-right:6px}
+#wzPrev{display:none}.wz.has-id #wzPrev{display:inline-flex}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -529,14 +537,14 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 </div></div>
 
 <div class="wz hidden" id="wz" role="dialog" aria-modal="true" aria-labelledby="wzH">
-  <div class="wz-top"><span class="wz-st" id="wzStep"></span><span class="saved" id="wzSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
+  <div class="wz-top"><span class="wz-st" id="wzStep"></span><span class="saved" id="wzSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" data-preview id="wzPrev">Preview</button><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
   <div class="wz-bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="100"><i id="wzBar" style="width:0"></i></div>
   <div class="wz-body"><div class="wz-in" id="wzIn"></div></div>
   <div class="wz-foot"><p class="wz-msg hidden" id="wzMsg" role="alert"></p><div class="wz-btns"><button type="button" class="link" id="wzBack">Back</button><button type="button" class="btn" id="wzNext">Next</button></div></div>
 </div>
 
 <div class="ed hidden" id="ed" role="dialog" aria-modal="true" aria-labelledby="edTitle">
-  <div class="ed-top"><button type="button" class="iconbtn" id="edClose" aria-label="Back to your listings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-arrow_l"/></svg></button><b id="edTitle" class="ed-title"></b><span class="saved" id="edSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" data-preview><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-search"/></svg>Preview</button></div>
+  <div class="ed-top"><button type="button" class="iconbtn" id="edClose" aria-label="Back to your listings"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-arrow_l"/></svg></button><b id="edTitle" class="ed-title"></b><span class="saved" id="edSaved" aria-live="polite"></span><button type="button" class="btn ghost sm" data-preview><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-search"/></svg>Preview as guest</button></div>
   <div class="ed-wrap">
     <nav class="ed-side" aria-label="Listing sections"><div id="edStatus"></div><h2 class="ed-h">Your listing</h2><div id="edNav"></div></nav>
     <main class="ed-main" id="edMain"><div class="ed-in" id="edBody"></div>
@@ -545,15 +553,16 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
   </div>
 </div>
 
-<div class="pv hidden" id="pv" role="dialog" aria-modal="true" aria-label="Guest preview">
-  <div class="pv-top"><button type="button" class="btn ghost sm" id="pvClose">Close preview</button></div>
-  <div class="pv-in" id="pvIn"></div>
+<div class="pv hidden" id="pv" role="dialog" aria-modal="true" aria-label="Preview as a guest">
+  <div class="pv-top"><b>Preview as a guest</b><a class="btn ghost sm hidden" id="pvLive" target="_blank" rel="noopener">Open live page</a><button type="button" class="btn sm" id="pvClose">Close preview</button></div>
+  <iframe id="pvFrame" title="Guest view of your listing" src="about:blank"></iframe>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script src="https://accounts.google.com/gsi/client" async></script>
-<script src="/assets/host.js?v=listing3"></script>
+<script src="/assets/host.js?v=listing4"></script>
 <script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
 </body>
 </html>
