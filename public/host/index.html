@@ -394,6 +394,9 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 .dellink{display:inline-flex;align-items:center;gap:6px;margin:12px 4px 0;color:#b42318;font-size:14px;font-weight:600}.dellink .ic{width:14px;height:14px}
 .wz-top #wzPrev{margin-right:6px}
 #wzPrev{display:none}.wz.has-id #wzPrev{display:inline-flex}
+
+.enrol-tap,.enrol-tap-note{display:none}
+@media (pointer:coarse){.enrol-tap{display:flex;margin-bottom:8px}.enrol-tap-note{display:block;font-size:13.5px;color:var(--muted);margin-bottom:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -432,7 +435,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <div id="vEnrol" class="box hidden"><div class="cardx">
   <h1>Protect your account</h1><p class="lead">One-time setup: a 6-digit code from an app on your phone keeps your bookings and payouts safe.</p>
   <div id="enrolMsg" role="status" aria-live="polite"></div>
-  <ol class="steps"><li>Install an authenticator app, for example Google Authenticator or Microsoft Authenticator.</li>
+  <a class="btn block enrol-tap" id="enrolTap" href="#">Open in my authenticator app</a><p class="enrol-tap-note">On this phone? Tap above to add Book Homes to Google Authenticator or Microsoft Authenticator, then come back and type the code. Or follow the steps below.</p><ol class="steps"><li>Install an authenticator app, for example Google Authenticator or Microsoft Authenticator.</li>
     <li>In the app, tap <b>+</b> and scan this code. <img id="enrolQr" class="qr" alt="QR code for your authenticator app"><span class="muted" style="font-size:13.5px">On this phone? <a href="#" id="enrolUri">Open in your authenticator app</a>, or type this key:</span><code class="secret" id="enrolSecret"></code></li>
     <li>Type the 6-digit code the app shows.</li></ol>
   <form id="enrolForm" novalidate><label class="f2">6-digit code<input type="text" class="code" id="enrolCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label><button class="btn block" type="submit" id="enrolBtn">Verify</button></form>
@@ -563,7 +566,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes are set by build.py -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
 <script src="/assets/host-perf.js?v=7868d279"></script>
-<script src="/assets/host.js?v=e7c48cb3"></script>
+<script src="/assets/host.js?v=35cc97b4"></script>
 <script src="/assets/bh-feedback.js?v=e42a2a7c" defer></script>
 </body>
 </html>
