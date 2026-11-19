@@ -126,7 +126,7 @@ Zermatt Lodge is a whole house in Fazakerley, next door to Aintree, with everyth
 
 Please note: Zermatt Lodge is a quiet residential home. There are **no parties, no smoking and no pets**. It's ideal for groups who want a comfortable base, but not for a party house.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees, or call +44 7479 905477 to check festival availability.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to check festival availability.
 
 ## Related guides
 

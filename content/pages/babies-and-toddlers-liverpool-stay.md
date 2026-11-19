@@ -166,7 +166,7 @@ Please **ask us about cots, high chairs and stair gates** before you book, so we
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/#book), or browse family homes on our [stays](/stays) page.
+[Book direct](/zermatt-lodge#book), or browse family homes on our [stays](/) page.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

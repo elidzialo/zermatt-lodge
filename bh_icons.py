@@ -72,13 +72,37 @@ ICONS = {
     "bell": '<path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="M3.3 15.3A1 1 0 0 0 4 17h16a1 1 0 0 0 .7-1.7C19.4 14 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.4 6-2.7 7.3"/>',
     "gauge": '<path d="m12 14 4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/>',
     "camera": '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/>',
+    # added for the 2026-11 redesign (Lucide-style, 1.5px)
+    "heart": '<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/>',
+    "menu": '<path d="M4 6h16M4 12h16M4 18h16"/>',
+    "user": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    "chev_l": '<path d="m15 18-6-6 6-6"/>',
+    "chev_r": '<path d="m9 18 6-6-6-6"/>',
+    "chev_d": '<path d="m6 9 6 6 6-6"/>',
+    "minus": '<path d="M5 12h14"/>',
+    "plus": '<path d="M12 5v14M5 12h14"/>',
+    "share": '<path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>',
+    "grid": '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+    "arrow_l": '<path d="M19 12H5M12 19l-7-7 7-7"/>',
+    "hot_tub": '<path d="M2 12h20v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"/><path d="M7 8c0-1.5 1-1.5 1-3M12 8c0-1.5 1-1.5 1-3M17 8c0-1.5 1-1.5 1-3"/>',
+    "train": '<rect x="4" y="3" width="16" height="14" rx="3"/><path d="M4 11h16M12 3v8M8 21l2-4M16 21l-2-4"/><path d="M8 14h.01M16 14h.01"/>',
+    "phone": '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
+    "mail": '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
+    "sparkle": '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>',
+    "no": '<circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/>',
+    "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    "tag": '<path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r=".5"/>',
+    "lock": '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
 }
 
 
-def sprite(names=None) -> str:
+def sprite(names=None, paint=False) -> str:
+    """Inline sprite for site pages: symbols carry no fill/stroke, so CSS (.ic) can fill the heart and star.
+    paint=True writes stroke="currentColor" etc. on each symbol (assets/bh-icons.svg, used by the host dashboard)."""
     keys = names or ICONS.keys()
+    attrs = ' fill="none" stroke="currentColor" stroke-width="1.5"' if paint else ""
     body = "".join(
-        f'<symbol id="i-{k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" '
+        f'<symbol id="i-{k}" viewBox="0 0 24 24"{attrs} '
         f'stroke-linecap="round" stroke-linejoin="round">{ICONS[k]}</symbol>' for k in keys
     )
     return f'<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">{body}</svg>'
@@ -94,6 +118,7 @@ AMENITY_LABELS = {
     "cot": "Cot", "highchair": "High chair", "bath": "Bath", "ev_charger": "EV charger", "pool_table": "Pool table",
     "bbq": "BBQ", "self_checkin": "Self check-in", "step_free": "Step-free entrance", "dishwasher": "Dishwasher",
     "coffee": "Coffee maker", "iron": "Iron", "hairdryer": "Hairdryer", "fireplace": "Fireplace", "pets": "Pets allowed",
+    "hot_tub": "Hot tub",
 }
 
 CATEGORIES = [

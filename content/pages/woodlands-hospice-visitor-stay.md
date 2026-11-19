@@ -119,7 +119,7 @@ Zermatt Lodge is a whole house in north Liverpool, close to the Aintree campus a
 
 It's a quiet home: strictly no parties or events, no smoking and no pets. There's a one-off £129 cleaning fee.
 
-You can check dates and book direct at [Zermatt Lodge](/#book), or simply call +44 7479 905477.
+You can check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or simply call +44 7479 905477.
 
 ## If you need to stay on afterwards
 

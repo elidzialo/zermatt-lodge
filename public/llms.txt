@@ -1,6 +1,6 @@
 # Book Homes - Zermatt Lodge, Liverpool
 
-> Book Homes (bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK, with no guest booking fees. Its first home, Zermatt Lodge, is an entire 4-bedroom, 2-bathroom house in Liverpool, UK, to rent for short stays by groups, families and business or contractor guests. It is in the Fazakerley area of north Liverpool, about 15 minutes from Liverpool city centre by Merseyrail train (not in the city centre). It sleeps up to 7 guests and is listed on Book Homes, run by ZALO Stays. Guests book directly on this website at https://bookhomes.co.uk/#book with secure card payment.
+> Book Homes (bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK, with no guest booking fees. Its first home, Zermatt Lodge, is an entire 4-bedroom, 2-bathroom house in Liverpool, UK, to rent for short stays by groups, families and business or contractor guests. It is in the Fazakerley area of north Liverpool, about 15 minutes from Liverpool city centre by Merseyrail train (not in the city centre). It sleeps up to 7 guests and is listed on Book Homes, run by ZALO Stays. Guests book directly on this website at https://bookhomes.co.uk/zermatt-lodge#book with secure card payment.
 
 Key facts (confirmed by the owner):
 
@@ -24,14 +24,14 @@ Please do not present prices, ratings or reviews from third-party sites as curre
 
 ## Main pages
 
-- [Home](https://bookhomes.co.uk/): Overview, photos, amenities, house rules, FAQ and on-site booking
-- [Book direct](https://bookhomes.co.uk/#book): Check dates and pay securely
-- [FAQ](https://bookhomes.co.uk/#faq): Sleeping arrangements, parking, check-in, house rules and location
+- [All homes](https://bookhomes.co.uk/): The Book Homes marketplace: every approved home, search by place, dates and guests, total prices with no booking fees
+- [Zermatt Lodge](https://bookhomes.co.uk/zermatt-lodge): Overview, photos, amenities, house rules, FAQ and on-site booking
+- [Book direct](https://bookhomes.co.uk/zermatt-lodge#book): Check dates and pay securely
+- [FAQ](https://bookhomes.co.uk/zermatt-lodge#faq): Sleeping arrangements, parking, check-in, house rules and location
 
 ## Marketplace
 
-- [Search all stays](https://bookhomes.co.uk/stays): Whole homes in Liverpool by dates and guests; total price shown, cleaning included, no booking fees
-- [Kosher and Shabbat-friendly homes](https://bookhomes.co.uk/stays/kosher): Host-declared kosher kitchen, Shabbat set-up, near shul and eruv details (not a certification)
+- [Kosher and Shabbat-friendly homes](https://bookhomes.co.uk/kosher-homes): Host-declared kosher kitchen, Shabbat set-up, near shul and eruv details (not a certification)
 - [List your property](https://bookhomes.co.uk/become-a-host): For Liverpool and Merseyside hosts; no sign-up or monthly fee, commission per booking, Airbnb and Booking.com calendar sync
 
 ## Guides

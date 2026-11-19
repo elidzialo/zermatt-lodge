@@ -941,7 +941,7 @@ function mpRender(){
       '<details style="margin-top:6px"><summary class="m">Text, kosher and business details</summary><div class="m" style="white-space:pre-line">' + esc(l.description || "") + "\n\nRules: " + esc(l.house_rules || "") + "\n\nKosher (host-declared): " + esc(JSON.stringify(k)) + "\nBusiness: " + esc(JSON.stringify(b)) + '</div></details>' +
       (l.reject_reason ? '<div class="m">Last note to host: ' + esc(l.reject_reason) + '</div>' : "") +
       (l.legacy_source ? '<div class="m">Runs on the Zermatt Lodge booking system (page "/").</div>' : '<div class="acts">' +
-        (l.status !== "approved" ? '<button type="button" class="btn sm" data-mp="approve_listing" data-id="' + esc(l.id) + '">Approve</button>' : '<a class="btn ghost sm" href="/stays/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a>') +
+        (l.status !== "approved" ? '<button type="button" class="btn sm" data-mp="approve_listing" data-id="' + esc(l.id) + '">Approve</button>' : '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a>') +
         '<button type="button" class="btn ghost sm" data-mp="reject_listing" data-id="' + esc(l.id) + '">Reject with note</button>' +
         (l.status === "approved" ? '<button type="button" class="btn ghost sm" data-mp="pause_listing" data-id="' + esc(l.id) + '">Pause</button>' : "") + '</div>') + '</div>';
   }, "Nothing here.");

@@ -145,7 +145,7 @@ We don't describe it as wheelchair accessible. It's a family house, and we'd rat
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/#book) once you're happy it suits your group, or browse other [stays](/stays).
+[Book direct](/zermatt-lodge#book) once you're happy it suits your group, or browse other [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

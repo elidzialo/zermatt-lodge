@@ -129,7 +129,7 @@ Zermatt Lodge is in north Liverpool, the side of the city both grounds are on. I
 
 Please note: the house has **strictly no parties or events**, no smoking and no pets. It suits fans who want a comfortable, quiet base.
 
-Book direct at [Zermatt Lodge](/#book), or call +44 7479 905477 to check derby weekend availability.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477 to check derby weekend availability.
 
 ## Related guides
 

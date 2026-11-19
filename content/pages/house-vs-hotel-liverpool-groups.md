@@ -25,7 +25,7 @@ faqs:
   - q: "Are holiday houses in Liverpool party-friendly?"
     a: "Many aren't, including Zermatt Lodge, which has no parties, no smoking and no pets. Always check the house rules. If your trip is all about a party, a city-centre hotel and a night out is the better option."
   - q: "Do I pay platform fees when booking a house?"
-    a: "On many booking platforms you pay a service fee. Booking Zermatt Lodge direct at /#book means no platform fees."
+    a: "On many booking platforms you pay a service fee. Booking Zermatt Lodge direct at bookhomes.co.uk/zermatt-lodge#book means no platform fees."
 sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
@@ -123,7 +123,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
-Book direct at [Zermatt Lodge](/#book), with no platform fees, or call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book), with no platform fees, or call +44 7479 905477.
 
 ## Related guides
 

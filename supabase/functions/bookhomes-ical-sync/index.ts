@@ -92,10 +92,10 @@ Deno.serve(async (req: Request): Promise<Response> => {
     if (c[0].n !== nights || c[0].bad > 0) continue;
     const link = a.legacy_source
       ? `${siteUrl()}${a.page_url || "/"}?checkIn=${a.check_in}&checkOut=${a.check_out}&guests=${a.guests}#book`
-      : `${siteUrl()}/stays/${a.slug}?check_in=${a.check_in}&check_out=${a.check_out}&guests=${a.guests}`;
+      : `${siteUrl()}/${a.slug}?check_in=${a.check_in}&check_out=${a.check_out}&guests=${a.guests}`;
     await sendLogged(db, { toRole: "guest", to: a.email, template: "bh_date_alert",
       email: adminNotice(`Your dates are free at ${a.title}`, [`Good news: ${a.title} is available again for ${a.check_in} to ${a.check_out}.`,
-        "Dates can go quickly, and we can't hold them until you book.", `Book here: ${link}`], siteUrl(), a.page_url || `/stays/${a.slug}`) });
+        "Dates can go quickly, and we can't hold them until you book.", `Book here: ${link}`], siteUrl(), a.page_url || `/${a.slug}`) });
     await sql`update bookhomes.date_alerts set notified_at = now() where id = ${a.id}`;
     alerted++;
   }

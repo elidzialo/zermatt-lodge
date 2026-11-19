@@ -99,7 +99,7 @@ Deno.serve(handle(async (req) => {
       },
       metadata: meta,
       success_url: `${base}/stays/booked/?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${base}/stays/${info.slug}/?cancelled=1`,
+      cancel_url: `${base}/${info.slug}?cancelled=1`,
     };
     if (company) {
       params.invoice_creation = { enabled: true, invoice_data: {

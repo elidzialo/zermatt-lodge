@@ -24,7 +24,7 @@ faqs:
   - q: "Which parts of Liverpool can I reach easily from Fazakerley?"
     a: "Fazakerley is close to the M57 and M58, so Knowsley, Kirkby, the north docks via Switch Island, Skelmersdale and the M62 and M6 are all straightforward. The city centre is about 15 minutes by Merseyrail from Fazakerley station."
   - q: "Can my company book and pay directly?"
-    a: "Yes. Book direct at /#book or call to arrange dates. Booking direct means no platform fees and one point of contact."
+    a: "Yes. Book direct at bookhomes.co.uk/zermatt-lodge#book or call to arrange dates. Booking direct means no platform fees and one point of contact."
   - q: "Is the house suitable for long contracts?"
     a: "Yes. A whole house with a big kitchen, two bathrooms and a garden is much easier to live in for weeks than a hotel room. Call to discuss longer stays."
 sources:
@@ -132,7 +132,7 @@ Zermatt Lodge is a whole house, not a shared house or rooms let individually. Yo
 
 House rules: **no parties, no smoking, no pets**. That keeps it a calm place to rest between shifts.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees. Site managers and bookers can call +44 7479 905477 to discuss crew sizes, dates and longer stays.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. Site managers and bookers can call +44 7479 905477 to discuss crew sizes, dates and longer stays.
 
 ## Related guides
 

@@ -1,12 +1,41 @@
 // POST /functions/v1/bookhomes-admin   { action, ... }   - marketplace tabs in /admin
 // Auth: the signed-in user's token, 2-step verified (aal2), and their email must be on the admin list (zermatt.admins).
 // Every change is written to bookhomes.audit_log.
-import { adminClient, siteUrl } from "../_shared/util.ts";
+import { adminClient, optionalEnv, siteUrl } from "../_shared/util.ts";
 import { audit, authAdmin, EMAIL_RE, handle, HttpError, int, jsonRes, LISTING_COLS, num, readBody, requireAdmin, setSetting, sql, str, UUID_RE } from "../_shared/bh.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice } from "../_shared/bh_emails.ts";
 
 const COLS = LISTING_COLS.map((c) => "l." + c).join(", ");
+
+// Listing pages live at the site root (bookhomes.co.uk/<slug>), so a slug may never take a site path.
+// Keep in step with RESERVED in build_listings.py.
+const RESERVED_SLUGS = new Set(["guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
+  "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms", "listing", "listings", "data",
+  "public", "index", "booking-confirmed", "booking-cancelled", "favicon"]);
+
+async function safeSlug(id: number, slug: string): Promise<string> {
+  if (!RESERVED_SLUGS.has(slug)) return slug;
+  for (const cand of [`${slug}-liverpool`, ...Array.from({ length: 20 }, (_, i) => `${slug}-${i + 2}`)]) {
+    if (RESERVED_SLUGS.has(cand)) continue;
+    const taken = await sql`select 1 from bookhomes.listings where slug = ${cand} and id <> ${id} limit 1`;
+    if (!taken.length) return cand; // saved together with the approval below
+  }
+  throw new HttpError(409, "Choose a different listing name: its web address clashes with a site page.");
+}
+
+// Rebuild the website so the new home gets its own page, city and tags (Vercel deploy hook, optional secret).
+async function rebuildSite(): Promise<boolean> {
+  const hook = optionalEnv("VERCEL_DEPLOY_HOOK_URL");
+  if (!hook || !/^https:\/\/api\.vercel\.com\//.test(hook)) return false;
+  try {
+    const r = await fetch(hook, { method: "POST" });
+    return r.ok;
+  } catch (e) {
+    console.error("deploy hook failed", (e as Error).message);
+    return false;
+  }
+}
 
 async function notify(to: string | null, subject: string, lines: string[], link = "/host/") {
   if (!to) return;
@@ -64,15 +93,18 @@ Deno.serve(handle(async (req) => {
     case "pause_listing": {
       const id = int(b.id, 1, 1e12);
       if (!id) throw new HttpError(400, "Invalid listing");
-      const l = (await sql`select l.id, l.title, l.status, l.legacy_source, p.approved as host_approved, p.email
+      const l = (await sql`select l.id, l.slug, l.title, l.status, l.legacy_source, p.approved as host_approved, p.email
                              from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
                             where l.id = ${id}`)[0];
       if (!l) throw new HttpError(404, "Listing not found");
       const reason = str(b.reason, 400);
       if (action === "approve_listing") {
         if (!l.host_approved) throw new HttpError(409, "Approve the host first (Hosts tab).");
-        await sql`update bookhomes.listings set status = 'approved', approved_at = now(), reviewed_by = ${admin.email}, reject_reason = null where id = ${id}`;
-        await notify(l.email, `Your listing is live: ${l.title}`, [`"${l.title}" is approved and now bookable on Book Homes.`, "New listings appear in search straight away, and get their own page at the next site update."]);
+        const slug = await safeSlug(id, String(l.slug ?? ""));
+        await sql`update bookhomes.listings set status = 'approved', slug = ${slug}, approved_at = now(), reviewed_by = ${admin.email}, reject_reason = null where id = ${id}`;
+        const rebuilt = await rebuildSite();
+        await audit(admin, "rebuild_site", "listing", String(id), { rebuilt, slug });
+        await notify(l.email, `Your listing is live: ${l.title}`, [`"${l.title}" is approved and now bookable on Book Homes.`, `Your page: ${siteUrl()}/${slug}`, "It appears in search straight away."]);
       } else if (action === "reject_listing") {
         await sql`update bookhomes.listings set status = 'rejected', reviewed_by = ${admin.email}, reject_reason = ${reason} where id = ${id}`;
         await notify(l.email, `Changes needed: ${l.title}`, [`"${l.title}" needs a few changes before it can go live.`, reason ? `What to change: ${reason}` : "", "Edit it in your host dashboard and submit it again."]);
@@ -80,6 +112,7 @@ Deno.serve(handle(async (req) => {
         await sql`update bookhomes.listings set status = 'paused', reviewed_by = ${admin.email} where id = ${id}`;
       }
       await audit(admin, action, "listing", String(id), { reason });
+      if (action === "pause_listing") await rebuildSite();
       return jsonRes({ ok: true });
     }
 

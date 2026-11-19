@@ -34,7 +34,7 @@ async function listAll(where?: { slug?: string }) {
       baths: Number(l.baths),
       lat: l.lat === null ? null : Number(l.lat),
       lng: l.lng === null ? null : Number(l.lng),
-      url: l.page_url || `/stays/${l.slug}`,
+      url: l.page_url || `/${l.slug}`,
       photos: photos.filter((p: { listing_id: number }) => Number(p.listing_id) === Number(l.id)).map((p: { url: string; caption: string }) => ({ url: p.url, caption: p.caption })),
       reviews: st ? { count: st.n, average: st.avg } : { count: 0, average: null },
       from_price: froms.find((f: { id: number }) => Number(f.id) === Number(l.id))?.p ?? null,

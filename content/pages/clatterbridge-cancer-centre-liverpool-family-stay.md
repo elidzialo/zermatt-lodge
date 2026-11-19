@@ -123,7 +123,7 @@ Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station. It i
 
 It's a quiet home. Strictly no parties or events, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in (50% after that), which helps when treatment dates move.
 
-Check availability and book direct at [Zermatt Lodge](/#book), or call +44 7479 905477 if you're not yet sure how many weeks you'll need.
+Check availability and book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477 if you're not yet sure how many weeks you'll need.
 
 ## Related guides
 

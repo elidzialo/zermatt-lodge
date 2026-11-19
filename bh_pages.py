@@ -2,8 +2,8 @@
 Returns the URLs that belong in the sitemap. Legal pages are plain-English DRAFTS for a solicitor to review."""
 import json
 
-from build_listings import (DOMAIN, COMMISSION_TEXT, DP, LISTING_ASSETS, booking_card, end, esc, footer, head,
-                            header, write)
+from build_listings import (CALENDAR, DOMAIN, COMMISSION_TEXT, DP, asset_v, booking_card, end, esc, footer, head,
+                            header, listing_assets, write)
 from bh_icons import icon
 
 DRAFT = '<p class="draft">Draft - have a solicitor review before relying on this.</p>'
@@ -15,38 +15,39 @@ def text_page(path, title, desc, body, robots="index, follow", schema=None, extr
 
 
 def dynamic_listing():
-    """Fallback for a listing approved after the last build: same layout, filled in the browser from the API."""
-    skeleton = {"id": 0, "slug": "", "max_guests": 16, "base_price": None, "cleaning_fee": 0}
-    body = f"""<main class="wrap" id="content">
-<div class="lp-head"><h1 id="lpTitle">Loading...</h1><div class="meta" id="lpMeta"></div></div>
-<div class="gal" id="lpGal"></div>
-<div class="lp">
-<div>
-  <section><h2 id="lpFacts" style="margin-bottom:4px"></h2></section>
-  <section><div class="hostline"><span class="av" id="lpAv">H</span><div><b id="lpHost"></b><p class="disclose" id="lpDisc"></p></div></div></section>
-  <section><h2>About this home</h2><p class="desc" id="lpDesc"></p></section>
-  <section id="lpAmenWrap" hidden><h2>What this place offers</h2><ul class="amen" id="lpAmen"></ul></section>
-  <section id="lpKosher" hidden><h2>Kosher and Shabbat</h2><div class="kbox"><ul class="kgrid" id="lpKosherList"></ul><p class="note">Details provided by the host. Book Homes does not inspect or certify kashrut, and this is not a certification.</p></div></section>
-  <section id="book" aria-labelledby="bookH"><h2 id="bookH" tabindex="-1">Select dates</h2>
-    <div class="cal-card" style="padding:0;border:0;box-shadow:none">
-      <div class="cal-top"><button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">‹</button><p id="calStatus" aria-live="polite">Select your check-in date</p><button type="button" class="cal-nav" id="calNext" aria-label="Next month">›</button></div>
-      <div class="months" id="months" aria-label="Availability calendar"><p class="bd-empty">Loading availability...</p></div>
-      <div class="cal-foot"><ul class="legend"><li><i class="lg-a"></i>Available</li><li><i class="lg-s"></i>Your stay</li><li><i class="lg-u"></i>Unavailable</li></ul><button type="button" class="link" id="clearDates">Clear dates</button></div>
-      <p class="cal-note" id="calNote" hidden></p><span id="liveTxt" hidden></span>
-    </div>
-  </section>
-  <section><h2>Where you'll be</h2><div class="lmap" id="lmap" role="region" aria-label="Map of the approximate area"></div><p style="color:var(--muted);margin-top:8px">The map shows the area only. The exact address is shared after booking.</p></section>
+    """Fallback for a listing approved after the last build (/<slug> rewrites here): same layout, filled in the browser from the API."""
+    skeleton = {"id": 0, "slug": "", "max_guests": 16, "from_price": None, "cleaning_fee": 0}
+    body = f"""<main class="lp" id="content">
+<div class="wrap lp-top">
+  <div class="lp-titlebar"><h1 id="lpTitle">Loading...</h1><div class="lp-act"><button type="button" class="tbtn" data-share>{icon("share")}<span>Share</span></button><button type="button" class="tbtn heart-btn" id="lpSave" data-save="0" aria-pressed="false">{icon("heart")}<span>Save</span></button></div></div>
+  <div class="gal" id="gal"><div class="gal-track" id="galTrack"></div>
+    <div class="gal-over"><a class="gbtn" href="/" aria-label="Back to all homes">{icon("arrow_l")}</a><span class="gal-r"><button type="button" class="gbtn" data-share aria-label="Share">{icon("share")}</button></span></div>
+    <span class="gal-count" id="galCount" aria-hidden="true"></span><button type="button" class="gal-all" data-lb="0">{icon("grid")}Show all photos</button></div>
+</div>
+<div class="wrap lp-grid">
+<div class="lp-main">
+  <section class="lp-sum"><h2 id="lpSub"></h2><p id="lpFacts"></p></section>
+  <section class="lp-host"><span class="av big" id="lpAv">H</span><div><b id="lpHost"></b><p class="muted" id="lpDisc"></p></div></section>
+  <section class="lp-sec lp-about"><h2 class="sr-only">About this home</h2><div class="clamp" id="aboutTxt"></div><button type="button" class="morebtn" data-modal="mAbout">Show more{icon("chev_r")}</button></section>
+  <section class="lp-sec" id="lpAmenWrap" hidden><h2>What this place offers</h2><ul class="amen" id="lpAmen"></ul></section>
+  <section class="lp-sec" id="lpKosher" hidden><h2>Kosher and Shabbat</h2><div class="kbox"><ul class="kgrid" id="lpKosherList"></ul><p class="note">Details provided by the host. Book Homes does not inspect or certify kashrut, and this is not a certification.</p></div></section>
+  {CALENDAR}
 </div>
 {booking_card(dict(skeleton, max_guests=16))}
 </div>
+<div class="wrap lp-full">
+  <section class="lp-sec" id="location"><h2>Where you'll be</h2><div class="lmap" id="lmap" role="region" aria-label="Map of the approximate area"></div><p class="where">The map shows the area only. The exact address is shared after booking.</p></section>
+  <section class="lp-sec"><h2>Things to know</h2><div class="know"><div><h3>House rules</h3><ul id="lpRules"></ul></div><div><h3>Cancellation policy</h3><ul><li>{icon("calendar")}<span id="lpPolicy"></span></li></ul></div></div></section>
+</div>
 </main>
-<div class="lb" id="lbox" role="dialog" aria-modal="true" aria-label="All photos" hidden><button type="button" class="close" id="lbClose">‹ Back</button><div class="lbg" id="lbg"></div></div>
-<div class="mbook" id="mbook"><div id="mbookPrice"><b>Add dates</b><small>for the total price</small></div><button type="button" class="btn" id="mbookBtn">Check dates</button></div>
+<div class="modal" id="mAbout" role="dialog" aria-modal="true" aria-labelledby="mAboutH" hidden><div class="modal-box"><div class="modal-top"><button type="button" class="iconbtn" data-close aria-label="Close">{icon("x")}</button></div><h2 id="mAboutH">About this home</h2><div id="aboutFull"></div></div></div>
+<div class="lb" id="lbox" role="dialog" aria-modal="true" aria-label="All photos" hidden><div class="lb-top"><button type="button" class="iconbtn" id="lbClose" aria-label="Close photos">{icon("chev_l")}</button><span></span><span></span></div><div class="lbg" id="lbg"></div></div>
+<div class="mbook" id="mbook"><div id="mbookPrice"><b>Add dates</b><small>Add dates for the total</small></div><button type="button" class="btn sbtn" id="mbookBtn">Reserve</button></div>
 {DP}
-<script src="/assets/stay-dynamic.js" defer></script>
+<script src="/assets/stay-dynamic.js?v={asset_v('stay-dynamic.js')}" defer></script>
 """
-    page = head("Stay | Book Homes", "A home on Book Homes.", "/stays/listing", robots="noindex, nofollow", extra=LISTING_ASSETS) + header() + body + '<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>\n' + footer() + end()
-    return page.replace("<body>", '<body class="has-mbook">', 1)
+    page = head("Stay | Book Homes", "A home on Book Homes.", "/stays/listing", robots="noindex, nofollow", extra=listing_assets(), body_class="has-mbook listing") + header("listing") + body + footer() + end()
+    return page
 
 
 BOOKED = """<div id="bkState"><h1>Confirming your booking...</h1><p>Please keep this page open for a moment.</p></div>

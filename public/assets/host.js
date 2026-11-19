@@ -217,7 +217,7 @@ function renderDash(){
     var legacy = !!l.legacy_source;
     var acts = legacy ? '<a class="btn ghost sm" href="/admin/">Managed in admin</a>' :
       '<button type="button" class="btn sm" data-edit="' + l.id + '">' + (l.status === "draft" || l.status === "rejected" ? "Continue" : "Edit") + '</button>' +
-      (l.status === "approved" ? '<a class="btn ghost sm" href="/stays/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
+      (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
       (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "");
     return '<div class="lcard"><div class="ph">' + (ph ? '<img src="' + esc(ph.url) + '" alt="">' : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
       (l.reject_reason ? '<p class="m" style="font-size:13.5px;color:#b42318">' + esc(l.reject_reason) + '</p>' : "") +

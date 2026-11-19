@@ -2,34 +2,60 @@
 """Book Homes marketplace pages, built from APPROVED listings (called by build.py).
 
 Writes (all copied to public/ by build.py):
-  stays/index.html            search: Where / Dates / Guests pill, category icon bar, filter chips, list + map
-  stays/<slug>/index.html     one page per approved listing (Zermatt Lodge keeps its own page at /)
-  stays/kosher/index.html     SEO landing page for kosher and Shabbat-friendly homes
-  stays/listing/, stays/booked/, stays/review/, become-a-host/, terms/hosts, terms/guests, privacy  (bh_pages.py)
-  assets/bh-icons.svg, assets/stay.js (booking code generated from index.html, so the date picker is identical)
+  index.html                  "/" = the marketplace: search bar, auto-generated category row, filters sheet, cards, map
+  listings/<path>/index.html  one page per approved listing, served at /<path> (short URLs, no /stays/ folder)
+  kosher-homes/index.html     SEO landing page for kosher and Shabbat-friendly homes (/stays/kosher redirects here)
+  stays/listing/, stays/booked/, stays/review/, become-a-host/, terms/*, privacy  (bh_pages.py)
+  assets/bh-icons.svg, assets/stay.js (booking code generated from design/zermatt-legacy.html, so the picker is identical)
+
+Tags: listing_tags() is the ONE place tags come from (city, area, property features, kosher). It runs every build,
+so a newly approved listing brings its city and tags with it. assets/stays.js mirrors the same rules for listings
+that arrive from the live API before the next build. A category only shows when at least one listing has it.
 
 Listings come from the public bookhomes-listings Edge Function (key read from admin/index.html).
 If that can't be reached (offline build), the last good copy in data/listings.json is used.
+Optional per-listing extras (rooms, FAQ, external reviews...) live in data/listing-extras.json, keyed by slug.
 House style: plain hyphens only, no fake reviews, no "was" prices, no street addresses.
 """
 import csv
 import glob
+import hashlib
 import html
 import json
 import os
 import re
-import shutil
 import urllib.request
 
 import yaml
 
-from bh_icons import AMENITY_LABELS, CATEGORIES, ICONS, icon, sprite
+from bh_icons import AMENITY_LABELS, ICONS, icon, sprite
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = os.environ.get("SITE_DOMAIN", "https://bookhomes.co.uk").rstrip("/")
 CACHE = os.path.join(ROOT, "data/listings.json")
+EXTRAS_FILE = os.path.join(ROOT, "data/listing-extras.json")
 COMMISSION_TEXT = "15%"  # keep in step with admin > Settings (bookhomes.settings commission_pct)
-SPECIAL = ("kosher", "listing", "booked", "review")
+
+
+def load_extras():
+    try:
+        return json.load(open(EXTRAS_FILE, encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+_SITE_CONTACT = (load_extras().get("zermatt-lodge") or {}).get("contact") or {}
+PHONE = _SITE_CONTACT.get("phone", "")
+EMAIL = _SITE_CONTACT.get("email", "")
+
+# Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
+RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
+            "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
+            "listing", "listings", "data", "public", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+
+HOME_TITLE = "Book Homes - Holiday Homes & Serviced Accommodation in Liverpool | Book Direct, No Booking Fees"
+HOME_DESC = ("Book whole holiday homes and serviced accommodation in Liverpool direct with the host. "
+             "Total prices with no booking fees, instant confirmation and secure card checkout.")
 
 
 def esc(s):
@@ -37,7 +63,7 @@ def esc(s):
 
 
 def no_dashes(s):
-    return s.replace("\u2013", "-").replace("\u2014", "-")
+    return s.replace("–", "-").replace("—", "-")
 
 
 def supabase_config():
@@ -85,8 +111,141 @@ def features(l):
     }
 
 
+# --------------------------------------------------------------------------- tags (one function, mirrored in stays.js)
+# key: (label, icon). Order here = order in the category row (after city and area tags).
+FEATURE_TAGS = {
+    "large-groups": ("Large groups", "groups"),
+    "family": ("Family", "family"),
+    "work-crews": ("Work crews", "van"),
+    "business": ("Business-ready", "work"),
+    "free-parking": ("Free parking", "parking"),
+    "games-room": ("Games room", "pool_table"),
+    "garden": ("Garden", "garden"),
+    "long-stays": ("Long stays", "long_stay"),
+    "hospital": ("Hospital stays", "hospital"),
+    "events": ("Match and event days", "events"),
+    "city-centre": ("City centre", "city"),
+    "coast": ("Coast", "coast"),
+    "countryside": ("Countryside", "countryside"),
+    "pet-friendly": ("Pet friendly", "pets"),
+    "hot-tub": ("Hot tub", "hot_tub"),
+    "ev-charger": ("EV charger", "ev_charger"),
+    "step-free": ("Step-free", "step_free"),
+    "self-check-in": ("Self check-in", "self_checkin"),
+    "kosher-kitchen": ("Kosher kitchen", "kosher"),
+    "shabbat-friendly": ("Shabbat friendly", "shabbat"),
+    "near-shul": ("Near shul", "shul"),
+}
+KOSHER_TAGS = ("kosher-kitchen", "shabbat-friendly", "near-shul")
+
+
+def slugify(s):
+    return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")
+
+
+def area_name(l):
+    """'Fazakerley, north Liverpool' -> 'Fazakerley' (the neighbourhood). Empty if it is just the city again."""
+    a = (l.get("area") or "").split(",")[0].strip()
+    return "" if not a or a.lower() == (l.get("city") or "").strip().lower() else a
+
+
+def listing_tags(l):
+    """All tags for one listing: city, area, then feature tags derived from the listing's own fields."""
+    f = features(l)
+    am = set(l.get("amenities") or [])
+    cats = set(l.get("categories") or [])
+    b = l.get("business") or {}
+    tags = []
+    if l.get("city"):
+        tags.append("city-" + slugify(l["city"]))
+    if area_name(l):
+        tags.append("area-" + slugify(area_name(l)))
+    rules = {
+        "large-groups": (l.get("max_guests") or 0) >= 6 or "groups" in cats,
+        "family": "family" in cats or bool(am & {"cot", "highchair"}),
+        "work-crews": f["work_crew"] or "work" in cats,
+        "business": f["business_ready"],
+        "free-parking": "parking" in am or b.get("van_parking") is True,
+        "games-room": "pool_table" in am,
+        "garden": "garden" in am,
+        "long-stays": "long_stay" in cats or (l.get("monthly_discount_pct") or 0) > 0 or b.get("monthly_rates") is True or (l.get("max_nights") or 0) >= 28,
+        "hospital": "hospital" in cats,
+        "events": "events" in cats,
+        "city-centre": "city" in cats,
+        "coast": "coast" in cats,
+        "countryside": "countryside" in cats,
+        "pet-friendly": "pets" in am,
+        "hot-tub": "hot_tub" in am,
+        "ev-charger": "ev_charger" in am,
+        "step-free": "step_free" in am,
+        "self-check-in": "self_checkin" in am,
+        "kosher-kitchen": f["kosher_kitchen"],
+        "shabbat-friendly": f["shabbat_friendly"],
+        "near-shul": f["near_shul"],
+    }
+    return tags + [k for k in FEATURE_TAGS if rules[k]]
+
+
+def tag_label(key, listings):
+    if key.startswith("city-") or key.startswith("area-"):
+        for l in listings:
+            if key == "city-" + slugify(l.get("city")):
+                return l["city"], "city"
+            if key == "area-" + slugify(area_name(l)):
+                return area_name(l), "pin"
+        return key.split("-", 1)[1].replace("-", " ").title(), "pin"
+    return FEATURE_TAGS[key]
+
+
+def category_row(listings):
+    """[(key, label, icon, count)] for every tag at least one listing has. Cities first (most homes first), then areas,
+    then features in FEATURE_TAGS order. Kosher tags are ordinary tags at the end, not featured."""
+    counts = {}
+    for l in listings:
+        for t in l["tags"]:
+            counts[t] = counts.get(t, 0) + 1
+    order = list(FEATURE_TAGS)
+
+    def sk(k):
+        if k.startswith("city-"):
+            return (0, -counts[k], k)
+        if k.startswith("area-"):
+            return (1, -counts[k], k)
+        return (2, order.index(k), k)
+    return [(k,) + tuple(tag_label(k, listings)) + (counts[k],) for k in sorted(counts, key=sk)]
+
+
+# --------------------------------------------------------------------------- urls and images
+def page_paths(listings):
+    """Short URL for each listing: /<slug>. A slug that clashes with a site path gets -liverpool (then -2, -3...)."""
+    taken = set(RESERVED) | {d for d in os.listdir(ROOT) if os.path.isdir(os.path.join(ROOT, d)) and d != "listings"}
+    for l in sorted(listings, key=lambda x: x["id"]):
+        s = slugify(l["slug"]) or f"home-{l['id']}"
+        if s in taken:
+            s2, n = s + "-liverpool", 2
+            while s2 in taken:
+                s2, n = f"{s}-{n}", n + 1
+            s = s2
+        taken.add(s)
+        l["path"] = s
+        l["url"] = "/" + s
+
+
 def listing_url(l):
-    return l.get("page_url") or f"/stays/{l['slug']}"
+    return l.get("url") or "/" + l["slug"]
+
+
+def img(url, w):
+    """Resized copy for Guesty CDN photos; other hosts' photos are used as they are."""
+    if "assets.guesty.com" in (url or "") and re.search(r"/w_\d+,", url):
+        return re.sub(r"/w_\d+,", f"/w_{w},", url)
+    return url
+
+
+def srcset(url, widths=(480, 720, 1080)):
+    if "assets.guesty.com" not in (url or ""):
+        return ""
+    return ", ".join(f"{img(url, w)} {w}w" for w in widths)
 
 
 def money(n):
@@ -94,15 +253,31 @@ def money(n):
     return f"£{n:,.0f}" if n == int(n) else f"£{n:,.2f}"
 
 
+def plural(n, word):
+    n = float(n or 0)
+    return f"{n:g} {word}{'' if n == 1 else 's'}"
+
+
+def asset_v(name):
+    """Short content hash for cache-busting (/assets is cached for a while)."""
+    p = os.path.join(ROOT, "assets", name)
+    return hashlib.md5(open(p, "rb").read()).hexdigest()[:8] if os.path.exists(p) else "1"
+
+
+# --------------------------------------------------------------------------- shared chrome
 LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/>'
         '<path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>')
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">\n')
 
 
-def head(title, desc, path, robots="index, follow", extra="", schema=None):
+def head(title, desc, path, robots="index, follow", extra="", schema=None, og_image=None, body_class=""):
     canon = DOMAIN + path
     ld = ""
     if schema:
-        ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+        ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
+    og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
+    bc = f' class="{body_class}"' if body_class else ""
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -112,43 +287,48 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None):
 <meta name="description" content="{esc(desc)}">
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{esc(canon)}">
-<meta name="theme-color" content="#1f4d3a">
-<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canon)}">
-<link rel="stylesheet" href="/assets/bh.css">
-{extra}{ld}
-</head>
-<body>
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Book Homes"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canon)}">{og}
+<meta name="twitter:card" content="summary_large_image">
+{FONTS}<link rel="stylesheet" href="/assets/bh.css?v={asset_v('bh.css')}">
+{extra}{ld}</head>
+<body{bc}>
 {sprite()}
 """
 
 
-def header(search=False):
-    s = ""
-    if search:
-        guests = "".join(f'<option value="{i}"{" selected" if i == 2 else ""}>{i} guests</option>' for i in range(2, 17))
-        s = f"""<div class="wrap"><div class="searchbar"><form class="pill" id="pill" role="search" aria-label="Search stays">
-  <label class="seg where"><small>Where</small><select id="qWhere" aria-label="Where"><option value="">Anywhere</option></select></label>
-  <button type="button" class="seg" id="qDates"><small>Dates</small><span id="qDatesTxt">Add dates</span></button>
-  <label class="seg"><small>Guests</small><select id="qGuests" aria-label="Guests"><option value="1">1 guest</option>{guests}</select></label>
-  <button type="submit" class="go" id="qGo" aria-label="Search">{icon("search")}</button>
-</form></div></div>"""
-    return f"""<header class="bh-top"><div class="wrap">
-  <a class="logo" href="/stays" aria-label="Book Homes - all stays">{LOGO}<span>Book Homes</span></a>
-  <nav class="bh-nav" aria-label="Main"><a href="/stays">Stays</a><a href="/stays/kosher">Kosher homes</a><a href="/guides">Liverpool guides</a><a class="host-cta" href="/become-a-host">List your property</a></nav>
-</div>{s}</header>
+def menu_html():
+    tel = PHONE.replace(" ", "")
+    contact = (f'<hr><a href="tel:{tel}">Call {esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">Email us</a>' if EMAIL else "")
+    return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
+            f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
+            f'<div class="umlist" id="umList" hidden><a href="/host"><b>Host login</b></a><a href="/become-a-host">List your property</a><hr>'
+            f'<a href="/">All homes</a><a href="/guides">Liverpool guides</a><a href="/kosher-homes">Kosher homes</a>{contact}</div></div>')
+
+
+def header(kind="page"):
+    """Logo left, 'List your property' and the menu right. kind="page" | "listing" (hidden on phones; the photo carousel has its own buttons)."""
+    return f"""<header class="hd hd-{kind}"><div class="wrap hd-row">
+  <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a>
+  <div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div>
+</div></header>
 """
 
 
 def footer():
-    return """<footer class="bh-foot"><div class="wrap">
-  <div class="cols">
-    <div><h3>Book Homes</h3><a href="/stays">All stays</a><a href="/stays/kosher">Kosher homes</a><a href="/">Zermatt Lodge</a><a href="/guides">Liverpool guides</a></div>
-    <div><h3>Hosting</h3><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
-    <div><h3>Legal</h3><a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
-    <div><h3>Contact</h3><a href="/#contact">Contact us</a><a href="tel:+447479905477">+44 7479 905477</a></div>
+    tel = PHONE.replace(" ", "")
+    sup = (f'<a href="tel:{tel}">{esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">{esc(EMAIL)}</a>' if EMAIL else "")
+    return f"""<footer class="ft"><div class="wrap">
+  <div class="ft-cols">
+    <div><h2>Book Homes</h2><a href="/">All homes</a><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
+    <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
+    <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
   </div>
-  <p class="legal">Book Homes is a booking platform. Each stay is provided by its host. No booking fees for guests.</p>
+  <div class="ft-legal"><span>© 2026 Book Homes, Liverpool</span><span>A booking platform. Each stay is provided by its host. No booking fees for guests.</span></div>
 </div></footer>
+<script src="/assets/bh-ui.js?v={asset_v('bh-ui.js')}" defer></script>
 """
 
 
@@ -182,7 +362,7 @@ def load_guides():
     return out
 
 
-def guides_for(l, guides, n=4):
+def guides_for(l, guides, n=6):
     if (l.get("city") or "").strip().lower() != "liverpool":
         return []
     cats = set(l.get("categories") or [])
@@ -199,77 +379,175 @@ def guides_for(l, guides, n=4):
     return [g for g in ranked if score(g) > 0][:n] or ranked[:2]
 
 
-# --------------------------------------------------------------------------- /stays
-def from_html(l):
-    """Honest 'from' price: the lowest nightly price bookable in the next 90 days (from the live calendar)."""
-    fp = l.get("from_price")
-    if not fp:
-        return "<b>Add dates</b> to see prices<small>Total shown with dates. No booking fees.</small>"
-    return f'<b>From {money(fp)}</b> a night<small>Plus cleaning {money(l.get("cleaning_fee"))}. No booking fees.</small>'
+# --------------------------------------------------------------------------- "/" marketplace (and the kosher landing)
+NEARBY = ["Liverpool", "Southport", "Wirral", "Chester", "Manchester", "Warrington"]
 
 
-def card_html(l, f):
-    photo = (l.get("photos") or [{}])[0].get("url", "")
+def card_photos(l, extras):
+    ph = (extras.get(l["slug"]) or {}).get("photos") or l.get("photos") or []
+    return [{"url": p.get("url"), "caption": p.get("caption") or l["title"]} for p in ph if p.get("url")][:5]
+
+
+def card_html(l, eager=False):
+    """Airbnb-style card: 20:19 photo carousel with dots and a heart, then place, name, rooms, price. Same markup as stays.js."""
+    photos = l["card_photos"]
+    slides = "".join(
+        f'<a class="sl" href="{esc(l["url"])}" tabindex="{0 if i == 0 else -1}"{"" if i == 0 else " aria-hidden=\"true\""}>'
+        f'<img src="{esc(img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) else ""}'
+        f' alt="{esc(p["caption"])}" width="720" height="684" {"fetchpriority=" + chr(34) + "high" + chr(34) if eager and i == 0 else "loading=" + chr(34) + "lazy" + chr(34)} decoding="async"></a>'
+        for i, p in enumerate(photos))
+    dots = "".join(f'<i{" class=" + chr(34) + "on" + chr(34) if i == 0 else ""}></i>' for i in range(len(photos))) if len(photos) > 1 else ""
+    nav = (f'<button type="button" class="cnav prev" aria-label="Previous photo" hidden>{icon("chev_l")}</button>'
+           f'<button type="button" class="cnav next" aria-label="Next photo">{icon("chev_r")}</button>') if len(photos) > 1 else ""
     rv = l.get("reviews") or {}
-    rating = f'<span class="rt">{icon("star")}{rv["average"]:.2f} ({rv["count"]})</span>' if rv.get("count") else ""
-    tag = ""
-    if f["kosher_kitchen"]:
-        tag = f'<span class="tag">{icon("kosher")}Kosher kitchen</span>'
-    elif f["business_ready"]:
-        tag = f'<span class="tag">{icon("work")}Business-ready</span>'
-    stats = f'{l["max_guests"]} guests · {l["bedrooms"]} bedroom{"s" if l["bedrooms"] != 1 else ""}'
-    return (f'<a class="card" href="{esc(listing_url(l))}" data-id="{l["id"]}">'
-            f'<div class="ph"><img src="{esc(photo)}" alt="{esc(l["title"])}" loading="lazy" width="600" height="570">{tag}</div>'
-            f'<div class="row1"><span>{esc(l["title"])}</span>{rating}</div>'
-            f'<div class="sub">{esc(l.get("area") or l.get("city"))}</div><div class="sub">{stats}</div>'
-            f'<div class="price">{from_html(l)}</div></a>')
+    rating = f'<span class="rt">{icon("star", "ic st")}{rv["average"]:.2f} ({rv["count"]})</span>' if rv.get("count") else ""
+    place = ", ".join(x for x in [l.get("city"), area_name(l)] if x)
+    price = (f'<span class="from">From</span> <b>{money(l["from_price"])}</b> night' if l.get("from_price")
+             else '<b>Add dates</b> for prices')
+    return (f'<article class="card" data-id="{l["id"]}"><div class="cph"><div class="track">{slides}</div>{nav}'
+            f'<button type="button" class="heart" aria-pressed="false" aria-label="Save {esc(l["title"])}">{icon("heart")}</button>'
+            f'<div class="cdots" aria-hidden="true">{dots}</div></div>'
+            f'<a class="meta" href="{esc(l["url"])}"><span class="l1"><b>{esc(place)}</b>{rating}</span>'
+            f'<span class="l2">{esc(l["title"])}</span>'
+            f'<span class="l2">{plural(l.get("bedrooms") or 0, "bedroom")} · {plural(l.get("max_guests") or 0, "guest")}</span>'
+            f'<span class="l2 l-d">No booking fees</span><span class="pr">{price}</span></a></article>')
 
 
-def stays_page(listings, path="/stays", preset=None, intro="", faq=None, title=None, desc=None):
-    feats = {l["id"]: features(l) for l in listings}
-    cats = "".join(
-        f'<button type="button" class="cat" data-cat="{k}" aria-pressed="{"true" if (preset or "all") == k else "false"}">{icon(ic)}<span>{esc(lbl)}</span></button>'
-        for k, lbl, ic in CATEGORIES)
-    chips = "".join(
-        f'<button type="button" class="chipf" data-chip="{k}" aria-pressed="false">{icon(ic)}{esc(lbl)}</button>'
-        for k, lbl, ic in [("kosher_kitchen", "Kosher kitchen", "kosher"), ("shabbat_friendly", "Shabbat friendly", "shabbat"),
-                           ("near_shul", "Near shul", "shul"), ("work_crew", "Work crew", "van"), ("business_ready", "Business-ready", "work")])
-    shown = [l for l in listings if not preset or preset == "all" or (preset == "kosher" and feats[l["id"]]["kosher"])]
-    cards = "".join(card_html(l, feats[l["id"]]) for l in shown)
-    empty = '<p class="empty">No homes match yet. New homes are added as hosts are approved.</p>'
-    t = title or "Holiday homes and short stays in Liverpool | Book Homes"
-    d = desc or "Whole homes to book direct with no booking fees. Search by dates and guests: kosher homes, work crews, families and groups."
-    crumbs = [{"@type": "ListItem", "position": 1, "name": "Stays", "item": DOMAIN + "/stays"}]
-    if preset == "kosher":
-        crumbs.append({"@type": "ListItem", "position": 2, "name": "Kosher homes", "item": DOMAIN + path})
-    graph = [{"@type": "CollectionPage", "name": t, "url": DOMAIN + path, "description": d,
-              "mainEntity": {"@type": "ItemList", "itemListElement": [
-                  {"@type": "ListItem", "position": i + 1, "url": DOMAIN + listing_url(l), "name": l["title"]} for i, l in enumerate(shown)]}},
-             {"@type": "BreadcrumbList", "itemListElement": crumbs}]
+def search_ui():
+    """Desktop three-part bar + mobile pill, and the shared search panel (popover on desktop, full-screen sheet on phones)."""
+    steppers = "".join(
+        f'<div class="stp"><div><b>{t}</b><small>{s}</small></div><div class="stp-c">'
+        f'<button type="button" data-step="{k}" data-d="-1" aria-label="Fewer {t.lower()}">{icon("minus")}</button>'
+        f'<output id="n_{k}" aria-live="polite">0</output>'
+        f'<button type="button" data-step="{k}" data-d="1" aria-label="More {t.lower()}">{icon("plus")}</button></div></div>'
+        for k, t, s in [("adults", "Adults", "Ages 13 or above"), ("children", "Children", "Ages 2 to 12"),
+                        ("infants", "Infants", "Under 2"), ("pets", "Pets", "Only homes that allow pets")])
+    bar = f"""<form class="sbar" id="sbar" role="search" aria-label="Search homes">
+  <label class="sg sg-where" data-p="where"><span class="sg-l">Where</span><input id="sbWhere" type="search" placeholder="Search destinations" autocomplete="off" enterkeyhint="search"></label>
+  <button type="button" class="sg" data-p="ci"><span class="sg-l">Check in</span><span class="sg-v" id="sbCi">Add dates</span></button>
+  <button type="button" class="sg" data-p="co"><span class="sg-l">Check out</span><span class="sg-v" id="sbCo">Add dates</span></button>
+  <button type="button" class="sg sg-who" data-p="who"><span class="sg-l">Who</span><span class="sg-v" id="sbWho">Add guests</span></button>
+  <button type="submit" class="sb-go" aria-label="Search">{icon("search")}<span>Search</span></button>
+</form>"""
+    pill = f"""<button type="button" class="mpill" id="mpill" aria-label="Search homes">{icon("search")}<span class="mp-t"><b id="mpWhere">Where to?</b><small id="mpSub">Any week · Add guests</small></span></button>"""
+    panel = f"""<div class="sp" id="sp" role="dialog" aria-modal="true" aria-label="Search" hidden>
+<div class="sp-top"><button type="button" class="iconbtn" id="spClose" aria-label="Close search">{icon("x")}</button></div>
+<div class="sp-scroll">
+<section class="spc" data-p="where"><button type="button" class="spc-sum" data-open="where"><span>Where</span><b id="sumWhere">Anywhere</b></button>
+  <div class="spc-body"><h2>Where to?</h2><label class="sp-in">{icon("search")}<input id="whereIn" type="search" placeholder="Search destinations" autocomplete="off" enterkeyhint="search" aria-label="Search destinations"></label><ul class="sugg" id="sugg"></ul></div></section>
+<section class="spc" data-p="when"><button type="button" class="spc-sum" data-open="when"><span>When</span><b id="sumWhen">Any week</b></button>
+  <div class="spc-body"><h2>When's your trip?</h2>
+  <div class="cal-top"><button type="button" class="cal-nav" id="spPrev" aria-label="Previous month">{icon("chev_l")}</button><p id="spStatus" aria-live="polite">Select your check-in date</p><button type="button" class="cal-nav" id="spNext" aria-label="Next month">{icon("chev_r")}</button></div>
+  <div class="months" id="spMonths" aria-label="Choose dates"></div></div></section>
+<section class="spc" data-p="who"><button type="button" class="spc-sum" data-open="who"><span>Who</span><b id="sumWho">Add guests</b></button>
+  <div class="spc-body"><h2>Who's coming?</h2>{steppers}</div></section>
+</div>
+<div class="sp-foot"><button type="button" class="link" id="spClear">Clear all</button><button type="button" class="btn sbtn" id="spGo">{icon("search")}Search</button></div>
+</div>"""
+    return bar, pill, panel
+
+
+def filters_ui(listings):
+    present = sorted({a for l in listings for a in (l.get("amenities") or []) if a in AMENITY_LABELS}, key=lambda a: AMENITY_LABELS[a])
+    tagkeys = [k for k in FEATURE_TAGS if k not in KOSHER_TAGS]
+
+    def chip(kind, k, label, ic):
+        return f'<button type="button" class="fchip" data-{kind}="{k}" aria-pressed="false">{icon(ic)}<span>{esc(label)}</span></button>'
+    stp = "".join(
+        f'<div class="stp"><div><b>{t}</b></div><div class="stp-c"><button type="button" data-fstep="{k}" data-d="-1" aria-label="Fewer {t.lower()}">{icon("minus")}</button>'
+        f'<output id="f_{k}">Any</output><button type="button" data-fstep="{k}" data-d="1" aria-label="More {t.lower()}">{icon("plus")}</button></div></div>'
+        for k, t in [("bedrooms", "Bedrooms"), ("beds", "Beds"), ("baths", "Bathrooms")])
+    return f"""<div class="fs" id="fs" role="dialog" aria-modal="true" aria-labelledby="fsH" hidden><div class="fs-box">
+<div class="fs-top"><button type="button" class="iconbtn" id="fsClose" aria-label="Close filters">{icon("x")}</button><h2 id="fsH">Filters</h2><span></span></div>
+<div class="fs-body">
+  <section><h3>Price range</h3><p class="muted">Nightly prices before cleaning. The total you pay never has a booking fee.</p>
+    <div class="range" id="pRange"><div class="rtrack"><i id="pFill"></i></div><input type="range" id="pMin" aria-label="Minimum price"><input type="range" id="pMax" aria-label="Maximum price"></div>
+    <div class="pbox"><div><small>Minimum</small><b id="pMinT">£0</b></div><div><small>Maximum</small><b id="pMaxT">Any</b></div></div></section>
+  <section><h3>Rooms and beds</h3>{stp}</section>
+  <section><h3>Type of stay</h3><div class="fchips">{"".join(chip("ftag", k, FEATURE_TAGS[k][0], FEATURE_TAGS[k][1]) for k in tagkeys)}</div></section>
+  <section><h3>Amenities</h3><div class="fchips">{"".join(chip("famen", a, AMENITY_LABELS[a], a if a in ICONS else "check") for a in present)}</div></section>
+  <section><h3>Kosher and Shabbat</h3><p class="muted">Described by each host. Not a kashrut certification.</p><div class="fchips">{"".join(chip("ftag", k, FEATURE_TAGS[k][0], FEATURE_TAGS[k][1]) for k in KOSHER_TAGS)}</div></section>
+</div>
+<div class="fs-foot"><button type="button" class="link" id="fsClear">Clear all</button><button type="button" class="btn" id="fsGo">Show homes</button></div>
+</div></div>"""
+
+
+def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HOME_DESC, h1="Holiday homes in Liverpool", intro="", faq=None):
+    shown = [l for l in listings if not preset or any(t in l["tags"] for t in preset)]
+    row = category_row(listings)
+    cats = f'<button type="button" class="cat" data-tag="" aria-pressed="{"false" if preset else "true"}">{icon("all")}<span>All homes</span></button>' + "".join(
+        f'<button type="button" class="cat" data-tag="{k}" aria-pressed="false">{icon(ic)}<span>{esc(lbl)}</span></button>' for k, lbl, ic, n in row)
+    cards = "".join(card_html(l, eager=i < 2) for i, l in enumerate(shown))
+    empty = ('<div class="empty"><h2>No homes here yet</h2><p>New homes appear as soon as hosts are approved. '
+             'Try all homes, or list your own.</p><p><a class="btn ghost" href="/">Show all homes</a> <a class="btn" href="/become-a-host">List your property</a></p></div>')
+    bar, pill, panel = search_ui()
+    org = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Book Homes", "url": DOMAIN + "/",
+           "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/logo.png"}, "alternateName": "ZALO Stays"}
+    if PHONE:
+        org["telephone"] = PHONE.replace(" ", "")
+        org["contactPoint"] = {"@type": "ContactPoint", "telephone": PHONE.replace(" ", ""), "contactType": "reservations", "areaServed": "GB", "availableLanguage": "en-GB"}
+    if EMAIL:
+        org["email"] = EMAIL
+        org.setdefault("contactPoint", {})["email"] = EMAIL
+    graph = [org,
+             {"@type": "WebSite", "@id": DOMAIN + "/#website", "url": DOMAIN + "/", "name": "Book Homes", "publisher": {"@id": DOMAIN + "/#org"}, "inLanguage": "en-GB"},
+             {"@type": "CollectionPage", "@id": DOMAIN + path + "#page", "url": DOMAIN + path, "name": title, "description": desc,
+              "isPartOf": {"@id": DOMAIN + "/#website"}, "inLanguage": "en-GB",
+              "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown), "itemListElement": [
+                  {"@type": "ListItem", "position": i + 1, "url": DOMAIN + l["url"], "name": l["title"]} for i, l in enumerate(shown)]}}]
+    if path != "/":
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Book Homes", "item": DOMAIN + "/"},
+            {"@type": "ListItem", "position": 2, "name": h1, "item": DOMAIN + path}]})
     if faq:
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
-    data = {"listings": [dict(l, features=feats[l["id"]], url=listing_url(l)) for l in listings], "preset": preset or "all"}
+    data = {"listings": [{k: l.get(k) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "beds", "baths", "amenities",
+                                                 "categories", "business", "kosher", "monthly_discount_pct", "max_nights", "lat", "lng",
+                                                 "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source")}
+                         for l in listings],
+            "tags": {k: list(v) for k, v in FEATURE_TAGS.items()}, "reserved": sorted(RESERVED), "nearby": NEARBY,
+            "preset": preset or [], "amenity_labels": AMENITY_LABELS}
     faq_html = ""
     if faq:
-        faq_html = "<section class='page' style='padding-top:10px'><h2>Questions</h2>" + "".join(
-            f"<details><summary><b>{esc(q)}</b></summary><p>{esc(a)}</p></details>" for q, a in faq) + "</section>"
-    leaflet = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">\n'
+        faq_html = "<section class='home-faq'><h2>Questions</h2>" + "".join(
+            f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faq) + "</section>"
+    pop = [g for g in guides if g["priority"] <= 2][:9] or guides[:9]
+    explore = ("<section class='explore'><h2>Plan your Liverpool stay</h2><ul>" +
+               "".join(f'<li><a href="/guides/{esc(g["slug"])}">{esc(g["title"])}</a></li>' for g in pop) +
+               '<li><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a></li><li><a href="/guides"><b>All Liverpool guides</b></a></li></ul></section>')
     data_js = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    return (head(t, d, path, extra=leaflet, schema={"@context": "https://schema.org", "@graph": graph}) + header(search=True) +
-            f"""<main class="wrap">
+    count = f'{len(shown)} home{"s" if len(shown) != 1 else ""}'
+    extra = f'<link rel="stylesheet" href="/assets/bh-booking.css?v={asset_v("bh-booking.css")}">\n'
+    og = img(shown[0]["card_photos"][0]["url"], 1200) if shown and shown[0]["card_photos"] else None
+    return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home") +
+            f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>
+<header class="top" id="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span>Book Homes</span></a>
+    <div class="top-mid">{pill}<button type="button" class="iconbtn fbtn-m" data-filters aria-label="Filters">{icon("sliders")}<span class="fcount" hidden></span></button></div>
+    <div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html().replace('id="umBtn"', 'id="umBtn2"').replace('id="umList"', 'id="umList2"').replace('aria-controls="umList"', 'aria-controls="umList2"')}</div>
+  </div>
+  <div class="wrap top-search">{bar}</div>
+  <div class="catbar"><div class="wrap catbar-in">
+    <div class="cats-scroll" id="catsScroll"><div class="cats" id="cats" aria-label="Categories">{cats}</div></div>
+    <button type="button" class="cat-arrow" id="catNext" aria-label="More categories" tabindex="-1">{icon("chev_r")}</button>
+    <button type="button" class="fbtn" data-filters>{icon("sliders")}<span>Filters</span><span class="fcount" hidden></span></button>
+  </div></div>
+</header>
+<main class="wrap home-main" id="content">
+<div class="rhead"><h1>{esc(h1)}</h1><p><span id="count">{count}</span><span class="dot-sep" aria-hidden="true">·</span><span>Total prices, no booking fees</span></p></div>
 {intro}
-<nav class="cats" aria-label="Categories">{cats}</nav>
-<div class="chips" role="group" aria-label="Filters">{chips}</div>
-<div class="resbar"><span id="count">{len(shown)} home{'s' if len(shown) != 1 else ''}</span><span class="nofees">{icon("check")}Total price, no booking fees</span><button type="button" class="chipf" id="mapToggle" aria-pressed="false">{icon("map")}Map</button></div>
-<div class="results" id="results"><div><div class="grid" id="grid">{cards or empty}</div></div>
-<div class="mapbox" id="mapbox" hidden><div id="map" role="region" aria-label="Map of approximate locations"></div></div></div>
-</main>
+<div class="results" id="results"><div class="grid" id="grid">{cards or empty}</div><div class="mapview" id="mapview" hidden><div id="map" role="region" aria-label="Map of approximate locations"></div></div></div>
 {faq_html}
-<div class="dp-scrim" id="dpScrim" aria-hidden="true"></div>
+{explore}
+</main>
+<button type="button" class="mapbtn" id="mapBtn" aria-pressed="false"><span>Show map</span>{icon("map")}</button>
+{panel}
+{filters_ui(listings)}
+<div class="scrim" id="scrim" hidden></div>
 <script id="bh-data" type="application/json">{data_js}</script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
-<script src="/assets/stays.js" defer></script>
+<script src="/assets/stays.js?v={asset_v('stays.js')}" defer></script>
 """ + footer() + end())
 
 
@@ -282,17 +560,13 @@ KOSHER_FAQ = [
 ]
 
 
-def kosher_page(listings):
-    intro = """<section style="padding:28px 0 6px">
-<h1 class="serif" style="font-size:clamp(26px,3.6vw,38px);line-height:1.15">Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK</h1>
-<p style="color:var(--muted);max-width:760px;margin-top:10px">Whole homes with kosher kitchens, Shabbat set-ups and a shul in walking distance. Every detail is declared by the host and shown on the listing, so you can check before you book. Not a certification. No booking fees.</p>
-</section>"""
-    return stays_page(listings, path="/stays/kosher", preset="kosher", intro=intro, faq=KOSHER_FAQ,
-                      title="Kosher holiday homes and Shabbat-friendly stays in Liverpool | Book Homes",
-                      desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, near shul, eruv details. Host-declared, no booking fees.")
-
-
-# --------------------------------------------------------------------------- listing page
+def kosher_page(listings, guides):
+    intro = ('<p class="lead-p">Whole homes with kosher kitchens, Shabbat set-ups and a shul in walking distance. Every detail is declared by the host '
+             'and shown on the listing, so you can check before you book. Not a certification. No booking fees.</p>')
+    return home_page(listings, guides, path="/kosher-homes", preset=list(KOSHER_TAGS),
+                     title="Kosher holiday homes and Shabbat-friendly stays in Liverpool | Book Homes",
+                     desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, near shul, eruv details. Host-declared, no booking fees.",
+                     h1="Kosher and Shabbat-friendly homes", intro=intro, faq=KOSHER_FAQ)
 POLICY = {
     "flexible": "Flexible: full refund up to 24 hours before check-in.",
     "moderate": "Moderate: full refund up to 5 days before check-in, 50% refund after that, no refund after check-in.",
@@ -345,7 +619,7 @@ def kosher_section(l):
             'certification. Please check anything important with the host after booking.</p></div></section>')
 
 
-def business_section(l):
+def business_section(l, legacy=False):
     b = l.get("business") or {}
     if not any(b.values()) and not l.get("monthly_discount_pct"):
         return ""
@@ -360,199 +634,345 @@ def business_section(l):
         items.append(("bed", "Separate beds", "Good for colleagues sharing"))
     if b.get("monthly_rates") or l.get("monthly_discount_pct"):
         items.append(("long_stay", "Monthly stays welcome", f"{l['monthly_discount_pct']}% off 28 nights or more" if l.get("monthly_discount_pct") else ""))
-    items.append(("receipt", "Company receipt (PDF)", "Tick the box at checkout and add your company name"))
+    if not legacy:
+        items.append(("receipt", "Company receipt (PDF)", "Tick the box at checkout and add your company name"))
     lis = "".join(f'<li>{icon(i)}<div><b>{esc(t)}</b>{f"<span>{esc(s)}</span>" if s else ""}</div></li>' for i, t, s in items)
     return f'<section id="work"><h2>For work stays</h2><ul class="hl">{lis}</ul></section>'
 
 
-def vacation_schema(l, path, reviews):
-    am = [{"@type": "LocationFeatureSpecification", "name": AMENITY_LABELS.get(a, a), "value": True} for a in (l.get("amenities") or [])]
+
+
+# --------------------------------------------------------------------------- listing page (/<slug>)
+def listing_photos(l, ex):
+    ph = ex.get("photos") or l.get("photos") or []
+    return [{"url": p["url"], "caption": p.get("caption") or l["title"]} for p in ph if p.get("url")]
+
+
+def vacation_schema(l, path, reviews, ex):
+    am = [{"@type": "LocationFeatureSpecification", "name": lbl, "value": True} for _, lbl in amenity_items(l, ex)]
+    desc = " ".join(ex.get("about") or []) or l.get("description") or l["title"]
     node = {
         "@type": ["VacationRental", "LodgingBusiness"], "@id": DOMAIN + path + "#rental", "name": l["title"],
-        "description": no_dashes(l.get("description") or l["title"]), "url": DOMAIN + path,
-        "image": [p["url"] for p in (l.get("photos") or [])][:10], "identifier": f"bookhomes-{l['id']}",
-        "address": {"@type": "PostalAddress", "addressLocality": l.get("city") or "Liverpool", "addressCountry": "GB"},
+        "description": no_dashes(desc), "url": DOMAIN + path,
+        "image": [p["url"] for p in listing_photos(l, ex)][:12], "identifier": f"bookhomes-{l['id']}",
+        "address": {"@type": "PostalAddress", "addressLocality": l.get("city") or "Liverpool", "addressRegion": "Merseyside" if (l.get("city") or "") == "Liverpool" else None, "addressCountry": "GB"},
         "checkinTime": l.get("check_in_time") or "15:00", "checkoutTime": l.get("check_out_time") or "11:00",
         "numberOfRooms": l.get("bedrooms") or 1, "petsAllowed": "pets" in (l.get("amenities") or []),
         "containsPlace": {"@type": "Accommodation", "additionalType": "EntirePlace",
                           "occupancy": {"@type": "QuantitativeValue", "value": l["max_guests"], "maxValue": l["max_guests"]},
                           "numberOfBedrooms": l.get("bedrooms") or 0, "numberOfBathroomsTotal": l.get("baths") or 0, "amenityFeature": am},
-        "brand": {"@type": "Organization", "name": "Book Homes", "url": DOMAIN + "/"},
+        "brand": {"@id": DOMAIN + "/#org"},
+        "potentialAction": {"@type": "ReserveAction", "target": DOMAIN + path + "#book"},
     }
+    node["address"] = {k: v for k, v in node["address"].items() if v}
+    if l.get("airbnb_url") or l.get("booking_url"):
+        node["sameAs"] = [u for u in (l.get("airbnb_url"), l.get("booking_url")) if u]
     if l.get("lat") is not None and l.get("lng") is not None:
         node["geo"] = {"@type": "GeoCoordinates", "latitude": round(l["lat"], 2), "longitude": round(l["lng"], 2),
                        "description": "Approximate area, not the exact property location"}
     rv = l.get("reviews") or {}
-    if rv.get("count") and reviews:  # only real reviews from completed stays
+    if rv.get("count") and reviews:  # only Book Homes reviews from completed stays; never ratings copied from other sites
         node["aggregateRating"] = {"@type": "AggregateRating", "ratingValue": rv["average"], "reviewCount": rv["count"], "bestRating": 5, "worstRating": 1}
         node["review"] = [{"@type": "Review", "reviewRating": {"@type": "Rating", "ratingValue": r["rating"], "bestRating": 5},
                            "author": {"@type": "Person", "name": r.get("guest_first_name") or "Guest"}, "reviewBody": r.get("comment") or ""}
                           for r in reviews[:10]]
-    return {"@context": "https://schema.org", "@graph": [node, {"@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Stays", "item": DOMAIN + "/stays"},
-        {"@type": "ListItem", "position": 2, "name": l["title"], "item": DOMAIN + path}]}]}
+    graph = [node, {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Book Homes", "url": DOMAIN + "/"},
+             {"@type": "BreadcrumbList", "itemListElement": [
+                 {"@type": "ListItem", "position": 1, "name": "Book Homes", "item": DOMAIN + "/"},
+                 {"@type": "ListItem", "position": 2, "name": l["title"], "item": DOMAIN + path}]}]
+    if ex.get("faqs"):
+        graph.append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["q"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]}} for q in ex["faqs"]]})
+    return {"@context": "https://schema.org", "@graph": graph}
 
 
-def booking_card(l):
+def amenity_items(l, ex):
+    if ex.get("amenities"):
+        return [(i if i in ICONS else "check", t) for i, t in ex["amenities"]]
+    return [(a if a in ICONS else "check", AMENITY_LABELS.get(a, a)) for a in (l.get("amenities") or [])]
+
+
+def booking_card(l, ex=None):
+    ex = ex or {}
     opts = "".join(f'<option value="{i}"{" selected" if i == min(2, l["max_guests"]) else ""}>{i} guest{"s" if i > 1 else ""}</option>'
                    for i in range(1, l["max_guests"] + 1))
-    return f"""<aside><div class="bookcard" id="bookcard">
-  <div class="from">{('From ' + money(l['from_price']) + ' <small>a night</small>') if l.get('from_price') else 'Add dates <small>for the total price</small>'}</div>
+    fp = l.get("from_price")
+    price = f'<span class="from">From</span> <b>{money(fp)}</b> <span>night</span>' if fp else '<b>Add dates</b> <span>for prices</span>'
+    legacy = bool(ex.get("legacy_checkout"))
+    receipt = "" if legacy else ('<label class="tickrow"><input type="checkbox" id="bkReceipt"><span>I need a company receipt (PDF) with my company name</span></label>'
+                                 '<label class="inp" id="bkCompanyWrap" hidden><span>Company name</span><input type="text" id="bkCompany" autocomplete="organization" maxlength="120"></label>')
+    promo = ('<details class="promo"><summary>Add a promo code</summary><div class="promo-row"><input type="text" id="bkPromo" autocomplete="off" autocapitalize="characters" '
+             'spellcheck="false" maxlength="30" placeholder="e.g. WELCOME5" aria-label="Promo code"><button type="button" class="btn ghost" id="promoBtn">Apply</button></div>'
+             '<p class="promo-msg" id="promoMsg" aria-live="polite" hidden></p></details>') if ex.get("promo") else ""
+    notice = f'<p class="notice">{icon("no")}<span>{esc(ex["notice"])}</span></p>' if ex.get("notice") else ""
+    tel = PHONE.replace(" ", "")
+    talk = f'<p class="talk">Prefer to talk? Call <a href="tel:{tel}">{esc(PHONE)}</a></p>' if legacy and PHONE else ""
+    return f"""<aside class="lp-side"><div class="bookcard" id="bookcard">
+  <div class="bc-price" id="cardPrice" data-from="{esc(money(fp) if fp else '')}">{price}</div>
   <div class="sum-box">
     <div class="sum-dates"><button type="button" id="sCiBtn"><small>Check-in</small><b id="sCi" class="ph">Add date</b></button><button type="button" id="sCoBtn"><small>Checkout</small><b id="sCo" class="ph">Add date</b></button></div>
     <label class="f"><small>Guests</small><select id="bkGuests" name="guests">{opts}</select></label>
   </div>
-  <p class="bd-empty" id="bdEmpty">Choose your dates to see the total price.</p>
-  <div class="bd" id="breakdown" hidden></div>
   <form id="reserveForm" novalidate>
-    <fieldset class="det"><legend>Your details</legend>
-      <label class="inp"><span>Full name</span><input type="text" id="bkName" autocomplete="name" required></label>
-      <label class="inp"><span>Email</span><input type="email" id="bkEmail" autocomplete="email" inputmode="email" required></label>
-      <label class="inp"><span>Phone</span><input type="tel" id="bkPhone" autocomplete="tel" inputmode="tel" required></label>
-    </fieldset>
-    <label class="tickrow"><input type="checkbox" id="bkReceipt"><span>I need a company receipt (PDF) with my company name</span></label>
-    <label class="inp" id="bkCompanyWrap" hidden><span>Company name</span><input type="text" id="bkCompany" autocomplete="organization" maxlength="120"></label>
-    <button class="btn block" type="submit" id="reserveBtn">Reserve</button>
+    <div class="det-wrap" id="detWrap" hidden>
+      <fieldset class="det"><legend>Your details</legend>
+        <label class="inp"><span>Full name</span><input type="text" id="bkName" autocomplete="name" required></label>
+        <label class="inp"><span>Email</span><input type="email" id="bkEmail" autocomplete="email" inputmode="email" required></label>
+        <label class="inp"><span>Phone</span><input type="tel" id="bkPhone" autocomplete="tel" inputmode="tel" required></label>
+      </fieldset>
+      {receipt}{promo}{notice}
+    </div>
+    <button class="btn block sbtn" type="submit" id="reserveBtn">Reserve</button>
     <div class="bk-err" id="bkErr" role="alert" hidden></div>
   </form>
-  <p class="fine">You won't be charged until you pay on the secure Stripe page.</p>
-  <ul class="trustlist">
-    <li>{icon('bolt')}Instant confirmation</li><li>{icon('shield')}Double-booking protection: your dates are held while you pay</li>
-    <li>{icon('check')}No booking fees: the total includes cleaning</li><li>{icon('chat')}Host's phone and WhatsApp shown after booking</li>
-  </ul>
-  <div class="alertbox"><b>Dates taken?</b> We'll email you once if they free up.
+  <p class="fine">You won't be charged yet</p>
+  <p class="bd-empty" id="bdEmpty">Choose your dates to see the total price.</p>
+  <div class="bd" id="breakdown" hidden></div>
+  <ul class="trustlist"><li>{icon('bolt')}Instant confirmation</li><li>{icon('lock')}Secure Stripe checkout, dates held while you pay</li><li>{icon('tag')}No booking fees, the total includes cleaning</li></ul>
+  <details class="alertbox"><summary>Dates taken? Get an email if they free up</summary>
     <form id="alertForm" novalidate>
-      <div style="display:flex;gap:8px"><input type="date" id="alertCi" aria-label="Check-in"><input type="date" id="alertCo" aria-label="Checkout"></div>
-      <div style="display:flex;gap:8px;margin-top:8px"><input type="email" id="alertEmail" placeholder="Your email" autocomplete="email" inputmode="email"><button class="btn" type="submit">Notify me</button></div>
+      <div class="arow"><input type="date" id="alertCi" aria-label="Check-in"><input type="date" id="alertCo" aria-label="Checkout"></div>
+      <div class="arow"><input type="email" id="alertEmail" placeholder="Your email" autocomplete="email" inputmode="email" aria-label="Your email"><button class="btn ghost" type="submit">Notify me</button></div>
     </form>
-    <p id="alertMsg" aria-live="polite" style="margin-top:6px"></p>
-  </div>
-</div></aside>"""
+    <p id="alertMsg" aria-live="polite"></p>
+  </details>
+</div>{talk}</aside>"""
 
 
-DP = """<div class="dp-scrim" id="dpScrim" aria-hidden="true"></div>
+DP = f"""<div class="dp-scrim" id="dpScrim" aria-hidden="true"></div>
 <div class="dp" id="dp" role="dialog" aria-modal="false" aria-labelledby="dpStatus" hidden>
   <div class="dp-grab" aria-hidden="true"></div>
-  <div class="dp-head"><p id="dpStatus" aria-live="polite">Select your check-in date</p><button type="button" class="dp-x" id="dpClose" aria-label="Close calendar">✕</button></div>
-  <div class="dp-nav"><button type="button" class="cal-nav" id="dpPrev" aria-label="Previous month">‹</button><button type="button" class="cal-nav" id="dpNext" aria-label="Next month">›</button></div>
+  <div class="dp-head"><p id="dpStatus" aria-live="polite">Select your check-in date</p><button type="button" class="dp-x" id="dpClose" aria-label="Close calendar">{icon("x")}</button></div>
+  <div class="dp-nav"><button type="button" class="cal-nav" id="dpPrev" aria-label="Previous month">{icon("chev_l")}</button><button type="button" class="cal-nav" id="dpNext" aria-label="Next month">{icon("chev_r")}</button></div>
   <div class="months" id="dpMonths" aria-label="Choose dates"></div>
   <div class="dp-foot"><button type="button" class="link" id="dpClear">Clear dates</button><button type="button" class="btn" id="dpDone">Done</button></div>
 </div>"""
 
-
-def listing_body(l, reviews, guides):
-    f = features(l)
-    photos = l.get("photos") or []
-    gal = "".join(
-        f'<button type="button" data-lb="{i}" aria-label="Open photo {i + 1} of {len(photos)}"><img src="{esc(p["url"])}" alt="{esc(p.get("caption") or l["title"])}"{"" if i == 0 else " loading=\"lazy\""}></button>'
-        for i, p in enumerate(photos[:5]))
-    if len(photos) > 1:
-        gal += f'<button type="button" class="all" data-lb="0">Show all {len(photos)} photos</button>'
-    lb = "".join(f'<img src="{esc(p["url"])}" alt="{esc(p.get("caption") or l["title"])}" loading="lazy">' for p in photos)
-    rv = l.get("reviews") or {}
-    meta = []
-    if rv.get("count"):
-        meta.append(f'{icon("star")} {rv["average"]:.2f} · {rv["count"]} review{"s" if rv["count"] != 1 else ""}')
-    meta.append(esc(", ".join(x for x in [l.get("area"), l.get("city")] if x)))
-    baths = float(l.get("baths") or 0)
-    facts = (f'Entire {esc(l.get("property_type") or "home")} · {l["max_guests"]} guests · {l["bedrooms"]} bedroom{"s" if l["bedrooms"] != 1 else ""}'
-             f' · {l["beds"]} bed{"s" if l["beds"] != 1 else ""} · {baths:g} bath{"s" if baths != 1 else ""}')
-    hl = []
-    if f["kosher_kitchen"]:
-        hl.append(("kosher", "Kosher kitchen", "Host-declared. See Kosher and Shabbat below."))
-    if f["shabbat_friendly"]:
-        hl.append(("shabbat", "Shabbat friendly", "Non-electric entry and no motion-sensor lights, as described by the host."))
-    if f["business_ready"]:
-        hl.append(("work", "Business-ready", "Desk and fast wifi (the host's speed test)."))
-    if f["work_crew"]:
-        hl.append(("van", "Good for work crews", "Separate beds and room for vans or several cars."))
-    if "self_checkin" in (l.get("amenities") or []):
-        hl.append(("self_checkin", "Self check-in", "Let yourself in with the host's instructions."))
-    hl.append(("check", "No booking fees", "The total you see includes cleaning. Nothing is added at checkout."))
-    hl_html = "".join(f'<li>{icon(i)}<div><b>{esc(t)}</b><span>{esc(s)}</span></div></li>' for i, t, s in hl[:4])
-    amen = "".join(f'<li>{icon(a)}{esc(AMENITY_LABELS.get(a, a))}</li>' for a in (l.get("amenities") or []) if a in ICONS)
-    if reviews:
-        rev_html = "<div class='rev'>" + "".join(
-            f'<div><b>{esc(r.get("guest_first_name") or "Guest")}</b><small>{esc((r.get("when") or "").strip())}</small>'
-            f'<div class="stars" aria-label="{int(r["rating"])} out of 5">{icon("star") * int(r["rating"])}</div><p>{esc(r.get("comment") or "")}</p></div>'
-            for r in reviews) + "</div>"
-    else:
-        rev_html = "<p>No reviews yet. Only guests who complete a stay booked here can leave a review, so every review is real.</p>"
-    gl = "".join(f'<a href="/guides/{esc(g["slug"])}">{icon("book")}{esc(g["title"])}</a>' for g in guides)
-    guides_html = f'<section id="local"><h2>Local guide</h2><div class="guides">{gl}</div></section>' if gl else ""
-    also = [n for n, k in [("Airbnb", "airbnb_url"), ("Booking.com", "booking_url")] if l.get(k)]
-    cmp_txt = f' Also listed on {" and ".join(also)}; booking here there is no guest service fee.' if also else ""
-    disc = [x for x in [f'{l["weekly_discount_pct"]}% off 7 nights or more' if l.get("weekly_discount_pct") else "",
-                        f'{l["monthly_discount_pct"]}% off 28 nights or more' if l.get("monthly_discount_pct") else ""] if x]
-    disc_html = f'<p style="color:var(--muted)">{esc(", ".join(disc))}</p>' if disc else ""
-    rules = (f'<li>{icon("list")}<div><b>House rules</b><span class="desc">{esc(l.get("house_rules"))}</span></div></li>') if l.get("house_rules") else ""
-    host = l.get("host_name") or "your host"
-    return f"""<main class="wrap" id="content">
-<div class="lp-head"><h1 id="lpTitle">{esc(l['title'])}</h1><div class="meta">{' · '.join(meta)}</div></div>
-<div class="gal">{gal}</div>
-<div class="lp">
-<div>
-  <section><h2 style="margin-bottom:4px">{facts}</h2>{disc_html}</section>
-  <section><div class="hostline"><span class="av">{esc(host[:1].upper())}</span><div><b>Hosted by {esc(host)}</b><p class="disclose">{esc(disclosure(l))}</p></div></div></section>
-  <section><ul class="hl">{hl_html}</ul></section>
-  <section><h2>About this home</h2><p class="desc">{esc(l.get('description') or '')}</p></section>
-  {('<section><h2>What this place offers</h2><ul class="amen">' + amen + '</ul></section>') if amen else ''}
-  {kosher_section(l)}
-  {business_section(l)}
-  <section id="book" aria-labelledby="bookH"><h2 id="bookH" tabindex="-1">Select dates</h2>
-    <div class="cal-card" style="padding:0;border:0;box-shadow:none">
-      <div class="cal-top"><button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">‹</button><p id="calStatus" aria-live="polite">Select your check-in date</p><button type="button" class="cal-nav" id="calNext" aria-label="Next month">›</button></div>
+CALENDAR = f"""<section id="book" class="lp-sec" aria-labelledby="bookH"><h2 id="bookH" tabindex="-1">Select dates</h2>
+    <div class="cal-card">
+      <div class="cal-top"><button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">{icon("chev_l")}</button><p id="calStatus" aria-live="polite">Select your check-in date</p><button type="button" class="cal-nav" id="calNext" aria-label="Next month">{icon("chev_r")}</button></div>
       <div class="months" id="months" aria-label="Availability calendar"><p class="bd-empty">Loading availability...</p></div>
       <div class="cal-foot"><ul class="legend"><li><i class="lg-a"></i>Available</li><li><i class="lg-s"></i>Your stay</li><li><i class="lg-u"></i>Unavailable</li></ul><button type="button" class="link" id="clearDates">Clear dates</button></div>
       <p class="cal-note" id="calNote" hidden></p><span id="liveTxt" hidden></span>
     </div>
-  </section>
-  <section><h2>Where you'll be</h2><div class="lmap" id="lmap" role="region" aria-label="Map of the approximate area"></div><p style="color:var(--muted);margin-top:8px">{esc(l.get('area') or l.get('city'))}. The map shows the area only. The exact address is shared after booking.</p></section>
-  <section><h2>Reviews</h2>{rev_html}</section>
-  {guides_html}
-  <section><h2>Good to know</h2><ul class="hl">
-    <li>{icon('door')}<div><b>Check-in from {esc(l.get('check_in_time'))}, checkout by {esc(l.get('check_out_time'))}</b></div></li>
-    <li>{icon('calendar')}<div><b>Cancellation</b><span>{esc(POLICY.get(l.get('cancellation_policy'), POLICY['moderate']))}</span></div></li>
-    {rules}
-    <li>{icon('shield')}<div><b>Book with confidence</b><span>Instant confirmation, double-booking protection and no booking fees.{esc(cmp_txt)}</span></div></li>
-  </ul></section>
+  </section>"""
+
+
+def gallery_html(l, photos):
+    n = len(photos)
+    tiles = "".join(
+        f'<button type="button" class="gt" data-lb="{i}" aria-label="Open photo {i + 1} of {n}"{" tabindex=" + chr(34) + "-1" + chr(34) if i >= 5 else ""}>'
+        f'<img src="{esc(img(p["url"], 1080 if i == 0 else 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"], (480, 720, 1080, 1600) if i == 0 else (480, 720))) + chr(34) + " sizes=" + chr(34) + ("(max-width:860px) 100vw, 50vw" if i == 0 else "(max-width:860px) 100vw, 25vw") + chr(34)) if srcset(p["url"]) else ""}'
+        f' alt="{esc(p["caption"])}" width="1080" height="720" {"fetchpriority=" + chr(34) + "high" + chr(34) if i == 0 else "loading=" + chr(34) + "lazy" + chr(34)} decoding="async"></button>'
+        for i, p in enumerate(photos))
+    return f"""<div class="gal{' gal-few' if n < 5 else ''}" id="gal">
+  <div class="gal-track" id="galTrack">{tiles}</div>
+  <div class="gal-over"><a class="gbtn" href="/" aria-label="Back to all homes">{icon("arrow_l")}</a><span class="gal-r"><button type="button" class="gbtn" data-share aria-label="Share">{icon("share")}</button><button type="button" class="gbtn heart-btn" data-save="{l['id']}" aria-pressed="false" aria-label="Save">{icon("heart")}</button></span></div>
+  <span class="gal-count" id="galCount" aria-hidden="true">1 / {n}</span>
+  {f'<button type="button" class="gal-all" data-lb="0">{icon("grid")}Show all photos</button>' if n > 1 else ''}
+</div>"""
+
+
+def reviews_html(l, reviews, ex):
+    rv = l.get("reviews") or {}
+    out = []
+    if reviews:
+        out.append(f'<p class="rv-big">{icon("star", "ic st")}<b>{rv["average"]:.2f}</b> · {plural(rv["count"], "review")} on Book Homes</p>')
+        out.append("<div class='rv'>" + "".join(
+            f'<figure><figcaption><span class="av">{esc((r.get("guest_first_name") or "G")[:1].upper())}</span><b>{esc(r.get("guest_first_name") or "Guest")}</b>'
+            f'<small>{esc((r.get("when") or "").strip())}</small></figcaption><div class="stars" role="img" aria-label="{int(r["rating"])} out of 5">{icon("star", "ic st") * int(r["rating"])}</div>'
+            f'<blockquote>{esc(r.get("comment") or "")}</blockquote></figure>' for r in reviews[:6]) + "</div>")
+    else:
+        out.append('<p class="muted">No Book Homes reviews yet. Only guests who complete a stay booked here can leave one, so every review here is real.</p>')
+    xr = ex.get("external_reviews")
+    if xr:
+        badges = "".join(f'<a class="rv-badge" href="{esc(s["url"])}" target="_blank" rel="noopener">{icon("star", "ic st")}<span><b>{esc(s["label"])}</b><small>{esc(s["sub"])}</small></span></a>' for s in xr.get("summary", []))
+        items = "".join(
+            f'<figure><figcaption><span class="av">{esc(r["name"][:1])}</span><b>{esc(r["name"])}</b><small>{esc(r["source"])} · {esc(r["when"])}</small></figcaption>'
+            f'<div class="stars" role="img" aria-label="{r["rating"]} out of 5">{icon("star", "ic st") * int(r["rating"])}</div><blockquote>{esc(r["text"])}</blockquote></figure>'
+            for r in xr.get("items", []))
+        out.append(f'<h3 class="rv-sub">Reviews from other sites</h3><div class="rv-badges">{badges}</div><div class="rv">{items}</div><p class="fine-l">{esc(xr.get("note", ""))}</p>')
+    return f'<section class="lp-sec" id="reviews" aria-labelledby="revH"><h2 id="revH">Reviews</h2>{"".join(out)}</section>'
+
+
+def things_html(l, ex):
+    cols = []
+    rules = ex.get("rules")
+    if rules:
+        for h, items in rules.items():
+            cols.append((h, [(i if i in ICONS else "check", t) for i, t in items]))
+    else:
+        items = [("clock", f"Check-in after {l.get('check_in_time') or '15:00'}"), ("clock", f"Checkout before {l.get('check_out_time') or '11:00'}"),
+                 ("users", f"{l['max_guests']} guests maximum")]
+        if l.get("house_rules"):
+            items.append(("list", l["house_rules"]))
+        cols.append(("House rules", items))
+        cols.append(("Safety and property", [("shield", "The exact address is shared after booking"), ("check", disclosure(l))]))
+    cols.append(("Cancellation policy", [("calendar", POLICY.get(l.get("cancellation_policy"), POLICY["moderate"]))]))
+    body = "".join(f'<div><h3>{esc(h)}</h3><ul>' + "".join(f'<li>{icon(i)}<span>{esc(t)}</span></li>' for i, t in items) + '</ul></div>' for h, items in cols)
+    return f'<section class="lp-sec" aria-labelledby="knowH"><h2 id="knowH">Things to know</h2><div class="know">{body}</div></section>'
+
+
+def listing_body(l, reviews, guides, ex):
+    f = features(l)
+    photos = listing_photos(l, ex)
+    rv = l.get("reviews") or {}
+    baths = float(l.get("baths") or 0)
+    ptype = (l.get("property_type") or "home").lower()
+    where = ", ".join(x for x in [area_name(l), l.get("city")] if x)
+    sub = ex.get("subtitle") or f"Entire {ptype} in {where}"
+    facts = f'{plural(l["max_guests"], "guest")} · {plural(l["bedrooms"], "bedroom")} · {plural(l.get("beds") or 0, "bed")} · {plural(baths, "bath")}'
+    rating = ""
+    if rv.get("count"):
+        rating = f'<a class="lp-rt" href="#reviews">{icon("star", "ic st")}<b>{rv["average"]:.2f}</b> · {plural(rv["count"], "review")}</a>'
+    elif ex.get("external_reviews"):
+        s = ex["external_reviews"]["summary"][0]
+        rating = f'<a class="lp-rt" href="#reviews">{icon("star", "ic st")}<b>{esc(s["label"])}</b> · {esc(s["sub"])}</a>'
+    hl = [tuple(x) for x in ex.get("highlights") or []]
+    if not hl:
+        if f["kosher_kitchen"]:
+            hl.append(("kosher", "Kosher kitchen", "Described by the host. See Kosher and Shabbat below."))
+        if f["shabbat_friendly"]:
+            hl.append(("shabbat", "Shabbat friendly", "Non-electric entry and no motion-sensor lights, as described by the host."))
+        if f["business_ready"]:
+            hl.append(("work", "Business-ready", "Desk and fast wifi (the host's speed test)."))
+        if f["work_crew"]:
+            hl.append(("van", "Good for work crews", "Separate beds and room for several cars."))
+        if "self_checkin" in (l.get("amenities") or []):
+            hl.append(("self_checkin", "Self check-in", "Let yourself in with the host's instructions."))
+        if "parking" in (l.get("amenities") or []):
+            hl.append(("parking", "Free parking", "Parking at the property."))
+    hl.append(("tag", "No booking fees", "The total you see includes cleaning. Nothing is added at checkout."))
+    hl_html = "".join(f'<li>{icon(i)}<div><b>{esc(t)}</b><span>{esc(s)}</span></div></li>' for i, t, s in hl[:4])
+    about = ex.get("about") or [p for p in (l.get("description") or "").split("\n") if p.strip()]
+    about_html = "".join(f"<p>{esc(p)}</p>" for p in about)
+    rooms = ex.get("rooms")
+    rooms_html = ""
+    if rooms:
+        rooms_html = ('<section class="lp-sec" aria-labelledby="sleepH"><h2 id="sleepH">Where you\'ll sleep</h2><ul class="rooms">' +
+                      "".join(f'<li>{icon(i)}<b>{esc(t)}</b><span>{esc(s)}</span></li>' for i, t, s in rooms) + "</ul></section>")
+    am = amenity_items(l, ex)
+    amen_first = "".join(f'<li>{icon(i)}<span>{esc(t)}</span></li>' for i, t in am[:10])
+    amen_all = "".join(f'<li>{icon(i)}<span>{esc(t)}</span></li>' for i, t in am)
+    amen_html = ""
+    if am:
+        more = f'<button type="button" class="btn ghost" data-modal="mAmen">Show all {len(am)} amenities</button>' if len(am) > 10 else ""
+        amen_html = f'<section class="lp-sec" aria-labelledby="offersH"><h2 id="offersH">What this place offers</h2><ul class="amen">{amen_first}</ul>{more}</section>'
+    host = l.get("host_name") or "your host"
+    nearby = ""
+    if ex.get("nearby"):
+        nearby = '<ul class="near">' + "".join(f'<li>{icon(i if i in ICONS else "pin")}<span>{esc(t)}</span><small>{esc(d)}</small></li>' for i, t, d in ex["nearby"]) + "</ul>"
+    where_txt = ex.get("where") or f'{esc(where)}. The map shows the area only. The exact address is shared after booking.'
+    faq_html = ""
+    if ex.get("faqs"):
+        faq_html = ('<section class="lp-sec" id="faq" aria-labelledby="faqH"><h2 id="faqH">Questions</h2>' +
+                    "".join(f"<details><summary>{esc(q['q'])}</summary><p>{esc(q['a'])}</p></details>" for q in ex["faqs"]) + "</section>")
+    gl = "".join(f'<li><a href="/guides/{esc(g["slug"])}">{icon("book")}<span>{esc(g["title"])}</span></a></li>' for g in guides)
+    guides_html = f'<section class="lp-sec" aria-labelledby="locH2"><h2 id="locH2">Local guides</h2><ul class="lguides">{gl}</ul></section>' if gl else ""
+    also = [(n, l[k]) for n, k in [("Airbnb", "airbnb_url"), ("Booking.com", "booking_url")] if l.get(k)]
+    also_html = ""
+    if also:
+        also_html = ('<p class="also">Also listed on ' + " and ".join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{n}</a>' for n, u in also) +
+                     '. Same home and host; booking here has no guest service fee.</p>')
+    return f"""<main class="lp" id="content">
+<div class="wrap lp-top">
+  <div class="lp-titlebar"><h1 id="lpTitle">{esc(l['title'])}</h1><div class="lp-act"><button type="button" class="tbtn" data-share>{icon("share")}<span>Share</span></button><button type="button" class="tbtn heart-btn" data-save="{l['id']}" aria-pressed="false">{icon("heart")}<span>Save</span></button></div></div>
+  {gallery_html(l, photos)}
 </div>
-{booking_card(l)}
+<div class="wrap lp-grid">
+<div class="lp-main">
+  <section class="lp-sum"><h2>{esc(sub)}</h2><p>{facts}</p>{rating}</section>
+  <section class="lp-host"><span class="av big">{esc(host[:1].upper())}</span><div><b>Hosted by {esc(host)}</b><p class="muted">{esc(disclosure(l))}</p></div></section>
+  <section class="lp-hl"><ul class="hl">{hl_html}</ul></section>
+  <section class="lp-sec lp-about" aria-labelledby="aboutH"><h2 id="aboutH" class="sr-only">About this home</h2><div class="clamp" id="aboutTxt">{about_html}</div><button type="button" class="morebtn" data-modal="mAbout">Show more{icon("chev_r")}</button></section>
+  {rooms_html}
+  {amen_html}
+  {kosher_section(l)}
+  {business_section(l, bool(ex.get("legacy_checkout")))}
+  {CALENDAR}
+</div>
+{booking_card(l, ex)}
+</div>
+<div class="wrap lp-full">
+  {reviews_html(l, reviews, ex)}
+  <section class="lp-sec" id="location" aria-labelledby="locH"><h2 id="locH">Where you'll be</h2><div class="lmap" id="lmap" role="region" aria-label="Map of the approximate area"><button type="button" class="map-load" id="mapLoad">{icon("map")}<span>Show the map of {esc(where)}</span></button></div><p class="where">{where_txt}</p>{nearby}</section>
+  <section class="lp-sec lp-host2"><div class="hostcard"><span class="av big">{esc(host[:1].upper())}</span><div><h2>Hosted by {esc(host)}</h2><p class="muted">{esc(disclosure(l))}</p>{also_html}</div></div></section>
+  {things_html(l, ex)}
+  {faq_html}
+  {guides_html}
 </div>
 </main>
-<div class="lb" id="lbox" role="dialog" aria-modal="true" aria-label="All photos" hidden><button type="button" class="close" id="lbClose">‹ Back</button><div class="lbg">{lb}</div></div>
-<div class="mbook" id="mbook"><div id="mbookPrice"><b>Add dates</b><small>for the total price</small></div><button type="button" class="btn" id="mbookBtn">Check dates</button></div>
+<div class="modal" id="mAmen" role="dialog" aria-modal="true" aria-labelledby="mAmenH" hidden><div class="modal-box"><div class="modal-top"><button type="button" class="iconbtn" data-close aria-label="Close">{icon("x")}</button></div><h2 id="mAmenH">What this place offers</h2><ul class="amen amen-all">{amen_all}</ul></div></div>
+<div class="modal" id="mAbout" role="dialog" aria-modal="true" aria-labelledby="mAboutH" hidden><div class="modal-box"><div class="modal-top"><button type="button" class="iconbtn" data-close aria-label="Close">{icon("x")}</button></div><h2 id="mAboutH">About this home</h2>{about_html}</div></div>
+<div class="lb" id="lbox" role="dialog" aria-modal="true" aria-label="All photos" hidden><div class="lb-top"><button type="button" class="iconbtn" id="lbClose" aria-label="Close photos">{icon("chev_l")}</button><span id="lbCount"></span><span></span></div><div class="lbg" id="lbg">{"".join(f'<img src="{esc(img(p["url"], 1080))}" alt="{esc(p["caption"])}" loading="lazy" decoding="async" width="1080" height="720" id="lbp{i}">' for i, p in enumerate(photos))}</div></div>
+<div class="mbook" id="mbook"><div id="mbookPrice"><b>{('From ' + money(l['from_price']) + '</b> night') if l.get('from_price') else 'Add dates</b>'}<small>Add dates for the total</small></div><button type="button" class="btn sbtn" id="mbookBtn">Reserve</button></div>
 {DP}
 """
 
 
-def stay_config(l):
+OFFER = """<div class="xp" id="xp" role="dialog" aria-modal="true" aria-labelledby="xpH" hidden>
+  <div class="xp-box">
+    <button type="button" class="iconbtn xp-x" id="xpClose" aria-label="Close">%s</button>
+    <div id="xpForm">
+      <h2 id="xpH">Get 5%% off your stay</h2>
+      <p class="xp-lead">Leave your email and we'll show you a code for 5%% off the nightly rate when you book this home direct on Book Homes.</p>
+      <form id="xpF" novalidate>
+        <label class="inp"><span>Email</span><input type="email" id="xpEmail" autocomplete="email" inputmode="email" required></label>
+        <label class="inp"><span>First name (optional)</span><input type="text" id="xpName" autocomplete="given-name" maxlength="80"></label>
+        <label class="hp" aria-hidden="true">Website<input type="text" id="xpWeb" tabindex="-1" autocomplete="off"></label>
+        <label class="tickrow"><input type="checkbox" id="xpConsent"><span>Email me occasional offers and news. I can unsubscribe at any time.</span></label>
+        <p class="bk-err" id="xpErr" role="alert" hidden></p>
+        <button class="btn block" type="submit" id="xpBtn">Show my 5%% code</button>
+        <p class="fine">You get the code whether or not you tick the box. 5%% applies to the nightly rate, not the cleaning fee. One code per booking.</p>
+      </form>
+    </div>
+    <div id="xpDone" hidden>
+      <h2 id="xpH2" tabindex="-1">Here's 5%% off</h2>
+      <div class="xp-code"><b id="xpCode">WELCOME5</b><button type="button" class="btn ghost" id="xpCopy">Copy</button></div>
+      <p class="xp-lead">Enter it in the promo code box when you book. It takes 5%% off the nightly rate (not the cleaning fee).</p>
+      <button type="button" class="btn block" id="xpUse">Use it on my booking</button>
+    </div>
+  </div>
+</div>
+""" % icon("x")
+
+
+def stay_config(l, ex):
     return {"id": l["id"], "slug": l["slug"], "max_guests": l["max_guests"], "cleaning_fee": float(l.get("cleaning_fee") or 0),
             "weekly_discount_pct": l.get("weekly_discount_pct") or 0, "monthly_discount_pct": l.get("monthly_discount_pct") or 0,
-            "lat": l.get("lat"), "lng": l.get("lng")}
+            "lat": l.get("lat"), "lng": l.get("lng"), "legacy": bool(ex.get("legacy_checkout")), "from_price": l.get("from_price"),
+            "title": l["title"]}
 
 
-LISTING_ASSETS = ('<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">\n'
-                  '<link rel="stylesheet" href="/assets/bh-booking.css">\n')
-LISTING_SCRIPTS = """<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
-<script src="/assets/stay.js" defer></script>
-<script src="/assets/stay-page.js" defer></script>
+LISTING_ASSETS = '<link rel="stylesheet" href="/assets/bh-booking.css?v={v}">\n'
+LISTING_SCRIPTS = """<script src="/assets/stay.js?v={v1}" defer></script>
+<script src="/assets/stay-page.js?v={v2}" defer></script>
 """
 
 
-def listing_page(l, reviews, guides):
+def listing_assets():
+    return LISTING_ASSETS.format(v=asset_v("bh-booking.css"))
+
+
+def listing_scripts():
+    return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"))
+
+
+def listing_page(l, reviews, guides, ex):
     path = listing_url(l)
-    title = f'{l["title"]} - {l.get("area") or l.get("city")} | Book Homes'
-    desc = no_dashes((l.get("description") or l["title"]).replace("\n", " "))[:155]
-    cfg = json.dumps(stay_config(l))
-    page = (head(title, desc, path, extra=LISTING_ASSETS, schema=vacation_schema(l, path, reviews)) + header()
-            + listing_body(l, reviews, guides) + f"<script>window.STAY = {cfg};</script>\n" + LISTING_SCRIPTS + footer() + end())
-    return page.replace("<body>", '<body class="has-mbook">', 1)
+    title = ex.get("seo_title") or f'{l["title"]}, {area_name(l) or l.get("city")}: {plural(l["bedrooms"], "bedroom")} {(l.get("property_type") or "home").lower()}, sleeps {l["max_guests"]} | Book Homes'
+    desc = ex.get("seo_description") or no_dashes((l.get("description") or l["title"]).replace("\n", " "))[:155]
+    photos = listing_photos(l, ex)
+    og = ex.get("og_image") or (img(photos[0]["url"], 1200) if photos else None)
+    cfg = json.dumps(stay_config(l, ex))
+    offer = OFFER + f'<script src="/assets/offer.js?v={asset_v("offer.js")}" defer></script>\n' if ex.get("offer") else ""
+    return (head(title, desc, path, extra=listing_assets(), schema=vacation_schema(l, path, reviews, ex), og_image=og, body_class="has-mbook listing")
+            + header("listing") + listing_body(l, reviews, guides, ex) + f"<script>window.STAY = {cfg};</script>\n" + listing_scripts()
+            + offer + footer() + end())
 
 
-# --------------------------------------------------------------------------- stay.js (generated from index.html)
+# --------------------------------------------------------------------------- stay.js (generated from the original Zermatt booking code)
 def gen_stay_js():
-    L = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read().split("\n")
+    L = open(os.path.join(ROOT, "design/zermatt-legacy.html"), encoding="utf-8").read().split("\n")
     start = next(i for i, x in enumerate(L) if x.startswith("var AVAILABILITY_URLS"))
     stop = next(i for i, x in enumerate(L) if x.startswith('window.addEventListener("pageshow"'))
     core = "\n".join(L[start:stop + 1])
@@ -560,7 +980,7 @@ def gen_stay_js():
     def rep(a, b):
         nonlocal core
         if a not in core:
-            raise SystemExit(f"gen_stay_js: the booking code in index.html changed; update build_listings.py ({a[:60]!r})")
+            raise SystemExit(f"gen_stay_js: the booking code in design/zermatt-legacy.html changed; update build_listings.py ({a[:60]!r})")
         core = core.replace(a, b, 1)
 
     i, j = core.index("/* Inline sample data"), core.index("var B = {")
@@ -574,37 +994,43 @@ def gen_stay_js():
     rep('''  var disc = 0;
   if (B.promo && !missing){ disc = Math.round((total * 100) * B.promo.pct / 100) / 100; }''',
         '''  var disc = 0, n = nights.length, pct = n >= 28 && S.monthly_discount_pct > 0 ? S.monthly_discount_pct : n >= 7 && S.weekly_discount_pct > 0 ? S.weekly_discount_pct : 0;
-  if (pct && !missing){ disc = Math.round(total * pct) / 100; B.discLabel = (n >= 28 ? "Monthly" : "Weekly") + " discount (" + pct + "%)"; }''')
+  if (B.promo && !missing){ disc = Math.round((total * 100) * B.promo.pct / 100) / 100; B.discLabel = B.promo.pct + "% promo code (" + B.promo.code + ", nights only)"; }
+  else if (pct && !missing){ disc = Math.round(total * pct) / 100; B.discLabel = (n >= 28 ? "Monthly" : "Weekly") + " discount (" + pct + "%)"; }''')
     rep("B.promo.pct + '% welcome discount (' + B.promo.code + ', nights only)", "B.discLabel + '")
     rep("""html += '<div class="bd-row bd-total"><span>Total (' + B.currency + ')</span>""",
         """html += '<div class="bd-row bd-total"><span>Total, no booking fees</span>""")
     rep('''  var payload = {checkIn: B.ci, checkOut: B.co, guests: +B.guests, name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim()};
   var promoTyped = cleanCode(promoIn.value);
   if (promoTyped) payload.promo_code = promoTyped;''',
-        '''  var payload = {listing_id: S.id, checkIn: B.ci, checkOut: B.co, guests: +B.guests, name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim()};
-  var co = $("#bkCompany"), coTick = $("#bkReceipt");
-  if (coTick && coTick.checked && co && co.value.trim()) payload.company = co.value.trim();''')
+        '''  var payload = {checkIn: B.ci, checkOut: B.co, guests: +B.guests, name: name.value.trim(), email: email.value.trim(), phone: phone.value.trim()};
+  if (LEGACY){ var pin = $("#bkPromo"), promoTyped = pin ? cleanCode(pin.value) : ""; if (promoTyped) payload.promo_code = promoTyped; }
+  else {
+    payload.listing_id = S.id;
+    var co = $("#bkCompany"), coTick = $("#bkReceipt");
+    if (coTick && coTick.checked && co && co.value.trim()) payload.company = co.value.trim();
+  }''')
     rep('''      if (res.j && res.j.code === "PROMO_INVALID"){
-        setBusy(false); setPromo(null); promoMsg(res.j.error || "That promo code is not valid.", false);
-        showBkErr("That promo code didn't work.", "Nothing has been booked or charged. Remove the code to book at the normal price, or check it and try again.");
-        return;
-      }''', '      if (res.j && res.j.code === "NOT_AVAILABLE") reload();')
+        setBusy(false); setPromo(null); promoMsg(res.j.error || "That promo code is not valid.", false);''',
+        '''      if (res.j && res.j.code === "NOT_AVAILABLE") reload();
+      if (res.j && res.j.code === "PROMO_INVALID"){
+        setBusy(false); setPromo(null); promoMsg(res.j.error || "That promo code is not valid.", false);''')
     rep('''  bkErr.innerHTML = "<b></b><span></span> Prefer to talk? Call <a href=\\"tel:+447479905477\\">+44 7479 905477</a>.";''',
-        '  bkErr.innerHTML = "<b></b><span></span>";')
+        '  bkErr.innerHTML = "<b></b><span></span>" + (LEGACY ? " Prefer to talk? Call <a href=\\"tel:+447479905477\\">+44 7479 905477</a>." : "");')
     rep("var MAX_GUESTS = 7;", "var MAX_GUESTS = S.max_guests || 16;")
     rep("var CLEANING_FEE = 129; // per booking - must match CLEANING_FEE_GBP on the server (default 129)",
         "var CLEANING_FEE = S.cleaning_fee || 0; // shown only; the server re-prices every booking")
     rep('''var AVAILABILITY_URLS = ["/api/availability", "/data/availability.json"]; // live API first, static copy as fallback
-var CHECKOUT_API = "/api/create-checkout";''', '''var AVAILABILITY_URLS = ["/api/bh/availability?listing_id=" + encodeURIComponent(S.id)];
-var CHECKOUT_API = "/api/bh/create-checkout";''')
+var CHECKOUT_API = "/api/create-checkout";''', '''var LEGACY = !!S.legacy; // Zermatt Lodge keeps its original availability feed and checkout (zermatt-* functions)
+var AVAILABILITY_URLS = LEGACY ? ["/api/availability", "/data/availability.json"] : ["/api/bh/availability?listing_id=" + encodeURIComponent(S.id)];
+var CHECKOUT_API = LEGACY ? "/api/create-checkout" : "/api/bh/create-checkout";''')
     rep('        showBkErr("Online booking opens shortly.", "Nothing has been booked or charged - please call us to book these dates.");',
         '        showBkErr("Online booking opens shortly.", "Nothing has been booked or charged.");')
-    # Zermatt-only wording that does not apply to every host
     core = core.replace(" A damage deposit or damage waiver is arranged separately before arrival.", "")
-    head_js = '''/* GENERATED by build_listings.py from the booking code in index.html - do not edit by hand.
-   Book Homes listing pages: availability calendar, date picker, price and Stripe Checkout, the same component as the
-   Zermatt Lodge home page, with the listing's own availability (/api/bh/availability) and the marketplace checkout
-   (/api/bh/create-checkout). The server re-checks and re-prices every booking. Config: window.STAY. */
+    core = core.replace(" - please call us", ", please call us")
+    head_js = '''/* GENERATED by build_listings.py from the booking code in design/zermatt-legacy.html - do not edit by hand.
+   Book Homes listing pages: availability calendar, date picker, price and Stripe Checkout.
+   Marketplace homes use /api/bh/availability + /api/bh/create-checkout; Zermatt Lodge (STAY.legacy) keeps
+   /api/availability + /api/create-checkout. The server re-checks and re-prices every booking. Config: window.STAY. */
 (function(){
 "use strict";
 var S = window.STAY || {};
@@ -617,33 +1043,37 @@ function lock(on){ document.body.style.overflow = on ? "hidden" : ""; }
     write("assets/stay.js", head_js + core + "\n" + tail)
 
 
+# --------------------------------------------------------------------------- build
 def build():
     data = fetch_listings()
+    extras = load_extras()
     listings = list(data["listings"])
     for l in listings:
         l["id"] = int(l["id"])
+        l["tags"] = listing_tags(l)
+        l["card_photos"] = card_photos(l, extras)
+    page_paths(listings)
     reviews = data.get("reviews") or {}
     guides = load_guides()
-    urls = [f"{DOMAIN}/stays", f"{DOMAIN}/stays/kosher"]
 
-    write("assets/bh-icons.svg", sprite().replace(' width="0" height="0" style="position:absolute" aria-hidden="true"', "") + "\n")
+    write("assets/bh-icons.svg", sprite(paint=True).replace(' width="0" height="0" style="position:absolute" aria-hidden="true"', "") + "\n")
     gen_stay_js()
-    write("stays/index.html", stays_page(listings))
-    write("stays/kosher/index.html", kosher_page(listings))
-    built = set()
+    write("index.html", home_page(listings, guides))
+    write("kosher-homes/index.html", kosher_page(listings, guides))
+    import shutil
+    shutil.rmtree(os.path.join(ROOT, "listings"), ignore_errors=True)  # rebuilt from approved listings every time
+    shutil.rmtree(os.path.join(ROOT, "stays/kosher"), ignore_errors=True)
+    shutil.rmtree(os.path.join(ROOT, "stays/zermatt-lodge"), ignore_errors=True)
+    if os.path.exists(os.path.join(ROOT, "stays/index.html")):
+        os.remove(os.path.join(ROOT, "stays/index.html"))  # /stays now redirects to /
+    urls = [f"{DOMAIN}/kosher-homes"]
     for l in listings:
-        if l.get("legacy_source"):
-            continue  # Zermatt Lodge keeps its own page (/) and checkout
-        write(f"stays/{l['slug']}/index.html", listing_page(l, reviews.get(l["slug"], []), guides_for(l, guides)))
-        built.add(l["slug"])
-        urls.append(f"{DOMAIN}/stays/{l['slug']}")
-    for d in glob.glob(os.path.join(ROOT, "stays/*/")):
-        name = os.path.basename(d.rstrip("/"))
-        if name not in built and name not in SPECIAL:
-            shutil.rmtree(d)  # listing no longer approved
+        write(f"listings/{l['path']}/index.html", listing_page(l, reviews.get(l["slug"], []), guides_for(l, guides), extras.get(l["slug"]) or {}))
+        urls.append(DOMAIN + l["url"])
     import bh_pages
     urls += bh_pages.write_all()
-    print(f"marketplace: {len(built)} listing pages + stays, kosher, host landing, legal pages")
+    row = category_row(listings)
+    print(f"marketplace: {len(listings)} listing pages; categories: " + ", ".join(f"{lbl} ({n})" for _, lbl, _, n in row))
     return urls
 
 

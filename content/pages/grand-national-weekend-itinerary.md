@@ -149,7 +149,7 @@ Zermatt Lodge is a whole house in Fazakerley, the suburb next to Aintree. It's n
 
 Strictly no parties or events - bookings found to be for parties are cancelled. It's a quiet home, so it suits groups who want to rest between race days.
 
-[Book direct](/#book) for festival week as early as you can, or browse our other [stays](/stays).
+[Book direct](/zermatt-lodge#book) for festival week as early as you can, or browse our other [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

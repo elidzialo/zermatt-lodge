@@ -124,7 +124,7 @@ What it offers a cruise family or group:
 
 Check-in is from 3pm and checkout is 11am. It's a quiet home: no parties or events, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in.
 
-[Book your pre-cruise or post-cruise night direct](/#book), or call +44 7479 905477.
+[Book your pre-cruise or post-cruise night direct](/zermatt-lodge#book), or call +44 7479 905477.
 
 ## Related guides
 

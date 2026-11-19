@@ -156,7 +156,7 @@ Zermatt Lodge is a whole house in a quiet residential part of Fazakerley, north 
 
 Strictly no parties or events - bookings found to be for parties are cancelled. Please respect the neighbours, especially with early starts.
 
-[Book direct](/#book) or see all our [stays](/stays), including homes filtered for work crews.
+[Book direct](/zermatt-lodge#book) or see all our [stays](/), including homes filtered for work crews.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

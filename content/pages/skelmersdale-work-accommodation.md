@@ -116,7 +116,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M5
 
 It's a quiet residential home: **no parties or events**, no smoking and no pets. Check-in is 3pm and checkout is 11am. There's a £129 cleaning fee per stay.
 
-For weekday or multi-week bookings, call **+44 7479 905477** with your dates and crew size, or [check availability and book direct](/#book).
+For weekday or multi-week bookings, call **+44 7479 905477** with your dates and crew size, or [check availability and book direct](/zermatt-lodge#book).
 
 ## Related guides
 

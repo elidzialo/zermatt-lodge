@@ -130,7 +130,7 @@ Zermatt Lodge is a whole 4-bedroom house, not an apartment block. It's in a quie
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-[Book direct](/#book) with no booking fees, or see all our [stays](/stays).
+[Book direct](/zermatt-lodge#book) with no booking fees, or see all our [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

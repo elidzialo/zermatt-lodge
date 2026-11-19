@@ -1,0 +1,490 @@
+{
+ "zermatt-lodge": {
+  "note": "Extra content for listing pages, keyed by slug. Optional for every listing. Zermatt Lodge content moved here from the old homepage.",
+  "legacy_checkout": true,
+  "promo": true,
+  "offer": true,
+  "subtitle": "Entire house in Fazakerley, north Liverpool",
+  "photos": [
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85",
+    "caption": "Front of Zermatt Lodge, a 4-bedroom house in Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/e170d7e1-d3ef-4d-ixjYf",
+    "caption": "Living room with 55-inch Smart TV at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c08747f9-8543-49-NzG8z",
+    "caption": "Living room seating area at Zermatt Lodge holiday house"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY",
+    "caption": "Games room with pool table at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/16f2ba43-e66f-45-ClIDR",
+    "caption": "Pool table and board games in the games room at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/499d78d6-787f-42-f3HjY",
+    "caption": "Big fitted kitchen at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/31705f0b-14e0-4d-ZGX04",
+    "caption": "Kitchen worktops and appliances at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/f191e01b-94eb-47-v15NJ",
+    "caption": "Dining room with table for group meals at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/44fa5ff3-6c69-4c-4onXa",
+    "caption": "Dining table set for seven guests at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/ee9c770c-7a3e-4f-uH1ZG",
+    "caption": "King master bedroom at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/40ac15b7-356f-47-uD3eB",
+    "caption": "Master bedroom king bed and storage at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/7383a79c-bc04-47-nV-xe",
+    "caption": "En-suite bathroom off the master bedroom at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/b9a3624b-2f6d-49-toXb7",
+    "caption": "Second bedroom with king bed at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/05494a36-b584-47-85Mon",
+    "caption": "Second king bedroom from the doorway at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/05c835d6-9513-44-b1x2l",
+    "caption": "Third bedroom with queen bed at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/b9e841ca-7895-4e-Oj5rr",
+    "caption": "Queen bedroom detail at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/63c93d03-cd8f-42-OqZt7",
+    "caption": "Fourth bedroom with single bed at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/3cf8c8c0-769e-4d--92fL",
+    "caption": "Main bathroom at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/43af1e56-812b-4e-e8Vau",
+    "caption": "Main bathroom shower and basin at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/5159aa8e-9282-4b-azumt",
+    "caption": "Hallway and stairs at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/b53ff2db-98d3-41-Z4m2T",
+    "caption": "Large private back garden at Zermatt Lodge, Liverpool"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/43b9b967-8da3-43-qBgpL",
+    "caption": "Back garden seating area at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/7d8202a8-3cc8-48-1pch4",
+    "caption": "Rear of the house and garden at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/6f26388d-763b-41-5n6m7",
+    "caption": "Free off-street parking for two cars at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/430b57a8-71e9-4c-1HFXc",
+    "caption": "Board games ready for guests at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/1c578ac3-421b-49-OSCff",
+    "caption": "Smart TV with Netflix in the living room at Zermatt Lodge"
+   },
+   {
+    "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/b21b8871-2021-4e-8S0Gm",
+    "caption": "Welcome view into the open-plan ground floor at Zermatt Lodge"
+   }
+  ],
+  "highlights": [
+   [
+    "pool_table",
+    "Games room with pool table",
+    "Plus board games and Netflix on a 55-inch Smart TV."
+   ],
+   [
+    "garden",
+    "Large private garden",
+    "A big, fully fenced back garden that's all yours."
+   ],
+   [
+    "parking",
+    "Free parking for 2 cars",
+    "Minutes from the M57 and M58."
+   ]
+  ],
+  "about": [
+   "Zermatt Lodge is a spacious 4-bedroom house in Liverpool with room for up to 7 guests, made for groups, families and business or contractor stays. There is a king master bedroom with en-suite, a second king, a queen room and a single, plus two bathrooms in total. Downstairs you get a big kitchen, a separate dining room and a games room with a pool table and board games, and the 55-inch Smart TV has Netflix. Out back there is a large private garden, and there is free parking for 2 cars.",
+   "Liverpool city centre is about 15 minutes away by Merseyrail train (Northern line to Liverpool Central), and the M57 and M58 are close by for getting around Merseyside. The house is also near Aintree University Hospital, The Walton Centre and Aintree Racecourse. Check-in is from 3pm and checkout is by 11am. You book direct here, so you deal with the host, ZALO Stays, from start to finish.",
+   "Every stay comes with fresh towels and hotel-quality bedding. The cleaning crew makes sure the house is spotless for every stay, and the local team inspects the property before each arrival. The property management team is available 24/7 by email or phone if you need anything."
+  ],
+  "rooms": [
+   [
+    "bed",
+    "Bedroom 1",
+    "King bed, en-suite"
+   ],
+   [
+    "bed",
+    "Bedroom 2",
+    "King bed"
+   ],
+   [
+    "bed",
+    "Bedroom 3",
+    "Queen bed"
+   ],
+   [
+    "bed",
+    "Bedroom 4",
+    "Single bed"
+   ]
+  ],
+  "amenities": [
+   [
+    "wifi",
+    "Wifi"
+   ],
+   [
+    "pool_table",
+    "Games room with pool table"
+   ],
+   [
+    "tv",
+    "55-inch Smart TV with Netflix"
+   ],
+   [
+    "kitchen",
+    "Big fully equipped kitchen"
+   ],
+   [
+    "users",
+    "Separate dining room"
+   ],
+   [
+    "garden",
+    "Large, fully fenced private back garden"
+   ],
+   [
+    "fireplace",
+    "Gas fireplace"
+   ],
+   [
+    "washer",
+    "Washing machine"
+   ],
+   [
+    "dryer",
+    "Tumble dryer"
+   ],
+   [
+    "self_checkin",
+    "Self check-in with a lockbox"
+   ],
+   [
+    "parking",
+    "Free parking on premises for 2 cars"
+   ],
+   [
+    "bath",
+    "2 bathrooms, bathtub"
+   ],
+   [
+    "sparkle",
+    "Fresh towels and hotel-quality bedding"
+   ],
+   [
+    "water",
+    "Hot water, shampoo and body soap"
+   ],
+   [
+    "list",
+    "Board games"
+   ],
+   [
+    "camera",
+    "Exterior security cameras (outside only)"
+   ]
+  ],
+  "external_reviews": {
+   "summary": [
+    {
+     "label": "4.75 out of 5 on Airbnb",
+     "sub": "4 reviews",
+     "url": "https://www.airbnb.co.uk/rooms/1801505261909570677/reviews"
+    },
+    {
+     "label": "5.0 on Google",
+     "sub": "1 review",
+     "url": "https://www.google.com/search?q=BookHomes.co.uk+reviews"
+    }
+   ],
+   "items": [
+    {
+     "name": "Daniel",
+     "source": "Google",
+     "when": "November 2026",
+     "rating": 5,
+     "text": "This Liverpool Airbnb property was an absolute dream! Super clean, comfortable, and in a fantastic location. We had a wonderful stay and would gladly come back."
+    },
+    {
+     "name": "Charlie",
+     "source": "Airbnb",
+     "when": "November 2026",
+     "rating": 5,
+     "text": "Perfect property for a family stay. It's honestly one of the most beautifully decorated and well equipped properties we've stayed in. The hosts were brilliant and great at responding. Would love to stay again"
+    },
+    {
+     "name": "Laiba",
+     "source": "Airbnb",
+     "when": "November 2026",
+     "rating": 5,
+     "text": "It was a lovely home, lots of rooms (even though there were only two of us), filled with a lot of activities and cute decoration. Felt right at home and had lots of close by restaurants, super markets, and things to do."
+    },
+    {
+     "name": "Jordan",
+     "source": "Airbnb",
+     "when": "November 2026",
+     "rating": 5,
+     "text": "Very clean place. Perfectly described and lively host"
+    }
+   ],
+   "note": "Reviews from verified stays on Airbnb and Google, shown with the source. They are not counted as Book Homes reviews."
+  },
+  "where": "The house is in Fazakerley, a residential area of north Liverpool next to Aintree, about 15 minutes from Liverpool city centre by Merseyrail and close to the M57 and M58. The exact address is shared after booking.",
+  "nearby": [
+   [
+    "hospital",
+    "Aintree University Hospital and The Walton Centre",
+    "about 0.6 miles"
+   ],
+   [
+    "events",
+    "Aintree Racecourse",
+    "about 0.5 to 1 mile"
+   ],
+   [
+    "train",
+    "Fazakerley station, trains to Liverpool Central",
+    "around 15 min by train"
+   ],
+   [
+    "shop",
+    "Lidl, Tesco Express and Co-op",
+    "close by"
+   ],
+   [
+    "garden",
+    "Walton Hall Park",
+    "about 1 to 2 miles"
+   ],
+   [
+    "garden",
+    "Croxteth Hall and Country Park",
+    "about 2.5 miles"
+   ],
+   [
+    "events",
+    "Anfield",
+    "about 3 miles"
+   ],
+   [
+    "events",
+    "Hill Dickinson Stadium, Bramley-Moore Dock",
+    "about 4 miles"
+   ],
+   [
+    "city",
+    "Liverpool city centre and Lime Street",
+    "about 4.5 miles"
+   ]
+  ],
+  "rules": {
+   "House rules": [
+    [
+     "no",
+     "Strictly no parties or events. Party bookings are cancelled"
+    ],
+    [
+     "clock",
+     "Check-in after 3pm (self check-in with a lockbox)"
+    ],
+    [
+     "clock",
+     "Checkout before 11am"
+    ],
+    [
+     "users",
+     "7 guests maximum"
+    ],
+    [
+     "no",
+     "No smoking"
+    ],
+    [
+     "no",
+     "No pets"
+    ]
+   ],
+   "Safety and property": [
+    [
+     "shield",
+     "Guest ID required"
+    ],
+    [
+     "shield",
+     "Signed rental agreement"
+    ],
+    [
+     "shield",
+     "Damage deposit or waiver"
+    ],
+    [
+     "camera",
+     "Exterior security cameras on the property (outside only, never inside)"
+    ]
+   ]
+  },
+  "notice": "Strictly no parties or events. Bookings found to be for parties are cancelled.",
+  "faqs": [
+   {
+    "q": "How many people does Zermatt Lodge sleep?",
+    "a": "Zermatt Lodge sleeps up to 7 guests. It is an entire 4-bedroom house with 4 beds: a king in the master bedroom (with en-suite), a second king, a queen and a single."
+   },
+   {
+    "q": "How many bedrooms and bathrooms are there?",
+    "a": "There are 4 bedrooms and 2 bathrooms. The king master bedroom has its own en-suite, and there is a second bathroom for the other three bedrooms."
+   },
+   {
+    "q": "Is it the entire house or a shared space?",
+    "a": "You get the entire house to yourselves, all four bedrooms, both bathrooms, the kitchen, dining room, games room and the large private back garden. Nothing is shared with other guests."
+   },
+   {
+    "q": "Where is Zermatt Lodge?",
+    "a": "Zermatt Lodge is a spacious house in Liverpool, in the Fazakerley area of north Liverpool, Merseyside. Liverpool city centre is about 15 minutes away by Merseyrail train, or about 4.5 miles by road. The house is close to Aintree University Hospital, The Walton Centre, Aintree Racecourse and the M57 and M58. The full address is sent to confirmed guests."
+   },
+   {
+    "q": "Is the house in Liverpool city centre?",
+    "a": "No. Zermatt Lodge is a residential house in north Liverpool, not in the city centre. Liverpool Central is about 15 minutes away by Merseyrail train, and the city centre is about 4.5 miles by road, so it suits guests who want more space, a garden and free parking with an easy trip into town."
+   },
+   {
+    "q": "Is it close to Aintree University Hospital?",
+    "a": "Yes. Aintree University Hospital is about 0.6 miles away in a straight line. It is a good base for patients' families, visitors and NHS staff who want a whole house with free parking."
+   },
+   {
+    "q": "How far is it from The Walton Centre?",
+    "a": "The Walton Centre shares the Aintree University Hospital site on Lower Lane, so it is about 0.6 miles away in a straight line. Fazakerley station is the closest station to the hospital site."
+   },
+   {
+    "q": "Is there parking?",
+    "a": "Yes, there is free parking for 2 cars at the house. That is useful for hospital visits, as parking on the Aintree hospital site is chargeable."
+   },
+   {
+    "q": "How do I get to Liverpool city centre?",
+    "a": "Fazakerley station is on the Merseyrail Northern line, with trains to Liverpool Central taking about 15 minutes. You can tap in and out with a contactless card or phone. By car, the city centre is about 4.5 miles away."
+   },
+   {
+    "q": "Is it good for the Grand National?",
+    "a": "Yes. Aintree Racecourse is very close, and Aintree station runs extra trains on race days. The 2027 Grand National Festival runs 8-10 April 2027, so book early as it is the busiest week of the year."
+   },
+   {
+    "q": "Is it close to Anfield and Everton's stadium?",
+    "a": "Anfield is about 3 miles away. Everton's Hill Dickinson Stadium at Bramley-Moore Dock is about 4 miles away, take the train from Fazakerley to Sandhills (around 8 minutes) and walk from there."
+   },
+   {
+    "q": "What time are check-in and check-out?",
+    "a": "Check-in is from 3pm and check-out is by 11am."
+   },
+   {
+    "q": "Is the house suitable for contractors and work crews?",
+    "a": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room, and is close to the M57 and M58 for getting around Merseyside and the North West."
+   },
+   {
+    "q": "Do you take longer stays for work crews?",
+    "a": "Yes. Get in touch on +44 7479 905477 or eli@zelr.co.uk for weekly and monthly stays."
+   },
+   {
+    "q": "Is it good for families and groups?",
+    "a": "Yes. There is a games room with a pool table, board games, a 55\" Smart TV with Netflix, a big kitchen, a separate dining room and a large private back garden."
+   },
+   {
+    "q": "What entertainment is there?",
+    "a": "The games room has a pool table, there are board games for all ages, and the living area has a 55\" Smart TV with Netflix."
+   },
+   {
+    "q": "Can we have a party or event?",
+    "a": "No. Strictly no parties or events, bookings found to be for parties are cancelled. Zermatt Lodge is a home in a residential area for families, groups and work stays, so please respect the neighbours."
+   },
+   {
+    "q": "Is smoking allowed?",
+    "a": "No. Smoking is not allowed anywhere in the house."
+   },
+   {
+    "q": "Are pets allowed?",
+    "a": "No, pets are not allowed."
+   },
+   {
+    "q": "What do I need to provide before my stay?",
+    "a": "All guests booking need to provide ID, sign a rental agreement, and either pay a damage deposit or take the damage waiver. We will ask for these after you book."
+   },
+   {
+    "q": "What is the cancellation policy?",
+    "a": "Our cancellation policy is Moderate: you get a full refund if you cancel up to 5 days before check-in, a 50% refund if you cancel after that, and no refund after check-in. No pets and no smoking. Strictly no parties or events, bookings found to be for parties are cancelled. Guest ID and damage deposit may be required."
+   },
+   {
+    "q": "Is Zermatt Lodge also on Airbnb and Booking.com?",
+    "a": "Yes. The same house is also listed on Airbnb and Booking.com. Booking direct on this website means you deal with the hosts and avoid their guest service fees."
+   },
+   {
+    "q": "How do I book?",
+    "a": "You can book directly on this website, choose your dates in the booking section and pay securely by card. Booking direct means you deal with the host, ZALO Stays, from start to finish."
+   },
+   {
+    "q": "Why book direct instead of Airbnb?",
+    "a": "Same house, same team, but no platform service fee. Payment is taken securely online by card, and you deal with the host from start to finish."
+   },
+   {
+    "q": "Who runs Zermatt Lodge?",
+    "a": "Zermatt Lodge is run by ZALO Stays. You can call +44 7479 905477 or email eli@zelr.co.uk."
+   },
+   {
+    "q": "Are there shops nearby?",
+    "a": "Yes. Lidl, Tesco Express and Co-op are on Longmoor Lane, close to the house."
+   },
+   {
+    "q": "How far is Liverpool John Lennon Airport?",
+    "a": "Liverpool John Lennon Airport is about 10 miles away in a straight line. Most guests drive or take a taxi; by public transport you can go via the city centre."
+   },
+   {
+    "q": "Are there parks nearby?",
+    "a": "Yes. Walton Hall Park has 130 acres and two lakes, and Croxteth Hall and Country Park, about 2.5 miles away, has a working farm, a walled garden and a free Saturday parkrun."
+   }
+  ],
+  "contact": {
+   "phone": "+44 7479 905477",
+   "email": "eli@zelr.co.uk"
+  },
+  "og_image": "https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY",
+  "seo_title": "Zermatt Lodge, Liverpool: 4-bed house for groups, sleeps 7 | Book Homes",
+  "seo_description": "Luxury 4-bed, 2-bath Liverpool house for groups, families and contractor stays. Sleeps 7, games room, garden, free parking, 15 mins to the city by train. Book direct, no booking fees."
+ }
+}

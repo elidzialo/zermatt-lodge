@@ -157,7 +157,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree. It's no
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/#book) to avoid platform service fees, or browse all our [stays](/stays).
+[Book direct](/zermatt-lodge#book) to avoid platform service fees, or browse all our [stays](/).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

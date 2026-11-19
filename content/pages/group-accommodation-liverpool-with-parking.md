@@ -26,7 +26,7 @@ faqs:
   - q: "Can we have a party at the house?"
     a: "No. Zermatt Lodge is a residential home with no parties, no smoking and no pets. It suits families, friends, colleagues and teams who want a comfortable, quiet base."
   - q: "How do we book without platform fees?"
-    a: "Book direct at /#book on the Zermatt Lodge website, or call +44 7479 905477."
+    a: "Book direct at bookhomes.co.uk/zermatt-lodge#book on the Zermatt Lodge website, or call +44 7479 905477."
 sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
@@ -130,7 +130,7 @@ This mix gives you a full city day without paying for parking in town, and a coa
 
 House rules: **no parties, no smoking, no pets**.
 
-Book direct at [Zermatt Lodge](/#book) with no platform fees, or call +44 7479 905477 to check dates.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to check dates.
 
 ## Related guides
 
