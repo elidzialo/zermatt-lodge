@@ -511,6 +511,14 @@ function enterApp(){
   if (!started){ started = true; loadAll(); }
 }
 
+(function(){
+  var q = new URLSearchParams(location.search), th = q.get("token_hash"), ty = q.get("type");
+  if (!th || !ty) return;
+  history.replaceState(null, "", location.pathname);
+  sb.auth.verifyOtp({token_hash: th, type: ty}).then(function(r){
+    if (r.error){ view("Login"); msg("#loginMsg", "That link has expired or was already used. Ask for a new one."); }
+  });
+})();
 sb.auth.onAuthStateChange(function(evt, session){
   if (evt === "PASSWORD_RECOVERY") RECOVERY = true;
   if (/^(INITIAL_SESSION|SIGNED_IN|SIGNED_OUT|MFA_CHALLENGE_VERIFIED|PASSWORD_RECOVERY)$/.test(evt)){

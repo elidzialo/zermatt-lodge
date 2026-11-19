@@ -109,6 +109,25 @@ sb.auth.onAuthStateChange(function(evt, session){
   if (evt === "SIGNED_IN" && (location.hash || /access_token|code=/.test(location.search))) history.replaceState(null, "", location.pathname);
 });
 
+/* show / hide password */
+$$("[data-showpw]").forEach(function(b){ b.addEventListener("click", function(){ var i = document.getElementById(b.getAttribute("data-showpw")); var on = i.type === "password"; i.type = on ? "text" : "password"; b.textContent = on ? "Hide" : "Show"; b.setAttribute("aria-label", on ? "Hide password" : "Show password"); }); });
+/* Google sign-in */
+$$("[data-google]").forEach(function(b){ b.addEventListener("click", function(){
+  if (b.closest("#vSignup") && !$("#suTerms").checked){ msg("#signupMsg", "Please agree to the host terms first."); return; }
+  lsSet(PENDING_KEY, "1"); setTrust(true);
+  sb.auth.signInWithOAuth({provider: "google", options: {redirectTo: REDIRECT}}).then(function(r){ if (r.error){ var t = /not enabled|unsupported provider/i.test(r.error.message) ? "Google sign-in is not switched on yet. Please use email for now." : niceErr(r.error); msg(b.closest("#vSignup") ? "#signupMsg" : "#loginMsg", t); } });
+}); });
+/* branded email links: /host/?token_hash=...&type=... */
+(function(){
+  var q = new URLSearchParams(location.search), th = q.get("token_hash"), ty = q.get("type");
+  if (!th || !ty) return;
+  history.replaceState(null, "", location.pathname);
+  sb.auth.verifyOtp({token_hash: th, type: ty}).then(function(r){
+    if (r.error){ view("Login"); msg("#loginMsg", /expired|invalid/i.test(r.error.message) ? "That link has expired or was already used. Log in, or tap Forgot password to get a new one." : niceErr(r.error)); return; }
+    if (ty === "recovery") view("SetPw");
+    else if (ty === "signup" || ty === "email") msg("#loginMsg", "Email confirmed. Welcome to Book Homes.", true);
+  });
+})();
 $("#toSignup").addEventListener("click", function(){ view("Signup"); });
 $("#enrolLater").addEventListener("click", function(){ if (SESSION) lsSet(LATER_KEY, SESSION.user.id); afterAuth(); });
 function aal(){ try { var p = SESSION.access_token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"); while (p.length % 4) p += "="; return JSON.parse(atob(p)).aal; } catch (e) { return ""; } }

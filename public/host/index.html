@@ -22,6 +22,8 @@ label.f2{display:block;font-size:14px;font-weight:600;margin-bottom:12px}
 label.f2 input,label.f2 select,label.f2 textarea{display:block;width:100%;margin-top:5px;font:inherit;font-size:16px;padding:11px 13px;border:1px solid #a9aeaa;border-radius:10px;background:#fff}
 label.f2 textarea{min-height:140px;resize:vertical}
 label.f2 small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+.pwrap{position:relative;display:block}.pwrap input{padding-right:70px!important}.pwrap .eye{position:absolute;right:6px;top:50%;transform:translateY(-35%);border:0;background:none;font:inherit;font-size:14px;font-weight:600;color:var(--brand,#1f4d3a);padding:8px 10px;cursor:pointer;text-decoration:underline}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px;border:1px solid #a9aeaa;border-radius:10px;background:#fff;font:inherit;font-weight:600;font-size:15px;cursor:pointer;margin:4px 0 14px}.gbtn:hover{background:#f6f7f6}.or{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;margin:6px 0 14px}.or:before,.or:after{content:"";flex:1;height:1px;background:#dfe3e0}
 .msg{border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
 .msg.err{background:#fdeceb;color:#b42318}.msg.ok{background:var(--brand-tint);color:var(--brand)}
 .links{display:flex;flex-direction:column;margin-top:10px;border-top:1px solid var(--line);padding-top:6px}
@@ -112,9 +114,10 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
 <div id="vLogin" class="box hidden"><div class="cardx">
   <h1>Host login</h1><p class="lead">Manage your homes, calendar and bookings.</p>
   <div id="loginMsg" role="status" aria-live="polite"></div>
+  <button type="button" class="gbtn" data-google><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.7 13.2l7.8 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.8 6.1C6.6 42.6 14.6 48 24 48z"/></svg>Continue with Google</button><div class="or">or use email</div>
   <form id="loginForm" novalidate>
     <label class="f2">Email<input type="email" id="loginEmail" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false" required></label>
-    <label class="f2">Password<input type="password" id="loginPw" autocomplete="current-password" required></label>
+    <label class="f2">Password<span class="pwrap"><input type="password" id="loginPw" autocomplete="current-password" required><button type="button" class="eye" data-showpw="loginPw" aria-label="Show password">Show</button></span></label>
     <label class="tick"><input type="checkbox" id="trustBox" checked><span><b>Trust this browser for 30 days</b><span>Untick on a shared computer.</span></span></label>
     <button class="btn block" type="submit" id="loginBtn">Log in</button>
   </form>
@@ -124,9 +127,10 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
 <div id="vSignup" class="box hidden"><div class="cardx">
   <h1>Become a host</h1><p class="lead">Create your account. We approve every host and listing before it goes live.</p>
   <div id="signupMsg" role="status" aria-live="polite"></div>
+  <button type="button" class="gbtn" data-google><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.7 13.2l7.8 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.8 6.1C6.6 42.6 14.6 48 24 48z"/></svg>Continue with Google</button><div class="or">or use email</div>
   <form id="signupForm" novalidate>
     <label class="f2">Email<input type="email" id="suEmail" autocomplete="username" inputmode="email" autocapitalize="off" required></label>
-    <label class="f2">Password<input type="password" id="suPw" autocomplete="new-password" minlength="10" required><small>At least 10 characters. A few random words work well.</small></label>
+    <label class="f2">Password<span class="pwrap"><input type="password" id="suPw" autocomplete="new-password" minlength="10" required><button type="button" class="eye" data-showpw="suPw" aria-label="Show password">Show</button></span><small>At least 10 characters. A few random words work well.</small></label>
     <label class="tick"><input type="checkbox" id="suTerms"><span><b>I agree to the <a href="/terms/hosts" target="_blank" rel="noopener">host terms</a></b><span>And I have the right to let my property.</span></span></label>
     <button class="btn block" type="submit" id="suBtn">Create account</button>
   </form>
@@ -154,7 +158,7 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
 <div id="vSetPw" class="box hidden"><div class="cardx">
   <h1>Set your password</h1><p class="lead">At least 10 characters.</p>
   <div id="setPwMsg" role="status" aria-live="polite"></div>
-  <form id="setPwForm" novalidate><label class="f2">New password<input type="password" id="newPw" autocomplete="new-password" minlength="10"></label><button class="btn block" type="submit" id="setPwBtn">Save password</button></form>
+  <form id="setPwForm" novalidate><label class="f2">New password<span class="pwrap"><input type="password" id="newPw" autocomplete="new-password" minlength="10"><button type="button" class="eye" data-showpw="newPw" aria-label="Show password">Show</button></span></label><button class="btn block" type="submit" id="setPwBtn">Save password</button></form>
 </div></div>
 
 <div id="vProfile" class="box hidden"><div class="cardx">
