@@ -87,4 +87,16 @@
   var T0 = performance.now(), MARKS = [];
   HP.mark = function(n){ MARKS.push([n, Math.round(performance.now() - T0)]); };
   HP.marks = function(){ return MARKS.slice(); };
+  // record each portal API call (action, start, duration) so slow or repeated calls are easy to spot
+  var CALLS = []; HP.calls = function(){ return CALLS.slice(); };
+  if (window.fetch){
+    var f0 = window.fetch;
+    window.fetch = function(u, o){
+      var url = String(u && u.url || u), t = performance.now(), a = "";
+      if (url.indexOf("/functions/v1/") < 0) return f0.apply(this, arguments);
+      try { a = JSON.parse((o && o.body) || "{}").action || ""; } catch (e) {}
+      var rec = [url.split("/functions/v1/")[1] + (a ? ":" + a : ""), Math.round(t - T0), -1]; CALLS.push(rec);
+      return f0.apply(this, arguments).then(function(r){ rec[2] = Math.round(performance.now() - t); return r; });
+    };
+  }
 })();

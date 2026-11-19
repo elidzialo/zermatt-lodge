@@ -81,7 +81,7 @@ function route(session){
   var my = ++routing; SESSION = session || null;
   if (!session){ show("#who", false); started = false; view(/signup=1/.test(location.search) ? "Signup" : "Login"); return; }
   $("#whoEmail").textContent = session.user.email || ""; show("#who", true);
-  if (!BOOT){ BOOT = bootCall(); BOOT.catch(function(){}); } // host-perf: the dashboard data loads while 2-step is checked
+  if (!BOOT && !(AUTH_P && AUTH_UID === session.user.id)){ BOOT = bootCall(); BOOT.catch(function(){}); } // host-perf: the dashboard data loads while 2-step is checked
   sb.auth.mfa.getAuthenticatorAssuranceLevel().then(function(a){
     if (my !== routing) return;
     if (a.error) throw a.error;
@@ -254,7 +254,15 @@ function showDash(fresh){
   if (ME.payouts) loadEarnings(ME); else if (fresh) loadEarnings();
 }
 function keepMe(me){ var c = Object.assign({}, me); HP.put(ckey("boot"), c, true); return me; }
-function afterAuth(){
+var AUTH_P = null, AUTH_AT = 0, AUTH_UID = null;
+function afterAuth(force){
+  // host-perf: sign-in fires INITIAL_SESSION and SIGNED_IN together; load the dashboard once for both
+  var uid = SESSION && SESSION.user && SESSION.user.id;
+  if (!force && AUTH_P && AUTH_UID === uid && (!AUTH_AT || Date.now() - AUTH_AT < 4000)) return AUTH_P;
+  AUTH_UID = uid; AUTH_AT = 0;
+  return (AUTH_P = afterAuthRun().then(function(r){ AUTH_AT = Date.now(); return r; }));
+}
+function afterAuthRun(){
   var cached = HP.get(ckey("boot")), painted = false;
   if (cached && profileDone(cached.v) && !ME){ ME = cached.v; HP.mark("dash-cached"); showDash(false); painted = true; }
   var p = BOOT || bootCall(); BOOT = null;
@@ -291,7 +299,7 @@ $("#profForm").addEventListener("submit", function(e){
   var btn = $("#profBtn"); busy(btn, true, "Saving...");
   var first = !(ME && ME.profile);
   (first ? api("bookhomes-host-signup", body) : api("bookhomes-host", Object.assign({action: "save_profile"}, body)))
-    .then(function(){ busy(btn, false, "Continue"); return afterAuth(); })
+    .then(function(){ busy(btn, false, "Continue"); return afterAuth(true); })
     .then(function(){ if (first && ME && !(ME.listings || []).length) openWizard(null); })
     .catch(function(err){ busy(btn, false, "Continue"); msg("#profMsg", err.message); });
 });
