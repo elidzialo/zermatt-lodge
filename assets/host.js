@@ -353,6 +353,41 @@ function drawCal(){
     return '<div class="item"><div class="h"><span>' + dfmt(b.start_date) + " to " + dfmt(addDays(b.end_date, -1)) + '</span><button type="button" class="btn ghost sm" data-unblock="' + esc(b.id) + '">Unblock</button></div><div class="m">' + esc(b.reason) + "</div></div>";
   }).join("") : "";
 }
+/* side panel shows only with a selection; sync panel follows the chosen listing */
+var _drawCal = drawCal;
+drawCal = function(){
+  _drawCal();
+  var on = !!CAL.a;
+  $("#csPanel").classList.toggle("hidden", !on); $("#csEmpty").classList.toggle("hidden", on);
+  $("#calActs").classList.toggle("open", on);
+  if (on){
+    var j = CAL.data || {days: []}, lo = CAL.b && CAL.b < CAL.a ? CAL.b : CAL.a, hi = CAL.b && CAL.b > CAL.a ? CAL.b : CAL.a, blocked = 0, n = 0, price = null, same = true;
+    (j.days || []).forEach(function(d){ if (d.date >= lo && d.date <= hi){ n++; if (d.status === "blocked") blocked++; if (price === null) price = d.price; else if (d.price !== price) same = false; } });
+    $$("#csPanel [data-ca=open], #csPanel [data-ca=block]").forEach(function(b){ b.setAttribute("aria-pressed", (b.getAttribute("data-ca") === "block") === (n > 0 && blocked === n) ? "true" : "false"); });
+    var cp = $("#calPrice"); if (document.activeElement !== cp) cp.value = same && price != null ? Math.round(price) : "";
+  }
+  drawSync();
+};
+$("#csClear").addEventListener("click", function(){ CAL.a = CAL.b = null; $("#calOut").textContent = ""; drawCal(); });
+function drawSync(){
+  var id = +$("#calListing").value, l = (ME.listings || []).filter(function(x){ return +x.id === id; })[0];
+  var src = (ME.sources || []).filter(function(x){ return +x.listing_id === id && x.enabled; });
+  $("#syncExport").innerHTML = l && l.ical_export_url ? '<code class="code-line" id="syncLink">' + esc(l.ical_export_url) + '</code><button type="button" class="btn ghost sm" id="syncCopy">Copy link</button>' : '<p class="m">Your link appears once the listing is saved.</p>';
+  $("#syncList").innerHTML = src.length ? src.map(function(x){ return '<div class="sync-src"><span><b>' + esc(x.name) + '</b><small>' + esc(String(x.url).slice(0, 48)) + '...</small></span><button type="button" class="link" data-rmsync="' + esc(x.id) + '">Remove</button></div>'; }).join("") : '<p class="m">No calendars imported yet.</p>';
+}
+document.addEventListener("click", function(e){
+  if (!e.target.closest) return;
+  if (e.target.closest("#syncCopy")){ var t = $("#syncLink").textContent, b = $("#syncCopy"); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){ b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy link"; }, 2000); }, function(){}); }
+  var rm = e.target.closest("[data-rmsync]");
+  if (rm) api("bookhomes-host", {action: "remove_ical", id: rm.getAttribute("data-rmsync")}).then(refresh).then(drawSync).catch(function(err){ $("#syncOut").textContent = err.message; });
+  if (e.target.closest("#syncAdd")){
+    var url = $("#syncUrl").value.trim();
+    if (!/^https:\/\//.test(url)){ $("#syncOut").textContent = "Paste the full link (it starts with https://)."; return; }
+    $("#syncOut").textContent = "Adding...";
+    api("bookhomes-host", {action: "add_ical", listing_id: +$("#calListing").value, name: $("#syncName").value, url: url}).then(refresh).then(function(){ $("#syncUrl").value = ""; drawSync(); $("#syncOut").textContent = "Added. It syncs within 15 minutes."; })
+      .catch(function(err){ $("#syncOut").textContent = err.message; });
+  }
+});
 $("#cal2").addEventListener("click", function(e){
   var b = e.target.closest("[data-day]"); if (!b || b.disabled) return;
   var s = b.getAttribute("data-day");
@@ -386,7 +421,7 @@ function blank(){ return {property_type: "house", area: "", city: "Liverpool", l
   kosher: {kitchen: false, kitchen_type: null, separate_sinks: false, separate_ovens: false, supervision: "", shabbat: {}, shul_name: "", shul_walk_mins: null, eruv: "unknown", kosher_shops: "", mikvah: ""},
   business: {desk: false, wifi_mbps: null, van_parking: false, separate_beds: false, monthly_rates: false},
   title: "", description: "", house_rules: "No parties or events. No smoking.", check_in_time: "15:00", check_out_time: "11:00", cancellation_policy: "moderate",
-  base_price: null, weekend_price: null, cleaning_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: ""}; }
+  base_price: null, weekend_price: null, cleaning_fee: 0, guests_included: null, extra_guest_fee: 0, pets_allowed: false, pet_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: ""}; }
 function tiles(list, isOn, attr){ return '<div class="tiles">' + list.map(function(t){ return '<button type="button" class="tile" ' + attr + '="' + t[0] + '" aria-pressed="' + (isOn(t[0]) ? "true" : "false") + '">' + icon(t[2] || t[0]) + "<span>" + esc(t[1]) + "</span></button>"; }).join("") + "</div>"; }
 function stepper(key, label, min, max){ return '<div class="stepper"><span>' + label + '</span><div><button type="button" data-step="' + key + '" data-d="-1" aria-label="Fewer">-</button><b id="st_' + key + '">' + W.l[key] + '</b><button type="button" data-step="' + key + '" data-d="1" data-max="' + max + '" data-min="' + min + '" aria-label="More">+</button></div></div>'; }
 function sw(path, label, ic){ var v = get(path); return '<label class="switch"><span>' + icon(ic) + esc(label) + '</span><input type="checkbox" data-sw="' + path + '"' + (v ? " checked" : "") + "></label>"; }
@@ -395,6 +430,7 @@ function set(path, v){ var ks = path.split("."), o = W.l; for (var i = 0; i < ks
 function inp(path, label, type, extra){ var v = get(path); return '<label class="f2">' + label + '<input type="' + (type || "text") + '" data-in="' + path + '" value="' + esc(v == null ? "" : v) + '" ' + (extra || "") + "></label>"; }
 function area(path, label, extra){ return '<label class="f2">' + label + '<textarea data-in="' + path + '" ' + (extra || "") + ">" + esc(get(path) || "") + "</textarea></label>"; }
 var STEPS = [
+  {h: "Already on Airbnb? Import your listing", lead: "Paste the link to your Airbnb listing. We copy the title, description, rooms, amenities and photos, then you check every screen before you submit.", r: importStep, f: null, imp: true},
   {h: "Which of these best describes your place?", r: function(){ return tiles(TYPES, function(k){ return W.l.property_type === k; }, "data-type"); }, f: ["property_type"]},
   {h: "Where's your place?", lead: "Give the area, not the street address. Then tap the map near your home: guests only ever see a circle about 1 km wide.",
    r: function(){ return inp("area", "Area", "text", 'placeholder="e.g. Allerton, south Liverpool" maxlength="80"') + inp("city", "Town or city", "text", 'maxlength="60"') + '<div class="pmap" id="pmap"></div><p class="m" id="pinTxt" style="font-size:13.5px;color:var(--muted);margin-top:6px">' + (W.l.lat ? "Pin set." : "No pin yet.") + "</p>"; },
@@ -418,13 +454,14 @@ var STEPS = [
   {h: "House rules and check-in", r: function(){ return area("house_rules", "House rules", 'maxlength="2500"') + inp("check_in_time", "Check-in from", "time") + inp("check_out_time", "Checkout by", "time") +
      '<label class="f2">Cancellation policy<select data-in="cancellation_policy">' + [["flexible","Flexible: full refund up to 24 hours before"],["moderate","Moderate: full refund up to 5 days before, then 50%"],["strict","Strict: full refund up to 14 days before, 50% up to 7 days"]].map(function(o){ return '<option value="' + o[0] + '"' + (W.l.cancellation_policy === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>"; },
    f: ["house_rules", "check_in_time", "check_out_time", "cancellation_policy"]},
-  {h: "Set your price", lead: "Guests see one total with cleaning included and no booking fee.", r: function(){ return inp("base_price", "Price per night (£)", "number", 'min="10" max="10000" step="1"') + inp("weekend_price", "Friday and Saturday nights (£, optional)", "number", 'min="10" max="10000" step="1"') + inp("cleaning_fee", "Cleaning fee per stay (£)", "number", 'min="0" max="2000" step="1"') + inp("weekly_discount_pct", "Weekly discount, 7+ nights (%)", "number", 'min="0" max="50"') + inp("monthly_discount_pct", "Monthly discount, 28+ nights (%)", "number", 'min="0" max="60"') + inp("min_nights", "Minimum nights", "number", 'min="1" max="90"') + inp("max_nights", "Maximum nights", "number", 'min="1" max="365"') + '<div class="example" id="example"></div>'; },
-   f: ["base_price", "weekend_price", "cleaning_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights"], v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : ""; }, after: example},
+  {h: "Now, set your price", lead: "You can change it any time, and set prices for single dates in your calendar.", r: priceStep,
+   f: ["base_price", "weekend_price", "cleaning_fee", "guests_included", "extra_guest_fee", "pets_allowed", "pet_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights"],
+   v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : +W.l.max_nights && +W.l.min_nights > +W.l.max_nights ? "Minimum nights can't be more than maximum nights." : ""; }, after: example},
   {h: "Sync your other calendars", lead: "Stops double bookings. In Airbnb or Booking.com, find 'Export calendar' and paste the link here. We check them every 15 minutes.", r: icalStep, f: ["airbnb_url", "booking_url"], needId: true},
   {h: "Check and submit", r: reviewStep, last: true}
 ];
 function openWizard(id){
-  W.id = id; W.i = 0; W.photos = [];
+  W.id = id; W.min = id ? 1 : 0; W.i = W.min; W.photos = []; W.imported = null; STEPS[0].f = null;
   var l = id ? (ME.listings || []).filter(function(x){ return +x.id === id; })[0] : null;
   W.l = Object.assign(blank(), l ? JSON.parse(JSON.stringify(l)) : {});
   ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
@@ -436,15 +473,17 @@ function openWizard(id){
 function closeWizard(){ show("#wz", false); document.body.style.overflow = ""; refresh(); }
 function drawStep(){
   var s = STEPS[W.i];
-  $("#wzBar").style.width = Math.round((W.i + 1) / STEPS.length * 100) + "%";
+  $("#wzBar").style.width = Math.round((W.i + 1 - (W.min || 0)) / (STEPS.length - (W.min || 0)) * 100) + "%";
   $("#wzIn").innerHTML = '<h2 id="wzH">' + esc(s.h) + "</h2>" + (s.lead ? '<p class="lead">' + esc(s.lead) + "</p>" : "") + s.r();
-  $("#wzBack").style.visibility = W.i ? "visible" : "hidden";
-  $("#wzNext").textContent = s.last ? "Submit for approval" : "Next";
+  $("#wzBack").style.visibility = W.i > (W.min || 0) ? "visible" : "hidden";
+  $("#wzStep").textContent = "Step " + (W.i + 1 - (W.min || 0)) + " of " + (STEPS.length - (W.min || 0));
+  $("#wzNext").textContent = s.last ? "Submit for approval" : s.imp && !W.imported ? "Start from scratch" : "Next";
+  $("#wzIn").classList.remove("in"); void $("#wzIn").offsetWidth; $("#wzIn").classList.add("in");
   $("#wzMsg").textContent = "";
   if (s.after) s.after();
   $(".wz-body").scrollTop = 0;
 }
-function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
+function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths","guests_included","extra_guest_fee","pet_fee"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
 function save(fields){
   var body = {action: "save_listing", listing: payload(fields || [])};
   if (W.id) body.id = W.id; else body.listing.title = W.l.title || (W.l.area ? "Home in " + W.l.area : "My home");
@@ -463,7 +502,7 @@ $("#wzNext").addEventListener("click", function(){
   (s.f || STEPS[W.i + 1].needId ? save(s.f || []) : Promise.resolve()).then(function(){ b.disabled = false; W.i++; drawStep(); })
     .catch(function(e){ b.disabled = false; $("#wzMsg").textContent = e.message; });
 });
-$("#wzBack").addEventListener("click", function(){ if (W.i){ W.i--; $("#wzNext").style.visibility = "visible"; drawStep(); } });
+$("#wzBack").addEventListener("click", function(){ if (W.i > (W.min || 0)){ W.i--; $("#wzNext").style.visibility = "visible"; drawStep(); } });
 $("#wzSave").addEventListener("click", function(){ var s = STEPS[W.i]; (s.f ? save(s.f) : Promise.resolve()).then(closeWizard).catch(function(e){ $("#wzMsg").textContent = e.message; }); });
 $("#wzIn").addEventListener("click", function(e){
   var t = e.target.closest("[data-type],[data-amen],[data-cat2],[data-step]");
@@ -485,7 +524,7 @@ $("#wzIn").addEventListener("input", function(e){
 });
 $("#wzIn").addEventListener("change", function(e){
   var t = e.target;
-  if (t.hasAttribute("data-sw")){ set(t.getAttribute("data-sw"), t.checked); if (STEPS[W.i].rerender) drawStep(); }
+  if (t.hasAttribute("data-sw")){ set(t.getAttribute("data-sw"), t.checked); if (STEPS[W.i].rerender || STEPS[W.i].r === priceStep) drawStep(); }
   if (t.hasAttribute("data-in")) set(t.getAttribute("data-in"), t.value);
   if (t.id === "phFiles") upload(t.files);
 });
@@ -500,11 +539,89 @@ function pinMap(){
 }
 function example(){
   var el = $("#example"); if (!el) return;
-  var p = +W.l.base_price || 0, c = +W.l.cleaning_fee || 0, pct = ME.commission_pct != null ? ME.commission_pct : 15;
-  if (!p){ el.textContent = "Add a price to see an example."; return; }
-  var total = 3 * p + c, fee = Math.round(total * pct) / 100;
-  el.innerHTML = "<b>Example, 3 weeknights:</b> guest pays " + money(total * 100) + " in total (no booking fee). Book Homes commission " + pct + "% = " + money(fee * 100) + ". <b>You earn " + money((total - fee) * 100) + ".</b>";
+  var p = +W.l.base_price || 0, wk = +W.l.weekend_price || 0, c = +W.l.cleaning_fee || 0, pct = ME.commission_pct != null ? ME.commission_pct : 15;
+  var big = $("#bigPrice"); if (big && document.activeElement !== big) big.value = W.l.base_price == null ? "" : W.l.base_price;
+  if (big) big.style.width = (Math.max(1, String(big.value || "").length) + 0.4) + "ch";
+  if (!p){ el.innerHTML = '<p class="m">Add a nightly price to see what guests pay and what you earn.</p>'; return; }
+  var mode = el.getAttribute("data-mode") || "night";
+  var nights = mode === "night" ? [p] : [p, p, p, p, wk || p, wk || p, p];
+  var nightsAmt = nights.reduce(function(a, b){ return a + b; }, 0);
+  var disc = mode === "week" && +W.l.weekly_discount_pct ? Math.round(nightsAmt * +W.l.weekly_discount_pct) / 100 : 0;
+  var total = nightsAmt - disc + c, fee = Math.round(total * pct) / 100;
+  var row = function(a, b, cls){ return '<div class="ge-row' + (cls ? " " + cls : "") + '"><span>' + a + "</span><span>" + b + "</span></div>"; };
+  el.innerHTML = '<div class="ge-seg" role="group" aria-label="Example stay"><button type="button" data-ge="night" aria-pressed="' + (mode === "night") + '">1 weeknight</button><button type="button" data-ge="week" aria-pressed="' + (mode === "week") + '">7 nights</button></div>' +
+    '<div class="ge-cols"><div class="ge-col"><small>Guest pays</small><b>' + money(total * 100) + "</b>" +
+      row(mode === "night" ? "1 night" : "7 nights" + (wk && wk !== p ? " (incl. Fri, Sat)" : ""), money(nightsAmt * 100)) + (disc ? row("Weekly discount", "-" + money(disc * 100), "ge-disc") : "") +
+      (c ? row("Cleaning fee", money(c * 100)) : "") + row("Booking fee", "£0", "ge-free") + "</div>" +
+    '<div class="ge-col ge-earn"><small>You earn</small><b>' + money((total - fee) * 100) + "</b>" + row("Guest total", money(total * 100)) + row("Book Homes " + pct + "%", "-" + money(fee * 100)) + "</div></div>";
 }
+$("#wzIn").addEventListener("click", function(e){ var g = e.target.closest && e.target.closest("[data-ge]"); if (g){ $("#example").setAttribute("data-mode", g.getAttribute("data-ge")); example(); } });
+function money0(v){ return v == null || v === "" ? "" : v; }
+function priceStep(){
+  var l = W.l, pets = !!l.pets_allowed;
+  var row = function(path, label, sub, extra){ return '<label class="prow"><span><b>' + label + "</b>" + (sub ? "<small>" + sub + "</small>" : "") + '</span><span class="pin">£<input type="number" inputmode="decimal" data-in="' + path + '" value="' + esc(money0(get(path))) + '" ' + (extra || 'min="0" max="2000" step="1"') + "></span></label>"; };
+  var pct = function(path, label, sub, max){ return '<label class="prow"><span><b>' + label + "</b><small>" + sub + '</small></span><span class="pin">' + '<input type="number" inputmode="numeric" data-in="' + path + '" value="' + esc(money0(get(path))) + '" min="0" max="' + max + '">%</span></label>'; };
+  var num = function(path, label, sub, max){ return '<label class="prow"><span><b>' + label + "</b><small>" + sub + '</small></span><span class="pin"><input type="number" inputmode="numeric" data-in="' + path + '" value="' + esc(money0(get(path))) + '" min="1" max="' + max + '"></span></label>'; };
+  return '<div class="bigp"><span>£</span><input id="bigPrice" type="number" inputmode="numeric" data-in="base_price" value="' + esc(money0(l.base_price)) + '" min="10" max="10000" step="1" aria-label="Price per night in pounds" placeholder="0"></div><p class="bigp-sub">per night, Sunday to Thursday</p>' +
+    '<div class="example ge" id="example" data-mode="night"></div>' +
+    '<h3 class="psec">Weekend and custom prices</h3>' + row("weekend_price", "Weekend price", "Friday and Saturday nights. Leave blank to use your nightly price.", 'min="10" max="10000" step="1"') +
+    '<p class="pnote">Custom prices for single dates (match days, Christmas, the Grand National) are set in your Calendar once the listing is saved.</p>' +
+    '<h3 class="psec">Fees</h3>' + row("cleaning_fee", "Cleaning fee", "Once per stay. Shown inside the total, never added at checkout.") +
+    row("extra_guest_fee", "Extra guest fee", "Per guest, per night, above the number below.") + num("guests_included", "Guests included", "Guests covered by the nightly price.", 30) +
+    '<label class="prow"><span><b>Pets allowed</b><small>Show your home to guests travelling with a pet.</small></span><input type="checkbox" class="tg" data-sw="pets_allowed"' + (pets ? " checked" : "") + "></label>" +
+    (pets ? row("pet_fee", "Pet fee", "Once per stay.", 'min="0" max="500" step="1"') : "") +
+    '<h3 class="psec">Discounts</h3>' + pct("weekly_discount_pct", "Weekly discount", "For stays of 7 nights or more.", 50) + pct("monthly_discount_pct", "Monthly discount", "For stays of 28 nights or more. Popular with work crews.", 60) +
+    '<h3 class="psec">Length of stay</h3>' + num("min_nights", "Minimum nights", "Shortest stay you accept.", 90) + num("max_nights", "Maximum nights", "Longest stay you accept.", 365);
+}
+/* Step 1 for new listings: import from Airbnb (the backend reads the public listing page), with a manual fallback */
+var IMP_KEYS = ["title", "description", "property_type", "area", "city", "lat", "lng", "max_guests", "bedrooms", "beds", "baths", "amenities", "house_rules", "check_in_time", "check_out_time", "base_price", "cleaning_fee", "airbnb_url"];
+function importStep(){
+  if (W.imported) return importDone();
+  return '<div class="imp"><label class="f2">Airbnb listing link<input type="url" id="impUrl" inputmode="url" autocomplete="off" placeholder="https://www.airbnb.co.uk/rooms/12345678" value="' + esc(W.l.airbnb_url || "") + '"></label>' +
+    '<button type="button" class="btn block" id="impGo">' + icon("bolt") + "Import my listing</button>" +
+    '<div id="impState" aria-live="polite"></div>' +
+    '<div class="imp-how"><b>Where do I find the link?</b><span>Open your listing on airbnb.co.uk, tap Share, then Copy link. On the Airbnb app: your listing, Share, Copy.</span></div>' +
+    '<p class="imp-alt">Not on Airbnb? Tap <b>Start from scratch</b> below. It takes about 10 minutes.</p></div>';
+}
+function importDone(){
+  var j = W.imported, got = [];
+  if (j.title) got.push("Title");
+  if (j.description) got.push("Description");
+  if (j.max_guests) got.push(j.max_guests + " guests, " + (j.bedrooms || 0) + " bedrooms");
+  if (j.amenities && j.amenities.length) got.push(j.amenities.length + " amenities");
+  if (W.photos.length) got.push(W.photos.length + " photos");
+  if (j.base_price) got.push("Price from £" + j.base_price);
+  return '<div class="imp-ok">' + icon("check") + '<div><b>Imported from Airbnb</b><span>' + esc(j.title || "Your listing") + "</span></div></div>" +
+    '<ul class="imp-got">' + got.map(function(g){ return "<li>" + icon("check") + esc(g) + "</li>"; }).join("") + "</ul>" +
+    '<p class="lead" style="margin-top:16px">Tap Next to check each screen. Add the area (not the street address) and your map pin, then set your price.</p>';
+}
+function impProgress(i){
+  var steps = ["Reading your Airbnb listing", "Copying details and amenities", "Copying photos"];
+  $("#impState").innerHTML = '<ul class="imp-prog">' + steps.map(function(t, k){ return '<li class="' + (k < i ? "done" : k === i ? "now" : "") + '"><span class="dotx">' + (k < i ? icon("check") : "") + "</span>" + t + "</li>"; }).join("") + "</ul>";
+}
+$("#wzIn").addEventListener("click", function(e){
+  if (!e.target.closest || !e.target.closest("#impGo")) return;
+  var url = ($("#impUrl").value || "").trim(), b = $("#impGo");
+  if (!/^https:\/\/([a-z]+\.)?airbnb\.[a-z.]+\/(rooms|h)\/[^\s]+$/i.test(url) && !/^https:\/\/(abnb\.me|airbnb\.app\.link)\/[^\s]+$/i.test(url)){
+    $("#impState").innerHTML = '<p class="msg err">That doesn\'t look like an Airbnb listing link. It usually looks like https://www.airbnb.co.uk/rooms/12345678</p>'; return;
+  }
+  b.disabled = true; $("#wzNext").disabled = true; impProgress(0);
+  var k = 0, tick = setInterval(function(){ if (k < 2) impProgress(++k); }, 1800);
+  api("bookhomes-host", {action: "import_airbnb", url: url, listing_id: W.id || undefined}).then(function(j){
+    clearInterval(tick); impProgress(3);
+    var l = j.listing || j || {}, keys = [];
+    IMP_KEYS.forEach(function(key){ if (l[key] != null && l[key] !== "" && !(Array.isArray(l[key]) && !l[key].length)){ W.l[key] = l[key]; keys.push(key); } });
+    W.l.airbnb_url = url; if (keys.indexOf("airbnb_url") < 0) keys.push("airbnb_url");
+    if (j.id) W.id = +j.id;
+    if (Array.isArray(j.photos)) W.photos = j.photos.filter(function(p){ return p && p.url; });
+    W.imported = l; STEPS[0].f = keys;
+    setTimeout(function(){ $("#wzNext").disabled = false; drawStep(); }, 400);
+  }).catch(function(err){
+    clearInterval(tick); b.disabled = false; $("#wzNext").disabled = false;
+    var m = /unknown action/i.test(err.message || "") ? "Import isn't switched on yet." : (err.message || "We couldn't read that listing.");
+    $("#impState").innerHTML = '<p class="msg err">' + esc(m) + ' You can fill in the details yourself instead: tap <b>Start from scratch</b>.</p>';
+  });
+});
 function photoStep(){
   return '<label class="drop">' + icon("camera") + '<b>Upload photos</b><br><span style="color:var(--muted);font-size:14px">JPG, PNG or WebP, up to 10 MB each</span><input type="file" id="phFiles" accept="image/jpeg,image/png,image/webp" multiple hidden></label><p class="m" id="phOut" style="margin-top:8px"></p><div class="phgrid" id="phGrid">' + photoTiles() + "</div>";
 }

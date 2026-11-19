@@ -5,80 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1f4d3a">
-<title>Book Homes admin - Zermatt Lodge</title>
+<title>Book Homes admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
+/* Book Homes admin: sidebar dashboard. Same brand as the site (green, Plus Jakarta Sans), quiet greys, one accent for "needs you". */
 :root{
-  --ink:#1b1f1d; --muted:#5d6560; --line:#e7e3dc; --bg:#fff; --soft:#f7f4ef; --cream:#fbf8f3;
+  --ink:#222; --ink-2:#3d3d3d; --muted:#6a6a6a; --line:#e6e6e6; --line-2:#efefef; --bg:#fff; --soft:#f7f7f7; --cream:#f7f7f5;
   --brand:#1f4d3a; --brand-2:#2c6a50; --brand-ink:#163a2b; --brand-tint:#e9f1ec;
   --accent:#c8873a; --accent-ink:#8a5a1f; --accent-tint:#f8efe3; --red:#b42318; --red-tint:#fdeceb;
-  --radius:14px; --shadow:0 1px 2px rgba(20,30,25,.06),0 8px 24px rgba(20,30,25,.08);
+  --radius:12px; --shadow:0 1px 2px rgba(0,0,0,.05); --side:248px;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
-button,input,select{font:inherit;color:inherit}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:var(--brand)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
-.top{position:sticky;top:0;z-index:20;background:var(--brand);color:#fff;padding:4px 12px 4px 16px;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.top h1{font-family:Fraunces,Georgia,serif;font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
-.top h1 i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.top .who{font-size:13px;opacity:.9;display:flex;gap:10px;align-items:center;min-width:0}
-.top .who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:44vw}
-.top button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:8px;padding:6px 12px;font-size:14px;min-height:44px;min-width:44px}
-nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:52px;z-index:15;scrollbar-width:none}
-nav.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;white-space:nowrap;font-weight:600;font-size:14px;color:var(--muted)}
-nav.tabs button[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
-main{max-width:1100px;margin:0 auto;padding:16px 12px 60px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;margin-bottom:14px}
-.card h2{font-family:Fraunces,Georgia,serif;font-size:18px;font-weight:600;margin-bottom:10px;color:var(--brand-ink)}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:14px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
-.stat small{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
-.stat b{display:block;font-size:26px;font-family:Fraunces,Georgia,serif;color:var(--brand-ink);margin-top:4px}
-.stat span{font-size:13px;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:9px 16px;font-weight:600;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:6px}
+.hidden{display:none !important}
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);padding:0 16px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top h1{font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+.top h1 i{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:8px;background:var(--brand);font-style:normal}
+.top h1 i:before{content:"";width:12px;height:9px;background:#fff;clip-path:polygon(0 100%,40% 0,62% 50%,74% 30%,100% 100%)}
+.top h1 small{font-size:13px;font-weight:500;color:var(--muted);border-left:1px solid var(--line);padding-left:10px}
+.top .who{font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:center;min-width:0}
+.top .who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:36vw}
+.top .who button{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;min-height:36px}
+.menubtn{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;align-items:center;justify-content:center}
+.menubtn span,.menubtn span:before,.menubtn span:after{display:block;width:16px;height:1.5px;background:var(--ink);position:relative;content:""}
+.menubtn span:before{position:absolute;top:-5px}.menubtn span:after{position:absolute;top:5px}
+/* layout */
+.shell{display:grid;grid-template-columns:var(--side) minmax(0,1fr);min-height:calc(100vh - 60px)}
+nav.tabs{position:sticky;top:60px;align-self:start;height:calc(100vh - 60px);overflow-y:auto;background:#fff;border-right:1px solid var(--line);padding:16px 12px 24px;display:flex;flex-direction:column;gap:2px}
+nav.tabs .grp{font-size:12px;font-weight:600;color:var(--muted);padding:16px 12px 6px}
+nav.tabs .grp:first-child{padding-top:4px}
+nav.tabs button,nav.tabs a{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;background:none;border-radius:8px;padding:9px 12px;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;min-height:40px;transition:background .12s}
+nav.tabs button:hover,nav.tabs a:hover{background:var(--soft)}
+nav.tabs button[aria-selected="true"]{background:var(--brand-tint);color:var(--brand-ink);font-weight:700}
+nav.tabs svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+nav.tabs .newb{margin-left:auto}
+nav.tabs .ext{margin-top:auto;border-top:1px solid var(--line-2);padding-top:12px}
+nav.tabs .ext a{font-weight:600;color:var(--brand)}
+main{max-width:1180px;width:100%;padding:28px 32px 80px}
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.ph h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.ph p{color:var(--muted);font-size:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h2{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--ink)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.stat small{display:block;font-size:13px;font-weight:500;color:var(--muted)}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-top:4px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--muted)}
+.stat.hot{border-color:var(--accent);background:var(--accent-tint)}
+.stat.hot b{color:var(--accent-ink)}
+button.stat{text-align:left;cursor:pointer;transition:border-color .15s}
+button.stat:hover{border-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;background:var(--brand);color:#fff;border:0;border-radius:8px;padding:9px 16px;font-weight:600;font-size:14px;text-decoration:none;transition:background .15s,transform .1s}
 .btn:hover{background:var(--brand-2)}
+.btn:active{transform:scale(.98)}
 .btn.amber{background:var(--accent);color:#1b1307}
-.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid #c4c4c4}
+.btn.ghost:hover{border-color:var(--ink);background:#fff}
 .btn.sm{min-height:34px;padding:5px 12px;font-size:13px}
-.btn:disabled{opacity:.55;cursor:not-allowed}
-label.f{display:block;font-size:13px;font-weight:600;margin-bottom:10px}
-label.f input,label.f select{display:block;width:100%;margin-top:4px;font-size:16px;padding:10px 12px;border:1px solid #a9aeaa;border-radius:10px;background:#fff}
-.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+label.f{display:block;font-size:13px;font-weight:600;margin-bottom:12px}
+label.f input,label.f select{display:block;width:100%;margin-top:6px;font-size:15px;padding:10px 12px;border:1px solid #c4c4c4;border-radius:8px;background:#fff;min-height:44px}
+label.f input:focus,label.f select:focus,.tools input:focus{outline:2px solid var(--ink);outline-offset:-1px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
 .row > *{flex:1;min-width:140px}
-.list{display:grid;gap:10px}
-.item{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+/* list rows (read like a table) */
+.list{display:flex;flex-direction:column}
+.item{border-bottom:1px solid var(--line-2);padding:14px 4px;background:#fff;transition:background .12s}
+.item:last-child{border-bottom:0}
+.list .item.click{cursor:pointer;border-radius:8px}
+.list .item.click:hover{background:var(--soft)}
 .item .h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600}
-.item .m{font-size:13.5px;color:var(--muted);margin-top:4px;word-break:break-word}
-.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;background:var(--soft);color:var(--muted)}
+.item .m{font-size:13.5px;color:var(--muted);margin-top:3px;word-break:break-word}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:var(--soft);color:var(--muted);white-space:nowrap;height:fit-content}
+.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7}
 .pill.paid,.pill.ok{background:var(--brand-tint);color:var(--brand)}
 .pill.held,.pill.pending,.pill.warn{background:var(--accent-tint);color:var(--accent-ink)}
 .pill.cancelled{background:#eee;color:#555}
 .pill.cancelled_conflict,.pill.error,.pill.conflict{background:var(--red-tint);color:var(--red)}
-.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.empty{color:var(--muted);font-size:14px;padding:8px 0}
+.list>.empty:only-child,.zero{text-align:center;padding:36px 12px;color:var(--muted)}
 .err{background:var(--red-tint);color:var(--red);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
 .okmsg{background:var(--brand-tint);color:var(--brand);border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{font-size:12.5px;font-weight:600;color:var(--muted)}
 .tw{overflow-x:auto}
-.login{max-width:440px;margin:32px auto;padding:0 12px}
+/* toolbar: search + filter */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.tools input[type=search]{flex:1;min-width:200px;height:42px;border:1px solid #c4c4c4;border-radius:999px;padding:0 16px 0 40px;font-size:14px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%236a6a6a' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='m14 14-3.2-3.2'/%3E%3C/svg%3E") no-repeat 16px center}
+.tools label.f{margin:0;flex:0 1 220px}
+.tools label.f select{margin-top:0}
+.count{font-size:13px;color:var(--muted);padding:4px 4px 8px}
+/* overview */
+.two{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:start}
+.todo{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;background:none;padding:12px 4px;border-bottom:1px solid var(--line-2);font-size:14px}
+.todo:last-child{border-bottom:0}
+.todo b{font-size:20px;font-weight:800;min-width:34px;color:var(--accent-ink)}
+.todo.ok b{color:var(--brand)}
+.todo span{flex:1}
+.todo em{font-style:normal;color:var(--muted);font-size:13px}
+.bars{display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:8px}
+.bars div{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bars i{display:block;width:100%;max-width:36px;background:var(--brand);border-radius:6px 6px 2px 2px;min-height:2px}
+.bars small{font-size:11.5px;color:var(--muted)}
+/* drawer */
+.drawer{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.35);display:flex;justify-content:flex-end;animation:fd .15s}
+.drawer>div{width:min(520px,100%);height:100%;background:#fff;overflow-y:auto;padding:20px 24px 40px;box-shadow:-8px 0 32px rgba(0,0,0,.15);animation:sl .22s ease-out}
+.drawer .dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.drawer .dh b{font-size:18px}
+.drawer .x{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:18px;line-height:1}
+.drawer .item{border:0;padding:0}
+.drawer .item .h{font-size:18px;font-weight:700;flex-direction:column;align-items:flex-start;gap:8px}
+.drawer .item .m{font-size:14.5px;color:var(--ink-2);padding:10px 0;border-bottom:1px solid var(--line-2);margin:0}
+.drawer .acts{margin-top:16px}
+@keyframes fd{from{opacity:0}to{opacity:1}}
+@keyframes sl{from{transform:translateX(40px);opacity:.4}to{transform:none;opacity:1}}
+/* login */
+.login{max-width:440px;margin:48px auto;padding:0 16px}
+.login .card{padding:28px;border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.login .card h2{font-size:24px;font-weight:800;letter-spacing:-.02em}
 .login p{color:var(--muted);margin-bottom:14px}
-.login .btn{min-height:48px;width:100%;font-size:16px}
+.login .btn{min-height:50px;width:100%;font-size:16px}
 .login label.f{font-size:14px}
-.pw{position:relative}
+.pw{position:relative;display:block}
 .pw input{padding-right:72px !important}
-.pw button{position:absolute;right:4px;bottom:2px;min-height:44px;min-width:60px;border:0;background:transparent;color:var(--brand);font-weight:700;font-size:14px}
-.tick{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;margin:4px 0 14px;background:var(--brand-tint);border-radius:10px;cursor:pointer;min-height:44px}
-.tick input{width:24px;height:24px;flex:0 0 24px;margin-top:1px;accent-color:var(--brand)}
-.tick b{display:block;font-size:15px;color:var(--brand-ink)}
+.pw button{position:absolute;right:4px;bottom:0;min-height:44px;min-width:60px;border:0;background:transparent;color:var(--ink);font-weight:600;font-size:13px;text-decoration:underline}
+.tick{display:flex;gap:12px;align-items:flex-start;padding:12px;margin:4px 0 16px;background:var(--soft);border-radius:10px;cursor:pointer;min-height:44px}
+.tick input{width:20px;height:20px;flex:0 0 20px;margin-top:2px;accent-color:var(--brand)}
+.tick b{display:block;font-size:14px}
 .tick span{display:block;font-size:13px;color:var(--muted)}
-.links{display:flex;flex-direction:column;gap:2px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
-.linkbtn{background:none;border:0;color:var(--brand);font-weight:600;font-size:15px;min-height:44px;text-align:left;padding:0 2px;text-decoration:underline;text-underline-offset:3px}
-.linkbtn:hover{color:var(--accent-ink)}
+.links{display:flex;flex-direction:column;gap:2px;margin-top:12px;border-top:1px solid var(--line);padding-top:8px}
+.linkbtn{background:none;border:0;color:var(--ink);font-weight:600;font-size:14px;min-height:44px;text-align:left;padding:0 2px;text-decoration:underline;text-underline-offset:3px}
 .steps{counter-reset:st;list-style:none;margin:0 0 6px}
 .steps li{counter-increment:st;position:relative;padding-left:34px;margin-bottom:14px}
-.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#1b1307;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
 .qr{display:block;width:200px;height:200px;max-width:100%;margin:8px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px}
 .secret{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;letter-spacing:.06em;word-break:break-all;background:var(--soft);border-radius:8px;padding:8px 10px;margin-top:4px;user-select:all}
 .code{font-size:24px !important;letter-spacing:.35em;text-align:center;font-family:ui-monospace,Menlo,Consolas,monospace}
@@ -86,12 +154,13 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 .meter i{display:block;height:100%;width:0;background:var(--red);transition:width .2s}
 .hint{font-size:13px;color:var(--muted);margin-bottom:12px}
 .muted{color:var(--muted);font-size:14px}
-.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cal-h b{font-family:Fraunces,Georgia,serif;font-size:18px}
+/* calendar */
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-h b{font-size:18px;font-weight:700}
 .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal .dow{font-size:11px;font-weight:700;color:var(--muted);text-align:center;padding:4px 0}
-.cal .d{min-height:64px;border-radius:8px;border:1px solid var(--line);padding:4px;font-size:11px;background:#fff;overflow:hidden}
-.cal .d .n{font-weight:700;font-size:12px}
+.cal .dow{font-size:12px;font-weight:600;color:var(--muted);text-align:center;padding:4px 0}
+.cal .d{min-height:72px;border-radius:10px;border:1px solid var(--line);padding:6px;font-size:11.5px;background:#fff;overflow:hidden}
+.cal .d .n{font-weight:700;font-size:13px}
 .cal .d .p{color:var(--muted)}
 .cal .d .t{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cal .d.x{background:transparent;border:0}
@@ -99,20 +168,35 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
 .cal .d.direct .p{color:#dfe9e3}
 .cal .d.held{background:var(--accent-tint);border-color:var(--accent)}
 .cal .d.manual{background:repeating-linear-gradient(45deg,#f3e3cf,#f3e3cf 6px,#fff 6px,#fff 12px);border-color:var(--accent)}
-.cal .d.channel{background:#e4e7e5;color:#333}
-.cal .d.today{outline:2px solid var(--accent);outline-offset:-2px}
-.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;margin-top:10px;color:var(--muted)}
+.cal .d.channel{background:#ececec;color:#333}
+.cal .d.today{outline:2px solid var(--ink);outline-offset:-2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin-top:12px;color:var(--muted)}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-2px;border:1px solid var(--line)}
-.hidden{display:none !important}
-.newb{display:inline-block;background:var(--accent);color:#1b1307;font-size:11px;font-weight:800;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
-.acts{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.newb{display:inline-block;background:var(--accent);color:#1b1307;font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:1px}
+.acts{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .acts .msg{font-size:13px;color:var(--muted)}
-@media (max-width:560px){ .cal .d{min-height:52px;font-size:10px} .cal .d .t{display:none} }
+.scrim{display:none}
+@media (max-width:959px){
+  .menubtn{display:inline-flex}
+  .top h1 small{display:none}
+  .shell{grid-template-columns:1fr}
+  nav.tabs{position:fixed;top:60px;left:0;bottom:0;height:auto;width:min(300px,86vw);z-index:40;transform:translateX(-105%);transition:transform .22s ease-out;box-shadow:8px 0 32px rgba(0,0,0,.12)}
+  body.navopen nav.tabs{transform:none}
+  body.navopen .scrim{display:block;position:fixed;inset:60px 0 0;z-index:35;background:rgba(0,0,0,.3)}
+  main{padding:20px 16px 64px}
+  .ph h2{font-size:22px}
+  .two{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat b{font-size:22px}
+}
+@media (max-width:560px){ .cal .d{min-height:54px;font-size:10px;padding:4px} .cal .d .t{display:none} .top .who span{display:none} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <header class="top">
-  <h1><i aria-hidden="true"></i>Book Homes admin</h1>
+  <div style="display:flex;align-items:center;gap:10px"><button type="button" class="menubtn hidden" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span></button>
+  <h1><i aria-hidden="true"></i>Book Homes<small>Admin</small></h1></div>
   <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" data-signout>Sign out</button></div>
 </header>
 
@@ -193,26 +277,40 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
   </div>
 </div>
 
-<div id="viewApp" class="hidden">
-  <nav class="tabs" role="tablist" aria-label="Admin sections">
-    <button type="button" role="tab" data-tab="dash" aria-selected="true">Dashboard</button>
-    <button type="button" role="tab" data-tab="bookings" aria-selected="false">Bookings</button>
-    <button type="button" role="tab" data-tab="calendar" aria-selected="false">Calendar</button>
-    <button type="button" role="tab" data-tab="leads" aria-selected="false">Sign-ups</button>
-    <button type="button" role="tab" data-tab="blocks" aria-selected="false">Block dates</button>
-    <button type="button" role="tab" data-tab="emails" aria-selected="false">Emails</button>
-    <button type="button" role="tab" data-tab="log" aria-selected="false">Sync log</button>
-    <button type="button" role="tab" data-tab="mphosts" aria-selected="false">Hosts<span class="newb hidden" id="mpHostsN"></span></button>
-    <button type="button" role="tab" data-tab="mplistings" aria-selected="false">Listings<span class="newb hidden" id="mpListN"></span></button>
-    <button type="button" role="tab" data-tab="mpbookings" aria-selected="false">All bookings</button>
-    <button type="button" role="tab" data-tab="mppayouts" aria-selected="false">Payouts</button>
-    <button type="button" role="tab" data-tab="mpusers" aria-selected="false">Users</button>
-    <button type="button" role="tab" data-tab="mpsettings" aria-selected="false">Settings</button>
+<div id="viewApp" class="hidden shell">
+  <nav class="tabs" role="tablist" aria-label="Admin sections" id="sideNav">
+    <p class="grp">Platform</p>
+    <button type="button" role="tab" data-tab="mpover" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
+    <button type="button" role="tab" data-tab="mplistings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>Listings<span class="newb hidden" id="mpListN"></span></button>
+    <button type="button" role="tab" data-tab="mphosts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Hosts<span class="newb hidden" id="mpHostsN"></span></button>
+    <button type="button" role="tab" data-tab="mpbookings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Bookings</button>
+    <button type="button" role="tab" data-tab="mppayouts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 7c0-2.2-1.8-4-4-4s-4 1.8-4 4v14"/><path d="M6 21h12M6 13h8"/></svg>Payouts<span class="newb hidden" id="mpPayN"></span></button>
+    <button type="button" role="tab" data-tab="mpusers" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>Users</button>
+    <button type="button" role="tab" data-tab="emails" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Emails</button>
+    <button type="button" role="tab" data-tab="mpsettings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</button>
+    <p class="grp">Zermatt Lodge system</p>
+    <button type="button" role="tab" data-tab="dash" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Today</button>
+    <button type="button" role="tab" data-tab="bookings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Direct bookings</button>
+    <button type="button" role="tab" data-tab="calendar" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
+    <button type="button" role="tab" data-tab="blocks" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Block dates</button>
+    <button type="button" role="tab" data-tab="leads" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg>Sign-ups</button>
+    <button type="button" role="tab" data-tab="log" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Sync log</button>
+    <div class="ext"><p class="grp" style="padding-top:0">My listings</p><a href="/host" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>Open host dashboard</a><p class="muted" style="font-size:12.5px;padding:4px 12px 0">Calendar, prices, bookings and earnings for your own homes. Same login.</p></div>
   </nav>
+  <div class="scrim" id="navScrim"></div>
   <main>
     <div id="appErr"></div>
 
-    <section data-panel="dash">
+    <div class="ph"><div><h2 id="phTitle">Overview</h2><p id="phSub">Everything across Book Homes</p></div></div>
+    <section data-panel="mpover">
+      <div class="grid" id="ovKpis"><div class="stat"><small>Loading</small><b>...</b></div></div>
+      <div class="two">
+        <div class="card"><h2>Bookings by month</h2><div class="bars" id="ovBars"></div><p class="muted" style="font-size:12.5px;margin-top:8px">Paid bookings by check-in month, all homes.</p></div>
+        <div class="card"><h2>Needs you</h2><div id="ovTodo"></div></div>
+      </div>
+      <div class="card"><h2>Latest bookings</h2><div class="list" id="ovLatest"></div></div>
+    </section>
+    <section data-panel="dash" class="hidden">
       <div class="grid" id="dashStats"></div>
       <div class="card"><h2>Today</h2><div id="dashToday" class="list"></div></div>
       <div class="card"><h2>Next 5 bookings</h2><div id="dashNext" class="list"></div></div>
@@ -298,24 +396,24 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
     <!-- Marketplace (bookhomes schema), loaded through the bookhomes-admin Edge Function -->
     <div id="mpErr"></div>
     <section data-panel="mphosts" class="hidden">
-      <div class="card"><h2>Hosts waiting for approval</h2><div id="mpHostsPending" class="list"></div></div>
-      <div class="card"><h2>All hosts</h2><div id="mpHostsAll" class="list"></div></div>
+      <div class="card"><h2>Waiting for approval</h2><div id="mpHostsPending" class="list"></div></div>
+      <div class="card"><h2>All hosts</h2><div class="tools"><input type="search" data-search="#mpHostsAll" placeholder="Search hosts by name, email or company" aria-label="Search hosts by name, email or company"></div><div id="mpHostsAll" class="list"></div></div>
     </section>
     <section data-panel="mplistings" class="hidden">
       <div class="card">
-        <div class="row"><label class="f">Show<select id="mpListFilter"><option value="pending" selected>Waiting for approval</option><option value="">All</option><option value="approved">Live</option><option value="paused">Paused</option><option value="rejected">Rejected</option><option value="draft">Drafts</option><option value="edited">Edited since approval</option></select></label></div>
+        <div class="tools"><input type="search" data-search="#mpListings" placeholder="Search listings by title, area or host" aria-label="Search listings by title, area or host"><label class="f"><span class="hidden">Show</span><select id="mpListFilter" aria-label="Show"><option value="pending" selected>Waiting for approval</option><option value="">All</option><option value="approved">Live</option><option value="paused">Paused</option><option value="rejected">Rejected</option><option value="draft">Drafts</option><option value="edited">Edited since approval</option></select></label></div>
         <div id="mpListings" class="list"></div>
       </div>
     </section>
     <section data-panel="mpbookings" class="hidden">
       <div class="card">
-        <div class="row"><label class="f">Status<select id="mpBkFilter"><option value="paid" selected>Paid</option><option value="">All</option><option value="held">In checkout</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Clash, refunded</option></select></label></div>
+        <div class="tools"><input type="search" data-search="#mpBookings" placeholder="Search guest, email or home" aria-label="Search guest, email or home"><label class="f"><span class="hidden">Status</span><select id="mpBkFilter" aria-label="Status"><option value="paid" selected>Paid</option><option value="">All</option><option value="held">In checkout</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Clash, refunded</option></select></label></div>
         <div id="mpBookings" class="list"></div>
       </div>
     </section>
     <section data-panel="mppayouts" class="hidden">
       <div class="grid" id="mpPayStats"></div>
-      <div class="card"><h2>Payouts</h2><div id="mpPayouts" class="list"></div></div>
+      <div class="card"><h2>Payouts</h2><div class="tools"><input type="search" data-search="#mpPayouts" placeholder="Search host or home" aria-label="Search host or home"></div><div id="mpPayouts" class="list"></div></div>
     </section>
     <section data-panel="mpusers" class="hidden">
       <div class="card"><h2>Invite a host or admin</h2><div id="mpInvMsg"></div>
@@ -325,7 +423,7 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute
           <label class="f">Role<select id="mpInvRole"><option value="host">Host</option><option value="admin">Admin</option></select></label>
         </div><button class="btn" type="submit">Send invite</button>
         <p class="muted" style="margin-top:8px">New people get an email to set a password. Invited hosts are approved straight away; their listings still need approval.</p></form></div>
-      <div class="card"><h2>Users</h2><div id="mpUsers" class="list"></div></div>
+      <div class="card"><h2>Users</h2><div class="tools"><input type="search" data-search="#mpUsers" placeholder="Search name or email" aria-label="Search name or email"></div><div id="mpUsers" class="list"></div></div>
     </section>
     <section data-panel="mpsettings" class="hidden">
       <div class="card"><h2>Commission</h2><div id="mpSetMsg"></div>
@@ -508,7 +606,8 @@ function enterApp(){
   $("#trustStatus").textContent = until
     ? "This browser is trusted: you'll stay signed in here until " + new Intl.DateTimeFormat("en-GB", {day: "numeric", month: "long", year: "numeric"}).format(new Date(until)) + ". After that you'll need your password and code again."
     : "This browser isn't trusted: you'll be signed out when you close this tab.";
-  if (!started){ started = true; loadAll(); }
+  $("#menuBtn").classList.remove("hidden");
+  if (!started){ started = true; loadAll(); mpLoad(); }
 }
 
 (function(){
@@ -657,9 +756,19 @@ $("#signOutAll").addEventListener("click", function(){
   signOut("global");
 });
 
-/* ---------- tabs ---------- */
+/* ---------- tabs (sidebar) ---------- */
+var TITLES = {mpover: ["Overview", "Everything across Book Homes"], mplistings: ["Listings", "Approve new homes and check edits"], mphosts: ["Hosts", "Approve hosts, set commission overrides"],
+  mpbookings: ["Bookings", "Every booking on every home, including Zermatt Lodge"], mppayouts: ["Payouts", "What hosts are owed and what has been paid"], mpusers: ["Users", "Invite hosts and admins, change roles"],
+  emails: ["Emails", "Every email the system sent, and any that failed"], mpsettings: ["Settings", "Commission, Stripe Connect and the change log"],
+  dash: ["Zermatt Lodge today", "Arrivals, departures and sync health"], bookings: ["Direct bookings", "Zermatt Lodge bookings made on this website"], calendar: ["Calendar", "Zermatt Lodge: direct bookings, channel blocks and your blocks"],
+  blocks: ["Block dates", "Close nights on every channel"], leads: ["Sign-ups", "Emails from the 5% offer"], log: ["Sync log", "Calendar sync messages, conflicts and errors"]};
+function navOpen(on){ document.body.classList.toggle("navopen", on); $("#menuBtn").setAttribute("aria-expanded", on ? "true" : "false"); }
+$("#menuBtn").addEventListener("click", function(){ navOpen(!document.body.classList.contains("navopen")); });
+$("#navScrim").addEventListener("click", function(){ navOpen(false); });
 $$("nav.tabs button").forEach(function(b){
   b.addEventListener("click", function(){
+    var t = TITLES[b.getAttribute("data-tab")] || ["", ""];
+    $("#phTitle").textContent = t[0]; $("#phSub").textContent = t[1]; navOpen(false); window.scrollTo(0, 0);
     $$("nav.tabs button").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
     $$("[data-panel]").forEach(function(p){ p.classList.toggle("hidden", p.getAttribute("data-panel") !== b.getAttribute("data-tab")); });
     if (b.getAttribute("data-tab") === "calendar") renderCal();
@@ -956,7 +1065,7 @@ function mpRender(){
   var bf = $("#mpBkFilter").value;
   var bks = MP.bookings.filter(function(b){ return !bf || b.status === bf; });
   $("#mpBookings").innerHTML = '<p class="empty">' + bks.length + ' booking(s)</p>' + listOr(bks, function(b){
-    return '<div class="item"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.listing_title) + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + '</span></div>' +
+    return '<div class="item" data-bk="' + esc(b.id) + '"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.listing_title) + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + '</span></div>' +
       '<div class="m">' + dfmt(String(b.check_in).slice(0, 10)) + " to " + dfmt(String(b.check_out).slice(0, 10)) + " · " + b.nights + " nights · " + b.guests + " guests · " + (b.source === "zermatt" ? "Zermatt system" : "marketplace") + '</div>' +
       '<div class="m"><b>' + money(b.amount_pence) + '</b>' + (b.source === "bookhomes" ? " · commission " + money(b.fee_pence) + " · host " + money(b.host_payout_pence) + " (" + esc(b.payout_mode) + ")" : "") + " · " + esc(b.guest_email) + (b.stripe_payment_intent_id ? " · " + stripeLink(b.stripe_payment_intent_id) : "") + '</div></div>';
   }, "No bookings.");
@@ -980,6 +1089,108 @@ function mpRender(){
     : "Not tested yet. It is checked the first time a host taps 'Connect payouts with Stripe'.";
   $("#mpAudit").innerHTML = listOr(MP.audit.slice(0, 40), function(a){ return '<div class="item"><div class="h"><span>' + esc(a.action) + " · " + esc(a.entity) + " " + esc(a.entity_id || "") + '</span><span class="muted">' + esc(tfmt(a.at)) + '</span></div><div class="m">' + esc(a.actor_email || "system") + (a.details ? " · " + esc(JSON.stringify(a.details)) : "") + '</div></div>'; }, "Nothing yet.");
 }
+/* ---------- overview: KPIs, monthly bars, to-do ---------- */
+function ovRender(){
+  if (!MP) return;
+  var today = ukToday(), month = today.slice(0, 7), in30 = addDays(today, 30);
+  var paid = MP.bookings.filter(function(b){ return b.status === "paid"; });
+  var thisM = paid.filter(function(b){ return String(b.paid_at || b.created_at || b.check_in).slice(0, 7) === month; });
+  var rev = thisM.reduce(function(a, b){ return a + (+b.amount_pence || 0); }, 0);
+  var com = thisM.reduce(function(a, b){ return a + (b.source === "bookhomes" ? (+b.fee_pence || 0) : 0); }, 0);
+  var live = MP.listings.filter(function(l){ return l.status === "approved"; });
+  var nights = 0;
+  paid.forEach(function(b){ var ci = String(b.check_in).slice(0, 10), co = String(b.check_out).slice(0, 10); for (var d = ci < today ? today : ci; d < co && d < in30; d = addDays(d, 1)) nights++; });
+  var occ = live.length ? Math.round(nights / (live.length * 30) * 100) : 0;
+  var pendL = MP.listings.filter(function(l){ return l.status === "pending"; }).length, pendH = MP.hosts.filter(function(h){ return !h.approved && h.role === "host"; }).length;
+  var edited = MP.listings.filter(function(l){ return l.edited_since_approval && l.status === "approved"; }).length;
+  var due = MP.payouts.filter(function(p){ return p.status === "manual_pending"; });
+  var dueAmt = due.reduce(function(a, p){ return a + p.amount_pence; }, 0);
+  var mName = new Intl.DateTimeFormat("en-GB", {month: "long"}).format(new Date());
+  var k = function(lbl, val, sub, tab, hot){ return '<button type="button" class="stat' + (hot ? " hot" : "") + '"' + (tab ? ' data-go="' + tab + '"' : "") + '><small>' + lbl + "</small><b>" + val + "</b><span>" + sub + "</span></button>"; };
+  $("#ovKpis").innerHTML = k("Bookings", thisM.length, "Paid in " + mName, "mpbookings") + k("Revenue", money(rev), "Guest payments in " + mName, "mpbookings") +
+    k("Commission", money(com), "Book Homes share in " + mName, "mppayouts") + k("Occupancy", occ + "%", "Next 30 nights, " + live.length + " live home" + (live.length === 1 ? "" : "s"), "mpbookings") +
+    k("Pending approvals", pendL + pendH, pendL + " listing" + (pendL === 1 ? "" : "s") + ", " + pendH + " host" + (pendH === 1 ? "" : "s"), pendL ? "mplistings" : "mphosts", pendL + pendH > 0);
+  var months = [], byM = {};
+  for (var i = -5; i <= 2; i++){ var d = new Date(); d.setDate(1); d.setMonth(d.getMonth() + i); months.push(d.toISOString().slice(0, 7)); }
+  paid.forEach(function(b){ var m = String(b.check_in).slice(0, 7); byM[m] = (byM[m] || 0) + (+b.amount_pence || 0); });
+  var max = Math.max.apply(null, months.map(function(m){ return byM[m] || 0; }).concat([1]));
+  var fm = new Intl.DateTimeFormat("en-GB", {month: "short"});
+  $("#ovBars").innerHTML = months.map(function(m){ var v = byM[m] || 0; return '<div title="' + esc(m + ": " + money(v)) + '"><i style="height:' + Math.max(2, Math.round(v / max * 100)) + '%;' + (m > month ? "opacity:.45" : "") + '"></i><small>' + fm.format(new Date(m + "-15T12:00:00Z")) + "</small></div>"; }).join("");
+  var todo = [[pendL, "listing" + (pendL === 1 ? "" : "s") + " waiting for approval", "mplistings"], [pendH, "host" + (pendH === 1 ? "" : "s") + " waiting for approval", "mphosts"],
+    [edited, "live listing" + (edited === 1 ? "" : "s") + " edited since approval", "mplistings", "edited"], [due.length, "payout" + (due.length === 1 ? "" : "s") + " to send by bank transfer" + (due.length ? " (" + money(dueAmt) + ")" : ""), "mppayouts"]];
+  var open = todo.filter(function(t){ return t[0] > 0; });
+  $("#ovTodo").innerHTML = open.length ? open.map(function(t){ return '<button type="button" class="todo" data-go="' + t[2] + '"' + (t[3] ? ' data-lf="' + t[3] + '"' : "") + "><b>" + t[0] + "</b><span>" + esc(t[1]) + "</span><em>Open</em></button>"; }).join("")
+    : '<div class="todo ok"><b>0</b><span>Nothing waiting. New approvals and payouts show up here.</span></div>';
+  var latest = MP.bookings.slice().sort(function(a, b){ return String(b.created_at || "") < String(a.created_at || "") ? -1 : 1; }).slice(0, 6);
+  $("#ovLatest").innerHTML = listOr(latest, function(b){
+    return '<div class="item" data-bk="' + esc(b.id) + '"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.listing_title) + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + "</span></div>" +
+      '<div class="m">' + dfmt(String(b.check_in).slice(0, 10)) + " to " + dfmt(String(b.check_out).slice(0, 10)) + " · " + money(b.amount_pence) + "</div></div>";
+  }, "No bookings yet. They appear here as soon as a guest pays.");
+  $("#mpPayN").textContent = due.length; $("#mpPayN").classList.toggle("hidden", !due.length);
+}
+document.addEventListener("click", function(e){
+  var g = e.target.closest ? e.target.closest("[data-go]") : null; if (!g) return;
+  if (g.getAttribute("data-lf")) $("#mpListFilter").value = g.getAttribute("data-lf");
+  var t = $('nav.tabs [data-tab="' + g.getAttribute("data-go") + '"]'); if (t) t.click();
+});
+
+/* ---------- search boxes: filter the rows of a list as you type ---------- */
+function applySearch(inp){
+  var box = $(inp.getAttribute("data-search")), q = inp.value.trim().toLowerCase(), n = 0, shown = 0;
+  if (!box) return;
+  $$(".item", box).forEach(function(it){ n++; var ok = !q || it.textContent.toLowerCase().indexOf(q) >= 0; it.classList.toggle("hidden", !ok); if (ok) shown++; });
+  var z = $(".zero", box); if (z) z.remove();
+  if (q && n && !shown) box.insertAdjacentHTML("beforeend", '<p class="zero">No matches for "' + esc(inp.value.trim()) + '".</p>');
+}
+$$("[data-search]").forEach(function(inp){ inp.addEventListener("input", function(){ applySearch(inp); }); });
+
+/* ---------- detail drawer: tap a row to see it in full, with its actions ---------- */
+var DRAWER_LISTS = "#mpBookings,#mpListings,#mpHostsAll,#mpHostsPending,#mpPayouts,#bkList,#ovLatest,#dashNext,#mpUsers";
+function markClickable(){ $$(DRAWER_LISTS.split(",").map(function(x){ return x + " > .item"; }).join(",")).forEach(function(it){ it.classList.add("click"); it.setAttribute("tabindex", "0"); }); }
+function closeDrawer(){ var d = $(".drawer"); if (d) d.remove(); }
+function openDrawer(item){
+  closeDrawer();
+  var src = item;
+  if (item.hasAttribute("data-bk") && MP){ /* overview row: show the full booking row from the Bookings list */
+    var full = $$("#mpBookings .item").filter(function(x){ return x.getAttribute("data-bk") === item.getAttribute("data-bk"); })[0]; if (full) src = full;
+  }
+  var bk = item.getAttribute("data-bk") && MP ? MP.bookings.filter(function(x){ return String(x.id) === item.getAttribute("data-bk"); })[0] : null;
+  var c;
+  if (bk){
+    var ph = String(bk.guest_phone || "").replace(/[^\d+]/g, ""), wa = ph.replace(/^\+/, "").replace(/^0/, "44");
+    var r = function(k, v){ return v ? '<div class="m"><b style="display:block;font-size:12.5px;color:var(--muted);font-weight:600">' + k + "</b>" + v + "</div>" : ""; };
+    c = document.createElement("div"); c.className = "item";
+    c.innerHTML = '<div class="h"><span>' + esc(bk.guest_name) + '</span><span class="pill ' + esc(bk.status) + '">' + esc(String(bk.status).replace("_", " ")) + "</span></div>" +
+      r("Home", esc(bk.listing_title) + (bk.source === "zermatt" ? " (Zermatt Lodge system)" : "")) +
+      r("Stay", dfmt(String(bk.check_in).slice(0, 10)) + " to " + dfmt(String(bk.check_out).slice(0, 10)) + " · " + bk.nights + " night" + (bk.nights === 1 ? "" : "s") + " · " + bk.guests + " guest" + (bk.guests === 1 ? "" : "s")) +
+      r("Guest paid", "<b>" + money(bk.amount_pence) + "</b>") +
+      (bk.source === "bookhomes" ? r("Commission", money(bk.fee_pence)) + r("Host payout", money(bk.host_payout_pence) + " (" + esc(bk.payout_mode || "") + ")") : "") +
+      r("Email", '<a href="mailto:' + esc(bk.guest_email) + '">' + esc(bk.guest_email) + "</a>") +
+      r("Phone", ph ? '<a href="tel:' + esc(ph) + '">' + esc(bk.guest_phone) + '</a> · <a href="https://wa.me/' + esc(wa) + '" target="_blank" rel="noopener">WhatsApp</a>' : "") +
+      r("Booked", bk.created_at ? esc(tfmt(bk.created_at)) : "") + r("Paid", bk.paid_at ? esc(tfmt(bk.paid_at)) : "") +
+      (bk.stripe_payment_intent_id ? r("Payment", stripeLink(bk.stripe_payment_intent_id)) : "");
+  } else { c = src.cloneNode(true); c.classList.remove("click", "hidden"); c.removeAttribute("tabindex"); }
+  $$("details", c).forEach(function(d){ d.open = true; });
+  var d = document.createElement("div"); d.className = "drawer"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-label", "Details");
+  d.innerHTML = '<div><div class="dh"><b>Details</b><button type="button" class="x" aria-label="Close">&times;</button></div></div>';
+  d.firstChild.appendChild(c);
+  document.body.appendChild(d);
+  d.addEventListener("click", function(e){ if (e.target === d || e.target.closest(".x")) closeDrawer(); else if (e.target.closest("[data-mp]")) setTimeout(closeDrawer, 50); });
+  $(".x", d).focus();
+}
+document.addEventListener("click", function(e){
+  if (!e.target.closest || e.target.closest("button,a,select,input,summary,label,.drawer")) return;
+  var it = e.target.closest(".item.click"); if (it) openDrawer(it);
+});
+document.addEventListener("keydown", function(e){
+  if (e.key === "Escape"){ closeDrawer(); navOpen(false); }
+  if (e.key === "Enter" && e.target.classList && e.target.classList.contains("click")) openDrawer(e.target);
+});
+var _mpRender = mpRender;
+mpRender = function(){ _mpRender(); ovRender(); $$("[data-search]").forEach(applySearch); markClickable(); };
+var _renderDash = renderDash; renderDash = function(){ _renderDash(); markClickable(); };
+var _renderBookings = renderBookings; renderBookings = function(){ _renderBookings(); markClickable(); };
+
 $("#mpListFilter").addEventListener("change", mpRender);
 $("#mpBkFilter").addEventListener("change", mpRender);
 document.addEventListener("click", function(e){

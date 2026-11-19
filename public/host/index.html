@@ -103,6 +103,164 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
 .cal2 .d.past{opacity:.45}
 .code-line{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;word-break:break-all;background:var(--soft);padding:8px;border-radius:8px;display:block;margin-top:6px;user-select:all}
 @media (max-width:560px){.cal2 .d{min-height:46px}.tiles{grid-template-columns:1fr 1fr}}
+
+/* ---------- 2026 polish: Airbnb-calm dashboard, wizard, pricing, calendar ---------- */
+body{background:#fff}
+.box{margin:48px auto}
+.cardx{border-radius:16px;box-shadow:0 6px 24px rgba(0,0,0,.06);padding:28px}
+.cardx h1,.cardx h2{font-size:26px;font-weight:800;letter-spacing:-.02em}
+label.f2 input,label.f2 select,label.f2 textarea{border-color:#c4c4c4;border-radius:8px}
+label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px solid var(--ink);outline-offset:-1px}
+.linkbtn{color:var(--ink)}
+.tick{background:var(--soft)}
+.dash{padding-top:8px}
+.tabs{gap:24px;border-bottom:1px solid var(--line-2);padding:0;margin-bottom:24px;position:sticky;top:64px;background:#fff;z-index:20}
+.tabs button{border:0;border-radius:0;background:none;padding:16px 0 14px;color:var(--muted);font-weight:600;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{background:none;color:var(--ink);border-bottom-color:var(--ink)}
+.panel h2{font-size:26px;font-weight:800;letter-spacing:-.02em;margin:4px 0 16px}
+.lcard{border:0;border-radius:14px;transition:transform .15s}
+.lcard .ph{border-radius:14px;overflow:hidden}
+.lcard .bd2{padding:12px 2px}
+.stat{border-radius:12px;padding:16px 18px}
+.stat small{text-transform:none;letter-spacing:0;font-size:13px;font-weight:500;color:var(--muted)}
+.stat b{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.item{border-color:var(--line-2);border-radius:12px;padding:16px}
+/* wizard */
+.wz-top{padding:14px 24px;border:0}
+.wz-st{font-size:13px;font-weight:600;color:var(--muted)}
+.wz-bar{height:4px;background:var(--line-2)}
+.wz-bar i{background:var(--ink);transition:width .35s ease}
+.wz-body{padding:40px 24px 48px}
+.wz-in{max-width:620px}
+.wz-in.in{animation:wzIn .28s ease-out}
+@keyframes wzIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.wz-in h2{font-size:clamp(26px,4vw,32px);font-weight:800;letter-spacing:-.02em}
+.wz-in .lead{font-size:16px;margin-bottom:28px}
+.wz-foot{padding:16px 24px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--line-2)}
+.wz-foot .link{font-size:16px}
+.wz-foot .btn{min-width:120px;background:var(--ink);min-height:48px;border-radius:8px}
+.wz-foot .btn:hover{background:#000}
+.tile{border:1px solid var(--line);border-radius:12px;transition:border-color .15s,background .15s,transform .1s}
+.tile:hover{border-color:var(--ink)}
+.tile:active{transform:scale(.98)}
+.tile[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:var(--soft)}
+.stepper{border-color:var(--line-2)}
+.stepper button{border-color:#b0b0b0;color:var(--muted);transition:border-color .15s,color .15s}
+.stepper button:hover{border-color:var(--ink);color:var(--ink)}
+/* import */
+.imp .btn .ic{width:18px;height:18px}
+.imp-how{background:var(--soft);border-radius:12px;padding:14px 16px;margin-top:20px;font-size:14px}
+.imp-how b{display:block;margin-bottom:2px}
+.imp-how span{color:var(--muted)}
+.imp-alt{color:var(--muted);font-size:14px;margin-top:16px}
+.imp-prog{margin-top:20px;display:grid;gap:12px}
+.imp-prog li{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:15px}
+.imp-prog li.now{color:var(--ink);font-weight:600}
+.imp-prog li.done{color:var(--ink)}
+.imp-prog .dotx{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;flex-shrink:0}
+.imp-prog li.now .dotx{border-color:var(--ink);border-right-color:transparent;animation:spin .8s linear infinite}
+.imp-prog li.done .dotx{background:var(--brand);border-color:var(--brand);color:#fff}
+.imp-prog .dotx .ic{width:14px;height:14px;stroke-width:3}
+@keyframes spin{to{transform:rotate(360deg)}}
+.imp-ok{display:flex;gap:14px;align-items:center;background:var(--brand-tint);border-radius:14px;padding:16px 18px}
+.imp-ok>.ic{width:28px;height:28px;color:var(--brand);stroke-width:2.4}
+.imp-ok b{display:block}.imp-ok span{color:var(--muted);font-size:14px}
+.imp-got{margin-top:16px;display:grid;gap:8px}
+.imp-got li{display:flex;gap:10px;align-items:center;font-size:15px}
+.imp-got .ic{width:18px;height:18px;color:var(--brand);stroke-width:2.4}
+/* pricing */
+.bigp{display:flex;align-items:center;justify-content:center;gap:4px;font-size:clamp(56px,13vw,88px);font-weight:800;letter-spacing:-.04em;line-height:1;margin:8px 0 4px}
+.bigp input{border:0;outline:0;font:inherit;width:4.2ch;text-align:left;background:transparent;-moz-appearance:textfield;padding:0}
+.bigp input::-webkit-outer-spin-button,.bigp input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.bigp-sub{text-align:center;color:var(--muted);margin-bottom:20px}
+.ge{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.ge-seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:3px;margin-bottom:14px}
+.ge-seg button{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted)}
+.ge-seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.ge-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ge-col{border-radius:12px;padding:14px;background:var(--soft)}
+.ge-col small{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.ge-col>b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;margin:2px 0 8px}
+.ge-earn{background:var(--brand-tint)}
+.ge-earn>b{color:var(--brand-ink)}
+.ge-row{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:2px 0;color:var(--ink-2)}
+.ge-free{color:var(--brand);font-weight:700}
+.ge-disc span:last-child{color:var(--brand)}
+.psec{font-size:18px;font-weight:700;margin:32px 0 4px}
+.pnote{font-size:13.5px;color:var(--muted);margin-top:8px}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2);cursor:pointer}
+.prow b{display:block;font-weight:600}
+.prow small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.pin{display:inline-flex;align-items:center;gap:4px;border:1px solid #c4c4c4;border-radius:8px;padding:0 10px;height:44px;font-weight:600;flex-shrink:0}
+.pin:focus-within{outline:2px solid var(--ink);outline-offset:-1px}
+.pin input{border:0;outline:0;width:64px;font:inherit;font-size:16px;text-align:right;background:transparent}
+.tg{appearance:none;-webkit-appearance:none;width:48px;height:30px;border-radius:999px;background:#b0b0b0;position:relative;cursor:pointer;flex-shrink:0;transition:background .2s}
+.tg:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+.tg:checked{background:var(--brand)}
+.tg:checked:after{transform:translateX(18px)}
+/* calendar */
+.cal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.cal-head h2{margin:0}
+.selpill select{border:1px solid #c4c4c4;border-radius:999px;padding:9px 36px 9px 16px;font:inherit;font-size:14px;font-weight:600;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23222' stroke-width='2'%3E%3Cpath d='m2 4 4 4 4-4'/%3E%3C/svg%3E") no-repeat right 14px center;-webkit-appearance:none;appearance:none;max-width:70vw}
+.cal-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin:8px 0 4px}
+.cal-nav b{font-size:18px;font-weight:700}
+.cal-nav .iconbtn{font-size:20px;line-height:1}
+.cal2{gap:0;border-top:1px solid var(--line-2);border-left:1px solid var(--line-2);margin-top:12px}
+.cal2 .dw{padding:8px 0;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);font-weight:600;font-size:12px}
+.cal2 .d{min-height:92px;border:0;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);border-radius:0;padding:8px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;justify-content:space-between;transition:background .12s}
+.cal2 .d:not(:disabled):hover{background:var(--soft)}
+.cal2 .d .n{font-size:15px;color:var(--ink);font-weight:600}
+.cal2 .d.x{border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.cal2 .d.booked{background:var(--brand);color:#e9f1ec}
+.cal2 .d.booked .n{color:#fff}
+.cal2 .d.blocked{background:repeating-linear-gradient(135deg,#f4f4f4,#f4f4f4 6px,#fff 6px,#fff 12px);text-decoration:line-through}
+.cal2 .d.reserved{background:#ececec}
+.cal2 .d.sel{outline:0;background:var(--ink)!important;color:#fff;text-decoration:none}
+.cal2 .d.sel .n{color:#fff}
+.cal2 .d.past{opacity:.4}
+.cal-legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);margin-top:12px}
+.cal-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:1px solid var(--line)}
+.lg-b{background:var(--brand)}.lg-x{background:repeating-linear-gradient(135deg,#ddd,#ddd 2px,#fff 2px,#fff 4px)}.lg-o{background:#ececec}.lg-a{background:#fff}
+.cal-side{position:sticky;top:140px;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.06)}
+.cs-empty{color:var(--muted);font-size:14px}
+.cs-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cs-top b{font-size:16px}
+.cs-top .link{font-size:14px}
+.seg2{display:grid;grid-template-columns:1fr 1fr;border:1px solid #c4c4c4;border-radius:10px;overflow:hidden;margin-bottom:16px}
+.seg2 button{padding:12px;font-weight:600;font-size:14px;color:var(--muted)}
+.seg2 button+button{border-left:1px solid #c4c4c4}
+.seg2 button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.cs-price{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;font-weight:600;font-size:14px}
+.cs-reset{display:block;margin:12px auto 0;font-size:14px}
+#calOut{min-height:20px;text-align:center;font-size:13.5px;margin-top:6px}
+#calBlocks .item{margin:12px 0 0}
+.sync{margin-top:48px;border-top:1px solid var(--line-2);padding-top:32px}
+.sync>.m{color:var(--muted);margin-bottom:16px;max-width:640px}
+.sync-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sync-card{border:1px solid var(--line);border-radius:16px;padding:20px}
+.sync-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.sync-card .m{color:var(--muted);font-size:14px}
+.sync-card .code-line{margin:10px 0}
+.sync-src{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2)}
+.sync-src small{display:block;color:var(--muted);font-size:12.5px;word-break:break-all}
+.sync-add{margin-top:14px}
+.howto{margin-top:16px;border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+.howto summary{font-weight:600;cursor:pointer}
+.howto p{margin:14px 0 6px}
+.howto ol{padding-left:20px;display:grid;gap:4px;font-size:14.5px}
+@media (max-width:860px){
+  .cal-wrap{grid-template-columns:1fr}
+  .cal-side{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:50;border-radius:20px 20px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));transform:translateY(110%);visibility:hidden;transition:transform .25s ease-out,visibility 0s .25s;box-shadow:0 -8px 32px rgba(0,0,0,.18);max-height:80vh;overflow:auto}
+  .cal-side.open{transform:none;visibility:visible;transition:transform .25s ease-out}
+  .cal2 .d{min-height:64px;padding:6px 4px;font-size:11px}
+  .cal2 .d .n{font-size:13px}
+  .sync-grid{grid-template-columns:1fr}
+  .ge-cols{grid-template-columns:1fr}
+  .tabs{gap:20px;overflow-x:auto}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -194,18 +352,44 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
     <div class="lcards" id="lcards"></div>
   </section>
   <section class="panel hidden" data-panel="calendar">
-    <h2>Calendar</h2>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
-      <label class="f2" style="flex:1;min-width:200px;margin:0">Listing<select id="calListing"></select></label>
-      <div style="display:flex;gap:6px"><button type="button" class="btn ghost sm" id="calPrev" aria-label="Previous month">‹</button><b id="calTitle" style="min-width:140px;text-align:center;align-self:center"></b><button type="button" class="btn ghost sm" id="calNext" aria-label="Next month">›</button></div>
+    <div class="cal-head"><h2>Calendar</h2><label class="selpill"><span class="sr-only">Listing</span><select id="calListing"></select></label></div>
+    <div class="cal-wrap">
+      <div class="cal-main">
+        <div class="cal-nav"><button type="button" class="iconbtn" id="calPrev" aria-label="Previous month">&lsaquo;</button><b id="calTitle"></b><button type="button" class="iconbtn" id="calNext" aria-label="Next month">&rsaquo;</button></div>
+        <div class="cal2" id="cal2"></div>
+        <ul class="cal-legend"><li><i class="lg-b"></i>Booked</li><li><i class="lg-x"></i>Blocked by you</li><li><i class="lg-o"></i>Booked on another site</li><li><i class="lg-a"></i>Open, with the price a night</li></ul>
+      </div>
+      <aside class="cal-side" id="calActs">
+        <p class="cs-empty" id="csEmpty">Tap a night to change it. Tap a second night to select the dates in between.</p>
+        <div class="cs-panel hidden" id="csPanel">
+          <div class="cs-top"><b id="calSel">No nights selected</b><button type="button" class="link" id="csClear">Clear</button></div>
+          <div class="seg2" role="group" aria-label="Availability"><button type="button" data-ca="open">Available</button><button type="button" data-ca="block">Blocked</button></div>
+          <label class="cs-price"><span>Price per night</span><span class="pin">£<input type="number" id="calPrice" min="10" max="10000" step="1" inputmode="numeric" placeholder="-"></span></label>
+          <button type="button" class="btn block" data-ca="price">Save price</button>
+          <button type="button" class="link cs-reset" data-ca="reset">Go back to my default price</button>
+          <p class="m" id="calOut" aria-live="polite"></p>
+        </div>
+        <div id="calBlocks"></div>
+      </aside>
     </div>
-    <p class="m" style="color:var(--muted);font-size:14px;margin-top:8px">Tap a first and last night, then choose what to do.</p>
-    <div class="cal2" id="cal2"></div>
-    <div class="item" id="calActs" style="margin-top:12px"><b id="calSel">No nights selected</b>
-      <div class="acts"><button type="button" class="btn sm" data-ca="block">Block</button><button type="button" class="btn ghost sm" data-ca="open">Open</button>
-        <label style="display:flex;gap:6px;align-items:center;font-size:14px">£<input type="number" id="calPrice" min="10" max="10000" step="1" style="width:90px;font:inherit;font-size:16px;padding:6px 8px;border:1px solid #a9aeaa;border-radius:8px"></label><button type="button" class="btn ghost sm" data-ca="price">Set price</button><button type="button" class="btn ghost sm" data-ca="reset">Default price</button></div>
-      <p class="m" id="calOut"></p></div>
-    <div id="calBlocks"></div>
+    <section class="sync" aria-labelledby="syncH">
+      <h2 id="syncH">Sync with other sites</h2>
+      <p class="m">Link your calendars both ways so a night booked anywhere closes everywhere. We check imported calendars every 15 minutes.</p>
+      <div class="sync-grid">
+        <div class="sync-card"><h3>Export: your Book Homes calendar</h3><p class="m">Paste this link into Airbnb, Booking.com, Vrbo or Guesty as an imported calendar.</p><div id="syncExport"></div></div>
+        <div class="sync-card"><h3>Import: calendars from other sites</h3><div id="syncList"></div>
+          <div class="sync-add"><label class="f2">Site<select id="syncName"><option>Airbnb</option><option>Booking.com</option><option>Vrbo</option><option>Guesty</option><option>Other</option></select></label>
+          <label class="f2">Calendar link (iCal)<input type="url" id="syncUrl" placeholder="https://..." inputmode="url"></label>
+          <button type="button" class="btn ghost" id="syncAdd">Import calendar</button><p class="m" id="syncOut" aria-live="polite"></p></div></div>
+      </div>
+      <details class="howto"><summary>Using Guesty? How to link it</summary>
+        <p><b>Guesty to Book Homes (stops double bookings here)</b></p>
+        <ol><li>In Guesty, switch to Operations mode and open Properties.</li><li>Open the listing, then Calendar in the left menu.</li><li>Choose "Calendar sync (iCal)" and click Export.</li><li>Click the sync icon to make the link, then the copy icon.</li><li>Paste it above under Import, choose Guesty, and tap Import calendar.</li></ol>
+        <p><b>Book Homes to Guesty (closes dates booked here)</b></p>
+        <ol><li>Copy your Book Homes link from Export above.</li><li>In Guesty: the listing, Calendar, "Calendar sync (iCal)", then Import.</li><li>Click "Add an iCalendar link", name it Book Homes, paste the link and turn on Sync calendar.</li><li>Click Save.</li></ol>
+        <p class="m">Airbnb: Calendar, Availability, Connect calendars. Booking.com: Rates and availability, Sync calendars.</p>
+      </details>
+    </section>
   </section>
   <section class="panel hidden" data-panel="bookings"><h2>Bookings</h2><div id="bkList"></div></section>
   <section class="panel hidden" data-panel="earnings"><h2>Earnings</h2><div class="statgrid" id="earnStats"></div><div id="earnList"></div></section>
@@ -220,7 +404,7 @@ ol.steps{padding-left:20px;margin:0 0 12px}ol.steps li{margin-bottom:10px}
 </div></div>
 
 <div class="wz hidden" id="wz" role="dialog" aria-modal="true" aria-labelledby="wzH">
-  <div class="wz-top"><b>Your listing</b><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
+  <div class="wz-top"><span class="wz-st" id="wzStep"></span><button type="button" class="btn ghost sm" id="wzSave">Save and exit</button></div>
   <div class="wz-bar"><i id="wzBar" style="width:0"></i></div>
   <div class="wz-body"><div class="wz-in" id="wzIn"></div></div>
   <div class="wz-foot"><button type="button" class="link" id="wzBack">Back</button><span id="wzMsg" style="font-size:14px;color:#b42318"></span><button type="button" class="btn" id="wzNext">Next</button></div>
