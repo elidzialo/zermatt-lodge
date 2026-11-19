@@ -131,6 +131,9 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .cta-band h2{font-size:23px;line-height:1.2;color:#fff}
 .cta-band p{color:rgba(255,255,255,.85);font-size:15px;margin-top:4px}
 .cta-band .btn{position:relative;z-index:1}
+.cta-acts{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.cta-band .btn.ghost{color:#fff;border-color:rgba(255,255,255,.85)}
+.cta-band .btn.ghost:hover{background:rgba(255,255,255,.12)}
 
 /* Sticky sidebar card */
 .aside{position:relative}
@@ -151,6 +154,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .fields .g{border-top:1px solid #a9aeaa}
 .f small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:16px;width:100%;min-width:0;max-width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:26px}
+/* Bigger tap targets: the control fills the bottom padding of its label box (no visual change) */
+label.f input,label.f select{margin-bottom:-10px;padding-bottom:10px;min-height:38px}
 .card .btn.block{margin-top:14px}
 .card .note{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
 .card .note a{color:var(--ink);font-weight:600}
@@ -330,9 +335,9 @@ footer a:hover{color:#fff;text-decoration:underline}
         <aside class="cta-band" aria-label="Book Zermatt Lodge">
           <div>
             <h2 class="serif">Need a place to stay in Liverpool?</h2>
-            <p>A 4-bed house for up to 7, with free parking and a games room. No service fees.</p>
+            <p>A 4-bed house for up to 7, with free parking and a games room. Rated 4.75 on Airbnb. Book direct for instant confirmation and no service fees.</p>
           </div>
-          <a class="btn amber" href="/#book">See availability</a>
+          <div class="cta-acts"><a class="btn amber" href="/#book">Book direct</a><a class="btn ghost" href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener" aria-label="Book on Airbnb (opens in a new tab)">Book on Airbnb</a></div>
         </aside>
       </article>
 
@@ -363,6 +368,7 @@ footer a:hover{color:#fff;text-decoration:underline}
               </div>
               <button class="btn block" type="submit">Check availability</button>
             </form>
+            <p class="note">Prefer Airbnb? <a href="https://www.airbnb.co.uk/rooms/1801505261909570677" target="_blank" rel="noopener">Book this house on Airbnb</a></p>
             <p class="note">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
           </div>
         </div>

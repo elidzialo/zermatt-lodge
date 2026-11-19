@@ -117,6 +117,8 @@ button.link{min-height:44px}
 .f small,.fields small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 .f input,.f select{display:block;border:0;outline:0;font:inherit;font-size:16px;width:100%;background:transparent;color:var(--ink);padding:3px 0 0;min-height:28px;-webkit-appearance:none;appearance:none}
 .f select{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235d6560' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right center/16px no-repeat;padding-right:20px}
+/* Bigger tap targets: the control fills the bottom padding of its label box (no visual change) */
+label.f input,label.f select{margin-bottom:-10px;padding-bottom:10px;min-height:38px}
 .search .btn{border-radius:14px;padding:0 26px;min-height:56px;font-size:16px}
 .search .btn svg{width:18px;height:18px}
 .form-err{display:none;color:#b42318;font-size:13.5px;font-weight:500;margin-top:10px}
@@ -132,6 +134,7 @@ button.link{min-height:44px}
 .trust li{display:flex;gap:14px;align-items:center;padding:22px 20px}
 .trust li+li{border-left:1px solid rgba(255,255,255,.14)}
 .trust svg{width:28px;height:28px;stroke:#f3c88f;flex-shrink:0}
+.trust svg.star-ico{color:#f3c88f}
 .trust b{display:block;font-size:15px;font-weight:600;line-height:1.3}
 .trust span{display:block;font-size:13px;color:rgba(255,255,255,.78);line-height:1.4}
 
@@ -141,6 +144,7 @@ button.link{min-height:44px}
 .facts li{display:flex;align-items:center;gap:8px}
 .facts li svg{width:20px;height:20px;color:var(--brand)}
 .facts li b{font-weight:600}
+.rv-jump{display:inline-flex;align-items:center;min-height:44px}
 .facts .act{display:flex;gap:4px}
 .facts .act button{display:flex;gap:6px;align-items:center;min-height:44px;padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px}
 .facts .act button:hover{background:var(--soft)}
@@ -503,7 +507,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 }
 
 .chan{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 10px;margin:14px auto 0;font-size:14px;color:var(--muted);text-align:center}
-.chan-b{display:inline-block;border:1px solid #cfd5d1;border-radius:999px;padding:4px 12px;font-weight:600;color:var(--brand-ink);text-decoration:none;background:#fff}
+.chan-b{display:inline-flex;align-items:center;min-height:44px;border:1px solid #cfd5d1;border-radius:999px;padding:4px 12px;font-weight:600;color:var(--brand-ink);text-decoration:none;background:#fff}
 .chan-b:hover{border-color:var(--accent);background:var(--accent-tint)}
 .chan-n{flex-basis:100%}
 @media(min-width:700px){.chan-n{flex-basis:auto}}
@@ -583,6 +587,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 .promo-msg{font-size:13.5px;margin-top:6px}
 .promo-msg.ok{color:var(--brand)}
 .promo-msg.err{color:#b42318}
+.bd-note{font-size:13px;color:var(--muted);margin-top:2px}
 .bd-row.bd-disc span{color:var(--brand);font-weight:600;text-decoration:none}
 /* Exit-intent offer */
 .xp{position:fixed;inset:0;z-index:140;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(12,24,18,.55)}
@@ -716,10 +721,10 @@ footer a:hover{color:#fff;text-decoration:underline}
 
 <section class="trust" aria-label="Why book direct">
   <ul class="wrap">
-    <li><svg aria-hidden="true"><use href="#i-home"/></svg><div><b>Book direct</b><span>Deal straight with the hosts</span></div></li>
-    <li><svg aria-hidden="true"><use href="#i-tag"/></svg><div><b>No service fees</b><span>No platform booking fees added</span></div></li>
-    <li><svg aria-hidden="true"><use href="#i-lock"/></svg><div><b>Secure checkout</b><span>Pay safely online by card</span></div></li>
-    <li><svg aria-hidden="true"><use href="#i-sparkle"/></svg><div><b>Professionally cleaned</b><span>Fresh towels and bedding every stay</span></div></li>
+    <li><svg aria-hidden="true" class="star-ico"><use href="#i-star"/></svg><div><b>Rated 4.75 on Airbnb</b><span>From 4 guest reviews</span></div></li>
+    <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Instant confirmation</b><span>Confirmed when you pay, no waiting for approval</span></div></li>
+    <li><svg aria-hidden="true"><use href="#i-lock"/></svg><div><b>Secure Stripe checkout</b><span>Pay by card on Stripe's secure page</span></div></li>
+    <li><svg aria-hidden="true"><use href="#i-tag"/></svg><div><b>No service fees</b><span>Book direct, no platform fees added</span></div></li>
   </ul>
 </section>
 
@@ -729,7 +734,7 @@ footer a:hover{color:#fff;text-decoration:underline}
     <ul aria-label="House summary">
       <li><svg aria-hidden="true"><use href="#i-home"/></svg><b>Entire home</b> in Liverpool</li>
       <li>7 guests · 4 bedrooms · 4 beds · 2 baths</li>
-      <li><a href="#reviews">Guest reviews</a></li>
+      <li><a class="rv-jump" href="#reviews">Guest reviews</a></li>
     </ul>
     <div class="act">
       <button type="button" id="shareBtn"><svg aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button>
@@ -753,7 +758,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   <span class="eyebrow">Guest reviews</span>
   <h2 class="serif" id="revH">Selected guest reviews</h2>
   <div class="rv-badges">
-    <a class="rv-badge" href="https://www.airbnb.co.uk/rooms/1801505261909570677/reviews" target="_blank" rel="noopener"><span class="rv-stars" aria-hidden="true"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><span><b>4.75 out of 5</b> on Airbnb from 4 reviews</span></a>
+    <a class="rv-badge" href="https://www.airbnb.co.uk/rooms/1801505261909570677/reviews" target="_blank" rel="noopener"><span class="rv-stars" aria-hidden="true"><svg aria-hidden="true"><use href="#i-star"/></svg></span><span><b>4.75 out of 5</b> on Airbnb from 4 reviews</span></a>
     <a class="rv-badge" href="https://www.google.com/search?q=BookHomes.co.uk+reviews" target="_blank" rel="noopener"><span class="rv-stars" aria-hidden="true"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><span><b>5.0</b> on Google (1 review)</span></a>
   </div>
   <ul class="rv-list">
@@ -891,7 +896,7 @@ footer a:hover{color:#fff;text-decoration:underline}
         <ul class="perks">
           <li><svg aria-hidden="true"><use href="#i-tag"/></svg>No platform service fees when you book direct</li>
           <li><svg aria-hidden="true"><use href="#i-sparkle"/></svg>Professionally cleaned before every stay</li>
-          <li><svg aria-hidden="true"><use href="#i-lock"/></svg>Secure online checkout</li>
+          <li><svg aria-hidden="true"><use href="#i-lock"/></svg>Secure Stripe checkout, instant confirmation</li>
         </ul>
         <p class="contact-mini">Questions? Call <a href="tel:+447479905477">+44 7479 905477</a><br>or email <a href="mailto:eli@zelr.co.uk">eli@zelr.co.uk</a></p>
       </div>
@@ -1630,6 +1635,7 @@ function summary(){
   if (q.fee != null) html += '<div class="bd-row"><span>Cleaning fee</span><span>' + fmtMoney(q.fee) + '</span></div>';
   html += '<details><summary>Night-by-night breakdown</summary><ul>' + q.nights.map(function(n){ return '<li><span>' + fmtShort.format(parse(n.date)) + '</span><span>' + (n.price == null ? "-" : fmtMoney(n.price)) + '</span></li>'; }).join("") + '</ul></details>';
   html += '<div class="bd-row bd-total"><span>Total (' + B.currency + ')</span><span>' + (q.total == null ? "Confirmed at checkout" : fmtMoney(q.total)) + '</span></div>';
+  html += '<p class="bd-note">Includes the cleaning fee. Nothing else is added at checkout. A damage deposit or damage waiver is arranged separately before arrival.</p>';
   bd.innerHTML = html;
 }
 $("#bkGuests").addEventListener("change", function(){ B.guests = this.value; syncAll(B.ci, B.co, B.guests); });
