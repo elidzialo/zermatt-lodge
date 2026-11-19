@@ -292,7 +292,7 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
     og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
     bc = f' class="{body_class}"' if body_class else ""
     if path == "/":  # Google Search Console ownership (URL-prefix property https://bookhomes.co.uk/); keep it
-        extra = '<meta name="google-site-verification" content="iocZScMiB0yr7m73VVQrB4McHqrM8MyLEgvAAMcwBj4">\n' + extra
+        extra = '<meta name="google-site-verification" content="iocZScMiB0yr7m73VVQrB4McHqrM8MyLEgvAAMcwBj4">\n<meta name="google-site-verification" content="6ue-5oJtfSusMjom60Vp9z5mEdHAuXpPOtV1A4vZMJ8">\n' + extra
     return f"""<!DOCTYPE html>
 <html lang="en-GB">
 <head>

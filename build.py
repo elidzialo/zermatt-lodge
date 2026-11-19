@@ -256,7 +256,7 @@ import shutil
 PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
 INDEXNOW_KEY = "00d622ef355b6708bc52633c7be81118"  # IndexNow (Bing, Yandex, Seznam...): key file served at /00d622ef355b6708bc52633c7be81118.txt
-for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
+for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "googlec5a5ee698941ade7.html", "index.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
             "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
