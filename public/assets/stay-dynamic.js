@@ -60,7 +60,12 @@ get(slug).catch(function(e){ if (/-liverpool$/.test(slug)) return get(slug.repla
     cp.innerHTML = l.from_price ? '<span class="from">From</span> <b>' + money(l.from_price) + "</b> <span>night</span>" : "<b>Add dates</b> <span>for prices</span>";
     $("#lpSave").setAttribute("data-save", l.id);
     var g = $("#bkGuests"); while (g.options.length > l.max_guests) g.remove(g.options.length - 1);
-    window.STAY = {id: +l.id, slug: l.slug, max_guests: l.max_guests, cleaning_fee: +l.cleaning_fee || 0, weekly_discount_pct: l.weekly_discount_pct || 0, monthly_discount_pct: l.monthly_discount_pct || 0, lat: l.lat, lng: l.lng, legacy: false, from_price: l.from_price, title: l.title};
+    window.STAY = {id: +l.id, slug: l.slug, max_guests: l.max_guests, cleaning_fee: +l.cleaning_fee || 0, weekly_discount_pct: l.weekly_discount_pct || 0, monthly_discount_pct: l.monthly_discount_pct || 0, lat: l.lat, lng: l.lng, legacy: false, from_price: l.from_price, title: l.title, pets_allowed: !!l.pets_allowed, pet_fee: +l.pet_fee || 0, checkout_days: l.checkout_days || [], checkin_days: l.checkin_days || []};
+    if (l.pets_allowed && !document.getElementById("bkPets")){
+      var gl = document.getElementById("bkGuests").closest("label"), pl = document.createElement("label");
+      pl.className = "f f-pets"; pl.innerHTML = "<small>Pets" + (+l.pet_fee ? " (£" + (+l.pet_fee) + " a stay)" : "") + '</small><select id="bkPets" name="pets"><option value="0">No pets</option><option value="1">1 pet</option><option value="2">2 pets</option><option value="3">3 pets</option></select>';
+      gl.parentNode.insertBefore(pl, gl.nextSibling);
+    }
     load("/assets/stay.js"); load("/assets/stay-page.js"); load("/assets/checkout.js");
   })
   .catch(function(){ fail("This page could not be found."); });

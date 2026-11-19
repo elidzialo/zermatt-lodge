@@ -142,7 +142,7 @@ function visible(f){
     else if (PRESET.length && !PRESET.some(function(t){ return l.tags.indexOf(t) >= 0; })) return false;
     if (!whereMatch(l)) return false;
     if (guests() && l.max_guests < guests()) return false;
-    if (S.pets && (l.amenities || []).indexOf("pets") < 0) return false;
+    if (S.pets && !l.pets_allowed && (l.amenities || []).indexOf("pets") < 0) return false;
     if (!passFilters(l, f)) return false;
     if (S.results){ var r = S.results[l.id]; if (!r || !r.available) return false; }
     return true;
@@ -158,6 +158,7 @@ function linkFor(l){
   if (r && r.ci && r.co){ p.set("check_in", r.ci); p.set("check_out", r.co); }
   else if (S.ci && S.co){ p.set("check_in", S.ci); p.set("check_out", S.co); }
   if (guests()) p.set("guests", Math.min(guests(), l.max_guests));
+  if (S.pets) p.set("pets", S.pets);
   var s = p.toString(); return l.url + (s ? "?" + s : "");
 }
 function card(l, i){
@@ -472,7 +473,7 @@ sp.addEventListener("click", function(e){
 function search(){
   if (!(S.ci && S.co)){ S.results = null; render(); return; }
   S.results = "loading"; render();
-  fetch("/api/bh/listings?action=search&check_in=" + S.ci + "&check_out=" + S.co + "&guests=" + Math.max(1, guests()), {headers: {"Accept": "application/json"}})
+  fetch("/api/bh/listings?action=search&check_in=" + S.ci + "&check_out=" + S.co + "&guests=" + Math.max(1, guests()) + (S.pets ? "&pets=" + S.pets : ""), {headers: {"Accept": "application/json"}})
     .then(function(r){ if (!r.ok) throw new Error(); return r.json(); })
     .then(function(j){ S.results = {}; (j.results || []).forEach(function(x){ S.results[x.id] = x; }); render(); })
     .catch(function(){ S.results = null; render(); $("#count").textContent = "Couldn't check live availability. Showing all homes."; });
@@ -527,7 +528,7 @@ function flexSearch(){
   var ranges = flexRanges(); if (!ranges.length){ S.results = null; render(); return; }
   S.results = "loading"; render();
   Promise.all(ranges.map(function(rg){
-    return fetch("/api/bh/listings?action=search&check_in=" + rg[0] + "&check_out=" + rg[1] + "&guests=" + Math.max(1, guests()), {headers: {"Accept": "application/json"}})
+    return fetch("/api/bh/listings?action=search&check_in=" + rg[0] + "&check_out=" + rg[1] + "&guests=" + Math.max(1, guests()) + (S.pets ? "&pets=" + S.pets : ""), {headers: {"Accept": "application/json"}})
       .then(function(r){ return r.ok ? r.json() : {results: []}; }).then(function(j){ return {rg: rg, res: j.results || []}; }).catch(function(){ return {rg: rg, res: []}; });
   })).then(function(all){
     var out = {};
@@ -549,10 +550,11 @@ function togglePop(btn){
   var total = r.total_pence / 100, clean = +l.cleaning_fee || 0, disc = (r.discount_pence || 0) / 100, nightsAmt = Math.round((total - clean + disc) * 100) / 100;
   var avg = r.nights ? Math.round(nightsAmt / r.nights * 100) / 100 : 0;
   var row = function(a, b, c){ return '<div class="pp-row' + (c ? " " + c : "") + '"><span>' + a + "</span><span>" + b + "</span></div>"; };
+  var lines = Array.isArray(r.lines) && r.lines.length ? r.lines.map(function(x){ return row(esc(x.label), (x.pence < 0 ? "-" : "") + money(Math.abs(x.pence) / 100), x.pence < 0 ? "pp-disc" : ""); }).join("") : null;
   var h = '<div class="prpop" role="dialog" aria-label="Price details"><h3>Price details</h3>' +
-    row(r.nights ? plural(r.nights, "night") + " x " + money(avg) : "Nights", money(nightsAmt)) +
+    (lines || (row(r.nights ? plural(r.nights, "night") + " x " + money(avg) : "Nights", money(nightsAmt)) +
     (disc > 0 ? row("Length-of-stay discount", "-" + money(disc), "pp-disc") : "") +
-    (clean ? row("Cleaning fee", money(clean)) : "") +
+    (clean ? row("Cleaning fee", money(clean)) : ""))) +
     row("Booking fee", "£0", "pp-free") +
     row("<b>Total</b>", "<b>" + money(total) + "</b>", "pp-total") + "</div>";
   wrap.insertAdjacentHTML("beforeend", h);

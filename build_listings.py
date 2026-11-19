@@ -265,8 +265,7 @@ def asset_v(name):
 
 
 # --------------------------------------------------------------------------- shared chrome
-LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#1f4d3a"/>'
-        '<path d="M7 22 13 11l4 6 3-4 5 9z" fill="#fff"/><path d="m13 11 2 3.2-2 .8-2-.8z" fill="#c8873a"/></svg>')
+LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width=\"32\" height=\"32\" rx=\"9\" fill=\"#1f4d3a\"/><path d=\"M10.2 25.5V12.6L16.2 6.8l5.6 5.4c3.1 3 1.6 6.3-2.6 6.3 6.2 0 6.6 7-.4 7z\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.9\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"14.8\" cy=\"18.6\" r=\"1.7\" fill=\"#e3a35a\"/></svg>')
 _FONT_CSS = "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
 # Fonts load without blocking first paint (system font shows until Plus Jakarta Sans arrives, display=swap).
 FONTS = ('<link rel="preconnect" href="https://assets.guesty.com" crossorigin>'
@@ -289,7 +288,7 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
     ld = ""
     if schema:
         ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
-    og = f'<meta property="og:image" content="{esc(og_image)}">' if og_image else ""
+    og = f'<meta property="og:image" content="{esc(og_image or DOMAIN + "/assets/og-bookhomes.png")}">' 
     bc = f' class="{body_class}"' if body_class else ""
     if path == "/":  # Google Search Console ownership (URL-prefix property https://bookhomes.co.uk/); keep it
         extra = '<meta name="google-site-verification" content="iocZScMiB0yr7m73VVQrB4McHqrM8MyLEgvAAMcwBj4">\n<meta name="google-site-verification" content="6ue-5oJtfSusMjom60Vp9z5mEdHAuXpPOtV1A4vZMJ8">\n' + extra
@@ -618,7 +617,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
     data = {"listings": [{k: l.get(k) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "beds", "baths", "amenities",
                                                  "categories", "business", "kosher", "monthly_discount_pct", "max_nights", "lat", "lng",
-                                                 "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source")}
+                                                 "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source", "pets_allowed")}
                          for l in listings],
             "tags": {k: list(v) for k, v in FEATURE_TAGS.items()}, "reserved": sorted(RESERVED), "nearby": NEARBY,
             "preset": preset or [], "amenity_labels": AMENITY_LABELS}
@@ -815,6 +814,11 @@ def booking_card(l, ex=None):
     fp = l.get("from_price")
     price = f'<span class="from">From</span> <b>{money(fp)}</b> <span>night</span>' if fp else '<b>Add dates</b> <span>for prices</span>'
     legacy = bool(ex.get("legacy_checkout"))
+    pets_sel = ""
+    if l.get("pets_allowed") and not legacy:
+        pf = float(l.get("pet_fee") or 0)
+        pets_sel = ('<label class="f f-pets"><small>Pets' + (f' ({money(pf)} a stay)' if pf else "") + '</small><select id="bkPets" name="pets">'
+                    '<option value="0">No pets</option><option value="1">1 pet</option><option value="2">2 pets</option><option value="3">3 pets</option></select></label>')
     receipt = "" if legacy else ('<label class="tickrow"><input type="checkbox" id="bkReceipt"><span>I need a company receipt (PDF) with my company name</span></label>'
                                  '<label class="inp" id="bkCompanyWrap" hidden><span>Company name</span><input type="text" id="bkCompany" autocomplete="organization" maxlength="120"></label>')
     promo = ('<details class="promo"><summary>Add a promo code</summary><div class="promo-row"><input type="text" id="bkPromo" autocomplete="off" autocapitalize="characters" '
@@ -827,7 +831,7 @@ def booking_card(l, ex=None):
   <div class="bc-price" id="cardPrice" data-from="{esc(money(fp) if fp else '')}">{price}</div>
   <div class="sum-box">
     <div class="sum-dates"><button type="button" id="sCiBtn"><small>Check-in</small><b id="sCi" class="ph">Add date</b></button><button type="button" id="sCoBtn"><small>Checkout</small><b id="sCo" class="ph">Add date</b></button></div>
-    <label class="f"><small>Guests</small><select id="bkGuests" name="guests">{opts}</select></label>
+    <label class="f"><small>Guests</small><select id="bkGuests" name="guests">{opts}</select></label>{pets_sel}
   </div>
   <form id="reserveForm" novalidate>
     <div class="det-wrap" id="detWrap" hidden>
@@ -1057,7 +1061,8 @@ def stay_config(l, ex):
     return {"id": l["id"], "slug": l["slug"], "max_guests": l["max_guests"], "cleaning_fee": float(l.get("cleaning_fee") or 0),
             "weekly_discount_pct": l.get("weekly_discount_pct") or 0, "monthly_discount_pct": l.get("monthly_discount_pct") or 0,
             "lat": l.get("lat"), "lng": l.get("lng"), "legacy": bool(ex.get("legacy_checkout")), "from_price": l.get("from_price"),
-            "title": l["title"]}
+            "title": l["title"], "pets_allowed": bool(l.get("pets_allowed")), "pet_fee": float(l.get("pet_fee") or 0),
+            "checkout_days": l.get("checkout_days") or [], "checkin_days": l.get("checkin_days") or []}
 
 
 LISTING_ASSETS = '<link rel="stylesheet" href="/assets/bh-booking.css?v={v}">\n'

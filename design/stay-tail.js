@@ -84,6 +84,24 @@ summary = function(){ _summary(); mbar(); };
 var _setBusy = setBusy;
 setBusy = function(on){ _setBusy(on); if (!on) mbar(); };
 
+/* Host booking rules: checkout only on the host's checkout days (ISO weekdays, 1 = Monday). Check-in days come from
+   closed_to_arrival in the availability feed. */
+function isoDow(s){ return (parse(s).getDay() + 6) % 7 + 1; }
+if (S.checkout_days && S.checkout_days.length){
+  var _cco = canCheckOut, _why = dayWhy;
+  canCheckOut = function(s, ci){ return _cco(s, ci) && S.checkout_days.indexOf(isoDow(s)) >= 0; };
+  dayWhy = function(s){
+    if (B.ci && !B.co && s > B.ci && _cco(s) && S.checkout_days.indexOf(isoDow(s)) < 0) return "No checkout on this day";
+    return _why(s);
+  };
+}
+/* Pets: only on homes that allow them; the server quote adds the pet fee */
+var petSel = $("#bkPets");
+if (petSel){
+  var qp = new URLSearchParams(location.search).get("pets");
+  if (/^[1-3]$/.test(qp || "")){ petSel.value = qp; B.pets = +qp; }
+  petSel.addEventListener("change", function(){ B.pets = +this.value || 0; summary(); });
+}
 /* Boot */
 /* Marketplace homes: the server's quote is the price Stripe will charge (extra guests, pets, discounts, cleaning). */
 var SQ = 0;
