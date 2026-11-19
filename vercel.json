@@ -75,7 +75,7 @@
     },
     {
       "source": "/:slug([a-z0-9-]+)",
-      "destination": "/stays/listing/index.html"
+      "destination": "/stays/listing"
     }
   ],
   "headers": [
