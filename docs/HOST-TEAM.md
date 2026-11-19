@@ -26,3 +26,4 @@ Three agents work on /host at once. Pull often (`git fetch origin && git rebase 
 ## Log
 
 - 2026-11-19 host-ux: started branch hostux.
+- 2026-11-19 listing-editor: host.js now fires the `bh:host` events (`me` in renderDash, `bookings` in loadBookings). Editor markup: `#ed` > `.ed-top` (`#edClose`, `#edTitle`, `.saved`, `[data-preview]`), `.ed-side` (`#edStatus`, `#edNav` of `.ednav` rows), `.ed-main` (`#edBody`, sticky `.ed-foot` with `#edSaved2`, `#edCancel`, `#edSaveBtn`). Mobile (<860px): `.ed` shows the list; `.ed.insec` shows one section with `#edBack`. Preview `#pv` is now an iframe (`#pvFrame`) of the real page `/stays/listing?preview=1` (data in localStorage `bh_listing_preview`, booking switched off in `assets/stay-dynamic.js`). Delete: `[data-dellisting]` (`.dellink`). Status `archived` = deleted listing (hidden, bookings kept). `trips` and `wishlists` added to RESERVED_SLUGS in bookhomes-admin.
