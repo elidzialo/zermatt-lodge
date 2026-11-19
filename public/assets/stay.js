@@ -327,6 +327,7 @@ function summary(){
   if (q.fee != null) html += '<div class="bd-row"><span>Cleaning fee</span><span>' + fmtMoney(q.fee) + '</span></div>';
   html += '<details><summary>Night-by-night breakdown</summary><ul>' + q.nights.map(function(n){ return '<li><span>' + fmtShort.format(parse(n.date)) + '</span><span>' + (n.price == null ? "-" : fmtMoney(n.price)) + '</span></li>'; }).join("") + '</ul></details>';
   html += '<div class="bd-row bd-total"><span>Total, no booking fees</span><span>' + (q.total == null ? "Confirmed at checkout" : fmtMoney(q.total)) + '</span></div>';
+  html += '<p class="bd-note">Includes the cleaning fee. Nothing else is added at checkout.</p>';
   bd.innerHTML = html;
 }
 $("#bkGuests").addEventListener("change", function(){ B.guests = this.value; syncAll(B.ci, B.co, B.guests); });

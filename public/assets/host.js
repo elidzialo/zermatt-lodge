@@ -59,7 +59,8 @@ function niceErr(e){
   if (/already registered/i.test(m)) return "There's already an account with that email. Log in instead.";
   return m;
 }
-var routing = 0, FACTOR = null, ENROL = null, SESSION = null, ME = null, started = false;
+var routing = 0, FACTOR = null, ENROL = null, SESSION = null, ME = null, started = false, WANT_MFA = false;
+var LATER_KEY = "bh_host_mfa_later";
 
 function api(fn, body){
   return sb.auth.getSession().then(function(r){
@@ -82,6 +83,8 @@ function route(session){
       if (f.error) throw f.error;
       var ok = (f.data.totp || []).filter(function(x){ return x.status === "verified"; });
       if (ok.length){ FACTOR = ok[0].id; msg("#mfaMsg", ""); $("#mfaCode").value = ""; view("Mfa"); $("#mfaCode").focus(); return; }
+      if (lsGet(LATER_KEY) === session.user.id && !WANT_MFA) return afterAuth();
+      WANT_MFA = false;
       return startEnrol(f.data.all || []);
     });
   }).catch(function(e){ view("Login"); msg("#loginMsg", niceErr(e)); });
@@ -107,6 +110,8 @@ sb.auth.onAuthStateChange(function(evt, session){
 });
 
 $("#toSignup").addEventListener("click", function(){ view("Signup"); });
+$("#enrolLater").addEventListener("click", function(){ if (SESSION) lsSet(LATER_KEY, SESSION.user.id); afterAuth(); });
+function aal(){ try { var p = SESSION.access_token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"); while (p.length % 4) p += "="; return JSON.parse(atob(p)).aal; } catch (e) { return ""; } }
 $("#toLogin").addEventListener("click", function(){ view("Login"); });
 $("#loginForm").addEventListener("submit", function(e){
   e.preventDefault();
@@ -240,7 +245,14 @@ document.addEventListener("click", function(e){
 $("#newListing").addEventListener("click", function(){ openWizard(null); });
 $("#editProfile").addEventListener("click", function(){ fillProfile(); $("#profH").textContent = "Edit profile"; view("Profile"); });
 $("#connectBtn").addEventListener("click", function(){
-  var b = this; b.disabled = true; $("#connectOut").textContent = "Opening Stripe...";
+  var b = this;
+  if (aal() !== "aal2"){
+    // Payouts need 2-step verification: set it up (or enter the code), then come back here
+    WANT_MFA = true; lsDel(LATER_KEY); route(SESSION);
+    setTimeout(function(){ msg("#enrolMsg", "Payouts need 2-step verification. Set it up once, then tap Connect payouts again.", true); msg("#mfaMsg", "Payouts need your 6-digit code.", true); }, 600);
+    return;
+  }
+  b.disabled = true; $("#connectOut").textContent = "Opening Stripe...";
   api("bookhomes-connect-onboard", {action: "start"}).then(function(j){
     b.disabled = false;
     if (j.url){ location.assign(j.url); return; }

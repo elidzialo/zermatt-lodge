@@ -65,7 +65,8 @@ function card(l){
   var f = l.features || {}, ph = (l.photos && l.photos[0] && l.photos[0].url) || "", rv = l.reviews || {}, r = S.results && S.results[l.id];
   var tag = f.kosher_kitchen ? '<span class="tag">' + icon("kosher") + 'Kosher kitchen</span>' : f.business_ready ? '<span class="tag">' + icon("work") + 'Business-ready</span>' : f.shabbat_friendly ? '<span class="tag">' + icon("shabbat") + 'Shabbat friendly</span>' : "";
   var price = r && r.total_pence ? '<b>' + money(r.total_pence / 100) + '</b> total for ' + r.nights + ' night' + (r.nights === 1 ? "" : "s") + '<small>Total price, no booking fees</small>'
-    : '<b>From ' + money(l.base_price) + '</b> a night<small>Plus cleaning ' + money(l.cleaning_fee) + '. No booking fees.</small>';
+    : l.from_price ? '<b>From ' + money(l.from_price) + '</b> a night<small>Plus cleaning ' + money(l.cleaning_fee) + '. No booking fees.</small>'
+    : '<b>Add dates</b> to see prices<small>Total shown with dates. No booking fees.</small>';
   var badges = [];
   if (f.near_shul) badges.push('<span class="badge">' + icon("shul") + 'Near shul</span>');
   if (f.work_crew) badges.push('<span class="badge">' + icon("van") + 'Work crew</span>');
@@ -170,7 +171,7 @@ function drawMap(v){
   var pts = [];
   v.forEach(function(l){
     if (l.lat == null || l.lng == null) return;
-    var r = S.results && S.results[l.id], label = r && r.total_pence ? money(r.total_pence / 100) : money(l.base_price);
+    var r = S.results && S.results[l.id], label = r && r.total_pence ? money(r.total_pence / 100) : l.from_price ? "From " + money(l.from_price) : "Add dates";
     L.circle([l.lat, l.lng], {radius: 700, color: "#1f4d3a", weight: 1, fillOpacity: .12}).addTo(layer);
     L.marker([l.lat, l.lng], {icon: L.divIcon({className: "pricepin", html: '<a href="' + esc(linkFor(l)) + '">' + esc(label) + '</a>', iconSize: null})}).addTo(layer);
     pts.push([l.lat, l.lng]);
