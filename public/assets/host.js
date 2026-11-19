@@ -427,12 +427,8 @@ function blank(){ return {property_type: "house", area: "", city: "Liverpool", l
   kosher: {kitchen: false, kitchen_type: null, separate_sinks: false, separate_ovens: false, supervision: "", shabbat: {}, shul_name: "", shul_walk_mins: null, eruv: "unknown", kosher_shops: "", mikvah: ""},
   business: {desk: false, wifi_mbps: null, van_parking: false, separate_beds: false, monthly_rates: false},
   title: "", description: "", house_rules: "No parties or events. No smoking.", check_in_time: "15:00", check_out_time: "11:00", cancellation_policy: "moderate",
-<<<<<<< HEAD
-  base_price: null, weekend_price: null, cleaning_fee: 0, guests_included: null, extra_guest_fee: 0, pets_allowed: false, pet_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: ""}; }
-=======
   base_price: null, weekend_price: null, cleaning_fee: 0, weekly_discount_pct: 0, monthly_discount_pct: 0, min_nights: 1, max_nights: 28, airbnb_url: "", booking_url: "",
   guests_included: null, extra_guest_fee: 0, pets_allowed: false, pet_fee: 0, checkin_days: [], checkout_days: [], advance_notice_days: 0, prep_days: 0, booking_window_days: 365}; }
->>>>>>> origin/main
 function tiles(list, isOn, attr){ return '<div class="tiles">' + list.map(function(t){ return '<button type="button" class="tile" ' + attr + '="' + t[0] + '" aria-pressed="' + (isOn(t[0]) ? "true" : "false") + '">' + icon(t[2] || t[0]) + "<span>" + esc(t[1]) + "</span></button>"; }).join("") + "</div>"; }
 function stepper(key, label, min, max){ return '<div class="stepper"><span>' + label + '</span><div><button type="button" data-step="' + key + '" data-d="-1" aria-label="Fewer">-</button><b id="st_' + key + '">' + W.l[key] + '</b><button type="button" data-step="' + key + '" data-d="1" data-max="' + max + '" data-min="' + min + '" aria-label="More">+</button></div></div>'; }
 function sw(path, label, ic){ var v = get(path); return '<label class="switch"><span>' + icon(ic) + esc(label) + '</span><input type="checkbox" data-sw="' + path + '"' + (v ? " checked" : "") + "></label>"; }
@@ -443,12 +439,6 @@ function area(path, label, extra){ return '<label class="f2">' + label + '<texta
 var FEES = function(){ return !!(ME && ME.fees_enabled); };
 function sel(path, label, opts){ var v = String(get(path)); return '<label class="f2">' + label + '<select data-in="' + path + '">' + opts.map(function(o){ return '<option value="' + o[0] + '"' + (String(o[0]) === v ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>"; }
 function dayChips(path, label){ var on = get(path) || []; return '<div class="f2">' + label + '<div class="tiles" style="grid-template-columns:repeat(7,1fr)">' + ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(function(d, i){ return '<button type="button" class="tile" data-dayk="' + path + '" data-d="' + (i + 1) + '" aria-pressed="' + (on.indexOf(i + 1) >= 0 ? "true" : "false") + '"><span>' + d + "</span></button>"; }).join("") + '</div><small style="color:var(--muted)">None ticked = any day.</small></div>'; }
-function importStep(){
-  return '<label class="f2">Your Airbnb listing link<input type="url" id="abUrl" placeholder="https://www.airbnb.co.uk/rooms/12345678" value="' + esc(W.l.airbnb_url || "") + '"></label>' +
-    '<button type="button" class="btn" id="abGo">Import from Airbnb</button>' +
-    '<p class="m" style="font-size:13.5px;color:var(--muted);margin-top:8px">Only import listings you own or manage. We copy the public text, details and photos into a draft. You check every step before it goes anywhere, and we never copy reviews or ratings.</p>' +
-    '<div id="abOut" style="margin-top:12px"></div><p class="m" style="margin-top:14px">Not on Airbnb? Tap Next to start from scratch.</p>';
-}
 function rulesStep(){
   return dayChips("checkin_days", "Check-in days") + dayChips("checkout_days", "Checkout days") +
     sel("advance_notice_days", "How much notice do you need?", [[0, "Same day"], [1, "At least 1 day"], [2, "At least 2 days"], [3, "At least 3 days"], [7, "At least 7 days"]]) +
@@ -456,11 +446,7 @@ function rulesStep(){
     sel("booking_window_days", "How far ahead can guests book?", [[90, "3 months"], [180, "6 months"], [365, "12 months"], [730, "24 months"]]);
 }
 var STEPS = [
-<<<<<<< HEAD
-  {h: "Already on Airbnb? Import your listing", lead: "Paste the link to your Airbnb listing. We copy the title, description, rooms, amenities and photos, then you check every screen before you submit.", r: importStep, f: null, imp: true},
-=======
-  {h: "Import from Airbnb (optional)", lead: "Already listed on Airbnb? Paste your listing link and we'll fill in the steps for you.", r: importStep, hide: function(){ return W.l.status && W.l.status !== "draft" && W.l.status !== "rejected"; }},
->>>>>>> origin/main
+  {h: "Already on Airbnb? Import your listing", lead: "Paste the link to your Airbnb listing. We copy the title, description, rooms, amenities and photos into a draft, then you check every screen before you submit.", r: importStep, imp: true, hide: function(){ return W.l.status && W.l.status !== "draft" && W.l.status !== "rejected"; }},
   {h: "Which of these best describes your place?", r: function(){ return tiles(TYPES, function(k){ return W.l.property_type === k; }, "data-type"); }, f: ["property_type"]},
   {h: "Where's your place?", lead: "Give the area, not the street address. Then tap the map near your home: guests only ever see a circle about 1 km wide.",
    r: function(){ return inp("area", "Area", "text", 'placeholder="e.g. Allerton, south Liverpool" maxlength="80"') + inp("city", "Town or city", "text", 'maxlength="60"') + '<div class="pmap" id="pmap"></div><p class="m" id="pinTxt" style="font-size:13.5px;color:var(--muted);margin-top:6px">' + (W.l.lat ? "Pin set." : "No pin yet.") + "</p>"; },
@@ -484,30 +470,22 @@ var STEPS = [
   {h: "House rules and check-in", r: function(){ return area("house_rules", "House rules", 'maxlength="2500"') + inp("check_in_time", "Check-in from", "time") + inp("check_out_time", "Checkout by", "time") +
      '<label class="f2">Cancellation policy<select data-in="cancellation_policy">' + [["flexible","Flexible: full refund up to 24 hours before"],["moderate","Moderate: full refund up to 5 days before, then 50%"],["strict","Strict: full refund up to 14 days before, 50% up to 7 days"]].map(function(o){ return '<option value="' + o[0] + '"' + (W.l.cancellation_policy === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>"; },
    f: ["house_rules", "check_in_time", "check_out_time", "cancellation_policy"]},
-<<<<<<< HEAD
   {h: "Now, set your price", lead: "You can change it any time, and set prices for single dates in your calendar.", r: priceStep,
-   f: ["base_price", "weekend_price", "cleaning_fee", "guests_included", "extra_guest_fee", "pets_allowed", "pet_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights"],
-   v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : +W.l.max_nights && +W.l.min_nights > +W.l.max_nights ? "Minimum nights can't be more than maximum nights." : ""; }, after: example},
-  {h: "Sync your other calendars", lead: "Stops double bookings. In Airbnb or Booking.com, find 'Export calendar' and paste the link here. We check them every 15 minutes.", r: icalStep, f: ["airbnb_url", "booking_url"], needId: true},
-=======
-  {h: "Set your price", lead: "Guests see a clear breakdown and pay no guest service fee. Book Homes takes a commission from your payout only.", r: function(){ return (W.priceHint ? '<p class="m" style="font-size:13.5px">Your Airbnb page showed about £' + esc(W.priceHint) + ' a night. Set whatever price you like here.</p>' : "") + inp("base_price", "Price per night (£)", "number", 'min="10" max="10000" step="1"') + inp("weekend_price", "Friday and Saturday nights (£, optional)", "number", 'min="10" max="10000" step="1"') + inp("cleaning_fee", "Cleaning fee per stay (£)", "number", 'min="0" max="2000" step="1"') +
-     (FEES() ? inp("guests_included", "Guests included in the nightly price (leave empty for no extra guest fee)", "number", 'min="1" max="30"') + inp("extra_guest_fee", "Extra guest fee, per guest per night (£)", "number", 'min="0" max="500" step="1"') + sw("pets_allowed", "Pets allowed", "pets") + (W.l.pets_allowed ? inp("pet_fee", "Pet fee per stay (£)", "number", 'min="0" max="500" step="1"') : "") : "") +
-     inp("weekly_discount_pct", "Weekly discount, 7+ nights (%)", "number", 'min="0" max="50"') + inp("monthly_discount_pct", "Monthly discount, 28+ nights (%)", "number", 'min="0" max="60"') + inp("min_nights", "Minimum nights", "number", 'min="1" max="90"') + inp("max_nights", "Maximum nights", "number", 'min="1" max="365"') + '<div class="example" id="example"></div>'; },
-   f: ["base_price", "weekend_price", "cleaning_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights", "guests_included", "extra_guest_fee", "pets_allowed", "pet_fee"], v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : ""; }, after: example, rerender: true},
+   f: ["base_price", "weekend_price", "cleaning_fee", "weekly_discount_pct", "monthly_discount_pct", "min_nights", "max_nights", "guests_included", "extra_guest_fee", "pets_allowed", "pet_fee"],
+   v: function(){ return !(+W.l.base_price >= 10) ? "Please set a nightly price of at least £10." : +W.l.max_nights && +W.l.min_nights > +W.l.max_nights ? "Minimum nights can't be more than maximum nights." : ""; }, after: example, rerender: true},
   {h: "Booking rules (optional)", lead: "Choose when guests can arrive and how far ahead they can book. Leave as they are to accept any day.", r: rulesStep,
    f: ["checkin_days", "checkout_days", "advance_notice_days", "prep_days", "booking_window_days"], hide: function(){ return !FEES(); }},
   {h: "Sync your other calendars", lead: "Stops double bookings. In Airbnb, Booking.com, Vrbo or Guesty, find 'Export calendar' and paste the link here. We check every 15 minutes, or tap Sync now.", r: icalStep, f: ["airbnb_url", "booking_url"], needId: true},
->>>>>>> origin/main
   {h: "Check and submit", r: reviewStep, last: true}
 ];
 function openWizard(id){
-  W.id = id; W.min = id ? 1 : 0; W.i = W.min; W.photos = []; W.imported = null; STEPS[0].f = null;
+  W.id = id; W.i = 0; W.photos = [];
   var l = id ? (ME.listings || []).filter(function(x){ return +x.id === id; })[0] : null;
   W.l = Object.assign(blank(), l ? JSON.parse(JSON.stringify(l)) : {});
   ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
   W.l.kosher.shabbat = W.l.kosher.shabbat || {};
   W.photos = (ME.photos || []).filter(function(p){ return +p.listing_id === id; });
-  W.priceHint = null;
+  W.priceHint = null; W.imported = null;
   if (STEPS[0].hide()) W.i = 1;
   if (l && l.status === "approved") W.i = STEPS.length - 1;
   show("#wz", true); document.body.style.overflow = "hidden"; drawStep();
@@ -515,26 +493,18 @@ function openWizard(id){
 function closeWizard(){ show("#wz", false); document.body.style.overflow = ""; refresh(); }
 function drawStep(){
   var s = STEPS[W.i];
-  $("#wzBar").style.width = Math.round((W.i + 1 - (W.min || 0)) / (STEPS.length - (W.min || 0)) * 100) + "%";
+  var vis = STEPS.filter(function(x){ return !(x.hide && x.hide()); }), pos = vis.indexOf(s) + 1;
+  $("#wzBar").style.width = Math.round(pos / vis.length * 100) + "%";
+  $("#wzStep").textContent = "Step " + pos + " of " + vis.length;
   $("#wzIn").innerHTML = '<h2 id="wzH">' + esc(s.h) + "</h2>" + (s.lead ? '<p class="lead">' + esc(s.lead) + "</p>" : "") + s.r();
-<<<<<<< HEAD
-  $("#wzBack").style.visibility = W.i > (W.min || 0) ? "visible" : "hidden";
-  $("#wzStep").textContent = "Step " + (W.i + 1 - (W.min || 0)) + " of " + (STEPS.length - (W.min || 0));
+  $("#wzBack").style.visibility = W.i > (STEPS[0].hide() ? 1 : 0) ? "visible" : "hidden";
   $("#wzNext").textContent = s.last ? "Submit for approval" : s.imp && !W.imported ? "Start from scratch" : "Next";
   $("#wzIn").classList.remove("in"); void $("#wzIn").offsetWidth; $("#wzIn").classList.add("in");
-=======
-  $("#wzBack").style.visibility = W.i > (STEPS[0].hide() ? 1 : 0) ? "visible" : "hidden";
-  $("#wzNext").textContent = s.last ? "Submit for approval" : "Next";
->>>>>>> origin/main
   $("#wzMsg").textContent = "";
   if (s.after) s.after();
   $(".wz-body").scrollTop = 0;
 }
-<<<<<<< HEAD
-function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths","guests_included","extra_guest_fee","pet_fee"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
-=======
 function payload(fields){ var o = {}; fields.forEach(function(k){ var v = W.l[k]; if (["base_price","weekend_price","cleaning_fee","weekly_discount_pct","monthly_discount_pct","min_nights","max_nights","max_guests","bedrooms","beds","baths","guests_included","extra_guest_fee","pet_fee","advance_notice_days","prep_days","booking_window_days"].indexOf(k) >= 0) v = v === "" || v == null ? null : +v; if (k === "business" && v) v = Object.assign({}, v, {wifi_mbps: v.wifi_mbps ? +v.wifi_mbps : null}); if (k === "kosher" && v) v = Object.assign({}, v, {shul_walk_mins: v.shul_walk_mins ? +v.shul_walk_mins : null}); if ((k === "airbnb_url" || k === "booking_url") && !v) v = null; o[k] = v; }); return o; }
->>>>>>> origin/main
 function save(fields){
   var body = {action: "save_listing", listing: payload(fields || [])};
   if (W.id) body.id = W.id; else body.listing.title = W.l.title || (W.l.area ? "Home in " + W.l.area : "My home");
@@ -554,11 +524,7 @@ $("#wzNext").addEventListener("click", function(){
   (s.f || STEPS[nx].needId ? save(s.f || []) : Promise.resolve()).then(function(){ b.disabled = false; W.i = nx; drawStep(); })
     .catch(function(e){ b.disabled = false; $("#wzMsg").textContent = e.message; });
 });
-<<<<<<< HEAD
-$("#wzBack").addEventListener("click", function(){ if (W.i > (W.min || 0)){ W.i--; $("#wzNext").style.visibility = "visible"; drawStep(); } });
-=======
 $("#wzBack").addEventListener("click", function(){ var pv = W.i - 1; while (pv > 0 && STEPS[pv].hide && STEPS[pv].hide()) pv--; if (pv >= 0 && !(STEPS[pv].hide && STEPS[pv].hide())){ W.i = pv; $("#wzNext").style.visibility = "visible"; drawStep(); } });
->>>>>>> origin/main
 $("#wzSave").addEventListener("click", function(){ var s = STEPS[W.i]; (s.f ? save(s.f) : Promise.resolve()).then(closeWizard).catch(function(e){ $("#wzMsg").textContent = e.message; }); });
 $("#wzIn").addEventListener("click", function(e){
   var dk = e.target.closest("[data-dayk]");
@@ -582,7 +548,7 @@ $("#wzIn").addEventListener("input", function(e){
 });
 $("#wzIn").addEventListener("change", function(e){
   var t = e.target;
-  if (t.hasAttribute("data-sw")){ set(t.getAttribute("data-sw"), t.checked); if (STEPS[W.i].rerender || STEPS[W.i].r === priceStep) drawStep(); }
+  if (t.hasAttribute("data-sw")){ set(t.getAttribute("data-sw"), t.checked); if (STEPS[W.i].rerender) drawStep(); }
   if (t.hasAttribute("data-in")) set(t.getAttribute("data-in"), t.value);
   if (t.id === "phFiles") upload(t.files);
 });
@@ -620,25 +586,25 @@ function priceStep(){
   var row = function(path, label, sub, extra){ return '<label class="prow"><span><b>' + label + "</b>" + (sub ? "<small>" + sub + "</small>" : "") + '</span><span class="pin">£<input type="number" inputmode="decimal" data-in="' + path + '" value="' + esc(money0(get(path))) + '" ' + (extra || 'min="0" max="2000" step="1"') + "></span></label>"; };
   var pct = function(path, label, sub, max){ return '<label class="prow"><span><b>' + label + "</b><small>" + sub + '</small></span><span class="pin">' + '<input type="number" inputmode="numeric" data-in="' + path + '" value="' + esc(money0(get(path))) + '" min="0" max="' + max + '">%</span></label>'; };
   var num = function(path, label, sub, max){ return '<label class="prow"><span><b>' + label + "</b><small>" + sub + '</small></span><span class="pin"><input type="number" inputmode="numeric" data-in="' + path + '" value="' + esc(money0(get(path))) + '" min="1" max="' + max + '"></span></label>'; };
-  return '<div class="bigp"><span>£</span><input id="bigPrice" type="number" inputmode="numeric" data-in="base_price" value="' + esc(money0(l.base_price)) + '" min="10" max="10000" step="1" aria-label="Price per night in pounds" placeholder="0"></div><p class="bigp-sub">per night, Sunday to Thursday</p>' +
+  return (W.priceHint ? '<p class="pnote" style="text-align:center;margin:0 0 8px">Your Airbnb page showed about £' + esc(W.priceHint) + ' a night.</p>' : "") + '<div class="bigp"><span>£</span><input id="bigPrice" type="number" inputmode="numeric" data-in="base_price" value="' + esc(money0(l.base_price)) + '" min="10" max="10000" step="1" aria-label="Price per night in pounds" placeholder="0"></div><p class="bigp-sub">per night, Sunday to Thursday</p>' +
     '<div class="example ge" id="example" data-mode="night"></div>' +
     '<h3 class="psec">Weekend and custom prices</h3>' + row("weekend_price", "Weekend price", "Friday and Saturday nights. Leave blank to use your nightly price.", 'min="10" max="10000" step="1"') +
     '<p class="pnote">Custom prices for single dates (match days, Christmas, the Grand National) are set in your Calendar once the listing is saved.</p>' +
     '<h3 class="psec">Fees</h3>' + row("cleaning_fee", "Cleaning fee", "Once per stay. Shown inside the total, never added at checkout.") +
-    row("extra_guest_fee", "Extra guest fee", "Per guest, per night, above the number below.") + num("guests_included", "Guests included", "Guests covered by the nightly price.", 30) +
+    (FEES() ? row("extra_guest_fee", "Extra guest fee", "Per guest, per night, above the number below.") + num("guests_included", "Guests included", "Guests covered by the nightly price. Leave empty for no extra guest fee.", 30) +
     '<label class="prow"><span><b>Pets allowed</b><small>Show your home to guests travelling with a pet.</small></span><input type="checkbox" class="tg" data-sw="pets_allowed"' + (pets ? " checked" : "") + "></label>" +
-    (pets ? row("pet_fee", "Pet fee", "Once per stay.", 'min="0" max="500" step="1"') : "") +
+    (pets ? row("pet_fee", "Pet fee", "Once per stay.", 'min="0" max="500" step="1"') : "") : "") +
     '<h3 class="psec">Discounts</h3>' + pct("weekly_discount_pct", "Weekly discount", "For stays of 7 nights or more.", 50) + pct("monthly_discount_pct", "Monthly discount", "For stays of 28 nights or more. Popular with work crews.", 60) +
     '<h3 class="psec">Length of stay</h3>' + num("min_nights", "Minimum nights", "Shortest stay you accept.", 90) + num("max_nights", "Maximum nights", "Longest stay you accept.", 365);
 }
 /* Step 1 for new listings: import from Airbnb (the backend reads the public listing page), with a manual fallback */
-var IMP_KEYS = ["title", "description", "property_type", "area", "city", "lat", "lng", "max_guests", "bedrooms", "beds", "baths", "amenities", "house_rules", "check_in_time", "check_out_time", "base_price", "cleaning_fee", "airbnb_url"];
+/* fields the importer can fill */ var IMP_KEYS = ["title", "description", "property_type", "area", "city", "lat", "lng", "max_guests", "bedrooms", "beds", "baths", "amenities", "house_rules", "check_in_time", "check_out_time", "base_price", "cleaning_fee", "airbnb_url"];
 function importStep(){
   if (W.imported) return importDone();
   return '<div class="imp"><label class="f2">Airbnb listing link<input type="url" id="impUrl" inputmode="url" autocomplete="off" placeholder="https://www.airbnb.co.uk/rooms/12345678" value="' + esc(W.l.airbnb_url || "") + '"></label>' +
     '<button type="button" class="btn block" id="impGo">' + icon("bolt") + "Import my listing</button>" +
     '<div id="impState" aria-live="polite"></div>' +
-    '<div class="imp-how"><b>Where do I find the link?</b><span>Open your listing on airbnb.co.uk, tap Share, then Copy link. On the Airbnb app: your listing, Share, Copy.</span></div>' +
+    '<div class="imp-how"><b>Where do I find the link?</b><span>Open your listing on airbnb.co.uk, tap Share, then Copy link. Only import homes you own or manage. We never copy reviews or ratings.</span></div>' +
     '<p class="imp-alt">Not on Airbnb? Tap <b>Start from scratch</b> below. It takes about 10 minutes.</p></div>';
 }
 function importDone(){
@@ -648,7 +614,7 @@ function importDone(){
   if (j.max_guests) got.push(j.max_guests + " guests, " + (j.bedrooms || 0) + " bedrooms");
   if (j.amenities && j.amenities.length) got.push(j.amenities.length + " amenities");
   if (W.photos.length) got.push(W.photos.length + " photos");
-  if (j.base_price) got.push("Price from £" + j.base_price);
+  if (W.priceHint) got.push("Airbnb price about £" + W.priceHint + " a night");
   return '<div class="imp-ok">' + icon("check") + '<div><b>Imported from Airbnb</b><span>' + esc(j.title || "Your listing") + "</span></div></div>" +
     '<ul class="imp-got">' + got.map(function(g){ return "<li>" + icon("check") + esc(g) + "</li>"; }).join("") + "</ul>" +
     '<p class="lead" style="margin-top:16px">Tap Next to check each screen. Add the area (not the street address) and your map pin, then set your price.</p>';
@@ -665,18 +631,22 @@ $("#wzIn").addEventListener("click", function(e){
   }
   b.disabled = true; $("#wzNext").disabled = true; impProgress(0);
   var k = 0, tick = setInterval(function(){ if (k < 2) impProgress(++k); }, 1800);
-  api("bookhomes-host", {action: "import_airbnb", url: url, listing_id: W.id || undefined}).then(function(j){
-    clearInterval(tick); impProgress(3);
-    var l = j.listing || j || {}, keys = [];
-    IMP_KEYS.forEach(function(key){ if (l[key] != null && l[key] !== "" && !(Array.isArray(l[key]) && !l[key].length)){ W.l[key] = l[key]; keys.push(key); } });
-    W.l.airbnb_url = url; if (keys.indexOf("airbnb_url") < 0) keys.push("airbnb_url");
-    if (j.id) W.id = +j.id;
-    if (Array.isArray(j.photos)) W.photos = j.photos.filter(function(p){ return p && p.url; });
-    W.imported = l; STEPS[0].f = keys;
-    setTimeout(function(){ $("#wzNext").disabled = false; drawStep(); }, 400);
+  api("bookhomes-import-airbnb", {url: url, listing_id: W.id || undefined}).then(function(j){
+    if (!j.ok){ var e = new Error(j.error || "We couldn't read that listing."); throw e; }
+    W.id = +j.listing_id; W.priceHint = j.price_hint || null;
+    return api("bookhomes-host", {action: "me"}).then(function(me){
+      ME = me; clearInterval(tick); impProgress(3);
+      var l = (ME.listings || []).filter(function(x){ return +x.id === W.id; })[0] || {};
+      W.l = Object.assign(blank(), JSON.parse(JSON.stringify(l)));
+      ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
+      W.l.kosher.shabbat = W.l.kosher.shabbat || {};
+      W.photos = (ME.photos || []).filter(function(p){ return +p.listing_id === W.id; });
+      W.imported = Object.assign({}, W.l, {count: (j.imported || []).length});
+      setTimeout(function(){ $("#wzNext").disabled = false; drawStep(); }, 400);
+    });
   }).catch(function(err){
     clearInterval(tick); b.disabled = false; $("#wzNext").disabled = false;
-    var m = /unknown action/i.test(err.message || "") ? "Import isn't switched on yet." : (err.message || "We couldn't read that listing.");
+    var m = err.message || "We couldn't read that listing.";
     $("#impState").innerHTML = '<p class="msg err">' + esc(m) + ' You can fill in the details yourself instead: tap <b>Start from scratch</b>.</p>';
   });
 });
@@ -742,29 +712,6 @@ function icalStep(){
       : '<p class="m" style="font-size:14px;color:var(--muted)">Your Book Homes calendar link appears here once the listing is saved.</p>');
 }
 $("#wzIn").addEventListener("click", function(e){
-  if (e.target.id === "abGo"){
-    var ab = e.target, url = $("#abUrl").value.trim();
-    if (!/airbnb\.[a-z.]+\/rooms\/(plus\/)?\d+/i.test(url)){ $("#abOut").innerHTML = '<div class="msg err">Paste your Airbnb listing link. It looks like https://www.airbnb.co.uk/rooms/12345678</div>'; return; }
-    busy(ab, true, "Importing... this takes up to a minute");
-    api("bookhomes-import-airbnb", {url: url, listing_id: W.id || undefined}).then(function(j){
-      busy(ab, false, "Import from Airbnb");
-      if (!j.ok){
-        $("#abOut").innerHTML = '<div class="msg err">' + esc(j.error) + '</div><label class="f2">Paste your Airbnb description (optional)<textarea id="abDesc" maxlength="5000"></textarea></label>';
-        W.l.airbnb_url = url; return;
-      }
-      W.id = j.listing_id; W.priceHint = j.price_hint || null;
-      return api("bookhomes-host", {action: "me"}).then(function(me){
-        ME = me;
-        var l = (ME.listings || []).filter(function(x){ return +x.id === W.id; })[0];
-        W.l = Object.assign(blank(), JSON.parse(JSON.stringify(l)));
-        ["kosher", "business"].forEach(function(k){ W.l[k] = Object.assign(blank()[k], W.l[k] || {}); });
-        W.l.kosher.shabbat = W.l.kosher.shabbat || {};
-        W.photos = (ME.photos || []).filter(function(p){ return +p.listing_id === W.id; });
-        $("#abOut").innerHTML = '<div class="msg ok">Imported ' + esc((j.imported || []).length) + " details and " + esc(j.photos) + " photos. Tap Next and check each step: fix anything that's wrong and set the map pin.</div>";
-      });
-    }).catch(function(err){ busy(ab, false, "Import from Airbnb"); $("#abOut").innerHTML = '<div class="msg err">' + esc(err.message) + "</div>"; });
-    return;
-  }
   if (e.target.id === "icSync"){
     var sb2 = e.target; busy(sb2, true, "Syncing...");
     api("bookhomes-host", {action: "sync_now", listing_id: W.id}).then(function(j){

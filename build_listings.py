@@ -540,7 +540,7 @@ MONTHS = ["january", "february", "march", "april", "may", "june", "july", "augus
 SEASON_WORDS = {"christmas": 12, "boxing-day": 12, "panto": 12, "new-year": 1, "winter": 12, "becher": 12, "ice-skating": 12, "grand-national": 4, "beatleweek": 8, "half-term": None}
 
 
-def whats_on(guides, today=None, n=8):
+def whats_on_rail(guides, today=None, n=8):
     """Newest event and seasonal guides for this month and next: the homepage "What's on in Liverpool" rail."""
     import datetime
     today = today or datetime.date.today()
@@ -574,7 +574,7 @@ def whats_on(guides, today=None, n=8):
 
 
 def whats_on_html(guides):
-    items = whats_on(guides)
+    items = whats_on_rail(guides)
     if len(items) < 3:
         return ""
     cards = "".join(
