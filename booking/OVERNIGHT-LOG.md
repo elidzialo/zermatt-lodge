@@ -28,3 +28,11 @@ Checks: build clean, JS syntax, JSON-LD, no dashes, no secrets. Booking card cod
 ## Merge 3 (00:14) - optimise d2f2ea8 -> main
 Conversion + mobile: trust strip uses real facts (4.75 from 4 Airbnb reviews, already shown on the page), one star not five, price note says total includes cleaning, Book on Airbnb on guides, 44px tap targets.
 Checked claims are true (rating/review count match the reviews section; booking is confirmed on payment). Checks pass.
+
+## Review 2 (00:04) - builder's edge functions (uncommitted)
+Good: host writes go through RLS (asUser), server re-prices every checkout, idempotent Stripe calls, automatic refund on clash, host phone/WhatsApp shown only after payment, CORS limited to bookhomes.co.uk + this project's previews. Builder already fixed ical_token (column grants + my_ical_token).
+Sent: push the branch; date-free alerts need a real notify step; no "VAT receipt" wording without a VAT number; cap host calendar range; no 2-step dead end for hosts; setup notes for webhooks.
+Testing limit: Vercel Sandbox creation was refused by the permission system, so POST tests (Stripe session creation) cannot be run from here; checkout code paths are reviewed by reading instead.
+
+## Merge 4 (00:04) - optimise 46a16e1 -> main
+Topic clusters: /guides grouped under 9 topics with jump links, every guide links its cluster siblings, homepage links to pillar guides. New guides from the daily run fall into 'More guides' if their cluster is unknown, so the 09:10 run is safe. Checks pass.
