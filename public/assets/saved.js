@@ -7,7 +7,11 @@ function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(
 function icon(n){ return '<svg class="ic" aria-hidden="true"><use href="#i-' + n + '"/></svg>'; }
 function money(n){ n = +n || 0; return "£" + (n % 1 ? n.toFixed(2) : n.toLocaleString("en-GB")); }
 function plural(n, w){ n = +n || 0; return n + " " + w + (n === 1 ? "" : "s"); }
-function img(u, w){ return /assets\.guesty\.com/.test(u || "") && /\/w_\d+,/.test(u) ? u.replace(/\/w_\d+,/, "/w_" + w + ",") : u; }
+function img(u, w){
+  if (/assets\.guesty\.com/.test(u || "") && /\/w_\d+,/.test(u)) return u.replace(/\/w_\d+,/, "/w_" + w + ",");
+  if (/^https:\/\/kddhkuwnkkjcnbjegsmc\.supabase\.co\/storage\/v1\/object\/public\//.test(u || "") && [480, 720, 1080, 1600].indexOf(w) > -1) return "/_vercel/image?url=" + encodeURIComponent(u) + "&w=" + w + "&q=75";
+  return u;
+}
 
 var D = JSON.parse($("#bh-data").textContent), byId = {};
 D.listings.forEach(function(l){ byId[+l.id] = l; });

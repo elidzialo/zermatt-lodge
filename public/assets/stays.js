@@ -150,8 +150,14 @@ function visible(f){
 }
 
 /* ---------- cards ---------- */
-function img(u, w){ return /assets\.guesty\.com/.test(u || "") && /\/w_\d+,/.test(u) ? u.replace(/\/w_\d+,/, "/w_" + w + ",") : u; }
-function srcset(u){ return /assets\.guesty\.com/.test(u || "") ? [480, 720, 1080].map(function(w){ return img(u, w) + " " + w + "w"; }).join(", ") : ""; }
+/* Guesty CDN photos resize by URL; our own Supabase Storage photos go through Vercel Image Optimization (widths in vercel.json "images"). */
+var SUPA_IMG = /^https:\/\/kddhkuwnkkjcnbjegsmc\.supabase\.co\/storage\/v1\/object\/public\//;
+function img(u, w){
+  if (/assets\.guesty\.com/.test(u || "") && /\/w_\d+,/.test(u)) return u.replace(/\/w_\d+,/, "/w_" + w + ",");
+  if (SUPA_IMG.test(u || "") && [480, 720, 1080, 1600].indexOf(w) > -1) return "/_vercel/image?url=" + encodeURIComponent(u) + "&w=" + w + "&q=75";
+  return u;
+}
+function srcset(u){ return /assets\.guesty\.com/.test(u || "") || SUPA_IMG.test(u || "") ? [480, 720, 1080].map(function(w){ return img(u, w) + " " + w + "w"; }).join(", ") : ""; }
 function linkFor(l){
   var p = new URLSearchParams();
   var r = S.results && S.results !== "loading" && S.results[l.id];
@@ -165,7 +171,7 @@ function card(l, i){
   var ph = (l.card_photos && l.card_photos.length ? l.card_photos : (l.photos || [])).slice(0, 5), href = esc(linkFor(l));
   var r = S.results && S.results !== "loading" && S.results[l.id], rv = l.reviews || {};
   var slides = ph.map(function(p, k){
-    var ss = srcset(p.url);
+    var ss = p.thumb ? "" : srcset(p.url); // a host thumb is already card size
     // p.thumb: small card copy of a host photo (full size photos are for the listing page)
     return '<a class="sl" href="' + href + '" tabindex="' + (k ? -1 : 0) + '"' + (k ? ' aria-hidden="true"' : "") + '><img src="' + esc(p.thumb || img(p.url, 720)) + '"' +
       (ss ? ' srcset="' + esc(ss) + '" sizes="(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw"' : "") +

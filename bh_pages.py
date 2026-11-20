@@ -205,7 +205,14 @@ def trips_page():
     return head("Trips | Book Homes", "Your Book Homes trips.", "/trips", robots="noindex, nofollow", extra=extra) + header() + TRIPS + footer() + end()
 
 
+NOT_FOUND = """<h1>This page could not be found</h1>
+<p>The link may be old or mistyped. Try one of these instead.</p>
+<p><a class="btn" href="/">See all homes</a> <a class="btn ghost" href="/guides">Liverpool guides</a></p>"""
+
+
 def write_all():
+    # Served by Vercel with a real 404 status for any path that matches no file or rewrite (e.g. /guides/old-guide)
+    write("404.html", text_page("/404", "Page not found | Book Homes", "This page could not be found.", NOT_FOUND, robots="noindex, nofollow"))
     write("stays/listing/index.html", dynamic_listing())
     write("stays/booked/index.html", text_page("/stays/booked", "Your booking | Book Homes", "Your Book Homes booking.", BOOKED, robots="noindex, nofollow"))
     write("stays/review/index.html", text_page("/stays/review", "Review your stay | Book Homes", "Review your stay.", REVIEW, robots="noindex, nofollow"))

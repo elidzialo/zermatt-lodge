@@ -25,6 +25,7 @@ import json
 import os
 import re
 import urllib.request
+from urllib.parse import quote
 
 import yaml
 
@@ -235,15 +236,28 @@ def listing_url(l):
     return l.get("url") or "/" + l["slug"]
 
 
+# Our own Supabase Storage photos (uploads and Airbnb imports) are full size; Vercel Image Optimization
+# (vercel.json "images", widths 480/720/1080/1600) serves resized WebP copies of them.
+SUPA_IMG = re.compile(r"^https://kddhkuwnkkjcnbjegsmc\.supabase\.co/storage/v1/object/public/")
+VIMG_W = (480, 720, 1080, 1600)
+
+
 def img(url, w):
-    """Resized copy for Guesty CDN photos; other hosts' photos are used as they are."""
+    """Resized copy for Guesty CDN and our own Supabase Storage photos; other hosts' photos are used as they are."""
     if "assets.guesty.com" in (url or "") and re.search(r"/w_\d+,", url):
         return re.sub(r"/w_\d+,", f"/w_{w},", url)
+    if SUPA_IMG.match(url or "") and w in VIMG_W:
+        return "/_vercel/image?url=" + quote(url, safe="") + f"&w={w}&q=75"
     return url
 
 
+def og_img(url):
+    """Absolute 1200px image for og:image (social sites need a full URL)."""
+    return img(url, 1200) if "assets.guesty.com" in (url or "") else url
+
+
 def srcset(url, widths=(480, 720, 1080)):
-    if "assets.guesty.com" not in (url or ""):
+    if "assets.guesty.com" not in (url or "") and not SUPA_IMG.match(url or ""):
         return ""
     return ", ".join(f"{img(url, w)} {w}w" for w in widths)
 
@@ -454,7 +468,7 @@ def card_html(l, eager=False):
     photos = l["card_photos"]
     slides = "".join(
         f'<a class="sl" href="{esc(l["url"])}" tabindex="{0 if i == 0 else -1}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-        f'<img src="{esc(p.get("thumb") or img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) else ""}'
+        f'<img src="{esc(p.get("thumb") or img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) and not p.get("thumb") else ""}'
         f' alt="{esc(p["caption"])}" width="720" height="684" {"fetchpriority=" + chr(34) + "high" + chr(34) if eager and i == 0 else "loading=" + chr(34) + "lazy" + chr(34)} decoding="async"></a>'
         for i, p in enumerate(photos))
     dots = "".join(f'<i{" class=" + chr(34) + "on" + chr(34) if i == 0 else ""}></i>' for i in range(len(photos))) if len(photos) > 1 else ""
@@ -635,9 +649,11 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     data_js = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     count = f'{len(shown)} home{"s" if len(shown) != 1 else ""}'
     extra = f'<link rel="stylesheet" href="/assets/bh-booking.css?v={asset_v("bh-booking.css")}">\n'
-    og = img(shown[0]["card_photos"][0]["url"], 1200) if shown and shown[0]["card_photos"] else None
-    first = (shown[0]["card_photos"][0].get("thumb") or shown[0]["card_photos"][0]["url"]) if shown and shown[0]["card_photos"] else None
-    pre = lcp_preload(first, (480, 720, 1080), "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw")
+    og = og_img(shown[0]["card_photos"][0]["url"]) if shown and shown[0]["card_photos"] else None
+    p0 = shown[0]["card_photos"][0] if shown and shown[0]["card_photos"] else None
+    # Preload must match the first card <img>: the host's small thumb as is, otherwise the resized photo with srcset
+    pre = (f'<link rel="preload" as="image" href="{esc(p0["thumb"])}" fetchpriority="high">\n' if p0 and p0.get("thumb")
+           else lcp_preload(p0["url"] if p0 else None, (480, 720, 1080), "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw"))
     return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home", preload=pre) +
             f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span class="wm">Book<b>Homes</b></span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>
 <header class="top" id="top">
@@ -1088,7 +1104,7 @@ def listing_page(l, reviews, guides, ex):
     title = ex.get("seo_title") or f'{l["title"]}, {area_name(l) or l.get("city")}: {plural(l["bedrooms"], "bedroom")} {(l.get("property_type") or "home").lower()}, sleeps {l["max_guests"]} | Book Homes'
     desc = ex.get("seo_description") or no_dashes((l.get("description") or l["title"]).replace("\n", " "))[:155]
     photos = listing_photos(l, ex)
-    og = ex.get("og_image") or (img(photos[0]["url"], 1200) if photos else None)
+    og = ex.get("og_image") or (og_img(photos[0]["url"]) if photos else None)
     cfg = json.dumps(stay_config(l, ex))
     offer = OFFER + f'<script src="/assets/offer.js?v={asset_v("offer.js")}" defer></script>\n' if ex.get("offer") else ""
     pre = lcp_preload(photos[0]["url"], (480, 720, 1080, 1600), "(max-width:860px) 100vw, 50vw", 1080) if photos else ""

@@ -3,6 +3,18 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "images": {
+    "sizes": [480, 720, 1080, 1600],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "kddhkuwnkkjcnbjegsmc.supabase.co",
+        "pathname": "/storage/v1/object/public/**"
+      }
+    ],
+    "formats": ["image/webp"],
+    "minimumCacheTTL": 2592000
+  },
   "redirects": [
     {
       "source": "/:path*",
