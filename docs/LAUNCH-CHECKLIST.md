@@ -1,39 +1,35 @@
 # Book Homes launch checklist
 
-Last checked: 19 November 2026, live site, at 390px and 1280px.
+Last checked: 20 November 2026, live site, at 390px and 1280px (headless Chrome).
+
+**Status: ready to take bookings. Blocked on Eli for email, Stripe and legal sign-off (below).**
 
 ## Ready
 
-- Home page: search, filters, categories, map with pins, listing cards, empty state.
-- Listing pages: Zermatt Lodge and the Stylish Liverpool Apartment (gallery, reserve card, date picker, Confirm and pay). Both reach a Stripe Checkout session. No payment was made; the test holds were released.
-- The Stylish Liverpool Apartment now has its own built page (indexable, with title, canonical and JSON-LD), not only the noindex fallback.
-- Kosher homes, guides hub and guide pages, become a host, saved, trips, terms (hosts and guests), privacy, admin login screen, not-found page.
-- All 120 internal links checked: none broken. JSON-LD valid on every page. No layout overflow at 390px or 1280px. No broken images. Form fields have labels. Text contrast passes (only greyed-out past dates are low, which is expected).
-- Host side: log in, 2-step verification setup, profile, the 18-step listing wizard (with photo upload and map), submit for approval, editor and Save, guest preview, calendar (block a night), earnings, today, menu, delete listing (photos removed too).
+- All main pages checked at 390px and 1280px: home, Zermatt Lodge, Stylish Liverpool Apartment, kosher homes, guides hub and 3 guides, become a host, saved, trips, host terms, guest terms, privacy, host login, admin login, 404.
+- No console errors, no failed requests, no sideways scroll, no broken images, no images without alt text, no unnamed buttons or links, no unlabelled form fields, one h1 per page. LCP under 0.3s on every page (warm cache).
+- SEO: every public page has a title, description, canonical and OG tags. JSON-LD valid on all 112 blocks. Noindex on saved, trips, host, admin and not-found pages.
+- 122 internal links checked: none broken.
+- Booking: Zermatt Lodge and the Stylish Liverpool Apartment both create a Stripe Checkout session (15 to 17 Feb 2027, nothing paid). The apartment hold was released at once; the Zermatt hold lapses by itself after 15 minutes (Zermatt has no release call).
 - Zermatt checkout, /api/* and the Guesty iCal were not changed.
 
 ## Fixed in this pass
 
-- Every public page logged a console error because the Vercel analytics script 404s (analytics is not switched on). It now only loads when `ANALYTICS_ON` is true in `assets/bh-track.js`.
-- Not-found page showed Share and Save buttons. Hidden now.
-- Host sign-up said "wait a minute" when the real problem was the hourly email limit. It now says so and suggests Google.
-- Host editor said "1 amenities". Now "1 amenity".
-- Listings tab kept saying "1 home" after the last home was deleted. Fixed.
-- "Add a listing" button had no accessible name on phones. Fixed.
+- Our own Supabase photos (Airbnb imports and uploads) were full size (1440px for a 342px card). Built pages now load them through Vercel Image Optimization (`images` in vercel.json, widths 480/720/1080/1600): a card photo went from full size to about 43 KB. Covers home cards, saved homes and the listing page gallery. Where the host team's new `thumb_url` exists, cards use that instead (no srcset). Guesty photos and og:image are unchanged.
+- Unknown URLs with more than one part (for example /guides/old-guide) showed Vercel's plain-text error. They now get a Book Homes "page not found" page with a real 404 status (`404.html`).
 
 ## Blocked on Eli
 
-1. **Email (most urgent).** Supabase's built-in email is rate limited to a few emails an hour. Today host sign-ups and password resets already failed with "email rate limit exceeded". Add the Resend API key and set Resend as custom SMTP in Supabase (Authentication > Emails > SMTP settings). This also turns on booking and approval emails.
-2. **Stripe webhook secrets.** Add the webhook signing secrets for zermatt-stripe-webhook and bookhomes-stripe-webhook so paid bookings are confirmed automatically.
-3. **Stripe business name.** Stripe Checkout for Zermatt Lodge shows "ZUGATI" as the business name. Change the public business name (or use a separate Stripe account) so guests see Book Homes or ZALO Stays.
-4. **Legal pages.** Terms for hosts, terms for guests and the privacy notice are marked draft. Have a solicitor review them, then remove "(draft)" from the titles.
-5. **Analytics.** Switch on Web Analytics in Vercel (project > Analytics), then set `ANALYTICS_ON = true` in `assets/bh-track.js` and rebuild.
-6. **Listing id 2** ("Luxusrious Home in Manchester", slug checkout-test-internal) is approved and public. Left untouched until Eli says whether it is real.
+1. **Email (most urgent).** Domain is added in Resend; approve its DNS records in Namecheap, then add the Resend API key and set Resend as custom SMTP in Supabase (Authentication > Emails > SMTP settings). Until then sign-ups and password resets hit Supabase's hourly email limit.
+2. **Stripe webhook secrets.** Add the signing secrets for zermatt-stripe-webhook and bookhomes-stripe-webhook, and set `BOOKHOMES_CONNECT=on`, so paid bookings confirm automatically and hosts get paid.
+3. **Stripe business name.** Checkout shows "ZUGATI". Change the public business name, or (suggested) use a separate Book Homes Stripe account.
+4. **Legal pages.** Host terms, guest terms and privacy are drafts. Solicitor review, then remove "(draft)".
+5. **Analytics.** Run `supabase/PENDING_analytics.sql` in Supabase.
+6. **Listing id 2** ("Luxusrious Home in Manchester", slug checkout-test-internal): real or test? Left untouched.
 
 ## Known issues (not blocking)
 
-- Unknown URLs return HTTP 200 with a "This page could not be found" page (soft 404). The page is noindex, so search engines ignore it. A true 404 needs edge middleware.
-- New host listings approved after the last build show on a fallback page that is noindex until the next build. Builds cannot reach Supabase from the agent sandbox, so `data/listings.json` has to be refreshed by hand (or the build run where Supabase is reachable).
-- Listing photos from Airbnb imports were full size on cards. Fixed 20 Nov: cards use a small copy (`thumb_url`); new imports and uploads get one at once, older Airbnb imports are filled in by the 15-minute cron.
-- Launch QA leftovers to delete: the test host account test+launch@zelr.co.uk (auth user, bookhomes.hosts and bookhomes.profiles rows) and 3 expired, unpaid test holds with that email (1 in zermatt.bookings, 2 in bookhomes.bookings). The test listing and its photos are already deleted. The delete was not approved in this session.
-- Test listings 6, 7 and 8 (TEST hostperf) and 3, 4 are drafts or pending, so they are not public. Listing 5 is archived.
+- Unknown single-part URLs (for example /no-such-page) still return HTTP 200 and show "This page could not be found" with noindex. They share the /<slug> rewrite with listings approved since the last build, so vercel.json alone cannot tell them apart; a true 404 needs Vercel Routing Middleware asking Supabase about the slug on every such request. Left as is: a middleware fault would break new listing pages, and noindex already keeps these out of Google.
+- New listings approved after the last build show on the noindex fallback page until the next build (builds cannot reach Supabase from the agent sandbox; data/listings.json is refreshed by hand). That fallback page still shows photos full size.
+- Launch QA leftovers to delete (not approved yet): test host test+launch@zelr.co.uk (auth user, bookhomes.hosts and bookhomes.profiles rows) and its expired, unpaid test holds in zermatt.bookings and bookhomes.bookings (today added 1 to each; both released or lapsing).
+- Test listings 3, 4, 6, 7, 8 are drafts or pending; listing 5 is archived. None are public.
