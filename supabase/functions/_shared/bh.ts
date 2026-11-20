@@ -9,7 +9,9 @@ export type Sql = any;
 export const sql: Sql = postgres(env("SUPABASE_DB_URL"), {
   prepare: false,
   max: 3,
-  idle_timeout: 20,
+  // host-speed: a worker lives about 75s, so keep its connections for that long (20s meant a fresh TLS + auth
+  // handshake, about 200ms, on most host clicks after a short pause)
+  idle_timeout: 75,
   connect_timeout: 10,
   transform: { undefined: null },
 });
@@ -233,6 +235,15 @@ export function features(l: any) {
 export const FEE_COLS = ["guests_included", "extra_guest_fee", "pets_allowed", "pet_fee", "checkin_days", "checkout_days",
   "advance_notice_days", "prep_days", "booking_window_days"];
 let feesCache: { at: number; on: boolean } | null = null;
+// host-speed: open a database connection early (at worker start or alongside the auth check), so the first
+// query of a request does not wait for the handshake. Safe to call often: at most one warm-up every 15s.
+let warmAt = 0;
+export function warmDb(): Promise<unknown> {
+  if (Date.now() - warmAt < 15000) return Promise.resolve();
+  warmAt = Date.now();
+  return Promise.all([sql`select 1`, feesEnabled()]).catch(() => { warmAt = 0; });
+}
+
 export async function feesEnabled(): Promise<boolean> {
   if (feesCache && Date.now() - feesCache.at < 60000) return feesCache.on;
   const r = await sql`select to_regprocedure('bookhomes.quote(bigint,date,date,integer,integer)') is not null as on`;

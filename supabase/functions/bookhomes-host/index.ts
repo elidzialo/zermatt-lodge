@@ -5,7 +5,7 @@
 import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/util.ts";
 import {
   adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
-  PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE,
+  PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE, warmDb,
 } from "../_shared/bh.ts";
 import { AMENITIES, CATEGORIES, feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
@@ -147,8 +147,18 @@ async function bookingsAndEarnings(user: AuthUser) {
   return { bookings: await withZermatt(r.rows, r.z), payouts: r.pays };
 }
 
+// host-speed: connect to the database while the worker boots, before the first request needs it
+warmDb();
+
 Deno.serve(handle(async (req) => {
+  // host-speed: keep-warm ping from pg_cron (no sign-in, no data): opens the database connection and returns
+  if (new URL(req.url).searchParams.get("action") === "ping") {
+    await warmDb();
+    return jsonRes({ ok: true });
+  }
   if (req.method !== "POST") throw new HttpError(405, "Method not allowed");
+  // host-speed: the database handshake runs alongside the sign-in check instead of after it
+  warmDb();
   // Hosts work at aal1 (the portal still offers 2-step setup); payouts need aal2 in bookhomes-connect-onboard.
   const user = await getUser(req, false);
   const b = await readBody(req, 30000);
