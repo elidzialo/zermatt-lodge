@@ -166,7 +166,8 @@ function card(l, i){
   var r = S.results && S.results !== "loading" && S.results[l.id], rv = l.reviews || {};
   var slides = ph.map(function(p, k){
     var ss = srcset(p.url);
-    return '<a class="sl" href="' + href + '" tabindex="' + (k ? -1 : 0) + '"' + (k ? ' aria-hidden="true"' : "") + '><img src="' + esc(img(p.url, 720)) + '"' +
+    // p.thumb: small card copy of a host photo (full size photos are for the listing page)
+    return '<a class="sl" href="' + href + '" tabindex="' + (k ? -1 : 0) + '"' + (k ? ' aria-hidden="true"' : "") + '><img src="' + esc(p.thumb || img(p.url, 720)) + '"' +
       (ss ? ' srcset="' + esc(ss) + '" sizes="(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw"' : "") +
       ' alt="' + esc(p.caption || l.title) + '" width="720" height="684" ' + (i < 2 && !k ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async"></a>';
   }).join("");
@@ -662,7 +663,8 @@ window.addEventListener("scroll", onScroll, {passive: true}); window.addEventLis
 function prep(l, old){
   l.id = +l.id; l.tags = tagsFor(l);
   l.url = old && old.url ? old.url : pathFor(l);
-  l.card_photos = old && old.card_photos ? old.card_photos : (l.photos || []).slice(0, 5);
+  var th = {}; (l.photos || []).forEach(function(p){ if (p.thumb) th[p.url] = p.thumb; });
+  l.card_photos = (old && old.card_photos ? old.card_photos : (l.photos || []).slice(0, 5)).map(function(p){ return th[p.url] && !p.thumb ? Object.assign({}, p, {thumb: th[p.url]}) : p; });
   return l;
 }
 fetch("/api/bh/listings?action=list", {headers: {"Accept": "application/json"}})

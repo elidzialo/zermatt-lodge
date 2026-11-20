@@ -40,6 +40,11 @@ async function trimBlocks(tx: any, schema: "bookhomes" | "zermatt", listingId: n
     }
   }
 }
+// Card thumbnail next to a photo: <name>.jpg -> <name>.t.jpg (same rule as HP.thumbPath and _shared/bh_airbnb.ts)
+function thumbOf(path: string): string { return path.replace(/\.(jpg|jpeg|png|webp)$/i, "") + ".t.jpg"; }
+async function storedThumb(path: string): Promise<boolean> {
+  return (await sql`select 1 from storage.objects where bucket_id = 'listing-photos' and name = ${thumbOf(path)}`).length > 0;
+}
 const FEED_NAMES = ["Airbnb", "Booking.com", "Vrbo", "Guesty", "Other"];
 
 // One round trip for the dashboard. Speed (host-perf): the queries inside the user transaction are pipelined
@@ -52,7 +57,7 @@ async function me(user: AuthUser) {
       tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`,
       tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override, bookhomes.commission_for(id) as pct from bookhomes.hosts where user_id = ${user.id}`,
       tx.unsafe(`select ${cols} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`),
-      tx`select p.id, p.listing_id, p.url, p.storage_path, p.caption, p.sort from bookhomes.listing_photos p join bookhomes.listings l on l.id = p.listing_id
+      tx`select p.id, p.listing_id, p.url, p.thumb_url, p.storage_path, p.caption, p.sort from bookhomes.listing_photos p join bookhomes.listings l on l.id = p.listing_id
           where l.host_id = bookhomes.my_host_id() and l.status <> 'archived' order by p.sort, p.created_at`,
       tx`select s.id, s.listing_id, s.name, s.url, s.enabled, s.last_fetched_at, s.last_status, s.last_error, s.last_event_count
            from bookhomes.listing_ical_sources s join bookhomes.listings l on l.id = s.listing_id where l.host_id = bookhomes.my_host_id() and l.status <> 'archived'`,
@@ -228,7 +233,10 @@ Deno.serve(handle(async (req) => {
       if (!l.title || l.title.length < 3) missing.push("a title");
       if (l.lat === null || l.lng === null) missing.push("the map pin");
       if (missing.length) throw new HttpError(400, `Almost there. Please add ${missing.join(", ")}.`);
-      await asUser(user, (tx) => tx`update bookhomes.listings set status = 'pending' where id = ${id} returning id`);
+      // Only drafts and listings sent back for changes can be submitted, and only once: admins get one email per submission
+      if (!["draft", "rejected"].includes(l.status)) return jsonRes({ ok: true, already: true, status: l.status });
+      const moved = await asUser(user, (tx) => tx`update bookhomes.listings set status = 'pending' where id = ${id} and status in ('draft', 'rejected') returning id`);
+      if (!moved.length) return jsonRes({ ok: true, already: true });
       const db = adminClient();
       for (const to of await adminEmailList()) {
         await sendLogged(db, { toRole: "admin", to, template: "bh_admin_listing_submitted",
@@ -261,23 +269,26 @@ Deno.serve(handle(async (req) => {
       const path = String(b.path ?? "");
       if (!path.startsWith(`${user.id}/${id}/`) || !/^[0-9a-f-]+\/\d+\/[A-Za-z0-9._-]{1,80}$/.test(path)) throw new HttpError(400, "Invalid photo");
       const url = `${env("SUPABASE_URL")}/storage/v1/object/public/listing-photos/${path}`;
+      // thumb: true = the browser also uploaded the 640px card thumbnail <name>.t.jpg (checked here before it is used)
+      const thumb = b.thumb === true && await storedThumb(path) ? `${env("SUPABASE_URL")}/storage/v1/object/public/listing-photos/${thumbOf(path)}` : null;
       const r = await asUser(user, async (tx) => {
         const n = await tx`select count(*)::int n, coalesce(max(sort), -1) m from bookhomes.listing_photos where listing_id = ${id}`;
         if (n[0].n >= 40) throw new HttpError(400, "40 photos is the maximum.");
-        return await tx`insert into bookhomes.listing_photos (listing_id, storage_path, url, caption, sort)
-                        values (${id}, ${path}, ${url}, ${str(b.caption, 140)}, ${n[0].m + 1}) returning id, url`;
+        return await tx`insert into bookhomes.listing_photos (listing_id, storage_path, url, thumb_url, caption, sort)
+                        values (${id}, ${path}, ${url}, ${thumb}, ${str(b.caption, 140)}, ${n[0].m + 1}) returning id, url, thumb_url`;
       });
       return jsonRes({ ok: true, photo: r[0] });
     }
 
     case "delete_photo": {
       if (!UUID_RE.test(String(b.id))) throw new HttpError(400, "Invalid photo");
-      const r = await asUser(user, (tx) => tx`delete from bookhomes.listing_photos where id = ${String(b.id)} returning storage_path`);
+      const r = await asUser(user, (tx) => tx`delete from bookhomes.listing_photos where id = ${String(b.id)} returning storage_path, thumb_url`);
       if (!r.length) throw new HttpError(404, "Photo not found");
       if (r[0].storage_path && String(r[0].storage_path).startsWith(user.id + "/")) {
         const sp = String(r[0].storage_path);
-        // host-perf: new uploads have a 640px thumbnail next to them (<name>-w.jpg -> <name>-w.t.jpg)
-        await authAdmin().storage.from("listing-photos").remove(/-w\.(jpg|png|webp)$/.test(sp) ? [sp, sp.replace(/\.(jpg|png|webp)$/, ".t.jpg")] : [sp]).catch(() => {});
+        // the card thumbnail sits next to the photo (<name>.jpg -> <name>.t.jpg): new uploads ("-w") and Airbnb imports
+        const withThumb = /-w\.(jpg|png|webp)$/.test(sp) || String(r[0].thumb_url ?? "").endsWith(thumbOf(sp));
+        await authAdmin().storage.from("listing-photos").remove(withThumb ? [sp, thumbOf(sp)] : [sp]).catch(() => {});
       }
       return jsonRes({ ok: true });
     }
@@ -370,8 +381,12 @@ Deno.serve(handle(async (req) => {
         await sql`insert into zermatt.manual_blocks (start_date, end_date, reason, created_by) values (${s}::date, ${addDays(e, 1)}::date, ${reason}, ${user.email})`;
         return jsonRes({ ok: true });
       }
-      await asUser(user, (tx) => tx`insert into bookhomes.listing_blocks (listing_id, start_date, end_date, reason)
-                                    values (${id}, ${s}::date, ${addDays(e, 1)}::date, ${reason}) returning id`);
+      // One block per night: blocks that overlap the chosen nights are trimmed first, so no duplicates pile up
+      await asUser(user, async (tx) => {
+        await trimBlocks(tx, "bookhomes", id, s, e);
+        await tx`insert into bookhomes.listing_blocks (listing_id, start_date, end_date, reason)
+                 values (${id}, ${s}::date, ${addDays(e, 1)}::date, ${reason}) returning id`;
+      });
       return jsonRes({ ok: true });
     }
 

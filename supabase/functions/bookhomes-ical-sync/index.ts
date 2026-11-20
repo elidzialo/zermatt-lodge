@@ -4,12 +4,14 @@
 //    A feed that fails keeps its last good copy: we never unblock nights because of an error.
 // 3. sends the "how was your stay?" review email for completed paid stays (once per booking)
 // 4. emails guests whose "tell me if these dates free up" request is now bookable (once per request)
+// 5. makes card thumbnails for photos imported from Airbnb before thumbnails existed (time-boxed, never fails the run)
 import { stripeClient, optionalEnv, siteUrl, adminClient } from "../_shared/util.ts";
 import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { jsonRes, sql } from "../_shared/bh.ts";
 import { loadBooking } from "../_shared/bh_booking.ts";
 import { adminNotice, reviewRequest } from "../_shared/bh_emails.ts";
 import { sendLogged } from "../_shared/mailer.ts";
+import { backfillAirbnbThumbs } from "../_shared/bh_airbnb.ts";
 
 Deno.serve(async (req: Request): Promise<Response> => {
   if (req.method !== "POST" && req.method !== "GET") return jsonRes({ error: "Method not allowed" }, 405);
@@ -73,5 +75,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
     alerted++;
   }
   report.date_alerts_sent = alerted;
+
+  try { report.thumbnails = await backfillAirbnbThumbs(20000); } catch (e) { report.thumbnails = { error: (e as Error).message }; }
   return jsonRes({ ok: problems.length === 0, ...report, problems });
 });

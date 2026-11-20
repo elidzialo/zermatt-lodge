@@ -443,7 +443,10 @@ NEARBY = ["Liverpool", "Southport", "Wirral", "Chester", "Manchester", "Warringt
 
 def card_photos(l, extras):
     ph = (extras.get(l["slug"]) or {}).get("photos") or l.get("photos") or []
-    return [{"url": p.get("url"), "caption": p.get("caption") or l["title"]} for p in ph if p.get("url")][:5]
+    # thumb: small card copy of a host photo (bookhomes.listing_photos.thumb_url); the listing page keeps the full photo
+    thumbs = {p.get("url"): p.get("thumb") for p in (l.get("photos") or []) if p.get("thumb")}
+    return [{"url": p.get("url"), "caption": p.get("caption") or l["title"], **({"thumb": thumbs[p["url"]]} if thumbs.get(p.get("url")) else {})}
+            for p in ph if p.get("url")][:5]
 
 
 def card_html(l, eager=False):
@@ -451,7 +454,7 @@ def card_html(l, eager=False):
     photos = l["card_photos"]
     slides = "".join(
         f'<a class="sl" href="{esc(l["url"])}" tabindex="{0 if i == 0 else -1}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-        f'<img src="{esc(img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) else ""}'
+        f'<img src="{esc(p.get("thumb") or img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) else ""}'
         f' alt="{esc(p["caption"])}" width="720" height="684" {"fetchpriority=" + chr(34) + "high" + chr(34) if eager and i == 0 else "loading=" + chr(34) + "lazy" + chr(34)} decoding="async"></a>'
         for i, p in enumerate(photos))
     dots = "".join(f'<i{" class=" + chr(34) + "on" + chr(34) if i == 0 else ""}></i>' for i in range(len(photos))) if len(photos) > 1 else ""
@@ -633,7 +636,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     count = f'{len(shown)} home{"s" if len(shown) != 1 else ""}'
     extra = f'<link rel="stylesheet" href="/assets/bh-booking.css?v={asset_v("bh-booking.css")}">\n'
     og = img(shown[0]["card_photos"][0]["url"], 1200) if shown and shown[0]["card_photos"] else None
-    first = shown[0]["card_photos"][0]["url"] if shown and shown[0]["card_photos"] else None
+    first = (shown[0]["card_photos"][0].get("thumb") or shown[0]["card_photos"][0]["url"]) if shown and shown[0]["card_photos"] else None
     pre = lcp_preload(first, (480, 720, 1080), "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw")
     return (head(title, desc, path, extra=extra, schema={"@context": "https://schema.org", "@graph": graph}, og_image=og, body_class="home", preload=pre) +
             f"""<div class="brandbar"><div class="wrap hd-row"><a class="logo" href="/" aria-label="Book Homes home">{LOGO}<span class="wm">Book<b>Homes</b></span></a><div class="hd-r"><a class="hostlink" href="/become-a-host">List your property</a>{menu_html()}</div></div></div>

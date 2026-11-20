@@ -325,7 +325,7 @@ function renderDash(){
       (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
       (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "") +
       (l.status === "draft" ? '<button type="button" class="btn ghost sm" data-dellisting data-id="' + l.id + '">Delete</button>' : "");
-    return '<div class="lcard"><div class="ph">' + (ph ? HP.img(ph.url, 480, 'alt="" loading="lazy"') : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
+    return '<div class="lcard"><div class="ph">' + (ph ? HP.img(ph.thumb_url || ph.url, 480, 'alt="" loading="lazy"') : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
       (l.reject_reason ? '<p class="m" style="font-size:13.5px;color:#b42318">' + esc(l.reject_reason) + '</p>' : "") +
       (l.ical_export_url ? '<p style="font-size:12.5px;color:var(--muted);margin-top:6px">Calendar link for Airbnb / Booking.com:<code class="code-line">' + esc(l.ical_export_url) + '</code></p>' : "") +
       '<div class="acts">' + acts + '</div></div></div>';
@@ -422,6 +422,8 @@ function calFetch(id, month, ahead){
   return (calInflight[key] = api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to})
     .then(function(j){ delete calInflight[key]; return HP.put(key, j); }, function(e){ delete calInflight[key]; throw e; }));
 }
+// after a change: reload this month, and refetch the next one too (a range can run into it; its cached copy is stale)
+function calSaved(){ var id = +$("#calListing").value, nx = shiftMonth(CAL.month, 1); loadCal(); if (id) calFetch(id, nx).catch(function(){}); }
 // optimistic calendar edit: change the nights on screen now, the server answer replaces it
 function calLocal(lo, hi, a, v){
   var j = CAL.data; if (!j || !j.days) return;
@@ -482,7 +484,7 @@ document.addEventListener("click", function(e){
   if (rm) api("bookhomes-host", {action: "remove_ical", id: rm.getAttribute("data-rmsync")}).then(refresh).then(drawSync).catch(function(err){ $("#syncOut").textContent = err.message; });
   if (e.target.closest("#syncAdd")){
     var url = $("#syncUrl").value.trim();
-    if (!/^https:\/\//.test(url)){ $("#syncOut").textContent = "Paste the full link (it starts with https://)."; return; }
+    if (!/^(https|webcal):\/\//i.test(url)){ $("#syncOut").textContent = "Paste the full link (it starts with https:// or webcal://)."; return; }
     $("#syncOut").textContent = "Adding...";
     api("bookhomes-host", {action: "add_ical", listing_id: +$("#calListing").value, name: $("#syncName").value, url: url}).then(refresh).then(function(){ $("#syncUrl").value = ""; drawSync(); $("#syncOut").textContent = "Added. It syncs within 15 minutes."; })
       .catch(function(err){ $("#syncOut").textContent = err.message; });
@@ -496,7 +498,8 @@ $("#cal2").addEventListener("click", function(e){
 });
 $("#calBlocks").addEventListener("click", function(e){
   var b = e.target.closest("[data-unblock]"); if (!b) return;
-  api("bookhomes-host", {action: "unblock", id: b.getAttribute("data-unblock")}).then(loadCal);
+  b.disabled = true; $("#calOut").textContent = "Saving...";
+  api("bookhomes-host", {action: "unblock", id: b.getAttribute("data-unblock")}).then(function(){ $("#calOut").textContent = "Unblocked."; calSaved(); }, function(err){ b.disabled = false; $("#calOut").textContent = err.message; });
 });
 $("#calPrev").addEventListener("click", function(){ CAL.month = shiftMonth(CAL.month, -1); loadCal(); });
 $("#calNext").addEventListener("click", function(){ CAL.month = shiftMonth(CAL.month, 1); loadCal(); });
@@ -509,7 +512,7 @@ $$("[data-ca]").forEach(function(btn){ btn.addEventListener("click", function(){
   else if (a === "price"){ var v = +$("#calPrice").value; if (!(v >= 10)){ $("#calOut").textContent = "Enter a price of at least £10."; return; } p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: v}); }
   else p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null});
   $("#calOut").textContent = "Saving..."; calLocal(lo, hi, a, a === "price" ? +$("#calPrice").value : null);
-  p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; loadCal(); }).catch(function(e){ $("#calOut").textContent = e.message; loadCal(); });
+  p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; calSaved(); }).catch(function(e){ $("#calOut").textContent = e.message; loadCal(); });
 }); });
 
 /* ---------- Listings: "Add your home" wizard (one question per screen) and the section editor ---------- */
@@ -965,7 +968,7 @@ function phCountText(){ var n = W.photos.length; return n >= MIN_PHOTOS ? n + " 
 function photoTiles(){
   var n = W.photos.length;
   return W.photos.map(function(p, i){
-    return '<figure data-pid="' + esc(p.id) + '"><div class="phimg">' + HP.img(p.url, 480, 'alt="' + esc(p.caption || "Photo " + (i + 1)) + '" loading="lazy" draggable="false"') + (i === 0 ? '<span class="cover">Cover photo</span>' : "") +
+    return '<figure data-pid="' + esc(p.id) + '"><div class="phimg">' + HP.img(p.thumb_url || p.url, 480, 'alt="' + esc(p.caption || "Photo " + (i + 1)) + '" loading="lazy" draggable="false"') + (i === 0 ? '<span class="cover">Cover photo</span>' : "") +
       '<span class="grip" aria-hidden="true" title="Drag to reorder">' + icon("grid") + '</span></div>' +
       '<input class="cap" type="text" maxlength="140" placeholder="Add a caption" value="' + esc(p.caption || "") + '" data-cap="' + esc(p.id) + '" aria-label="Caption for photo ' + (i + 1) + '">' +
       '<div class="phacts"><button type="button" data-mv="-1" data-id="' + esc(p.id) + '" aria-label="Move earlier"' + (i ? "" : " disabled") + ">" + icon("chev_l") + '</button><button type="button" data-mv="1" data-id="' + esc(p.id) + '" aria-label="Move later"' + (i < n - 1 ? "" : " disabled") + ">" + icon("chev_r") + "</button>" +
@@ -1094,9 +1097,10 @@ function upload(files){
       var path = uid + "/" + W.id + "/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7) + (pr.thumb ? "-w" : "") + ".jpg";
       if (pr.blob.type && pr.blob.type !== "image/jpeg") path = path.replace(/\.jpg$/, pr.blob.type === "image/png" ? ".png" : ".webp");
       return withRetry(function(){ st(rid, "Uploading", 0.05); return putFile(path, pr.blob, function(p){ st(rid, Math.round(p * 100) + "%", 0.05 + p * 0.85); }); }, 3)
-        .then(function(){ st(rid, "Saving", 0.95); return Promise.all([withRetry(function(){ return api("bookhomes-host", {action: "add_photo", listing_id: W.id, path: path}); }, 2),
-          pr.thumb ? withRetry(function(){ return putFile(HP.thumbPath(path), pr.thumb, function(){}); }, 1).catch(function(){}) : null]).then(function(r){ return r[0]; }); })
-        .then(function(j){ W.photos.push({id: j.photo.id, url: j.photo.url, caption: null}); ok++; st(rid, "Done", 1, "ok"); redrawPhotos(); syncPhotosToMe(); setTimeout(function(){ var r = document.getElementById(rid); if (r) r.remove(); }, 1500); });
+        // the 640px card thumbnail goes up first, so add_photo can record it (a failed thumbnail never blocks the photo)
+        .then(function(){ st(rid, "Saving", 0.95); return pr.thumb ? withRetry(function(){ return putFile(HP.thumbPath(path), pr.thumb, function(){}); }, 1).then(function(){ return true; }, function(){ return false; }) : false; })
+        .then(function(th){ return withRetry(function(){ return api("bookhomes-host", {action: "add_photo", listing_id: W.id, path: path, thumb: th}); }, 2); })
+        .then(function(j){ W.photos.push({id: j.photo.id, url: j.photo.url, thumb_url: j.photo.thumb_url || null, caption: null}); ok++; st(rid, "Done", 1, "ok"); redrawPhotos(); syncPhotosToMe(); setTimeout(function(){ var r = document.getElementById(rid); if (r) r.remove(); }, 1500); });
     }).catch(function(e){ bad++; st(rid, e.message || "Failed", 1, "bad"); }).then(one);
   }
   saved("ing", "Uploading photos...");
@@ -1145,7 +1149,7 @@ $("#wzIn").addEventListener("click", icalClick); $("#edBody").addEventListener("
 /* ----- review screen (last wizard step) ----- */
 function reviewStep(){
   var l = W.l, cover = W.photos[0], miss = missing();
-  return '<div class="rv"><div class="rv-card"><div class="rv-ph">' + (cover ? HP.img(cover.url, 720) : icon("camera")) + "</div><div class='rv-bd'><b>" + esc(l.title || "Untitled") + "</b><span>" + esc([l.area, l.city].filter(Boolean).join(", ")) + "</span><span><b>£" + esc(l.base_price || "-") + "</b> night</span></div></div>" +
+  return '<div class="rv"><div class="rv-card"><div class="rv-ph">' + (cover ? HP.img(cover.thumb_url || cover.url, 720) : icon("camera")) + "</div><div class='rv-bd'><b>" + esc(l.title || "Untitled") + "</b><span>" + esc([l.area, l.city].filter(Boolean).join(", ")) + "</span><span><b>£" + esc(l.base_price || "-") + "</b> night</span></div></div>" +
     '<button type="button" class="btn ghost block" data-preview style="margin-top:12px">' + icon("search") + "Show full preview</button></div>" +
     (miss.length ? '<div class="miss"><b>Before you submit</b><ul>' + miss.map(function(m){ return '<li><button type="button" class="link" data-goto="' + m[0] + '">Add ' + esc(m[1]) + "</button></li>"; }).join("") + "</ul></div>" :
       '<h3 class="psec">What\'s next?</h3><ul class="nexts"><li>' + icon("shield") + "<span><b>We check your listing</b>Photos, text and that no street address is shown. Usually within one working day.</span></li><li>" + icon("calendar") + "<span><b>Set up your calendar</b>Block dates and set prices for busy days.</span></li><li>" + icon("bell") + "<span><b>We email you when it's live</b>Then guests can find and book it.</span></li></ul>") +
