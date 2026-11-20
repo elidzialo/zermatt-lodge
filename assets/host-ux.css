@@ -52,7 +52,7 @@ body:not(.dash-on) .hp-switch{display:none}
 .sec-head{display:flex;align-items:baseline;justify-content:space-between;margin:36px 0 14px}
 .sec-head h2,.rows-h{font-size:22px;font-weight:700;letter-spacing:-.015em}
 .panel h2{margin:0}
-.rows-h{margin:36px 0 12px}
+.panel .rows-h{margin:40px 0 12px}
 .host .notice{display:block;background:var(--am-tint);border:1px solid var(--am-line);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:14.5px;color:var(--ink)}
 
 /* ---------- status badges ---------- */
@@ -138,7 +138,10 @@ body:not(.dash-on) .hp-switch{display:none}
 .me-card:empty{display:none}
 .me-av{grid-row:1/3;width:56px;height:56px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:700;font-size:20px;letter-spacing:.02em}
 .me-card>b{font-size:20px;font-weight:700}
-.me-card .m{font-size:14px;color:var(--muted);margin:2px 0 0}
+.me-card .m{font-size:14px;color:var(--muted);margin:2px 0 0;line-height:1.5;overflow-wrap:anywhere}
+.me-facts{grid-column:2;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.me-facts:empty{display:none}
+.me-facts span{font-size:12.5px;font-weight:600;color:var(--ink-2);background:var(--soft);border-radius:999px;padding:3px 10px}
 .rows{border-top:1px solid var(--line-2)}
 .row{display:flex;align-items:center;gap:16px;width:100%;padding:16px 4px;min-height:68px;border-bottom:1px solid var(--line-2);text-align:left;text-decoration:none;color:var(--ink);background:none}
 .row:hover{background:var(--soft)}
@@ -208,10 +211,10 @@ body:not(.dash-on) .hp-switch{display:none}
   .pg-head .btn.add{padding:8px 12px;min-height:44px}
   .pg-head .btn.add span{display:none}
   .pg-head .btn.add .ic{width:20px;height:20px}
-  .res{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 6px;scrollbar-width:none}
+  .res{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad,16px);gap:12px;margin:0 calc(-1 * var(--pad,16px));padding:0 var(--pad,16px) 6px;scrollbar-width:none}
   .res::-webkit-scrollbar{display:none}
   .rc{flex:0 0 84%;scroll-snap-align:start}
-  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 14px;padding:0 16px;scrollbar-width:none}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 calc(-1 * var(--pad,16px)) 14px;padding:0 var(--pad,16px);scrollbar-width:none}
   .chips::-webkit-scrollbar{display:none}
   .chip-b{white-space:nowrap}
   .todo-i{flex-wrap:wrap;align-items:flex-start;row-gap:10px}
@@ -230,6 +233,34 @@ body:not(.dash-on) .hp-switch{display:none}
   .host .ed-top .btn[data-preview]{padding:8px 14px 8px 12px;min-height:40px}
   .ed-side{padding:12px 8px 40px}
   .ednav.on{background:none;box-shadow:none}
+}
+/* ---------- polish (hostux2) ---------- */
+.lcard .bd2>b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sync-grid{align-items:start}
+#earnList{border-top:1px solid var(--line-2)}
+#earnList .item{border:0;border-bottom:1px solid var(--line-2);border-radius:0;padding:16px 2px;margin:0;background:none}
+#earnList .item .h{font-weight:600}
+.host :focus-visible{outline:2px solid var(--g);outline-offset:2px}
+/* editor: status card, then the sections, then "Delete" quietly at the bottom */
+.ed-side{display:flex;flex-direction:column}
+#edStatus{display:contents}
+.ed-side .dellink{order:9;align-self:flex-start;margin:28px 12px 0;color:var(--muted);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.ed-side .dellink:hover{color:var(--red)}
+.ednav .dot{width:auto;height:auto;border-radius:999px;background:var(--am-tint);color:var(--am-ink);border:1px solid var(--am-line);padding:0 8px;font-size:11.5px;font-weight:700;line-height:18px;font-style:normal;flex-shrink:0;white-space:nowrap}
+.ednav .dot:before{content:"To do"}
+.ed-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* guest preview bar */
+.pv-top{min-height:60px;padding:10px 16px 10px 20px}
+.pv-top b{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.pv-top .btn{white-space:nowrap;border-radius:999px}
+@media (max-width:859px){
+  .host .ed-top .btn[data-preview]{font-size:0;gap:0;padding:8px 14px 8px 12px}
+  .host .ed-top .btn[data-preview]:after{content:"Preview";font-size:14px}
+  .host .ed-top .btn[data-preview] .ic{margin-right:6px}
+  .ed-title{font-size:16px}
+  .pv-top{padding:8px 12px 8px 16px}
+  .pv-top #pvLive{display:none}
+  .ed-side .dellink{margin:24px 12px 8px}
 }
 @media (max-width:380px){
   .hp-mode{display:none}

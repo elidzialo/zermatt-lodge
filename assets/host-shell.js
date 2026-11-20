@@ -126,16 +126,39 @@ function listingsSub(){
   var el = $("#lsSub"); if (el) el.textContent = ls.length ? ls.length + (ls.length === 1 ? " home" : " homes") + ", " + live + " live. Tap a home to edit it." : "Tap a home to edit its photos, details, price and rules.";
 }
 function menuCard(){
+  // Airbnb-style profile card: avatar, name, email and phone, then two plain facts (rebuilt each time host.js renders)
   var p = (ME && ME.profile) || {}, card = $("#profSummary");
   if (!card || !p.name) return;
   var ini = p.name.trim().split(/\s+/).map(function(w){ return w[0]; }).slice(0, 2).join("").toUpperCase();
-  card.insertAdjacentHTML("afterbegin", '<span class="me-av" aria-hidden="true">' + esc(ini) + "</span>");
+  var facts = [p.trader_status === "private" ? "Private host" : "Business host"];
+  if (p.company) facts.push(p.company);
+  if (ME.commission_pct != null) facts.push(ME.commission_pct + "% commission");
+  card.innerHTML = '<span class="me-av" aria-hidden="true">' + esc(ini) + "</span><b>" + esc(p.name) + "</b>" +
+    '<p class="m">' + esc(p.email || "") + (p.phone ? "<br>" + esc(p.phone) + (p.whatsapp && p.whatsapp !== p.phone ? ", WhatsApp " + esc(p.whatsapp) : "") : "") + "</p>" +
+    '<p class="me-facts">' + facts.map(function(f){ return "<span>" + esc(f) + "</span>"; }).join("") + "</p>";
 }
 document.addEventListener("bh:host", function(e){
   var x = e.detail || {};
   if (x.type === "me"){ ME = x.me; setTimeout(function(){ head(); todo(); listingsSub(); menuCard(); restoreTab(); }, 0); }
   if (x.type === "bookings"){ ROWS = x.rows || []; head(); reservations(); }
 });
+
+/* ---------- log in from a guest page (/host?next=/trips) ---------- */
+(function(){
+  var m = /[?&]next=([^&#]+)/.exec(location.search), next = m ? decodeURIComponent(m[1]) : "";
+  if (!/^\/(trips|saved)\/?$/.test(next)) return; // only our own guest pages
+  var h = $("#vLogin h1"), lead = $("#vLogin .lead");
+  if (h) h.textContent = "Log in";
+  if (lead) lead.textContent = "Use the email you booked with to see your trips.";
+  var gone = false;
+  function check(){
+    if (gone) return;
+    var inn = ["#vDash", "#vProfile", "#vMfa", "#vEnrol"].some(function(s){ var el = $(s); return el && !el.classList.contains("hidden"); });
+    if (inn){ gone = true; location.replace(next); }
+  }
+  ["#vDash", "#vProfile", "#vMfa", "#vEnrol"].forEach(function(s){ var el = $(s); if (el) new MutationObserver(check).observe(el, {attributes: true, attributeFilter: ["class"]}); });
+  check();
+})();
 
 /* ---------- account: admin rows in Menu ---------- */
 function acct(a){

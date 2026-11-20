@@ -42,7 +42,7 @@
     css();
     var a = document.createElement("a");
     a.className = "bhfb-btn"; a.href = feedbackUrl(); a.setAttribute("aria-label", "Report a bug or idea for this page");
-    a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2l1.9 1.9M16 2l-1.9 1.9M9 7.1V6a3 3 0 0 1 6 0v1.1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9M6.5 9C4.6 8.8 3 7.2 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.9 5c0 2.2-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg>Report a bug';
+    a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2l1.9 1.9M16 2l-1.9 1.9M9 7.1V6a3 3 0 0 1 6 0v1.1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6z"/><path d="M12 20v-9M6.5 9C4.6 8.8 3 7.2 3 5M6 13H2M3 21c0-2.1 1.7-3.9 3.8-4M20.9 5c0 2.2-1.6 3.8-3.5 4M22 13h-4M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg><span class="bhfb-tip">Report a bug</span>';
     a.addEventListener("click", function(){ a.href = feedbackUrl(); });
     document.body.appendChild(a);
     place();
@@ -64,9 +64,12 @@
         var pos = getComputedStyle(el).position;
         if ((pos === "fixed" || pos === "sticky") && r.bottom >= vh - 4 && r.top < vh) top = Math.min(top, r.top);
       });
-      var covered = top < vh;
-      a.classList.toggle("bhfb-off", covered && window.innerWidth < 860);
+      var covered = top < vh, pv = document.querySelector(".pv:not(.hidden)");
+      a.classList.toggle("bhfb-off", !!pv || (covered && window.innerWidth < 860));
       a.style.bottom = covered ? (vh - top + 12) + "px" : "";
+      // Listing editor on larger screens: sit beside the section list, not on top of it
+      var side = document.querySelector(".ed:not(.hidden) .ed-side"), sr = side && side.getBoundingClientRect();
+      a.style.left = sr && sr.width && window.innerWidth >= 860 ? (sr.right + 14) + "px" : "";
     });
   }
   function watch(){
@@ -115,6 +118,7 @@
   }
 
   function start(){
+    if (window.top !== window) return; // never inside the guest preview frame
     watch();
     if (isAdminPage) adminWatch();
     else { hostCheck(); setTimeout(hostCheck, 3000); setTimeout(hostCheck, 10000); window.addEventListener("storage", hostCheck); document.addEventListener("visibilitychange", hostCheck); }

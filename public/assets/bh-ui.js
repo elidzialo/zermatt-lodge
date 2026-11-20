@@ -92,7 +92,8 @@ function feedbackHref(){ return "/admin/feedback/?page=" + encodeURIComponent(lo
 function items(acct){
   var h = "";
   if (!acct){
-    h += '<a href="/host" class="um-strong">Log in</a><a href="/become-a-host">List your property</a><hr>' +
+    var nx = /^\/(trips|saved)\/?$/.test(location.pathname) ? "/host?next=" + location.pathname.replace(/\/$/, "") : "/host";
+    h += '<a href="' + nx + '" class="um-strong">Log in</a><a href="/become-a-host">List your property</a><hr>' +
       '<a href="/">All homes</a><a href="/saved">Saved homes</a><a href="/guides">Liverpool guides</a>';
     return h;
   }
@@ -151,6 +152,14 @@ function sync(){
   render();
   if (found) checkAdmin(found).then(function(ok){ if (ACCT && ACCT.email === email && ACCT.admin !== ok){ ACCT.admin = ok; render(); } }).catch(function(){});
 }
+// Fresh access token for other scripts on the page (e.g. /trips). Resolves null when logged out.
+window.BH_TOKEN = function(){
+  var found = readSession();
+  if (!found) return Promise.resolve(null);
+  if (fresh(found.s)) return Promise.resolve(found.s.access_token);
+  if (!found.s.refresh_token) return Promise.resolve(null);
+  return refresh(found).then(function(s){ return s.access_token; }, function(){ return null; });
+};
 function start(){ sync(); window.addEventListener("storage", sync); document.addEventListener("visibilitychange", function(){ if (!document.hidden) sync(); }); if (HOST_SIDE) setInterval(sync, 4000); }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();

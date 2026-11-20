@@ -133,10 +133,76 @@ PRIVACY = f"""{DRAFT}<h1>Privacy notice</h1><p>Last updated: 19 November 2026</p
 <h2>Analytics</h2><p>We count visits with our own cookie-free analytics, so no data goes to Google or other trackers. Your browser keeps a random ID so we can count unique visitors, and we record the page, the site you came from, your device type and a rough location (town or city) worked out from your connection. We never store your IP address. Raw visit data is deleted after 13 months. If your browser sends Do Not Track or Global Privacy Control, we don't count you at all.</p>"""
 
 
-TRIPS = """<h1>Trips</h1>
-<p>Your trips will show here soon: every booking made with your email, with dates, the address and the host's contact details.</p>
-<p>Until then, your booking confirmation email has everything you need. Can't find it? Check your spam folder, or get in touch and we'll resend it.</p>
-<p><a class="btn" href="/">Find a home</a> <a class="btn ghost" href="/saved">Saved homes</a></p>"""
+TRIPS = f"""<main class="wrap trips" id="content">
+<div class="tr-top"><h1>Trips</h1></div>
+<div id="trBody" aria-live="polite">
+  <div class="tr-sk" aria-hidden="true"><i></i><span><b></b><b></b><b></b></span></div>
+  <div class="tr-sk" aria-hidden="true"><i></i><span><b></b><b></b><b></b></span></div>
+</div>
+<div class="tr-empty" id="trOut" hidden><span class="e-ic">{icon("user")}</span><h2>Log in to see your trips</h2><p>Use the email you booked with. Your confirmation email also has your dates, the address and the host's number.</p><a class="btn" href="/host?next=/trips">Log in</a></div>
+<div class="tr-empty" id="trNone" hidden><span class="e-ic">{icon("calendar")}</span><h2>No trips booked yet</h2><p>When you book a home with <b id="trEmail"></b>, your trip shows here with the dates and the host's number.</p><a class="btn" href="/">Find a home</a> <a class="btn ghost" href="/saved">Saved homes</a></div>
+<p class="tr-help" id="trHelp" hidden>Booked with a different email? Log out and log in with that one, or check your confirmation email.</p>
+</main>
+"""
+TRIPS_CSS = """<style>
+.trips{max-width:1440px;padding-bottom:80px}
+.tr-up,.trips .tr-sk{max-width:920px}
+.tr-top{padding:32px 0 8px}
+.tr-top h1{font-size:clamp(28px,4vw,36px);font-weight:800;letter-spacing:-.02em}
+.tr-h{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:28px 0 14px}
+.tr-up{display:grid;gap:20px}
+.tr-card{display:grid;grid-template-columns:minmax(0,1fr) 300px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.tr-card .tr-ph{order:2;background:var(--soft);min-height:220px;display:grid;place-items:center;color:var(--muted)}
+.tr-card .tr-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tr-in{padding:22px 24px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tr-when{font-size:13.5px;font-weight:700;color:var(--brand,#1f4d3a)}
+.tr-in h3{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+.tr-in h3 a{color:inherit;text-decoration:none}.tr-in h3 a:hover{text-decoration:underline}
+.tr-area{color:var(--muted);font-size:14.5px}
+.tr-dates{display:grid;grid-template-columns:1fr 1fr;margin:14px 0 4px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tr-dates>div{padding:10px 14px}.tr-dates>div+div{border-left:1px solid var(--line)}
+.tr-dates small{display:block;font-size:12px;font-weight:700;color:var(--muted)}
+.tr-dates b{display:block;font-size:15px;margin-top:2px}
+.tr-meta{font-size:14px;color:var(--ink-2,#3f3f3f);margin-top:6px}
+.tr-host{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.tr-host span{font-size:14px;margin-right:auto}
+.tr-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);min-height:40px}
+.tr-pill:hover{border-color:var(--ink)}.tr-pill .ic{width:16px;height:16px}
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px 20px}
+.tr-mini{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tr-mini .tr-ph{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:var(--soft);display:grid;place-items:center;color:var(--muted);margin-bottom:6px}
+.tr-mini .tr-ph img{width:100%;height:100%;object-fit:cover}
+.tr-mini b{font-size:15.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tr-mini small{font-size:14px;color:var(--muted)}
+.tr-x{display:inline-flex;align-self:flex-start;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;background:#f1f1f1;color:#555;margin-top:2px}
+.tr-empty{text-align:center;padding:56px 16px;max-width:460px;margin:0 auto}
+.tr-empty .e-ic{background:var(--soft);box-shadow:none;color:var(--brand,#1f4d3a)}
+.tr-empty .e-ic .ic{width:26px;height:26px}
+.tr-empty h2{font-size:22px;margin-bottom:8px}
+.tr-empty p{color:var(--muted);margin-bottom:20px}
+.tr-empty .btn{margin:4px}
+.tr-help{color:var(--muted);font-size:14px;margin-top:32px}
+.tr-sk{display:grid;grid-template-columns:minmax(0,1fr) 300px;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:20px;height:236px}
+.tr-sk i{order:2;background:var(--soft)}
+.tr-sk span{padding:24px;display:flex;flex-direction:column;gap:12px}
+.tr-sk b{display:block;height:14px;border-radius:7px;background:var(--soft);width:40%}
+.tr-sk b:nth-child(2){height:22px;width:70%}.tr-sk b:nth-child(3){width:55%}
+@media (prefers-reduced-motion:no-preference){.tr-sk i,.tr-sk b{animation:trp 1.4s ease-in-out infinite}}
+@keyframes trp{50%{opacity:.55}}
+@media (max-width:720px){
+  .tr-card,.tr-sk{grid-template-columns:1fr}
+  .tr-card .tr-ph,.tr-sk i{order:0;min-height:0;aspect-ratio:16/9}
+  .tr-sk{height:auto}.tr-sk i{display:block}
+  .tr-in{padding:18px}
+  .tr-host span{flex-basis:100%}
+  .tr-grid{grid-template-columns:1fr 1fr;gap:18px 12px}
+}
+</style>"""
+
+
+def trips_page():
+    extra = TRIPS_CSS + f'\n<script src="/assets/trips.js?v={asset_v("trips.js")}" defer></script>'
+    return head("Trips | Book Homes", "Your Book Homes trips.", "/trips", robots="noindex, nofollow", extra=extra) + header() + TRIPS + footer() + end()
 
 
 def write_all():
@@ -146,6 +212,6 @@ def write_all():
     write("become-a-host/index.html", host_landing())
     write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English host terms for Book Homes. Draft.", TERMS_HOSTS))
     write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English guest terms for Book Homes. Draft.", TERMS_GUESTS))
-    write("trips/index.html", text_page("/trips", "Trips | Book Homes", "Your Book Homes trips.", TRIPS, robots="noindex, nofollow"))
+    write("trips/index.html", trips_page())
     write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes uses personal data. Draft.", PRIVACY))
     return [f"{DOMAIN}/become-a-host", f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]

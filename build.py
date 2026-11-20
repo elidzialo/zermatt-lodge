@@ -270,6 +270,6 @@ for d in sorted(glob.glob(os.path.join(ROOT, "listings", "*"))):
 _hp = os.path.join(PUB, "host", "index.html")
 if os.path.exists(_hp):
     _h = open(_hp, encoding="utf-8").read()
-    _h = re.sub(r'/assets/(host[\w-]*\.(?:js|css))\?v=[^"\']*', lambda m: f"/assets/{m.group(1)}?v={build_listings.asset_v(m.group(1))}", _h)
+    _h = re.sub(r'/assets/((?:host[\w-]*|bh-ui|bh-feedback)\.(?:js|css))\?v=[^"\']*', lambda m: f"/assets/{m.group(1)}?v={build_listings.asset_v(m.group(1))}", _h)
     open(_hp, "w", encoding="utf-8").write(_h)
 print("public/ ready")
