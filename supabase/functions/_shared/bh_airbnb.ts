@@ -1,6 +1,6 @@
 // Airbnb page reading and photo copying, shared by bookhomes-import-airbnb (one-click import) and
 // bookhomes-ical-sync (cron: makes card thumbnails for photos imported before thumbnails existed).
-import { env } from "./util.ts";
+import { env } from "./base.ts";
 import { authAdmin, sql } from "./bh.ts";
 import { cleanImportedText } from "./bh_listing.ts";
 

@@ -1,6 +1,6 @@
 // Shared helpers for the Book Homes marketplace functions (bookhomes-*).
 import postgres from "npm:postgres@3.4.5";
-import { env, optionalEnv, siteUrl } from "./util.ts";
+import { env, optionalEnv, siteUrl } from "./base.ts";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 // deno-lint-ignore no-explicit-any

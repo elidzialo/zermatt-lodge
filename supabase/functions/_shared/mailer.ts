@@ -2,7 +2,7 @@
 // RESEND_API_KEY and RESEND_FROM come from the function secrets (never hard-coded).
 // Admin recipients are read from zermatt.admins. Never throws: an email problem must not break a booking.
 import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
-import { optionalEnv, PHONE, siteUrl } from "./util.ts";
+import { optionalEnv, PHONE, siteUrl } from "./base.ts";
 import type { BookingEmailData, RenderedEmail } from "./emails.ts";
 
 export type EmailStatus = "sent" | "failed" | "skipped_no_key";

@@ -2,7 +2,7 @@
 // Auth: the host's own access token (verified with Supabase Auth). Every read/write runs AS that user, so the RLS
 // policies decide what they can see and change (their own profile, host row, listings, photos, calendars,
 // bookings and payouts only). Hosts can never approve their own listing (trigger in MARKETPLACE_setup.sql).
-import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/util.ts";
+import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/base.ts";
 import {
   adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
   PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE, warmDb,
