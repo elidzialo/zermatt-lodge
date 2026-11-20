@@ -30,6 +30,7 @@ Last checked: 20 November 2026, live site, at 390px and 1280px (headless Chrome)
 ## Known issues (not blocking)
 
 - Unknown single-part URLs (for example /no-such-page) still return HTTP 200 and show "This page could not be found" with noindex. They share the /<slug> rewrite with listings approved since the last build, so vercel.json alone cannot tell them apart; a true 404 needs Vercel Routing Middleware asking Supabase about the slug on every such request. Left as is: a middleware fault would break new listing pages, and noindex already keeps these out of Google.
-- New listings approved after the last build show on the noindex fallback page until the next build (builds cannot reach Supabase from the agent sandbox; data/listings.json is refreshed by hand). That fallback page still shows photos full size.
+- New listings approved after the last build show on the noindex fallback page until the next build (builds cannot reach Supabase from the agent sandbox; data/listings.json is refreshed by hand). It works for long slugs too. Listing 14 (Apartment in Merseyside) was prerendered on 20 Nov from the live API. That fallback page still shows photos full size.
+- Card thumbnails (20 Nov): `listing_photos.thumb_url`. New uploads and Airbnb imports get one at once; all 49 older Airbnb-imported photos (listings 4, 11, 14) were backfilled by the 15-minute cron, 3 to 4 times smaller.
 - Launch QA leftovers to delete (not approved yet): test host test+launch@zelr.co.uk (auth user, bookhomes.hosts and bookhomes.profiles rows) and its expired, unpaid test holds in zermatt.bookings and bookhomes.bookings (today added 1 to each; both released or lapsing).
 - Test listings 3, 4, 6, 7, 8 are drafts or pending; listing 5 is archived. None are public.
