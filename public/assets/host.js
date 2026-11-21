@@ -273,7 +273,7 @@ function afterAuthRun(){
     if (!profileDone(me)){ fillProfile(); view("Profile"); return; }
     if (painted && !$("#vDash").classList.contains("hidden")){ renderDash(); if (me.bookings) loadBookings(me); if (me.payouts) loadEarnings(me); }
     else showDash(true);
-    started = true;
+    started = true; calWarm();
     if (/connect=done/.test(location.search)){ api("bookhomes-connect-onboard", {action: "status"}).then(refresh).catch(function(){}); history.replaceState(null, "", location.pathname); }
   }).catch(function(e){
     if (/sign in|log in/i.test(e.message)) { view("Login"); msg("#loginMsg", e.message); return; }
@@ -421,6 +421,12 @@ function calFetch(id, month, ahead){
   var from = month + "-01", to = shiftMonth(month, 1) + "-01";
   return (calInflight[key] = api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to})
     .then(function(j){ delete calInflight[key]; return HP.put(key, j); }, function(e){ delete calInflight[key]; throw e; }));
+}
+// host-speed: once the dashboard is up, fetch this month for the calendar's listing while the browser is idle,
+// so the first Calendar tab opens from memory instead of waiting on the network (calFetch shares in-flight calls)
+function calWarm(){
+  var go = function(){ var id = +$("#calListing").value; if (id && !HP.get("cal:" + id + ":" + CAL.month)) calFetch(id, CAL.month).catch(function(){}); };
+  if (window.requestIdleCallback) requestIdleCallback(go, {timeout: 2500}); else setTimeout(go, 1200);
 }
 // after a change: reload this month, and refetch the next one too (a range can run into it; its cached copy is stale)
 function calSaved(){ var id = +$("#calListing").value, nx = shiftMonth(CAL.month, 1); loadCal(); if (id) calFetch(id, nx).catch(function(){}); }
@@ -1097,9 +1103,11 @@ function upload(files){
       if (pr.small) small++;
       var path = uid + "/" + W.id + "/" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7) + (pr.thumb ? "-w" : "") + ".jpg";
       if (pr.blob.type && pr.blob.type !== "image/jpeg") path = path.replace(/\.jpg$/, pr.blob.type === "image/png" ? ".png" : ".webp");
+      // the 640px card thumbnail goes up alongside the photo (host-speed: in parallel), before add_photo records it;
+      // a failed thumbnail never blocks the photo, and a thumbnail left behind by a failed photo is removed
+      var thP = pr.thumb ? withRetry(function(){ return putFile(HP.thumbPath(path), pr.thumb, function(){}); }, 1).then(function(){ return true; }, function(){ return false; }) : Promise.resolve(false);
       return withRetry(function(){ st(rid, "Uploading", 0.05); return putFile(path, pr.blob, function(p){ st(rid, Math.round(p * 100) + "%", 0.05 + p * 0.85); }); }, 3)
-        // the 640px card thumbnail goes up first, so add_photo can record it (a failed thumbnail never blocks the photo)
-        .then(function(){ st(rid, "Saving", 0.95); return pr.thumb ? withRetry(function(){ return putFile(HP.thumbPath(path), pr.thumb, function(){}); }, 1).then(function(){ return true; }, function(){ return false; }) : false; })
+        .then(function(){ st(rid, "Saving", 0.95); return thP; }, function(e){ thP.then(function(th){ if (th && sb.storage) sb.storage.from("listing-photos").remove([HP.thumbPath(path)]).catch(function(){}); }); throw e; })
         .then(function(th){ return withRetry(function(){ return api("bookhomes-host", {action: "add_photo", listing_id: W.id, path: path, thumb: th}); }, 2); })
         .then(function(j){ W.photos.push({id: j.photo.id, url: j.photo.url, thumb_url: j.photo.thumb_url || null, caption: null}); ok++; st(rid, "Done", 1, "ok"); redrawPhotos(); syncPhotosToMe(); setTimeout(function(){ var r = document.getElementById(rid); if (r) r.remove(); }, 1500); });
     }).catch(function(e){ bad++; st(rid, e.message || "Failed", 1, "bad"); }).then(one);
