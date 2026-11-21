@@ -340,7 +340,7 @@ function renderDash(){
   $("#trustStatus").textContent = until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "This browser isn't trusted: you'll be signed out when you close the tab.";
   var sel = $("#calListing"), cur = sel.value;
   sel.innerHTML = ls.map(function(l){ return '<option value="' + l.id + '">' + esc(l.title) + "</option>"; }).join("");
-  if (cur) sel.value = cur;
+  if (cur && ls.some(function(l){ return String(l.id) === cur; })) sel.value = cur;
 }
 document.addEventListener("click", function(e){
   var cf = e.target.closest && e.target.closest("[data-calfor]");
@@ -450,7 +450,7 @@ function drawCal(){
     var cls = s < today ? "past" : bk ? "booked" : d && d.status === "blocked" ? "blocked" : d && d.status === "reserved" ? "reserved" : "";
     var lo = CAL.a && (CAL.b || CAL.a), sel = CAL.a && s >= (CAL.a < lo ? CAL.a : lo) && s <= (CAL.a < lo ? lo : CAL.a);
     html += '<button type="button" class="d ' + cls + (sel ? " sel" : "") + '" data-day="' + s + '"' + (s < today ? " disabled" : "") + '><span class="n">' + (+s.slice(8)) + "</span>" +
-      (bk ? esc(bk.guest_name.split(" ")[0]) : d && d.status === "reserved" ? esc(feedName(j, s)) : d && d.status === "blocked" ? "Blocked" : d && d.price != null ? "£" + Math.round(d.price) : "") + "</button>";
+      (bk ? esc(String(bk.guest_name || "Booked").split(" ")[0]) : d && d.status === "reserved" ? esc(feedName(j, s)) : d && d.status === "blocked" ? "Blocked" : d && d.price != null ? "£" + Math.round(d.price) : "") + "</button>";
   }
   $("#cal2").innerHTML = html;
   var lo2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.a : CAL.b) : CAL.a, hi2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.b : CAL.a) : CAL.a;
@@ -487,13 +487,23 @@ document.addEventListener("click", function(e){
   if (!e.target.closest) return;
   if (e.target.closest("#syncCopy")){ var t = $("#syncLink").textContent, b = $("#syncCopy"); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){ b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy link"; }, 2000); }, function(){}); }
   var rm = e.target.closest("[data-rmsync]");
-  if (rm) api("bookhomes-host", {action: "remove_ical", id: rm.getAttribute("data-rmsync")}).then(refresh).then(drawSync).catch(function(err){ $("#syncOut").textContent = err.message; });
+  if (rm){
+    if (!confirm("Stop syncing this calendar? Its booked dates will open here.")) return;
+    rm.disabled = true; rm.textContent = "Removing...";
+    api("bookhomes-host", {action: "remove_ical", id: rm.getAttribute("data-rmsync")}).then(refresh).then(function(){ drawSync(); $("#syncOut").textContent = "Calendar removed."; calSaved(); })
+      .catch(function(err){ rm.disabled = false; rm.textContent = "Remove"; $("#syncOut").textContent = err.message; });
+  }
   if (e.target.closest("#syncAdd")){
     var url = $("#syncUrl").value.trim();
     if (!/^(https|webcal):\/\//i.test(url)){ $("#syncOut").textContent = "Paste the full link (it starts with https:// or webcal://)."; return; }
-    $("#syncOut").textContent = "Adding...";
-    api("bookhomes-host", {action: "add_ical", listing_id: +$("#calListing").value, name: $("#syncName").value, url: url}).then(refresh).then(function(){ $("#syncUrl").value = ""; drawSync(); $("#syncOut").textContent = "Added. It syncs within 15 minutes."; })
-      .catch(function(err){ $("#syncOut").textContent = err.message; });
+    var ab = $("#syncAdd"); if (ab.disabled) return;
+    ab.disabled = true; $("#syncOut").textContent = "Checking the link...";
+    api("bookhomes-host", {action: "add_ical", listing_id: +$("#calListing").value, name: $("#syncName").value, url: url}).then(function(j){
+      return refresh().then(function(){
+        ab.disabled = false; $("#syncUrl").value = ""; drawSync(); calSaved();
+        $("#syncOut").textContent = j.synced ? "Linked and synced: " + j.events + " booked or blocked periods found. We re-check every 15 minutes." : "Linked, but we couldn't read it yet: " + (j.error || "unknown problem") + " We'll keep trying every 15 minutes.";
+      });
+    }).catch(function(err){ ab.disabled = false; $("#syncOut").textContent = err.message; });
   }
 });
 $("#cal2").addEventListener("click", function(e){
