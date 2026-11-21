@@ -629,7 +629,7 @@ var STEPS = [
 var SECTIONS = [
   {k: "photos", t: "Photos", ic: "camera", r: photoStep, v: V.photos, after: photoAfter, instant: true, sum: function(){ return W.photos.length + " photo" + (W.photos.length === 1 ? "" : "s"); }},
   {k: "title", t: "Title and description", ic: "book", r: function(){ return titleR() + descR(); }, f: ["title", "description"], v: function(){ return V.title() || V.description(); }, sum: function(){ return W.l.title || "Add a title"; }},
-  {k: "rooms", t: "Property type, guests and rooms", ic: "home", r: function(){ return '<h3 class="psec" style="margin-top:0">Property type</h3>' + typeR() + '<h3 class="psec">Guests and rooms</h3>' + stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + inp("baths", "Bathrooms", "number", 'min="0" max="20" step="0.5" inputmode="decimal"'); }, f: ["property_type", "max_guests", "bedrooms", "beds", "baths"], sum: function(){ var t = TYPES.filter(function(x){ return x[0] === W.l.property_type; })[0]; return (t ? t[1] : "Home") + " · " + W.l.max_guests + " guests · " + W.l.bedrooms + " bedrooms · " + W.l.beds + " beds · " + W.l.baths + " baths"; }},
+  {k: "rooms", t: "Property type, guests and rooms", ic: "home", r: function(){ return '<h3 class="psec" style="margin-top:0">Property type</h3>' + typeR() + '<h3 class="psec">Guests and rooms</h3>' + stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + inp("baths", "Bathrooms", "number", 'min="0" max="20" step="0.5" inputmode="decimal"'); }, f: ["property_type", "max_guests", "bedrooms", "beds", "baths"], sum: function(){ var t = TYPES.filter(function(x){ return x[0] === W.l.property_type; })[0]; return (t ? t[1] : "Home") + " · " + pl(W.l.max_guests, "guest") + " · " + pl(W.l.bedrooms, "bedroom") + " · " + pl(W.l.beds, "bed") + " · " + pl(W.l.baths, "bath"); }},
   {k: "amenities", t: "Amenities", ic: "wifi", r: function(){ return amenR() + '<h3 class="psec">Good for</h3>' + catR(); }, f: ["amenities", "categories"], sum: function(){ var n = W.l.amenities.length; return n + (n === 1 ? " amenity" : " amenities"); }},
   {k: "location", t: "Location", ic: "pin", r: locR, f: ["area", "city", "lat", "lng"], v: V.location, after: pinMap, sum: function(){ return [W.l.area, W.l.city].filter(Boolean).join(", ") + (W.l.lat == null ? " · no map pin" : ""); }},
   {k: "rules", t: "House rules", ic: "list", r: rulesR, f: ["house_rules"], sum: function(){ return (W.l.house_rules || "None").slice(0, 60); }},
@@ -689,6 +689,7 @@ function load(id, useBackup){
   if (useBackup && bk && bk.l && (!l || !l.updated_at || bk.at > Date.parse(l.updated_at))) W.l = norm(Object.assign({}, W.l, bk.l, {status: W.l.status, id: W.l.id, slug: W.l.slug}));
   return {l: l, bk: bk};
 }
+function pl(n, w){ n = +n || 0; return n + " " + w + (n === 1 ? "" : "s"); }
 function openListing(id, sec){ var l = id ? findL(id) : null; if (!l || l.status === "draft") openWizard(id); else openEditor(id, sec); }
 function openWizard(id, stepK){
   var r = load(id, true); W.mode = "wizard"; W.pasteMode = false;

@@ -62,7 +62,9 @@
         var r = el.getBoundingClientRect();
         if (!r.width || !r.height || el.closest(".hidden")) return;
         var pos = getComputedStyle(el).position;
-        if ((pos === "fixed" || pos === "sticky") && r.bottom >= vh - 4 && r.top < vh) top = Math.min(top, r.top);
+        // the wizard's footer is a normal block at the bottom of a fixed full-screen panel, so it counts too
+        var pinned = pos === "fixed" || pos === "sticky" || el.matches(".wz-foot");
+        if (pinned && r.bottom >= vh - 4 && r.top < vh) top = Math.min(top, r.top);
       });
       var covered = top < vh, pv = document.querySelector(".pv:not(.hidden)");
       a.classList.toggle("bhfb-off", !!pv || (covered && window.innerWidth < 860));
@@ -70,6 +72,20 @@
       // Listing editor on larger screens: sit beside the section list, not on top of it
       var side = document.querySelector(".ed:not(.hidden) .ed-side"), sr = side && side.getBoundingClientRect();
       a.style.left = sr && sr.width && window.innerWidth >= 860 ? (sr.right + 14) + "px" : "";
+      // Last check: never sit on top of a button, link or field. If one is underneath, move up above it.
+      for (var i = 0; i < 4 && !a.classList.contains("bhfb-off"); i++){
+        var br = a.getBoundingClientRect(), hit = null;
+        [[br.left + 4, br.top + 4], [br.right - 4, br.top + 4], [br.left + 4, br.bottom - 4], [br.right - 4, br.bottom - 4], [br.left + br.width / 2, br.top + br.height / 2]].some(function(pt){
+          var els = document.elementsFromPoint ? document.elementsFromPoint(pt[0], pt[1]) : [];
+          for (var j = 0; j < els.length; j++){
+            if (els[j] === a || a.contains(els[j])) continue;
+            hit = els[j].closest("a, button, input, select, textarea, label, [role=button]"); return true;
+          }
+          return false;
+        });
+        if (!hit || hit.getBoundingClientRect().top < vh / 2) break;
+        a.style.bottom = (vh - hit.getBoundingClientRect().top + 10) + "px";
+      }
     });
   }
   function watch(){
