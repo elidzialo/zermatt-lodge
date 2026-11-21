@@ -304,6 +304,8 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
         ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
     og = f'<meta property="og:image" content="{esc(og_image or DOMAIN + "/assets/og-bookhomes.png")}">' 
     bc = f' class="{body_class}"' if body_class else ""
+    # error pages are served at any unknown URL: no canonical (it would point Google at /404)
+    canon_tag = "" if path == "/404" else f'<link rel="canonical" href="{esc(canon)}">\n'
     if path == "/":  # Google Search Console ownership (URL-prefix property https://bookhomes.co.uk/); keep it
         extra = '<meta name="google-site-verification" content="iocZScMiB0yr7m73VVQrB4McHqrM8MyLEgvAAMcwBj4">\n<meta name="google-site-verification" content="6ue-5oJtfSusMjom60Vp9z5mEdHAuXpPOtV1A4vZMJ8">\n' + extra
     return f"""<!DOCTYPE html>
@@ -314,8 +316,7 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
 <meta name="robots" content="{robots}">
-<link rel="canonical" href="{esc(canon)}">
-<meta name="theme-color" content="#ffffff">
+{canon_tag}<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Book Homes"><meta property="og:locale" content="en_GB">
 <meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canon)}">{og}
