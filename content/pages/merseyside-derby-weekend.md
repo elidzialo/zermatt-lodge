@@ -3,7 +3,7 @@ title: "Merseyside Derby Weekend: Where to Stay in Liverpool"
 meta_description: "Planning a Merseyside derby weekend? 2026/27 derby dates, how to reach Anfield and Hill Dickinson Stadium, parking, and a 4-bed house in north Liverpool."
 slug: merseyside-derby-weekend
 h1: "Merseyside Derby Weekend: Planning Your Stay in Liverpool"
-quick_answer: "Everton host Liverpool at Hill Dickinson Stadium on Sunday 29 November 2026 at 12pm, and Liverpool host Everton at Anfield on Saturday 30 January 2027 (listed for 3pm, subject to change). Book early, as hotels fill fast for derby weekends."
+quick_answer: "Everton host Liverpool at Hill Dickinson Stadium on Sunday 29 November 2026 at 12pm, and Liverpool host Everton at Anfield on Saturday 30 January 2027 at 12.30pm (moved for TNT Sports). Book early, as hotels fill fast for derby weekends."
 primary_keyword: "merseyside derby weekend"
 secondary_keywords:
   - "merseyside derby accommodation"
@@ -18,7 +18,7 @@ related:
   - getting-to-everton-stadium-from-fazakerley
 faqs:
   - q: "When are the Merseyside derbies in 2026/27?"
-    a: "Everton v Liverpool at Hill Dickinson Stadium has been moved for live TV to Sunday 29 November 2026 at 12pm. Liverpool v Everton at Anfield is listed for Saturday 30 January 2027 at 3pm, but all fixtures are subject to change."
+    a: "Everton v Liverpool at Hill Dickinson Stadium has been moved for live TV to Sunday 29 November 2026 at 12pm. Liverpool v Everton at Anfield has been moved to Saturday 30 January 2027 at 12.30pm, live on TNT Sports. Fixtures can still change."
   - q: "Which station is best for each ground?"
     a: "For Hill Dickinson Stadium at Bramley-Moore Dock, Sandhills is the closest station, about a 15-minute walk. For Anfield, Sandhills also has the Soccerbus, and Kirkdale is just under a mile's walk."
   - q: "Can I park at Anfield or Everton's stadium on derby day?"
@@ -47,7 +47,7 @@ This guide is specifically about derby days: dates, which station serves which g
 | Match | Venue | Date and time | Notes |
 |---|---|---|---|
 | Everton v Liverpool | Hill Dickinson Stadium, Bramley-Moore Dock | Sunday 29 November 2026, 12pm | Moved from Saturday 28 November for live TV (TNT Sports) |
-| Liverpool v Everton | Anfield | Saturday 30 January 2027, 3pm | Sky Sports lists it as subject to change |
+| Liverpool v Everton | Anfield | Saturday 30 January 2027, 12.30pm | Moved for TNT Sports on 19 Nov 2026 (ToffeeWeb) |
 
 Derby kick-offs are regularly moved for broadcasters. Book accommodation with flexible dates in mind, and check the clubs' official websites before you travel.
 
