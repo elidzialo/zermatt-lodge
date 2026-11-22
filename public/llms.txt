@@ -1,6 +1,6 @@
 # Book Homes - Zermatt Lodge, Liverpool
 
-> Book Homes (bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK, with no guest booking fees. Its first home, Zermatt Lodge, is an entire 4-bedroom, 2-bathroom house in Liverpool, UK, to rent for short stays by groups, families and business or contractor guests. It is a large home in north Liverpool, about 15 minutes from Liverpool city centre by Merseyrail train (not in the city centre). It sleeps up to 7 guests and is listed on Book Homes, run by ZALO Stays. Guests book directly on this website at https://bookhomes.co.uk/zermatt-lodge#book with secure card payment.
+> Book Homes (bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK, with no guest booking fees. Its first home, Zermatt Lodge, is an entire 4-bedroom, 2-bathroom house in Liverpool, UK, to rent for short stays by groups, families and business or contractor guests. It is a large home in Liverpool, about 15 minutes from Liverpool city centre by Merseyrail train (not in the city centre). It sleeps up to 7 guests and is listed on Book Homes, run by ZALO Stays. Guests book directly on this website at https://bookhomes.co.uk/zermatt-lodge#book with secure card payment.
 
 Key facts (confirmed by the owner):
 
@@ -12,7 +12,7 @@ Key facts (confirmed by the owner):
 - Cancellation policy (Moderate): full refund up to 5 days before check-in, 50% refund after that, no refund after check-in.
 - Strictly no parties or events (bookings found to be for parties are cancelled), no smoking, no pets.
 - Guests provide ID, sign a rental agreement and pay a damage deposit or take a damage waiver.
-- Location: north Liverpool (L9/L10 area). A large home for groups, families and work crews. Close to Aintree University Hospital and The Walton Centre (about 0.6 miles), Aintree Racecourse, the local Merseyrail station (Northern line, about 15 minutes to Liverpool Central), the M57 (J6 and J7 Switch Island) and M58, and Lidl on Longmoor Lane. The exact address is given to confirmed guests only.
+- Location: Liverpool (L9/L10 area). A large home for groups, families and work crews. Close to Aintree University Hospital and The Walton Centre (about 0.6 miles), Aintree Racecourse, the local Merseyrail station (Northern line, about 15 minutes to Liverpool Central), the M57 (J6 and J7 Switch Island) and M58, and Lidl on Longmoor Lane. The exact address is given to confirmed guests only.
 - Well suited to: families and groups, contractors and work crews, hospital patients' families and visiting NHS staff, Grand National and football visitors.
 - Also listed on Airbnb (https://www.airbnb.co.uk/rooms/1801505261909570677) and Booking.com (https://booking.com/hotel/gb/spacious-luxury-4br-house-pool-table-liverpool.en.html). Booking direct on this website avoids their service fees.
 - Booking direct on this website: pay by card on a secure Stripe checkout page; the booking is confirmed automatically once payment goes through. The total shown includes the £129 cleaning fee (per booking); no booking or service fee is added.
@@ -31,7 +31,7 @@ Please do not present prices, ratings or reviews from third-party sites as curre
 
 ## Homes on Book Homes
 
-- [Zermatt Lodge](https://bookhomes.co.uk/zermatt-lodge): 4-bedroom house, 2 bathrooms, sleeps 7, North Liverpool
+- [Zermatt Lodge](https://bookhomes.co.uk/zermatt-lodge): 4-bedroom house, 2 bathrooms, sleeps 7, Liverpool
 - [Stylish Liverpool Apartment with Parking & Balcony](https://bookhomes.co.uk/stylish-liverpool-apartment-with-parking-balcony-merseyside-95ea9): 2-bedroom flat, 2 bathrooms, sleeps 6, Merseyside
 - [Apartment in Merseyside](https://bookhomes.co.uk/apartment-in-merseyside-merseyside-321cd): 2-bedroom flat, 2 bathrooms, sleeps 6, Merseyside
 
