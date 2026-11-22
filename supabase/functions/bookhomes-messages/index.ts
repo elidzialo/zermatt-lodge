@@ -255,7 +255,7 @@ async function start(req: Request, b: Record<string, unknown>) {
   const tok = str(b.t, 40);
   if (tok && UUID_RE.test(tok)) {
     const x = await threadBy("token", tok);
-    if (x && x.listing_id === listingId && x.status !== "blocked") t = x;
+    if (x && Number(x.listing_id) === listingId && x.status !== "blocked") t = x;
   }
   if (!t && user) {
     const conf = await emailConfirmed(user.id);
