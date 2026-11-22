@@ -275,3 +275,4 @@ body:not(.dash-on) .hp-switch{display:none}
   .host .wz-top .saved:empty{display:none}
   .host .wz-top .btn{grid-row:1/3;margin:0!important}
 }
+.stepper button:disabled{opacity:.35;cursor:not-allowed}

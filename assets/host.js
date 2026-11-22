@@ -560,7 +560,7 @@ function norm(l){
 function get(path){ return path.split(".").reduce(function(o, k){ return o == null ? undefined : o[k]; }, W.l); }
 function set(path, v){ var ks = path.split("."), o = W.l; for (var i = 0; i < ks.length - 1; i++){ if (o[ks[i]] == null) o[ks[i]] = {}; o = o[ks[i]]; } o[ks[ks.length - 1]] = v; }
 function tiles(list, isOn, attr){ return '<div class="tiles">' + list.map(function(t){ return '<button type="button" class="tile" ' + attr + '="' + t[0] + '" aria-pressed="' + (isOn(t[0]) ? "true" : "false") + '">' + icon(t[2] || t[0]) + "<span>" + esc(t[1]) + "</span></button>"; }).join("") + "</div>"; }
-function stepper(key, label, min, max){ return '<div class="stepper"><span>' + label + '</span><div><button type="button" data-step="' + key + '" data-d="-1" data-min="' + min + '" data-max="' + max + '" aria-label="Fewer ' + esc(label) + '">' + icon("minus") + '</button><b id="st_' + key + '">' + esc(W.l[key]) + '</b><button type="button" data-step="' + key + '" data-d="1" data-max="' + max + '" data-min="' + min + '" aria-label="More ' + esc(label) + '">' + icon("plus") + "</button></div></div>"; }
+function stepper(key, label, min, max, step){ var d = step || 1, v = +W.l[key] || 0; return '<div class="stepper"><span id="stl_' + key + '">' + label + '</span><div><button type="button" data-step="' + key + '" data-d="-' + d + '" data-min="' + min + '" data-max="' + max + '" aria-label="Fewer ' + esc(label) + '"' + (v <= min ? " disabled" : "") + '>' + icon("minus") + '</button><b id="st_' + key + '" aria-live="polite" aria-labelledby="stl_' + key + ' st_' + key + '">' + esc(v) + '</b><button type="button" data-step="' + key + '" data-d="' + d + '" data-max="' + max + '" data-min="' + min + '" aria-label="More ' + esc(label) + '"' + (v >= max ? " disabled" : "") + '>' + icon("plus") + "</button></div></div>"; }
 function sw(path, label, ic){ return '<label class="switch"><span>' + icon(ic) + esc(label) + '</span><input type="checkbox" class="tg" data-sw="' + path + '"' + (get(path) ? " checked" : "") + "></label>"; }
 function inp(path, label, type, extra, hint){ var v = get(path); return '<label class="f2">' + label + '<input type="' + (type || "text") + '" data-in="' + path + '" value="' + esc(v == null ? "" : v) + '" ' + (extra || "") + ">" + (hint ? "<small>" + hint + "</small>" : "") + "</label>"; }
 function area(path, label, extra, hint){ var v = get(path) || "", m = (extra || "").match(/maxlength="(\d+)"/); return '<label class="f2">' + label + '<textarea data-in="' + path + '" ' + (extra || "") + ">" + esc(v) + "</textarea>" + (m ? '<small class="cnt" data-cnt="' + path + '">' + v.length + " / " + m[1] + "</small>" : "") + (hint ? "<small>" + hint + "</small>" : "") + "</label>"; }
@@ -573,7 +573,7 @@ function rowNum(path, label, sub, min, max){ return '<label class="prow"><span><
 
 /* ----- screens (used by both the wizard and the editor) ----- */
 function typeR(){ return tiles(TYPES, function(k){ return W.l.property_type === k; }, "data-type"); }
-function roomsR(){ return stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + stepper("baths", "Bathrooms", 0, 20) + '<p class="pnote">Half bathrooms: type 1.5 in the editor later if you need it.</p>'; }
+function roomsR(){ return stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + stepper("baths", "Bathrooms", 0, 20, 0.5); }
 function locR(){ return inp("area", "Area or neighbourhood", "text", 'placeholder="e.g. Allerton, south Liverpool" maxlength="80" autocomplete="off"', "Not the street address. Guests get the address after they book.") + inp("city", "Town or city", "text", 'maxlength="60"') +
   '<p class="pnote" style="margin-top:0">Find your home on the map: search, then drag the pin if needed. Guests only see a circle about 1 km wide, never the exact spot.</p>' +
   '<div class="geo"><label class="sr-only" for="geoQ">Search for your address or postcode</label><input type="search" id="geoQ" placeholder="Postcode or street, e.g. L18 1EE" autocomplete="off" enterkeyhint="search"><button type="button" class="btn ghost" id="geoGo">Search</button></div><div id="geoOut" aria-live="polite"></div>' +
@@ -644,8 +644,8 @@ var STEPS = [
 ];
 var SECTIONS = [
   {k: "photos", t: "Photos", ic: "camera", r: photoStep, v: V.photos, after: photoAfter, instant: true, sum: function(){ return W.photos.length + " photo" + (W.photos.length === 1 ? "" : "s"); }},
-  {k: "title", t: "Title and description", ic: "book", r: function(){ return titleR() + descR(); }, f: ["title", "description"], v: function(){ return V.title() || V.description(); }, sum: function(){ return W.l.title || "Add a title"; }},
-  {k: "rooms", t: "Property type, guests and rooms", ic: "home", r: function(){ return '<h3 class="psec" style="margin-top:0">Property type</h3>' + typeR() + '<h3 class="psec">Guests and rooms</h3>' + stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + inp("baths", "Bathrooms", "number", 'min="0" max="20" step="0.5" inputmode="decimal"'); }, f: ["property_type", "max_guests", "bedrooms", "beds", "baths"], sum: function(){ var t = TYPES.filter(function(x){ return x[0] === W.l.property_type; })[0]; return (t ? t[1] : "Home") + " · " + pl(W.l.max_guests, "guest") + " · " + pl(W.l.bedrooms, "bedroom") + " · " + pl(W.l.beds, "bed") + " · " + pl(W.l.baths, "bath"); }},
+  {k: "title", t: "Title and description", ic: "book", r: function(){ return titleR() + descR(); }, f: ["title", "description"], v: function(){ return V.title() || V.description(); }, sum: function(){ var t = (W.l.title || "").trim(); return t.length < 3 ? "Add a title" : V.description() ? t + " · description needs " + Math.max(1, 60 - (W.l.description || "").trim().length) + " more characters" : t; }},
+  {k: "rooms", t: "Property type, guests and rooms", ic: "home", r: function(){ return '<h3 class="psec" style="margin-top:0">Property type</h3>' + typeR() + '<h3 class="psec">Guests and rooms</h3>' + stepper("max_guests", "Guests", 1, 30) + stepper("bedrooms", "Bedrooms", 0, 30) + stepper("beds", "Beds", 0, 50) + stepper("baths", "Bathrooms", 0, 20, 0.5); }, f: ["property_type", "max_guests", "bedrooms", "beds", "baths"], sum: function(){ var t = TYPES.filter(function(x){ return x[0] === W.l.property_type; })[0]; return (t ? t[1] : "Home") + " · " + pl(W.l.max_guests, "guest") + " · " + pl(W.l.bedrooms, "bedroom") + " · " + pl(W.l.beds, "bed") + " · " + pl(W.l.baths, "bath"); }},
   {k: "amenities", t: "Amenities", ic: "wifi", r: function(){ return amenR() + '<h3 class="psec">Good for</h3>' + catR(); }, f: ["amenities", "categories"], sum: function(){ var n = W.l.amenities.length; return n + (n === 1 ? " amenity" : " amenities"); }},
   {k: "location", t: "Location", ic: "pin", r: locR, f: ["area", "city", "lat", "lng"], v: V.location, after: pinMap, sum: function(){ return [W.l.area, W.l.city].filter(Boolean).join(", ") + (W.l.lat == null ? " · no map pin" : ""); }},
   {k: "rules", t: "House rules", ic: "list", r: rulesR, f: ["house_rules"], sum: function(){ return (W.l.house_rules || "None").slice(0, 60); }},
@@ -789,8 +789,9 @@ function missing(){
 }
 
 /* ----- input handling (shared by wizard and editor bodies) ----- */
-function changed(){ if (W.mode === "editor"){ W.dirty = true; edDirty(); backup(); edErr(""); } else { wzMsg(""); autosave(); } }
-function rerenderBody(){ if (W.mode === "editor") drawSection(); else drawStep(); }
+function changed(){ if (W.mode === "editor"){ W.dirty = true; edDirty(); backup(); edErr(""); clearTimeout(W.navT); W.navT = setTimeout(edNav, 250); } else { wzMsg(""); autosave(); } }
+// editor: redraw the open section in place (keep the section, unsaved changes and scroll position)
+function rerenderBody(){ if (W.mode !== "editor") return drawStep(); var d = W.dirty, m = $("#edMain"), y = m ? m.scrollTop : 0; drawSection(W.sec); W.dirty = d; edDirty(); if (m) m.scrollTop = y; }
 function onClick(e){
   var t = e.target.closest && e.target.closest("[data-dayk],[data-type],[data-amen],[data-cat2],[data-step],[data-ge]");
   if (!t) return;
@@ -802,9 +803,10 @@ function onClick(e){
     if (i >= 0) arr.splice(i, 1); else arr.push(v);
     t.setAttribute("aria-pressed", i >= 0 ? "false" : "true");
   } else {
-    var k = t.getAttribute("data-step"), n = (+W.l[k] || 0) + +t.getAttribute("data-d");
-    n = Math.max(+t.getAttribute("data-min"), Math.min(+t.getAttribute("data-max"), n));
+    var k = t.getAttribute("data-step"), lo = +t.getAttribute("data-min"), hi = +t.getAttribute("data-max"), n = Math.round(((+W.l[k] || 0) + +t.getAttribute("data-d")) * 2) / 2;
+    n = Math.max(lo, Math.min(hi, n));
     W.l[k] = n; $("#st_" + k).textContent = n;
+    $$('[data-step="' + k + '"]', t.parentNode).forEach(function(x){ x.disabled = +x.getAttribute("data-d") < 0 ? n <= lo : n >= hi; });
   }
   changed();
 }
@@ -1216,7 +1218,7 @@ function edStatusMsg(t, miss){
 function edNav(){
   $("#edNav").innerHTML = SECTIONS.map(function(s){
     var err = s.v ? s.v() : "";
-    return '<button type="button" class="ednav' + (s.k === W.sec ? " on" : "") + '" data-sec="' + s.k + '"' + (s.k === W.sec ? ' aria-current="true"' : "") + ">" + icon(s.ic) + '<span><b>' + esc(s.t) + "</b><small>" + esc(s.sum()) + "</small></span>" + (err ? '<i class="dot" title="Needs attention"></i>' : "") + icon("chev_r") + "</button>";
+    return '<button type="button" class="ednav' + (s.k === W.sec ? " on" : "") + '" data-sec="' + s.k + '"' + (s.k === W.sec ? ' aria-current="true"' : "") + ">" + icon(s.ic) + '<span><b>' + esc(s.t) + "</b><small>" + esc(s.sum()) + "</small></span>" + (err ? '<i class="dot" title="' + esc(err) + '"></i>' : "") + icon("chev_r") + "</button>";
   }).join("");
 }
 function showList(){ W.sec = null; $("#ed").classList.remove("insec"); edNav(); setHash("edit=" + W.id); }
