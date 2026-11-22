@@ -1,8 +1,9 @@
 // POST /functions/v1/bookhomes-admin   { action, ... }   - marketplace tabs in /admin
 // Auth: the signed-in user's token, 2-step verified (aal2), and their email must be on the admin list (zermatt.admins).
 // Every change is written to bookhomes.audit_log.
-import { addDays, adminClient, isValidIsoDate, optionalEnv, siteUrl, stripeClient, ukToday } from "../_shared/util.ts";
-import { audit, authAdmin, EMAIL_RE, getSetting, handle, HttpError, int, jsonRes, listingCols, num, readBody, requireAdmin, setSetting, sql, str, UUID_RE } from "../_shared/bh.ts";
+import { addDays, adminClient, isValidIsoDate, LIVE_SITE, optionalEnv, siteUrl, stripeClient, ukToday } from "../_shared/util.ts";
+import { audit, authAdmin, EMAIL_RE, getSetting, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num, PHONE_RE, readBody, requireAdmin, setSetting, sql, str, UUID_RE } from "../_shared/bh.ts";
+import { accountDetail } from "../_shared/bh_connect.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice, guestBooked, hostBooked, ref } from "../_shared/bh_emails.ts";
 import { loadBooking } from "../_shared/bh_booking.ts";
@@ -71,6 +72,48 @@ async function notify(to: string | null, subject: string, lines: string[], link 
   await sendLogged(adminClient(), { toRole: "guest", to, template: "bh_host_notice", email: adminNotice(subject, lines, siteUrl(), link) });
 }
 
+// ---------- Hosts tab (22 Nov 2026): full host list, edit, password reset, delete, view as host, Stripe refresh ----------
+// One row per host (role host, or anyone with a hosts row). Counts are per status so the list can say "2 live, 1 draft".
+function hostRows(where: { uid?: string; withDeleted?: boolean } = {}) {
+  const uid = where.uid ?? null;
+  return sql`
+    select p.user_id, p.email, p.role, p.name, p.phone, p.whatsapp, p.company, p.trader_status, p.approved, p.approved_at, p.rejected_reason,
+           p.created_at, p.deleted_at, p.deleted_by, h.id as host_id, h.display_name, h.stripe_account_id, h.connect_status, h.charges_enabled,
+           h.payouts_enabled, h.commission_override, h.connect_waiting_on, h.connect_checked_at,
+           u.last_sign_in_at, u.banned_until, u.email_confirmed_at,
+           exists (select 1 from auth.mfa_factors f where f.user_id = p.user_id and f.status = 'verified') as mfa,
+           coalesce(lc.live, 0) as live, coalesce(lc.draft, 0) as draft, coalesce(lc.pending, 0) as pending, coalesce(lc.paused, 0) as paused,
+           coalesce(lc.archived, 0) as archived, coalesce(bc.paid, 0) as bookings, coalesce(bc.upcoming, 0) as upcoming
+      from bookhomes.profiles p
+      left join bookhomes.hosts h on h.user_id = p.user_id
+      left join auth.users u on u.id = p.user_id
+      left join lateral (select count(*) filter (where l.status = 'approved')::int as live, count(*) filter (where l.status in ('draft', 'rejected'))::int as draft,
+                                count(*) filter (where l.status = 'pending')::int as pending, count(*) filter (where l.status = 'paused')::int as paused,
+                                count(*) filter (where l.status = 'archived')::int as archived
+                           from bookhomes.listings l where l.host_id = h.id) lc on true
+      left join lateral (select count(*) filter (where b.status = 'paid')::int as paid,
+                                count(*) filter (where b.status in ('paid', 'held') and b.check_out >= bookhomes.uk_today())::int as upcoming
+                           from bookhomes.bookings b where b.host_id = h.id) bc on true
+     where (p.role = 'host' or h.id is not null) and (${uid === null} or p.user_id = ${uid ?? "00000000-0000-0000-0000-000000000000"}::uuid)
+       and (${!!where.withDeleted} or p.deleted_at is null)
+     order by p.created_at desc`;
+}
+async function oneHost(b: Record<string, unknown>) {
+  const uid = String(b.user_id ?? "");
+  if (!UUID_RE.test(uid)) throw new HttpError(400, "Invalid host");
+  const h = (await hostRows({ uid, withDeleted: true }))[0];
+  if (!h) throw new HttpError(404, "Host not found");
+  return h;
+}
+function live(h: { deleted_at?: unknown }) { if (h.deleted_at) throw new HttpError(409, "This host was deleted."); }
+// A sign-in link for the host that lands on /host and is verified there (verifyOtp), so no Supabase redirect allow-list is involved.
+async function hostLink(type: "magiclink" | "recovery", email: string, extra = ""): Promise<string> {
+  const { data, error } = await authAdmin().auth.admin.generateLink({ type, email, options: { redirectTo: `${LIVE_SITE}/host/` } });
+  const hashed = (data as { properties?: { hashed_token?: string } } | null)?.properties?.hashed_token;
+  if (error || !hashed) throw new HttpError(502, `Could not make the link: ${error?.message ?? "no token"}`);
+  return `${LIVE_SITE}/host/?${extra}token_hash=${encodeURIComponent(hashed)}&type=${type}`;
+}
+
 Deno.serve(handle(async (req) => {
   if (req.method !== "POST") throw new HttpError(405, "Method not allowed");
   const admin = await requireAdmin(req);
@@ -84,7 +127,7 @@ Deno.serve(handle(async (req) => {
         sql`select p.user_id, p.email, p.role, p.name, p.phone, p.whatsapp, p.company, p.trader_status, p.approved, p.approved_at,
                    p.rejected_reason, p.created_at, h.id as host_id, h.display_name, h.connect_status, h.charges_enabled, h.payouts_enabled,
                    h.commission_override, (select count(*)::int from bookhomes.listings l where l.host_id = h.id) as listings
-              from bookhomes.profiles p left join bookhomes.hosts h on h.user_id = p.user_id order by p.created_at desc`,
+              from bookhomes.profiles p left join bookhomes.hosts h on h.user_id = p.user_id where p.deleted_at is null order by p.created_at desc`,
         sql.unsafe(`select ${COLS}, l.reject_reason, l.reviewed_by, coalesce(nullif(h.display_name, ''), p.name) as host_name, p.email as host_email,
                            p.approved as host_approved,
                            (l.approved_at is not null and l.updated_at > l.approved_at + interval '1 minute') as edited_since_approval
@@ -221,7 +264,7 @@ Deno.serve(handle(async (req) => {
                count(*) filter (where status like 'cancelled%')::int as cancelled
           from bookhomes.all_bookings where coalesce(paid_at, created_at) >= ${from}::date and coalesce(paid_at, created_at) < ${to}::date`)[0];
       const pending = (await sql`
-        select (select count(*)::int from bookhomes.profiles where approved is not true and role <> 'admin') as hosts,
+        select (select count(*)::int from bookhomes.profiles where approved is not true and role <> 'admin' and deleted_at is null) as hosts,
                (select count(*)::int from bookhomes.listings where status = 'pending') as listings,
                (select count(*)::int from bookhomes.payouts where status = 'manual_pending') as payouts,
                (select coalesce(sum(amount_pence), 0)::bigint from bookhomes.payouts where status = 'manual_pending') as payouts_pence`)[0];
@@ -463,6 +506,171 @@ Deno.serve(handle(async (req) => {
                                 and (${!b.status} or status = ${String(b.status ?? "")})
                               order by created_at desc limit ${limit} offset ${offset}`;
       return jsonRes({ rows, limit, offset, sending_enabled: !!optionalEnv("RESEND_API_KEY") });
+    }
+
+    case "hosts": {
+      const [rows, pct] = await Promise.all([hostRows({ withDeleted: true }), getSetting<number>("commission_pct", 15)]);
+      return jsonRes({ rows, commission_pct: pct, site: LIVE_SITE });
+    }
+
+    case "host_detail": {
+      const h = await oneHost(b);
+      const listings = h.host_id ? await sql`select id, slug, title, status, area, city, base_price, approved_at, updated_at, deleted_at,
+                                                    (select url from bookhomes.listing_photos x where x.listing_id = l.id order by sort, created_at limit 1) as cover
+                                               from bookhomes.listings l where host_id = ${h.host_id} order by case status when 'approved' then 0 when 'pending' then 1 else 2 end, updated_at desc` : [];
+      const bookings = h.host_id ? await sql`select b.id, b.status, b.check_in::text, b.check_out::text, b.guest_name, b.amount_pence, b.host_payout_pence, b.payout_mode, l.title
+                                               from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id
+                                              where b.host_id = ${h.host_id} and b.status in ('paid', 'held') order by b.check_in desc limit 25` : [];
+      const ids = listings.map((l: { id: number }) => String(l.id));
+      const history = await sql`select at, actor_email, action, entity, entity_id, details from bookhomes.audit_log
+                                 where (entity = 'profile' and entity_id = ${h.user_id}) or (entity = 'host' and entity_id = ${h.host_id ?? ""})
+                                    or (entity = 'listing' and entity_id = any(${ids}::text[]))
+                                 order by at desc limit 100`;
+      return jsonRes({ host: h, listings, bookings, history, site: LIVE_SITE });
+    }
+
+    case "edit_host": {
+      const h = await oneHost(b);
+      live(h);
+      const f = (b.fields ?? {}) as Record<string, unknown>;
+      const prof: Record<string, unknown> = {}, host: Record<string, unknown> = {};
+      const txt = (k: string, max: number, re?: RegExp, label?: string) => {
+        if (!(k in f)) return undefined;
+        const v = str(f[k], max);
+        if (v && re && !re.test(v)) throw new HttpError(400, `Check the ${label ?? k}.`);
+        return v;
+      };
+      const name = txt("name", 120, NAME_RE, "name");
+      if (name !== undefined) { if (!name) throw new HttpError(400, "Name can't be empty."); prof.name = name; }
+      const phone = txt("phone", 25, PHONE_RE, "phone number"); if (phone !== undefined) prof.phone = phone;
+      const wa = txt("whatsapp", 25, PHONE_RE, "WhatsApp number"); if (wa !== undefined) prof.whatsapp = wa;
+      const company = txt("company", 160); if (company !== undefined) prof.company = company;
+      if ("trader_status" in f) {
+        const t = f.trader_status === null || f.trader_status === "" ? null : String(f.trader_status);
+        if (t !== null && !["trader", "private"].includes(t)) throw new HttpError(400, "Trader status is trader or private.");
+        prof.trader_status = t;
+      }
+      if ("approved" in f) {
+        const ok = f.approved === true;
+        prof.approved = ok;
+        if (ok && !h.approved) { prof.approved_at = new Date(); prof.rejected_reason = null; }
+        if (!ok) prof.approved_at = null;
+      }
+      const dn = txt("display_name", 80); if (dn !== undefined) host.display_name = dn;
+      if ("commission" in f) {
+        const c = f.commission === null || f.commission === "" ? null : num(f.commission, 0, 50);
+        if (c === null && !(f.commission === null || f.commission === "")) throw new HttpError(400, "Commission is 0 to 50 %, or blank for the standard rate.");
+        host.commission_override = c;
+      }
+      if (Object.keys(host).length && !h.host_id) throw new HttpError(409, "This person has no host account yet.");
+      // before -> after for every field that really changes (audit log)
+      const before = h as Record<string, unknown>;
+      const changes: Record<string, { from: unknown; to: unknown }> = {};
+      const cmp = (k: string, v: unknown) => {
+        if (k === "approved_at" || k === "rejected_reason") return; // follow "approved"
+        const a = before[k] ?? null;
+        if (String(a ?? "") !== String(v ?? "")) changes[k] = { from: a, to: v };
+      };
+      for (const [k, v] of Object.entries(prof)) cmp(k, v);
+      for (const [k, v] of Object.entries(host)) cmp(k, v);
+      if (!Object.keys(changes).length) return jsonRes({ ok: true, changed: [] });
+      await sql.begin(async (tx: typeof sql) => {
+        if (Object.keys(prof).length) await tx`update bookhomes.profiles set ${tx(prof)}, updated_at = now() where user_id = ${h.user_id}`;
+        if (Object.keys(host).length) await tx`update bookhomes.hosts set ${tx(host)}, updated_at = now() where id = ${h.host_id}`;
+      });
+      await audit(admin, "edit_host", "profile", h.user_id, { changes, host_id: h.host_id });
+      return jsonRes({ ok: true, changed: Object.keys(changes) });
+    }
+
+    case "host_password_reset": {
+      // mode "email": Supabase sends its reset email to the host. mode "link": we return a recovery link once, for the admin to send.
+      const h = await oneHost(b);
+      live(h);
+      const mode = b.mode === "link" ? "link" : "email";
+      if (mode === "email") {
+        const { error } = await authAdmin().auth.resetPasswordForEmail(h.email, { redirectTo: `${LIVE_SITE}/host/` });
+        if (error) throw new HttpError(/rate|security purposes/i.test(error.message) ? 429 : 502,
+          /rate|security purposes/i.test(error.message) ? "A reset email went to this host very recently. Wait a minute, or use Copy reset link." : `Could not send the email: ${error.message}`);
+        await audit(admin, "host_reset_email", "profile", h.user_id, { email: h.email });
+        return jsonRes({ ok: true, sent_to: h.email });
+      }
+      const url = await hostLink("recovery", h.email);
+      await audit(admin, "host_reset_link", "profile", h.user_id, { email: h.email }); // never the link itself
+      return jsonRes({ ok: true, url, note: "Works once. It expires after the time set in Supabase Auth (1 hour by default)." });
+    }
+
+    case "impersonate_host": {
+      // "Log in as host": a one-time sign-in link for the host, given only to this admin (aal2 checked above), opened in a new tab
+      // that keeps its own session (host.js ?as=1). Admin accounts can't be opened this way.
+      const h = await oneHost(b);
+      live(h);
+      if (h.user_id === admin.id) throw new HttpError(400, "That's you. Use My listings.");
+      if (h.role === "admin") throw new HttpError(403, "Admin accounts can't be opened this way.");
+      if (h.banned_until && Date.parse(String(h.banned_until)) > Date.now()) throw new HttpError(409, "This host is suspended. Unsuspend them first.");
+      const url = await hostLink("magiclink", h.email, "as=1&");
+      await audit(admin, "impersonate_host", "profile", h.user_id, { email: h.email, host_name: h.display_name || h.name, mfa_on: h.mfa });
+      return jsonRes({ ok: true, url, mfa: h.mfa });
+    }
+
+    case "refresh_host_connect": {
+      const h = await oneHost(b);
+      if (!h.host_id) throw new HttpError(409, "This person has no host account yet.");
+      if (!h.stripe_account_id) return jsonRes({ ok: true, status: "not_started", note: "This host hasn't started Stripe setup yet." });
+      if (!optionalEnv("STRIPE_SECRET_KEY")) throw new HttpError(409, "Stripe is not set up on the server.");
+      let d;
+      try { d = await accountDetail(h.stripe_account_id); } catch (e) {
+        throw new HttpError(502, `Stripe: ${(e as Error).message}`);
+      }
+      await sql`update bookhomes.hosts set connect_status = ${d.status}, charges_enabled = ${d.charges_enabled}, payouts_enabled = ${d.payouts_enabled},
+                  connect_waiting_on = ${d.waiting_on}, connect_checked_at = now(), updated_at = now() where id = ${h.host_id}`;
+      await audit(admin, "refresh_host_connect", "host", h.host_id, { account: h.stripe_account_id, ...d });
+      return jsonRes({ ok: true, ...d });
+    }
+
+    case "delete_host": {
+      const h = await oneHost(b);
+      live(h);
+      if (String(b.confirm_email ?? "").trim().toLowerCase() !== String(h.email).toLowerCase()) throw new HttpError(400, "Type the host's email exactly to confirm.");
+      if (h.user_id === admin.id) throw new HttpError(400, "You can't delete yourself.");
+      if (h.role === "admin") throw new HttpError(403, "This is an admin. Change their role on the Users tab first.");
+      const hid = h.host_id as string | null;
+      const upcoming = hid ? await sql`select b.id, b.status, b.check_in::text, b.check_out::text, b.guest_name, l.title from bookhomes.bookings b
+                                          join bookhomes.listings l on l.id = b.listing_id
+                                         where b.host_id = ${hid} and b.status in ('paid', 'held') and b.check_out >= bookhomes.uk_today() order by b.check_in` : [];
+      if (upcoming.length) return jsonRes({ error: `This host has ${upcoming.length} upcoming or active booking${upcoming.length === 1 ? "" : "s"}. Cancel or finish them first.`, code: "HAS_BOOKINGS", bookings: upcoming }, 409);
+      const owed = hid ? await sql`select id, amount_pence from bookhomes.payouts where host_id = ${hid} and status = 'manual_pending'` : [];
+      if (owed.length) return jsonRes({ error: `This host is still owed ${owed.length} bank transfer payout${owed.length === 1 ? "" : "s"}. Pay them (Payouts tab) first.`, code: "OWED" }, 409);
+      const ever = hid ? (await sql`select (select count(*)::int from bookhomes.listings where host_id = ${hid}) as listings,
+                                           (select count(*)::int from bookhomes.bookings where host_id = ${hid}) as bookings,
+                                           (select count(*)::int from bookhomes.payouts where host_id = ${hid}) as payouts`)[0] : { listings: 0, bookings: 0, payouts: 0 };
+      const db = authAdmin();
+      if (!ever.listings && !ever.bookings && !ever.payouts) {
+        // Nothing points at this host: remove the login; profile and host rows go with it (on delete cascade).
+        const { error } = await db.auth.admin.deleteUser(h.user_id);
+        if (error) throw new HttpError(502, `Could not delete the login: ${error.message}`);
+        await audit(admin, "delete_host", "profile", h.user_id, { mode: "deleted", email: h.email, host_id: hid, stripe_account_id: h.stripe_account_id, name: h.name });
+        return jsonRes({ ok: true, mode: "deleted", archived: [] });
+      }
+      // Soft delete: listings archived (pages go, bookings and reviews stay), rows marked deleted, login banned.
+      const { error } = await db.auth.admin.updateUserById(h.user_id, { ban_duration: "876000h" });
+      if (error) throw new HttpError(502, `Could not block the login: ${error.message}. Nothing was changed.`);
+      let wasLive = false;
+      const archived: number[] = [];
+      await sql.begin(async (tx: typeof sql) => {
+        const rows = await tx`update bookhomes.listings set status = 'archived', deleted_at = now(), deleted_by = ${admin.email}
+                               where host_id = ${hid} and status <> 'archived' and legacy_source is null returning id, approved_at`;
+        for (const r of rows) { archived.push(Number(r.id)); if (r.approved_at) wasLive = true; }
+        if (archived.length) {
+          await tx`update bookhomes.listing_ical_sources set enabled = false where listing_id = any(${archived}::bigint[])`;
+          await tx`delete from bookhomes.listing_ical_events where listing_id = any(${archived}::bigint[])`;
+        }
+        await tx`update bookhomes.profiles set deleted_at = now(), deleted_by = ${admin.email}, approved = false, updated_at = now() where user_id = ${h.user_id}`;
+        await tx`update bookhomes.hosts set deleted_at = now(), updated_at = now() where id = ${hid}`;
+      });
+      const rebuilt = wasLive ? await rebuildSite() : false;
+      await audit(admin, "delete_host", "profile", h.user_id, { mode: "soft", email: h.email, host_id: hid, stripe_account_id: h.stripe_account_id,
+        archived_listings: archived, rebuilt, name: h.name });
+      return jsonRes({ ok: true, mode: "soft", archived, rebuilt });
     }
 
     default:

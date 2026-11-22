@@ -8,6 +8,10 @@
 var URL_ = "https://kddhkuwnkkjcnbjegsmc.supabase.co", KEY = "sb_publishable_zASd1ua4ZuknbOatR4MnTA_nVwqRZlR";
 var TOKEN_KEY = "sb-kddhkuwnkkjcnbjegsmc-auth-token", ADMIN_KEY = "bh_admin_v1";
 var HOST_SIDE = /^\/host(\/|$)/.test(location.pathname);
+// Admin "Log in as host" tab (/host?as=1, see host.js): read the host session kept under its own key in this tab only,
+// and let Log out end just that session (host.js BH_AS_EXIT) instead of clearing every saved session.
+var AS_TAB = HOST_SIDE && (function(){ try { return /[?&]as=1(&|$)/.test(location.search) || sessionStorage.getItem("bh_as") === "1"; } catch (e) { return false; } })();
+if (AS_TAB) TOKEN_KEY = "bh-as-host-session";
 
 /* ---------- open / close ---------- */
 function btns(){ return Array.prototype.slice.call(document.querySelectorAll(".ubtn")); }
@@ -25,7 +29,7 @@ document.addEventListener("click", function(e){
 document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeAll(null); });
 
 /* ---------- session (read only, except Log out and a token refresh) ---------- */
-function stores(){ var out = []; ["sessionStorage", "localStorage"].forEach(function(n){ try { if (window[n]) out.push(window[n]); } catch (e) {} }); return out; }
+function stores(){ var out = []; (AS_TAB ? ["sessionStorage"] : ["sessionStorage", "localStorage"]).forEach(function(n){ try { if (window[n]) out.push(window[n]); } catch (e) {} }); return out; }
 function readSession(){
   var st = stores();
   for (var i = 0; i < st.length; i++){
@@ -61,6 +65,7 @@ function checkAdmin(found){
     .then(function(ok){ ok = ok === true; setAdminCache(uid, ok); return ok; });
 }
 function logOut(){
+  if (AS_TAB && window.BH_AS_EXIT) return window.BH_AS_EXIT();
   var found = readSession();
   var done = function(){
     stores().forEach(function(s){ try { Object.keys(s).forEach(function(k){ if (/^sb-.*-auth-token/.test(k)) s.removeItem(k); }); s.removeItem(ADMIN_KEY); } catch (e) {} });

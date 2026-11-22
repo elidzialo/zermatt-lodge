@@ -288,6 +288,80 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
   .top .who .wemail,.top .who>button{display:none}
 }
 @media (max-width:560px){ .cal .d{min-height:54px;font-size:10px;padding:4px} .cal .d .t{display:none} .top .who span.wemail{display:none} }
+
+/* ---------- Hosts tab (22 Nov): payout overview, table, host panel, modals ---------- */
+.hsum{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.hsum .stat b{font-size:24px}
+.hsum .big b{font-size:22px;line-height:1.25}
+.hsum .big .bar{height:8px;border-radius:99px;background:#eee;margin-top:10px;overflow:hidden}
+.hsum .big .bar i{display:block;height:100%;background:var(--brand);border-radius:99px}
+.hcard{padding:18px 18px 8px}
+.htab{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px}
+.htab th{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:10px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.htab td{padding:12px 8px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.htab tbody tr{cursor:pointer;transition:background .12s}
+.htab tbody tr:hover{background:var(--soft)}
+.htab tbody tr:last-child td{border-bottom:0}
+.htab .hn{display:flex;align-items:center;gap:10px;min-width:0}
+.htab .hn b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px}
+.htab .hn small,.htab td small{display:block;color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px;margin-top:3px}
+.htab .num{font-variant-numeric:tabular-nums}
+.htab td:nth-child(4){min-width:64px}
+.htab .av{margin:0}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;line-height:1.2}
+.badge:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.badge.ok{background:var(--brand-tint);color:var(--brand)}
+.badge.chk{background:#e8f0fb;color:#1d4f91}
+.badge.half{background:#fbf1e4;color:#8a5a1f}
+.badge.not{background:#f0f0f0;color:#555}
+.badge.bad,.badge.del{background:var(--red-tint);color:var(--red)}
+.badge.wait{background:#fbf1e4;color:#8a5a1f}
+.badge.plain:before{display:none}
+.hcards{display:none}
+.hc{display:block;width:100%;text-align:left;background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:14px;margin-bottom:10px}
+.hc .t{display:flex;gap:10px;align-items:center;min-width:0}
+.hc .t b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hc .t small{display:block;color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hc .t>span:last-child{min-width:0}
+.hc .bd{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 6px}
+.hc .mt{font-size:13px;color:var(--muted)}
+.hp{width:min(620px,100%) !important}
+.hp .hh{display:flex;gap:14px;align-items:center;margin:4px 0 14px}
+.hp .hh .av{width:56px;height:56px;flex:0 0 56px;font-size:19px;margin:0}
+.hp .hh b{display:block;font-size:20px;font-weight:800;letter-spacing:-.01em;word-break:break-word}
+.hp .hh small{display:block;color:var(--muted);font-size:13.5px;word-break:break-all}
+.hp .bd{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.hp .ha{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:6px}
+.hp .ha .btn{width:100%}
+.hp .ha .wide{grid-column:1/-1}
+.hp h3{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 8px}
+.kv{display:grid;grid-template-columns:150px minmax(0,1fr);border-top:1px solid var(--line-2)}
+.kv>*{padding:9px 0;border-bottom:1px solid var(--line-2);font-size:14px}
+.kv dt{color:var(--muted);font-weight:600;font-size:13px}
+.kv dd{word-break:break-word}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+.hl{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line-2)}
+.hl img,.hl .ph0{width:56px;height:56px;border-radius:10px;object-fit:cover;flex:0 0 56px;background:var(--soft);display:grid;place-items:center;font-size:11px;color:var(--muted)}
+.hl>span:not(.badge){flex:1;min-width:0}.hl b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hl small{display:block;color:var(--muted);font-size:12.5px}
+.ah{font-size:13px;padding:9px 0;border-bottom:1px solid var(--line-2)}
+.ah b{font-weight:700}.ah small{display:block;color:var(--muted)}
+.btn.red{background:#fff;color:var(--red);border:1px solid #e9b4ae}
+.btn.red:hover{background:var(--red-tint)}
+.btn.amberb{background:#E3A35A;color:#1b1307}.btn.amberb:hover{background:#d8964b}
+.modal{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;animation:fd .15s}
+.modal>form,.modal>div{background:#fff;border-radius:18px;width:min(520px,100%);max-height:calc(100vh - 32px);overflow-y:auto;padding:22px 22px 18px;box-shadow:0 16px 48px rgba(0,0,0,.2)}
+.modal h2{font-size:19px;font-weight:800;margin-bottom:6px}
+.modal p{color:var(--ink-2);font-size:14px;margin-bottom:12px}
+.modal .two2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.modal .foot{display:flex;gap:8px;justify-content:flex-end;margin-top:8px;flex-wrap:wrap}
+.modal .tog{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;min-height:44px;margin-bottom:8px}
+.modal .tog input{width:20px;height:20px;accent-color:var(--brand)}
+.modal .lk{display:block;width:100%;font-size:13px;padding:10px 12px;border:1px solid #c4c4c4;border-radius:8px;background:var(--soft);margin-bottom:10px}
+.modal ul{margin:0 0 12px 18px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:95;background:#222;color:#fff;border-radius:12px;padding:12px 16px;font-size:14px;max-width:min(560px,calc(100vw - 32px));box-shadow:0 8px 24px rgba(0,0,0,.2)}
+@media (max-width:1100px){ .hsum{grid-template-columns:repeat(2,minmax(0,1fr))} .hsum .big{grid-column:1/-1} }
+@media (max-width:899px){ .htab{display:none} .hcards{display:block} .hcard{padding:14px 12px 4px;background:transparent;border:0} }
+@media (max-width:759px){ .hsum{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px} .hsum .stat{padding:12px} .hsum .stat span{display:none} .hsum .stat small{font-size:12px;line-height:1.3} .toast{bottom:calc(80px + env(safe-area-inset-bottom))} .kv{grid-template-columns:120px minmax(0,1fr)} .modal .two2{grid-template-columns:1fr} .hp .ha{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -512,8 +586,14 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
     <!-- Marketplace (bookhomes schema), loaded through the bookhomes-admin Edge Function -->
     <div id="mpErr"></div>
     <section data-panel="mphosts" class="hidden">
-      <div class="card"><h2>Waiting for approval</h2><div id="mpHostsPending" class="list"></div></div>
-      <div class="card"><h2>All hosts</h2><div class="tools"><input type="search" data-search="#mpHostsAll" placeholder="Search hosts by name, email or company" aria-label="Search hosts by name, email or company"></div><div id="mpHostsAll" class="list"></div></div>
+      <div id="hsMsg"></div>
+      <div class="hsum" id="hsSum"></div>
+      <div class="card hcard">
+        <div class="tools"><input type="search" id="hsQ" placeholder="Search name, email, phone or company" aria-label="Search hosts"></div>
+        <div class="chips" id="hsChips" role="group" aria-label="Show hosts"></div>
+        <div id="hsList" aria-live="polite"></div>
+      </div>
+      <div class="hidden"><div id="mpHostsPending" class="list"></div><div id="mpHostsAll" class="list"></div></div>
     </section>
     <section data-panel="mplistings" class="hidden">
       <div class="card">
@@ -875,7 +955,7 @@ $("#signOutAll").addEventListener("click", function(){
 });
 
 /* ---------- tabs (sidebar) ---------- */
-var TITLES = {mpover: ["Overview", "Everything across Book Homes"], mplistings: ["Listings", "Approve new homes and check edits"], mphosts: ["Hosts", "Approve hosts, set commission overrides"],
+var TITLES = {mpover: ["Overview", "Everything across Book Homes"], mplistings: ["Listings", "Approve new homes and check edits"], mphosts: ["Hosts", "Who is connected to payouts, details, and account tools"],
   mpbookings: ["Bookings", "Every booking on every home, including Zermatt Lodge"], mppayouts: ["Payouts", "What hosts are owed and what has been paid"], mpusers: ["Users", "Invite hosts and admins, change roles"],
   emails: ["Emails", "Every email the system sent, and any that failed"], mpsettings: ["Settings", "Commission, Stripe Connect and the change log"],
   dash: ["Zermatt Lodge today", "Arrivals, departures and sync health"], bookings: ["Direct bookings", "Zermatt Lodge bookings made on this website"], calendar: ["Calendar", "Zermatt Lodge: direct bookings, channel blocks and your blocks"],
@@ -1133,7 +1213,7 @@ function mpApi(body){
     var tok = r.data && r.data.session && r.data.session.access_token;
     if (!tok) throw new Error("Please sign in again.");
     return fetch(SUPABASE_URL + "/functions/v1/bookhomes-admin", {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
-  }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok) throw new Error(j.error || ("Error " + res.status)); return j; }); });
+  }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok){ var er = new Error(j.error || ("Error " + res.status)); er.code = j.code; er.bookings = j.bookings; throw er; } return j; }); });
 }
 function mpLoad(force){
   if (MP && !force) return Promise.resolve(mpRender());
@@ -1281,6 +1361,7 @@ document.addEventListener("click", function(e){
 document.addEventListener("click", function(e){
   var b = e.target.closest ? e.target.closest("[data-peek]") : null; if (!b) return;
   var key = b.getAttribute("data-pid"), list = b.getAttribute("data-peek");
+  if (list === "mpHostsPending" && window.BH_OPEN_HOST){ window.BH_OPEN_HOST(key); return; }
   if (list === "mpListings" && $("#mpListFilter").value !== "pending"){ $("#mpListFilter").value = "pending"; mpRender(); }
   var row = $$("#" + list + " > .item").filter(function(it){ var x = it.querySelector(list === "mpListings" ? "[data-id]" : "[data-uid]"); return x && x.getAttribute(list === "mpListings" ? "data-id" : "data-uid") === key; })[0];
   if (row) openDrawer(row); else { var t = $('nav.tabs [data-tab="' + (list === "mpListings" ? "mplistings" : "mphosts") + '"]'); if (t) t.click(); }
@@ -1408,6 +1489,285 @@ $("#mpCommission").addEventListener("submit", function(e){
   mpApi({action: "set_commission", pct: v}).then(function(){ $("#mpSetMsg").innerHTML = '<div class="okmsg">Saved. New bookings use ' + v + '%.</div>'; MP = null; mpLoad(true); })
     .catch(function(err){ $("#mpSetMsg").innerHTML = '<div class="err">' + esc(err.message) + '</div>'; });
 });
+
+/* ---------- Hosts tab (22 Nov 2026): who is connected to Stripe payouts, full details, edit, reset, delete, view as host ---------- */
+var HS = null, HS_LOADING = null, HS_F = "all";
+function hsApi(body){ return mpApi(body); }
+function payState(h){
+  if (!h.host_id) return ["not", "No host account"];
+  if (!h.stripe_account_id || !h.connect_status || h.connect_status === "not_started" || h.connect_status === "unavailable") return ["not", "Not started"];
+  if (h.connect_status === "restricted") return ["bad", "Restricted"];
+  if (h.connect_status === "enabled" || (h.charges_enabled && h.payouts_enabled)) return ["ok", "Connected"];
+  if (h.connect_waiting_on === "stripe" || (h.charges_enabled && !h.payouts_enabled)) return ["chk", "Stripe checking details"];
+  return ["half", "Started, not finished"];
+}
+var fmtS = new Intl.DateTimeFormat("en-GB", {day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London"});
+function dshort(s){ return s ? fmtS.format(new Date(s)) : "-"; }
+function badge(k, t){ return '<span class="badge ' + k + '">' + esc(t) + "</span>"; }
+function hName(h){ return h.display_name || h.name || h.email; }
+function hDeleted(h){ return !!h.deleted_at; }
+function hBadges(h){
+  if (hDeleted(h)) return badge("del", "Deleted");
+  var p = payState(h);
+  return (h.approved ? badge("ok plain", "Approved") : badge("wait", "Pending approval")) + badge(p[0], p[1]) +
+    (h.banned_until && Date.parse(h.banned_until) > Date.now() ? badge("bad", "Suspended") : "");
+}
+function hComm(h){ return h.commission_override != null ? (+h.commission_override) + "%" : (HS ? HS.commission_pct : 15) + "% <small>standard</small>"; }
+function hLists(h){ var d = (h.draft || 0) + (h.pending || 0); return (h.live || 0) + " live" + (d ? ", " + d + " draft" : "") + (h.paused ? ", " + h.paused + " paused" : ""); }
+function trader(h){ return h.trader_status === "trader" ? "Business (trader)" : h.trader_status === "private" ? "Private individual" : "Not chosen"; }
+function hsFilter(h){
+  if (HS_F === "deleted") return hDeleted(h);
+  if (hDeleted(h)) return false;
+  if (HS_F === "conn") return payState(h)[0] === "ok";
+  if (HS_F === "notconn") return payState(h)[0] !== "ok";
+  if (HS_F === "pending") return !h.approved;
+  return true;
+}
+function hsLoad(force){
+  if (HS && !force){ hsRender(); return Promise.resolve(); }
+  if (HS_LOADING) return HS_LOADING;
+  if (!HS) $("#hsList").innerHTML = '<p class="zero">Loading hosts...</p>';
+  HS_LOADING = hsApi({action: "hosts"}).then(function(j){ HS = j; HS_LOADING = null; hsRender(); })
+    .catch(function(e){ HS_LOADING = null; errBox("#hsMsg", "Hosts: " + e.message); });
+  return HS_LOADING;
+}
+function hsRender(){
+  if (!HS) return;
+  var act = HS.rows.filter(function(h){ return !hDeleted(h); });
+  var conn = act.filter(function(h){ return payState(h)[0] === "ok"; }).length;
+  var started = act.filter(function(h){ var k = payState(h)[0]; return k === "chk" || k === "half"; }).length;
+  var notS = act.filter(function(h){ return payState(h)[0] === "not"; }).length;
+  var pend = act.filter(function(h){ return !h.approved; }).length;
+  var pct = act.length ? Math.round(conn / act.length * 100) : 0;
+  $("#hsSum").innerHTML =
+    '<div class="stat big"><small>Stripe payouts</small><b>' + conn + " of " + act.length + " host" + (act.length === 1 ? "" : "s") + ' connected</b><div class="bar"><i style="width:' + pct + '%"></i></div></div>' +
+    '<button type="button" class="stat" data-hsf="notconn"><small>Started, not finished</small><b>' + started + '</b><span>Includes Stripe checking</span></button>' +
+    '<button type="button" class="stat" data-hsf="notconn"><small>Not started</small><b>' + notS + '</b><span>Paid by bank transfer</span></button>' +
+    '<button type="button" class="stat' + (pend ? " hot" : "") + '" data-hsf="pending"><small>Pending approval</small><b>' + pend + '</b><span>Waiting for you</span></button>';
+  var chips = [["all", "All", act.length], ["conn", "Payouts connected", conn], ["notconn", "Not connected", act.length - conn], ["pending", "Pending approval", pend]];
+  var del = HS.rows.length - act.length; if (del) chips.push(["deleted", "Deleted", del]);
+  $("#hsChips").innerHTML = chips.map(function(c){ return '<button type="button" data-hsf="' + c[0] + '" aria-pressed="' + (HS_F === c[0]) + '">' + esc(c[1]) + "<i>" + c[2] + "</i></button>"; }).join("");
+  var q = ($("#hsQ").value || "").trim().toLowerCase();
+  var rows = HS.rows.filter(hsFilter).filter(function(h){
+    return !q || [h.name, h.display_name, h.email, h.phone, h.whatsapp, h.company].join(" ").toLowerCase().indexOf(q) >= 0;
+  });
+  if (!rows.length){ $("#hsList").innerHTML = '<p class="zero">' + (q ? 'No hosts match "' + esc(q) + '".' : "No hosts here.") + "</p>"; return; }
+  var tr = rows.map(function(h){
+    var p = payState(h);
+    return '<tr data-host="' + esc(h.user_id) + '" tabindex="0">' +
+      '<td><div class="hn"><i class="av" aria-hidden="true">' + esc(initials(hName(h))) + '</i><span><b>' + esc(hName(h)) + "</b><small>" + esc(h.email) + (h.phone ? " · " + esc(h.phone) : "") + "</small><small>" + esc(h.company ? h.company + " · " : "") + esc(trader(h)) + "</small></span></div></td>" +
+      "<td>" + (hDeleted(h) ? badge("del", "Deleted") : h.approved ? badge("ok plain", "Approved") : badge("wait", "Pending")) + "<small>2-step " + (h.mfa ? "on" : "off") + "</small></td>" +
+      "<td>" + (hDeleted(h) ? "" : badge(p[0], p[1])) + "</td>" +
+      '<td class="num">' + (h.live || 0) + " live" + (((h.draft || 0) + (h.pending || 0)) ? "<small>" + ((h.draft || 0) + (h.pending || 0)) + " draft</small>" : "") + (h.paused ? "<small>" + h.paused + " paused</small>" : "") + "</td>" +
+      '<td class="num">' + (h.bookings || 0) + (h.upcoming ? "<small>" + h.upcoming + " upcoming</small>" : "") + "</td>" +
+      '<td class="num">' + hComm(h) + "</td>" +
+      '<td class="num">' + esc(ago(h.last_sign_in_at)) + "<small>Joined " + esc(dshort(h.created_at)) + "</small></td></tr>";
+  }).join("");
+  var cards = rows.map(function(h){
+    return '<button type="button" class="hc" data-host="' + esc(h.user_id) + '"><span class="t"><i class="av" aria-hidden="true">' + esc(initials(hName(h))) + '</i><span><b>' + esc(hName(h)) + "</b><small>" + esc(h.email) + "</small></span></span>" +
+      '<span class="bd">' + hBadges(h) + "</span>" +
+      '<span class="mt">' + esc(hLists(h)) + " · " + (h.bookings || 0) + " booking" + (h.bookings === 1 ? "" : "s") + " · " + hComm(h).replace(/<[^>]+>/g, "") + " commission · 2-step " + (h.mfa ? "on" : "off") + "<br>" +
+      (h.phone ? esc(h.phone) + " · " : "") + "Last sign-in " + esc(ago(h.last_sign_in_at)) + "</span></button>";
+  }).join("");
+  $("#hsList").innerHTML = '<div class="tw"><table class="htab"><thead><tr><th>Host</th><th>Status</th><th>Payouts</th><th>Listings</th><th>Bookings</th><th>Commission</th><th>Last sign-in</th></tr></thead><tbody>' + tr + '</tbody></table></div><div class="hcards">' + cards + "</div>" +
+    '<p class="count">' + rows.length + " host" + (rows.length === 1 ? "" : "s") + " shown. Tap a host for details and actions.</p>";
+}
+$("#hsQ").addEventListener("input", hsRender);
+document.addEventListener("click", function(e){
+  var f = e.target.closest ? e.target.closest("[data-hsf]") : null;
+  if (f){ HS_F = f.getAttribute("data-hsf"); hsRender(); return; }
+  var r = e.target.closest ? e.target.closest("[data-host]") : null;
+  if (r && !e.target.closest(".drawer,.modal")) openHost(r.getAttribute("data-host"));
+});
+document.addEventListener("keydown", function(e){ if (e.key === "Enter" && e.target.matches && e.target.matches("tr[data-host]")) openHost(e.target.getAttribute("data-host")); });
+var hostTab = $('nav.tabs [data-tab="mphosts"]'); if (hostTab) hostTab.addEventListener("click", function(){ hsLoad(); });
+
+function toast(t, ms){ var o = $(".toast"); if (o) o.remove(); var d = document.createElement("div"); d.className = "toast"; d.setAttribute("role", "status"); d.textContent = t; document.body.appendChild(d); setTimeout(function(){ d.remove(); }, ms || 4500); }
+function closeModal(){ var m = $(".modal"); if (m) m.remove(); }
+function modal(html, onSubmit){
+  closeModal();
+  var m = document.createElement("div"); m.className = "modal"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true");
+  m.innerHTML = html; document.body.appendChild(m);
+  m.addEventListener("click", function(e){ if (e.target === m || e.target.closest("[data-close]")) closeModal(); });
+  var f = $("form", m); if (f && onSubmit) f.addEventListener("submit", function(e){ e.preventDefault(); onSubmit(f, m); });
+  var first = $("input,select,button", m); if (first) first.focus();
+  return m;
+}
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
+function findHost(uid){ return HS ? HS.rows.filter(function(h){ return h.user_id === uid; })[0] : null; }
+
+var HD = null; /* the open host panel's detail */
+function openHost(uid){
+  closeDrawer();
+  var d = document.createElement("div"); d.className = "drawer"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-label", "Host details");
+  d.innerHTML = '<div class="hp"><div class="dh"><b>Host</b><button type="button" class="x" aria-label="Close">&times;</button></div><div id="hpBody"><p class="zero">Loading...</p></div></div>';
+  document.body.appendChild(d);
+  d.addEventListener("click", function(e){ if (e.target === d || e.target.closest(".x")) closeDrawer(); });
+  $(".x", d).focus();
+  return hsApi({action: "host_detail", user_id: uid}).then(function(j){ HD = j; drawHost(); })
+    .catch(function(e){ var b = $("#hpBody"); if (b) b.innerHTML = '<div class="err">' + esc(e.message) + "</div>"; });
+}
+window.BH_OPEN_HOST = function(uid){ var t = $('nav.tabs [data-tab="mphosts"]'); if (t && t.getAttribute("aria-selected") !== "true") t.click(); openHost(uid); };
+var LST = {draft: "Draft", pending: "Waiting for approval", approved: "Live", rejected: "Changes asked", paused: "Paused", archived: "Deleted"};
+function drawHost(){
+  var body = $("#hpBody"); if (!body || !HD) return;
+  var h = HD.host, p = payState(h), dead = hDeleted(h), site = HD.site || "https://bookhomes.co.uk";
+  var kv = function(k, v){ return "<dt>" + k + "</dt><dd>" + (v || '<span class="muted">-</span>') + "</dd>"; };
+  var acct = h.stripe_account_id && /^acct_[A-Za-z0-9]+$/.test(h.stripe_account_id) ? h.stripe_account_id : "";
+  body.innerHTML =
+    '<div class="hh"><i class="av" aria-hidden="true">' + esc(initials(hName(h))) + '</i><span><b>' + esc(hName(h)) + "</b><small>" + esc(h.email) + "</small></span></div>" +
+    '<div class="bd">' + hBadges(h) + (h.mfa ? badge("ok plain", "2-step on") : badge("not plain", "2-step off")) + "</div>" +
+    (dead ? '<p class="muted">Deleted ' + esc(tfmt(h.deleted_at)) + (h.deleted_by ? " by " + esc(h.deleted_by) : "") + ". Their listings are archived and the login is blocked.</p>" :
+    '<div class="ha">' +
+      '<button type="button" class="btn amberb wide" data-hx="as">Log in as host</button>' +
+      '<button type="button" class="btn ghost" data-hx="edit">Edit details</button>' +
+      '<button type="button" class="btn ghost" data-hx="stripe">Refresh from Stripe</button>' +
+      '<button type="button" class="btn ghost" data-hx="reset_email">Email reset link</button>' +
+      '<button type="button" class="btn ghost" data-hx="reset_link">Copy reset link</button>' +
+      (h.approved ? "" : '<button type="button" class="btn wide" data-hx="approve">Approve host</button>') +
+    "</div>") +
+    '<p class="acts msg" id="hpMsg" aria-live="polite" style="margin:6px 0 0"></p>' +
+    "<h3>Details</h3><dl class=\"kv\">" +
+      kv("Name", esc(h.name)) + kv("Host name", esc(h.display_name)) +
+      kv("Email", '<a href="mailto:' + esc(h.email) + '">' + esc(h.email) + "</a>" + (h.email_confirmed_at ? "" : ' <span class="badge half">not confirmed</span>')) +
+      kv("Phone", h.phone ? '<a href="tel:' + esc(String(h.phone).replace(/[^\d+]/g, "")) + '">' + esc(h.phone) + "</a>" : "") +
+      kv("WhatsApp", h.whatsapp ? '<a href="https://wa.me/' + esc(String(h.whatsapp).replace(/[^\d]/g, "").replace(/^0/, "44")) + '" target="_blank" rel="noopener">' + esc(h.whatsapp) + "</a>" : "") +
+      kv("Trader status", esc(trader(h))) + kv("Company", esc(h.company)) +
+      kv("Commission", hComm(h)) + kv("Approved", h.approved ? "Yes" + (h.approved_at ? ", " + esc(tfmt(h.approved_at)) : "") : "No" + (h.rejected_reason ? ". Note: " + esc(h.rejected_reason) : "")) +
+      kv("Joined", esc(tfmt(h.created_at))) + kv("Last sign-in", esc(h.last_sign_in_at ? tfmt(h.last_sign_in_at) + " (" + ago(h.last_sign_in_at) + ")" : "never")) +
+      kv("Bookings", (h.bookings || 0) + " paid" + (h.upcoming ? ", " + h.upcoming + " upcoming" : "")) +
+    "</dl>" +
+    "<h3>Payouts</h3><dl class=\"kv\">" +
+      kv("Status", badge(p[0], p[1])) +
+      kv("Card payments", h.stripe_account_id ? (h.charges_enabled ? "On" : "Off") : "") + kv("Payouts", h.stripe_account_id ? (h.payouts_enabled ? "On" : "Off") : "") +
+      kv("Stripe account", acct ? '<span class="mono">' + esc(acct) + '</span><br><a href="https://dashboard.stripe.com/connect/accounts/' + esc(acct) + '" target="_blank" rel="noopener">Open in Stripe</a>' : "") +
+      kv("Last checked", h.connect_checked_at ? esc(tfmt(h.connect_checked_at)) : "Not refreshed from here yet") +
+    "</dl>" +
+    "<h3>Listings (" + HD.listings.length + ")</h3>" +
+    (HD.listings.length ? HD.listings.map(function(l){
+      var pub = l.status === "approved" && l.slug;
+      return '<div class="hl">' + (l.cover ? '<img src="' + esc(l.cover) + '" alt="" loading="lazy">' : '<i class="ph0">No photo</i>') +
+        "<span><b>" + esc(l.title || "Untitled") + "</b><small>" + esc([l.area, l.city].filter(Boolean).join(", ")) + (l.base_price ? " · £" + esc(l.base_price) + " a night" : "") + "</small></span>" +
+        badge(l.status === "approved" ? "ok plain" : l.status === "archived" ? "del" : "half plain", LST[l.status] || l.status) +
+        (pub ? ' <a class="btn ghost sm" href="' + esc(site) + "/" + esc(l.slug) + '" target="_blank" rel="noopener">View</a>' : "") + "</div>";
+    }).join("") : '<p class="muted">No listings yet.</p>') +
+    (HD.bookings.length ? "<h3>Recent bookings</h3>" + HD.bookings.slice(0, 10).map(function(b){
+      return '<div class="hl"><span><b>' + esc(b.guest_name || "Guest") + " · " + esc(b.title) + "</b><small>" + dfmt(b.check_in) + " to " + dfmt(b.check_out) + " · " + money(b.amount_pence) + " · host " + money(b.host_payout_pence) + "</small></span>" + badge(b.status === "paid" ? "ok plain" : "half plain", b.status) + "</div>";
+    }).join("") : "") +
+    "<h3>History</h3>" +
+    (HD.history.length ? HD.history.map(function(a){
+      var det = a.details || {}, extra = "";
+      if (a.action === "edit_host" && det.changes) extra = Object.keys(det.changes).map(function(k){ return k.replace(/_/g, " ") + ": " + (det.changes[k].from == null || det.changes[k].from === "" ? "-" : det.changes[k].from) + " to " + (det.changes[k].to == null || det.changes[k].to === "" ? "-" : det.changes[k].to); }).join("; ");
+      else if (a.action === "refresh_host_connect") extra = det.status + (det.waiting_on ? ", waiting on " + det.waiting_on : "");
+      else if (a.entity === "listing") extra = "listing " + a.entity_id;
+      return '<div class="ah"><b>' + esc(String(a.action).replace(/_/g, " ")) + "</b> " + esc(extra) + "<small>" + esc(tfmt(a.at)) + (a.actor_email ? " · " + esc(a.actor_email) : "") + "</small></div>";
+    }).join("") : '<p class="muted">Nothing logged yet.</p>') +
+    (dead ? "" : '<h3>Danger zone</h3><button type="button" class="btn red" data-hx="delete">Delete host</button><p class="muted" style="margin-top:6px;font-size:13px">Archives their listings, blocks their login and keeps bookings, payouts and the Stripe account.</p>');
+}
+function hpMsg(t, ok){ var m = $("#hpMsg"); if (m){ m.innerHTML = t ? '<span style="color:' + (ok ? "var(--brand)" : "var(--red)") + '">' + esc(t) + "</span>" : ""; } }
+function reloadHost(){ var uid = HD && HD.host.user_id; HS = null; hsLoad(true); MP = null; mpLoad(true); if (uid) return hsApi({action: "host_detail", user_id: uid}).then(function(j){ HD = j; drawHost(); }); }
+
+document.addEventListener("click", function(e){
+  var b = e.target.closest ? e.target.closest("[data-hx]") : null; if (!b || !HD) return;
+  var h = HD.host, a = b.getAttribute("data-hx");
+  if (a === "as") return viewAs(h, b);
+  if (a === "edit") return editHost(h);
+  if (a === "delete") return deleteHost(h);
+  if (a === "approve"){
+    b.disabled = true;
+    return hsApi({action: "approve_host", user_id: h.user_id}).then(function(){ toast("Approved. " + hName(h) + " has been emailed."); return reloadHost(); }).catch(function(err){ b.disabled = false; hpMsg(err.message); });
+  }
+  if (a === "stripe"){
+    b.disabled = true; hpMsg("Checking with Stripe...", true);
+    return hsApi({action: "refresh_host_connect", user_id: h.user_id}).then(function(j){
+      b.disabled = false;
+      var said = {enabled: "connected", restricted: "restricted, the host needs to contact Stripe",
+        pending: j.waiting_on === "stripe" ? "Stripe is checking their details" : "setup not finished" + (j.due ? " (" + j.due + " thing" + (j.due === 1 ? "" : "s") + " still needed)" : "")};
+      var line = j.note || ("Stripe says: " + (said[j.status] || j.status) + ".");
+      return reloadHost().then(function(){ hpMsg(line, true); });
+    }).catch(function(err){ b.disabled = false; hpMsg(err.message); });
+  }
+  if (a === "reset_email"){
+    if (!confirm("Email a password reset link to " + h.email + "?")) return;
+    b.disabled = true;
+    return hsApi({action: "host_password_reset", user_id: h.user_id, mode: "email"}).then(function(){ b.disabled = false; hpMsg("Reset email sent to " + h.email + ".", true); })
+      .catch(function(err){ b.disabled = false; hpMsg(err.message); });
+  }
+  if (a === "reset_link"){
+    if (!confirm("Make a one-time reset link for " + h.email + "? You send it to them yourself. It is shown once and not saved.")) return;
+    b.disabled = true;
+    return hsApi({action: "host_password_reset", user_id: h.user_id, mode: "link"}).then(function(j){
+      b.disabled = false;
+      var m = modal('<div><h2>Reset link for ' + esc(hName(h)) + '</h2><p>Send this to the host yourself (WhatsApp or email). It works once and expires within an hour. It is shown only now.</p>' +
+        '<input class="lk mono" readonly aria-label="Reset link" value="' + esc(j.url) + '"><div class="foot"><button type="button" class="btn ghost" data-close>Done</button><button type="button" class="btn" id="cpLink">Copy link</button></div></div>');
+      $("#cpLink", m).addEventListener("click", function(){
+        var inp = $(".lk", m); inp.select();
+        var ok = function(){ $("#cpLink", m).textContent = "Copied"; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(inp.value).then(ok, function(){ document.execCommand("copy"); ok(); }); else { document.execCommand("copy"); ok(); }
+      });
+    }).catch(function(err){ b.disabled = false; hpMsg(err.message); });
+  }
+});
+
+function viewAs(h, b){
+  // Open the tab first (inside the click, so it isn't blocked), then send it to the one-time link.
+  var w = window.open("about:blank", "_blank");
+  b.disabled = true; hpMsg("Opening " + hName(h) + "'s account in a new tab...", true);
+  hsApi({action: "impersonate_host", user_id: h.user_id}).then(function(j){
+    b.disabled = false;
+    if (w && !w.closed){ try { w.opener = null; } catch (e) {} w.location.replace(j.url); }
+    else modal('<div><h2>Pop-up blocked</h2><p>Your browser stopped the new tab. Open it here instead.</p><div class="foot"><button type="button" class="btn ghost" data-close>Close</button><a class="btn" href="' + esc(j.url) + '" target="_blank" rel="noopener" data-close>Open account</a></div></div>');
+    hpMsg("Opened in a new tab. Your own login here is not affected." + (j.mfa ? " This host uses 2-step login, so actions that need it won't work there." : ""), true);
+  }).catch(function(err){ b.disabled = false; if (w) w.close(); hpMsg(err.message); });
+}
+
+function editHost(h){
+  var std = HS ? HS.commission_pct : 15;
+  var m = modal('<form novalidate><h2>Edit ' + esc(hName(h)) + '</h2><p class="muted">Every change is saved in the history.</p><div id="ehMsg"></div>' +
+    '<div class="two2"><label class="f">Name<input name="name" maxlength="120" required value="' + esc(h.name || "") + '"></label>' +
+    '<label class="f">Host name (shown to guests)<input name="display_name" maxlength="80" value="' + esc(h.display_name || "") + '"></label>' +
+    '<label class="f">Phone<input name="phone" type="tel" maxlength="25" value="' + esc(h.phone || "") + '"></label>' +
+    '<label class="f">WhatsApp<input name="whatsapp" type="tel" maxlength="25" value="' + esc(h.whatsapp || "") + '"></label>' +
+    '<label class="f">Trader status<select name="trader_status"><option value="">Not chosen</option><option value="trader"' + (h.trader_status === "trader" ? " selected" : "") + '>Business (trader)</option><option value="private"' + (h.trader_status === "private" ? " selected" : "") + '>Private individual</option></select></label>' +
+    '<label class="f">Company<input name="company" maxlength="160" value="' + esc(h.company || "") + '"></label>' +
+    '<label class="f">Commission %<input name="commission" type="number" min="0" max="50" step="0.5" placeholder="' + std + ' (standard)" value="' + (h.commission_override != null ? esc(+h.commission_override) : "") + '"></label></div>' +
+    '<label class="tog"><input type="checkbox" name="approved"' + (h.approved ? " checked" : "") + '> Approved host</label>' +
+    '<p class="muted" style="font-size:13px">Leave commission blank to use the standard ' + std + '%. Approving here sends no email (the Approve host button does).</p>' +
+    '<div class="foot"><button type="button" class="btn ghost" data-close>Cancel</button><button type="submit" class="btn">Save changes</button></div></form>', function(f){
+    var v = function(n){ return f.elements[n].value.trim(); };
+    var err = function(t){ $("#ehMsg", f).innerHTML = '<div class="err">' + esc(t) + "</div>"; };
+    var ph = /^\+?[0-9 ()-]{7,25}$/;
+    if (v("name").length < 2) return err("Enter their name.");
+    if (v("phone") && !ph.test(v("phone"))) return err("Check the phone number.");
+    if (v("whatsapp") && !ph.test(v("whatsapp"))) return err("Check the WhatsApp number.");
+    var c = v("commission");
+    if (c !== "" && !(+c >= 0 && +c <= 50)) return err("Commission is 0 to 50%, or blank for the standard rate.");
+    var fields = {name: v("name"), display_name: v("display_name"), phone: v("phone"), whatsapp: v("whatsapp"), trader_status: v("trader_status"), company: v("company"),
+      commission: c === "" ? null : +c, approved: f.elements.approved.checked};
+    var btn = $('[type="submit"]', f); btn.disabled = true; btn.textContent = "Saving...";
+    hsApi({action: "edit_host", user_id: h.user_id, fields: fields}).then(function(j){
+      closeModal(); toast(j.changed && j.changed.length ? "Saved: " + j.changed.join(", ").replace(/_/g, " ") + "." : "Nothing changed."); return reloadHost();
+    }).catch(function(e){ btn.disabled = false; btn.textContent = "Save changes"; err(e.message); });
+  });
+  return m;
+}
+
+function deleteHost(h){
+  var m = modal('<form novalidate><h2>Delete ' + esc(hName(h)) + '?</h2>' +
+    '<p>Their listings are archived (pages go offline), their login is blocked and they disappear from the host list. Bookings, payouts, the audit log and their Stripe account are kept. If they never had a listing, booking or payout, the login is deleted for good.</p>' +
+    '<div id="dhMsg"></div><label class="f">Type <b>' + esc(h.email) + '</b> to confirm<input name="em" autocomplete="off" spellcheck="false"></label>' +
+    '<div class="foot"><button type="button" class="btn ghost" data-close>Cancel</button><button type="submit" class="btn red" disabled>Delete host</button></div></form>', function(f){
+    var btn = $('[type="submit"]', f); btn.disabled = true; btn.textContent = "Deleting...";
+    mpApi({action: "delete_host", user_id: h.user_id, confirm_email: f.elements.em.value.trim()}).then(function(j){
+      closeModal(); closeDrawer(); HD = null;
+      toast(j.mode === "deleted" ? "Deleted for good." : "Deleted. " + (j.archived.length ? j.archived.length + " listing" + (j.archived.length === 1 ? "" : "s") + " archived." : ""));
+      HS = null; hsLoad(true); MP = null; mpLoad(true);
+    }).catch(function(e){ btn.disabled = false; btn.textContent = "Delete host"; $("#dhMsg", f).innerHTML = '<div class="err">' + esc(e.message) + "</div>" + (e.bookings ? "<ul>" + e.bookings.map(function(b){ return "<li>" + esc(b.title) + ", " + dfmt(b.check_in) + " to " + dfmt(b.check_out) + " (" + esc(b.guest_name || "guest") + ", " + esc(b.status) + ")</li>"; }).join("") + "</ul>" : ""); });
+  });
+  var inp = $('[name="em"]', m), sub = $('[type="submit"]', m);
+  inp.addEventListener("input", function(){ sub.disabled = inp.value.trim().toLowerCase() !== String(h.email).toLowerCase(); });
+  return m;
+}
 })();
 </script>
 <script src="/assets/bh-feedback.js?v=063b82dd" defer></script>

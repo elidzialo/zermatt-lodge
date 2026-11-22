@@ -108,3 +108,29 @@ export async function accountState(account: string): Promise<ConnectState> {
     return stateFromV1(a as Parameters<typeof stateFromV1>[0]);
   }
 }
+
+// Admin "Refresh from Stripe": the same state as accountState plus who a pending account is waiting on.
+//   host   = Stripe still needs details from the host (Started, not finished)
+//   stripe = everything is in and Stripe is checking it (Stripe checking details)
+export type ConnectDetail = ConnectState & { waiting_on: "host" | "stripe" | null; due: number; api: "v2" | "v1" };
+const DUE = new Set(["currently_due", "past_due"]);
+export async function accountDetail(account: string): Promise<ConnectDetail> {
+  try {
+    const a = await call("GET", `/v2/core/accounts/${encodeURIComponent(account)}?include=configuration.merchant&include=requirements`);
+    const st = stateFromV2(a);
+    const entries = (((a.requirements as Record<string, unknown> | undefined)?.entries ?? []) as {
+      awaiting_action_from?: string; minimum_deadline?: { status?: string } }[]);
+    const user = entries.filter((e) => e.awaiting_action_from === "user" && DUE.has(e.minimum_deadline?.status ?? "currently_due")).length;
+    const stripe = entries.filter((e) => e.awaiting_action_from === "stripe").length;
+    return { ...st, waiting_on: st.status !== "pending" ? null : user ? "host" : stripe ? "stripe" : st.charges_enabled ? "stripe" : "host", due: user, api: "v2" };
+  } catch (e) {
+    console.error("v2 account retrieve failed, trying v1", (e as Error).message);
+    const a = await call("GET", `/v1/accounts/${encodeURIComponent(account)}`) as Parameters<typeof stateFromV1>[0] & {
+      requirements?: { currently_due?: string[]; past_due?: string[]; pending_verification?: string[]; disabled_reason?: string | null } | null };
+    const st = stateFromV1(a);
+    const r = a.requirements ?? {};
+    const user = new Set([...(r.currently_due ?? []), ...(r.past_due ?? [])]).size;
+    const stripe = (r.pending_verification ?? []).length;
+    return { ...st, waiting_on: st.status !== "pending" ? null : user ? "host" : stripe ? "stripe" : "host", due: user, api: "v1" };
+  }
+}

@@ -24,6 +24,17 @@ function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
 
 if (!window.supabase){ document.body.insertAdjacentHTML("beforeend", '<div class="box"><div class="msg err">The sign-in library did not load. Check your connection and reload.</div></div>'); return; }
 
+/* ---------- admin "Log in as host" (?as=1): this tab gets its own session ----------
+   The admin portal opens /host/?as=1&token_hash=...&type=magiclink in a NEW tab. That tab keeps the host's session in
+   sessionStorage under its own key (never the normal Supabase key), so the admin's own session in other tabs is untouched.
+   The flag stays in this tab's sessionStorage, so the tab keeps working after the link is removed from the address bar.
+   Password, 2-step and Stripe setup are hidden here; Exit signs this session out (this device only) and closes the tab. */
+var AS = (function(){
+  var q = /[?&]as=1(&|$)/.test(location.search);
+  try { if (q) sessionStorage.setItem("bh_as", "1"); return sessionStorage.getItem("bh_as") === "1"; } catch (e) { return q; }
+})(), AS_MFA = false, AS_KEY = "bh-as-host-session";
+window.BH_AS = AS;
+
 /* ---------- trusted browser: same approach as /admin ---------- */
 var TRUST_KEY = "bh_host_trust", PENDING_KEY = "bh_host_trust_pending";
 function probe(n){ try { var s = window[n]; s.setItem("__bh", "1"); s.removeItem("__bh"); return s; } catch (e) { return null; } }
@@ -38,15 +49,22 @@ function store(mode){ return (mode === "local" ? LS : SS) || memStore; }
 function clearLocalSession(){ if (!LS) return; try { Object.keys(LS).forEach(function(k){ if (/^sb-.*-auth-token/.test(k)) LS.removeItem(k); }); } catch (e) {} }
 var START_HASH = location.hash; // e.g. #wizard=12 or #edit=12:photos, to reopen the listing after a refresh
 var fromEmail = /(access_token|token_hash|error_description)=|[?&]code=/.test(location.hash + location.search);
-var MODE = fromEmail ? (lsGet(PENDING_KEY) === "0" ? "session" : "local") : (trustUntil() ? "local" : "session");
-if (fromEmail) setTrust(MODE === "local");
-if (MODE === "session"){ lsDel(TRUST_KEY); clearLocalSession(); }
-var authStorage = {
+var MODE = AS ? "session" : fromEmail ? (lsGet(PENDING_KEY) === "0" ? "session" : "local") : (trustUntil() ? "local" : "session");
+if (fromEmail && !AS) setTrust(MODE === "local");
+if (MODE === "session" && !AS){ lsDel(TRUST_KEY); clearLocalSession(); }
+var asStorage = {
+  getItem: function(k){ try { return (SS || memStore).getItem(k); } catch (e) { return null; } },
+  setItem: function(k, v){ try { (SS || memStore).setItem(k, v); } catch (e) {} },
+  removeItem: function(k){ try { (SS || memStore).removeItem(k); } catch (e) {} }
+};
+var authStorage = AS ? asStorage : {
   getItem: function(k){ try { return store(MODE).getItem(k); } catch (e) { return null; } },
   setItem: function(k, v){ try { store(MODE).setItem(k, v); } catch (e) {} var o = store(MODE === "local" ? "session" : "local"); if (o !== store(MODE)) { try { o.removeItem(k); } catch (e) {} } },
   removeItem: function(k){ [LS, SS, memStore].forEach(function(s){ try { if (s) s.removeItem(k); } catch (e) {} }); }
 };
-var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit", storage: authStorage}});
+var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth: AS
+  ? {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, flowType: "implicit", storage: authStorage, storageKey: AS_KEY}
+  : {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit", storage: authStorage}});
 HP.useStore(store(MODE)); // host-perf: dashboard cache lives where the session lives
 
 var VIEWS = ["Login", "Signup", "Enrol", "Mfa", "SetPw", "Profile", "Dash"];
@@ -80,13 +98,14 @@ function api(fn, body){
 
 function route(session){
   var my = ++routing; SESSION = session || null;
-  if (!session){ show("#who", false); started = false; view(/signup=1/.test(location.search) ? "Signup" : "Login"); return; }
+  if (!session){ show("#who", false); started = false; view(/signup=1/.test(location.search) ? "Signup" : "Login"); if (AS) asBanner(true); return; }
   $("#whoEmail").textContent = session.user.email || ""; show("#who", true);
   if (!BOOT && !(AUTH_P && AUTH_UID === session.user.id)){ BOOT = bootCall(); BOOT.catch(function(){}); } // host-perf: the dashboard data loads while 2-step is checked
   sb.auth.mfa.getAuthenticatorAssuranceLevel().then(function(a){
     if (my !== routing) return;
     if (a.error) throw a.error;
     if (a.data.currentLevel === "aal2") return afterAuth();
+    if (AS){ AS_MFA = a.data.nextLevel === "aal2"; asBanner(); return afterAuth(); } // admin view: no 2-step bypass, just a note
     if (a.data.nextLevel === "aal1" && !WANT_MFA) return afterAuth();
     return sb.auth.mfa.listFactors().then(function(f){
       if (my !== routing) return;
@@ -116,7 +135,7 @@ function startEnrol(all){
   }).catch(function(e){ msg("#enrolMsg", "Could not start setup: " + niceErr(e)); });
 }
 sb.auth.onAuthStateChange(function(evt, session){
-  if (evt === "PASSWORD_RECOVERY"){ setTimeout(function(){ view("SetPw"); }, 0); return; }
+  if (evt === "PASSWORD_RECOVERY" && !AS){ setTimeout(function(){ view("SetPw"); }, 0); return; }
   if (/^(INITIAL_SESSION|SIGNED_IN|SIGNED_OUT|MFA_CHALLENGE_VERIFIED)$/.test(evt)) setTimeout(function(){ route(session); }, 0);
   if (evt === "SIGNED_IN" && (/access_token|error_description|token_hash/.test(location.hash) || /access_token|code=/.test(location.search))) history.replaceState(null, "", location.pathname);
 });
@@ -155,7 +174,9 @@ function gsiInit(tries){
   if (!th || !ty) return;
   history.replaceState(null, "", location.pathname);
   sb.auth.verifyOtp({token_hash: th, type: ty}).then(function(r){
+    if (r.error && AS){ view("Login"); asBanner(true); return; }
     if (r.error){ view("Login"); msg("#loginMsg", /expired|invalid/i.test(r.error.message) ? "That link has expired or was already used. Log in, or tap Forgot password to get a new one." : niceErr(r.error)); return; }
+    if (AS) return; // admin view: the magic link only signs in
     if (ty === "recovery" || ty === "invite") view("SetPw");
     else if (ty === "signup" || ty === "email") msg("#loginMsg", "Email confirmed. Welcome to Book Homes.", true);
     else if (ty === "email_change") msg("#loginMsg", "Your new email address is confirmed.", true);
@@ -234,7 +255,37 @@ $("#setPwForm").addEventListener("submit", function(e){
   busy(b, true, "Saving...");
   sb.auth.updateUser({password: p}).then(function(r){ busy(b, false, "Save password"); if (r.error){ msg("#setPwMsg", niceErr(r.error)); return; } $("#newPw").value = ""; route(SESSION); });
 });
-function signOut(){ setTrust(false); HP.drop(); sb.auth.signOut().then(function(){ clearLocalSession(); location.replace("/host/"); }); }
+function signOut(){ if (AS) return asExit(); setTrust(false); HP.drop(); sb.auth.signOut().then(function(){ clearLocalSession(); location.replace("/host/"); }); }
+function asExit(){
+  // Only this tab's copy of the host session ends (scope local): the host's own devices stay signed in, the admin's tabs too.
+  var done = function(){ try { SS.removeItem(AS_KEY); SS.removeItem("bh_as"); } catch (e) {} HP.drop(); window.close(); setTimeout(function(){ location.replace("/admin/"); }, 300); };
+  sb.auth.signOut({scope: "local"}).then(done, done);
+}
+window.BH_AS_EXIT = AS ? asExit : null;
+function asBanner(expired){
+  if (!AS) return;
+  var b = document.getElementById("asBar");
+  if (!b){
+    var st = document.createElement("style");
+    st.textContent = "#asBar{position:sticky;top:0;z-index:200;background:#E3A35A;color:#1b1307;display:flex;align-items:center;gap:12px;padding:10px 16px;font:600 14px/1.35 'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,.12)}" +
+      "#asBar span{flex:1;min-width:0}#asBar small{display:block;font-weight:500;font-size:12.5px}" +
+      "#asBar button{flex:0 0 auto;background:#1b1307;color:#fff;border:0;border-radius:999px;min-height:36px;padding:0 16px;font:inherit;cursor:pointer}" +
+      ".bh-as #mfaOptIn,.bh-as #connectBtn,.bh-as #forgotBtn,.bh-as #toSignup{display:none !important}";
+    document.head.appendChild(st);
+    document.documentElement.classList.add("bh-as");
+    b = document.createElement("div"); b.id = "asBar"; b.setAttribute("role", "status");
+    document.body.insertBefore(b, document.body.firstChild);
+    b.addEventListener("click", function(e){ if (e.target.closest("button")) asExit(); });
+  }
+  var who = ME && ((ME.host && ME.host.display_name) || (ME.profile && ME.profile.name)) || (SESSION && SESSION.user && SESSION.user.email) || "this host";
+  b.innerHTML = expired
+    ? "<span>This admin link has expired or was already used.<small>Close this tab and tap Log in as host again in the admin portal.</small></span><button type=\"button\">Exit</button>"
+    : "<span>You are viewing " + esc(who) + "'s account as admin." +
+      (AS_MFA ? "<small>This host uses 2-step login. You're in without their code, so anything that needs it (like payout setup) won't work here.</small>" : "") +
+      "</span><button type=\"button\">Exit</button>";
+  var sec = $("#trustStatus"); if (sec) sec.textContent = "Admin view: password, 2-step login and payout setup are hidden. Only the host can change them.";
+  var co = $("#connectOut"); if (co && !co.textContent) co.textContent = "Admin view: only the host can set up payouts.";
+}
 $$("[data-signout]").forEach(function(b){ b.addEventListener("click", signOut); });
 
 /* ---------- after 2-step: profile -> dashboard ---------- */
@@ -315,6 +366,7 @@ $$(".tabs button").forEach(function(b){ b.addEventListener("click", function(){
 }); });
 var STATUS = {draft: "Draft", pending: "Waiting for approval", approved: "Live", rejected: "Changes needed", paused: "Paused"};
 function renderDash(){
+  if (AS) asBanner();
   try { document.dispatchEvent(new CustomEvent("bh:host", {detail: {type: "me", me: ME}})); } catch (e) {}
   var p = ME.profile || {}, ls = ME.listings || [];
   $("#approvalNote").innerHTML = p.approved ? "" : '<div class="notice"><b>Your host account is waiting for approval.</b> You can add and submit listings now. We check every host and listing, usually within one working day.' + (p.rejected_reason ? "<br>Note from us: " + esc(p.rejected_reason) : "") + "</div>";
@@ -342,7 +394,7 @@ function renderDash(){
   $("#connectBtn").textContent = h.connect_status === "enabled" ? "Update payout details" : h.has_stripe ? "Finish payout setup" : "Connect payouts with Stripe";
   $("#profSummary").innerHTML = "<b>" + esc(p.name) + "</b><p class='m'>" + esc(p.email) + " · " + esc(p.phone || "") + (p.whatsapp ? " · WhatsApp " + esc(p.whatsapp) : "") + "<br>" + (p.trader_status === "private" ? "Private individual" : "Business (trader)") + (p.company ? " · " + esc(p.company) : "") + " · Commission " + (ME.commission_pct != null ? ME.commission_pct + "%" : "") + "</p>";
   var until = MODE === "local" ? trustUntil() : 0;
-  $("#trustStatus").textContent = until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "This browser isn't trusted: you'll be signed out when you close the tab.";
+  $("#trustStatus").textContent = AS ? "Admin view: password, 2-step login and payout setup are hidden. Only the host can change them." : until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "This browser isn't trusted: you'll be signed out when you close the tab.";
   var sel = $("#calListing"), cur = sel.value;
   sel.innerHTML = ls.map(function(l){ return '<option value="' + l.id + '">' + esc(l.title) + "</option>"; }).join("");
   if (cur && ls.some(function(l){ return String(l.id) === cur; })) sel.value = cur;
