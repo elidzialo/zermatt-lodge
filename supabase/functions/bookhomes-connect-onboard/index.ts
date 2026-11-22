@@ -1,4 +1,6 @@
-// POST /functions/v1/bookhomes-connect-onboard   { action: "start" | "status" }  Stripe payout setup for hosts.
+// POST /functions/v1/bookhomes-connect-onboard   { action: "start" | "status" | "dashboard" }  Stripe payout setup for hosts.
+// status also refreshes the display copy of the payout account (bank name, last 4, currency, schedule) in bookhomes.hosts;
+// dashboard returns a one-time Stripe Express Dashboard link ("Manage in Stripe").
 // Accounts v2 with Managed Risk (owner decision 22 Nov 2026): Express Dashboard, Stripe liable for negative balances,
 // Stripe takes its card fee from the host; BookHomes takes its commission as the application fee on direct charges.
 // 2-step login is optional for hosts (owner decision 22 Nov 2026); Stripe's own onboarding verifies identity and bank details.
@@ -8,6 +10,7 @@
 import { optionalEnv } from "../_shared/base.ts";
 import { audit, connectFlagEnabled, getUser, handle, HttpError, jsonRes, readBody, returnBase, setSetting, sql } from "../_shared/bh.ts";
 import { accountState, createConnectedAccount, onboardingLink } from "../_shared/bh_connect.ts";
+import { expressLoginLink, fetchPayoutInfo, type PayoutInfo, savePayoutInfo } from "../_shared/bh_stripe_bank.ts";
 
 const NOT_ENABLED = "Automatic payouts are not switched on yet. Until then Book Homes pays you by bank transfer after each stay. We'll let you know when you can connect.";
 const KEY_PERMS = "Payout setup is not ready on our side yet. We've been told and are fixing it. Until then Book Homes pays you by bank transfer after each stay.";
@@ -42,12 +45,28 @@ Deno.serve(handle(async (req) => {
     try {
       const st = await accountState(host.stripe_account_id);
       await sql`update bookhomes.hosts set connect_status = ${st.status}, charges_enabled = ${st.charges_enabled}, payouts_enabled = ${st.payouts_enabled}, updated_at = now() where id = ${host.id}`;
-      return jsonRes({ connect_enabled: true, ...st });
+      // Display copy of the payout bank (never full numbers). Best effort: the status above is what matters.
+      let payout: PayoutInfo | null = null;
+      try { payout = await fetchPayoutInfo(host.stripe_account_id); await savePayoutInfo(host.stripe_account_id, payout, st.status); }
+      catch (e) { console.error("payout details failed", (e as Error).message); }
+      return jsonRes({ connect_enabled: true, ...st, payout });
     } catch (e) {
       console.error("account status failed", (e as Error).message);
       const f = await friendly(e);
       if (f) return f;
       throw new HttpError(502, "We couldn't check your payout setup with Stripe. Please try again in a minute.");
+    }
+  }
+
+  if (b.action === "dashboard") {
+    if (!host.stripe_account_id) throw new HttpError(409, "Connect payouts with Stripe first.");
+    try {
+      return jsonRes({ connect_enabled: true, url: await expressLoginLink(host.stripe_account_id) });
+    } catch (e) {
+      console.error("login link failed", (e as { code?: string }).code ?? "", (e as Error).message);
+      const f = await friendly(e);
+      if (f) return f;
+      throw new HttpError(409, "Stripe can't open your dashboard until your payout setup is finished. Tap Finish payout setup.");
     }
   }
 

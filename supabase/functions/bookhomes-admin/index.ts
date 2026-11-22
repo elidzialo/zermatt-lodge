@@ -9,6 +9,8 @@ import { adminNotice, guestBooked, hostBooked, ref } from "../_shared/bh_emails.
 import { loadBooking } from "../_shared/bh_booking.ts";
 import { feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { money } from "../_shared/bh_quote.ts";
+import { sendSms, smsText } from "../_shared/bh_sms.ts";
+import { rateLimit } from "../_shared/bh.ts"; // payouts: kept on its own line so it merges cleanly
 
 // Refund maths for a guest cancellation, by the listing's policy (same wording as checkout):
 //   flexible: 100% up to 1 day before check-in; moderate: 100% up to 5 days before, 50% after; strict: 100% up to 14 days,
@@ -166,7 +168,7 @@ Deno.serve(handle(async (req) => {
     case "pause_listing": {
       const id = int(b.id, 1, 1e12);
       if (!id) throw new HttpError(400, "Invalid listing");
-      const l = (await sql`select l.id, l.slug, l.title, l.status, l.legacy_source, p.approved as host_approved, p.email
+      const l = (await sql`select l.id, l.slug, l.title, l.status, l.legacy_source, p.approved as host_approved, p.email, p.phone
                              from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
                             where l.id = ${id}`)[0];
       if (!l) throw new HttpError(404, "Listing not found");
@@ -178,6 +180,8 @@ Deno.serve(handle(async (req) => {
         const rebuilt = await rebuildSite();
         await audit(admin, "rebuild_site", "listing", String(id), { rebuilt, slug });
         await notify(l.email, `Your listing is live: ${l.title}`, [`"${l.title}" is approved and now bookable on Book Homes.`, `Your page: ${siteUrl()}/${slug}`, "It appears in search straight away."]);
+        await sendSms({ kind: "listing_approved", to: l.phone, email: l.email, listingId: id, dedupe: `listing_approved:${id}:${new Date().toISOString().slice(0, 10)}`,
+          body: smsText.listingApproved(String(l.title), `${siteUrl()}/${slug}`) });
       } else if (action === "reject_listing") {
         await sql`update bookhomes.listings set status = 'rejected', reviewed_by = ${admin.email}, reject_reason = ${reason} where id = ${id}`;
         await notify(l.email, `Changes needed: ${l.title}`, [`"${l.title}" needs a few changes before it can go live.`, reason ? `What to change: ${reason}` : "", "Edit it in your host dashboard and submit it again."]);
@@ -249,7 +253,32 @@ Deno.serve(handle(async (req) => {
                            where id = ${id} and status = 'manual_pending' returning id`;
       if (!r.length) throw new HttpError(409, "Only payouts waiting for a manual transfer can be marked paid.");
       await audit(admin, "mark_payout_paid", "payout", id, { note: str(b.note, 300) });
+      const pt = (await sql`select p.amount_pence, l.title, pr.phone, pr.email from bookhomes.payouts p join bookhomes.bookings bk on bk.id = p.booking_id
+                              join bookhomes.listings l on l.id = bk.listing_id join bookhomes.hosts h on h.id = p.host_id
+                              join bookhomes.profiles pr on pr.user_id = h.user_id where p.id = ${id}`)[0];
+      if (pt) await sendSms({ kind: "host_payout_sent", to: pt.phone, email: pt.email, dedupe: `payout_sent:${id}`, body: smsText.payoutSent(pt.amount_pence, pt.title) });
       return jsonRes({ ok: true });
+    }
+
+    // Host bank details for manual transfers (bookhomes.host_bank_accounts). Masked by default.
+    case "bank_accounts": {
+      const rows = await sql`select b.host_id, b.holder_name, b.last4, b.sort_code_masked, b.verified_format, b.updated_at,
+                                    coalesce(nullif(h.display_name, ''), p.name) as host_name, p.email, h.connect_status,
+                                    (select coalesce(sum(x.amount_pence), 0)::int from bookhomes.payouts x where x.host_id = b.host_id and x.status = 'manual_pending') as due_pence
+                               from bookhomes.host_bank_accounts b join bookhomes.hosts h on h.id = b.host_id join bookhomes.profiles p on p.user_id = h.user_id
+                              order by due_pence desc, b.updated_at desc`;
+      return jsonRes({ rows });
+    }
+    // Full sort code and account number, for making a transfer. Admin + aal2 (requireAdmin above), rate limited, audit-logged.
+    // The numbers are returned to this admin only and never written to the audit log or the function logs.
+    case "reveal_bank": {
+      const hid = String(b.host_id ?? "");
+      if (!UUID_RE.test(hid)) throw new HttpError(400, "Invalid host");
+      await rateLimit("reveal_bank", admin.id, 30, 3600, "Too many reveals in the last hour.");
+      const r = (await sql`select * from bookhomes.reveal_host_bank(${hid})`)[0];
+      if (!r) throw new HttpError(404, "This host has no bank details saved.");
+      await audit(admin, "reveal_bank", "host", hid, { reason: str(b.reason, 200) });
+      return jsonRes({ holder_name: r.holder_name, sort_code: `${r.sort_code.slice(0, 2)}-${r.sort_code.slice(2, 4)}-${r.sort_code.slice(4, 6)}`, account_number: r.account_number });
     }
 
     case "kpis": {

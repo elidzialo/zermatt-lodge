@@ -4,13 +4,14 @@
 // bookings and payouts only). Hosts can never approve their own listing (trigger in MARKETPLACE_setup.sql).
 import { addDays, adminClient, env, isValidIsoDate, siteUrl, ukToday } from "../_shared/base.ts";
 import {
-  adminEmailList, asUser, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
+  adminEmailList, asUser, audit, authAdmin, type AuthUser, bool, feesEnabled, getUser, handle, HttpError, int, jsonRes, listingCols, NAME_RE, num,
   PHONE_RE, rateLimit, readBody, slugify, sql, str, UUID_RE, warmDb,
 } from "../_shared/bh.ts";
 import { AMENITIES, CATEGORIES, feeFields, listingFields, removeListing } from "../_shared/bh_listing.ts";
 import { safeFeedUrl, syncSource } from "../_shared/bh_ical_sync.ts";
 import { sendLogged } from "../_shared/mailer.ts";
 import { adminNotice } from "../_shared/bh_emails.ts";
+import { checkBank } from "../_shared/bh_bank.ts";
 
 async function ownListing(user: AuthUser, id: unknown, allowLegacy = false): Promise<number> {
   const lid = int(id, 1, 1e12);
@@ -54,8 +55,9 @@ async function me(user: AuthUser) {
   const cols = await listingCols();
   const inTx = asUser(user, async (tx) => {
     const [pr, hr, ls, photos, sources, toks] = await Promise.all([
-      tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason from bookhomes.profiles where user_id = ${user.id}`,
-      tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override, bookhomes.commission_for(id) as pct from bookhomes.hosts where user_id = ${user.id}`,
+      tx`select user_id, email, role, name, phone, whatsapp, company, trader_status, approved, rejected_reason, sms_opt_out from bookhomes.profiles where user_id = ${user.id}`,
+      tx`select id, display_name, stripe_account_id is not null as has_stripe, connect_status, charges_enabled, payouts_enabled, commission_override, bookhomes.commission_for(id) as pct,
+             connect_waiting_on, payout_bank_name, payout_bank_last4, payout_currency, payout_schedule from bookhomes.hosts where user_id = ${user.id}`,
       tx.unsafe(`select ${cols} from bookhomes.listings where host_id = bookhomes.my_host_id() and status <> 'archived' order by created_at`),
       tx`select p.id, p.listing_id, p.url, p.thumb_url, p.storage_path, p.caption, p.sort from bookhomes.listing_photos p join bookhomes.listings l on l.id = p.listing_id
           where l.host_id = bookhomes.my_host_id() and l.status <> 'archived' order by p.sort, p.created_at`,
@@ -70,12 +72,13 @@ async function me(user: AuthUser) {
     for (const t of toks) tokens[String(t.id)] = t.t;
     return { profile: pr[0] ?? null, host, listings: host ? ls : [], photos: host ? photos : [], sources: host ? sources : [], tokens, commission_pct: pct === null || pct === undefined ? null : Number(pct) };
   });
-  const [r, connectRows, extra, fees] = await Promise.all([
+  const [r, connectRows, extra, fees, bank] = await Promise.all([
     inTx,
     sql`select value #>> '{}' as v from bookhomes.settings where key = 'connect_status'`,
     sql`select l.id, case when l.status = 'rejected' then l.reject_reason end as reject_reason, l.host_edited_at
           from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id where h.user_id = ${user.id} and l.status <> 'archived'`,
     feesEnabled(),
+    myBank(user),
   ]);
   const site = siteUrl();
   // deno-lint-ignore no-explicit-any
@@ -90,9 +93,17 @@ async function me(user: AuthUser) {
     })),
     tokens: undefined,
     connect_platform: connectRows[0]?.v ?? "unknown",
+    bank_account: bank,
     amenities: AMENITIES, categories: CATEGORIES, feed_names: FEED_NAMES,
     fees_enabled: fees,
   };
+}
+
+// Bank details for manual transfers (bookhomes.host_bank_accounts, service role only): the host only ever sees the masked copy.
+async function myBank(user: AuthUser) {
+  const r = await sql`select b.holder_name, b.last4, b.sort_code_masked, b.verified_format, b.updated_at from bookhomes.host_bank_accounts b
+                        join bookhomes.hosts h on h.id = b.host_id where h.user_id = ${user.id}`;
+  return r[0] ?? null;
 }
 
 // deno-lint-ignore no-explicit-any
@@ -185,11 +196,33 @@ Deno.serve(handle(async (req) => {
                              company = ${str(b.company, 120)}, trader_status = coalesce(${trader}, trader_status)
                             where user_id = ${user.id} returning user_id`;
         if (!r.length) throw new HttpError(404, "Finish sign-up first.");
+        if (typeof b.sms_opt_out === "boolean") await tx`update bookhomes.profiles set sms_opt_out = ${b.sms_opt_out} where user_id = ${user.id}`;
         if (Object.prototype.hasOwnProperty.call(b, "display_name")) {
           await tx`update bookhomes.hosts set display_name = ${str(b.display_name, 80)} where user_id = ${user.id}`;
         }
       });
       return jsonRes(await me(user));
+    }
+
+    // Bank account for manual bank transfers (hosts not paid through Stripe). Encrypted in the database
+    // (bookhomes.save_host_bank, Vault key). The numbers are never logged or sent back; only the masked copy.
+    case "bank_save": {
+      await rateLimit("bank_save", user.id, 10, 3600, "Too many changes to your bank details. Please try again later.");
+      const c = checkBank(b);
+      if (!c.ok) throw new HttpError(400, c.error);
+      const h = (await sql`select id from bookhomes.hosts where user_id = ${user.id} and deleted_at is null`)[0];
+      if (!h) throw new HttpError(403, "Finish your host profile first.");
+      await sql`select * from bookhomes.save_host_bank(${h.id}, ${c.v.holder}, ${c.v.sort}, ${c.v.account})`;
+      const bank = await myBank(user);
+      await audit(user, "host_bank_saved", "host", h.id, { last4: bank?.last4, sort_code_masked: bank?.sort_code_masked });
+      return jsonRes({ ok: true, bank_account: bank });
+    }
+    case "bank_delete": {
+      const h = (await sql`select id from bookhomes.hosts where user_id = ${user.id}`)[0];
+      if (!h) throw new HttpError(403, "Finish your host profile first.");
+      const r = await sql`delete from bookhomes.host_bank_accounts where host_id = ${h.id} returning last4`;
+      if (r.length) await audit(user, "host_bank_deleted", "host", h.id, { last4: r[0].last4 });
+      return jsonRes({ ok: true, bank_account: null });
     }
 
     case "save_listing": {

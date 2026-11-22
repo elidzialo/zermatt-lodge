@@ -5,7 +5,8 @@ import type Stripe from "npm:stripe@17.7.0";
 import { adminClient, siteUrl } from "./util.ts";
 import { adminEmailList, sql } from "./bh.ts";
 import { sendLogged } from "./mailer.ts";
-import { adminBooked, adminNotice, type BhBooking, guestBooked, hostBooked } from "./bh_emails.ts";
+import { adminBooked, adminNotice, type BhBooking, guestBooked, hostBooked, ref } from "./bh_emails.ts";
+import { sendSms, smsText } from "./bh_sms.ts";
 
 export async function loadBooking(id: string): Promise<BhBooking | null> {
   const r = await sql`
@@ -73,5 +74,8 @@ export async function settlePaidSession(stripe: Stripe, session: Stripe.Checkout
   for (const to of admins) {
     if (to !== b.host_email) await sendLogged(db, { toRole: "admin", to, template: "bh_admin_new_booking", email: adminBooked(b, site) });
   }
+  // Texts (bh_sms.ts: off until the Twilio secrets are set; never throws; respects profiles.sms_opt_out)
+  await sendSms({ kind: "guest_booking_confirmed", to: b.guest_phone, email: b.guest_email, bookingId: booking_id, dedupe: `guest_confirmed:${booking_id}`, body: smsText.guestConfirmed(b, ref(booking_id)) });
+  await sendSms({ kind: "host_new_booking", to: b.host_phone, email: b.host_email, bookingId: booking_id, dedupe: `host_booking:${booking_id}`, body: smsText.hostNewBooking(b, site) });
   return { outcome, bookingId: booking_id };
 }

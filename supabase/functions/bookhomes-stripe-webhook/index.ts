@@ -11,6 +11,8 @@ import { optionalEnv, stripeClient } from "../_shared/util.ts";
 import { jsonRes, sql } from "../_shared/bh.ts";
 import { settlePaidSession } from "../_shared/bh_booking.ts";
 import { stateFromV1 } from "../_shared/bh_connect.ts";
+import { payoutInfoFromV1, savePayoutInfo } from "../_shared/bh_stripe_bank.ts";
+import { sendSms, smsText } from "../_shared/bh_sms.ts";
 
 const crypto = Stripe.createSubtleCryptoProvider();
 
@@ -75,6 +77,18 @@ Deno.serve(async (req: Request): Promise<Response> => {
         const st = stateFromV1(a);
         await sql`update bookhomes.hosts set charges_enabled = ${st.charges_enabled}, payouts_enabled = ${st.payouts_enabled},
                     connect_status = ${st.status}, updated_at = now() where stripe_account_id = ${a.id}`;
+        // display copy of the payout bank (name, last 4, currency, schedule); never full numbers
+        try { await savePayoutInfo(a.id, payoutInfoFromV1(a as unknown as Parameters<typeof payoutInfoFromV1>[0]), st.status); }
+        catch (e) { console.error("payout details save failed", (e as Error).message); }
+        break;
+      }
+      case "payout.paid": {
+        // Stripe paid a connected host's balance to their bank (needs payout.paid on the Connected accounts destination)
+        if (!account) break;
+        const p = event.data.object as Stripe.Payout;
+        const h = (await sql`select p.phone, p.email, h.payout_bank_last4 from bookhomes.hosts h join bookhomes.profiles p on p.user_id = h.user_id
+                              where h.stripe_account_id = ${account}`)[0];
+        if (h && p.currency === "gbp") await sendSms({ kind: "host_payout_paid_stripe", to: h.phone, email: h.email, dedupe: `stripe_payout:${p.id}`, body: smsText.stripePayoutPaid(p.amount, h.payout_bank_last4) });
         break;
       }
     }

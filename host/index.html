@@ -486,6 +486,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
       <label class="tick" style="background:#fff;border:1px solid var(--line)"><input type="radio" name="trader" value="private"><span><b>As a private individual</b><span>For example your own home now and then.</span></span></label>
       <small style="color:var(--muted)">UK rules require us to tell guests which one applies. If unsure, choose business.</small>
     </fieldset>
+    <label class="tick" style="background:#fff;border:1px solid var(--line);margin-bottom:14px"><input type="checkbox" id="pSms" checked><span><b>Text me about bookings and payouts</b><span>Short texts to your mobile for new bookings, payouts and listing approvals. Emails still come either way.</span></span></label>
     <button class="btn block" type="submit" id="profBtn">Continue</button>
   </form>
 </div></div>
@@ -603,6 +604,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes for host*.js are set by build.py -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
 <script src="/assets/host-perf.js?v=1"></script>
+<script src="/assets/host-payouts.js?v=1"></script>
 <script src="/assets/host.js?v=8ec0900c"></script>
 <script src="/assets/host-shell.js?v=hux3l" defer></script>
 <script src="/assets/bh-ui.js?v=hux3" defer></script>

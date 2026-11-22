@@ -88,6 +88,7 @@ var routing = 0, FACTOR = null, ENROL = null, SESSION = null, ME = null, started
 var LATER_KEY = "bh_host_mfa_later";
 var LISTING_HOOK = null, hooked = false; // set by the listing editor below: reopens a wizard or editor after a refresh
 
+window.BHHost = {api: function(fn, body){ return api(fn, body); }, refresh: function(){ return refresh(); }, me: function(){ return ME; }}; // used by host-payouts.js
 function api(fn, body){
   return sb.auth.getSession().then(function(r){
     var t = r.data && r.data.session && r.data.session.access_token;
@@ -342,17 +343,19 @@ function fillProfile(){
   $("#pName").value = p.name || md.full_name || md.name || ""; $("#pPhone").value = p.phone || ""; $("#pWa").value = p.whatsapp || ""; $("#pCompany").value = p.company || "";
   $("#pDisplay").value = (ME && ME.host && ME.host.display_name) || "";
   $$("input[name=trader]").forEach(function(r){ r.checked = r.value === p.trader_status; });
+  if ($("#pSms")) $("#pSms").checked = !p.sms_opt_out;
 }
 $("#profForm").addEventListener("submit", function(e){
   e.preventDefault();
   var tr = ($$("input[name=trader]").filter(function(r){ return r.checked; })[0] || {}).value;
   var body = {name: $("#pName").value.trim(), phone: $("#pPhone").value.trim(), whatsapp: $("#pWa").value.trim() || null, company: $("#pCompany").value.trim() || null, display_name: $("#pDisplay").value.trim() || null, trader_status: tr};
+  if ($("#pSms")) body.sms_opt_out = !$("#pSms").checked;
   if (body.name.length < 2){ msg("#profMsg", "Please enter your full name."); return; }
   if (body.phone.replace(/\D/g, "").length < 7){ msg("#profMsg", "Please enter your phone number."); return; }
   if (!tr){ msg("#profMsg", "Please choose how you host."); return; }
   var btn = $("#profBtn"); busy(btn, true, "Saving...");
   var first = !(ME && ME.profile);
-  (first ? api("bookhomes-host-signup", body) : api("bookhomes-host", Object.assign({action: "save_profile"}, body)))
+  (first ? api("bookhomes-host-signup", body).then(function(r){ return body.sms_opt_out ? api("bookhomes-host", Object.assign({action: "save_profile"}, body)) : r; }) : api("bookhomes-host", Object.assign({action: "save_profile"}, body)))
     .then(function(){ busy(btn, false, "Continue"); return afterAuth(true); })
     .then(function(){ if (first && ME && !(ME.listings || []).length) openWizard(null); })
     .catch(function(err){ busy(btn, false, "Continue"); msg("#profMsg", err.message); });
@@ -386,12 +389,13 @@ function renderDash(){
   }).join("") : '<div class="item"><b>No listings yet.</b><p class="m">Add your first home. It takes about 10 minutes, one question at a time.</p></div>';
   var h = ME.host || {};
   var FEE_NOTE = " Guests pay you directly through Stripe. Book Homes keeps its commission and Stripe takes its card fee from your share.";
+  if (window.BHPay) BHPay.render(ME); else { // assets/host-payouts.js draws the Payouts box and the Today banner
   $("#payoutState").innerHTML = h.connect_status === "enabled" ? "<b>Payouts connected.</b> Stripe pays your share to your bank automatically after each booking." + FEE_NOTE
     : h.connect_status === "restricted" ? "<b>Stripe needs to check something.</b> Open your payout setup to see what Stripe needs. Until it's sorted we pay you by bank transfer after check-in."
     : h.has_stripe ? "<b>Payout setup in progress.</b> If you have finished Stripe's form, Stripe is now checking your details. This usually takes a few minutes and you don't need to do anything else. If you stopped part way, tap Finish payout setup. Until it's done we pay you by bank transfer after check-in."
     : "<b>Get paid automatically.</b> Connect your bank through Stripe." + FEE_NOTE + " Until then we pay you by bank transfer after check-in.";
   $("#payBanner").innerHTML = h.connect_status === "enabled" ? "" : '<div class="notice" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap"><span><b>' + (h.connect_status === "restricted" ? "Stripe needs more details for your payouts." : "Your payouts are not connected yet.") + '</b> Please set up Stripe so you can get paid automatically.</span><button type="button" class="btn sm" data-gopayout>' + (h.has_stripe ? "Finish setup" : "Set up payouts") + '</button></div>';
-  $("#connectBtn").textContent = h.connect_status === "enabled" ? "Update payout details" : h.has_stripe ? "Finish payout setup" : "Connect payouts with Stripe";
+  $("#connectBtn").textContent = h.connect_status === "enabled" ? "Update payout details" : h.has_stripe ? "Finish payout setup" : "Connect payouts with Stripe"; }
   $("#profSummary").innerHTML = "<b>" + esc(p.name) + "</b><p class='m'>" + esc(p.email) + " · " + esc(p.phone || "") + (p.whatsapp ? " · WhatsApp " + esc(p.whatsapp) : "") + "<br>" + (p.trader_status === "private" ? "Private individual" : "Business (trader)") + (p.company ? " · " + esc(p.company) : "") + " · Commission " + (ME.commission_pct != null ? ME.commission_pct + "%" : "") + "</p>";
   var until = MODE === "local" ? trustUntil() : 0;
   $("#trustStatus").textContent = AS ? "Admin view: password, 2-step login and payout setup are hidden. Only the host can change them." : until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "This browser isn't trusted: you'll be signed out when you close the tab.";
