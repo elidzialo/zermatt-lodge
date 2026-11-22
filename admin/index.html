@@ -58,6 +58,7 @@ main{max-width:1180px;width:100%;padding:28px 32px 80px}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:16px}
 .card h2{font-size:16px;font-weight:700;margin-bottom:12px;color:var(--ink)}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:16px}
+#ovKpis{margin-bottom:0}
 .stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
 .stat small{display:block;font-size:13px;font-weight:500;color:var(--muted)}
 .stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-top:4px;font-variant-numeric:tabular-nums}
@@ -179,11 +180,84 @@ th{font-size:12.5px;font-weight:600;color:var(--muted)}
 .acts{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .acts .msg{font-size:13px;color:var(--muted)}
 .scrim{display:none}
+/* ---------- 22 Nov redesign: Admin vs My listings switch, cleaner cards, overview dashboard, listing covers, filter chips, phone tab bar ---------- */
+body{background:#f7f7f7}
+.card,.stat{border-color:#ebebeb;border-radius:16px}
+.card{padding:22px 24px}
+.card h2{font-size:17px}
+.ch{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.ch h2{margin:0}
+.lnk{background:none;border:0;color:var(--ink);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:3px;min-height:36px;padding:0 2px;white-space:nowrap}
+.sh{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:26px 2px 10px}
+.mode{display:inline-flex;background:#f2f2f2;border-radius:999px;padding:3px;gap:2px}
+.mode span,.mode a{display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+.mode span{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.mode a:hover{background:#e8e8e8}
+.top .who .av{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:14px;max-width:none;flex:0 0 34px}
+nav.tabs .grp{text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;font-weight:700}
+nav.tabs .ext{background:var(--cream);border:1px solid #ebebeb;border-top:1px solid #ebebeb;border-radius:12px;padding:6px 4px 10px;margin-top:20px}
+nav.tabs .ext .grp{padding:8px 12px 2px}
+nav.tabs .soext{margin-top:8px}
+nav.tabs .soext button{color:var(--muted);font-weight:600}
+nav.tabs .newb{margin-left:auto}
+/* overview */
+.needs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.need{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:#fff;border:1px solid var(--accent);border-left-width:4px;border-radius:14px;padding:14px 16px;min-height:96px;transition:box-shadow .15s}
+.need:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.need b{font-size:28px;font-weight:800;line-height:1.1;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.need span{font-size:14px;color:var(--ink-2)}
+.need em{font-style:normal;font-weight:700;font-size:13.5px;margin-top:auto;padding-top:6px;text-decoration:underline;text-underline-offset:3px}
+.need.ok{border-color:var(--brand);cursor:default}
+.need.ok b{color:var(--brand);font-size:20px}
+.need.ok:hover{box-shadow:none}
+.pend{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.pend button{display:flex;gap:12px;align-items:center;text-align:left;background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:10px;min-width:0;transition:box-shadow .15s}
+.pend button:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.pend img,.pend .ph0{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:0 0 64px;background:var(--soft)}
+.pend .ph0{display:grid;place-items:center;color:var(--muted);font-size:12px}
+.pend span{min-width:0;display:flex;flex-direction:column;gap:1px}
+.pend b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pend small{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pend small.tag{color:var(--accent-ink);font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tile{display:flex;gap:14px;align-items:flex-start;text-align:left;background:#fff;border:1px solid #ebebeb;border-radius:16px;padding:18px;text-decoration:none;color:var(--ink);transition:box-shadow .15s,border-color .15s;min-width:0}
+.tile:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);border-color:#ddd}
+.tile i{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--brand-tint);color:var(--brand);flex:0 0 42px}
+.tile svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tile b{display:block;font-size:15.5px;font-weight:700}
+.tile small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.tile small.hot{color:var(--accent-ink);font-weight:600}
+.stat small{font-weight:600}
+button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+/* list rows: listing cover, host avatar */
+.item.lst{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:start}
+.item.lst .cov{width:120px;height:96px;border-radius:12px;object-fit:cover;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-size:12px;text-align:center}
+.list .strip{display:none !important}
+.drawer .item.lst{display:block}
+.drawer .item.lst .cov{display:none}
+.strip img{height:110px !important}
+.av{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--brand-tint);color:var(--brand-ink);font-style:normal;font-weight:700;font-size:12.5px;flex:0 0 32px;margin-right:10px;vertical-align:middle}
+.item .h .who2{display:inline-flex;align-items:center;min-width:0}
+.list .item .h{flex-wrap:nowrap;align-items:flex-start}
+.list .item .h>span:first-child{min-width:0;flex:1 1 auto}
+.list .item .h .pill{margin-top:1px}
+/* filter chips (drive the hidden selects) */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 -2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:0 0 auto;border:1px solid #d8d8d8;background:#fff;border-radius:999px;min-height:36px;padding:0 14px;font-size:13.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.chips button:hover{border-color:var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips button i{font-style:normal;font-weight:500;opacity:.75;margin-left:5px}
+/* Report a bug icon: beside the sidebar on desktop, not on top of it */
+@media (min-width:960px){ .bhfb-btn{left:calc(var(--side) + 16px) !important} }
+/* phone tab bar */
+.bbar{display:none}
+@media (max-width:1100px){ .tiles{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:959px){
   .menubtn{display:inline-flex}
   .top h1 small{display:none}
-  .shell{grid-template-columns:1fr}
-  nav.tabs{position:fixed;top:60px;left:0;bottom:0;height:auto;width:min(300px,86vw);z-index:40;transform:translateX(-105%);transition:transform .22s ease-out;box-shadow:8px 0 32px rgba(0,0,0,.12)}
+  .shell{grid-template-columns:minmax(0,1fr)}
+  nav.tabs{position:fixed;top:60px;left:0;bottom:0;height:auto;align-self:stretch;width:min(300px,86vw);z-index:40;transform:translateX(-105%);transition:transform .22s ease-out;box-shadow:8px 0 32px rgba(0,0,0,.12)}
   body.navopen nav.tabs{transform:none}
   body.navopen .scrim{display:block;position:fixed;inset:60px 0 0;z-index:35;background:rgba(0,0,0,.3)}
   main{padding:20px 16px 64px}
@@ -192,7 +266,28 @@ th{font-size:12.5px;font-weight:600;color:var(--muted)}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat b{font-size:22px}
 }
-@media (max-width:560px){ .cal .d{min-height:54px;font-size:10px;padding:4px} .cal .d .t{display:none} .top .who span{display:none} }
+@media (max-width:759px){
+  .menubtn{display:none !important}
+  .bbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;background:#fff;border-top:1px solid var(--line);padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+  .bbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;min-height:52px;font-size:11px;font-weight:600;color:var(--muted);position:relative;padding:4px 0}
+  .bbar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .bbar button[aria-current="page"]{color:var(--brand)}
+  .bbar .newb{position:absolute;top:2px;left:calc(50% + 6px);margin:0;padding:0 6px;font-size:10.5px}
+  nav.tabs{bottom:calc(61px + env(safe-area-inset-bottom))}
+  body.navopen .scrim{bottom:calc(61px + env(safe-area-inset-bottom))}
+  main{padding:18px 16px calc(96px + env(safe-area-inset-bottom))}
+  .card{padding:18px 16px}
+  .tiles{grid-template-columns:1fr}
+  .tile{padding:14px 16px;align-items:center}
+  .needs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .need{min-height:0;padding:12px 14px}
+  .need b{font-size:24px}
+  .pend{grid-template-columns:1fr}
+  .item.lst{grid-template-columns:84px minmax(0,1fr);gap:12px}
+  .item.lst .cov{width:84px;height:84px}
+  .top .who .wemail,.top .who>button{display:none}
+}
+@media (max-width:560px){ .cal .d{min-height:54px;font-size:10px;padding:4px} .cal .d .t{display:none} .top .who span.wemail{display:none} }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -200,7 +295,7 @@ th{font-size:12.5px;font-weight:600;color:var(--muted)}
 <header class="top">
   <div style="display:flex;align-items:center;gap:10px"><button type="button" class="menubtn hidden" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span></button>
   <h1><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path d="M7 26V14.6L16 7l9 7.6V26z" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linejoin="round"/><path d="M20.8 10.5V6.5" fill="none" stroke="#1f4d3a" stroke-width="3.4" stroke-linecap="round"/><path d="M11.8 19.2c2.2 2.9 6.2 2.9 8.4 0" fill="none" stroke="#e3a35a" stroke-width="3.4" stroke-linecap="round"/></svg><span class="wm">Book<b>Homes</b></span><small>Admin</small></h1></div>
-  <div class="who hidden" id="who"><span id="whoEmail"></span><button type="button" data-signout>Sign out</button></div>
+  <div class="who hidden" id="who"><nav class="mode" aria-label="Switch between the admin portal and your own listings"><span aria-current="page">Admin</span><a href="/host">My listings</a></nav><span class="wemail" id="whoEmail"></span><span class="av" id="whoAv" aria-hidden="true"></span><button type="button" data-signout>Sign out</button></div>
 </header>
 
 <div id="viewLogin" class="login hidden">
@@ -282,38 +377,54 @@ th{font-size:12.5px;font-weight:600;color:var(--muted)}
 
 <div id="viewApp" class="hidden shell">
   <nav class="tabs" role="tablist" aria-label="Admin sections" id="sideNav">
-    <p class="grp">Platform</p>
+    <p class="grp">Marketplace</p>
     <button type="button" role="tab" data-tab="mpover" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
     <button type="button" role="tab" data-tab="mplistings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>Listings<span class="newb hidden" id="mpListN"></span></button>
     <button type="button" role="tab" data-tab="mphosts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Hosts<span class="newb hidden" id="mpHostsN"></span></button>
     <button type="button" role="tab" data-tab="mpbookings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Bookings</button>
     <button type="button" role="tab" data-tab="mppayouts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 7c0-2.2-1.8-4-4-4s-4 1.8-4 4v14"/><path d="M6 21h12M6 13h8"/></svg>Payouts<span class="newb hidden" id="mpPayN"></span></button>
-    <button type="button" role="tab" data-tab="mpusers" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>Users</button>
+    <p class="grp">Insights</p>
+    <a href="/admin/feedback/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback and bugs</a>
+    <a href="/admin/analytics/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Analytics</a>
     <button type="button" role="tab" data-tab="emails" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Emails</button>
+    <p class="grp">People and settings</p>
+    <button type="button" role="tab" data-tab="mpusers" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>Users</button>
     <button type="button" role="tab" data-tab="mpsettings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</button>
-    <p class="grp">Zermatt Lodge system</p>
+    <p class="grp">Zermatt Lodge</p>
     <button type="button" role="tab" data-tab="dash" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Today</button>
     <button type="button" role="tab" data-tab="bookings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Direct bookings</button>
     <button type="button" role="tab" data-tab="calendar" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Calendar</button>
     <button type="button" role="tab" data-tab="blocks" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Block dates</button>
     <button type="button" role="tab" data-tab="leads" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></svg>Sign-ups</button>
     <button type="button" role="tab" data-tab="log" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Sync log</button>
-    <a href="/admin/feedback/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback and bugs</a>
-    <a href="/admin/analytics/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Analytics</a>
-    <div class="ext"><p class="grp" style="padding-top:0">My listings</p><a href="/host" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg>Open host dashboard</a><p class="muted" style="font-size:12.5px;padding:4px 12px 0">Calendar, prices, bookings and earnings for your own homes. Same login.</p></div>
+    <div class="ext"><p class="grp">My listings</p><a href="/host"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Switch to My listings</a><p class="muted" style="font-size:12.5px;padding:2px 12px 0">Your own homes: calendar, prices, bookings and earnings. Same login.</p></div>
+    <div class="soext"><button type="button" data-signout><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button></div>
   </nav>
   <div class="scrim" id="navScrim"></div>
+  <nav class="bbar bh-bottombar" aria-label="Admin sections">
+    <button type="button" data-go="mpover" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Overview</button>
+    <button type="button" data-go="mplistings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>Listings<span class="newb hidden" data-mirror="mpListN"></span></button>
+    <button type="button" data-go="mphosts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Hosts<span class="newb hidden" data-mirror="mpHostsN"></span></button>
+    <button type="button" data-go="mpbookings"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Bookings</button>
+    <button type="button" id="bbMore" aria-label="More sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>More</button>
+  </nav>
   <main>
     <div id="appErr"></div>
 
     <div class="ph"><div><h2 id="phTitle">Overview</h2><p id="phSub">Everything across Book Homes</p></div></div>
     <section data-panel="mpover">
+      <h3 class="sh" style="margin-top:0">Needs you</h3>
+      <div class="needs" id="ovTodo"><div class="need ok"><b>...</b><span>Loading</span></div></div>
+      <div class="card hidden" id="ovPendCard" style="margin-top:16px"><div class="ch"><h2>Waiting for approval</h2><button type="button" class="lnk" data-go="mplistings" data-lf="pending">See all</button></div><div class="pend" id="ovPending"></div></div>
+      <h3 class="sh">This month</h3>
       <div class="grid" id="ovKpis"><div class="stat"><small>Loading</small><b>...</b></div></div>
+      <h3 class="sh">Manage</h3>
+      <div class="tiles" id="ovTiles"></div>
+      <h3 class="sh">Bookings</h3>
       <div class="two">
-        <div class="card"><h2>Bookings by month</h2><div class="bars" id="ovBars"></div><p class="muted" style="font-size:12.5px;margin-top:8px">Paid bookings by check-in month, all homes.</p></div>
-        <div class="card"><h2>Needs you</h2><div id="ovTodo"></div></div>
+        <div class="card"><div class="ch"><h2>Latest bookings</h2><button type="button" class="lnk" data-go="mpbookings">See all</button></div><div class="list" id="ovLatest"></div></div>
+        <div class="card"><h2>Bookings by month</h2><div class="bars" id="ovBars"></div><p class="muted" style="font-size:12.5px;margin-top:8px">Paid bookings by check-in month, all homes. Faded bars are future months.</p></div>
       </div>
-      <div class="card"><h2>Latest bookings</h2><div class="list" id="ovLatest"></div></div>
     </section>
     <section data-panel="dash" class="hidden">
       <div class="grid" id="dashStats"></div>
@@ -406,13 +517,15 @@ th{font-size:12.5px;font-weight:600;color:var(--muted)}
     </section>
     <section data-panel="mplistings" class="hidden">
       <div class="card">
-        <div class="tools"><input type="search" data-search="#mpListings" placeholder="Search listings by title, area or host" aria-label="Search listings by title, area or host"><label class="f"><span class="hidden">Show</span><select id="mpListFilter" aria-label="Show"><option value="pending" selected>Waiting for approval</option><option value="">All</option><option value="approved">Live</option><option value="paused">Paused</option><option value="rejected">Rejected</option><option value="draft">Drafts</option><option value="edited">Edited since approval</option></select></label></div>
+        <div class="tools"><input type="search" data-search="#mpListings" placeholder="Search listings by title, area or host" aria-label="Search listings by title, area or host"><label class="f hidden"><span class="hidden">Show</span><select id="mpListFilter" aria-label="Show"><option value="pending" selected>Waiting for approval</option><option value="">All</option><option value="approved">Live</option><option value="paused">Paused</option><option value="rejected">Rejected</option><option value="draft">Drafts</option><option value="edited">Edited since approval</option></select></label></div>
+        <div class="chips" data-chips="mpListFilter" role="group" aria-label="Show listings"></div>
         <div id="mpListings" class="list"></div>
       </div>
     </section>
     <section data-panel="mpbookings" class="hidden">
       <div class="card">
-        <div class="tools"><input type="search" data-search="#mpBookings" placeholder="Search guest, email or home" aria-label="Search guest, email or home"><label class="f"><span class="hidden">Status</span><select id="mpBkFilter" aria-label="Status"><option value="paid" selected>Paid</option><option value="">All</option><option value="held">In checkout</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Clash, refunded</option></select></label></div>
+        <div class="tools"><input type="search" data-search="#mpBookings" placeholder="Search guest, email or home" aria-label="Search guest, email or home"><label class="f hidden"><span class="hidden">Status</span><select id="mpBkFilter" aria-label="Status"><option value="paid" selected>Paid</option><option value="">All</option><option value="held">In checkout</option><option value="cancelled">Cancelled</option><option value="cancelled_conflict">Clash, refunded</option></select></label></div>
+        <div class="chips" data-chips="mpBkFilter" role="group" aria-label="Show bookings"></div>
         <div id="mpBookings" class="list"></div>
       </div>
     </section>
@@ -545,7 +658,7 @@ function route(session){
     if (LINK_ERR){ msg("#loginMsg", LINK_ERR + " Links work once and expire after a while, so ask for a new one."); LINK_ERR = ""; history.replaceState(null, "", location.pathname); }
     return;
   }
-  $("#whoEmail").textContent = session.user.email || ""; show("#who", true);
+  $("#whoEmail").textContent = session.user.email || ""; $("#whoAv").textContent = (session.user.email || "?").charAt(0).toUpperCase(); show("#who", true);
   sb.rpc("is_admin").then(function(r){
     if (my !== routing) return;
     if (r.error || r.data !== true){
@@ -770,11 +883,13 @@ var TITLES = {mpover: ["Overview", "Everything across Book Homes"], mplistings: 
 function navOpen(on){ document.body.classList.toggle("navopen", on); $("#menuBtn").setAttribute("aria-expanded", on ? "true" : "false"); }
 $("#menuBtn").addEventListener("click", function(){ navOpen(!document.body.classList.contains("navopen")); });
 $("#navScrim").addEventListener("click", function(){ navOpen(false); });
-$$("nav.tabs button").forEach(function(b){
+$("#bbMore").addEventListener("click", function(){ navOpen(!document.body.classList.contains("navopen")); });
+$$("nav.tabs button[data-tab]").forEach(function(b){
   b.addEventListener("click", function(){
     var t = TITLES[b.getAttribute("data-tab")] || ["", ""];
     $("#phTitle").textContent = t[0]; $("#phSub").textContent = t[1]; navOpen(false); window.scrollTo(0, 0);
-    $$("nav.tabs button").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+    $$("nav.tabs button[data-tab]").forEach(function(x){ x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+    $$(".bbar [data-go]").forEach(function(x){ if (x.getAttribute("data-go") === b.getAttribute("data-tab")) x.setAttribute("aria-current", "page"); else x.removeAttribute("aria-current"); });
     $$("[data-panel]").forEach(function(p){ p.classList.toggle("hidden", p.getAttribute("data-panel") !== b.getAttribute("data-tab")); });
     if (b.getAttribute("data-tab") === "calendar") renderCal();
     if (/^mp/.test(b.getAttribute("data-tab"))) mpLoad();
@@ -1033,6 +1148,7 @@ function mpAct(body, btn, done){
   return mpApi(body).then(function(){ MP = null; return mpLoad(true); }).then(function(){ if (done) done(); })
     .catch(function(e){ if (btn) btn.disabled = false; alert(e.message); });
 }
+function initials(n){ var w = String(n || "?").replace(/@.*/, "").split(/[\s._-]+/).filter(Boolean); return ((w[0] || "?").charAt(0) + (w.length > 1 ? w[w.length - 1].charAt(0) : "")).toUpperCase(); }
 var MP_ST = {draft: "draft", pending: "pending", approved: "live", rejected: "rejected", paused: "paused", archived: "deleted (archived)"};
 function mpRender(){
   if (!MP) return;
@@ -1041,9 +1157,9 @@ function mpRender(){
   $("#mpHostsN").textContent = pendHosts.length; $("#mpHostsN").classList.toggle("hidden", !pendHosts.length);
   $("#mpListN").textContent = pendList.length; $("#mpListN").classList.toggle("hidden", !pendList.length);
   function hostItem(h){
-    return '<div class="item"><div class="h"><span>' + esc(h.name || h.email) + (h.company ? " · " + esc(h.company) : "") + '</span><span class="pill ' + (h.approved ? "ok" : "warn") + '">' + (h.approved ? "approved" : "waiting") + '</span></div>' +
+    return '<div class="item"><div class="h"><span class="who2"><i class="av" aria-hidden="true">' + esc(initials(h.name || h.email)) + '</i><span>' + esc(h.name || h.email) + (h.company ? " · " + esc(h.company) : "") + '</span></span><span class="pill ' + (h.approved ? "ok" : "warn") + '">' + (h.approved ? "approved" : "waiting") + '</span></div>' +
       '<div class="m">' + esc(h.email) + (h.phone ? " · " + esc(h.phone) : "") + " · " + (h.trader_status === "private" ? "private individual" : h.trader_status === "trader" ? "business (trader)" : "status not chosen") + " · " + (h.listings || 0) + " listing(s) · joined " + esc(tfmt(h.created_at)) + '</div>' +
-      '<div class="m">Payouts: ' + esc(h.connect_status || "not_started") + (h.commission_override != null ? " · commission override " + esc(h.commission_override) + "%" : "") + '</div>' +
+      '<div class="m">Payouts: ' + esc(({enabled: "Stripe connected", pending: "Stripe set-up in progress", not_started: "not set up yet", restricted: "Stripe needs more details"})[h.connect_status || "not_started"] || h.connect_status) + (h.commission_override != null ? " · commission override " + esc(h.commission_override) + "%" : "") + '</div>' +
       (h.rejected_reason ? '<div class="m">Note: ' + esc(h.rejected_reason) + '</div>' : "") +
       '<div class="acts">' + (h.approved ? "" : '<button type="button" class="btn sm" data-mp="approve_host" data-uid="' + esc(h.user_id) + '">Approve</button>') +
       '<button type="button" class="btn ghost sm" data-mp="reject_host" data-uid="' + esc(h.user_id) + '">' + (h.approved ? "Suspend" : "Reject") + '</button>' +
@@ -1056,17 +1172,17 @@ function mpRender(){
   $("#mpListings").innerHTML = listOr(ls, function(l){
     var ph = MP.photos.filter(function(p){ return String(p.listing_id) === String(l.id); });
     var k = l.kosher || {}, b = l.business || {};
-    return '<div class="item"><div class="h"><span>#' + esc(l.id) + " " + esc(l.title) + (l.edited_since_approval ? '<span class="newb">EDITED SINCE APPROVAL</span>' : "") + '</span><span class="pill ' + (l.status === "approved" ? "ok" : l.status === "pending" ? "warn" : l.status === "rejected" ? "error" : "") + '">' + esc(MP_ST[l.status] || l.status) + '</span></div>' +
+    return '<div class="item lst">' + (ph.length ? '<img class="cov" src="' + esc(ph[0].url) + '" alt="" loading="lazy">' : '<div class="cov">No photos</div>') + '<div class="lb"><div class="h"><span>#' + esc(l.id) + " " + esc(l.title) + (l.edited_since_approval ? '<span class="newb">EDITED SINCE APPROVAL</span>' : "") + '</span><span class="pill ' + (l.status === "approved" ? "ok" : l.status === "pending" ? "warn" : l.status === "rejected" ? "error" : "") + '">' + esc(MP_ST[l.status] || l.status) + '</span></div>' +
       '<div class="m">' + esc(l.area || "") + ", " + esc(l.city || "") + " · host " + esc(l.host_name) + " (" + esc(l.host_email) + ")" + (l.host_approved ? "" : " · <b>host not approved yet</b>") + '</div>' +
       '<div class="m">' + l.max_guests + " guests · " + l.bedrooms + " bedrooms · £" + esc(l.base_price) + "/night" + (l.weekend_price ? ", £" + esc(l.weekend_price) + " Fri/Sat" : "") + " · cleaning £" + esc(l.cleaning_fee) + " · " + ph.length + " photos" + (l.lat != null ? " · map " + esc(l.lat) + ", " + esc(l.lng) : " · no map pin") + '</div>' +
-      (ph.length ? '<div style="display:flex;gap:6px;overflow-x:auto;margin-top:8px">' + ph.slice(0, 8).map(function(p){ return '<img src="' + esc(p.url) + '" alt="" style="height:70px;border-radius:8px">'; }).join("") + '</div>' : "") +
+      (ph.length ? '<div class="strip" style="display:flex;gap:6px;overflow-x:auto;margin-top:8px">' + ph.slice(0, 8).map(function(p){ return '<img src="' + esc(p.url) + '" alt="" style="height:70px;border-radius:8px">'; }).join("") + '</div>' : "") +
       '<details style="margin-top:6px"><summary class="m">Text, kosher and business details</summary><div class="m" style="white-space:pre-line">' + esc(l.description || "") + "\n\nRules: " + esc(l.house_rules || "") + "\n\nKosher (host-declared): " + esc(JSON.stringify(k)) + "\nBusiness: " + esc(JSON.stringify(b)) + '</div></details>' +
       (l.reject_reason ? '<div class="m">Last note to host: ' + esc(l.reject_reason) + '</div>' : "") +
       (l.legacy_source ? '<div class="m">Runs on the Zermatt Lodge booking system (page "/").</div>' : '<div class="acts">' +
         (l.status !== "approved" ? '<button type="button" class="btn sm" data-mp="approve_listing" data-id="' + esc(l.id) + '">Approve</button>' : '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a>') +
         '<button type="button" class="btn ghost sm" data-mp="reject_listing" data-id="' + esc(l.id) + '">Reject with note</button>' +
         (l.status === "approved" ? '<button type="button" class="btn ghost sm" data-mp="pause_listing" data-id="' + esc(l.id) + '">Pause</button>' : "") +
-        (l.status !== "archived" ? '<button type="button" class="btn ghost sm" data-mp="delete_listing" data-id="' + esc(l.id) + '" style="color:#b42318">Delete</button>' : "") + '</div>') + '</div>';
+        (l.status !== "archived" ? '<button type="button" class="btn ghost sm" data-mp="delete_listing" data-id="' + esc(l.id) + '" style="color:#b42318">Delete</button>' : "") + '</div>') + '</div></div>';
   }, "Nothing here.");
   var bf = $("#mpBkFilter").value;
   var bks = MP.bookings.filter(function(b){ return !bf || b.status === bf; });
@@ -1114,8 +1230,7 @@ function ovRender(){
   var mName = new Intl.DateTimeFormat("en-GB", {month: "long"}).format(new Date());
   var k = function(lbl, val, sub, tab, hot){ return '<button type="button" class="stat' + (hot ? " hot" : "") + '"' + (tab ? ' data-go="' + tab + '"' : "") + '><small>' + lbl + "</small><b>" + val + "</b><span>" + sub + "</span></button>"; };
   $("#ovKpis").innerHTML = k("Bookings", thisM.length, "Paid in " + mName, "mpbookings") + k("Revenue", money(rev), "Guest payments in " + mName, "mpbookings") +
-    k("Commission", money(com), "Book Homes share in " + mName, "mppayouts") + k("Occupancy", occ + "%", "Next 30 nights, " + live.length + " live home" + (live.length === 1 ? "" : "s"), "mpbookings") +
-    k("Pending approvals", pendL + pendH, pendL + " listing" + (pendL === 1 ? "" : "s") + ", " + pendH + " host" + (pendH === 1 ? "" : "s"), pendL ? "mplistings" : "mphosts", pendL + pendH > 0);
+    k("Commission", money(com), "Book Homes share in " + mName, "mppayouts") + k("Occupancy", occ + "%", "Next 30 nights, " + live.length + " live home" + (live.length === 1 ? "" : "s"), "mpbookings");
   var months = [], byM = {};
   for (var i = -5; i <= 2; i++){ var d = new Date(); d.setDate(1); d.setMonth(d.getMonth() + i); months.push(d.toISOString().slice(0, 7)); }
   paid.forEach(function(b){ var m = String(b.check_in).slice(0, 7); byM[m] = (byM[m] || 0) + (+b.amount_pence || 0); });
@@ -1125,8 +1240,30 @@ function ovRender(){
   var todo = [[pendL, "listing" + (pendL === 1 ? "" : "s") + " waiting for approval", "mplistings"], [pendH, "host" + (pendH === 1 ? "" : "s") + " waiting for approval", "mphosts"],
     [edited, "live listing" + (edited === 1 ? "" : "s") + " edited since approval", "mplistings", "edited"], [due.length, "payout" + (due.length === 1 ? "" : "s") + " to send by bank transfer" + (due.length ? " (" + money(dueAmt) + ")" : ""), "mppayouts"]];
   var open = todo.filter(function(t){ return t[0] > 0; });
-  $("#ovTodo").innerHTML = open.length ? open.map(function(t){ return '<button type="button" class="todo" data-go="' + t[2] + '"' + (t[3] ? ' data-lf="' + t[3] + '"' : "") + "><b>" + t[0] + "</b><span>" + esc(t[1]) + "</span><em>Open</em></button>"; }).join("")
-    : '<div class="todo ok"><b>0</b><span>Nothing waiting. New approvals and payouts show up here.</span></div>';
+  $("#ovTodo").innerHTML = open.length ? open.map(function(t){ return '<button type="button" class="need" data-go="' + t[2] + '"' + (t[3] ? ' data-lf="' + t[3] + '"' : "") + "><b>" + t[0] + "</b><span>" + esc(t[1]) + "</span><em>Review</em></button>"; }).join("")
+    : '<div class="need ok"><b>All caught up</b><span>Nothing waiting. New approvals and payouts show up here.</span></div>';
+  /* waiting for approval: a quick look at each pending listing and host (opens the full row with its actions) */
+  var pl = MP.listings.filter(function(l){ return l.status === "pending"; }), ph0 = MP.hosts.filter(function(h){ return !h.approved && h.role === "host"; });
+  show("#ovPendCard", pl.length + ph0.length > 0);
+  $("#ovPending").innerHTML = pl.slice(0, 6).map(function(l){
+    var cv = MP.photos.filter(function(p){ return String(p.listing_id) === String(l.id); })[0];
+    return '<button type="button" data-peek="mpListings" data-pid="' + esc(l.id) + '">' + (cv ? '<img src="' + esc(cv.url) + '" alt="" loading="lazy">' : '<i class="ph0">No photo</i>') +
+      '<span><b>' + esc(l.title) + '</b><small>' + esc([l.area, l.city].filter(Boolean).join(", ")) + ' · ' + esc(l.host_name || "") + '</small><small class="tag">Listing' + (l.host_approved ? "" : ", host not approved yet") + '</small></span></button>';
+  }).join("") + ph0.slice(0, 6).map(function(h){
+    return '<button type="button" data-peek="mpHostsPending" data-pid="' + esc(h.user_id) + '"><i class="ph0 av" style="width:64px;height:64px;border-radius:50%;font-size:20px;margin:0">' + esc(initials(h.name || h.email)) + '</i>' +
+      '<span><b>' + esc(h.name || h.email) + '</b><small>' + esc(h.email) + '</small><small class="tag">New host</small></span></button>';
+  }).join("");
+  /* manage: one tile per area */
+  var hostsN = MP.hosts.filter(function(h){ return h.role !== "guest"; }).length;
+  var upcoming = MP.bookings.filter(function(b){ return b.status === "paid" && String(b.check_out).slice(0, 10) >= today; }).length;
+  var ic = function(n){ var b = $('nav.tabs [data-tab="' + n + '"] svg, nav.tabs a[href="' + n + '"] svg'); return b ? b.outerHTML : ""; };
+  var tile = function(go, href, icon, title, sub, hot){ return (href ? '<a class="tile" href="' + href + '">' : '<button type="button" class="tile" data-go="' + go + '">') + "<i>" + ic(icon) + "</i><span><b>" + title + "</b><small" + (hot ? ' class="hot"' : "") + ">" + sub + "</small></span>" + (href ? "</a>" : "</button>"); };
+  $("#ovTiles").innerHTML = tile("mplistings", "", "mplistings", "Listings", live.length + " live" + (pendL ? " · " + pendL + " to approve" : ""), pendL) +
+    tile("mphosts", "", "mphosts", "Hosts", hostsN + " host" + (hostsN === 1 ? "" : "s") + (pendH ? " · " + pendH + " waiting" : ""), pendH) +
+    tile("mpbookings", "", "mpbookings", "Bookings", upcoming + " upcoming paid stay" + (upcoming === 1 ? "" : "s")) +
+    tile("mppayouts", "", "mppayouts", "Payouts", due.length ? money(dueAmt) + " to send" : "Nothing to send", due.length) +
+    tile("", "/admin/feedback/", "/admin/feedback/", "Feedback and bugs", "Reports from the site and your notes") +
+    tile("", "/admin/analytics/", "/admin/analytics/", "Analytics", "Visitors, searches and conversions");
   var latest = MP.bookings.slice().sort(function(a, b){ return String(b.created_at || "") < String(a.created_at || "") ? -1 : 1; }).slice(0, 6);
   $("#ovLatest").innerHTML = listOr(latest, function(b){
     return '<div class="item" data-bk="' + esc(b.id) + '"><div class="h"><span>' + esc(b.guest_name) + " · " + esc(b.listing_title) + '</span><span class="pill ' + esc(b.status) + '">' + esc(b.status.replace("_", " ")) + "</span></div>" +
@@ -1138,6 +1275,36 @@ document.addEventListener("click", function(e){
   var g = e.target.closest ? e.target.closest("[data-go]") : null; if (!g) return;
   if (g.getAttribute("data-lf")) $("#mpListFilter").value = g.getAttribute("data-lf");
   var t = $('nav.tabs [data-tab="' + g.getAttribute("data-go") + '"]'); if (t) t.click();
+});
+
+/* pending preview on the overview: open that row's details (with its Approve / Reject buttons) */
+document.addEventListener("click", function(e){
+  var b = e.target.closest ? e.target.closest("[data-peek]") : null; if (!b) return;
+  var key = b.getAttribute("data-pid"), list = b.getAttribute("data-peek");
+  if (list === "mpListings" && $("#mpListFilter").value !== "pending"){ $("#mpListFilter").value = "pending"; mpRender(); }
+  var row = $$("#" + list + " > .item").filter(function(it){ var x = it.querySelector(list === "mpListings" ? "[data-id]" : "[data-uid]"); return x && x.getAttribute(list === "mpListings" ? "data-id" : "data-uid") === key; })[0];
+  if (row) openDrawer(row); else { var t = $('nav.tabs [data-tab="' + (list === "mpListings" ? "mplistings" : "mphosts") + '"]'); if (t) t.click(); }
+});
+
+/* ---------- filter chips: buttons that drive the (hidden) status selects, with counts ---------- */
+function renderChips(){
+  if (!MP) return;
+  var counters = {
+    mpListFilter: function(v){ return MP.listings.filter(function(l){ return !v || (v === "edited" ? l.edited_since_approval && l.status === "approved" : l.status === v); }).length; },
+    mpBkFilter: function(v){ return MP.bookings.filter(function(b){ return !v || b.status === v; }).length; }
+  };
+  $$("[data-chips]").forEach(function(box){
+    var sel = document.getElementById(box.getAttribute("data-chips")), count = counters[sel.id];
+    box.innerHTML = $$("option", sel).map(function(o){
+      var n = count ? count(o.value) : null;
+      return '<button type="button" data-v="' + esc(o.value) + '" aria-pressed="' + (o.value === sel.value ? "true" : "false") + '">' + esc(o.textContent) + (n != null ? "<i>" + n + "</i>" : "") + "</button>";
+    }).join("");
+  });
+}
+document.addEventListener("click", function(e){
+  var c = e.target.closest ? e.target.closest("[data-chips] button") : null; if (!c) return;
+  var sel = document.getElementById(c.parentNode.getAttribute("data-chips"));
+  sel.value = c.getAttribute("data-v"); sel.dispatchEvent(new Event("change"));
 });
 
 /* ---------- search boxes: filter the rows of a list as you type ---------- */
@@ -1193,7 +1360,7 @@ document.addEventListener("keydown", function(e){
   if (e.key === "Enter" && e.target.classList && e.target.classList.contains("click")) openDrawer(e.target);
 });
 var _mpRender = mpRender;
-mpRender = function(){ _mpRender(); ovRender(); $$("[data-search]").forEach(applySearch); markClickable(); };
+mpRender = function(){ _mpRender(); ovRender(); renderChips(); $$("[data-mirror]").forEach(function(m){ var src = document.getElementById(m.getAttribute("data-mirror")); m.textContent = src.textContent; m.classList.toggle("hidden", src.classList.contains("hidden")); }); $$("[data-search]").forEach(applySearch); markClickable(); };
 var _renderDash = renderDash; renderDash = function(){ _renderDash(); markClickable(); };
 var _renderBookings = renderBookings; renderBookings = function(){ _renderBookings(); markClickable(); };
 
