@@ -33,7 +33,7 @@ What we already promise: no guest booking fee, total price shown up front, koshe
 ## Later
 
 1. Multi-language (Hebrew, Spanish, Chinese first for match days and conferences).
-2. Kosher/Shabbat info pages per area (shuls, kosher shops, eruv maps), linked from each listing.
+2. Kosher/Shabbat practical guides (no shul addresses, eruv maps or community locations, see the community safety rule in seo/next-posts.md), linked from each listing.
 3. Price alerts and "any weekend" email digests.
 4. Host tools: smart pricing for Liverpool event dates, cleaner scheduling.
 

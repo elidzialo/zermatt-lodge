@@ -79,7 +79,7 @@ So if you arrive on a **Sunday afternoon**, the big supermarkets may already be 
 
 ### Special diets
 
-If you need **kosher** food, Liverpool's options are in the south of the city and in Greater Manchester. See our [kosher food in Liverpool guide](/guides/kosher-food-liverpool). Supermarkets may stock some certified products, but check the hechsher on each item.
+If you need **kosher** food, supply in Liverpool is limited, so plan ahead. See our [kosher food in Liverpool guide](/guides/kosher-food-liverpool). Supermarkets may stock some certified products, but check the hechsher on each item.
 
 ## Work crews
 

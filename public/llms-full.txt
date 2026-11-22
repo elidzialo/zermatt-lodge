@@ -82,7 +82,7 @@ Distances are approximate, in a straight line from the house. Road routes are lo
 - Search all stays: https://bookhomes.co.uk/
   Search by dates and guests. Filters include kosher homes, work crews, large groups, family, hospital stays, city, coast, countryside, match and event days, long stays, kosher kitchen, Shabbat friendly, near shul, work crew and business-ready. Prices shown are the total for the stay, cleaning included, with no booking fees.
 - Kosher and Shabbat-friendly homes: https://bookhomes.co.uk/kosher-homes
-  Kosher details are declared by each host and shown on the listing. Book Homes does not inspect or certify kashrut. "Shabbat friendly" means the host says the home has a non-electric key or keypad override, no motion-sensor lights (or they can be switched off) and items such as a Shabbat hot plate, urn or timers. The "Near shul" filter shows homes where the host says the nearest shul is a 15-minute walk or less. Each listing shows the host's eruv answer (inside, not inside, or not sure). New homes are added as hosts are approved.
+  Kosher details are declared by each host and shown on the listing. Book Homes does not inspect or certify kashrut. "Shabbat friendly" means the host says the home has a non-electric key or keypad override, no motion-sensor lights (or they can be switched off) and items such as a Shabbat hot plate, urn or timers. The "Near shul" filter shows homes where the host says the nearest shul is a 15-minute walk or less. New homes are added as hosts are approved.
 - For hosts: https://bookhomes.co.uk/become-a-host
   For owners of holiday lets, serviced accommodation and family homes in Liverpool and Merseyside. No sign-up fee and no monthly fee. Book Homes takes a commission on each booking (currently 15%). Guests pay by card through Stripe and payouts are automatic once connected. Airbnb and Booking.com calendars sync by iCal (imported every 15 minutes, with an export link). Every listing is checked before it goes live, usually within one working day, and no street address is shown.
 
@@ -260,7 +260,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Jewish Liverpool: Princes Road Synagogue and Heritage Trail: https://bookhomes.co.uk/guides/jewish-heritage-liverpool-guide
 - Kirkby Town Guide for Visitors and Workers: https://bookhomes.co.uk/guides/kirkby-town-guide
 - Kosher Accommodation in Prestwich and Whitefield: Visitor Guide: https://bookhomes.co.uk/guides/kosher-accommodation-prestwich-whitefield
-- Kosher Accommodation in Salford: Broughton Park, Shuls and Shops: https://bookhomes.co.uk/guides/kosher-accommodation-salford
+- Kosher Accommodation in Salford: A Visitor Guide: https://bookhomes.co.uk/guides/kosher-accommodation-salford
 - A Kosher Business Trip to Liverpool: Food, Shul and Where to Stay: https://bookhomes.co.uk/guides/kosher-business-trip-liverpool
 - Staying for a Simcha in Liverpool or Manchester: Houses for Big Families: https://bookhomes.co.uk/guides/kosher-family-simcha-accommodation-liverpool
 - Kosher Food in Liverpool: Shops, Bakeries and Supplies: https://bookhomes.co.uk/guides/kosher-food-liverpool
@@ -287,7 +287,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Run Aintree Half Marathon, 10k and 5k: December 2026 and January 2027: https://bookhomes.co.uk/guides/run-aintree-winter-races-stay
 - Self-Catering Meal Plan for a Group of 7: Three Days, One Shop: https://bookhomes.co.uk/guides/self-catering-meal-plan-group-of-7
 - Serviced Accommodation in Liverpool with Free Parking: https://bookhomes.co.uk/guides/serviced-accommodation-liverpool-with-parking
-- Serviced Accommodation in Salford: MediaCityUK, Salford Royal and Broughton: https://bookhomes.co.uk/guides/serviced-accommodation-salford
+- Serviced Accommodation in Salford: MediaCityUK and Salford Royal: https://bookhomes.co.uk/guides/serviced-accommodation-salford
 - Shabbat-Friendly Holiday Homes: What to Ask Before You Book: https://bookhomes.co.uk/guides/shabbat-friendly-holiday-home-checklist
 - Spending Shabbat in Liverpool: A Practical Guide for Visitors: https://bookhomes.co.uk/guides/shabbat-in-liverpool-visitor-guide
 - Spending Shabbat in Manchester: A Practical Guide for Visitors: https://bookhomes.co.uk/guides/shabbat-in-manchester-visitor-guide

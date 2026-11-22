@@ -30,8 +30,6 @@ faqs:
     a: "According to the STAR-K guidance, if the owner is Jewish you should not use utensils that need tevilah unless the owner has toveled them. If the owner is not Jewish, ask your rav. When in doubt, bring your own."
 sources:
   - https://kashrut.com/articles/AirBnB
-  - https://eruv.org/eruv-directory/349/manchester-community-eruv
-  - https://www.princesroad.org/
   - https://sunrisesunset.io/gb/england/liverpool/
   - https://www.hebcal.com/holidays/chanukah-2026
 ---
@@ -95,10 +93,10 @@ This is a summary, not a psak. Ask your rav about your own case.
 ## The walk to shul
 
 - **Map the route** from the door, not from the postcode centre
-- **Check it in the dark.** In a northern UK winter, Shabbat starts mid afternoon. In Liverpool, for example, Princes Road Synagogue listed Shabbat on 20 November 2026 as starting at **3.50pm**, and sunset is earliest on **13 December at 3.54pm**
+- **Check it in the dark.** In a northern UK winter, Shabbat starts mid afternoon. In Liverpool, for example, sunset is earliest on **13 December at 3.54pm**
 - **Pavements and lighting.** Some suburban roads have no pavement
-- **Eruv.** Don't assume. Manchester has a large eruv covering Broughton Park, Prestwich and nearby areas, with a status hotline on 0161 883 1333. Many cities have none. Ask the local rabbi
-- **Contact the shul first.** Security is tight at UK synagogues, and most ask visitors to get in touch ahead
+- **Eruv.** Don't assume. Ask the local rabbi or community directly
+- **Contact the local community first** for shul, mikvah and service details
 
 ## Timing your arrival
 

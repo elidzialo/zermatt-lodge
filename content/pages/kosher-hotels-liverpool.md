@@ -3,7 +3,7 @@ title: "Kosher Hotels in Liverpool: What Exists and What to Book Instead"
 meta_description: "Searching for a kosher hotel in Liverpool? We found no kosher-supervised hotel in the city. Here are the practical options for observant visitors and families."
 slug: kosher-hotels-liverpool
 h1: "Kosher Hotels in Liverpool: The Honest Answer and Better Options"
-quick_answer: "We could not find a kosher-supervised hotel in Liverpool in any source we checked, and no kosher restaurant either. Most observant visitors book self-catering: a house or apartment where they can bring kosher food, use their own equipment and stay within walking distance of a shul in south Liverpool (Childwall or Allerton). Kosher supplies are easiest to buy in north Manchester, under the Manchester Beth Din."
+quick_answer: "We could not find a kosher-supervised hotel in Liverpool in any source we checked, and no kosher restaurant either. Most observant visitors book self-catering: a house or apartment where they can bring kosher food, use their own equipment and stay within walking distance of a shul. Kosher supplies are easiest to find through the Manchester Beth Din's official licensee list."
 primary_keyword: "kosher hotels Liverpool"
 secondary_keywords:
   - "kosher apartment rentals Liverpool"
@@ -21,20 +21,18 @@ faqs:
   - q: "Is there a kosher hotel in Liverpool?"
     a: "We could not find one. No source we checked lists a kosher-supervised hotel in Liverpool, and travel directories that promise one show no named property. Plan on self-catering instead."
   - q: "What is the best alternative to a kosher hotel?"
-    a: "A self-catering house or apartment within walking distance of the shul you'll use, so you can bring sealed kosher food and your own equipment. In Liverpool that usually means Childwall or Allerton in the south of the city."
+    a: "A self-catering house or apartment within walking distance of the shul you'll use, so you can bring sealed kosher food and your own equipment."
   - q: "Where can I buy kosher food near Liverpool?"
-    a: "Liverpool has a small kosher deli on Childwall Abbey Road. For a wider choice, the Manchester Beth Din licenses grocers, butchers and bakeries in Prestwich, Whitefield and Salford. Check current supervision before you buy."
+    a: "Liverpool has a small kosher deli. For a wider choice, use the Manchester Beth Din's official licensee list of grocers, butchers and bakeries. Check current supervision before you buy."
   - q: "Can I get kosher meals in a Liverpool hospital?"
     a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. Call 0151 733 2292 if there is a problem."
   - q: "Is Zermatt Lodge kosher?"
-    a: "No. Zermatt Lodge has no kosher kitchen or Shabbat features declared, and it is in north Liverpool, not near the shuls. Use the Book Homes kosher homes page to find homes where hosts have declared these details."
+    a: "No. Zermatt Lodge has no kosher kitchen or Shabbat features declared, and it is not within walking distance of a shul. Use the Book Homes kosher homes page to find homes where hosts have declared these details."
 sources:
   - https://www.totallyjewishtravel.com/kosherhotels-TJ1176-Liverpool_United_Kingdom_UK-Observant_Friendly_Accommodation.html
   - https://jguideeurope.org/en/region/england/other-cities-in-england/liverpool/
   - https://www.mbd.org.uk/licensees
   - https://www.jewishnews.co.uk/topic/liverpool-kashrut-commission/
-  - https://www.allertonshul.org.uk/synagoguetours.html
-  - https://www.princesroad.org/
   - https://mjccliverpool.com/hospital-visitation
 ---
 
@@ -55,20 +53,12 @@ A house or apartment solves most of this. You control the kitchen, you can set u
 
 ## Where to stay
 
-The Jewish community lives mainly in **south Liverpool**, around **Childwall and Allerton**, with the Orthodox shuls in those areas. If you'll walk to shul on Shabbat, search there first and map the walk before you book.
-
-| Shul | Area |
-|---|---|
-| Childwall Hebrew Congregation | Childwall |
-| Allerton Hebrew Congregation | Mather Avenue, Allerton |
-| Princes Road Synagogue | Toxteth (historic building, Shabbat morning services) |
-
-Contact the shul before you travel. Communities ask visitors to get in touch ahead for security, and it's the best way to find out about minyan times and meals. Full details are in our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide).
+If you'll walk to shul on Shabbat, contact the local community directly for shul, mikvah and service details, then search for homes within walking distance and map the walk before you book. It's also the best way to find out about meals. Full details are in our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide).
 
 ## Food: plan it before you travel
 
-- **In Liverpool:** a small kosher deli on Childwall Abbey Road. The Liverpool Kashrut Commission is the local authority. Check current supervision before you buy.
-- **In Greater Manchester:** the Manchester Beth Din licenses grocers, butchers, bakeries and caterers in Prestwich, Whitefield and Salford. Many Liverpool visitors stock up there or order ahead.
+- **In Liverpool:** a small kosher deli. The Liverpool Kashrut Commission is the local authority. Check current supervision before you buy.
+- **In Greater Manchester:** the Manchester Beth Din publishes an official list of licensed grocers, butchers, bakeries and caterers. Many Liverpool visitors stock up there or order ahead.
 - **Bring sealed food** for Friday night and Shabbat lunch if you're arriving from elsewhere.
 
 Our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) has the detail.
@@ -81,7 +71,7 @@ Before you book any rental, ask:
 2. **Lights and heating:** can lights be left on, and is heating on a timer?
 3. **Kitchen:** is there an oven, hob and space for your own urn and hotplate?
 4. **Motion sensors:** are there sensor lights inside or outside?
-5. **Walking route:** how far is the shul on foot, and is the route lit?
+5. **Walking route:** how far is your shul on foot, and is the route lit?
 
 Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) has the full list.
 

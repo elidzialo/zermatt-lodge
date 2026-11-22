@@ -52,10 +52,8 @@ function get(s){ return fetch("/api/bh/listings?action=get&slug=" + encodeURICom
     if (k.kitchen) rows.push(["kosher", "Kosher kitchen", k.kitchen_type || ""]);
     if (k.supervision) rows.push(["check", "Kashrut, in the host's words", k.supervision]);
     [["hotplate","Shabbat hot plate or blech"],["urn","Shabbat urn"],["lamp_timers","Shabbat lamp or timers"],["non_electric_key","Non-electric key or keypad override"],["no_motion_sensors","No motion-sensor lights"]].forEach(function(x){ if (sh[x[0]]) rows.push(["shabbat", x[1], ""]); });
-    if (k.shul_name || k.shul_walk_mins) rows.push(["shul", "Nearest shul: " + (k.shul_name || "ask the host"), k.shul_walk_mins ? "About " + k.shul_walk_mins + " minutes' walk" : ""]);
-    if (k.eruv === "yes") rows.push(["eruv", "Inside an eruv", ""]);
-    if (k.kosher_shops) rows.push(["shop", "Kosher shops and restaurants nearby", k.kosher_shops]);
-    if (k.mikvah) rows.push(["water", "Mikvah", k.mikvah]);
+    // Community safety: no shul names, eruv, mikvah or shop details on listings.
+    if (k.shul_walk_mins) rows.push(["shul", "Shul within walking distance", "About " + k.shul_walk_mins + " minutes' walk, as declared by the host"]);
     if (rows.length){ $("#lpKosherList").innerHTML = rows.map(function(r){ return "<li>" + icon(r[0]) + "<div><b>" + esc(r[1]) + "</b>" + (r[2] ? "<span>" + esc(r[2]) + "</span>" : "") + "</div></li>"; }).join(""); $("#lpKosher").hidden = false; }
     var rules = [["clock", "Check-in after " + (l.check_in_time || "15:00")], ["clock", "Checkout before " + (l.check_out_time || "11:00")], ["users", l.max_guests + " guests maximum"]];
     if (l.house_rules) rules.push(["list", l.house_rules]);

@@ -87,11 +87,11 @@ A good host will answer plainly. If the answers are vague, look elsewhere.
 
 ## Buying kosher food in and around Liverpool
 
-Supply in Liverpool is limited: the city has one kosher deli, in Childwall. Most visitors bring supplies or shop in north Manchester, where the Manchester Beth Din licenses shops in Prestwich, Whitefield and Salford. Our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) has the details. For Pesach, the rules are stricter; see our [Pesach holiday house guide](/guides/pesach-holiday-house-north-west).
+Supply in Liverpool is limited, so most visitors bring supplies or order ahead. For licensed shops, use the official lists published by the Manchester Beth Din (MBD), KLBD or the Liverpool Kashrut Commission. Our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) has the details. For Pesach, the rules are stricter; see our [Pesach holiday house guide](/guides/pesach-holiday-house-north-west).
 
 ## Is Zermatt Lodge suitable?
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It is **not kosher**, and it's not near the Jewish community in the south of the city. It does have a **big kitchen** and a **separate dining room**, which helps if you're bringing your own equipment, plus free parking for 2 cars for unloading.
+Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It is **not kosher**. It does have a **big kitchen** and a **separate dining room**, which helps if you're bringing your own equipment, plus free parking for 2 cars for unloading.
 
 - Sleeps 7 in 4 bedrooms, with 2 bathrooms
 - Washer and dryer

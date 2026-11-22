@@ -3,7 +3,7 @@ title: "Pesach in a Holiday House: Self-Catering in the North West"
 meta_description: "Pesach 2027 runs from the evening of Wed 21 April to Thu 29 April. How to plan a self-catering Pesach in a North West holiday house."
 slug: pesach-holiday-house-north-west
 h1: "Pesach in a Holiday House: How to Plan a Self-Catering Pesach in the North West"
-quick_answer: "Pesach 2027 begins at sundown on Wednesday 21 April and ends at nightfall on Thursday 29 April (diaspora). A self-catering house can work well for a family Pesach if you book early, plan how you'll handle a kitchen that isn't kosher for Pesach, and source food from Manchester's licensed shops. Ask your rav about kashering before you go."
+quick_answer: "Pesach 2027 begins at sundown on Wednesday 21 April and ends at nightfall on Thursday 29 April (diaspora). A self-catering house can work well for a family Pesach if you book early, plan how you'll handle a kitchen that isn't kosher for Pesach, and source food from shops on the Manchester Beth Din's official licensee list. Ask your rav about kashering before you go."
 primary_keyword: "Pesach self catering accommodation UK"
 secondary_keywords:
   - "Pesach holiday house rental"
@@ -23,17 +23,15 @@ faqs:
   - q: "Can you kasher a holiday home kitchen for Pesach?"
     a: "Some parts can be kashered and some can't. STAR-K guidance for rentals suggests that sinks should not be kashered, grills and dishwashers should not be used, and ovens need either kashering or double-wrapped food. For Pesach the standards are stricter, so ask your rav before you travel."
   - q: "Where can I buy kosher for Pesach food in the North West?"
-    a: "Greater Manchester has the region's licensed kosher shops. The Manchester Beth Din lists groceries such as Halpern's in Salford and Kayes Kosher in Prestwich, plus butchers, bakeries and caterers. Liverpool's own kosher supply is limited."
-  - q: "Are there communal seders in Liverpool?"
-    a: "Chabad at Liverpool Universities has run seders in English and Hebrew in past years, with a booking form for parents, guests and tourists. Check its website for 2027 details."
+    a: "Greater Manchester has the region's licensed kosher shops. The Manchester Beth Din's official licensee list includes groceries such as Halpern's and Kayes Kosher, plus butchers, bakeries and caterers. Liverpool's own kosher supply is limited."
+  - q: "Are there communal seders for visitors?"
+    a: "Contact the local community directly nearer the time for seder, shul and service details."
   - q: "Is Zermatt Lodge kosher for Pesach?"
     a: "No. Zermatt Lodge is not described as kosher and has no Pesach set-up. It is a self-catering house in north Liverpool. Use the Book Homes kosher stays page for homes where hosts have declared kosher details."
 sources:
   - https://hebcal.com/h/pesach-2027?um=api&us=js
   - https://kashrut.com/articles/AirBnB
   - https://www.mbd.org.uk/licensees
-  - https://www.ulivchabad.org/pesach
-  - https://eruv.org/eruv-directory/349/manchester-community-eruv
   - https://www.jewishnews.co.uk/keeping-kosher-is-no-hindrance-to-travel-even-at-pesach/
 ---
 
@@ -52,7 +50,7 @@ For homes where hosts have declared kosher kitchens or Pesach-friendly set-ups, 
 | Wed 28 April | Pesach VII | Yom tov |
 | Thu 29 April | Pesach VIII | Yom tov. Pesach ends at nightfall |
 
-These are Hebcal's diaspora dates. The seder nights follow from the schedule; confirm local times with your shul.
+These are Hebcal's diaspora dates. The seder nights follow from the schedule; check exact times on a Jewish calendar.
 
 Note that **yom tov runs straight into Shabbat** on Friday 23 April. That's three days in a row where you can't cook from scratch in the usual way, so plan food, warming and lighting accordingly.
 
@@ -92,23 +90,23 @@ Agree with your rav **before** you book which appliances you'll use, so you can 
 
 Liverpool's own kosher supply is limited. For Pesach shopping in the North West, Greater Manchester is the place. The Manchester Beth Din lists its licensees, including:
 
-- **Groceries:** Halpern's (Salford) and Kayes Kosher (Prestwich)
-- **Butcher:** Glatt Butchers (Prestwich)
-- **Bakeries:** several in Salford and Prestwich
-- **Caterers:** several in Prestwich, useful if you'd rather not cook the seder
+- **Groceries:** Halpern's and Kayes Kosher
+- **Butcher:** Glatt Butchers
+- **Bakeries and caterers:** several, useful if you'd rather not cook the seder
+
+Use the MBD's official list for current details. KLBD and the London Beth Din also publish Pesach product guides.
 
 Check each one's Pesach supervision, order hours and collection days well ahead. Shops are busiest in the days before Erev Pesach.
 
 ## Seders and community
 
-- **Chabad at Liverpool Universities** has run seders in English and Hebrew in past years, with a booking form for parents, young professionals, guests and tourists. Check its website for 2027
-- **Manchester** has the North West's largest community and a large eruv covering Broughton Park, Prestwich and nearby areas (status hotline 0161 883 1333)
+Contact the local community or kashrut authority directly for shul, mikvah, eruv and service details over Pesach.
 
 ## Where to stay
 
 Think about what matters most on yom tov:
 
-- **Walking distance to shul.** In Manchester, look around Prestwich and Broughton Park. In Liverpool, look at Childwall and Allerton
+- **Walking distance to shul.** Ask the local community which shul to use, then check the walk from the door
 - **Day trips in Chol Hamoed.** A base with parking and motorway access opens up the coast, the Lake District and North Wales
 - **Space.** A seder for 7 to 10 needs a proper dining room
 

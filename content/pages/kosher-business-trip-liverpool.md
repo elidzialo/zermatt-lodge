@@ -1,14 +1,13 @@
 ---
 title: "A Kosher Business Trip to Liverpool: Food, Shul and Where to Stay"
-meta_description: "Travelling to Liverpool for work and keeping kosher? Where to buy food, how to handle conference catering, finding a minyan, and choosing a base for the week."
+meta_description: "Travelling to Liverpool for work and keeping kosher? Where to buy food, how to handle conference catering, finding a shul, and choosing a base for the week."
 slug: kosher-business-trip-liverpool
 h1: "Keeping Kosher on a Business Trip to Liverpool"
-quick_answer: "Liverpool has one kosher deli, The Deli on Childwall Abbey Road, and no kosher restaurant that we could find, so most business travellers bring food, order from licensed shops in north Manchester, or stay somewhere with a kitchen. Orthodox shuls are in south Liverpool, including Allerton Hebrew Congregation on Mather Avenue. For conferences, ask the venue early about sealed kosher meals, and for a week-long trip consider a self-catering base."
+quick_answer: "Liverpool has one kosher deli, The Deli, and no kosher restaurant that we could find, so most business travellers bring food, order from shops on the Manchester Beth Din's official licensee list, or stay somewhere with a kitchen. For shul and service details, contact the local community directly. For conferences, ask the venue early about sealed kosher meals, and for a week-long trip consider a self-catering base."
 primary_keyword: "kosher business trip liverpool"
 secondary_keywords:
   - "kosher food for business travellers liverpool"
   - "jewish business traveller liverpool"
-  - "minyan liverpool weekday"
   - "kosher conference catering liverpool"
 last_updated: 2026-11-22
 related:
@@ -19,43 +18,39 @@ related:
   - acc-liverpool-conference-accommodation
 faqs:
   - q: "Can I get kosher food in Liverpool for a work trip?"
-    a: "Yes, with planning. The Deli on Childwall Abbey Road is the city's kosher deli. For more choice, the Manchester Beth Din licenses butchers, bakeries, grocers, takeaways and caterers in Prestwich, Whitefield and Salford. Check current supervision before you buy."
+    a: "Yes, with planning. The Deli is the city's kosher deli. For more choice, use the Manchester Beth Din's official licensee list of butchers, bakeries, grocers, takeaways and caterers. Check current supervision before you buy."
   - q: "Are there kosher restaurants in Liverpool?"
-    a: "We couldn't find one in current published sources. Plan to cook, bring food, or order from Manchester."
+    a: "We couldn't find one in current published sources. Plan to cook, bring food, or order from a licensed caterer."
   - q: "Can a Liverpool conference venue provide kosher meals?"
     a: "Ask the organiser and venue well before the event. Ask for a sealed meal from a supervised caterer, with the hechsher shown. We couldn't find a published kosher catering policy for Liverpool's conference venues, so get confirmation in writing."
-  - q: "Where can I find a minyan in Liverpool?"
-    a: "Liverpool's Orthodox shuls are in the south of the city, including Allerton Hebrew Congregation on Mather Avenue (L18) and Childwall Synagogue. Contact the shul office for weekday times, as small communities may not have a daily minyan every day."
+  - q: "How do I find a shul in Liverpool?"
+    a: "Contact the local community directly for shul and service details before you travel."
   - q: "Is Zermatt Lodge kosher?"
-    a: "No. Zermatt Lodge has no kosher kitchen or Shabbat features declared and is in north Liverpool, far from the shuls. It may suit colleagues who bring their own food and equipment. See the kosher homes page for homes where hosts have declared these details."
+    a: "No. Zermatt Lodge has no kosher kitchen or Shabbat features declared and is not within walking distance of a synagogue. It may suit colleagues who bring their own food and equipment. See the kosher homes page for homes where hosts have declared these details."
 sources:
-  - https://inkl.com/news/after-years-of-decline-city-s-proud-jewish-community-is-starting-to-grow-again
   - https://www.mbd.org.uk/licensees
-  - https://www.allertonshul.org.uk/synagoguetours.html
-  - https://chiefrabbi.org/jewish-community-liverpool/
-  - https://www.princesroad.org/
   - https://www.conference-news.co.uk/news/liverpool-experience-campus-launches-as-acc-liverpool-group-rebrands/
 ---
 
-A work trip to Liverpool is easy to plan, until you need to keep kosher for the week. The city has a small Jewish community, about 2,000 people according to local press, mostly in **Childwall and Allerton** in the south. That means limited kosher supply, no kosher restaurant that we could find, and shuls a long way from most business districts. Here's how to plan food, prayer and a base.
+A work trip to Liverpool is easy to plan, until you need to keep kosher for the week. Kosher supply in the city is limited and we couldn't find a kosher restaurant. Here's how to plan food, shul and a base.
 
-This guide uses published sources only. Check current supervision and service times with the community before you travel. For homes where hosts have declared a kosher kitchen or Shabbat features, see our [kosher homes page](/kosher-homes).
+This guide uses published sources only. Check current supervision before you travel, and contact the local community directly for shul and service details. For homes where hosts have declared a kosher kitchen or Shabbat features, see our [kosher homes page](/kosher-homes).
 
 ## Food: three ways to manage
 
 ### 1. Shop locally
 
-**The Deli**, formerly Roseman's, on **Childwall Abbey Road**, is Liverpool's kosher deli. It's in south Liverpool, so it's a detour if you're working in the city centre or the north. Check opening hours and current supervision before you go. Our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) covers the shop's history and the Liverpool Kashrut Commission.
+**The Deli**, formerly Roseman's, is Liverpool's kosher deli. Check opening hours and current supervision with the Liverpool Kashrut Commission before you go. Our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) has more.
 
 ### 2. Order from Manchester
 
-The **Manchester Beth Din** licenses butchers, bakeries, grocers, restaurants, takeaways and **caterers**, mostly in **Prestwich, Whitefield and Salford**. For a week-long trip, many travellers:
+The **Manchester Beth Din** (MBD) publishes an official licensee list of butchers, bakeries, grocers, restaurants, takeaways and **caterers**. For a week-long trip, many travellers:
 
 - Order a box of meals or Shabbat food in advance
 - Ask whether the shop delivers to Liverpool or needs collection
 - Bring cool bags and ice packs for the drive
 
-The licensee list changes, so check the Beth Din's site before you order.
+The licensee list changes, so check the MBD's site before you order.
 
 ### 3. Self-cater
 
@@ -80,24 +75,18 @@ We couldn't find a published kosher catering policy for Liverpool's conference v
 
 ## Davening and shul
 
-Liverpool's Orthodox shuls are in the **south of the city**:
-
-- **Allerton Hebrew Congregation**, 207 Mather Avenue, L18. The office is open Monday to Friday mornings, and it publishes daily and weekly times on its website
-- **Childwall Synagogue**
-- **Princes Road Synagogue**, the historic city centre synagogue, which publishes weekly Shabbat times
-
-Small communities may not have a minyan every weekday. **Call or email ahead** if you need one, especially for a yahrzeit.
+Contact the local community directly before you travel for shul and service details, especially if you need to say kaddish for a yahrzeit.
 
 ## Shabbat on a work trip
 
-If your trip runs over a weekend, you'll need to be within walking distance of the shul you'll use, which usually means **Childwall, Allerton or Wavertree**. Our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide) covers the details, and our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) lists what to ask a host. In winter, Shabbat starts mid afternoon, so plan to finish work early on Friday.
+If your trip runs over a weekend, you'll need to be within walking distance of the shul you'll use. Our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide) covers the details, and our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) lists what to ask a host. In winter, Shabbat starts mid afternoon, so plan to finish work early on Friday.
 
 ## Choosing a base
 
 | Your trip | Best base |
 |---|---|
 | Weekdays only, working in the city centre | City centre hotel or serviced apartment, bring food |
-| Over a Shabbat | South Liverpool, walking distance of shul |
+| Over a Shabbat | Walking distance of the shul you'll use |
 | Team trip, working in north Liverpool or off the M57 | A whole house with a kitchen and parking |
 
 Our [kosher hotels in Liverpool guide](/guides/kosher-hotels-liverpool) explains what hotels can and can't offer.
@@ -118,7 +107,7 @@ Strictly no parties or events - bookings found to be for parties are cancelled.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 
-For homes closer to the community, browse the [kosher homes page](/kosher-homes) or [see all homes](/) on Book Homes.
+For homes with declared kosher features, browse the [kosher homes page](/kosher-homes) or [see all homes](/) on Book Homes.
 
 ## Related guides
 

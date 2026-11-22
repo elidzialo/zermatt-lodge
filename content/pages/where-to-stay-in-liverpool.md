@@ -37,7 +37,6 @@ sources:
   - https://www.merseyrail.org/tickets-passes/soccerbus.aspx
   - https://footballgroundguide.com/news/how-to-get-to-hill-dickinson-stadium-best-ways-for-fans-to-travel-to-the-home-of-everton.html
   - https://www.thejockeyclub.co.uk/the-grand-national/grand-national-day/
-  - https://inkl.com/news/after-years-of-decline-city-s-proud-jewish-community-is-starting-to-grow-again
 ---
 
 The right area depends on your trip. For a **short break on foot**, stay in the **city centre** or around the **Royal Albert Dock**. For **bars and an edgier feel**, try the **Baltic Triangle**. For **leafy streets and parks**, look at **south Liverpool** near Sefton Park. For **families, groups, race goers and anyone driving**, **north Liverpool** gives you a whole house with parking for the price of a city flat, with direct trains to **Liverpool Central in about 15 minutes** from stations such as Fazakerley.
@@ -70,7 +69,7 @@ Described by one travel guide as "the creative and digital hub of Liverpool", th
 
 ## South Liverpool
 
-**Toxteth, Sefton Park, Aigburth and Lark Lane** offer a quieter, residential feel with big parks. It's popular with families and with visitors who want a neighbourhood rather than a hotel district. It's also where most of the city's **Jewish community** lives, around Childwall and Allerton. See our [kosher homes page](/kosher-homes) if that matters for your stay.
+**Toxteth, Sefton Park, Aigburth and Lark Lane** offer a quieter, residential feel with big parks. It's popular with families and with visitors who want a neighbourhood rather than a hotel district. If you need kosher or Shabbat features, see our [kosher homes page](/kosher-homes).
 
 ## North Liverpool
 

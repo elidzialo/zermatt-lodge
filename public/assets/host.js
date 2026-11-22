@@ -585,9 +585,7 @@ function kosherR(){ var k = W.l.kosher; return '<p class="pnote" style="margin-t
   inp("kosher.supervision", "Kashrut, in your words (optional)", "text", 'maxlength="300" placeholder="e.g. Kitchen kashered by our local rabbi in 2025"') +
   '<h3 class="psec">Shabbat</h3>' + sw("kosher.shabbat.hotplate", "Shabbat hot plate or blech", "shabbat") + sw("kosher.shabbat.urn", "Shabbat urn", "coffee") + sw("kosher.shabbat.lamp_timers", "Shabbat lamp or timers", "bolt") +
   sw("kosher.shabbat.non_electric_key", "Non-electric key or keypad override", "self_checkin") + sw("kosher.shabbat.no_motion_sensors", "No motion-sensor lights (or they switch off)", "check") +
-  '<h3 class="psec">Nearby</h3>' + inp("kosher.shul_name", "Nearest shul (name)", "text", 'maxlength="120"') + inp("kosher.shul_walk_mins", "Minutes' walk to the shul", "number", 'min="1" max="120" inputmode="numeric"') +
-  sel("kosher.eruv", "Inside an eruv?", [["unknown", "Not sure"], ["yes", "Yes"], ["no", "No"]]) +
-  inp("kosher.kosher_shops", "Kosher shops and restaurants nearby (optional)", "text", 'maxlength="400"') + inp("kosher.mikvah", "Mikvah nearby (optional)", "text", 'maxlength="300"'); }
+  '<h3 class="psec">Nearby</h3>' + inp("kosher.shul_walk_mins", "Minutes' walk to the nearest shul", "number", 'min="1" max="120" inputmode="numeric"'); }
 function workR(){ return sw("business.desk", "Desk or dedicated workspace", "workspace") + inp("business.wifi_mbps", "Wifi speed in Mbps", "number", 'min="1" max="10000" inputmode="numeric"', "Run a speed test at home, for example at fast.com.") + sw("business.van_parking", "Parking for vans", "van") + sw("business.separate_beds", "Separate beds (good for colleagues)", "bed") + sw("business.monthly_rates", "Monthly stays welcome", "long_stay"); }
 function titleR(){ return inp("title", "Title", "text", 'maxlength="80" placeholder="e.g. Bright family house with garden near Sefton Park"') + '<small class="cnt" data-cnt="title">' + (W.l.title || "").length + " / 80</small>"; }
 function descR(){ return area("description", "Description", 'maxlength="5000" rows="9"', "At least 60 characters. No street address, no 'was' prices."); }

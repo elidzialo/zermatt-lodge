@@ -1,9 +1,9 @@
 ---
-title: "Serviced Accommodation in Salford: MediaCityUK, Salford Royal and Broughton"
-meta_description: "Working or visiting in Salford? Where to base yourself for MediaCityUK, Salford Royal Hospital or north Salford, how the trams help, and what to check before booking."
+title: "Serviced Accommodation in Salford: MediaCityUK and Salford Royal"
+meta_description: "Working or visiting in Salford? Where to base yourself for MediaCityUK, Salford Royal Hospital or family visits, how the trams help, and what to check before booking."
 slug: serviced-accommodation-salford
 h1: "Serviced Accommodation in Salford: Where to Stay for Work and Visits"
-quick_answer: "Pick your Salford base by where you need to be each day. For MediaCityUK, home to BBC and ITV teams and a University of Salford campus, look around Salford Quays, which has trams to Manchester city centre. For Salford Royal, a major trauma centre with 728 beds, look near the hospital on Eccles Road. For family or Shabbat visits, look in north Salford around Broughton Park. Check parking, invoices and the real bed list before you book."
+quick_answer: "Pick your Salford base by where you need to be each day. For MediaCityUK, home to BBC and ITV teams and a University of Salford campus, look around Salford Quays, which has trams to Manchester city centre. For Salford Royal, a major trauma centre with 728 beds, look near the hospital on Eccles Road. For family visits, choose by where your family is and check walking times yourself. Check parking, invoices and the real bed list before you book."
 primary_keyword: "serviced accommodation salford"
 secondary_keywords:
   - "accommodation near mediacityuk"
@@ -29,11 +29,9 @@ faqs:
 sources:
   - https://www.salford.gov.uk/mediacityuk
   - https://en.wikipedia.org/wiki/Salford_Royal_Hospital
-  - https://www.jewishnews.co.uk/barnet-continues-to-have-largest-jewish-population-census-2021-confirms/
-  - https://eruv.org/eruv-directory/349/manchester-community-eruv
 ---
 
-Salford covers very different places: the waterfront offices and studios of **Salford Quays and MediaCityUK**, the hospital campus at **Salford Royal**, and the residential streets of **north Salford**, home to a large Jewish community. Serviced accommodation, a furnished home or apartment with bedding, utilities and wifi included, works well for all three, especially for stays of a week or more. The trick is to choose your base by where you'll be each day.
+Salford covers very different places: the waterfront offices and studios of **Salford Quays and MediaCityUK**, the hospital campus at **Salford Royal**, and the residential streets where many visitors come to see family. Serviced accommodation, a furnished home or apartment with bedding, utilities and wifi included, works well for all three, especially for stays of a week or more. The trick is to choose your base by where you'll be each day.
 
 Book Homes is starting to add homes in Salford and Prestwich. [See all homes](/) for what's live now.
 
@@ -61,9 +59,7 @@ What helps:
 - A **kitchen**, so you can eat properly between visits
 - **Flexible stay lengths**, since discharge dates change
 
-## North Salford: Broughton Park and Kersal
-
-Jewish News reported that Salford's Jewish population was **10,373 in the 2021 Census**, up from 7,681 in 2011. Visitors come for simchas, yeshiva visits and family Shabbatot. The Manchester community eruv covers Broughton Park, Prestwich and surrounding areas.
+## Family and Shabbat visits
 
 If you're observant, read our [kosher accommodation in Salford guide](/guides/kosher-accommodation-salford) and browse the [kosher homes page](/kosher-homes), which shows what each host has declared.
 

@@ -85,7 +85,7 @@ Our [self-catering meal plan for a group of 7](/guides/self-catering-meal-plan-g
 
 ## Kosher or special diets
 
-Supermarkets stock some kosher-certified products, but check the hechsher on each item and turn off substitutions. For fresh kosher food in the north west, the **Manchester Beth Din** licenses grocers and bakeries in Prestwich and Salford. See our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) and [kosher food in Manchester guide](/guides/kosher-food-manchester-visitors-guide).
+Supermarkets stock some kosher-certified products, but check the hechsher on each item and turn off substitutions. For fresh kosher food in the north west, check the **Manchester Beth Din** (MBD) licensee list on its official website. See our [kosher food in Liverpool guide](/guides/kosher-food-liverpool) and [kosher food in Manchester guide](/guides/kosher-food-manchester-visitors-guide).
 
 ## Staying at Zermatt Lodge?
 

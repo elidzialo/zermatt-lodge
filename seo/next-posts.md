@@ -6,7 +6,8 @@ Picked on 19 November 2026 from seo/keywords.csv (including the new rows added t
 - Most of them cover the four focus groups: kosher and Jewish travel, serviced accommodation, contractor, business, insurance and relocation stays, and holiday homes for 2026-2027 events.
 - Publish each one at /guides/<slug>. The "Keywords" column is how many rows in keywords.csv point at that page. Use those rows for secondary keywords and FAQs.
 - Event dates come from seo/events-calendar.md. Check them again before you publish.
-- Kosher posts: link to /kosher-homes. Do not claim a property is kosher or has an eruv unless the listing says so.
+- Kosher posts: link to /kosher-homes. Do not claim a property is kosher unless the listing says so.
+- Community safety rule for all Jewish-related posts (owner's instruction, 22 Nov 2026): never publish Jewish population numbers or census figures, where the community lives or concentrates, names with addresses, streets, postcodes, maps or walking routes of synagogues, schools, yeshivas, mikvaot, community centres or care homes, service or minyan times, communal event times or places, eruv boundaries or details, or anything about security arrangements or threats. Do not say a listing is used by Jewish guests. Kosher shops: business names only, no addresses. Instead say "contact the local community or kashrut authority directly for shul, mikvah and service details" and point to official lists (MBD, KLBD, London Beth Din, Liverpool Kashrut Commission). Princes Road Synagogue may appear as heritage only: no address or times, "book tours via its official website".
 - Host posts: link to /become-a-host.
 
 | # | Slug | Title | Primary keyword | Audience | Group | Keywords |

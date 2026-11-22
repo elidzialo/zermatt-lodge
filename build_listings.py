@@ -95,6 +95,16 @@ def fetch_listings():
         return data
 
 
+PRIVATE_KOSHER_KEYS = ("shul_name", "eruv", "kosher_shops", "mikvah")  # community safety: never published
+
+
+def public_kosher(l):
+    k = l.get("kosher")
+    if not isinstance(k, dict):
+        return k
+    return {key: v for key, v in k.items() if key not in PRIVATE_KOSHER_KEYS}
+
+
 def features(l):
     k = l.get("kosher") or {}
     sh = k.get("shabbat") or {}
@@ -679,7 +689,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     if faq:
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
-    data = {"listings": [{k: l.get(k) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "beds", "baths", "amenities",
+    data = {"listings": [{k: (public_kosher(l) if k == "kosher" else l.get(k)) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "beds", "baths", "amenities",
                                                  "categories", "business", "kosher", "monthly_discount_pct", "max_nights", "lat", "lng",
                                                  "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source", "pets_allowed")}
                          for l in listings],
@@ -736,8 +746,8 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
 KOSHER_FAQ = [
     ("Are these homes kosher certified?", "No. Kosher details on Book Homes are provided by each host and describe the kitchen and home as the host keeps it. Book Homes does not inspect or certify kashrut. If you need a particular standard, ask the host after booking or check with your rabbi."),
     ("What does Shabbat friendly mean here?", "The host says the home has a non-electric key or keypad override, no motion-sensor lights (or they can be switched off) and things like a Shabbat hot plate, urn or timers. Each listing shows exactly what the host declared."),
-    ("How do I find homes near a shul?", "Use the Near shul filter. It shows homes where the host says the nearest shul is a 15-minute walk or less, with the shul name on the listing."),
-    ("Is there an eruv?", "Each listing shows what the host told us: inside an eruv, not inside, or not sure. Please check the current eruv status locally before Shabbat."),
+    ("How do I find homes near a shul?", "Use the Near shul filter. It shows homes where the host says a shul is a 15-minute walk or less. For shul, mikvah and service details, contact the local community directly."),
+    ("Is there an eruv?", "Please contact the local community or rabbi directly for current eruv details before Shabbat."),
     ("Are there booking fees?", "No. The price you see is the total for the stay, including cleaning. There is no guest service fee."),
 ]
 
@@ -747,7 +757,7 @@ def kosher_page(listings, guides):
              'and shown on the listing, so you can check before you book. Not a certification. No booking fees.</p>')
     return home_page(listings, guides, path="/kosher-homes", preset=list(KOSHER_TAGS),
                      title="Kosher Holiday Homes in Liverpool, Shabbat-Friendly | Book Homes",
-                     desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, near shul, eruv details. Host-declared, no booking fees.",
+                     desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, Shabbat set-ups, near shul. Host-declared, no booking fees.",
                      h1="Kosher and Shabbat-friendly homes", intro=intro, faq=KOSHER_FAQ)
 POLICY = {
     "flexible": "Flexible: full refund up to 24 hours before check-in.",
@@ -766,8 +776,7 @@ def disclosure(l):
 def kosher_section(l):
     k = l.get("kosher") or {}
     sh = k.get("shabbat") or {}
-    declared = k.get("kitchen") or k.get("supervision") or any(sh.values()) or k.get("shul_name") or k.get("shul_walk_mins") \
-        or k.get("eruv") == "yes" or k.get("kosher_shops") or k.get("mikvah")
+    declared = k.get("kitchen") or k.get("supervision") or any(sh.values()) or k.get("shul_walk_mins")
     if not declared:
         return ""
     rows = []
@@ -787,18 +796,12 @@ def kosher_section(l):
     for key, label in [("hotplate", "Shabbat hot plate or blech"), ("urn", "Shabbat urn"), ("lamp_timers", "Shabbat lamp or timers"),
                        ("non_electric_key", "Non-electric key or keypad override"), ("no_motion_sensors", "No motion-sensor lights (or they switch off)")]:
         row(bool(sh.get(key)), "shabbat", label)
-    if k.get("shul_name") or k.get("shul_walk_mins"):
-        row(True, "shul", f"Nearest shul: {k.get('shul_name') or 'ask the host'}",
-            f"About {k['shul_walk_mins']} minutes' walk" if k.get("shul_walk_mins") else "")
-    eruv = {"yes": "Inside an eruv", "no": "Not inside an eruv"}.get(k.get("eruv") or "", "Eruv: host not sure")
-    row(k.get("eruv") == "yes", "eruv", eruv)
-    if k.get("kosher_shops"):
-        row(True, "shop", "Kosher shops and restaurants nearby", k["kosher_shops"])
-    if k.get("mikvah"):
-        row(True, "water", "Mikvah", k["mikvah"])
+    # Community safety: never show shul names, eruv status, mikvah or shop details on a listing.
+    if k.get("shul_walk_mins"):
+        row(True, "shul", "Shul within walking distance", f"About {k['shul_walk_mins']} minutes' walk, as declared by the host")
     return (f'<section id="kosher"><h2>Kosher and Shabbat</h2><div class="kbox"><ul class="kgrid">{"".join(rows)}</ul>'
             '<p class="note">Details provided by the host. Book Homes does not inspect or certify kashrut, and this is not a '
-            'certification. Please check anything important with the host after booking.</p></div></section>')
+            'certification. Please check anything important with the host after booking. For shul, mikvah and service details, contact the local community directly.</p></div></section>')
 
 
 def business_section(l, legacy=False):

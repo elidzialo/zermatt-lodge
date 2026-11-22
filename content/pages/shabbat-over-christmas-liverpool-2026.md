@@ -25,21 +25,20 @@ faqs:
   - q: "Will trains run on Christmas Day so I can travel before Shabbat?"
     a: "The 2026 festive timetable hadn't been published when we checked. In past years Merseyrail hasn't run on Christmas Day. Plan to arrive by Christmas Eve."
   - q: "When does Shabbat start in Liverpool in late December?"
-    a: "Mid afternoon. Sunset in Liverpool is at its earliest in mid December, at 3.54pm on 13 December 2026 and stays early through late December. Get the exact candle lighting time from the shul you'll use."
+    a: "Mid afternoon. Sunset in Liverpool is at its earliest in mid December, at 3.54pm on 13 December 2026 and stays early through late December. Get the exact candle lighting time from a Jewish calendar."
   - q: "Is the Boxing Day bank holiday on a Saturday in 2026?"
     a: "Boxing Day itself is Saturday 26 December, which is Shabbat, so the bank holiday moves to Monday 28 December. Shops and services may be closed or on reduced hours that Monday."
 sources:
   - https://www.hoseasons.co.uk/blog/uk-bank-holidays
   - https://www.gov.uk/trading-hours-for-retailers-the-law
   - https://www.liverpoolcityregion-ca.gov.uk/news/passengers-urged-to-plan-journeys-and-check-for-changes-on-public-transport-over-the-christmas-and-new-year-period
-  - https://www.princesroad.org/
   - https://sunrisesunset.io/gb/england/liverpool/
   - https://www.mbd.org.uk/licensees
 ---
 
 The Christmas school holidays are a popular time for Jewish families to get away, and in 2026 the calendar adds a twist: **Christmas Day is Friday 25 December** and **New Year's Day is Friday 1 January 2027**. Both are erev Shabbat. With **large shops closed on Christmas Day** and **trains not running on Christmas Day** in past years, the usual Friday routine of shopping and travelling in the morning won't work. Plan to **arrive and shop by Thursday 24 December**.
 
-This guide uses published sources only. Confirm times and arrangements with the shul you plan to use. For homes where hosts have declared kosher kitchens or Shabbat features, see our [kosher homes page](/kosher-homes).
+This guide uses published sources only. For shul, mikvah and service details, contact the local community directly. For homes where hosts have declared kosher kitchens or Shabbat features, see our [kosher homes page](/kosher-homes).
 
 ## The two Fridays
 
@@ -54,11 +53,11 @@ This guide uses published sources only. Confirm times and arrangements with the 
 
 ## Shabbat times
 
-Winter Shabbat in Liverpool starts early. **Sunset is at its earliest on 13 December 2026, at 3.54pm**, so candle lighting on both Fridays is mid afternoon. Princes Road Synagogue publishes weekly Shabbat times. Ask the shul you'll attend for the exact time.
+Winter Shabbat in Liverpool starts early. **Sunset is at its earliest on 13 December 2026, at 3.54pm**, so candle lighting on both Fridays is mid afternoon. Check the exact time on a Jewish calendar.
 
 ## Food: plan for both weeks at once
 
-Kosher supply in Liverpool is limited: the city has **one kosher deli, in Childwall**. Most visitors bring food or shop in north Manchester, where the **Manchester Beth Din** licenses butchers, bakeries and grocers in Prestwich, Whitefield and Salford.
+Kosher supply in Liverpool is limited: the city has **one kosher deli**. Most visitors bring food or order from shops on the **Manchester Beth Din's** official licensee list.
 
 Over Christmas, that takes extra planning:
 
@@ -78,7 +77,7 @@ The 2026 festive timetable for Merseyrail and buses hadn't been published when w
 
 ## Where to stay for Shabbat
 
-If you want to walk to an Orthodox shul, stay in **south Liverpool, around Childwall or Allerton**. Our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide) covers the shuls, the eruv question and walking routes. Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) lists what to ask a host.
+If you want to walk to shul, contact the local community first and stay within walking distance. Our [Shabbat in Liverpool guide](/guides/shabbat-in-liverpool-visitor-guide) covers planning a Shabbat stay. Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) lists what to ask a host.
 
 ## Is Zermatt Lodge suitable?
 
@@ -95,7 +94,7 @@ Strictly no parties or events - bookings found to be for parties are cancelled.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 
-For homes closer to the community, browse the [kosher homes page](/kosher-homes) or [see all homes](/) on Book Homes.
+For homes with declared kosher features, browse the [kosher homes page](/kosher-homes) or [see all homes](/) on Book Homes.
 
 ## Related guides
 

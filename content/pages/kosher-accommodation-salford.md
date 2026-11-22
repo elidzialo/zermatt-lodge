@@ -1,14 +1,12 @@
 ---
-title: "Kosher Accommodation in Salford: Broughton Park, Shuls and Shops"
-meta_description: "Staying in Salford for Shabbat, a simcha or a family visit? Where the community lives, the eruv, kosher shops on Leicester Road and what to ask a host."
+title: "Kosher Accommodation in Salford: A Visitor Guide"
+meta_description: "Staying in Salford for Shabbat, a simcha or a family visit? What to ask a host, how to find kosher food, which hechsher is which and who to contact for shul details."
 slug: kosher-accommodation-salford
-h1: "Kosher Accommodation in Salford: A Guide for Jewish Visitors"
-quick_answer: "Salford has the fastest-growing Jewish community in Greater Manchester: the 2021 Census counted 10,373 Jewish residents, up from 7,681 in 2011. Most live around Broughton Park, Higher Broughton and Kersal, inside the Manchester community eruv, which is certified by the Manchester Beth Din. Leicester Road has Manchester Beth Din licensed shops, including Halpern's grocers and Brackmans bakery. Book a home within walking distance of your shul and check the eruv status each week."
+h1: "Kosher Accommodation in Salford: A Guide for Visitors"
+quick_answer: "For a kosher or Shabbat stay in Salford, contact the local community or the Manchester Beth Din (MBD) directly for shul, mikvah and eruv details, then book a home within walking distance of the shul you'll use. Find kosher food on the official MBD licensee list, and ask your host about the kitchen, locks and lights before you book."
 primary_keyword: "kosher accommodation salford"
 secondary_keywords:
-  - "broughton park accommodation"
   - "shabbat accommodation salford"
-  - "jewish salford visitor guide"
   - "kosher holiday home manchester"
 last_updated: 2026-11-22
 related:
@@ -18,93 +16,44 @@ related:
   - kosher-family-simcha-accommodation-liverpool
   - shabbat-friendly-holiday-home-checklist
 faqs:
-  - q: "Where do Jewish families live in Salford?"
-    a: "Mainly in the north of the city around Broughton Park, Higher Broughton and Kersal, close to Bury Old Road and Leicester Road. The 2021 Census counted 10,373 Jewish residents in Salford."
   - q: "Is there an eruv in Salford?"
-    a: "Yes. The Manchester community eruv covers Broughton Park, Prestwich and surrounding areas and is certified by the Manchester Beth Din. Its directory listing gives a status hotline, 0161 883 1333. Check it before every Shabbat."
+    a: "Contact the local community or the Manchester Beth Din directly for current eruv details and status. Ask your host too, and check before every Shabbat."
   - q: "Where can I buy kosher food in Salford?"
-    a: "The Manchester Beth Din licensee list includes Halpern's grocers and Brackmans bakery on Leicester Road, plus Royal Bake, The Granary and Pittanor bakeries in Salford M7. Lists change, so check the Beth Din website before you shop."
+    a: "Use the Manchester Beth Din's official licensee list, which covers grocers, bakeries and more. Lists change, so check it before you shop."
   - q: "Which kashrut authorities work in Salford?"
-    a: "The Manchester Beth Din, Machzikei Hadass Manchester and Badatz Igud Rabbonim (KIR) all certify in Greater Manchester. Many families in Salford keep a specific hechsher, so ask your hosts which one they use."
+    a: "The Manchester Beth Din, Machzikei Hadass Manchester and Badatz Igud Rabbonim (KIR) all certify in Greater Manchester. If you're eating with family, ask which hechsher they keep."
   - q: "Does Book Homes have kosher homes in Salford?"
-    a: "We're starting to add homes in Salford and Prestwich. Our kosher homes page shows what each host has declared, such as a kosher kitchen, Shabbat set-up or walking time to shul. These are host declarations, not certification."
+    a: "We're starting to add homes in Greater Manchester. Our kosher homes page shows what each host has declared, such as a kosher kitchen or Shabbat set-up. These are host declarations, not certification."
 sources:
-  - https://www.jewishnews.co.uk/barnet-continues-to-have-largest-jewish-population-census-2021-confirms/
-  - https://eruv.org/eruv-directory/349/manchester-community-eruv
-  - https://www.thejc.com/news/community/largest-eruv-goes-live-in-manchester-xuwdje7b
   - https://www.mbd.org.uk/licensees
-  - https://lchaim.org.uk/templates/articlecco_cdo/aid/1100747/jewish/Kashrut-Authorities.htm
-  - https://www.lchaim.org.uk/templates/articlecco_cdo/aid/1100753/jewish/Synagogues.htm
   - https://en.wikipedia.org/wiki/Manchester_Jewish_Museum
 ---
 
-Salford is home to one of the largest and fastest-growing Jewish communities in the UK. If you're coming for Shabbat, a simcha, a yeshiva visit or to see family, the most important thing is to **stay within walking distance of the shul you'll use**, inside the eruv. On Book Homes you can filter for homes where hosts have declared kosher kitchens, Shabbat set-ups and walking time to shul on our [kosher homes page](/kosher-homes).
-
-This guide uses published sources only. Shuls, shops and supervision change, so always confirm details with the community before you travel. We checked them on 22 November 2026.
-
-## Salford's Jewish community
-
-Jewish News reported that the **2021 Census counted 10,373 Jewish residents in Salford**, up from 7,681 in 2011, and that this growth was driving the rise in Greater Manchester's overall Jewish population, which reached 28,072.
-
-Most of the community lives in the north of the city, around:
-
-- **Broughton Park** and **Higher Broughton**
-- **Kersal**
-- The streets off **Bury Old Road** and **Leicester Road**
-
-It's a largely Orthodox and Charedi area, with many shuls, shtieblach, schools and yeshivos within a short walk of each other.
-
-## The eruv
-
-The **Manchester community eruv** is described in the eruv directory as "the largest Eruv in the UK, covering Broughton Park, Prestwich and surrounding areas", certified by the Manchester Beth Din. When it went live in January 2014, the Jewish Chronicle reported a 13-mile perimeter spanning Salford, Prestwich and Crumpsall.
-
-- **Check the status every week.** The directory lists an eruv status hotline on **0161 883 1333**.
-- **Ask your host** whether the house is inside the boundary. Don't assume from the postcode.
-
-## Synagogues
-
-Salford has a long list of congregations. An older community directory lists, among others:
-
-| Synagogue | Area |
-|---|---|
-| Adath Yisroel | Upper Park Road, Broughton Park |
-| Machzikei Hadass | Northumberland Street |
-| Manchester Great and New Synagogue | Holden Road |
-| Holy Law South Broughton | Bury Old Road |
-| Congregation of Spanish and Portuguese Jews | Moor Lane, Kersal |
-
-That directory says its listings may be out of date, so **contact the shul directly** before Shabbat, and ask about service times and visitor arrangements.
+If you're coming to Salford for Shabbat, a simcha or to see family, the most important thing is to **stay within walking distance of the shul you'll use**. For shul, mikvah, eruv and service details, **contact the local community or the Manchester Beth Din (MBD) directly**. On Book Homes you can filter for homes where hosts have declared kosher kitchens and Shabbat set-ups on our [kosher homes page](/kosher-homes).
 
 ## Kosher food in Salford
 
-The **Manchester Beth Din** licensee list includes these Salford businesses (M7) at the time of writing:
-
-- **Halpern's**, grocers, Leicester Road
-- **Brackmans**, bakery and coffee shop, Leicester Road
-- **Royal Bake**, **The Granary** and **Pittanor**, bakeries
-
-Prestwich, a short drive north, has most of the licensed restaurants and takeaways. See our [kosher food guide for Manchester visitors](/guides/kosher-food-manchester-visitors-guide).
+The **Manchester Beth Din** publishes an official licensee list of grocers, bakeries, butchers, restaurants and caterers. Use it as your main reference, as businesses open, close and change supervision. See our [kosher food guide for Manchester visitors](/guides/kosher-food-manchester-visitors-guide).
 
 ### Which hechsher?
 
-Three authorities certify locally: the **Manchester Beth Din**, **Machzikei Hadass Manchester** and **Badatz Igud Rabbonim (KIR)**. Many Salford families keep a particular hechsher, so if you're eating with family, ask which one they use before you shop.
+Three authorities certify locally: the **Manchester Beth Din**, **Machzikei Hadass Manchester** and **Badatz Igud Rabbonim (KIR)**. If you're eating with family, ask which one they keep before you shop.
 
 ## What to ask a host before you book
 
 A normal holiday home won't be set up for Shabbat. Ask:
 
 1. **How many minutes' walk is it to my shul?** Get the walk time, not the drive time.
-2. **Is the house inside the eruv?**
-3. **Is there a kosher kitchen,** or can I bring my own pots, or use disposables?
-4. **Are there motion-sensor lights,** a keypad lock or a doorbell camera that switches on automatically?
-5. **Is there an urn or hot plate,** and can I set timers on the lights?
-6. **How many beds and bathrooms** are there, really? Simcha weekends need a lot of both.
+2. **Is there a kosher kitchen,** or can I bring my own pots, or use disposables?
+3. **Are there motion-sensor lights,** a keypad lock or a doorbell camera that switches on automatically?
+4. **Is there an urn or hot plate,** and can I set timers on the lights?
+5. **How many beds and bathrooms** are there, really? Simcha weekends need a lot of both.
 
 Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-home-checklist) goes through each point.
 
-## Things to see nearby
+## Things to see
 
-The **Manchester Jewish Museum** is at 190 Cheetham Hill Road, in the former Spanish and Portuguese Synagogue, completed in 1874. It reopened on 2 July 2021 after a redevelopment of about £6 million. Check its website for opening times.
+The **Manchester Jewish Museum** tells the story of Jewish life in Manchester, in a former synagogue completed in 1874. It reopened in 2021 after a redevelopment. Book and check opening times via its official website.
 
 ## If your trip includes Liverpool
 
@@ -112,7 +61,7 @@ Some families split a trip between Salford and Liverpool, for example for a hosp
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-[Book direct](/zermatt-lodge#book) for weekday Liverpool dates, or look for Salford homes on our [kosher homes page](/kosher-homes). You can also [see all homes](/) on Book Homes.
+[Book direct](/zermatt-lodge#book) for weekday Liverpool dates, or look for homes on our [kosher homes page](/kosher-homes). You can also [see all homes](/) on Book Homes.
 
 Prefer Airbnb? <https://www.airbnb.co.uk/rooms/1801505261909570677>
 

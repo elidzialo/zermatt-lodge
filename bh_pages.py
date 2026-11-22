@@ -63,7 +63,7 @@ def host_landing():
         ("check", "No guest booking fees", "Guests see one total price, cleaning included. That helps your home stand out against platforms that add a service fee."),
         ("bolt", "Paid automatically", "Guests pay by card through Stripe. Payouts go straight to your bank once you connect payouts (or by bank transfer until then)."),
         ("calendar", "Works with Airbnb and Booking.com", "Paste your iCal links. We import your bookings every 15 minutes and give you one link to export ours, so nothing double-books."),
-        ("kosher", "Reach kosher and Shabbat-observant guests", "Tell guests about your kosher kitchen, Shabbat set-up and the nearest shul. A rare filter that guests search for."),
+        ("kosher", "Reach kosher and Shabbat-observant guests", "Tell guests about your kosher kitchen, Shabbat set-up and whether a shul is within walking distance. A rare filter that guests search for."),
         ("work", "Work crews and business stays", "Show desks, wifi speed, van parking and separate beds. Guests can get a company receipt at checkout."),
         ("shield", "You stay in control", "Your prices, your minimum stay, your house rules. Each listing is checked by us before it goes live."),
     ]
