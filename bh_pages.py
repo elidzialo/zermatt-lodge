@@ -217,8 +217,8 @@ def write_all():
     write("stays/booked/index.html", text_page("/stays/booked", "Your booking | Book Homes", "Your Book Homes booking.", BOOKED, robots="noindex, nofollow"))
     write("stays/review/index.html", text_page("/stays/review", "Review your stay | Book Homes", "Review your stay.", REVIEW, robots="noindex, nofollow"))
     write("become-a-host/index.html", host_landing())
-    write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English host terms for Book Homes. Draft.", TERMS_HOSTS))
-    write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English guest terms for Book Homes. Draft.", TERMS_GUESTS))
+    write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English terms for hosts listing a home on Book Homes: listings, bookings, payouts, cancellations and fees. Draft.", TERMS_HOSTS))
+    write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English terms for guests booking a home on Book Homes: price, booking, cancellations, your stay, reviews and what to do if there is a problem. Draft.", TERMS_GUESTS))
     write("trips/index.html", trips_page())
-    write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes uses personal data. Draft.", PRIVACY))
+    write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes collects, uses and protects personal data for guests and hosts, who we share it with, how long we keep it, and your rights. Draft.", PRIVACY))
     return [f"{DOMAIN}/become-a-host", f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]

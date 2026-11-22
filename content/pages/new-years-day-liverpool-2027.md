@@ -1,6 +1,6 @@
 ---
 title: "New Year's Day in Liverpool 2027: What's On and What's Open"
-meta_description: "New Year's Day 2027 in Liverpool is a Friday bank holiday. The Philharmonic's New Year's Day Proms, skating, shows, Liverpool v Coventry the next day and travel tips."
+meta_description: "New Year's Day 2027 in Liverpool is a Friday bank holiday. The Philharmonic's New Year Proms, skating, shows, Liverpool v Coventry next day and travel tips."
 slug: new-years-day-liverpool-2027
 h1: "New Year's Day in Liverpool 2027: How to Spend It"
 quick_answer: "New Year's Day 2027 is Friday 1 January, a bank holiday. Liverpool Philharmonic lists the New Year's Day Proms at 3pm, Icebox at Boxpark is open daily to 10 January, and Skate St George's runs to 3 January. Liverpool host Coventry at Anfield the next day, Saturday 2 January, at 3pm. Festive transport is reduced, so check times before you travel."

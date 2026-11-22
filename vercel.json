@@ -46,6 +46,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/guides/airbnb-liverpool-whole-house-guide",
+      "destination": "/guides/airbnb-liverpool-booking-tips",
+      "permanent": true
     }
   ],
   "rewrites": [

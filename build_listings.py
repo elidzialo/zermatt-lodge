@@ -436,17 +436,29 @@ def load_guides():
 
 
 def guides_for(l, guides, n=6):
-    if (l.get("city") or "").strip().lower() != "liverpool":
-        return []
+    lat, lng = l.get("lat"), l.get("lng")
+    near = isinstance(lat, (int, float)) and isinstance(lng, (int, float)) and abs(lat - 53.41) < 0.15 and abs(lng + 2.98) < 0.2
+    if (l.get("city") or "").strip().lower() != "liverpool" and not near:
+        return []  # the guides are about Liverpool: only homes in or right around the city get them
     cats = set(l.get("categories") or [])
+    if (l.get("max_guests") or 0) >= 5:
+        cats.add("groups")
+    if near and abs(lat - 53.405) < 0.02 and abs(lng + 2.985) < 0.03:
+        cats.add("city")  # city centre home
     f = features(l)
     if f["work_crew"] or f["business_ready"]:
         cats.add("work")
     clusters = {c for k in cats for c in CAT_CLUSTERS.get(k, [])}
-    area_words = [w for w in re.findall(r"[a-z]+", (l.get("area") or "").lower()) if len(w) > 4 and w not in ("liverpool", "north", "south", "central")]
+    area_words = [w for w in re.findall(r"[a-z]+", (l.get("area") or "").lower()) if len(w) > 4 and w not in ("liverpool", "merseyside", "north", "south", "central")]
+
+    if "city" in cats:
+        area_words.append("city centre")
+    if (l.get("property_type") or "").lower() in ("flat", "apartment", "serviced apartment"):
+        area_words += ["apartment", "serviced"]
 
     def score(g):
-        return (3 if g["cluster"] in clusters else 0) + sum(4 for w in area_words if w in g["words"]) - g["priority"] * 0.1
+        local = -10 if "fazakerley" in g["slug"] and "fazakerley" not in area_words else 0  # Zermatt Lodge's own area guides
+        return (3 if g["cluster"] in clusters else 0) + sum(4 for w in area_words if w in g["words"]) - g["priority"] * 0.1 + local
 
     ranked = sorted(guides, key=score, reverse=True)
     return [g for g in ranked if score(g) > 0][:n] or ranked[:2]
@@ -603,6 +615,38 @@ def whats_on_html(guides):
             f'<a href="/guides#venues-events">All guides</a></div><div class="rail">{cards}</div></section>')
 
 
+# Guides linked from "/" and /kosher-homes ("Plan your Liverpool stay"): the best guide from each topic in turn,
+# so the home page spreads its links across hospitals, work, racing, football, events and groups (not A to Z).
+EXPLORE_ORDER = ["groups-families", "hospitals", "work-stays", "football", "racing", "venues-events", "comparisons",
+                 "things-to-do", "transport", "seasonal", "neighbourhoods", "practical", "food-drink"]
+KOSHER_WORDS = ("kosher", "shabbat", "jewish", "chanukah", "pesach", "simcha")
+# Lead guide per topic (the main search-intent page); others in the topic follow by priority
+EXPLORE_LEAD = ["where-to-stay-in-liverpool-for-a-group", "accommodation-near-aintree-university-hospital", "contractor-accommodation-liverpool",
+                "anfield-match-day-accommodation", "grand-national-accommodation", "house-vs-hotel-liverpool-groups",
+                "things-to-do-in-liverpool-with-a-group", "fazakerley-to-liverpool-city-centre-by-train",
+                "kosher-shabbat-friendly-stays-liverpool", "shabbat-in-liverpool-visitor-guide", "kosher-food-liverpool"]
+
+
+def _explore_key(g):
+    return (EXPLORE_LEAD.index(g["slug"]) if g["slug"] in EXPLORE_LEAD else 99, g["priority"], g["slug"])
+
+
+def explore_guides(guides, n=9, kosher=False):
+    if kosher:
+        k = [g for g in guides if any(w in g["slug"] for w in KOSHER_WORDS) and not re.search(r"20\d\d", g["slug"])]
+        k.sort(key=_explore_key)
+        return k[:n] or guides[:n]
+    by = {}
+    for g in sorted(guides, key=_explore_key):
+        if g["priority"] <= 2 and not re.search(r"20\d\d", g["slug"]):  # evergreen only; dated guides sit in "What's on"
+            by.setdefault(g["cluster"], []).append(g)
+    out, i = [], 0
+    while len(out) < n and any(i < len(by.get(c, [])) for c in EXPLORE_ORDER):
+        out += [by[c][i] for c in EXPLORE_ORDER if i < len(by.get(c, []))]
+        i += 1
+    return out[:n] or guides[:n]
+
+
 def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HOME_DESC, h1="Holiday homes in Liverpool", intro="", faq=None):
     shown = [l for l in listings if not preset or any(t in l["tags"] for t in preset)]
     row = category_row(listings)
@@ -645,7 +689,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
     if faq:
         faq_html = "<section class='home-faq'><h2>Questions</h2>" + "".join(
             f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faq) + "</section>"
-    pop = [g for g in guides if g["priority"] <= 2][:9] or guides[:9]
+    pop = explore_guides(guides, kosher=bool(preset))
     explore = ("<section class='explore'><h2>Plan your Liverpool stay</h2><ul>" +
                "".join(f'<li><a href="/guides/{esc(g["slug"])}">{esc(g["title"])}</a></li>' for g in pop) +
                '<li><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a></li><li><a href="/guides"><b>All Liverpool guides</b></a></li></ul></section>')
@@ -702,7 +746,7 @@ def kosher_page(listings, guides):
     intro = ('<p class="lead-p">Whole homes with kosher kitchens, Shabbat set-ups and a shul in walking distance. Every detail is declared by the host '
              'and shown on the listing, so you can check before you book. Not a certification. No booking fees.</p>')
     return home_page(listings, guides, path="/kosher-homes", preset=list(KOSHER_TAGS),
-                     title="Kosher holiday homes and Shabbat-friendly stays in Liverpool | Book Homes",
+                     title="Kosher Holiday Homes in Liverpool, Shabbat-Friendly | Book Homes",
                      desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, near shul, eruv details. Host-declared, no booking fees.",
                      h1="Kosher and Shabbat-friendly homes", intro=intro, faq=KOSHER_FAQ)
 POLICY = {
@@ -1102,10 +1146,34 @@ def listing_scripts():
     return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"), v3=asset_v("checkout.js"))
 
 
+def cut_words(t, n):
+    """Shorten to at most n characters at a word boundary (meta descriptions)."""
+    t = " ".join(t.split())
+    if len(t) <= n:
+        return t
+    t = t[:n].rsplit(" ", 1)[0].rstrip(",;:. ")
+    return t + "..." if len(t) + 3 <= n else t
+
+
+def listing_seo_title(l, limit=70):
+    """<title> for a listing page: the fullest version that fits about 70 characters (Google cuts longer ones)."""
+    name = " ".join((l.get("title") or "Home").split())
+    where = area_name(l) or l.get("city") or ""
+    kind = f'{l["bedrooms"]}-bedroom {(l.get("property_type") or "home").lower()}' if l.get("bedrooms") else (l.get("property_type") or "home").lower()
+    sleeps = f'sleeps {l["max_guests"]}' if l.get("max_guests") else ""
+    place = "" if not where or where.lower() in name.lower() else f", {where}"
+    end = " | Book Homes"
+    for t in (f"{name}{place}: {kind}, {sleeps}", f"{name}: {kind}, {sleeps}", f"{name}{place}", name):
+        t = t.rstrip(", :")
+        if len(t + end) <= limit:
+            return t + end
+    return cut_words(name, limit - len(end)) + end
+
+
 def listing_page(l, reviews, guides, ex):
     path = listing_url(l)
-    title = ex.get("seo_title") or f'{l["title"]}, {area_name(l) or l.get("city")}: {plural(l["bedrooms"], "bedroom")} {(l.get("property_type") or "home").lower()}, sleeps {l["max_guests"]} | Book Homes'
-    desc = ex.get("seo_description") or no_dashes((l.get("description") or l["title"]).replace("\n", " "))[:155]
+    title = ex.get("seo_title") or listing_seo_title(l)
+    desc = ex.get("seo_description") or cut_words(no_dashes((l.get("description") or l["title"]).replace("\n", " ")), 155)
     photos = listing_photos(l, ex)
     og = ex.get("og_image") or (og_img(photos[0]["url"]) if photos else None)
     cfg = json.dumps(stay_config(l, ex))
@@ -1211,6 +1279,30 @@ def saved_page(listings):
 
 
 # --------------------------------------------------------------------------- build
+def write_llms_homes(listings):
+    """llms.txt / llms-full.txt: keep the list of approved homes in step with the build (AI assistants read these)."""
+    rows = []
+    for l in sorted(listings, key=lambda x: x["id"]):
+        bits = [f'{l["bedrooms"]}-bedroom {(l.get("property_type") or "home").lower()}' if l.get("bedrooms") else "",
+                f'{l["baths"]} bathrooms' if l.get("baths") else "", f'sleeps {l["max_guests"]}' if l.get("max_guests") else "",
+                area_name(l) or l.get("city") or ""]
+        rows.append((" ".join((l.get("title") or "Home").split()), DOMAIN + listing_url(l), ", ".join(b for b in bits if b)))
+    sec = {"llms.txt": "## Homes on Book Homes\n\n" + "\n".join(f"- [{t}]({u}): {d}" for t, u, d in rows),
+           "llms-full.txt": "## Homes on Book Homes\n\n" + "\n".join(f"- {t}: {u}\n  {d}. Live prices and availability are on the listing page." for t, u, d in rows)}
+    before = {"llms.txt": "## Marketplace", "llms-full.txt": "## The Book Homes marketplace"}
+    for name, block in sec.items():
+        f = os.path.join(ROOT, name)
+        if not os.path.exists(f):
+            continue
+        txt = open(f, encoding="utf-8").read()
+        block += f"\n\n{len(rows)} approved home{'s' if len(rows) != 1 else ''} at the last site build. New homes are added as hosts are approved.\n\n"
+        if "## Homes on Book Homes" in txt:
+            txt = re.sub(r"## Homes on Book Homes\n.*?(?=\n## )\n", block, txt, count=1, flags=re.S)
+        elif before[name] in txt:
+            txt = txt.replace(before[name], block + before[name], 1)
+        open(f, "w", encoding="utf-8").write(txt)
+
+
 def build():
     data = fetch_listings()
     extras = load_extras()
@@ -1220,6 +1312,7 @@ def build():
         l["tags"] = listing_tags(l)
         l["card_photos"] = card_photos(l, extras)
     page_paths(listings)
+    write_llms_homes(listings)
     reviews = data.get("reviews") or {}
     guides = load_guides()
 
