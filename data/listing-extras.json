@@ -4,7 +4,7 @@
   "legacy_checkout": true,
   "promo": true,
   "offer": true,
-  "subtitle": "Entire house in Fazakerley, north Liverpool",
+  "subtitle": "Large entire home in Liverpool, sleeps 7",
   "photos": [
    {
     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85",
@@ -270,7 +270,7 @@
    ],
    "note": "Reviews from verified stays on Airbnb and Google, shown with the source. They are not counted as Book Homes reviews."
   },
-  "where": "The house is in Fazakerley, a residential area of north Liverpool next to Aintree, about 15 minutes from Liverpool city centre by Merseyrail and close to the M57 and M58. The exact address is shared after booking.",
+  "where": "The house is a large home in a quiet residential area of north Liverpool next to Aintree, about 15 minutes from Liverpool city centre by Merseyrail and close to the M57 and M58. The exact address is shared after booking.",
   "nearby": [
    [
     "hospital",
@@ -284,7 +284,7 @@
    ],
    [
     "train",
-    "Fazakerley station, trains to Liverpool Central",
+    "Local Merseyrail station, trains to Liverpool Central",
     "around 15 min by train"
    ],
    [
@@ -380,7 +380,7 @@
    },
    {
     "q": "Where is Zermatt Lodge?",
-    "a": "Zermatt Lodge is a spacious house in Liverpool, in the Fazakerley area of north Liverpool, Merseyside. Liverpool city centre is about 15 minutes away by Merseyrail train, or about 4.5 miles by road. The house is close to Aintree University Hospital, The Walton Centre, Aintree Racecourse and the M57 and M58. The full address is sent to confirmed guests."
+    "a": "Zermatt Lodge is a large, spacious home in north Liverpool, Merseyside. Liverpool city centre is about 15 minutes away by Merseyrail train, or about 4.5 miles by road. The house is close to Aintree University Hospital, The Walton Centre, Aintree Racecourse and the M57 and M58. The full address is sent to confirmed guests."
    },
    {
     "q": "Is the house in Liverpool city centre?",
@@ -392,7 +392,7 @@
    },
    {
     "q": "How far is it from The Walton Centre?",
-    "a": "The Walton Centre shares the Aintree University Hospital site on Lower Lane, so it is about 0.6 miles away in a straight line. Fazakerley station is the closest station to the hospital site."
+    "a": "The Walton Centre shares the Aintree University Hospital site on Lower Lane, so it is about 0.6 miles away in a straight line. The local Merseyrail station is the closest station to the hospital site."
    },
    {
     "q": "Is there parking?",
@@ -400,7 +400,7 @@
    },
    {
     "q": "How do I get to Liverpool city centre?",
-    "a": "Fazakerley station is on the Merseyrail Northern line, with trains to Liverpool Central taking about 15 minutes. You can tap in and out with a contactless card or phone. By car, the city centre is about 4.5 miles away."
+    "a": "The nearest station is on the Merseyrail Northern line, with trains to Liverpool Central taking about 15 minutes. You can tap in and out with a contactless card or phone. By car, the city centre is about 4.5 miles away."
    },
    {
     "q": "Is it good for the Grand National?",
@@ -408,7 +408,7 @@
    },
    {
     "q": "Is it close to Anfield and Everton's stadium?",
-    "a": "Anfield is about 3 miles away. Everton's Hill Dickinson Stadium at Bramley-Moore Dock is about 4 miles away, take the train from Fazakerley to Sandhills (around 8 minutes) and walk from there."
+    "a": "Anfield is about 3 miles away. Everton's Hill Dickinson Stadium at Bramley-Moore Dock is about 4 miles away, take the train from the local station to Sandhills (around 8 minutes) and walk from there."
    },
    {
     "q": "What time are check-in and check-out?",
@@ -420,7 +420,7 @@
    },
    {
     "q": "Do you take longer stays for work crews?",
-    "a": "Yes. Get in touch on +44 7479 905477 or eli@zelr.co.uk for weekly and monthly stays."
+    "a": "Yes. Email cs@zugati.co.uk for weekly and monthly stays."
    },
    {
     "q": "Is it good for families and groups?",
@@ -464,7 +464,7 @@
    },
    {
     "q": "Who runs Zermatt Lodge?",
-    "a": "Zermatt Lodge is run by ZALO Stays. You can call +44 7479 905477 or email eli@zelr.co.uk."
+    "a": "Zermatt Lodge is run by ZALO Stays. You can email cs@zugati.co.uk or send a message when you book."
    },
    {
     "q": "Are there shops nearby?",
@@ -480,8 +480,8 @@
    }
   ],
   "contact": {
-   "phone": "+44 7479 905477",
-   "email": "eli@zelr.co.uk"
+   "phone": "",
+   "email": "cs@zugati.co.uk"
   },
   "og_image": "https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY",
   "seo_title": "Zermatt Lodge, Liverpool: 4-bed house for groups, sleeps 7 | Book Homes",
