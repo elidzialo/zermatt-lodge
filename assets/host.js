@@ -96,6 +96,7 @@ function api(fn, body){
     return fetch(FN + fn, {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + t, "apikey": SUPABASE_KEY}, body: JSON.stringify(body || {})});
   }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok) throw new Error(j.error || ("Error " + res.status)); return j; }); });
 }
+window.BH_HOST_API = function(fn, body){ return api(fn, body); }; // host-messages.js (Messages tab) uses the same session
 
 function route(session){
   var my = ++routing; SESSION = session || null;

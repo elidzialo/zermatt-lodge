@@ -45,6 +45,7 @@ def dynamic_listing():
 <div class="mbook" id="mbook"><div id="mbookPrice"><b>Add dates</b><small>Add dates for the total</small></div><button type="button" class="btn sbtn" id="mbookBtn">Reserve</button></div>
 {DP}
 <script src="/assets/stay-dynamic.js?v={asset_v('stay-dynamic.js')}" defer></script>
+<script src="/assets/bh-messages.js?v={asset_v('bh-messages.js')}" defer></script>
 """
     page = head("Stay | Book Homes", "A home on Book Homes.", "/stays/listing", robots="noindex, nofollow", extra=listing_assets(), body_class="has-mbook listing") + header("listing") + body + footer() + end()
     return page
@@ -134,7 +135,7 @@ PRIVACY = f"""{DRAFT}<h1>Privacy notice</h1><p>Last updated: 19 November 2026</p
 
 
 TRIPS = f"""<main class="wrap trips" id="content">
-<div class="tr-top"><h1>Trips</h1></div>
+<div class="tr-top" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><h1 style="margin-right:auto">Trips</h1><a class="tr-pill" href="/trips/messages">{icon("chat")}Messages</a></div>
 <div id="trBody" aria-live="polite">
   <div class="tr-sk" aria-hidden="true"><i></i><span><b></b><b></b><b></b></span></div>
   <div class="tr-sk" aria-hidden="true"><i></i><span><b></b><b></b><b></b></span></div>
@@ -200,6 +201,20 @@ TRIPS_CSS = """<style>
 </style>"""
 
 
+MESSAGES = f"""<main class="wrap im" id="content">
+<div class="im-top"><h1>Messages</h1><a href="/trips">Trips</a></div>
+<p class="tr-help" id="imSignin" hidden style="margin:0 0 14px"><a href="/host?next=/trips/messages">Log in</a> to see every conversation for your email. Without logging in you see the ones opened on this device.</p>
+<div class="im-grid" id="imGrid"><div class="im-list" id="imList" aria-label="Conversations"><div class="im-empty">Loading...</div></div><div class="im-pane" id="imPane"><div class="im-empty">Choose a conversation.</div></div></div>
+<div id="imRoot"></div>
+</main>
+"""
+
+
+def messages_page():
+    extra = TRIPS_CSS + f'\n<script src="/assets/bh-messages.js?v={asset_v("bh-messages.js")}" defer></script>'
+    return head("Messages | Book Homes", "Your Book Homes messages.", "/trips/messages", robots="noindex, nofollow", extra=extra) + header() + MESSAGES + footer() + end()
+
+
 def trips_page():
     extra = TRIPS_CSS + f'\n<script src="/assets/trips.js?v={asset_v("trips.js")}" defer></script>'
     return head("Trips | Book Homes", "Your Book Homes trips.", "/trips", robots="noindex, nofollow", extra=extra) + header() + TRIPS + footer() + end()
@@ -220,5 +235,6 @@ def write_all():
     write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English terms for hosts listing a home on Book Homes: listings, bookings, payouts, cancellations and fees. Draft.", TERMS_HOSTS))
     write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English terms for guests booking a home on Book Homes: price, booking, cancellations, your stay, reviews and what to do if there is a problem. Draft.", TERMS_GUESTS))
     write("trips/index.html", trips_page())
+    write("trips/messages/index.html", messages_page())
     write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes collects, uses and protects personal data for guests and hosts, who we share it with, how long we keep it, and your rights. Draft.", PRIVACY))
     return [f"{DOMAIN}/become-a-host", f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]

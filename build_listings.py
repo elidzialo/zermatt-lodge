@@ -1139,6 +1139,7 @@ LISTING_ASSETS = '<link rel="stylesheet" href="/assets/bh-booking.css?v={v}">\n'
 LISTING_SCRIPTS = """<script src="/assets/stay.js?v={v1}" defer></script>
 <script src="/assets/stay-page.js?v={v2}" defer></script>
 <script src="/assets/checkout.js?v={v3}" defer></script>
+<script src="/assets/bh-messages.js?v={v4}" defer></script>
 """
 
 
@@ -1147,7 +1148,7 @@ def listing_assets():
 
 
 def listing_scripts():
-    return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"), v3=asset_v("checkout.js"))
+    return LISTING_SCRIPTS.format(v1=asset_v("stay.js"), v2=asset_v("stay-page.js"), v3=asset_v("checkout.js"), v4=asset_v("bh-messages.js"))
 
 
 def cut_words(t, n):

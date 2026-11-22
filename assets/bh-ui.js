@@ -97,7 +97,7 @@ function feedbackHref(){ return "/admin/feedback/?page=" + encodeURIComponent(lo
 function items(acct){
   var h = "";
   if (!acct){
-    var nx = /^\/(trips|saved)\/?$/.test(location.pathname) ? "/host?next=" + location.pathname.replace(/\/$/, "") : "/host";
+    var nx = /^\/(trips|saved|trips\/messages)\/?$/.test(location.pathname) ? "/host?next=" + location.pathname.replace(/\/$/, "") : "/host";
     h += '<a href="' + nx + '" class="um-strong">Log in</a><a href="/become-a-host">List your property</a><hr>' +
       '<a href="/">All homes</a><a href="/saved">Saved homes</a><a href="/guides">Liverpool guides</a>';
     return h;
@@ -107,7 +107,7 @@ function items(acct){
     h += '<a href="#menu" data-go="menu">Account</a><a href="#earnings" data-go="earnings">Earnings</a><hr>' +
       '<a href="/" class="um-strong">Switch to travelling</a>';
   } else {
-    h += '<a href="/trips">Trips</a><a href="/saved">Saved homes</a><hr>' +
+    h += '<a href="/trips">Trips</a><a href="/trips/messages">Messages</a><a href="/saved">Saved homes</a><hr>' +
       '<a href="/host" class="um-strong">Switch to hosting</a>';
   }
   if (acct.admin) h += '<a href="/admin">Admin portal</a>';
