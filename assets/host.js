@@ -459,83 +459,10 @@ function loadEarnings(pre){
   }).catch(function(){});
 }
 
-/* ---------- host calendar: block, open, prices ---------- */
-var CAL = {month: ukToday().slice(0, 7), a: null, b: null, data: null};
-function shiftMonth(m, n){ var y = +m.slice(0, 4), mo = +m.slice(5, 7) - 1 + n; y += Math.floor(mo / 12); mo = ((mo % 12) + 12) % 12; return y + "-" + (mo < 9 ? "0" : "") + (mo + 1); }
-function loadCal(){
-  var id = +$("#calListing").value; if (!id){ $("#cal2").innerHTML = '<p class="m">Add a listing first.</p>'; return; }
-  var from = CAL.month + "-01", to = shiftMonth(CAL.month, 1) + "-01";
-  $("#calTitle").textContent = new Intl.DateTimeFormat("en-GB", {month: "long", year: "numeric", timeZone: "UTC"}).format(new Date(from + "T00:00:00Z"));
-  // host-perf: show the cached month at once (or an empty grid), then refresh it; the next month is fetched ahead
-  var key = "cal:" + id + ":" + CAL.month, hit = HP.get(key), want = CAL.month;
-  CAL.data = hit ? hit.v : null; drawCal(); $("#cal2").classList.toggle("loading", !hit);
-  calFetch(id, CAL.month).then(function(j){ if (CAL.month !== want || +$("#calListing").value !== id) return; CAL.data = j; drawCal(); $("#cal2").classList.remove("loading"); calFetch(id, shiftMonth(want, 1), true); })
-    .catch(function(e){ if (CAL.month === want) $("#cal2").innerHTML = '<div class="msg err">' + esc(e.message) + "</div>"; });
-}
-var calInflight = {};
-function calFetch(id, month, ahead){
-  var key = "cal:" + id + ":" + month, hit = HP.get(key);
-  if (ahead && hit && Date.now() - hit.at < 60000) return Promise.resolve(hit.v);
-  if (calInflight[key]) return calInflight[key];
-  var from = month + "-01", to = shiftMonth(month, 1) + "-01";
-  return (calInflight[key] = api("bookhomes-host", {action: "calendar", listing_id: id, from: from < ukToday() ? ukToday() : from, to: to})
-    .then(function(j){ delete calInflight[key]; return HP.put(key, j); }, function(e){ delete calInflight[key]; throw e; }));
-}
-// host-speed: once the dashboard is up, fetch this month for the calendar's listing while the browser is idle,
-// so the first Calendar tab opens from memory instead of waiting on the network (calFetch shares in-flight calls)
-function calWarm(){
-  var go = function(){ var id = +$("#calListing").value; if (id && !HP.get("cal:" + id + ":" + CAL.month)) calFetch(id, CAL.month).catch(function(){}); };
-  if (window.requestIdleCallback) requestIdleCallback(go, {timeout: 2500}); else setTimeout(go, 1200);
-}
-// after a change: reload this month, and refetch the next one too (a range can run into it; its cached copy is stale)
-function calSaved(){ var id = +$("#calListing").value, nx = shiftMonth(CAL.month, 1); loadCal(); if (id) calFetch(id, nx).catch(function(){}); }
-// optimistic calendar edit: change the nights on screen now, the server answer replaces it
-function calLocal(lo, hi, a, v){
-  var j = CAL.data; if (!j || !j.days) return;
-  j.days.forEach(function(d){ if (d.date < lo || d.date > hi) return;
-    if (a === "block" && d.status !== "reserved") d.status = "blocked";
-    else if (a === "open" && d.status === "blocked") d.status = "available";
-    else if (a === "price") d.price = v; });
-  drawCal();
-}
-function feedName(j, s){ var f = (j.feeds || []).filter(function(x){ return x.start_date <= s && s < x.end_date; })[0]; return f ? f.name : "Booked"; }
-function drawCal(){
-  var j = CAL.data || {days: [], bookings: [], blocks: []}, first = CAL.month + "-01", today = ukToday(), html = "";
-  ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(function(d){ html += '<div class="dw">' + d + "</div>"; });
-  var dow = (new Date(first + "T00:00:00Z").getUTCDay() + 6) % 7; for (var i = 0; i < dow; i++) html += '<div class="d x"></div>';
-  var byDate = {}; (j.days || []).forEach(function(d){ byDate[d.date] = d; });
-  for (var s = first; s.slice(0, 7) === CAL.month; s = addDays(s, 1)){
-    var d = byDate[s], bk = (j.bookings || []).filter(function(b){ return b.check_in <= s && s < b.check_out; })[0];
-    var cls = s < today ? "past" : bk ? "booked" : d && d.status === "blocked" ? "blocked" : d && d.status === "reserved" ? "reserved" : "";
-    var lo = CAL.a && (CAL.b || CAL.a), sel = CAL.a && s >= (CAL.a < lo ? CAL.a : lo) && s <= (CAL.a < lo ? lo : CAL.a);
-    html += '<button type="button" class="d ' + cls + (sel ? " sel" : "") + '" data-day="' + s + '"' + (s < today ? " disabled" : "") + '><span class="n">' + (+s.slice(8)) + "</span>" +
-      (bk ? esc(String(bk.guest_name || "Booked").split(" ")[0]) : d && d.status === "reserved" ? esc(feedName(j, s)) : d && d.status === "blocked" ? "Blocked" : d && d.price != null ? "£" + Math.round(d.price) : "") + "</button>";
-  }
-  $("#cal2").innerHTML = html;
-  var lo2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.a : CAL.b) : CAL.a, hi2 = CAL.a && CAL.b ? (CAL.a < CAL.b ? CAL.b : CAL.a) : CAL.a;
-  $("#calSel").textContent = CAL.a ? (lo2 === hi2 ? "Night of " + dfmt(lo2) : dfmt(lo2) + " to " + dfmt(hi2) + " (last night)") : "No nights selected";
-  $$("[data-ca=price],[data-ca=reset],#calPrice").forEach(function(x){ x.closest("label") ? x.closest("label").classList.toggle("hidden", !!j.prices_managed_elsewhere) : x.classList.toggle("hidden", !!j.prices_managed_elsewhere); });
-  if (j.prices_managed_elsewhere && !$("#calOut").textContent) $("#calOut").textContent = "Zermatt Lodge prices come from your channel manager. Blocks you add here also close the dates there (through the iCal link).";
-  $("#calBlocks").innerHTML = (j.blocks || []).length ? "<h3 style='margin:14px 0 8px'>Your blocks</h3>" + j.blocks.map(function(b){
-    return '<div class="item"><div class="h"><span>' + dfmt(b.start_date) + " to " + dfmt(addDays(b.end_date, -1)) + '</span><button type="button" class="btn ghost sm" data-unblock="' + esc(b.id) + '">Unblock</button></div><div class="m">' + esc(b.reason) + "</div></div>";
-  }).join("") : "";
-}
-/* side panel shows only with a selection; sync panel follows the chosen listing */
-var _drawCal = drawCal;
-drawCal = function(){
-  _drawCal();
-  var on = !!CAL.a;
-  $("#csPanel").classList.toggle("hidden", !on); $("#csEmpty").classList.toggle("hidden", on);
-  $("#calActs").classList.toggle("open", on);
-  if (on){
-    var j = CAL.data || {days: []}, lo = CAL.b && CAL.b < CAL.a ? CAL.b : CAL.a, hi = CAL.b && CAL.b > CAL.a ? CAL.b : CAL.a, blocked = 0, n = 0, price = null, same = true;
-    (j.days || []).forEach(function(d){ if (d.date >= lo && d.date <= hi){ n++; if (d.status === "blocked") blocked++; if (price === null) price = d.price; else if (d.price !== price) same = false; } });
-    $$("#csPanel [data-ca=open], #csPanel [data-ca=block]").forEach(function(b){ b.setAttribute("aria-pressed", (b.getAttribute("data-ca") === "block") === (n > 0 && blocked === n) ? "true" : "false"); });
-    var cp = $("#calPrice"); if (document.activeElement !== cp) cp.value = same && price != null ? Math.round(price) : "";
-  }
-  drawSync();
-};
-$("#csClear").addEventListener("click", function(){ CAL.a = CAL.b = null; $("#calOut").textContent = ""; drawCal(); });
+/* ---------- host calendar: the month grid, selection panel and listing settings live in assets/host-calendar.js (BHCal) ---------- */
+function loadCal(){ if (window.BHCal) BHCal.open(); }
+function calWarm(){ if (window.BHCal) BHCal.warm(); }
+function calSaved(){ if (window.BHCal) BHCal.reload(); }
 function drawSync(){
   var id = +$("#calListing").value, l = (ME.listings || []).filter(function(x){ return +x.id === id; })[0];
   var src = (ME.sources || []).filter(function(x){ return +x.listing_id === id && x.enabled; });
@@ -565,31 +492,7 @@ document.addEventListener("click", function(e){
     }).catch(function(err){ ab.disabled = false; $("#syncOut").textContent = err.message; });
   }
 });
-$("#cal2").addEventListener("click", function(e){
-  var b = e.target.closest("[data-day]"); if (!b || b.disabled) return;
-  var s = b.getAttribute("data-day");
-  if (!CAL.a || CAL.b){ CAL.a = s; CAL.b = null; } else CAL.b = s;
-  drawCal();
-});
-$("#calBlocks").addEventListener("click", function(e){
-  var b = e.target.closest("[data-unblock]"); if (!b) return;
-  b.disabled = true; $("#calOut").textContent = "Saving...";
-  api("bookhomes-host", {action: "unblock", id: b.getAttribute("data-unblock")}).then(function(){ $("#calOut").textContent = "Unblocked."; calSaved(); }, function(err){ b.disabled = false; $("#calOut").textContent = err.message; });
-});
-$("#calPrev").addEventListener("click", function(){ CAL.month = shiftMonth(CAL.month, -1); loadCal(); });
-$("#calNext").addEventListener("click", function(){ CAL.month = shiftMonth(CAL.month, 1); loadCal(); });
-$("#calListing").addEventListener("change", function(){ CAL.a = CAL.b = null; loadCal(); });
-$$("[data-ca]").forEach(function(btn){ btn.addEventListener("click", function(){
-  if (!CAL.a){ $("#calOut").textContent = "Tap the first and last night first."; return; }
-  var lo = CAL.b && CAL.b < CAL.a ? CAL.b : CAL.a, hi = CAL.b && CAL.b > CAL.a ? CAL.b : CAL.a, id = +$("#calListing").value, a = btn.getAttribute("data-ca"), p;
-  if (a === "block") p = api("bookhomes-host", {action: "block", listing_id: id, start: lo, end: hi, reason: "Host block"});
-  else if (a === "open") p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, open: true});
-  else if (a === "price"){ var v = +$("#calPrice").value; if (!(v >= 10)){ $("#calOut").textContent = "Enter a price of at least £10."; return; } p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: v}); }
-  else p = api("bookhomes-host", {action: "set_nights", listing_id: id, start: lo, end: hi, price: null});
-  $("#calOut").textContent = "Saving..."; calLocal(lo, hi, a, a === "price" ? +$("#calPrice").value : null);
-  p.then(function(){ $("#calOut").textContent = "Saved."; CAL.a = CAL.b = null; calSaved(); }).catch(function(e){ $("#calOut").textContent = e.message; loadCal(); });
-}); });
-
+window.BHHost.drawSync = drawSync;
 /* ---------- Listings: "Add your home" wizard (one question per screen) and the section editor ---------- */
 var W = {id: null, l: null, i: 0, photos: [], mode: "wizard", sec: null, dirty: false, imported: null, priceHint: null, check: null, savedAt: 0};
 var TYPES = [["house", "House", "home"], ["flat", "Flat", "city"], ["cottage", "Cottage", "countryside"], ["townhouse", "Townhouse", "home"], ["bungalow", "Bungalow", "home"], ["studio", "Studio", "door"], ["room", "Private room", "bed"]];

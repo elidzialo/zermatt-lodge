@@ -228,6 +228,10 @@ Deno.serve(handle(async (req) => {
     case "save_listing": {
       const raw = (b.listing ?? {}) as Record<string, unknown>;
       const f = { ...listingFields(raw), ...(await feeFields(raw)) };
+      // host calendar settings: same-day cut-off hour (UK time; null = same-day bookings any time)
+      if (Object.prototype.hasOwnProperty.call(raw, "same_day_cutoff_hour")) {
+        f.same_day_cutoff_hour = raw.same_day_cutoff_hour === null || raw.same_day_cutoff_hour === "" ? null : int(raw.same_day_cutoff_hour, 6, 23);
+      }
       if (b.id) {
         const id = await ownListing(user, b.id);
         let live = false;
@@ -408,11 +412,15 @@ Deno.serve(handle(async (req) => {
       const [blocks, bookings, overrides, feeds] = await asUser(user, async (tx) => [
         await tx`select id, start_date::text, end_date::text, reason from bookhomes.listing_blocks where listing_id = ${id} and active and end_date >= ${from}::date order by start_date`,
         await tx`select id, check_in::text, check_out::text, guest_name, guests, status from bookhomes.bookings where listing_id = ${id} and status in ('paid', 'held') and (status = 'paid' or hold_expires_at > now()) and check_out >= ${from}::date order by check_in`,
-        await tx`select date::text, price::float8, closed, min_stay from bookhomes.availability where listing_id = ${id} and date >= ${from}::date and date < ${to}::date`,
+        await tx`select date::text, price::float8, closed, min_stay, note from bookhomes.availability where listing_id = ${id} and date >= ${from}::date and date < ${to}::date`,
         await tx`select e.start_date::text, e.end_date::text, s.name from bookhomes.listing_ical_events e join bookhomes.listing_ical_sources s on s.id = e.source_id
                   where e.listing_id = ${id} and s.enabled and e.end_date >= ${from}::date and e.start_date < ${to}::date`,
       ]);
-      return jsonRes({ days, blocks, bookings, overrides, feeds });
+      // listing-wide pricing and availability rules for the calendar's side panel
+      const settings = (await sql`select base_price::float8, weekend_price::float8, cleaning_fee::float8, weekly_discount_pct, monthly_discount_pct,
+                                         min_nights, max_nights, max_guests, guests_included, extra_guest_fee::float8, advance_notice_days, prep_days,
+                                         booking_window_days, same_day_cutoff_hour from bookhomes.listings where id = ${id}`)[0] ?? null;
+      return jsonRes({ days, blocks, bookings, overrides, feeds, settings });
     }
 
     case "block": {
@@ -465,13 +473,15 @@ Deno.serve(handle(async (req) => {
       if (has("price") && b.price !== null && b.price !== "" && price === null) throw new HttpError(400, "Enter a price of at least £10.");
       const minStay = b.min_stay === null || b.min_stay === "" || b.min_stay === undefined ? null : int(b.min_stay, 1, 90);
       const closed = open ? false : has("closed") ? bool(b.closed) : null;
+      const note = str(b.note, 500); // private note, only the host sees it
       await asUser(user, async (tx) => {
         await tx`
-          insert into bookhomes.availability as a (listing_id, date, price, min_stay, closed, updated_at)
-          select ${id}, g::date, ${price}, ${minStay}, ${closed ?? false}, now() from generate_series(${s}::date, ${e}::date, interval '1 day') g
+          insert into bookhomes.availability as a (listing_id, date, price, min_stay, closed, note, updated_at)
+          select ${id}, g::date, ${price}, ${minStay}, ${closed ?? false}, ${note}, now() from generate_series(${s}::date, ${e}::date, interval '1 day') g
           on conflict (listing_id, date) do update set
             price = case when ${has("price")} then excluded.price else a.price end,
             min_stay = case when ${has("min_stay")} then excluded.min_stay else a.min_stay end,
+            note = case when ${has("note")} then excluded.note else a.note end,
             closed = case when ${closed !== null} then excluded.closed else a.closed end,
             updated_at = now()
           returning date`;
