@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T09:24:24.054Z",
+ "updated": "2026-11-22T17:16:46.108Z",
  "listings": [
   {
    "id": 1,
@@ -57,7 +57,7 @@
    "legacy_source": "zermatt",
    "page_url": "/zermatt-lodge",
    "approved_at": "2026-11-18T23:52:07.478Z",
-   "updated_at": "2026-11-19T12:28:07.344Z",
+   "updated_at": "2026-11-22T15:42:23.592Z",
    "host_name": "ZALO Stays",
    "trader_status": "trader",
    "guests_included": null,
@@ -553,6 +553,1378 @@
     "average": null
    },
    "from_price": 299,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 15,
+   "slug": "my-home-505b4",
+   "title": "Studio Appartement In Salford",
+   "area": "Manchester",
+   "city": "Manchester",
+   "property_type": "flat",
+   "description": "A central, stylish place to stay. One bedroom fully furnished flat with en-suite bathroom, kosher kitchen, washing machine and dryer, air conditioning and onsite parking.",
+   "house_rules": null,
+   "max_guests": 4,
+   "bedrooms": 2,
+   "beds": 2,
+   "baths": 1,
+   "amenities": [
+    "wifi",
+    "kitchen",
+    "heating"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": true,
+    "shabbat": {
+     "urn": true,
+     "hotplate": true,
+     "lamp_timers": true,
+     "non_electric_key": true,
+     "no_motion_sensors": true
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 109,
+   "weekend_price": null,
+   "cleaning_fee": 65,
+   "weekly_discount_pct": 15,
+   "monthly_discount_pct": 30,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.27,
+   "airbnb_url": null,
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T14:41:38.781Z",
+   "updated_at": "2026-11-22T14:41:38.781Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 20,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/my-home-505b4",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyq6cx9us0-w.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyq6cx9us0-w.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6ktj6tr-w.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6ktj6tr-w.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6zp0lyh-w.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6zp0lyh-w.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6rt3uaq-w.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyp6rt3uaq-w.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyq6397l8n-w.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/15/mwrxyq6397l8n-w.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 109,
+   "features": {
+    "kosher_kitchen": true,
+    "shabbat_friendly": true,
+    "near_shul": false,
+    "kosher": true,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 16,
+   "slug": "stylish-spacious-stay-sleeps-6-prestwich-214c1",
+   "title": "Stylish & Spacious Stay / Sleeps 6",
+   "area": "Prestwich",
+   "city": "Prestwich",
+   "property_type": "flat",
+   "description": "Step into a stylish, spacious home designed for comfort and relaxation. Enjoy a stunning modern kitchen with a large island, bright living spaces and comfortable bedrooms with fresh linen. Perfect for families, groups, business trips or weekend getaways. Relax with Smart TV and Wi-Fi, cook and dine together, or simply unwind after exploring Manchester. A welcoming home with plenty of space, modern comforts and everything you need for a memorable stay.",
+   "house_rules": null,
+   "max_guests": 6,
+   "bedrooms": 2,
+   "beds": 4,
+   "baths": 1,
+   "amenities": [
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "cot",
+    "highchair",
+    "wifi",
+    "workspace",
+    "kitchen",
+    "coffee",
+    "parking"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 399,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.26,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1773230890949727651",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:20:35.256Z",
+   "updated_at": "2026-11-22T15:20:35.256Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/stylish-spacious-stay-sleeps-6-prestwich-214c1",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-12.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-13.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-13.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-14.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-14.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-15.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-15.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-16.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-16.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-17.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/16/airbnb-mwrzfnp8-17.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 399,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 17,
+   "slug": "prestwich-4-bedroom-home-amazing-for-groups-prestwich-9b22c",
+   "title": "Prestwich: 4-Bedroom Home | Amazing for Groups",
+   "area": "Prestwich",
+   "city": "Prestwich",
+   "property_type": "house",
+   "description": "Enjoy a stay in this newly renovated 4-bedroom home, comfortably sleeping up to 8 guests with double beds in each bedroom. A spacious and modern base for families, groups or work stays.\n\nNo parties or events allowed. Photo ID may be required.\n\nThe space\nThis spacious 4-bedroom home near Heaton Park comfortably sleeps up to 8 guests, making it ideal for families or small groups travelling together.\n\nBedrooms\n• 4 comfortable bedrooms, each with a double bed\n\nLiving space\n• Fully equipped modern kitchen for cooking and dining\n• Bright and spacious living area perfect for relaxing together\n\nBathrooms\n• Full family bathroom\n• Additional separate toilet for extra convenience\n\nAdditional features\n• Private driveway parking for up to 3 cars\n• Fast, reliable Wi-Fi throughout the house\n• Pet-friendly accommodation\n\nFamily-friendly extra\n• Travel cot available on request (£10 fee with notice)\n\nA comfortable base for visiting Heaton Park, exploring Prestwich Village, or travelling into Manchester City Centre.\n\nGuest access\nThe property has a key safe. The property check-in details will be sent the morning of your booking.\n\nCheck-in is anytime from 3PM. The check-in details will be sent on the morning of your booking, once the current guest checks out.\n\nPlease confirm your email address via messenger tab on Airbnb for the property manual to be sent over on the morning of your check-in.\n\nEarly check-ins / late check-outs must be pre-approved before making your booking.\n\nOther things to note\nPETS:\n- Pets must be approved and paid for (no birds allowed).\n- Please keep all pets off the sofas, or alternatively, lay down a blanket on top of the sofa beforehand.\n- We do not provide any pet essentials, so guests will need to bring their own blankets, litter tray etc.\n- Any litter trays will need to stay on the lower floor, inside the hallway.\n\nCHECK-IN/CHECK-OUT:\n- Early check-in or late check out is not guaranteed and must be pre-approved before booking.\n\nVISITORS:\n- No visitors are allowed after 10PM.\n\n- Parties & gatherings are strictly forbidden - Bookings will be canceled immediately with no refund and you will need to leave the property.\n\nLOST KEYS:\n- If keys are lost, a locksmith callout is required, or you fail to return the keys to the key safe upon check-out, a fee of £150 will be charged to your account.\n\nPARKING:\n\nDAMAGE DEPOSIT:\n- Please note that a refundable security deposit of up to £400 may be required prior to receiving check-in details.\n\n- The exact deposit amount is determined at the host’s discretion, based on factors such as the guest’s booking history, profile verification, and previous reviews.\n\n- We require a mandatory £500 refundable security deposit, during festival season.\n\n- This deposit serves as a safeguard against potential damages, breaches of house rules, or excessive cleaning requirements. It will be fully refunded within 48 hours of check-out, provided the property is left in good condition and no issues are reported.\n\n- Guests will be notified in advance if a deposit is required and provided with clear instructions for payment and refund processing.\n\n- By confirming your booking, you acknowledge and agree to these terms.",
+   "house_rules": "Pets allowed. No smoking. Quiet hours. No parties or events. No commercial photography.",
+   "max_guests": 8,
+   "bedrooms": 4,
+   "beds": 4,
+   "baths": 1.5,
+   "amenities": [
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "cot",
+    "heating",
+    "wifi",
+    "kitchen",
+    "garden",
+    "parking",
+    "pets",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 450,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.27,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1463647082700321573",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:21:46.875Z",
+   "updated_at": "2026-11-22T15:21:46.875Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/prestwich-4-bedroom-home-amazing-for-groups-prestwich-9b22c",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/17/airbnb-mwrzi7yr-12.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 450,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 21,
+   "slug": "luxury-5-quiet-home-close-to-city-free-parking-prestwich-54f41",
+   "title": "Luxury 5* quiet home close to city + free parking",
+   "area": "Prestwich",
+   "city": "Prestwich",
+   "property_type": "house",
+   "description": "Free parking, tram and bus stop nearby giving easy access to everything. 2 mins walk to Tesco superstore.\n\nThe space\nFeaturing a beautiful show home style open plan kitchen dining area with floor to ceiling bifold doors opening out into a private south- facing back garden, including patio, garden furniture, and decking.\nThe kitchen diner features a magnificent fireplace, 2 luxurious 3 seater chesterfield sofas, 4 deluxe breakfast bar stools with complementing quartz worktop, excellent to double up as a work space for those who may be travelling on business.\n\nFully equipped cook's kitchen, with dishwasher, fridge, freezer, microwave and blender. Cooking oils, salt & pepper, spices and cleaning products included.\n\nThere is also a selection of tea, coffee and accompanying sugars/sweetners, provided on the house. Top of the range Sage Coffee bean to powder machine also provided.\n\nThe living room showcases an antique chandelier, 2 grande executive suede sofas with accompanying bespoke furniture. Additional pouffe seating available.\nThe main feature in the living room has to be the show home feature fireplace with a 60” LG smart 4K TV.\n\nDownstairs W.C powder room\n\nMaster bedroom features an impressive plush super-king size bed, 55” smart TV, mirror, side tables with lamps, additional seating and en-suite with shower.\n\nSecond bedroom interior designer with perfection with a feature modern boucle double bed, bedside tables, wardrobe rail with hangers, handy stool and dressing wall mirror.\n\nThird bedroom hosts a comfy cozy daybed which turns into a luxurious super- king bed including memory foam mattress topper to add a hotel-like touch. Dorma duvet and extra pillows provided.\nAdditionally this can be used as a glam room as it hosts a 55” Dressing table Hollywood mirror.\n\nMain bathroom with bath and over head shower. Iron + ironing board in cupboard.\n\nHand soaps, body wash, shampoo and conditioner provided.\n\nLuxury Dunelm Hand and XL bath towel for each guest.\n\nFamily friendly:\nFootball pitch at the end of the estate\nDrink water park a short walk for the most beautiful woodland & reservoir walks.\nTwo minutes walk to Tesco Superstore.\n\nChildren’s park in Prestwich village including climbing frames.\n\nA true oasis in the heart of Prestwich village.",
+   "house_rules": "No pets. No smoking. Quiet hours. No parties or events. No commercial photography.",
+   "max_guests": 8,
+   "bedrooms": 4,
+   "beds": 4,
+   "baths": 2.5,
+   "amenities": [
+    "garden",
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "aircon",
+    "fireplace",
+    "heating",
+    "wifi",
+    "workspace",
+    "kitchen",
+    "coffee",
+    "parking",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 330,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.26,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/967465293758106183",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:26:00.936Z",
+   "updated_at": "2026-11-22T15:26:00.936Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/luxury-5-quiet-home-close-to-city-free-parking-prestwich-54f41",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-12.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-13.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-13.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-14.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-14.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-15.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-15.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-16.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-16.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-17.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-17.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-18.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-18.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-19.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-19.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-20.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-20.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-21.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-21.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-22.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-22.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-23.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/21/airbnb-mwrzngwm-23.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 330,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 19,
+   "slug": "luxury-5br-house-pool-table-free-parking-crumpsall-461a7",
+   "title": "Luxury 5BR House | Pool Table | Free Parking",
+   "area": "Crumpsall",
+   "city": "Crumpsall",
+   "property_type": "house",
+   "description": "Enjoy a spacious luxury five-bedroom home near Manchester city centre. Elegantly styled and newly renovated throughout, it sleeps up to 11 guests - ideal for families, groups, business stays and visitors attending football matches, concerts or events.\n\nWatch a film on the impressive 80-inch TV, enjoy a game of pool, or unwind in the private garden, with lighting throughout the outdoor space for a welcoming evening atmosphere.\n\nThe space\n🏡 THE SPACE\n\n✓ 5 bedrooms - sleeps up to 11 guests\n✓ 2 full bathrooms plus 2 additional WC rooms\n✓ Main living room with an 80-inch TV\n✓ TVs in 2 of the bedrooms\n✓ Dining table that converts into a pool table\n✓ Fully equipped kitchen with coffee machine\n✓ Fast broadband Wi-Fi\n✓ Separate laundry room with washing machine and dryer\n✓ Private driveway parking for up to 2 cars\n✓ Private back garden with lighting throughout\n\n📍 LOCATION\n\nLocated in Crumpsall, North Manchester, with convenient transport links for exploring the city and surrounding area.\n\n✓ Approximately 8 minute walk to Crumpsall Metrolink station, followed by a 10-minute tram journey to Manchester city centre\n✓ Approximately 20 minute walk to North Manchester General Hospital\n✓ 15 minutes walk to Heaton Park for walks, outdoor activities and events\n✓ Convenient local bus services\n\nWhether you’re visiting for work, a family getaway or Manchester’s sports and entertainment, you’ll have a comfortable, spacious home to return to.\n\nGuest access\nYou have full exclusive use of the house and parking during your stay.\n\nOther things to note\n🏡 GOOD TO KNOW\n\n✓ Check-in: from 4:00 PM\n✓ Check-out: by 10:00 AM\n✓ The home is professionally cleaned before every stay, with fresh bed linen and towels provided.\n✓ Well-behaved pets are welcome downstairs only. Please let us know in advance if you’re bringing a pet.\n\n🤫 PLEASE RESPECT OUR NEIGHBOURS\n\n• No parties or events are permitted.\n• Quiet hours are from 10:00 PM to 7:00 AM.\n• Please keep noise at a considerate level at all times, particularly in the garden.\n• The property is equipped with a Minut noise monitor to help us maintain a peaceful environment.",
+   "house_rules": "Pets allowed. No smoking. Quiet hours.",
+   "max_guests": 11,
+   "bedrooms": 5,
+   "beds": 6,
+   "baths": 3,
+   "amenities": [
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "cot",
+    "heating",
+    "wifi",
+    "kitchen",
+    "coffee",
+    "parking",
+    "pets",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 249,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.26,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1778106881004870766",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:26:02.454Z",
+   "updated_at": "2026-11-22T15:26:02.454Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/luxury-5br-house-pool-table-free-parking-crumpsall-461a7",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-12.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-13.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-13.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-14.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-14.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-15.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-15.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-16.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-16.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-17.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-17.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-18.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-18.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-19.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-19.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-20.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-20.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-21.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-21.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-22.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-22.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-23.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/19/airbnb-mwrzlbfg-23.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 249,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 20,
+   "slug": "norwood-house-4-bedroom-house-in-prestwich-prestwich-2497d",
+   "title": "Norwood House: 4-Bedroom House in Prestwich",
+   "area": "Prestwich",
+   "city": "Prestwich",
+   "property_type": "house",
+   "description": "Norwood House is a four-bedroom home with an event space in Prestwich, positioned near Heaton Park with transport links into Manchester city centre. The property accommodates up to 12 guests across four bedrooms and an event space, featuring three bathrooms, two living areas, a fully equipped kitchen, a hot tub, and a private garden with a fire pit.\n\nThis property suits:\n❖ Families or event guests\n❖ Leisure travellers\n\nThe space\n❖ Four-bedroom house with an additional event space\n❖ Three bathrooms including one main bathroom with a bath and one en suite\n❖ Accommodates up to 12 guests\n❖ Bedroom 1: one double bed\n❖ Bedroom 2: two double beds\n❖ Bedroom 3: one double bed\n❖ Bedroom 4: one king bed, convertible to two single beds upon request\n❖ Event room: two floor mattresses available upon request\n❖ Open-plan kitchen and dining area\n❖ Circular dining table with seating for 10 guests\n❖ Tassimo pod coffee machine\n❖ Sitting room with 75-inch Smart TV\n❖ Event space suitable for yoga retreats and small gatherings\n❖ Private garden with outdoor seating\n❖ Hot tub\n❖ Fire pit\n\nGuest access\nGuests have full access to the entire property throughout their stay.\n\nHot Tub Access: The hot tub is available as an optional add-on for £90. If you wish to use it during your stay, please let us know in advance so we can prepare it for your arrival.\n\nAge Restriction: For safety reasons, the hot tub is strictly for guests aged 16 and above. Children under 16 are not permitted to use it.\n\nOther things to note\n❖ Self-check-in via secure key lockbox\n❖ Additional fees apply for flexible check-in times, subject to availability\n❖ Additional fees apply for flexible check-out times, subject to availability\n❖ Personalised digital guidebook provided prior to arrival\n❖ External Blink doorbell CCTV camera active at the entrance\n❖ Maximum occupancy restricted to the booked guest count\n❖ Additional fee applies for unapproved excess guests\n❖ Daytime event guests permitted strictly by prior agreement and subject to an additional event fee\n❖ Events and gatherings require pre-approval\n❖ Strict quiet hours policy in place for the residential neighbourhood\n❖ Concierge services available for hampers, packages, and local experiences\n❖ Six total units managed within the operator's portfolio\n\nBy using the hot tub, guests confirm that they have read and agreed to these Terms and Conditions.\n✓ Age Restrictions: Hot tub use is strictly for guests aged 16 and over. Children under 16 must not use the hot tub and must be supervised by an adult when near the hot tub area.\n✓ Health and Safety: Use the hot tub at your own risk. Guests who are pregnant, have medical conditions, or take medication that may affect heat tolerance should seek medical advice before use. Limit sessions to 20 minutes, stay hydrated, and never use the hot tub under the influence of alcohol or drugs.\n✓ Operating Instructions: Please follow the separate printed Hot Tub Instructions Guide at all times. The recommended temperature is 38°C (maximum 40°C). Do not tamper with the controls or disconnect the power.\n✓ Hygiene and Behaviour: Shower before use. Do not introduce soaps, oils, chemicals, or other contaminants into the water. No pets, glassware, or sharp objects. Jumping, diving, rough play, and sitting or standing on the cover are prohibited. Maximum occupancy is 7 guests.\n✓ Maintenance and Water Quality: Management or authorised personnel may access the hot tub area for water testing and maintenance. If the water is found to be excessively dirty or contaminated beyond recovery, the hot tub will be switched off and taken out of service for health and safety reasons.\n✓ Contamination and Reinstatement Fee: If guests wish to continue using the hot tub after it has been taken out of service due to guest-caused contamination, an £90 refill and servicing fee must be paid before it can be drained, cleaned, refilled, and prepared for further use. Otherwise, the hot tub will remain switched off and unavailable for the rest of the stay.\n✓ Availability and Liability: The hot tub may be unavailable due to maintenance, unsafe water, weather, or mechanical faults. Access may be suspended for safety or misuse. Guests use the hot tub at their own risk, subject to applicable law.\n✓ Acceptance: By using the hot tub, guests agree to these terms and accept responsibility for following the safety instructions. Failure to comply may result in suspension of access and applicable charges.",
+   "house_rules": "No pets. No smoking. Quiet hours. No parties or events. Commercial photography allowed.",
+   "max_guests": 12,
+   "bedrooms": 4,
+   "beds": 5,
+   "baths": 2.5,
+   "amenities": [
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "heating",
+    "wifi",
+    "kitchen",
+    "coffee",
+    "garden",
+    "parking",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 249,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.26,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1162025090734199495",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:26:03.652Z",
+   "updated_at": "2026-11-22T15:26:03.652Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/norwood-house-4-bedroom-house-in-prestwich-prestwich-2497d",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-12.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-13.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-13.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-14.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-14.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-15.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-15.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-16.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-16.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-17.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-17.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-18.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-18.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-19.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-19.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-20.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-20.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-21.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-21.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-22.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-22.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-23.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/20/airbnb-mwrzmr1v-23.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 249,
+   "features": {
+    "kosher_kitchen": false,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 18,
+   "slug": "beautiful-5-riverview-home-private-free-parking-prestwich-27141",
+   "title": "Beautiful 5* riverview home, private +free parking",
+   "area": "Prestwich",
+   "city": "Prestwich",
+   "property_type": "house",
+   "description": "Recharge and retreat in comfort and calm surroundings before heading out into the dynamic energy of Manchester. A beautiful modern city home with garden on the outskirts of Manchester City Centre. Nestled in between 2 lush parks a true oasis from the city!\nA short walk to public transport links or catch an Uber to Manchester City centre in less than 10 minutes!\nPrivate double car parking space.\nStrong wifi speed.\n\nThe space\nBright and airy aesthetically pleasing home with quality furnishings, linens and equipment in pleasant peaceful surroundings.\n\nBeautiful open plan kitchen dining area with bifold doors opening into a private well manicured landscaped back garden, including patio, duo relaxer garden bench with pillows, and BBQ.\n\nFully equipped cook's kitchen, with dishwasher, fridge, freezer, microwave.\n\nTea, coffee and sugar is provided.\n\nThe dining area is beautiful and bright with huge floor to ceiling windows and bifold doors heading out into the well manicured south facing garden. The 4 person dining table is also excellent to double up as a work space for those who may be travelling on buisness. There is additional seating for 3/4 people at the breakfast bar.\n\nThe living room has a super comfy chaise-lounge sofa-bed with additional seating including a feature armchair Looking out onto a quiet charming cul-de-sac estate of new builds on one side and an abundance of nature that lines the riverbank on the other side. The main feature in the living room has to be the stunning feature fireplace with a 60” LG smart 4K TV.\n\nThe sofa doubles up as a quality soft sofa bed which comfortably sleeps 2.\n\nDownstairs W.C\n\nMaster bedroom with king sized bed, dressing table, smart TV and en-suite with shower. Clothing rail with hangers in cupboard.\n\nSecond bedroom with 2 singles. Drawers, bedside table, wardrobe rail with hangers, lamps,\n\nThird bedroom, drawers, mirror, side tables, lamps and mirror.\n\nMain bathroom with bath and over head shower.\n\nHand soaps, body wash, shampoo and conditioner provided.\n\nHand and bath towel for each guest.\n\nGuest access\nEntire house and private garden",
+   "house_rules": "Pets allowed. No smoking. Quiet hours. No parties or events. No commercial photography.",
+   "max_guests": 8,
+   "bedrooms": 3,
+   "beds": 5,
+   "baths": 2.5,
+   "amenities": [
+    "garden",
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "highchair",
+    "fireplace",
+    "heating",
+    "wifi",
+    "workspace",
+    "kitchen",
+    "bbq",
+    "parking",
+    "pets",
+    "self_checkin"
+   ],
+   "categories": [],
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": false,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "base_price": 220,
+   "weekend_price": null,
+   "cleaning_fee": 0,
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "min_nights": 1,
+   "max_nights": 28,
+   "check_in_time": "15:00",
+   "check_out_time": "11:00",
+   "cancellation_policy": "moderate",
+   "lat": 53.52,
+   "lng": -2.26,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/903024587685663282",
+   "booking_url": null,
+   "legacy_source": null,
+   "page_url": null,
+   "approved_at": "2026-11-22T15:26:04.884Z",
+   "updated_at": "2026-11-22T15:26:04.884Z",
+   "host_name": "Esther",
+   "trader_status": "private",
+   "guests_included": null,
+   "extra_guest_fee": 0,
+   "pets_allowed": false,
+   "pet_fee": 0,
+   "checkin_days": [],
+   "checkout_days": [],
+   "advance_notice_days": 0,
+   "prep_days": 0,
+   "booking_window_days": 365,
+   "url": "/beautiful-5-riverview-home-private-free-parking-prestwich-27141",
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-0.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-0.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-1.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-1.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-2.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-2.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-3.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-3.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-4.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-4.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-5.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-5.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-6.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-6.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-7.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-7.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-8.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-8.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-9.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-9.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-10.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-10.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-11.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-11.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-12.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-12.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-13.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-13.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-14.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-14.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-15.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-15.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-16.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-16.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-17.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-17.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-18.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-18.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-19.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-19.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-20.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-20.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-21.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-21.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-22.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-22.t.jpg"
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-23.jpg",
+     "caption": null,
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/68de43fc-9a44-42d1-83b7-c6d61ca156d8/18/airbnb-mwrzl3fp-23.t.jpg"
+    }
+   ],
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "from_price": 220,
    "features": {
     "kosher_kitchen": false,
     "shabbat_friendly": false,

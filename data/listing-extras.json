@@ -4,7 +4,7 @@
   "legacy_checkout": true,
   "promo": true,
   "offer": true,
-  "subtitle": "Large entire home in Liverpool, sleeps 7",
+  "subtitle": "Large house to rent in Liverpool, sleeps 7",
   "photos": [
    {
     "url": "https://assets.guesty.com/image/upload/w_1600,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/c8d1f216-a703-42-FWn85",
@@ -415,6 +415,14 @@
     "a": "Check-in is from 3pm and check-out is by 11am."
    },
    {
+    "q": "Is Zermatt Lodge good group accommodation in Liverpool?",
+    "a": "Yes. It is a whole 4-bedroom house in Liverpool that sleeps 7, with a games room, a big kitchen, a separate dining room, a private garden and free parking for 2 cars, so a group can stay together under one roof instead of booking several hotel rooms."
+   },
+   {
+    "q": "Is it contractor accommodation in Liverpool?",
+    "a": "Yes. Contractors and work crews book Zermatt Lodge for weekly and monthly stays: 4 bedrooms with separate beds, free parking for 2 cars, a washing machine and tumble dryer, and quick access to the M57 and M58. Email cs@zugati.co.uk for longer stays."
+   },
+   {
     "q": "Is the house suitable for contractors and work crews?",
     "a": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room, and is close to the M57 and M58 for getting around Merseyside and the North West."
    },
@@ -484,7 +492,7 @@
    "email": "cs@zugati.co.uk"
   },
   "og_image": "https://assets.guesty.com/image/upload/w_1200,q_auto,f_auto/listing_images_s3/production/property-photos/37a2d888023082c29b1226d40db536d063d294d85294dec4/6ad9acf9b28235001aefaaed/2c4e59c1-658f-4a-TUyeY",
-  "seo_title": "Zermatt Lodge, Liverpool: 4-bed house for groups, sleeps 7 | Book Homes",
-  "seo_description": "4-bed, 2-bath Liverpool house for groups, families and contractors. Sleeps 7, games room, garden, free parking, 15 mins to the city by train. Book direct."
+  "seo_title": "Zermatt Lodge: Large House to Rent in Liverpool, Sleeps 7",
+  "seo_description": "Liverpool holiday home that sleeps 7: a 4-bed group house for families and contractors with games room, garden, free parking and 15 mins to the city."
  }
 }

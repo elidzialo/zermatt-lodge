@@ -1,0 +1,198 @@
+{
+  "_readme": "Book Homes focus areas. Edit this file in the weekly run (see seo/area-focus.md). Each area gets a hub at /stays-in/<slug>. indexing: auto = index once at least min_listings_to_index approved listings match (counted at build time from data/listings.json), noindex until then; index / noindex force it. match: words looked for in a listing's city or area (lower case). center + radius_km (optional, cities only): listings with lat/lng inside the circle also match. parent: a city hub also shows its children's homes. No community population or locations, no shul, school or mikvah addresses, no eruv or security details. Kosher wording: kosher-friendly homes, host-declared kosher kitchen, Shabbat friendly. No em or en dashes.",
+  "min_listings_to_index": 1,
+  "areas": [
+    {
+      "slug": "liverpool",
+      "name": "Liverpool",
+      "region": "Merseyside",
+      "parent": null,
+      "priority": 1,
+      "kosher_focus": false,
+      "indexing": "auto",
+      "match": ["liverpool"],
+      "center": [53.408, -2.98],
+      "radius_km": 10,
+      "featured_listing": "zermatt-lodge",
+      "guides": "liverpool",
+      "short": "Whole houses and apartments in Liverpool for groups, families, hospital visits, match days and work crews.",
+      "intro": "Book whole homes in Liverpool direct with the host: family houses with gardens and parking, city apartments and homes that sleep a group. Every price is the total for the stay, with no guest booking fees.",
+      "getting_there": [
+        "Liverpool Lime Street is the main station, with direct trains from London Euston, Manchester and Birmingham.",
+        "Merseyrail trains run across the city and out to the Wirral, Southport and Ormskirk. You can tap in and out with a contactless card or phone.",
+        "Liverpool John Lennon Airport is in the south of the city. Manchester Airport is about an hour away by car or train.",
+        "By road, the M62 comes in from Manchester and the east, and the M57 and M58 serve the north of the city and Aintree."
+      ],
+      "stay_types": [
+        "Large houses for groups and families, often with a garden and free parking.",
+        "City apartments for couples and small groups near the shops, docks and venues.",
+        "Homes near the hospitals for patients' families, visitors and NHS staff.",
+        "Race day and match day stays for the Grand National, Anfield and Everton.",
+        "Weekly and monthly stays for contractors and work crews."
+      ]
+    },
+    {
+      "slug": "manchester",
+      "name": "Manchester",
+      "region": "Greater Manchester",
+      "parent": null,
+      "priority": 2,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["manchester", "crumpsall"],
+      "center": [53.48, -2.242],
+      "radius_km": 9,
+      "short": "Family homes and group houses across Manchester, including Salford and Prestwich, with kosher-friendly homes declared by hosts.",
+      "intro": "Whole homes in Manchester booked direct with the host, from family houses in the north of the city to homes near the centre. Some hosts list a host-declared kosher kitchen or a Shabbat-friendly set-up, and you can filter for them.",
+      "getting_there": [
+        "Manchester Piccadilly and Manchester Victoria are the two main stations, with direct trains from London, Liverpool, Leeds and Scotland.",
+        "Metrolink trams link the city centre with Salford, Prestwich, Bury, Didsbury and the airport.",
+        "Manchester Airport is south of the city, with trains and trams into the centre.",
+        "The M60 ring road circles the city, with the M62, M61 and M56 joining it."
+      ],
+      "stay_types": [
+        "Large family houses for visits, celebrations and holidays, often with parking.",
+        "Group homes that sleep 6 to 12 for weddings, family events and reunions.",
+        "Homes near the hospitals for patients' families and visiting staff.",
+        "Weekly and monthly stays for work crews, relocations and renovation stays.",
+        "Kosher-friendly homes with a host-declared kosher kitchen or Shabbat-friendly set-up."
+      ]
+    },
+    {
+      "slug": "salford",
+      "name": "Salford",
+      "region": "Greater Manchester",
+      "parent": "manchester",
+      "priority": 4,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["salford", "mediacity", "broughton", "kersal"],
+      "short": "Homes in Salford, next door to Manchester city centre and MediaCityUK.",
+      "intro": "Salford sits right next to Manchester city centre, from the apartments near Salford Quays and MediaCityUK to family houses further out. Book whole homes direct with the host, with total prices and no booking fees.",
+      "getting_there": [
+        "Salford Central and Salford Crescent stations are a few minutes from Manchester city centre by train.",
+        "Metrolink trams run to Salford Quays and MediaCityUK from the city centre.",
+        "The M602 and M60 serve Salford by road. Manchester Airport is about 25 minutes by car."
+      ],
+      "stay_types": [
+        "Apartments near Salford Quays and MediaCityUK for work trips and short breaks.",
+        "Family houses for longer visits and celebrations.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up."
+      ]
+    },
+    {
+      "slug": "prestwich",
+      "name": "Prestwich",
+      "region": "Greater Manchester",
+      "parent": "manchester",
+      "priority": 3,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["prestwich", "whitefield"],
+      "short": "Large family homes in Prestwich, north Manchester, near Heaton Park and the Metrolink.",
+      "intro": "Prestwich is a leafy area in the north of Greater Manchester with big family houses, Heaton Park on the doorstep and a quick tram into the city. Book whole homes direct with the host, including kosher-friendly homes with a host-declared kosher kitchen.",
+      "getting_there": [
+        "Prestwich has its own Metrolink stop on the Bury line, with trams to Manchester Victoria and the city centre.",
+        "Junction 17 of the M60 is close by, so it is easy to get around Greater Manchester by car.",
+        "Manchester Airport is about 30 minutes by car, traffic allowing."
+      ],
+      "stay_types": [
+        "Large family houses with parking for visiting family and celebrations.",
+        "Group homes that sleep 6 to 12 for family events.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up.",
+        "Longer stays for relocations and renovation stays."
+      ]
+    },
+    {
+      "slug": "london",
+      "name": "London",
+      "region": "Greater London",
+      "parent": null,
+      "priority": 5,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["london"],
+      "center": [51.5074, -0.1278],
+      "radius_km": 22,
+      "short": "Whole homes in London, starting with Golders Green and Stamford Hill. Now taking hosts.",
+      "intro": "Book Homes is now taking hosts in London, starting with north London homes in Golders Green and Stamford Hill. Guests will be able to book whole homes direct with the host, with total prices and no booking fees.",
+      "getting_there": [
+        "London has mainline stations for every part of the UK, including Euston for Liverpool and Manchester trains and King's Cross for the north east.",
+        "The Underground, London Overground and buses cover the whole city. You can pay with a contactless card or phone.",
+        "Heathrow, Gatwick, Luton and Stansted airports all have rail links into London."
+      ],
+      "stay_types": [
+        "Family homes for visits, celebrations and holidays.",
+        "Homes near the hospitals for patients' families.",
+        "Longer stays for relocations and work.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up."
+      ]
+    },
+    {
+      "slug": "golders-green",
+      "name": "Golders Green",
+      "region": "Greater London",
+      "parent": "london",
+      "priority": 6,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["golders green", "hampstead garden suburb", "temple fortune"],
+      "short": "Family homes in Golders Green, north west London. Now taking hosts.",
+      "intro": "Book Homes is now taking hosts in Golders Green, north west London. Once homes go live you will be able to book a whole home direct with the host, with total prices and no booking fees.",
+      "getting_there": [
+        "Golders Green station is on the Northern line (Edgware branch), with direct trains to Camden, Euston and the West End.",
+        "Golders Green bus station has routes across north London, and coaches stop nearby.",
+        "By car, the A41 and the North Circular (A406) are close by. Parking rules vary street by street, so ask the host."
+      ],
+      "stay_types": [
+        "Family homes for visits, celebrations and holidays.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up.",
+        "Longer stays for relocations and work."
+      ]
+    },
+    {
+      "slug": "stamford-hill",
+      "name": "Stamford Hill",
+      "region": "Greater London",
+      "parent": "london",
+      "priority": 7,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["stamford hill", "stoke newington", "clapton"],
+      "short": "Family homes in Stamford Hill, north east London. Now taking hosts.",
+      "intro": "Book Homes is now taking hosts in Stamford Hill, north east London. Once homes go live you will be able to book a whole home direct with the host, with total prices and no booking fees.",
+      "getting_there": [
+        "Stamford Hill station is on the London Overground, with trains to Liverpool Street.",
+        "Seven Sisters (Victoria line) is a short bus ride away for the Underground.",
+        "Many bus routes run along the A10 into the City and the West End."
+      ],
+      "stay_types": [
+        "Large family homes for visits and celebrations.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up.",
+        "Longer stays for relocations and work."
+      ]
+    },
+    {
+      "slug": "gateshead",
+      "name": "Gateshead",
+      "region": "Tyne and Wear",
+      "parent": null,
+      "priority": 8,
+      "kosher_focus": true,
+      "indexing": "auto",
+      "match": ["gateshead"],
+      "short": "Homes in Gateshead, across the Tyne from Newcastle. Now taking hosts.",
+      "intro": "Book Homes is now taking hosts in Gateshead, just across the River Tyne from Newcastle. Once homes go live you will be able to book a whole home direct with the host, with total prices and no booking fees.",
+      "getting_there": [
+        "Newcastle Central station is just over the river, with direct trains from London King's Cross, Edinburgh, Leeds and Manchester.",
+        "The Tyne and Wear Metro stops at Gateshead and Gateshead Stadium.",
+        "The A1 runs along the west side of Gateshead. Newcastle International Airport is about 25 minutes by car or Metro."
+      ],
+      "stay_types": [
+        "Family homes for visits, celebrations and holidays.",
+        "Kosher-friendly homes where the host declares a kosher kitchen or Shabbat-friendly set-up.",
+        "Longer stays for relocations, study visits and work."
+      ]
+    }
+  ]
+}

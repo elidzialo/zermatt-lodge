@@ -130,7 +130,11 @@ def hub_body():
     if rest:
         items = "".join(f'<li><a href="/guides/{s}">{esc(pages[s][0]["title"])}</a></li>' for s in rest)
         secs.append(f'<h2 id="more">More guides</h2><ul class="hub-list">{items}</ul>')
-    return ('<p>Local, first-hand guides to staying in north Liverpool, written by the hosts of Zermatt Lodge. Pick a topic:</p>'
+    import bh_areas
+    areas = " ".join(f'<a href="{bh_areas.url(a)}">{esc(a["name"])}</a>' + ("," if i < len(bh_areas.AREAS) - 1 else ".") for i, a in enumerate(bh_areas.AREAS))
+    return ('<p>First-hand guides from Book Homes hosts. Our guides start with Liverpool, written by the hosts of <a href="/zermatt-lodge">Zermatt Lodge, a large house to rent in Liverpool</a>. '
+            'Guides for our other areas follow as homes go live there.</p>'
+            f'<p>Homes by area: {areas}</p><h2 id="liverpool">Liverpool guides</h2><p>Pick a topic:</p>'
             f'<ul class="hub-jump">{"".join(jump)}</ul>' + "".join(secs))
 
 def quick_answer_html(meta, body_html):
@@ -193,10 +197,10 @@ for slug, (meta, body) in pages.items():
     urls.append(canon)
 
 # Guides hub page, built from the same template
-hub_meta_desc = "Practical Liverpool guides from Book Homes hosts: hospital visits, Grand National, match days, events, contractor and group stays."
-hub = (TPL.replace("{{TITLE}}", "Liverpool Guides for Groups, Families and Work Stays | Book Homes")
+hub_meta_desc = "Stay guides from Book Homes hosts, starting with Liverpool: hospital visits, Grand National, match days, events, contractor and group stays."
+hub = (TPL.replace("{{TITLE}}", "Stay Guides for Groups, Families and Work Trips | Book Homes")
           .replace("{{META_DESCRIPTION}}", hub_meta_desc).replace("{{CANONICAL}}", f"{DOMAIN}/guides")
-          .replace("{{H1}}", "Liverpool guides for groups, families and work stays")
+          .replace("{{H1}}", "Stay guides for groups, families and work trips")
           .replace("{{BREADCRUMB}}", "All guides").replace("{{INTRO}}", hub_meta_desc)
           .replace("{{HERO_SRCSET}}", hero_srcset(PHOTOS[0]))
           .replace("{{HERO_ALT}}", esc(PHOTO_ALT[PHOTOS[0]]))
@@ -206,12 +210,12 @@ hub = (TPL.replace("{{TITLE}}", "Liverpool Guides for Groups, Families and Work 
           .replace("{{FAQ_HTML}}", "")
           .replace("{{RELATED_HTML}}", "").replace("{{CLUSTER_HTML}}", "")
           .replace("{{SCHEMA_JSON}}", json.dumps({"@context": "https://schema.org", "@graph": [
-              {"@type": "CollectionPage", "name": "Liverpool guides", "url": f"{DOMAIN}/guides", "description": hub_meta_desc,
+              {"@type": "CollectionPage", "name": "Book Homes stay guides", "url": f"{DOMAIN}/guides", "description": hub_meta_desc,
                "mainEntity": {"@type": "ItemList", "numberOfItems": len(pages), "itemListElement": [
                    {"@type": "ListItem", "position": i, "url": f"{DOMAIN}/guides/{s}", "name": pages[s][0]["title"]} for i, s in enumerate(pages, 1)]}},
               {"@type": "BreadcrumbList", "itemListElement": [
                   {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
-                  {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides"}]}]}, ensure_ascii=False).replace("</", "<\\/")))
+                  {"@type": "ListItem", "position": 2, "name": "Guides", "item": f"{DOMAIN}/guides"}]}]}, ensure_ascii=False).replace("</", "<\\/")))
 hub = strip_empty_faq(hub)
 hub = re.sub(r'\s*<section class="related sec".*?</section>', "", hub, count=1, flags=re.S)  # the hub lists every guide by topic above
 os.makedirs(os.path.join(ROOT, "guides"), exist_ok=True)
@@ -257,7 +261,7 @@ PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
 INDEXNOW_KEY = "00d622ef355b6708bc52633c7be81118"  # IndexNow (Bing, Yandex, Seznam...): key file served at /00d622ef355b6708bc52633c7be81118.txt
 for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "googlec5a5ee698941ade7.html", "index.html", "404.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
-            "stays", "host", "become-a-host", "terms", "privacy", "kosher-homes", "saved", "trips"]:
+            "stays", "stays-in", "host", "become-a-host", "terms", "privacy", "kosher-homes", "saved", "trips"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)

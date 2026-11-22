@@ -59,7 +59,8 @@ REVIEW = """<h1>How was your stay?</h1>
 <script src="/assets/review.js" defer></script>"""
 
 
-def host_landing():
+def host_landing(listings=None):
+    import bh_areas
     feat = [
         ("check", "No guest booking fees", "Guests see one total price, cleaning included. That helps your home stand out against platforms that add a service fee."),
         ("bolt", "Paid automatically", "Guests pay by card through Stripe. Once you connect payouts, Stripe pays your share straight to your bank (until then we pay you by bank transfer)."),
@@ -69,12 +70,15 @@ def host_landing():
         ("shield", "You stay in control", "Your prices, your minimum stay, your house rules. Each listing is checked by us before it goes live."),
     ]
     tiles = "".join(f'<div>{icon(i)}<b>{esc(t)}</b><p>{esc(d)}</p></div>' for i, t, d in feat)
-    schema = {"@context": "https://schema.org", "@type": "WebPage", "name": "List your Liverpool property on Book Homes", "url": DOMAIN + "/become-a-host",
-              "description": "Liverpool owners: list your holiday let or serviced accommodation on Book Homes. No guest fees, simple commission, Airbnb and Booking.com calendar sync."}
-    body = f"""<section class="hero2"><h1 class="serif">List your Liverpool home on Book Homes</h1>
-<p>For owners of holiday lets, serviced accommodation and family homes in Liverpool and Merseyside. Guests book direct with no booking fees, and you keep control.</p>
+    schema = {"@context": "https://schema.org", "@type": "WebPage", "name": "List your holiday home on Book Homes", "url": DOMAIN + "/become-a-host",
+              "description": "Owners in Manchester, Salford, Prestwich, Liverpool, London and Gateshead: list your holiday let or serviced accommodation on Book Homes. No guest fees, simple commission, Airbnb and Booking.com calendar sync.",
+              "areaServed": bh_areas.area_served()}
+    chips = bh_areas.chips_html(listings or [], "Where we are taking hosts", host=True)
+    body = f"""<section class="hero2"><h1 class="serif">List your holiday home on Book Homes</h1>
+<p>For owners of holiday lets, serviced accommodation and family homes in Manchester, Salford, Prestwich, Liverpool, London (Golders Green and Stamford Hill) and Gateshead. Guests book direct with no booking fees, and you keep control.</p>
 <a class="btn" href="/host?signup=1">Get started</a> <a class="btn ghost" href="/host">Host login</a></section>
 <div class="feat">{tiles}</div>
+{chips}
 <h2>How it works</h2>
 <ol class="dots" style="list-style:decimal;padding-left:22px">
 <li>Create your host account with your email and a password. You can add 2-step verification later if you like.</li>
@@ -93,8 +97,8 @@ def host_landing():
 <li>Local rules can change, so keep an eye on any short-let registration scheme for England.</li>
 <li>Read the <a class="link" href="/terms/hosts">host terms</a> before you sign up.</li></ul>
 <p style="margin-top:24px"><a class="btn" href="/host?signup=1">List your property</a></p>"""
-    return text_page("/become-a-host", "List your Liverpool property | Book Homes for hosts",
-                     "Liverpool owners: list your holiday let on Book Homes. No guest booking fees, simple commission, Airbnb and Booking.com calendar sync, payouts by Stripe.",
+    return text_page("/become-a-host", "List your holiday home | Book Homes for hosts",
+                     "List your holiday let in Manchester, Prestwich, Liverpool, London or Gateshead. No guest booking fees, simple commission, Airbnb and Booking.com sync.",
                      body, schema=schema)
 
 
@@ -225,13 +229,13 @@ NOT_FOUND = """<h1>This page could not be found</h1>
 <p><a class="btn" href="/">See all homes</a> <a class="btn ghost" href="/guides">Liverpool guides</a></p>"""
 
 
-def write_all():
+def write_all(listings=None):
     # Served by Vercel with a real 404 status for any path that matches no file or rewrite (e.g. /guides/old-guide)
     write("404.html", text_page("/404", "Page not found | Book Homes", "This page could not be found.", NOT_FOUND, robots="noindex, nofollow"))
     write("stays/listing/index.html", dynamic_listing())
     write("stays/booked/index.html", text_page("/stays/booked", "Your booking | Book Homes", "Your Book Homes booking.", BOOKED, robots="noindex, nofollow"))
     write("stays/review/index.html", text_page("/stays/review", "Review your stay | Book Homes", "Review your stay.", REVIEW, robots="noindex, nofollow"))
-    write("become-a-host/index.html", host_landing())
+    write("become-a-host/index.html", host_landing(listings))
     write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English terms for hosts listing a home on Book Homes: listings, bookings, payouts, cancellations and fees. Draft.", TERMS_HOSTS))
     write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English terms for guests booking a home on Book Homes: price, booking, cancellations, your stay, reviews and what to do if there is a problem. Draft.", TERMS_GUESTS))
     write("trips/index.html", trips_page())

@@ -52,11 +52,11 @@ EMAIL = _SITE_CONTACT.get("email", "")
 # Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
 RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
-            "listing", "listings", "data", "public", "saved", "wishlists", "trips", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+            "listing", "listings", "data", "public", "saved", "stays-in", "areas", "wishlists", "trips", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
-HOME_TITLE = "Holiday Homes in Liverpool | Book Direct, No Booking Fees | Book Homes"
-HOME_DESC = ("Book whole holiday homes and serviced accommodation in Liverpool direct with the host. "
-             "Total prices, no booking fees, secure card checkout.")
+HOME_TITLE = "Holiday Homes in Manchester, Liverpool & London | Book Homes"
+HOME_DESC = ("Whole holiday homes in Manchester, Prestwich and Liverpool, booked direct. Kosher-friendly, no booking fees. "
+             "Now taking hosts in London and Gateshead.")  # build() rewrites the place names from data/focus-areas.json
 
 
 def esc(s):
@@ -346,7 +346,7 @@ def menu_html():
     return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
             f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
             f'<div class="umlist" id="umList" hidden><a href="/host"><b>Log in</b></a><a href="/become-a-host">List your property</a><hr>'
-            f'<a href="/">All homes</a><a href="/saved">Saved homes</a><a href="/guides">Liverpool guides</a><a href="/kosher-homes">Kosher homes</a>{contact}</div></div>')
+            f'<a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/saved">Saved homes</a><a href="/guides">Guides</a><a href="/kosher-homes">Kosher-friendly homes</a>{contact}</div></div>')
 
 
 def header(kind="page"):
@@ -397,12 +397,12 @@ def footer():
     sup = (f'<a href="tel:{tel}">{esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">{esc(EMAIL)}</a>' if EMAIL else "")
     return f"""<footer class="ft"><div class="wrap">
   <div class="ft-cols{' ft-4' if wo_html else ''}">
-    <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/kosher-homes">Kosher and Shabbat-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
+    <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/kosher-homes">Kosher-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
     <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
     {wo_html}
   </div>
-  <div class="ft-legal"><span>© 2026 Book Homes, Liverpool</span><span>A booking platform. Each stay is provided by its host. No booking fees for guests.</span></div>
+  <div class="ft-legal"><span>© 2026 Book Homes, UK holiday homes in Manchester, Liverpool, London and Gateshead</span><span>A booking platform. Each stay is provided by its host. No booking fees for guests.</span></div>
 </div></footer>
 <script src="/assets/bh-ui.js?v={asset_v('bh-ui.js')}" defer></script>
 """
@@ -658,7 +658,7 @@ def explore_guides(guides, n=9, kosher=False):
     return out[:n] or guides[:n]
 
 
-def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HOME_DESC, h1="Holiday homes in Liverpool", intro="", faq=None):
+def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HOME_DESC, h1="Whole holiday homes, booked direct", intro="", faq=None, areas=""):
     shown = [l for l in listings if not preset or any(t in l["tags"] for t in preset)]
     row = category_row(listings)
     cats = f'<button type="button" class="cat" data-tag="" aria-pressed="{"false" if preset else "true"}">{icon("all")}<span>All homes</span></button>' + "".join(
@@ -668,7 +668,9 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
              'Try all homes, or list your own.</p><p><a class="btn ghost" href="/">Show all homes</a> <a class="btn" href="/become-a-host">List your property</a></p></div>')
     bar, pill, panel = search_ui()
     org = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Book Homes", "url": DOMAIN + "/",
-           "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/logo.png"}, "alternateName": "ZALO Stays"}
+           "logo": {"@type": "ImageObject", "url": DOMAIN + "/assets/logo.png"}, "alternateName": "ZALO Stays",
+           "description": "UK marketplace for whole holiday homes booked direct with the host, with no guest booking fees.",
+           "areaServed": __import__("bh_areas").area_served()}
     if PHONE:
         org["telephone"] = PHONE.replace(" ", "")
         org["contactPoint"] = {"@type": "ContactPoint", "telephone": PHONE.replace(" ", ""), "contactType": "reservations", "areaServed": "GB", "availableLanguage": "en-GB"}
@@ -676,7 +678,8 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
         org["email"] = EMAIL
         org.setdefault("contactPoint", {})["email"] = EMAIL
     graph = [org,
-             {"@type": "WebSite", "@id": DOMAIN + "/#website", "url": DOMAIN + "/", "name": "Book Homes", "publisher": {"@id": DOMAIN + "/#org"}, "inLanguage": "en-GB"},
+             {"@type": "WebSite", "@id": DOMAIN + "/#website", "url": DOMAIN + "/", "name": "Book Homes", "publisher": {"@id": DOMAIN + "/#org"}, "inLanguage": "en-GB",
+              "description": "Holiday homes and kosher-friendly stays in Manchester, Liverpool, London and Gateshead, booked direct with the host."},
              {"@type": "CollectionPage", "@id": DOMAIN + path + "#page", "url": DOMAIN + path, "name": title, "description": desc,
               "isPartOf": {"@id": DOMAIN + "/#website"}, "inLanguage": "en-GB",
               "mainEntity": {"@type": "ItemList", "numberOfItems": len(shown), "itemListElement": [
@@ -731,6 +734,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
 <div class="rhead"><h1>{esc(h1)}</h1><p><span id="count">{count}</span><span class="dot-sep" aria-hidden="true">·</span><span>Total prices, no booking fees</span></p></div>
 {intro}
 <div class="results" id="results"><div class="grid" id="grid">{cards or empty}</div><div class="mapview" id="mapview" hidden><div id="map" role="region" aria-label="Map of approximate locations"></div></div></div>
+{areas}
 {faq_html}
 {whats_on_html(guides) if path == "/" else ""}
 {explore}
@@ -754,12 +758,14 @@ KOSHER_FAQ = [
 
 
 def kosher_page(listings, guides):
+    import bh_areas
     intro = ('<p class="lead-p">Whole homes with kosher kitchens, Shabbat set-ups and a shul in walking distance. Every detail is declared by the host '
              'and shown on the listing, so you can check before you book. Not a certification. No booking fees.</p>')
     return home_page(listings, guides, path="/kosher-homes", preset=list(KOSHER_TAGS),
-                     title="Kosher Holiday Homes in Liverpool, Shabbat-Friendly | Book Homes",
-                     desc="Kosher holiday homes and Shabbat-friendly accommodation in Liverpool and the UK: kosher kitchens, Shabbat set-ups, near shul. Host-declared, no booking fees.",
-                     h1="Kosher and Shabbat-friendly homes", intro=intro, faq=KOSHER_FAQ)
+                     title="Kosher-Friendly Holiday Homes in the UK | Book Homes",
+                     desc="Kosher-friendly homes in Manchester, Prestwich and Liverpool, soon London and Gateshead: host-declared kosher kitchen, Shabbat friendly. No booking fees.",
+                     h1="Kosher and Shabbat-friendly homes", intro=intro, faq=KOSHER_FAQ,
+                     areas=bh_areas.chips_html(listings, "Kosher-friendly homes by area", kosher_only=True))
 POLICY = {
     "flexible": "Flexible: full refund up to 24 hours before check-in.",
     "moderate": "Moderate: full refund up to 5 days before check-in, 50% refund after that, no refund after check-in.",
@@ -1323,7 +1329,14 @@ def build():
 
     write("assets/bh-icons.svg", sprite(paint=True).replace(' width="0" height="0" style="position:absolute" aria-hidden="true"', "") + "\n")
     gen_stay_js()
-    write("index.html", home_page(listings, guides))
+    import bh_areas
+    live = [a["name"] for a, n, _ in bh_areas.status(listings) if n][:3]
+    soon = bh_areas.taking_names(listings)
+    home_desc = cut_words(f"Whole holiday homes in {bh_areas.join(live)}, booked direct. Kosher-friendly, no booking fees."
+                          + (f" Now taking hosts in {bh_areas.join(soon)}." if soon else ""), 155) if live else HOME_DESC
+    home_intro = (f'<p class="lead-p">Book whole homes direct with the host. Homes live now in {esc(bh_areas.join(bh_areas.live_names(listings)))}'
+                  + (f', and we are now taking hosts in {esc(bh_areas.join(soon))}' if soon else "") + '. Total prices, no booking fees.</p>') if live else ""
+    write("index.html", home_page(listings, guides, desc=home_desc, intro=home_intro, areas=bh_areas.chips_html(listings)))
     write("kosher-homes/index.html", kosher_page(listings, guides))
     write("saved/index.html", saved_page(listings))
     import shutil
@@ -1337,7 +1350,8 @@ def build():
         write(f"listings/{l['path']}/index.html", listing_page(l, reviews.get(l["slug"], []), guides_for(l, guides), extras.get(l["slug"]) or {}))
         urls.append(DOMAIN + l["url"])
     import bh_pages
-    urls += bh_pages.write_all()
+    urls += bh_pages.write_all(listings)
+    urls += bh_areas.write_all(listings, guides)
     row = category_row(listings)
     print(f"marketplace: {len(listings)} listing pages; categories: " + ", ".join(f"{lbl} ({n})" for _, lbl, _, n in row))
     return urls
