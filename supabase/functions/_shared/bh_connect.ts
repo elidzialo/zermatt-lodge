@@ -60,7 +60,6 @@ export async function onboardingLink(account: string, base: string): Promise<str
     use_case: {
       type: "account_onboarding",
       account_onboarding: {
-        configurations: ["merchant"],
         refresh_url: `${base}/host/?connect=refresh`,
         return_url: `${base}/host/?connect=done`,
       },
