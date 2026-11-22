@@ -153,7 +153,6 @@ function detailsText(d: BookingEmailData): string {
 /** (a) Guest booking confirmation */
 export function guestConfirmation(d: BookingEmailData): RenderedEmail {
   const subject = `Booking confirmed - Zermatt Lodge, ${longDate(d.checkIn)} (ref ${bookingRef(d.bookingId)})`;
-  const tel = d.phone.replace(/[^\d+]/g, "");
   const body =
     p(`Hi ${esc(firstName(d.guestName))},`) +
     p("Thank you for booking direct. Your stay at Zermatt Lodge is confirmed and your payment has been received.") +
@@ -164,12 +163,12 @@ export function guestConfirmation(d: BookingEmailData): RenderedEmail {
     `<h2 style="margin:0 0 6px;font-family:Georgia,serif;font-size:18px;color:${GREEN}">Before you arrive</h2>` +
     p("We will send the full address and access details before your arrival. We will also ask for guest ID and a signed rental agreement, and a damage deposit or waiver may be required.") +
     p(`<span style="color:${MUTED};font-size:14px">${esc(CANCELLATION)}</span>`) +
-    p(`Questions? Call or WhatsApp <a href="tel:${esc(tel)}" style="color:${GREEN};font-weight:bold">${esc(d.phone)}</a>, or just reply to this email.`) +
+    p(`Questions? Email <a href="mailto:cs@zugati.co.uk" style="color:${GREEN};font-weight:bold">cs@zugati.co.uk</a>, or just reply to this email.`) +
     p("We look forward to hosting you.<br>Book Homes");
   const text = `Hi ${firstName(d.guestName)},\n\nThank you for booking direct. Your stay at Zermatt Lodge is confirmed and your payment has been received.\n\n` +
     `${detailsText(d)}\n\n${priceText(d)}\n\n${NO_PARTIES}\n\n` +
     `We will send the full address and access details before your arrival. We will also ask for guest ID and a signed rental agreement, and a damage deposit or waiver may be required.\n\n` +
-    `${CANCELLATION}\n\nQuestions? Call ${d.phone} or reply to this email.\n\nBook Homes\n${d.siteUrl}`;
+    `${CANCELLATION}\n\nQuestions? Email cs@zugati.co.uk or reply to this email.\n\nBook Homes\n${d.siteUrl}`;
   return { subject, html: layout(`Your stay is confirmed: ${longDate(d.checkIn)} to ${longDate(d.checkOut)}`, "Your booking is confirmed", body, d.siteUrl), text };
 }
 
@@ -193,18 +192,17 @@ ${row("Phone", esc(d.guestPhone ?? "-"))}${stripe ? row("Stripe", `<a href="${es
 /** Guest apology after an automatic full refund (dates taken at the moment of payment) */
 export function guestConflictRefund(d: BookingEmailData): RenderedEmail {
   const subject = "Sorry - those dates have just gone, and you have been refunded in full";
-  const tel = d.phone.replace(/[^\d+]/g, "");
   const body =
     p(`Hi ${esc(firstName(d.guestName))},`) +
     p(`Thank you for choosing Zermatt Lodge. We are very sorry: the dates you picked (${esc(longDate(d.checkIn))} to ${esc(longDate(d.checkOut))}) were booked by someone else at the same moment, so we could not confirm your stay.`) +
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${GREEN_TINT};border-radius:12px;margin:0 0 18px"><tr><td style="padding:16px 18px;font-size:15px">
 We have refunded your payment of <b>${money(d.totalPence)}</b> in full. It usually shows on your card within 5-10 working days.<br>
 <span style="color:${MUTED};font-size:13.5px">Reference ${esc(bookingRef(d.bookingId))}</span></td></tr></table>` +
-    p(`We would love to find you other dates. Call <a href="tel:${esc(tel)}" style="color:${GREEN};font-weight:bold">${esc(d.phone)}</a> or reply to this email.`) +
+    p(`We would love to find you other dates. Email <a href="mailto:cs@zugati.co.uk" style="color:${GREEN};font-weight:bold">cs@zugati.co.uk</a> or reply to this email.`) +
     p("With apologies,<br>Book Homes");
   const text = `Hi ${firstName(d.guestName)},\n\nWe are very sorry: the dates you picked (${longDate(d.checkIn)} to ${longDate(d.checkOut)}) were booked by someone else at the same moment, so we could not confirm your stay.\n\n` +
     `We have refunded your payment of ${money(d.totalPence)} in full. It usually shows on your card within 5-10 working days. Reference ${bookingRef(d.bookingId)}.\n\n` +
-    `We would love to find you other dates. Call ${d.phone} or reply to this email.\n\nWith apologies,\nBook Homes`;
+    `We would love to find you other dates. Email cs@zugati.co.uk or reply to this email.\n\nWith apologies,\nBook Homes`;
   return { subject, html: layout("Your payment has been refunded in full", "Sorry, those dates have just gone", body, d.siteUrl), text };
 }
 

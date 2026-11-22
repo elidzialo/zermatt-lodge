@@ -141,7 +141,7 @@ The games room is for relaxed, sociable evenings, not parties. Zermatt Lodge is 
 - **Near Fazakerley station and a Lidl**
 - **Check-in 3pm, checkout 11am**
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk.
 
 ## Related guides
 

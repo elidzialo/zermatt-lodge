@@ -113,7 +113,7 @@ Zermatt Lodge is a whole house in Fazakerley, on the same Merseyrail line as San
 
 It's a quiet residential house: **no parties, no smoking and no pets**.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk.
 
 ## Related guides
 

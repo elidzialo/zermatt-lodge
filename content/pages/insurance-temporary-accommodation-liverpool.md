@@ -23,7 +23,7 @@ faqs:
   - q: "What counts as uninhabitable?"
     a: "Typically, structural damage or a lack of essentials such as running water, heating, electricity, or working toilets and washing facilities. A loss adjuster usually assesses this."
   - q: "Can Zermatt Lodge be used for an insurance claim stay?"
-    a: "Yes, if your insurer or its accommodation provider agrees. It's a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, with a kitchen, garden and free parking for 2 cars. Call +44 7479 905477 to discuss dates."
+    a: "Yes, if your insurer or its accommodation provider agrees. It's a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, with a kitchen, garden and free parking for 2 cars. Email cs@zugati.co.uk to discuss dates."
   - q: "Can we bring our pets?"
     a: "Sorry, Zermatt Lodge has a no-pets rule. Ask your insurer whether your policy covers kennel or boarding fees, or pet-friendly accommodation."
 sources:
@@ -109,7 +109,7 @@ When your normal life has been turned upside down, the right temporary home real
 - **Parking:** free off-street parking for 2 cars
 - **Location:** Fazakerley, north Liverpool, near the M57/M58 and a Merseyrail station
 - **House rules:** no parties, no smoking, no pets
-- **Contact:** one point of contact by phone on +44 7479 905477
+- **Contact:** one point of contact by email at cs@zugati.co.uk
 
 ## Why Zermatt Lodge suits insurance stays
 
@@ -125,7 +125,7 @@ Zermatt Lodge is a whole house in Fazakerley, north Liverpool, near Aintree, Wal
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
-Insurers, accommodation providers and families can book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to discuss availability and longer stays.
+Insurers, accommodation providers and families can book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk to discuss availability and longer stays.
 
 ## Related guides
 

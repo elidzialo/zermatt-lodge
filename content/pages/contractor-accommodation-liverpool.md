@@ -20,7 +20,7 @@ faqs:
   - q: "How many contractors can stay at Zermatt Lodge?"
     a: "Up to 7 people in 4 bedrooms: a king master with en-suite, a second king, a queen and a single. For a crew who each want their own bed, it works well for 4 people, or up to 7 if some are happy to share a king or queen."
   - q: "Is there parking for work vans?"
-    a: "There's free parking for 2 vehicles. If you're bringing large or high-sided vans, call +44 7479 905477 before booking to check they'll fit."
+    a: "There's free parking for 2 vehicles. If you're bringing large or high-sided vans, email cs@zugati.co.uk before booking to check they'll fit."
   - q: "Which parts of Liverpool can I reach easily from Fazakerley?"
     a: "Fazakerley is close to the M57 and M58, so Knowsley, Kirkby, the north docks via Switch Island, Skelmersdale and the M62 and M6 are all straightforward. The city centre is about 15 minutes by Merseyrail from Fazakerley station."
   - q: "Can my company book and pay directly?"
@@ -132,7 +132,7 @@ Zermatt Lodge is a whole house, not a shared house or rooms let individually. Yo
 
 House rules: **no parties, no smoking, no pets**. That keeps it a calm place to rest between shifts.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. Site managers and bookers can call +44 7479 905477 to discuss crew sizes, dates and longer stays.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. Site managers and bookers can email cs@zugati.co.uk to discuss crew sizes, dates and longer stays.
 
 ## Related guides
 

@@ -119,7 +119,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley sta
 
 House rules are strict: no parties or events, no smoking and no pets. The Moderate cancellation policy gives a full refund up to 5 days before check-in.
 
-[Book direct for your European night](/zermatt-lodge#book) or call +44 7479 905477.
+[Book direct for your European night](/zermatt-lodge#book) or email cs@zugati.co.uk.
 
 ## Related guides
 

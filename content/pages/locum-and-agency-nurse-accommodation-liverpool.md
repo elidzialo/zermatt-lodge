@@ -26,7 +26,7 @@ faqs:
   - q: "Is Zermatt Lodge suitable for night-shift workers?"
     a: "It's a quiet, residential house with no parties allowed, and each sharer gets their own room. Bring an eye mask and earplugs as you would anywhere, and agree quiet hours with housemates on different rotas."
   - q: "Can a staffing agency book on behalf of a clinician?"
-    a: "Yes. Agencies and trusts can book direct at bookhomes.co.uk/zermatt-lodge#book or call +44 7479 905477 to discuss dates and paperwork."
+    a: "Yes. Agencies and trusts can book direct at bookhomes.co.uk/zermatt-lodge#book or email cs@zugati.co.uk to discuss dates and paperwork."
 sources:
   - https://uhliverpool.nhs.uk/our-hospitals/aintree-university-hospital/location
   - https://www.uhliverpool.nhs.uk/our-hospitals/royal-liverpool-university-hospital/getting-here
@@ -115,7 +115,7 @@ Zermatt Lodge is a whole house in Fazakerley, near the Aintree hospital site, Fa
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**, so it stays quiet
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. Agencies, trusts and clinicians can call +44 7479 905477 to discuss dates.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. Agencies, trusts and clinicians can email cs@zugati.co.uk to discuss dates.
 
 ## Related guides
 

@@ -124,7 +124,7 @@ Adjust to suit your family, and always check the festive transport timetables fo
 - **Near Fazakerley station, the M57/M58 and a Lidl**
 - **No parties, no smoking, no pets**, so it's a calm family Christmas
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to check festive dates.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk to check festive dates.
 
 ## Related guides
 

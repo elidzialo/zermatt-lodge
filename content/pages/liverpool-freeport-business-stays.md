@@ -124,7 +124,7 @@ Zermatt Lodge is a whole house in north Liverpool, near the M57/M58 and Switch I
 
 House rules: **strictly no parties or events**, no smoking and no pets. A £129 cleaning fee applies. The Moderate cancellation policy gives a full refund up to 5 days before check-in and 50% after.
 
-For multi-week jobs, call +44 7479 905477 to talk through dates and invoicing, or book direct at [Zermatt Lodge](/zermatt-lodge#book).
+For multi-week jobs, email cs@zugati.co.uk to talk through dates and invoicing, or book direct at [Zermatt Lodge](/zermatt-lodge#book).
 
 ## Related guides
 

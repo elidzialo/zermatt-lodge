@@ -140,7 +140,7 @@ Zermatt Lodge is a quiet, whole house in north Liverpool. It's not a hotel, so t
 
 The house is strictly no parties or events, with no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in, which helps if your surgery date moves.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477 to check a specific date.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk to check a specific date.
 
 ## Related guides
 

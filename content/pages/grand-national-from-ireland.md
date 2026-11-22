@@ -125,7 +125,7 @@ Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station and a
 
 House rules: **strictly no parties or events**, no smoking and no pets. It's a comfortable base for racegoers, not a party house.
 
-Festival week books up fast. Check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477.
+Festival week books up fast. Check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 

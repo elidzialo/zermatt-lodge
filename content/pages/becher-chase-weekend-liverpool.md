@@ -131,7 +131,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, in the same part of
 
 Check-in is 3pm and checkout is 11am. It's a quiet home with firm rules: **no parties or events**, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in.
 
-[Book direct for Becher Chase weekend](/zermatt-lodge#book) or call +44 7479 905477.
+[Book direct for Becher Chase weekend](/zermatt-lodge#book) or email cs@zugati.co.uk.
 
 ## Related guides
 

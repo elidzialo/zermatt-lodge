@@ -124,7 +124,7 @@ Families from North Wales, Lancashire, Cumbria and the Isle of Man often visit A
 
 Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and the hospital site. It sleeps up to 7, with a big kitchen, two bathrooms, a large garden and free parking for two cars, so the family can avoid daily hospital parking charges. Check-in is 3pm and checkout is 11am. It's a quiet home with strictly no parties or events, no smoking and no pets.
 
-See our guide to [accommodation near Aintree University Hospital](/guides/accommodation-near-aintree-university-hospital), check dates at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477.
+See our guide to [accommodation near Aintree University Hospital](/guides/accommodation-near-aintree-university-hospital), check dates at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 

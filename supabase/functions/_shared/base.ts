@@ -18,7 +18,7 @@ export function optionalEnv(name: string): string | undefined {
   return v === undefined || v === "" ? undefined : v;
 }
 
-export const PHONE = "+44 7479 905477";
+export const PHONE = ""; // not shown publicly; guests contact cs@zugati.co.uk
 export const LIVE_SITE = "https://bookhomes.co.uk";
 /** Browser origins allowed to call the public booking functions (plus localhost previews). */
 export const ALLOWED_ORIGINS = [

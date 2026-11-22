@@ -360,7 +360,7 @@ function goToBooking(){
 var rf = $("#reserveForm"), rBtn = $("#reserveBtn"), bkErr = $("#bkErr");
 function hideBkErr(){ bkErr.hidden = true; bkErr.innerHTML = ""; }
 function showBkErr(title, msg){
-  bkErr.innerHTML = "<b></b><span></span>" + (LEGACY ? " Prefer to talk? Call <a href=\"tel:+447479905477\">+44 7479 905477</a>." : "");
+  bkErr.innerHTML = "<b></b><span></span>" + (LEGACY ? " Need help? Email <a href=\"mailto:cs@zugati.co.uk\">cs@zugati.co.uk</a>." : "");
   bkErr.querySelector("b").textContent = title; bkErr.querySelector("span").textContent = msg;
   bkErr.hidden = false;
 }

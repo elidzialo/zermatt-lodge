@@ -112,7 +112,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the M57 an
 
 Check-in is 3pm and checkout is 11am. If your sailing gets you in at an awkward hour, call first to talk it through. It's a quiet home with firm rules: **no parties or events**, no smoking and no pets. The Moderate cancellation policy gives a full refund up to 5 days before check-in, which helps if a sailing is cancelled in bad weather.
 
-[Book direct](/zermatt-lodge#book) or call +44 7479 905477.
+[Book direct](/zermatt-lodge#book) or email cs@zugati.co.uk.
 
 ## Related guides
 

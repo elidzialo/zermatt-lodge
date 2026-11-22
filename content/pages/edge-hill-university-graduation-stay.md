@@ -111,7 +111,7 @@ Zermatt Lodge is in north Liverpool, near Fazakerley station and the start of th
 
 House rules: **strictly no parties or events**, no smoking and no pets. A family dinner is welcome; a graduation party isn't.
 
-Check availability for graduation week and book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477.
+Check availability for graduation week and book direct at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 

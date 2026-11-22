@@ -113,7 +113,7 @@ Zermatt Lodge is a whole house in north Liverpool, on the same side of the city 
 
 Please note: the house is **strictly no parties or events**, with no smoking and no pets. It's a place to get ready and rest, not a venue for pre-drinks gatherings or after-parties.
 
-Check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or call +44 7479 905477.
+Check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 

@@ -115,7 +115,7 @@ Zermatt Lodge is a whole house in Fazakerley, near the station, with direct trai
 
 Please note: it's a quiet residential home with **no parties, no smoking and no pets**. Enjoy the gig in town, then come back to a calm house.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk.
 
 ## Related guides
 

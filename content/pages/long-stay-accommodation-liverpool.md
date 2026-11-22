@@ -26,7 +26,7 @@ faqs:
   - q: "Can I claim my accommodation as a work expense?"
     a: "It depends on your circumstances. Tax guidance from LITRG explains that a workplace counts as temporary unless you work there continuously for more than 24 months, which affects what travel and subsistence costs can be claimed. Check with your employer or accountant."
   - q: "Does Zermatt Lodge take long stays?"
-    a: "Yes, subject to availability. Call +44 7479 905477 to talk through dates, cleaning and invoicing for stays of several weeks."
+    a: "Yes, subject to availability. Email cs@zugati.co.uk to talk through dates, cleaning and invoicing for stays of several weeks."
 sources:
   - https://www.litrg.org.uk/tax-guides/employment/employment-benefits-and-expenses/what-travel-expenses-can-i-claim
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
@@ -129,7 +129,7 @@ Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, Aint
 
 It's a quiet house: **strictly no parties or events**, no smoking and no pets. There's a one-off £129 cleaning fee.
 
-For long stays, call +44 7479 905477 to discuss dates, cleaning and invoicing, or check availability and book direct at [Zermatt Lodge](/zermatt-lodge#book).
+For long stays, email cs@zugati.co.uk to discuss dates, cleaning and invoicing, or check availability and book direct at [Zermatt Lodge](/zermatt-lodge#book).
 
 ## Related guides
 

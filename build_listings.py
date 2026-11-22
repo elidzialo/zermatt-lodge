@@ -341,7 +341,8 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
 
 def menu_html():
     tel = PHONE.replace(" ", "")
-    contact = (f'<hr><a href="tel:{tel}">Call {esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">Email us</a>' if EMAIL else "")
+    contact = (f'<a href="tel:{tel}">Call {esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">Email us</a>' if EMAIL else "")
+    contact = ("<hr>" + contact) if contact else ""
     return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
             f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
             f'<div class="umlist" id="umList" hidden><a href="/host"><b>Log in</b></a><a href="/become-a-host">List your property</a><hr>'
@@ -1233,7 +1234,7 @@ def gen_stay_js():
       if (res.j && res.j.code === "PROMO_INVALID"){
         setBusy(false); setPromo(null); promoMsg(res.j.error || "That promo code is not valid.", false);''')
     rep('''  bkErr.innerHTML = "<b></b><span></span> Prefer to talk? Call <a href=\\"tel:+447479905477\\">+44 7479 905477</a>.";''',
-        '  bkErr.innerHTML = "<b></b><span></span>" + (LEGACY ? " Prefer to talk? Call <a href=\\"tel:+447479905477\\">+44 7479 905477</a>." : "");')
+        '  bkErr.innerHTML = "<b></b><span></span>" + (LEGACY ? " Need help? Email <a href=\\"mailto:cs@zugati.co.uk\\">cs@zugati.co.uk</a>." : "");')
     rep("var MAX_GUESTS = 7;", "var MAX_GUESTS = S.max_guests || 16;")
     rep("var CLEANING_FEE = 129; // per booking - must match CLEANING_FEE_GBP on the server (default 129)",
         "var CLEANING_FEE = S.cleaning_fee || 0; // shown only; the server re-prices every booking")

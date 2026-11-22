@@ -136,7 +136,7 @@ Zermatt Lodge is a whole house in north Liverpool, close to the Aintree hospital
 
 Check-in is from 3pm and checkout is 11am. It's a quiet home: no parties or events, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in and 50% after that.
 
-If you need somewhere tonight or tomorrow, call **+44 7479 905477** to check availability, or [book direct here](/zermatt-lodge#book).
+If you need somewhere tonight or tomorrow, email **cs@zugati.co.uk** to check availability, or [book direct here](/zermatt-lodge#book).
 
 ## Related guides
 

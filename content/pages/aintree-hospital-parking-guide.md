@@ -136,7 +136,7 @@ For a step-by-step guide to the site, see [visiting Aintree hospital: a practica
 
 If you're travelling in to visit someone over a week or more, parking is only part of the cost. Fuel, meals and accommodation add up fast. Our [long-stay hospital visiting tips](/guides/long-stay-hospital-visiting-tips-liverpool) cover budgeting and routines.
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the Aintree hospital site, with **free parking for 2 cars**. Families can leave a car at the house and only pay for the hours they're actually at the hospital. It sleeps up to 7, with 2 bathrooms, a big kitchen and a large private garden, and it's a quiet home with no parties or events, no smoking and no pets. [See availability and book direct](/zermatt-lodge#book), or call +44 7479 905477.
+Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the Aintree hospital site, with **free parking for 2 cars**. Families can leave a car at the house and only pay for the hours they're actually at the hospital. It sleeps up to 7, with 2 bathrooms, a big kitchen and a large private garden, and it's a quiet home with no parties or events, no smoking and no pets. [See availability and book direct](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 

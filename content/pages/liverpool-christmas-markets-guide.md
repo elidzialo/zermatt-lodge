@@ -117,7 +117,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley sta
 
 It's a quiet home with clear rules: **no parties or events**, no smoking and no pets. That includes Christmas and New Year. Check-in is 3pm and checkout is 11am, with a £129 cleaning fee.
 
-[Book a December break direct](/zermatt-lodge#book) or call +44 7479 905477.
+[Book a December break direct](/zermatt-lodge#book) or email cs@zugati.co.uk.
 
 ## Related guides
 

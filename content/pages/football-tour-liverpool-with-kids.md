@@ -122,7 +122,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley sta
 
 It's a quiet family home: **no parties or events**, no smoking and no pets. Check-in is 3pm and checkout is 11am.
 
-[Book your family football weekend direct](/zermatt-lodge#book) or call +44 7479 905477.
+[Book your family football weekend direct](/zermatt-lodge#book) or email cs@zugati.co.uk.
 
 ## Related guides
 

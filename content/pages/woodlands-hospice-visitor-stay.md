@@ -26,7 +26,7 @@ faqs:
   - q: "Can relatives get help with parking?"
     a: "Aintree University Hospital manages parking on the campus. Its page says ward or clinic staff can grant discretionary free parking in some cases, including relatives called in at short notice. Ask the hospice team what applies to you."
   - q: "Can we stay at short notice?"
-    a: "Often, yes, depending on availability. Call +44 7479 905477 and we'll tell you straight away whether the house is free and how flexible the dates can be."
+    a: "Often, yes, depending on availability. Email cs@zugati.co.uk and we'll tell you straight away whether the house is free and how flexible the dates can be."
 sources:
   - https://www.woodlandshospice.org
   - https://www.hospiceuk.org/hospice-care-finder/woodlands-hospice
@@ -103,7 +103,7 @@ Nobody knows exactly how long they'll need to stay. When you book anywhere, ask 
 - The cancellation terms. Zermatt Lodge uses a Moderate policy: a full refund up to 5 days before check-in, 50% after that
 - Arriving at short notice
 
-If you're unsure, call +44 7479 905477 and talk it through. We'd rather you asked than worried about it.
+If you're unsure, email cs@zugati.co.uk and we can talk it through. We'd rather you asked than worried about it.
 
 ## A quiet place for the family
 
@@ -119,7 +119,7 @@ Zermatt Lodge is a whole house in north Liverpool, close to the Aintree campus a
 
 It's a quiet home: strictly no parties or events, no smoking and no pets. There's a one-off £129 cleaning fee.
 
-You can check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or simply call +44 7479 905477.
+You can check dates and book direct at [Zermatt Lodge](/zermatt-lodge#book), or simply email cs@zugati.co.uk.
 
 ## If you need to stay on afterwards
 

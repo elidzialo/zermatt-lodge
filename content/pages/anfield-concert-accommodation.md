@@ -116,7 +116,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley sta
 
 To be clear: this is a quiet residential home with strict rules. **No parties or events, no after-parties**, no smoking and no pets. Check-in is 3pm and checkout is 11am.
 
-[Check dates and book direct](/zermatt-lodge#book) once your concert's announced, or call +44 7479 905477.
+[Check dates and book direct](/zermatt-lodge#book) once your concert's announced, or email cs@zugati.co.uk.
 
 ## Related guides
 

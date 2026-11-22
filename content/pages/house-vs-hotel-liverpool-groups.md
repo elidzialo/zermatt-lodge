@@ -123,7 +123,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book), with no platform fees, or call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book), with no platform fees, or email cs@zugati.co.uk.
 
 ## Related guides
 

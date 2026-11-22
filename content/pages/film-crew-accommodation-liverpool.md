@@ -26,7 +26,7 @@ faqs:
   - q: "Can a crew house have vans parked outside?"
     a: "It depends on the property. Zermatt Lodge has free parking for 2 cars. If you're bringing vans or a larger vehicle, call first to check before booking."
   - q: "Can Zermatt Lodge be booked for weeks at a time?"
-    a: "Longer stays can be discussed. Call +44 7479 905477 with your production dates and crew numbers."
+    a: "Longer stays can be discussed. Email cs@zugati.co.uk with your production dates and crew numbers."
 sources:
   - https://liverpoolexpress.co.uk/record-growth-sees-liverpool-city-region-become-uks-leading-film-and-tv-hub-outside-london/
   - https://liverpoolexpress.co.uk/stage-set-for-opening-of-new-film-studios/
@@ -122,7 +122,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M5
 
 Check-in is from 3pm and checkout is 11am. It's a quiet residential home: no parties or events, no smoking and no pets. There's a £129 cleaning fee, and the Moderate cancellation policy gives a full refund up to 5 days before check-in.
 
-For production bookings or longer stays, call **+44 7479 905477** with your dates and crew size, or [check availability and book direct](/zermatt-lodge#book).
+For production bookings or longer stays, email **cs@zugati.co.uk** with your dates and crew size, or [check availability and book direct](/zermatt-lodge#book).
 
 ## Related guides
 

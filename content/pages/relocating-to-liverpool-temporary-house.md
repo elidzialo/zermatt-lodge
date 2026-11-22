@@ -25,7 +25,7 @@ faqs:
   - q: "How long should I book a relocation stay for?"
     a: "Enough time to view homes, settle work and sort schools, often two to six weeks. Talk to us about your dates so there's some flexibility if a move slips."
   - q: "Can my employer book the stay?"
-    a: "Yes. Employers and relocation agents can book direct at bookhomes.co.uk/zermatt-lodge#book or call +44 7479 905477."
+    a: "Yes. Employers and relocation agents can book direct at bookhomes.co.uk/zermatt-lodge#book or email cs@zugati.co.uk."
 sources:
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
   - https://liverpool.gov.uk/schools-and-learning/school-admissions/in-year-transfers
@@ -135,7 +135,7 @@ Zermatt Lodge is a whole house in Fazakerley, north Liverpool.
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. For longer or flexible relocation stays, or bookings by an employer or relocation agent, call +44 7479 905477.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. For longer or flexible relocation stays, or bookings by an employer or relocation agent, email cs@zugati.co.uk.
 
 ## Related guides
 

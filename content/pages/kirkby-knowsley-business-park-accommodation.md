@@ -118,7 +118,7 @@ Zermatt Lodge is a whole house in Fazakerley, close to both the Kirkby and Knows
 
 House rules: **no parties, no smoking, no pets**. It stays quiet for people who need to sleep.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or call +44 7479 905477 to discuss crew sizes and longer stays.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk to discuss crew sizes and longer stays.
 
 ## Related guides
 

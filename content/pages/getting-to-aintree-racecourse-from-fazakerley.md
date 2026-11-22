@@ -137,7 +137,7 @@ If you'd rather not fight for a train back to the city at 6pm, staying in north 
 
 It's a quiet residential home with strict rules: no parties or events, no smoking and no pets. Check-in is 3pm and checkout 11am.
 
-Festival dates book up early. [Check availability and book direct](/zermatt-lodge#book), or call +44 7479 905477.
+Festival dates book up early. [Check availability and book direct](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
 ## Related guides
 
