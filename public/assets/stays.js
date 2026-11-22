@@ -173,8 +173,9 @@ function card(l, i){
   var slides = ph.map(function(p, k){
     var ss = p.thumb ? "" : srcset(p.url); // a host thumb is already card size
     // p.thumb: small card copy of a host photo (full size photos are for the listing page)
-    return '<a class="sl" href="' + href + '" tabindex="' + (k ? -1 : 0) + '"' + (k ? ' aria-hidden="true"' : "") + '><img src="' + esc(p.thumb || img(p.url, 720)) + '"' +
-      (ss ? ' srcset="' + esc(ss) + '" sizes="(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw"' : "") +
+    var dz = k > 1 ? "data-" : ""; // slides 3+ wait for wake() (first hover, touch, focus or swipe on the card)
+    return '<a class="sl" href="' + href + '" tabindex="' + (k ? -1 : 0) + '"' + (k ? ' aria-hidden="true"' : "") + '><img ' + dz + 'src="' + esc(p.thumb || img(p.url, 720)) + '"' +
+      (ss ? " " + dz + 'srcset="' + esc(ss) + '" sizes="(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw"' : "") +
       ' alt="' + esc(p.caption || l.title) + '" width="720" height="684" ' + (i < 2 && !k ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async"></a>';
   }).join("");
   var dots = ph.length > 1 ? ph.map(function(p, k){ return k ? "<i></i>" : '<i class="on"></i>'; }).join("") : "";
@@ -295,8 +296,14 @@ grid.addEventListener("click", function(e){
   var n = e.target.closest(".cnav");
   if (n){ e.preventDefault(); var tr = $(".track", n.closest(".cph")); tr.scrollBy({left: (n.classList.contains("next") ? 1 : -1) * tr.clientWidth, behavior: reduce ? "auto" : "smooth"}); }
 });
+function wake(e){
+  var c = e.target && e.target.closest && e.target.closest(".card"); if (!c || c.bhWoke) return; c.bhWoke = 1;
+  $$("img[data-src]", c).forEach(function(im){ if (im.dataset.srcset) im.srcset = im.dataset.srcset; im.src = im.dataset.src; im.removeAttribute("data-src"); im.removeAttribute("data-srcset"); });
+}
+["pointerover", "touchstart", "focusin"].forEach(function(t){ grid.addEventListener(t, wake, {passive: true}); });
 grid.addEventListener("scroll", function(e){
   var tr = e.target; if (!tr.classList || !tr.classList.contains("track")) return;
+  wake(e);
   var ph = tr.parentNode, i = Math.round(tr.scrollLeft / (tr.clientWidth || 1)), n = tr.children.length;
   $$(".cdots i", ph).forEach(function(d, k){ d.classList.toggle("on", k === i); });
   var p = $(".cnav.prev", ph), x = $(".cnav.next", ph); if (p) p.hidden = i <= 0; if (x) x.hidden = i >= n - 1;

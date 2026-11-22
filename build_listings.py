@@ -466,10 +466,12 @@ def card_photos(l, extras):
 
 def card_html(l, eager=False):
     """Airbnb-style card: 20:19 photo carousel with dots and a heart, then place, name, rooms, price. Same markup as stays.js."""
+    # Slides 3+ carry data-src: stays.js loads them when the card is first hovered, touched, focused or scrolled
+    # (Chrome's lazy loading would otherwise fetch 3-4 hidden slides per card on first load).
     photos = l["card_photos"]
     slides = "".join(
         f'<a class="sl" href="{esc(l["url"])}" tabindex="{0 if i == 0 else -1}"{"" if i == 0 else " aria-hidden=\"true\""}>'
-        f'<img src="{esc(p.get("thumb") or img(p["url"], 720))}"{(" srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) and not p.get("thumb") else ""}'
+        f'<img {"data-" if i > 1 else ""}src="{esc(p.get("thumb") or img(p["url"], 720))}"{(" " + ("data-" if i > 1 else "") + "srcset=" + chr(34) + esc(srcset(p["url"])) + chr(34) + " sizes=" + chr(34) + "(max-width:640px) 92vw, (max-width:1100px) 45vw, 25vw" + chr(34)) if srcset(p["url"]) and not p.get("thumb") else ""}'
         f' alt="{esc(p["caption"])}" width="720" height="684" {"fetchpriority=" + chr(34) + "high" + chr(34) if eager and i == 0 else "loading=" + chr(34) + "lazy" + chr(34)} decoding="async"></a>'
         for i, p in enumerate(photos))
     dots = "".join(f'<i{" class=" + chr(34) + "on" + chr(34) if i == 0 else ""}></i>' for i in range(len(photos))) if len(photos) > 1 else ""
