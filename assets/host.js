@@ -363,12 +363,6 @@ $("#newListing").addEventListener("click", function(){ openWizard(null); });
 $("#editProfile").addEventListener("click", function(){ fillProfile(); $("#profH").textContent = "Edit profile"; view("Profile"); });
 $("#connectBtn").addEventListener("click", function(){
   var b = this;
-  if (aal() !== "aal2"){
-    // Payouts need 2-step verification: set it up (or enter the code), then come back here
-    WANT_MFA = true; lsDel(LATER_KEY); route(SESSION);
-    setTimeout(function(){ msg("#enrolMsg", "Payouts need 2-step verification. Set it up once, then tap Connect payouts again.", true); msg("#mfaMsg", "Payouts need your 6-digit code.", true); }, 600);
-    return;
-  }
   b.disabled = true; $("#connectOut").textContent = "Opening Stripe...";
   api("bookhomes-connect-onboard", {action: "start"}).then(function(j){
     b.disabled = false;

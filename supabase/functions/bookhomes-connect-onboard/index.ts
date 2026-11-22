@@ -17,7 +17,7 @@ function connectStatus(a: { charges_enabled?: boolean; payouts_enabled?: boolean
 
 Deno.serve(handle(async (req) => {
   if (req.method !== "POST") throw new HttpError(405, "Method not allowed");
-  const user = await getUser(req, true);
+  const user = await getUser(req, false);
   const b = await readBody(req, 1000);
   const host = (await sql`select h.id, h.stripe_account_id, p.email, p.trader_status, p.approved from bookhomes.hosts h
                             join bookhomes.profiles p on p.user_id = h.user_id where h.user_id = ${user.id}`)[0];

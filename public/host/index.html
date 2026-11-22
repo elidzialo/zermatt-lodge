@@ -456,7 +456,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
     <li>Type the 6-digit code the app shows.</li></ol>
   <form id="enrolForm" novalidate><label class="f2">6-digit code<input type="text" class="code" id="enrolCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label><button class="btn block" type="submit" id="enrolBtn">Verify</button></form>
   <div class="links"><button type="button" class="linkbtn" id="enrolLater">Set up later</button><button type="button" class="linkbtn" data-signout>Cancel and sign out</button></div>
-  <p style="font-size:13px;color:var(--muted);margin-top:6px">You'll need it before connecting payouts.</p>
+  <p style="font-size:13px;color:var(--muted);margin-top:6px">Optional. You can turn it on any time.</p>
 </div></div>
 
 <div id="vMfa" class="box hidden"><div class="cardx">
@@ -566,7 +566,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
     <h2 class="rows-h">Payouts</h2>
     <div class="box2"><div id="payoutState"></div><div class="acts"><button type="button" class="btn" id="connectBtn">Connect payouts with Stripe</button></div><p class="m" id="connectOut"></p></div>
     <h2 class="rows-h">Security</h2>
-    <div class="box2"><p class="m" id="trustStatus"></p><div class="acts"><button type="button" class="btn ghost" id="mfaOptIn">Turn on 2-step login (optional)</button></div><p class="m" style="font-size:13px">Recommended. You will need it before getting paid.</p></div>
+    <div class="box2"><p class="m" id="trustStatus"></p><div class="acts"><button type="button" class="btn ghost" id="mfaOptIn">Turn on 2-step login (optional)</button></div><p class="m" style="font-size:13px">Optional, but recommended for extra security.</p></div>
     <h2 class="rows-h">Help</h2>
     <div class="rows">
       <a class="row" href="tel:+447479905477"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-phone"/></svg><span><b>Call us</b><small>+44 7479 905477</small></span><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-chev_r"/></svg></a>
@@ -602,7 +602,7 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
 <!-- host-perf: Leaflet and Google sign-in load on demand (assets/host-perf.js); ?v= hashes for host*.js are set by build.py -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
 <script src="/assets/host-perf.js?v=47bb6aa9"></script>
-<script src="/assets/host.js?v=a92236b7"></script>
+<script src="/assets/host.js?v=457974be"></script>
 <script src="/assets/host-shell.js?v=854c88bf" defer></script>
 <script src="/assets/bh-ui.js?v=559e24ca" defer></script>
 <script src="/assets/bh-feedback.js?v=860abfbf" defer></script>
