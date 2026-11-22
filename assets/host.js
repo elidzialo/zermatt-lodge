@@ -324,6 +324,7 @@ function renderDash(){
       '<button type="button" class="btn sm" data-edit="' + l.id + '">' + (l.status === "draft" ? "Continue" : l.status === "rejected" ? "Make changes" : "Edit") + '</button>' +
       (l.status === "approved" ? '<a class="btn ghost sm" href="/' + esc(l.slug) + '" target="_blank" rel="noopener">View</a><button type="button" class="btn ghost sm" data-status="paused" data-id="' + l.id + '">Pause</button>' : "") +
       (l.status === "paused" && l.approved_at ? '<button type="button" class="btn ghost sm" data-status="approved" data-id="' + l.id + '">Unpause</button>' : "") +
+      (l.status !== "draft" ? '<button type="button" class="btn ghost sm" data-calfor="' + l.id + '">Calendar</button>' : "") +
       (l.status === "draft" ? '<button type="button" class="btn ghost sm" data-dellisting data-id="' + l.id + '">Delete</button>' : "");
     return '<div class="lcard"><div class="ph">' + (ph ? HP.img(ph.thumb_url || ph.url, 480, 'alt="" loading="lazy"') : icon("camera")) + '</div><div class="bd2"><b>' + esc(l.title) + '</b><span class="st ' + esc(l.status) + '">' + esc(STATUS[l.status] || l.status) + '</span>' +
       (l.reject_reason ? '<p class="m" style="font-size:13.5px;color:#b42318">' + esc(l.reject_reason) + '</p>' : "") +
@@ -334,6 +335,7 @@ function renderDash(){
   $("#payoutState").innerHTML = h.connect_status === "enabled" ? "<b>Payouts connected.</b> Stripe sends your share to your bank automatically after each booking."
     : h.has_stripe ? "<b>Payout setup started.</b> Finish it with Stripe to get paid automatically."
     : "<b>Get paid automatically.</b> Connect your bank through Stripe. Until then we pay you by bank transfer after check-in.";
+  $("#payBanner").innerHTML = h.connect_status === "enabled" ? "" : '<div class="notice" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap"><span><b>Your payouts are not connected yet.</b> Please set up Stripe so you can get paid.</span><button type="button" class="btn sm" data-gopayout>' + (h.has_stripe ? "Finish setup" : "Set up payouts") + '</button></div>';
   $("#connectBtn").textContent = h.connect_status === "enabled" ? "Update payout details" : h.has_stripe ? "Finish payout setup" : "Connect payouts with Stripe";
   $("#profSummary").innerHTML = "<b>" + esc(p.name) + "</b><p class='m'>" + esc(p.email) + " · " + esc(p.phone || "") + (p.whatsapp ? " · WhatsApp " + esc(p.whatsapp) : "") + "<br>" + (p.trader_status === "private" ? "Private individual" : "Business (trader)") + (p.company ? " · " + esc(p.company) : "") + " · Commission " + (ME.commission_pct != null ? ME.commission_pct + "%" : "") + "</p>";
   var until = MODE === "local" ? trustUntil() : 0;
@@ -343,6 +345,10 @@ function renderDash(){
   if (cur && ls.some(function(l){ return String(l.id) === cur; })) sel.value = cur;
 }
 document.addEventListener("click", function(e){
+  var gp = e.target.closest && e.target.closest("[data-gopayout]");
+  if (gp){ var mt = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "menu"; })[0]; if (mt) mt.click(); setTimeout(function(){ var c = $("#connectBtn"); if (c){ c.scrollIntoView({block: "center"}); c.click(); } }, 50); return; }
+  var oc = e.target.closest && e.target.closest("[data-opencal]");
+  if (oc){ var lid = oc.getAttribute("data-opencal"); if (W.dirty && !confirm("You have unsaved changes. Leave without saving?")) return; W.dirty = false; dropBackup(); closeAll(); $("#calListing").value = lid; var ct = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "calendar"; })[0]; if (ct) ct.click(); return; }
   var cf = e.target.closest && e.target.closest("[data-calfor]");
   if (cf){ $("#calListing").value = cf.getAttribute("data-calfor"); var tb = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "calendar"; })[0]; if (tb) tb.click(); return; }
   var ed = e.target.closest && e.target.closest("[data-edit]");
@@ -588,7 +594,7 @@ function checkR(){ return '<div class="two">' + inp("check_in_time", "Check-in f
 function cancelR(){ return '<div class="radios">' + POLICIES.map(function(p){ return '<label class="radio"><input type="radio" name="canc" data-in="cancellation_policy" value="' + p[0] + '"' + (W.l.cancellation_policy === p[0] ? " checked" : "") + "><span><b>" + p[1] + "</b><small>" + p[2] + "</small></span></label>"; }).join("") + "</div>"; }
 function priceR(){
   var l = W.l, pets = !!l.pets_allowed;
-  return (W.priceHint ? '<p class="pnote" style="text-align:center;margin:0 0 8px">Your Airbnb page showed about £' + esc(W.priceHint) + " a night.</p>" : "") +
+  return '<div class="notice" style="margin:0 0 14px"><b>Block dates or change the price for certain days</b> in your calendar.' + (W.id ? ' <button type="button" class="btn sm" style="margin-top:8px" data-opencal="' + W.id + '">Open calendar</button>' : " Save the listing first.") + "</div>" + (W.priceHint ? '<p class="pnote" style="text-align:center;margin:0 0 8px">Your Airbnb page showed about £' + esc(W.priceHint) + " a night.</p>" : "") +
     '<div class="bigp"><span>£</span><input id="bigPrice" type="number" inputmode="numeric" data-in="base_price" value="' + esc(money0(l.base_price)) + '" min="10" max="10000" step="1" aria-label="Price per night in pounds" placeholder="0"></div><p class="bigp-sub">per night, Sunday to Thursday</p>' +
     '<div class="example ge" id="example" data-mode="night"></div>' +
     '<h3 class="psec">Weekend price</h3>' + rowMoney("weekend_price", "Friday and Saturday", "Leave blank to use your nightly price.", 'min="10" max="10000" step="1"') +
@@ -600,7 +606,7 @@ function priceR(){
     '<h3 class="psec">Discounts</h3>' + rowPct("weekly_discount_pct", "Weekly discount", "For stays of 7 nights or more.", 50) + rowPct("monthly_discount_pct", "Monthly discount", "For stays of 28 nights or more. Popular with work crews.", 60);
 }
 function availR(){
-  return rowNum("min_nights", "Minimum nights", "Shortest stay you accept.", 1, 90) + rowNum("max_nights", "Maximum nights", "Longest stay you accept.", 1, 365) +
+  return '<div class="notice" style="margin:0 0 14px"><b>Block dates or change the price for certain days</b> in your calendar.' + (W.id ? ' <button type="button" class="btn sm" style="margin-top:8px" data-opencal="' + W.id + '">Open calendar</button>' : " Save the listing first.") + "</div>" + rowNum("min_nights", "Minimum nights", "Shortest stay you accept.", 1, 90) + rowNum("max_nights", "Maximum nights", "Longest stay you accept.", 1, 365) +
     sel("advance_notice_days", "How much notice do you need?", [[0, "Same day"], [1, "At least 1 day"], [2, "At least 2 days"], [3, "At least 3 days"], [7, "At least 7 days"]]) +
     sel("prep_days", "Preparation time between stays", [[0, "None"], [1, "Block 1 night before and after each booking"], [2, "Block 2 nights before and after each booking"]]) +
     sel("booking_window_days", "How far ahead can guests book?", [[90, "3 months"], [180, "6 months"], [365, "12 months"], [730, "24 months"]]);

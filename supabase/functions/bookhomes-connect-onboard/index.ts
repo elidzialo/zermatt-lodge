@@ -52,7 +52,10 @@ Deno.serve(handle(async (req) => {
     } catch (e) {
       const msg = (e as Error).message ?? "";
       console.error("accounts.create failed", msg);
-      if (/connect|platform|signed up|not enabled|review the responsibilities/i.test(msg)) {
+      if (/permission|does not have the required permissions|rk_live|restricted key/i.test(msg)) {
+        return jsonRes({ connect_enabled: false, message: "Payout setup is not ready on our side yet. We've been told and are fixing it. Until then Book Homes pays you by bank transfer after each stay." });
+      }
+      if (/signed up for connect|not enabled for connect|review the responsibilities|platform profile/i.test(msg)) {
         await setSetting("connect_status", "not_enabled", "connect-onboard");
         return jsonRes({ connect_enabled: false, message: NOT_ENABLED });
       }
