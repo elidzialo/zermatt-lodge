@@ -6,7 +6,7 @@ Picked on 19 November 2026 from seo/keywords.csv (including the new rows added t
 - Most of them cover the four focus groups: kosher and Jewish travel, serviced accommodation, contractor, business, insurance and relocation stays, and holiday homes for 2026-2027 events.
 - Publish each one at /guides/<slug>. The "Keywords" column is how many rows in keywords.csv point at that page. Use those rows for secondary keywords and FAQs.
 - Event dates come from seo/events-calendar.md. Check them again before you publish.
-- Kosher posts: link to /stays/kosher. Do not claim a property is kosher or has an eruv unless the listing says so.
+- Kosher posts: link to /kosher-homes. Do not claim a property is kosher or has an eruv unless the listing says so.
 - Host posts: link to /become-a-host.
 
 | # | Slug | Title | Primary keyword | Audience | Group | Keywords |
@@ -44,7 +44,7 @@ Picked on 19 November 2026 from seo/keywords.csv (including the new rows added t
 
 ## Why the top 5 come first
 
-1. **shabbat-in-liverpool-visitor-guide** - this is the main guide behind the new kosher filter. No competitor has a page about staying in Liverpool for Shabbat. It links straight to /stays/kosher.
+1. **shabbat-in-liverpool-visitor-guide** - this is the main guide behind the new kosher filter. No competitor has a page about staying in Liverpool for Shabbat. It links straight to /kosher-homes.
 2. **grand-national-and-anfield-same-day-2027** - on Sat 10 Apr 2027 the Grand National and Liverpool v Newcastle are on the same day. That will be the busiest night of the year near the house, and nobody has written about the clash yet.
 3. **tour-de-france-liverpool-2027-stay** - Stage 2 finishes on The Strand on Sat 3 Jul 2027. Search interest is growing and few accommodation pages cover it.
 4. **serviced-accommodation-liverpool-with-parking** - "serviced accommodation Liverpool" is a search-verified money term. Most rival listings are city-centre flats with no free parking.

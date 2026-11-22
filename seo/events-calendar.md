@@ -38,7 +38,7 @@ Demand key: **High** = price up and set a minimum stay. **Med** = some uplift. *
 | Wed 6 Jan 2027 | Everton v Aston Villa | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
 | Sat 16 Jan 2027 | Liverpool v Crystal Palace, 3pm | Anfield | Med | Verified | Sky Sports Liverpool fixtures (above) |
 | Sat 23 Jan 2027 | Everton v Brentford, 3pm | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
-| Sat 30 Jan 2027 | Merseyside derby: Liverpool v Everton, 3pm | Anfield | High | Verified | Sky Sports Liverpool fixtures (above) |
+| Sat 30 Jan 2027 | Merseyside derby: Liverpool v Everton, 12.30pm (moved for TNT Sports) | Anfield | High | Verified | ToffeeWeb / Read Everton, 19 Nov 2026 |
 | Tue 2 - Wed 3 Feb 2027 | Strictly Come Dancing Live Tour | M&S Bank Arena | Low | Verified | https://www.ents24.com/liverpool-events/mands-bank-arena-liverpool/strictly-come-dancing-2027/7537711 |
 | Sat 6 Feb 2027 | Everton v Newcastle, 3pm | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
 | Wed 10 Feb 2027 | Everton v Leeds, 8pm | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
