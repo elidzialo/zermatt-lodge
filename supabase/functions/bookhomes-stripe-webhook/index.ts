@@ -1,13 +1,16 @@
 // POST /functions/v1/bookhomes-stripe-webhook   (Stripe calls it; verify_jwt off, Stripe signature checked)
-// Two Stripe endpoints can point here, each with its own signing secret:
-//   BOOKHOMES_STRIPE_WEBHOOK_SECRET          "Your account" events: checkout.session.completed / .expired, charge.refunded
-//   BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET  "Connected accounts" events: account.updated
-// Only marketplace sessions (metadata.bh_booking_id) are handled; Zermatt Lodge events are ignored here
-// (they keep going to zermatt-stripe-webhook).
+// Two Stripe event destinations point here:
+//   - platform ("Your account") events, signed with BOOKHOMES_STRIPE_WEBHOOK_SECRET: hosts not yet on Connect (platform charges)
+//   - "bookhomes-connect-accounts" (Connected accounts) events, signed with BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET.
+//     Connect bookings are DIRECT charges (Accounts v2, Managed Risk), so their checkout / charge events arrive here with
+//     event.account = the host's account. account.updated (v1 snapshot) still fires for v2 accounts and updates payout status.
+// Only marketplace sessions (metadata.bh_booking_id) are handled; Zermatt Lodge keeps zermatt-stripe-webhook.
+// Source: github.com/elidzialo/zermatt-lodge supabase/functions/bookhomes-stripe-webhook (shared modules pinned by commit)
 import Stripe from "npm:stripe@17.7.0";
 import { optionalEnv, stripeClient } from "../_shared/util.ts";
 import { jsonRes, sql } from "../_shared/bh.ts";
 import { settlePaidSession } from "../_shared/bh_booking.ts";
+import { stateFromV1 } from "../_shared/bh_connect.ts";
 
 const crypto = Stripe.createSubtleCryptoProvider();
 
@@ -17,13 +20,21 @@ Deno.serve(async (req: Request): Promise<Response> => {
   if (!sig) return jsonRes({ error: "Missing signature" }, 400);
   const raw = await req.text();
   const stripe = stripeClient();
-  const secrets = [optionalEnv("BOOKHOMES_STRIPE_WEBHOOK_SECRET"), optionalEnv("BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET")].filter(Boolean) as string[];
+  const platformSecret = optionalEnv("BOOKHOMES_STRIPE_WEBHOOK_SECRET"), connectSecret = optionalEnv("BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET");
+  if (!platformSecret) console.error("BOOKHOMES_STRIPE_WEBHOOK_SECRET is not set: platform events cannot be verified");
+  if (!connectSecret) console.error("BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET is not set: connected-account events (direct-charge bookings, account.updated) cannot be verified");
+  const secrets: [string, string][] = [];
+  if (platformSecret) secrets.push(["platform", platformSecret]);
+  if (connectSecret) secrets.push(["connect", connectSecret]);
   if (!secrets.length) return jsonRes({ error: "Webhook secret not set" }, 503);
-  let event: Stripe.Event | null = null;
-  for (const s of secrets) {
-    try { event = await stripe.webhooks.constructEventAsync(raw, sig, s, undefined, crypto); break; } catch { /* try next */ }
+  let event: Stripe.Event | null = null, via = "";
+  for (const [name, s] of secrets) {
+    try { event = await stripe.webhooks.constructEventAsync(raw, sig, s, undefined, crypto); via = name; break; } catch { /* try next */ }
   }
   if (!event) return jsonRes({ error: "Invalid signature" }, 400);
+  const account = event.account ?? null;
+  if (account && via !== "connect") console.error("connected-account event verified with the platform secret", event.type, account);
+  if (!account && via === "connect") console.error("platform event verified with the connect secret", event.type);
 
   try {
     await sql`select bookhomes.release_expired_holds()`;
@@ -31,7 +42,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
       case "checkout.session.completed":
       case "checkout.session.async_payment_succeeded": {
         const s = event.data.object as Stripe.Checkout.Session;
-        if (s.metadata?.bh_booking_id) await settlePaidSession(stripe, s);
+        if (s.metadata?.bh_booking_id) await settlePaidSession(stripe, s, account);
         break;
       }
       case "checkout.session.expired": {
@@ -61,15 +72,15 @@ Deno.serve(async (req: Request): Promise<Response> => {
       }
       case "account.updated": {
         const a = event.data.object as Stripe.Account;
-        const status = a.charges_enabled && a.payouts_enabled ? "enabled" : a.requirements?.disabled_reason ? "restricted" : "pending";
-        await sql`update bookhomes.hosts set charges_enabled = ${!!a.charges_enabled}, payouts_enabled = ${!!a.payouts_enabled},
-                    connect_status = ${status}, updated_at = now() where stripe_account_id = ${a.id}`;
+        const st = stateFromV1(a);
+        await sql`update bookhomes.hosts set charges_enabled = ${st.charges_enabled}, payouts_enabled = ${st.payouts_enabled},
+                    connect_status = ${st.status}, updated_at = now() where stripe_account_id = ${a.id}`;
         break;
       }
     }
   } catch (e) {
-    console.error("bookhomes webhook failed", event.type, (e as Error).message);
-    return jsonRes({ error: "Webhook handling failed" }, 500); // Stripe retries
+    console.error("bookhomes webhook failed", event.type, account ?? "platform", (e as Error).message);
+    return jsonRes({ error: "Webhook handling failed" }, 500);
   }
   return jsonRes({ received: true });
 });

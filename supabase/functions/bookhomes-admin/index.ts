@@ -340,7 +340,9 @@ Deno.serve(handle(async (req) => {
     case "cancel_booking": {
       // { id, refund: "policy" | "full" | "none" | <pence>, reason, preview? }
       if (!UUID_RE.test(String(b.id))) throw new HttpError(400, "Invalid booking");
-      const bk = (await sql`select b.*, b.check_in::text as ci, l.title, l.cancellation_policy from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id where b.id = ${String(b.id)}`)[0];
+      const bk = (await sql`select b.*, b.check_in::text as ci, l.title, l.cancellation_policy, h.stripe_account_id as host_account
+                              from bookhomes.bookings b join bookhomes.listings l on l.id = b.listing_id join bookhomes.hosts h on h.id = b.host_id
+                             where b.id = ${String(b.id)}`)[0];
       if (!bk) throw new HttpError(404, "Marketplace booking not found. Zermatt Lodge bookings are cancelled from its own Bookings tab.");
       if (bk.status === "held") {
         if (b.preview) return jsonRes({ preview: true, refund_pence: 0, note: "Unpaid hold: the dates are simply released." });
@@ -363,9 +365,13 @@ Deno.serve(handle(async (req) => {
       if (refund > 0) {
         if (!bk.stripe_payment_intent_id || !optionalEnv("STRIPE_SECRET_KEY")) throw new HttpError(409, "No Stripe payment found to refund. Refund it in Stripe, then cancel with 'No refund'.");
         try {
+          // Connect bookings are direct charges on the host's account: refund there, and give back the same share of our
+          // application fee (so we keep commission only on the part the guest still pays).
+          const direct = bk.payout_mode === "connect" && !!bk.host_account;
           const r = await stripeClient().refunds.create({ payment_intent: bk.stripe_payment_intent_id, amount: refund, reason: "requested_by_customer",
-            ...(bk.payout_mode === "connect" ? { reverse_transfer: true, refund_application_fee: refund === bk.amount_pence } : {}),
-            metadata: { bh_booking_id: bk.id, by: admin.email } }, { idempotencyKey: `bh-admin-refund-${bk.id}-${refund}` });
+            ...(direct ? { refund_application_fee: true } : {}),
+            metadata: { bh_booking_id: bk.id, by: admin.email } },
+            { idempotencyKey: `bh-admin-refund-${bk.id}-${refund}`, ...(direct ? { stripeAccount: bk.host_account } : {}) });
           refundId = r.id;
         } catch (e) {
           throw new HttpError(502, `Stripe refund failed: ${(e as Error).message}. Nothing was changed.`);

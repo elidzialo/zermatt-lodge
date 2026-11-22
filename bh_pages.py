@@ -61,7 +61,7 @@ REVIEW = """<h1>How was your stay?</h1>
 def host_landing():
     feat = [
         ("check", "No guest booking fees", "Guests see one total price, cleaning included. That helps your home stand out against platforms that add a service fee."),
-        ("bolt", "Paid automatically", "Guests pay by card through Stripe. Payouts go straight to your bank once you connect payouts (or by bank transfer until then)."),
+        ("bolt", "Paid automatically", "Guests pay by card through Stripe. Once you connect payouts, Stripe pays your share straight to your bank (until then we pay you by bank transfer)."),
         ("calendar", "Works with Airbnb and Booking.com", "Paste your iCal links. We import your bookings every 15 minutes and give you one link to export ours, so nothing double-books."),
         ("kosher", "Reach kosher and Shabbat-observant guests", "Tell guests about your kosher kitchen, Shabbat set-up and whether a shul is within walking distance. A rare filter that guests search for."),
         ("work", "Work crews and business stays", "Show desks, wifi speed, van parking and separate beds. Guests can get a company receipt at checkout."),
@@ -76,17 +76,17 @@ def host_landing():
 <div class="feat">{tiles}</div>
 <h2>How it works</h2>
 <ol class="dots" style="list-style:decimal;padding-left:22px">
-<li>Create your host account with your email and a password. You can add 2-step verification later; it's needed before payouts.</li>
+<li>Create your host account with your email and a password. You can add 2-step verification later if you like.</li>
 <li>Tell us if you host as a business (trader) or a private individual. Guests see this on your listing, as UK rules require.</li>
 <li>Add your home one question at a time: photos, rooms, price, house rules and your Airbnb or Booking.com calendar links.</li>
 <li>We check every listing (for example that no street address is shown) and approve it, usually within one working day.</li>
 <li>Guests book and pay. You get an email with the guest's details and the dates close on every calendar.</li>
 </ol>
 <h2>What it costs</h2>
-<p>No sign-up fee and no monthly fee. Book Homes takes a simple commission on each booking (currently {COMMISSION_TEXT}), taken from the amount the guest pays. Guests pay no booking fee.</p>
+<p>No sign-up fee and no monthly fee. Book Homes takes a simple commission on each booking (currently {COMMISSION_TEXT}), taken from the amount the guest pays. Guests pay no booking fee. Once your payouts are connected, Stripe also takes its standard card processing fee from your share.</p>
 <table class="cmp"><tr><th></th><th>Book Homes</th></tr>
 <tr><td>Guest service fee</td><td>None</td></tr><tr><td>Host commission</td><td>Currently {COMMISSION_TEXT} per booking</td></tr>
-<tr><td>Calendar sync with Airbnb and Booking.com</td><td>Yes, iCal import and export</td></tr><tr><td>Payout</td><td>Automatic by Stripe once connected</td></tr></table>
+<tr><td>Calendar sync with Airbnb and Booking.com</td><td>Yes, iCal import and export</td></tr><tr><td>Card processing fee</td><td>Stripe's standard fee, taken from your share once payouts are connected</td></tr><tr><td>Payout</td><td>Automatic by Stripe once connected</td></tr></table>
 <h2>Good to know</h2>
 <ul class="dots"><li>You need the right to let the property (owner, or landlord's permission) and the usual safety checks: gas safety certificate, electrical checks, smoke and carbon monoxide alarms, fire safety, and suitable insurance.</li>
 <li>Local rules can change, so keep an eye on any short-let registration scheme for England.</li>
@@ -104,7 +104,7 @@ TERMS_HOSTS = f"""{DRAFT}<h1>Host terms</h1><p>Last updated: 19 November 2026</p
 <h2>3. Your listing</h2><ul class="dots"><li>Everything must be accurate and kept up to date: photos, rooms, beds, amenities, prices and house rules.</li><li>Do not show the street address or house number. Guests get the address after booking.</li><li>No fake reviews, no "was" prices or invented discounts, no misleading claims.</li><li>Kosher, Shabbat, business and other features are your own description. Do not claim a certification or show a certification logo unless you hold that certification in writing.</li></ul>
 <h2>4. Your property and the law</h2><p>You confirm you have the right to let the property for short stays (as owner or with the owner's or landlord's written permission, and any mortgage lender or freeholder consent), and that you meet the law and keep it up to date, including gas and electrical safety, fire safety, smoke and carbon monoxide alarms, insurance, tax, data protection and any local registration or licensing.</p>
 <h2>5. Calendars and bookings</h2><ul class="dots"><li>Keep your Book Homes calendar right. If you also list elsewhere, add your iCal links so we can block those dates, and add our export link to the other sites.</li><li>Accepted bookings are confirmed straight away. If you cancel a confirmed booking, the guest gets a full refund and we may charge you any costs we incur.</li></ul>
-<h2>6. Money</h2><ul class="dots"><li>Guests pay the total price shown (nights, cleaning fee and any weekly or monthly discount you set). There is no guest booking fee.</li><li>Our commission is currently {COMMISSION_TEXT} of each booking (shown in your host dashboard), unless we agree a different rate with you in writing. We can change the standard rate with 30 days' notice.</li><li>Payouts: once you connect Stripe, Stripe pays your share to your bank automatically. Until then we pay you by bank transfer after the guest checks in.</li><li>Refunds follow the cancellation policy on your listing. If a booking is refunded, your payout is reduced or reversed.</li><li>You are responsible for your own tax and VAT. We provide statements of your bookings.</li></ul>
+<h2>6. Money</h2><ul class="dots"><li>Guests pay the total price shown (nights, cleaning fee and any weekly or monthly discount you set). There is no guest booking fee.</li><li>Our commission is currently {COMMISSION_TEXT} of each booking (shown in your host dashboard), unless we agree a different rate with you in writing. We can change the standard rate with 30 days' notice.</li><li>Payouts: once you connect Stripe, the guest's card payment is taken on your own Stripe account. Book Homes keeps its commission and Stripe takes its standard card processing fee from your share, then Stripe pays the rest to your bank automatically. Stripe checks your identity and may hold or delay payouts under its own terms. Until you connect, we take the payment and pay you by bank transfer after the guest checks in.</li><li>Refunds follow the cancellation policy on your listing. If a booking is refunded, your payout is reduced or reversed.</li><li>You are responsible for your own tax and VAT. We provide statements of your bookings.</li></ul>
 <h2>7. Guests' personal data</h2><p>We share the guest's name, email and phone with you for the booking only. Use them only to manage the stay and keep them safe, under UK GDPR.</p>
 <h2>8. Ending</h2><p>You can close your account at any time once your future bookings are completed or cancelled. We can suspend or close an account that breaks these terms.</p>
 <h2>9. Liability</h2><p>We are not responsible for the condition of your property or what happens during a stay. Nothing in these terms limits liability that cannot be limited by law.</p>

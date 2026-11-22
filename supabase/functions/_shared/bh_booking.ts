@@ -21,7 +21,13 @@ export async function loadBooking(id: string): Promise<BhBooking | null> {
   return r.length ? (r[0] as BhBooking) : null;
 }
 
-export async function settlePaidSession(stripe: Stripe, session: Stripe.Checkout.Session): Promise<{ outcome: string; bookingId: string | null }> {
+export async function hostAccount(bookingId: string): Promise<string | null> {
+  const r = await sql`select h.stripe_account_id from bookhomes.bookings b join bookhomes.hosts h on h.id = b.host_id where b.id = ${bookingId}`;
+  return r[0]?.stripe_account_id ?? null;
+}
+
+// account: the host's connected account when the session is a direct charge (Connect booking, webhook event.account).
+export async function settlePaidSession(stripe: Stripe, session: Stripe.Checkout.Session, account?: string | null): Promise<{ outcome: string; bookingId: string | null }> {
   if (session.payment_status !== "paid") return { outcome: "not_paid", bookingId: null };
   const pi = typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id ?? null;
   const r = await sql`select booking_id::text, outcome from bookhomes.mark_booking_paid(${session.id}, ${pi})`;
@@ -38,10 +44,11 @@ export async function settlePaidSession(stripe: Stripe, session: Stripe.Checkout
     let note = "Refunded in full automatically.";
     if (!done[0]?.refund_id && pi) {
       try {
+        // Direct charge: refund on the host's account and give back our application fee too (full refund).
+        const acct = account ?? (b.payout_mode === "connect" ? await hostAccount(booking_id) : null);
         const refund = await stripe.refunds.create(
-          { payment_intent: pi, reason: "requested_by_customer", reverse_transfer: b.payout_mode === "connect" || undefined,
-            refund_application_fee: b.payout_mode === "connect" || undefined, metadata: { bh_booking_id: booking_id } },
-          { idempotencyKey: `bh-conflict-refund-${booking_id}` },
+          { payment_intent: pi, reason: "requested_by_customer", refund_application_fee: acct ? true : undefined, metadata: { bh_booking_id: booking_id } },
+          { idempotencyKey: `bh-conflict-refund-${booking_id}`, ...(acct ? { stripeAccount: acct } : {}) },
         );
         await sql`update bookhomes.bookings set refund_id = ${refund.id}, updated_at = now() where id = ${booking_id}`;
         await sql`update bookhomes.payouts set status = 'cancelled', updated_at = now() where booking_id = ${booking_id}`;

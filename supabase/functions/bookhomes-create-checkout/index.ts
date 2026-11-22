@@ -3,8 +3,9 @@
 //    -> re-prices on the server (bookhomes.quote: nights, discounts, extra guests, cleaning, pets; no guest service fee),
 //       holds the dates for 30 minutes (per-listing lock), opens a Stripe Checkout page in GBP whose line items are
 //       exactly the breakdown shown on the listing page, and returns { url, lines, total_pence }.
-//    Host connected to Stripe (Express, charges enabled) -> destination charge: application_fee_amount = commission,
-//    the rest goes to the host automatically. Otherwise a normal charge to Book Homes, payout recorded "manual_pending".
+//    Host connected to Stripe (Accounts v2, Managed Risk, charges enabled) -> DIRECT charge: the Checkout Session is
+//    created on the host's connected account (Stripe-Account header), application_fee_amount = BookHomes commission,
+//    Stripe takes its card fee from the host's share. Otherwise a normal charge to Book Homes, payout "manual_pending".
 //    company -> Stripe creates a receipt/invoice PDF with the company name (sent by Stripe after payment).
 // 2) { confirm_session: "cs_..." } -> asks Stripe directly whether that session is paid and settles the booking
 //    (works even before the webhook arrives). Returns the booking summary; host contact only once paid.
@@ -115,7 +116,9 @@ Deno.serve(handle(async (req) => {
         statement_descriptor_suffix: "BOOK HOMES",
         description: `${info.title} ${ci} to ${co} (ref ${ref(hold.booking_id)})`,
         metadata: meta,
-        ...(useConnect ? { application_fee_amount: info.fee_pence, transfer_data: { destination: info.stripe_account_id } } : {}),
+        // Direct charge on the host's connected account (Managed Risk): BookHomes keeps only its commission as the
+        // application fee; Stripe takes its card fee from the host's share (fees_collector = stripe).
+        ...(useConnect ? { application_fee_amount: info.fee_pence } : {}),
       },
       metadata: meta,
       success_url: `${base}/stays/booked/?session_id={CHECKOUT_SESSION_ID}`,
@@ -129,7 +132,10 @@ Deno.serve(handle(async (req) => {
         footer: "Book Homes - booking platform. Accommodation provided by the host.",
       } };
     }
-    const session = await stripe.checkout.sessions.create(params, { idempotencyKey: `bh-checkout-${hold.booking_id}` });
+    const session = await stripe.checkout.sessions.create(params, {
+      idempotencyKey: `bh-checkout-${hold.booking_id}`,
+      ...(useConnect ? { stripeAccount: info.stripe_account_id as string } : {}),
+    });
     await sql`update bookhomes.bookings set stripe_checkout_session_id = ${session.id}, updated_at = now() where id = ${hold.booking_id}`;
     return jsonRes({ url: session.url, booking_id: hold.booking_id, total_pence: hold.amount_pence, lines: ls, hold_expires_at: hold.hold_expires_at, payout_mode: useConnect ? "connect" : "manual_pending" });
   } catch (e) {
@@ -141,16 +147,23 @@ Deno.serve(handle(async (req) => {
 }));
 
 // The guest pressed "back" on the Stripe page: free their dates straight away (only while unpaid) and close the page.
+// Connect bookings are direct charges: their Checkout Session lives on the host's connected account.
+function connectOpts(mode: string | null, account: string | null): { stripeAccount?: string } {
+  return mode === "connect" && account ? { stripeAccount: account } : {};
+}
+
 async function release(bookingId: string): Promise<Response> {
   if (!UUID_RE.test(bookingId)) throw new HttpError(400, "Invalid request");
-  const r = await sql`update bookhomes.bookings set status = 'cancelled', cancel_reason = 'guest_left_checkout', updated_at = now()
-                       where id = ${bookingId} and status in ('held', 'pending') returning stripe_checkout_session_id`;
+  const r = await sql`update bookhomes.bookings b set status = 'cancelled', cancel_reason = 'guest_left_checkout', updated_at = now()
+                       where b.id = ${bookingId} and b.status in ('held', 'pending')
+                       returning b.stripe_checkout_session_id, b.payout_mode,
+                                 (select h.stripe_account_id from bookhomes.hosts h where h.id = b.host_id) as account`;
   if (!r.length) return jsonRes({ released: false });
   await sql`update bookhomes.holds set released_at = now(), release_reason = 'guest_left' where booking_id = ${bookingId} and released_at is null`;
   const sid = r[0].stripe_checkout_session_id;
   if (sid && optionalEnv("STRIPE_SECRET_KEY")) {
     try {
-      await stripeClient().checkout.sessions.expire(sid);
+      await stripeClient().checkout.sessions.expire(sid, {}, connectOpts(r[0].payout_mode, r[0].account));
       await sql`update bookhomes.bookings set stripe_session_closed = true where id = ${bookingId}`;
     } catch { /* already completed or expired: the webhook settles it */ }
   }
@@ -159,11 +172,13 @@ async function release(bookingId: string): Promise<Response> {
 
 async function confirm(sessionId: string): Promise<Response> {
   if (!/^cs_(live|test)_[A-Za-z0-9]{10,200}$/.test(sessionId)) throw new HttpError(400, "Invalid request");
-  const own = await sql`select id::text from bookhomes.bookings where stripe_checkout_session_id = ${sessionId}`;
+  const own = await sql`select b.id::text, b.payout_mode, h.stripe_account_id as account from bookhomes.bookings b
+                          join bookhomes.hosts h on h.id = b.host_id where b.stripe_checkout_session_id = ${sessionId}`;
   if (!own.length) throw new HttpError(404, "Booking not found");
   const stripe = stripeClient();
-  const session = await stripe.checkout.sessions.retrieve(sessionId);
-  if (session.payment_status === "paid") await settlePaidSession(stripe, session);
+  const opts = connectOpts(own[0].payout_mode, own[0].account);
+  const session = await stripe.checkout.sessions.retrieve(sessionId, {}, opts);
+  if (session.payment_status === "paid") await settlePaidSession(stripe, session, opts.stripeAccount);
   const b = await loadBooking(own[0].id) as (Awaited<ReturnType<typeof loadBooking>> & { status: string }) | null;
   if (!b) throw new HttpError(404, "Booking not found");
   const paid = b.status === "paid";
