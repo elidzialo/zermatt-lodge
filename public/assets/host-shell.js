@@ -146,7 +146,7 @@ document.addEventListener("bh:host", function(e){
 /* ---------- log in from a guest page (/host?next=/trips) ---------- */
 (function(){
   var m = /[?&]next=([^&#]+)/.exec(location.search), next = m ? decodeURIComponent(m[1]) : "";
-  if (!/^\/(trips|saved)\/?$/.test(next)) return; // only our own guest pages
+  if (!/^\/(trips|saved|trips\/messages)\/?$/.test(next)) return; // only our own guest pages
   var h = $("#vLogin h1"), lead = $("#vLogin .lead");
   if (h) h.textContent = "Log in";
   if (lead) lead.textContent = "Use the email you booked with to see your trips.";

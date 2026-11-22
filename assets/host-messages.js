@@ -1,6 +1,6 @@
 /* Book Homes host portal: Messages tab (guest conversations), unread badge on the tab, "unread messages" card on Today.
    Data: bookhomes-messages function (host_list, host_thread, host_reply). Calls go through host.js's api()
-   (window.BH_HOST_API, so it uses the same session) and fall back to bh-ui.js's BH_TOKEN.
+   (window.BHHost.api, so it uses the same session) and fall back to bh-ui.js's BH_TOKEN.
    Email links open /host/#messages=<thread id>. See docs/HOST-TEAM.md. */
 (function(){
 "use strict";
@@ -12,7 +12,7 @@ var $$ = function(s, r){ return Array.prototype.slice.call((r || document).query
 function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
 function icon(n){ return '<svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-' + n + '"/></svg>'; }
 function api(body){
-  if (window.BH_HOST_API) return window.BH_HOST_API(FN_NAME, body);
+  if (window.BHHost && window.BHHost.api) return window.BHHost.api(FN_NAME, body);
   var tk = window.BH_TOKEN ? window.BH_TOKEN() : Promise.resolve(null);
   return tk.then(function(t){
     if (!t) throw new Error("Please log in again.");

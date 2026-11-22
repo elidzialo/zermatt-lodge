@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f4d3a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<title>Messages | Book Homes admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Book Homes admin: guest <-> host conversations, READ ONLY (for disputes). Every list and open is written to bookhomes.audit_log. */
+:root{--ink:#222;--muted:#6a6a6a;--line:#e6e6e6;--soft:#f7f7f7;--cream:#f7f7f5;--brand:#1f4d3a;--brand-tint:#e9f1ec;--amber:#e3a35a;--red:#b42318;--red-tint:#fdeceb;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.45;font-size:15px;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}button{cursor:pointer}
+a{color:var(--brand)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:6px}
+.hidden{display:none!important}
+.top{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);height:60px;padding:0 12px;display:flex;align-items:center;gap:10px}
+.top a.back{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:22px;line-height:1}
+.top h1{font-size:16px;font-weight:800;flex:1;min-width:0}
+.top h1 small{display:block;font-size:12.5px;font-weight:500;color:var(--muted)}
+main{max-width:1240px;margin:0 auto;padding:16px 14px 60px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.bar input{flex:1;min-width:200px;border:1px solid #cfcfcf;border-radius:10px;padding:9px 12px;font-size:16px;background:#fff}
+.bar button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px;min-height:40px}
+.bar button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.grid{display:grid;grid-template-columns:380px minmax(0,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;min-height:560px}
+.list{border-right:1px solid var(--line);overflow:auto;max-height:calc(100vh - 150px)}
+.it{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid #f1f1f1;background:#fff;padding:12px 14px}
+.it:hover{background:var(--soft)}.it[aria-current="true"]{background:var(--brand-tint)}
+.it b{display:block;font-size:14.5px}.it small{display:block;font-size:12.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;margin-left:4px;background:var(--brand-tint);color:var(--brand)}
+.tag.fl{background:#fbf1e4;color:#8a5a1f}
+.pane{display:flex;flex-direction:column;min-width:0;max-height:calc(100vh - 150px)}
+.hd{padding:14px 16px;border-bottom:1px solid #f1f1f1}.hd b{font-size:16px}.hd small{display:block;color:var(--muted);font-size:13px}
+.ro{background:#fbf1e4;color:#8a5a1f;font-size:13px;padding:8px 16px}
+.msgs{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fbfaf8}
+.m{max-width:80%;padding:10px 14px;border-radius:14px;font-size:14.5px;background:#fff;border:1px solid #ececec;align-self:flex-start;overflow-wrap:anywhere}
+.m.host{align-self:flex-end;background:var(--brand);color:#fff;border-color:var(--brand)}
+.m .who{display:block;font-size:11.5px;font-weight:700;opacity:.75;margin-bottom:2px}.m time{display:block;font-size:11.5px;opacity:.7;margin-top:4px}
+.m .orig{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed rgba(127,127,127,.5);font-size:12.5px}
+.none{padding:40px 20px;text-align:center;color:var(--muted)}
+.err{background:var(--red-tint);color:var(--red);border-radius:10px;padding:10px 12px;margin:10px}
+.gate{max-width:460px;margin:60px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+.back2{display:none;margin-right:8px;border:1px solid var(--line);background:#fff;border-radius:10px;width:36px;height:36px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.list{border-right:0;max-height:none}.grid.open .list{display:none}.grid:not(.open) .pane{display:none}.back2{display:inline-block}.pane{max-height:none}}
+</style>
+</head>
+<body>
+<header class="top"><a class="back" href="/admin" aria-label="Back to admin">&#8249;</a><h1>Messages<small>Guest and host conversations, read only</small></h1></header>
+<div class="gate hidden" id="gate"><h2 style="margin-bottom:8px">Admin sign-in needed</h2><p id="gateText">Log in on the admin page first, then come back here.</p><p style="margin-top:16px"><a href="/admin">Open admin</a></p></div>
+<main id="app" class="hidden">
+  <div class="bar"><input id="q" type="search" placeholder="Search guest, email or listing" aria-label="Search"><button type="button" id="fl" aria-pressed="false">Flagged only</button></div>
+  <div id="err"></div>
+  <div class="grid" id="grid"><div class="list" id="list"><div class="none">Loading...</div></div><div class="pane" id="pane"><div class="none">Choose a conversation.</div></div></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1/dist/umd/supabase.js" crossorigin></script>
+<script>
+(function(){
+"use strict";
+// Same sign-in as /admin (its saved session is reused). bookhomes-messages checks 2-step (aal2) + the admin list,
+// and logs admin_list_threads / admin_view_thread in bookhomes.audit_log. Nothing here can send or change a message.
+var SUPABASE_URL = "https://kddhkuwnkkjcnbjegsmc.supabase.co";
+var SUPABASE_KEY = "sb_publishable_zASd1ua4ZuknbOatR4MnTA_nVwqRZlR";
+var FN = SUPABASE_URL + "/functions/v1/bookhomes-messages";
+var $ = function(s){ return document.querySelector(s); };
+function esc(v){ return String(v == null ? "" : v).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]; }); }
+function show(el, on){ $(el).classList.toggle("hidden", !on); }
+var fDT = new Intl.DateTimeFormat("en-GB", {day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"});
+function dt(s){ return s ? fDT.format(new Date(s)) : ""; }
+function probe(n){ try { var s = window[n]; s.setItem("__bh", "1"); s.removeItem("__bh"); return s; } catch (e) { return null; } }
+var LS = probe("localStorage"), SS = probe("sessionStorage"), MEM = {};
+function trusted(){ try { var v = JSON.parse((LS && LS.getItem("bh_admin_trust")) || "null"); return !!(v && v.until > Date.now()); } catch (e) { return false; } }
+var PRIMARY = trusted() ? LS : SS, OTHER = PRIMARY === LS ? SS : LS;
+var authStorage = {
+  getItem: function(k){ try { var v = PRIMARY && PRIMARY.getItem(k); if (v) return v; v = OTHER && OTHER.getItem(k); if (v) return v; } catch (e) {} return Object.prototype.hasOwnProperty.call(MEM, k) ? MEM[k] : null; },
+  setItem: function(k, v){ try { var w = (OTHER && OTHER.getItem(k) && !(PRIMARY && PRIMARY.getItem(k))) ? OTHER : PRIMARY; if (w) w.setItem(k, v); else MEM[k] = String(v); } catch (e) { MEM[k] = String(v); } },
+  removeItem: function(k){ [LS, SS].forEach(function(s){ try { if (s) s.removeItem(k); } catch (e) {} }); delete MEM[k]; }
+};
+var sb = window.supabase && window.supabase.createClient ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storage: authStorage}}) : null;
+function claims(tok){ try { var p = tok.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"); while (p.length % 4) p += "="; return JSON.parse(atob(p)); } catch (e) { return {}; } }
+function gate(text){ show("#gate", true); show("#app", false); if (text) $("#gateText").textContent = text; }
+function api(body){
+  return sb.auth.getSession().then(function(r){
+    var s = r.data && r.data.session;
+    if (!s){ var e = new Error("signin"); e.status = 401; throw e; }
+    return fetch(FN, {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + s.access_token, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
+  }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok){ var e = new Error(j.error || ("Error " + res.status)); e.status = res.status; throw e; } return j; }); });
+}
+function fail(e){
+  if (e.status === 401 || e.status === 403) return gate(e.status === 403 && /2-step/.test(e.message) ? "Enter your 6-digit code on the admin page, then come back here." : e.status === 403 ? "This account isn't on the admin list." : null);
+  $("#err").innerHTML = '<div class="err">Could not load: ' + esc(e.message) + "</div>";
+}
+var T = [], cur = null, flagged = false, qt = null;
+function list(){
+  api({action: "admin_list", q: $("#q").value.trim() || null, flagged: flagged}).then(function(j){
+    T = j.threads || [];
+    $("#list").innerHTML = T.length ? T.map(function(t, i){
+      return '<button type="button" class="it" data-i="' + i + '"' + (cur === t.id ? ' aria-current="true"' : "") + "><b>" + esc(t.guest_name) + " &rarr; " + esc(t.host_name || "host") +
+        (t.flagged ? '<span class="tag fl">Flagged</span>' : "") + (t.booked ? '<span class="tag">Booked</span>' : "") + "</b><small>" + esc(t.listing_title) + " · " + esc(t.messages) + " message" + (t.messages === 1 ? "" : "s") + " · " + esc(dt(t.last_message_at)) + "</small><small>" + esc(t.last_preview || "") + "</small></button>";
+    }).join("") : '<div class="none">No conversations.</div>';
+  }, fail);
+}
+function open(i){
+  var t = T[i]; if (!t) return; cur = t.id; $("#grid").classList.add("open");
+  Array.prototype.forEach.call(document.querySelectorAll(".it"), function(b){ b.setAttribute("aria-current", b.getAttribute("data-i") === String(i) ? "true" : "false"); });
+  $("#pane").innerHTML = '<div class="none">Loading...</div>';
+  api({action: "admin_thread", id: t.id}).then(function(j){
+    var h = j.thread;
+    $("#pane").innerHTML = '<div class="hd"><button type="button" class="back2" data-back aria-label="Back">&#8249;</button><b>' + esc(h.guest_name) + " and " + esc(h.host_name || "host") + "</b><small>" + esc(h.listing_title) + " · guest " + esc(h.guest_email) + (h.guest_phone ? ", " + esc(h.guest_phone) : "") +
+      (h.check_in ? " · " + esc(h.check_in) + (h.check_out ? " to " + esc(h.check_out) : "") : "") + " · started " + esc(dt(h.created_at || h.last_message_at)) + "</small></div>" +
+      '<div class="ro">Read only. Opening this conversation is recorded in the audit log.</div>' +
+      '<div class="msgs">' + j.messages.map(function(m){
+        return '<div class="m ' + esc(m.sender) + '"><span class="who">' + (m.sender === "host" ? "Host" : m.sender === "guest" ? "Guest" : "Book Homes") + "</span>" + esc(m.body).replace(/\n/g, "<br>") +
+          (m.redacted && m.original_body ? '<span class="orig"><b>Original (hidden from the other side):</b><br>' + esc(m.original_body).replace(/\n/g, "<br>") + "</span>" : "") +
+          "<time>" + esc(dt(m.created_at)) + (m.read_at ? " · read " + esc(dt(m.read_at)) : "") + "</time></div>";
+      }).join("") + "</div>";
+  }, fail);
+}
+document.addEventListener("click", function(e){
+  var it = e.target.closest(".it"); if (it){ open(+it.getAttribute("data-i")); return; }
+  if (e.target.closest("[data-back]")){ $("#grid").classList.remove("open"); cur = null; }
+  if (e.target.id === "fl"){ flagged = !flagged; e.target.setAttribute("aria-pressed", flagged ? "true" : "false"); list(); }
+});
+$("#q").addEventListener("input", function(){ clearTimeout(qt); qt = setTimeout(list, 350); });
+if (!sb){ gate("The sign-in library did not load. Check your connection and reload."); return; }
+sb.auth.getSession().then(function(r){
+  var s = r.data && r.data.session;
+  if (!s) return gate();
+  if (claims(s.access_token).aal !== "aal2") return gate("Enter your 6-digit code on the admin page, then come back here.");
+  show("#app", true); list();
+});
+})();
+</script>
+</body>
+</html>
