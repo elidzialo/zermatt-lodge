@@ -511,25 +511,25 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
   <section class="panel hidden" data-panel="calendar" id="panel-calendar" role="tabpanel">
     <div class="hc" id="hc">
       <div class="hc-top">
-        <div class="hc-pick"><button type="button" class="hc-lbtn" id="hcListBtn" aria-haspopup="listbox" aria-expanded="false"><span class="hc-lph" id="hcListPh"></span><span class="hc-ltx"><b id="hcListTitle">Calendar</b><small id="hcListSub"></small></span><span class="hc-caret" aria-hidden="true"></span></button>
+        <div class="hc-pick"><button type="button" class="hc-lbtn" id="hcListBtn" aria-haspopup="listbox" aria-expanded="false"><span class="hc-lph" id="hcListPh"></span><b id="hcListTitle">Calendar</b><span class="hc-caret" aria-hidden="true"></span></button>
           <div class="hc-lmenu hidden" id="hcListMenu" role="listbox" aria-label="Choose a listing"></div>
           <label class="sr-only">Listing<select id="calListing"></select></label></div>
-        <div class="hc-nav"><button type="button" class="btn ghost sm hc-setbtn" id="hcSetBtn">Prices and rules</button><button type="button" class="btn ghost sm" id="hcToday">Today</button><button type="button" class="iconbtn" id="hcPrev" aria-label="Previous month">&lsaquo;</button><b id="hcMonth" aria-live="polite"></b><button type="button" class="iconbtn" id="hcNext" aria-label="Next month">&rsaquo;</button></div>
+        <div class="hc-nav"><button type="button" class="hc-today" id="hcToday">Today</button><b id="hcMonth" aria-live="polite"></b><button type="button" class="hc-arrow" id="hcPrev" aria-label="Previous month">&lsaquo;</button><button type="button" class="hc-arrow" id="hcNext" aria-label="Next month">&rsaquo;</button></div>
       </div>
       <div class="hc-wrap">
-        <div class="hc-main">
+        <div class="hc-main" id="hcMain">
           <div class="hc-dow" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
-          <div class="hc-months" id="hcMonths" aria-label="Calendar months"></div>
-          <p class="hc-hint">Click a night, or drag across nights. Shift-click to stretch a selection. On a phone, tap the first night and then the last.</p>
+          <div class="hc-grid" id="hcGrid"></div>
+          <p class="hc-err" id="hcErr" role="alert"></p>
         </div>
         <aside class="hc-side" id="hcSide" aria-label="Calendar settings">
-          <div class="hc-grab"><span></span><button type="button" class="iconbtn" id="hcSheetX" aria-label="Close">&times;</button></div>
+          <div class="hc-grab"><span></span></div>
           <div id="hcSel" class="hidden"></div>
           <div id="hcSet"></div>
-          <details class="hc-sync" id="hcSync"><summary><span><b>Connect calendars</b><small>Only if you also list on Airbnb, Booking.com or Vrbo</small></span></summary>
-            <p class="m">Link your calendars both ways so a night booked anywhere closes everywhere. We check imported calendars every 15 minutes. You don't need this if you only take bookings here.</p>
-            <div class="sync-card"><h3>Export: your Book Homes calendar</h3><p class="m">Paste this link into Airbnb, Booking.com, Vrbo or Guesty as an imported calendar.</p><div id="syncExport"></div></div>
-            <div class="sync-card"><h3>Import: calendars from other sites</h3><div id="syncList"></div>
+          <div id="hcSync" class="hc-syncbox hidden">
+            <p class="m">Only needed if you also take bookings on another site. We check every 15 minutes.</p>
+            <div class="sync-card"><h3>Your Book Homes link</h3><p class="m">Paste it into the other site's calendar import.</p><div id="syncExport"></div></div>
+            <div class="sync-card"><h3>Import from another site</h3><div id="syncList"></div>
               <div class="sync-add"><label class="f2">Site<select id="syncName"><option>Airbnb</option><option>Booking.com</option><option>Vrbo</option><option>Guesty</option><option>Other</option></select></label>
               <label class="f2">Calendar link (iCal)<input type="url" id="syncUrl" placeholder="https://..." inputmode="url"></label>
               <button type="button" class="btn ghost" id="syncAdd">Import calendar</button><p class="m" id="syncOut" aria-live="polite"></p></div></div>
@@ -540,7 +540,8 @@ label.f2 input:focus,label.f2 select:focus,label.f2 textarea:focus{outline:2px s
               <ol><li>Copy your Book Homes link from Export above.</li><li>In Guesty: the listing, Calendar, "Calendar sync (iCal)", then Import.</li><li>Click "Add an iCalendar link", name it Book Homes, paste the link and turn on Sync calendar.</li><li>Click Save.</li></ol>
               <p class="m">Airbnb: Calendar, Availability, Connect calendars. Booking.com: Rates and availability, Sync calendars.</p>
             </details>
-          </details>
+          
+          </div>
         </aside>
       </div>
       <div class="hc-toast hidden" id="hcToast" role="status" aria-live="polite"><span id="hcToastTx"></span><button type="button" class="link" id="hcUndo">Undo</button></div>
