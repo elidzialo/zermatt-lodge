@@ -35,9 +35,9 @@ Demand key: **High** = price up and set a minimum stay. **Med** = some uplift. *
 | Nov - Dec 2026 | Liverpool Christmas markets, Skate St George's, Christmas Wonderland at Pier Head | City centre | Med | Unverified (dates "to be announced" on the source) | https://liverpoolexpress.co.uk/liverpool-christmas-markets-set-for-return-as-2026-festive-programme-revealed/ |
 | Sat 2 Jan 2027 | Liverpool v Coventry, 3pm | Anfield | Med | Verified | Sky Sports Liverpool fixtures (above) |
 | Sun 3 Jan 2027 | Run Aintree Half Marathon | Aintree Racecourse | Low | Unverified (date from a listing URL only) | https://running.life/en/event/run-aintree-half-marathon/2027-01-03 |
-| Wed 6 Jan 2027 | Everton v Aston Villa | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
+| Wed 6 Jan 2027 | Everton v Aston Villa | Hill Dickinson Stadium | Med | Recheck | Published guides say Tue 5 Jan 7.30pm; confirm before reuse |
 | Sat 16 Jan 2027 | Liverpool v Crystal Palace, 3pm | Anfield | Med | Verified | Sky Sports Liverpool fixtures (above) |
-| Sat 23 Jan 2027 | Everton v Brentford, 3pm | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
+| Sun 24 Jan 2027 | Everton v Brentford, 2pm (moved for Sky Sports) | Hill Dickinson Stadium | Med | Verified | ToffeeWeb, 19 Nov 2026 |
 | Sat 30 Jan 2027 | Merseyside derby: Liverpool v Everton, 12.30pm (moved for TNT Sports) | Anfield | High | Verified | ToffeeWeb / Read Everton, 19 Nov 2026 |
 | Tue 2 - Wed 3 Feb 2027 | Strictly Come Dancing Live Tour | M&S Bank Arena | Low | Verified | https://www.ents24.com/liverpool-events/mands-bank-arena-liverpool/strictly-come-dancing-2027/7537711 |
 | Sat 6 Feb 2027 | Everton v Newcastle, 3pm | Hill Dickinson Stadium | Med | Verified | Sky Sports Everton fixtures (above) |
