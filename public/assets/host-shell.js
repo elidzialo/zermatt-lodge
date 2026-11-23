@@ -56,14 +56,14 @@ function head(){
 }
 function todo(){
   if (!ME) return;
-  var out = [], h = ME.host || {}, ls = ME.listings || [];
+  var out = [], ls = ME.listings || [];
   if (!ls.length) out.push({tone: "go", t: "Add your first home", s: "One question at a time, about 10 minutes.", btn: '<button type="button" class="btn sm" data-click="#newListing">Start</button>'});
   ls.forEach(function(l){
     if (l.legacy_source) return;
     if (l.status === "rejected") out.push({tone: "warn", t: "Changes needed: " + l.title, s: l.reject_reason || "We left a note on this listing.", btn: '<button type="button" class="btn sm" data-edit="' + l.id + '">Fix it</button>'});
     else if (l.status === "draft") out.push({tone: "go", t: "Finish your listing: " + l.title, s: "Pick up where you left off.", btn: '<button type="button" class="btn sm" data-edit="' + l.id + '">Continue</button>'});
   });
-  if (h.connect_status !== "enabled") out.push({tone: "warn", t: h.has_stripe ? "Finish your payout setup" : "Get paid automatically", s: "Connect your bank through Stripe.", btn: '<button type="button" class="btn ghost sm" data-click="#connectBtn">Set up payouts</button>'});
+  // Payouts are not repeated here: the payouts line at the top of Today (host-payouts.js) already asks for them
   out.sort(function(a, b){ return (a.tone === "warn" ? 0 : 1) - (b.tone === "warn" ? 0 : 1); });
   $("#tdTodoWrap").classList.toggle("hidden", !out.length);
   $("#tdTodo").innerHTML = out.map(function(x){

@@ -52,6 +52,31 @@
   // Phones: hide (the host Menu tab has "Report a bug"). Larger screens: sit just above the bar.
   var BARS = ".hp-top nav.tabs, .ed-foot, .wz-foot, .mbook, .cal-side.open, .bh-bottombar";
   var queued = false;
+  function painted(el){
+    if (/^(IMG|SVG|CANVAS|VIDEO|svg|path|use)$/.test(el.tagName)) return true;
+    var cs = getComputedStyle(el);
+    if (parseFloat(cs.borderTopWidth) || parseFloat(cs.borderLeftWidth) || parseFloat(cs.borderBottomWidth)) return true;
+    var bg = cs.backgroundColor;
+    if (bg && bg !== "transparent" && !/rgba\(.*,\s*0\)$/.test(bg) && bg !== "rgb(255, 255, 255)") return true;
+    for (var n = el.firstChild; n; n = n.nextSibling) if (n.nodeType === 3 && n.nodeValue.trim()) return true;
+    return false;
+  }
+  function overContent(a){
+    var r = a.getBoundingClientRect(), pad = 4;
+    var pts = [[r.left - pad, r.top - pad], [r.right + pad, r.top - pad], [r.left - pad, r.bottom + pad], [r.right + pad, r.bottom + pad], [r.left + r.width / 2, r.top + r.height / 2], [r.right + pad, r.top + r.height / 2]];
+    var vis = a.style.visibility; a.style.visibility = "hidden";
+    try {
+      return pts.some(function(pt){
+        var els = document.elementsFromPoint ? document.elementsFromPoint(pt[0], pt[1]) : [];
+        for (var j = 0; j < els.length; j++){
+          var el = els[j];
+          if (el === document.body || el === document.documentElement) return false;
+          if (painted(el)) return true;
+        }
+        return false;
+      });
+    } finally { a.style.visibility = vis; }
+  }
   function place(){
     if (queued) return; queued = true;
     requestAnimationFrame(function(){
@@ -86,6 +111,10 @@
         if (!hit || hit.getBoundingClientRect().top < vh / 2) break;
         a.style.bottom = (vh - hit.getBoundingClientRect().top + 10) + "px";
       }
+      // Never sit on top of page content either (cards, calendar cells, text): hide until the corner is clear.
+      // Admins can still use "Report a bug" in the user menu and the Menu tab.
+      // (inline style, not a class: the MutationObserver above watches class changes)
+      if (!isAdminPage){ a.style.display = ""; if (!a.classList.contains("bhfb-off") && overContent(a)) a.style.display = "none"; }
     });
   }
   function watch(){

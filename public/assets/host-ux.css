@@ -276,3 +276,10 @@ body:not(.dash-on) .hp-switch{display:none}
   .host .wz-top .btn{grid-row:1/3;margin:0!important}
 }
 .stepper button:disabled{opacity:.35;cursor:not-allowed}
+/* 2026-11-23 host-ux calm-down pass */
+.ed-top .ed-title{flex:1 1 auto}
+#panel-earnings .paybox{margin-bottom:8px}
+#panel-earnings .rows-h{margin-top:32px}
+#panel-earnings .statgrid:empty{display:none}
+#panel-menu .box2>b{display:block;font-size:16px;margin-bottom:2px}
+#panel-menu #trustStatus:empty{display:none}

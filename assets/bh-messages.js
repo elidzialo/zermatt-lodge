@@ -91,7 +91,7 @@ function openForm(){
     '<div id="bhmWho"></div>' +
     '<div id="bhmGuest"><label for="bhmName">Your name</label><input id="bhmName" autocomplete="name" maxlength="120" required value="' + esc(me.name || "") + '">' +
     '<label for="bhmEmail">Email <small>(so the host can reply)</small></label><input id="bhmEmail" type="email" inputmode="email" autocomplete="email" maxlength="254" required value="' + esc(me.email || "") + '">' +
-    '<label for="bhmPhone">Mobile <small>(optional, for a text when they reply)</small></label><input id="bhmPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" value="' + esc(me.phone || "") + '"></div>' +
+    '<label for="bhmPhone">Mobile <small>(optional)</small></label><input id="bhmPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" value="' + esc(me.phone || "") + '"></div>' +
     '<div class="bhm-row"><div><label for="bhmIn">Check-in <small>(optional)</small></label><input id="bhmIn" type="date" min="' + today + '" value="' + esc(d.a) + '"></div>' +
     '<div><label for="bhmOut">Checkout</label><input id="bhmOut" type="date" min="' + today + '" value="' + esc(d.b) + '"></div>' +
     '<div><label for="bhmG">Guests</label><input id="bhmG" type="number" min="1" max="50" inputmode="numeric" value="' + esc(d.g) + '"></div></div>' +
@@ -99,7 +99,7 @@ function openForm(){
     '<div class="bhm-hp" aria-hidden="true"><label>Website<input id="bhmWeb" tabindex="-1" autocomplete="off"></label></div>' +
     '<div id="bhmErr"></div>' +
     '<button type="submit" class="bhm-send" id="bhmSend">Send message</button>' +
-    '<p class="bhm-note">Your details are shared with the host only to reply to you. For your safety, keep payments and messages on Book Homes. Phone numbers and emails are hidden until you book.</p>' +
+    '<p class="bhm-note">Phone numbers and emails stay hidden until you book. For your safety, keep payments on Book Homes.</p>' +
     '</form></div>';
   document.body.appendChild(ov); document.documentElement.style.overflow = "hidden";
   ov.addEventListener("click", function(e){ if (e.target === ov || e.target.closest("[data-bhmclose]")) close(); });

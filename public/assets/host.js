@@ -398,14 +398,14 @@ function renderDash(){
   $("#connectBtn").textContent = h.connect_status === "enabled" ? "Update payout details" : h.has_stripe ? "Finish payout setup" : "Connect payouts with Stripe"; }
   $("#profSummary").innerHTML = "<b>" + esc(p.name) + "</b><p class='m'>" + esc(p.email) + " · " + esc(p.phone || "") + (p.whatsapp ? " · WhatsApp " + esc(p.whatsapp) : "") + "<br>" + (p.trader_status === "private" ? "Private individual" : "Business (trader)") + (p.company ? " · " + esc(p.company) : "") + " · Commission " + (ME.commission_pct != null ? ME.commission_pct + "%" : "") + "</p>";
   var until = MODE === "local" ? trustUntil() : 0;
-  $("#trustStatus").textContent = AS ? "Admin view: password, 2-step login and payout setup are hidden. Only the host can change them." : until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "This browser isn't trusted: you'll be signed out when you close the tab.";
+  $("#trustStatus").textContent = AS ? "Admin view: password, 2-step login and payout setup are hidden. Only the host can change them." : until ? "This browser is trusted until " + new Date(until).toLocaleDateString("en-GB") + "." : "You'll be signed out when you close this tab.";
   var sel = $("#calListing"), cur = sel.value;
   sel.innerHTML = ls.map(function(l){ return '<option value="' + l.id + '">' + esc(l.title) + "</option>"; }).join("");
   if (cur && ls.some(function(l){ return String(l.id) === cur; })) sel.value = cur;
 }
 document.addEventListener("click", function(e){
   var gp = e.target.closest && e.target.closest("[data-gopayout]");
-  if (gp){ var mt = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "menu"; })[0]; if (mt) mt.click(); setTimeout(function(){ var c = $("#connectBtn"); if (c){ c.scrollIntoView({block: "center"}); c.click(); } }, 50); return; }
+  if (gp){ var mt = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "earnings"; })[0]; if (mt) mt.click(); setTimeout(function(){ var c = $("#connectBtn"); if (c){ c.scrollIntoView({block: "center"}); c.click(); } }, 50); return; }
   var oc = e.target.closest && e.target.closest("[data-opencal]");
   if (oc){ var lid = oc.getAttribute("data-opencal"); if (W.dirty && !confirm("You have unsaved changes. Leave without saving?")) return; W.dirty = false; dropBackup(); closeAll(); $("#calListing").value = lid; var ct = $$(".tabs button").filter(function(x){ return x.getAttribute("data-tab") === "calendar"; })[0]; if (ct) ct.click(); return; }
   var cf = e.target.closest && e.target.closest("[data-calfor]");
@@ -452,10 +452,11 @@ function loadEarnings(pre){
   (pre && pre.payouts ? Promise.resolve(pre) : api("bookhomes-host", {action: "earnings"})).then(function(j){
     var rows = j.payouts || [], paid = 0, due = 0, sched = 0;
     rows.forEach(function(p){ if (p.status === "paid") paid += p.amount_pence; else if (p.status === "manual_pending") due += p.amount_pence; else if (p.status === "connect_scheduled") sched += p.amount_pence; });
-    $("#earnStats").innerHTML = '<div class="stat"><small>Paid to you</small><b>' + money(paid) + '</b></div><div class="stat"><small>Due by bank transfer</small><b>' + money(due) + '</b></div><div class="stat"><small>Paying by Stripe</small><b>' + money(sched) + "</b></div>";
+    // Only the totals that have something in them (Paid to you always shows once there are payouts)
+    $("#earnStats").innerHTML = rows.length ? '<div class="stat"><small>Paid to you</small><b>' + money(paid) + "</b></div>" + (due ? '<div class="stat"><small>Due by bank transfer</small><b>' + money(due) + "</b></div>" : "") + (sched ? '<div class="stat"><small>Paying by Stripe</small><b>' + money(sched) + "</b></div>" : "") : "";
     $("#earnList").innerHTML = rows.map(function(p){
       return '<div class="item"><div class="h"><span>' + esc(p.title) + " · " + dfmt(p.check_in) + '</span><span>' + money(p.amount_pence) + '</span></div><div class="m">' + esc({paid: "Paid", manual_pending: "Due by bank transfer", connect_scheduled: "Paid by Stripe", cancelled: "Cancelled", failed: "Failed"}[p.status] || p.status) + (p.paid_at ? " · " + dfmt(p.paid_at.slice(0, 10)) : "") + "</div></div>";
-    }).join("") || '<p class="m">Payouts appear here after your first booking.</p>';
+    }).join("") || '<div class="empty slim"><svg class="ic" aria-hidden="true"><use href="/assets/bh-icons.svg#i-receipt"/></svg><h2>No earnings yet</h2><p>Your share of each stay shows here after your first booking.</p></div>';
   }).catch(function(){});
 }
 

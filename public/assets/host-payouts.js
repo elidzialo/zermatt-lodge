@@ -1,4 +1,4 @@
-/* Book Homes host portal: Payouts box (Menu) and the compact payouts line on Today (owner decisions 22 Nov 2026).
+/* Book Homes host portal: Payouts box (Earnings tab) and the compact payouts line on Today (owner decisions 22 Nov 2026).
    - Connected via Stripe: Stripe badge, status badge, bank name + "account ending 2743", payout schedule, Manage in Stripe
      (one-time Express Dashboard link from bookhomes-connect-onboard {action: "dashboard"}).
    - Not on Stripe: optional "Or add your bank account for bank transfers" (bookhomes-host bank_save / bank_delete).
@@ -22,11 +22,13 @@ css.textContent =
   ".bp-bank form{margin-top:12px}.bp-row{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}@media(max-width:520px){.bp-row{grid-template-columns:1fr}}" +
   ".bp-saved{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin-top:12px;font-size:14.5px}" +
   ".bp-mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border:1px solid var(--line,#e5e5e5);border-radius:14px;padding:10px 14px;margin-bottom:16px;font-size:14px}" +
-  ".bp-mini span.t{flex:1;min-width:180px}.bp-mini .st{margin:0}";
+  ".bp-mini span.t{flex:1;min-width:180px}.bp-mini .st{margin:0}" +
+  ".notice.bp-today{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.notice.bp-today>span{flex:1 1 220px}";
 document.head.appendChild(css);
 
 var STRIPE = '<span class="bp-stripe" role="img" aria-label="Stripe">stripe</span>';
-var FEE_NOTE = "Guests pay you directly through Stripe. Book Homes keeps its commission and Stripe takes its card fee from your share.";
+var FEE_NOTE = "Book Homes keeps its commission and Stripe takes its card fee from your share.";
+var UNTIL = "Until then we pay you by bank transfer after check-in.";
 
 // Barclays Bank Plc -> Barclays; keeps short all-capital names (HSBC, TSB)
 function bankName(n){
@@ -41,6 +43,7 @@ function state(h){
   return "checking";
 }
 var BADGE = {on: ["approved", "Connected"], checking: ["pending", "Stripe checking your details"], more: ["rejected", "Needs more details"], none: ["draft", "Not started"]};
+function cap(t){ t = String(t || ""); return t.charAt(0).toUpperCase() + t.slice(1); }
 function badge(st){ return '<span class="st ' + BADGE[st][0] + '">' + BADGE[st][1] + "</span>"; }
 function acctLine(h){
   var b = bankName(h.payout_bank_name), l4 = h.payout_bank_last4;
@@ -51,19 +54,19 @@ function renderBox(me){
   var h = me.host || {}, st = state(h), out = "";
   if (st === "on"){
     var acct = acctLine(h);
-    out = '<div class="bp-head">' + STRIPE + "<b>Connected via Stripe</b>" + badge(st) + "</div>" +
+    out = '<div class="bp-head">' + STRIPE + "<b>Payouts</b>" + badge(st) + "</div>" +
       '<dl class="bp-dl">' + (acct ? "<dt>Bank</dt><dd>" + acct + "</dd>" : "<dt>Bank</dt><dd>Shown in Stripe</dd>") +
-      (h.payout_schedule ? "<dt>Payouts</dt><dd>" + esc(h.payout_schedule) + "</dd>" : "") + (h.payout_currency && h.payout_currency !== "GBP" ? "<dt>Currency</dt><dd>" + esc(h.payout_currency) + "</dd>" : "") + "</dl>" +
-      '<p class="bp-txt">Stripe pays your share to your bank automatically after each booking. ' + FEE_NOTE + "</p>";
+      (h.payout_schedule ? "<dt>Schedule</dt><dd>" + esc(cap(h.payout_schedule)) + "</dd>" : "") + (h.payout_currency && String(h.payout_currency).toUpperCase() !== "GBP" ? "<dt>Currency</dt><dd>" + esc(h.payout_currency) + "</dd>" : "") + "</dl>" +
+      '<p class="bp-txt">Stripe pays your share to your bank after each booking. ' + FEE_NOTE + "</p>";
   } else if (st === "checking"){
     out = '<div class="bp-head">' + STRIPE + "<b>Payout setup</b>" + badge(st) + "</div>" +
-      '<p class="bp-txt">If you have finished Stripe\'s form, Stripe is now checking your details. This usually takes a few minutes and you don\'t need to do anything else. If you stopped part way, tap Finish payout setup. Until it\'s done we pay you by bank transfer after check-in.</p>';
+      '<p class="bp-txt">This usually takes a few minutes. If you stopped part way, tap Finish payout setup. ' + UNTIL + "</p>";
   } else if (st === "more"){
     out = '<div class="bp-head">' + STRIPE + "<b>Payout setup</b>" + badge(st) + "</div>" +
-      '<p class="bp-txt">Stripe needs a few more details before it can pay you. Tap Finish payout setup to see what\'s missing. Until it\'s sorted we pay you by bank transfer after check-in.</p>';
+      '<p class="bp-txt">Stripe needs a few more details before it can pay you. ' + UNTIL + "</p>";
   } else {
-    out = '<div class="bp-head">' + STRIPE + "<b>Get paid automatically</b>" + badge(st) + "</div>" +
-      '<p class="bp-txt">Connect your bank through Stripe. ' + FEE_NOTE + " Until then we pay you by bank transfer after check-in.</p>";
+    out = '<div class="bp-head">' + STRIPE + "<b>Get paid automatically</b></div>" +
+      '<p class="bp-txt">Connect your bank through Stripe and guests pay you directly. ' + FEE_NOTE + " " + UNTIL + "</p>";
   }
   $("#payoutState").innerHTML = out;
   var cb = $("#connectBtn"), acts = cb && cb.parentNode;
@@ -73,7 +76,7 @@ function renderBox(me){
   }
   var mb = $("#bpManage");
   if (!mb && acts){
-    mb = document.createElement("button"); mb.type = "button"; mb.id = "bpManage"; mb.className = "btn";
+    mb = document.createElement("button"); mb.type = "button"; mb.id = "bpManage"; mb.className = "btn ghost";
     mb.innerHTML = "Manage in Stripe"; acts.insertBefore(mb, cb); mb.addEventListener("click", manage);
   }
   if (mb) mb.classList.toggle("hidden", st !== "on");
@@ -99,7 +102,7 @@ function bankForm(){
     '<label class="f2">Account holder name<input type="text" id="bpHolder" autocomplete="name" maxlength="70" required></label>' +
     '<div class="bp-row"><label class="f2">Sort code<input type="text" id="bpSort" inputmode="numeric" autocomplete="off" placeholder="12-34-56" maxlength="8" required></label>' +
     '<label class="f2">Account number<input type="text" id="bpAcc" inputmode="numeric" autocomplete="off" placeholder="8 digits" maxlength="8" required></label></div>' +
-    '<p class="m" style="margin:0 0 10px">We keep these encrypted and only use them to send your payouts. We check the format here; your bank confirms the name when we send the first payment.</p>' +
+    '<p class="m" style="margin:0 0 10px">Kept encrypted and only used to pay you.</p>' +
     '<div id="bpMsg"></div><div class="acts"><button class="btn" type="submit" id="bpSave">Save bank details</button>' + (bankOf() ? '<button class="btn ghost" type="button" id="bpCancel">Cancel</button>' : "") + "</div></form>";
 }
 function bankOf(){ var me = H() && H().me(); return me && me.bank_account; }
@@ -118,7 +121,7 @@ function renderBank(me, force){
   var inner = bank ?
     '<div class="bp-saved"><span>We pay you by bank transfer to:<br><b>' + esc(bank.holder_name) + "</b><br>Sort code " + esc(bank.sort_code_masked) + " · account ending " + esc(bank.last4) + '</span><span class="acts" style="margin:0"><button type="button" class="btn ghost sm" id="bpReplace">Replace</button><button type="button" class="btn ghost sm" id="bpRemove">Remove</button></span></div><div id="bpMsg"></div>'
     : bankForm();
-  box.innerHTML = '<details class="box2 bp-bank"' + (bank ? " open" : "") + '><summary>' + (bank ? "Bank account for bank transfers" : "Or add your bank account for bank transfers") + "</summary>" + inner + "</details>";
+  box.innerHTML = '<details class="box2 bp-bank"' + (bank ? " open" : "") + '><summary>' + (bank ? "Bank account for bank transfers" : "Or get paid by bank transfer") + "</summary>" + inner + "</details>";
 }
 function msg(t, ok){ var m = $("#bpMsg"); if (m) m.innerHTML = t ? '<div class="msg ' + (ok ? "ok" : "err") + '">' + esc(t) + "</div>" : ""; }
 function setBank(b){ var me = H().me(); if (me) me.bank_account = b; editing = false; renderBank(me, true); }
@@ -139,7 +142,7 @@ document.addEventListener("click", function(e){
     return;
   }
   var go = t.closest && t.closest("[data-bp-go]");
-  if (go){ var mt = document.querySelector('.tabs button[data-tab="menu"]'); if (mt) mt.click(); setTimeout(function(){ var b = $("#payoutState"); if (b) b.scrollIntoView({block: "center"}); }, 50); }
+  if (go){ var mt = document.querySelector('.tabs button[data-tab="earnings"]'); if (mt) mt.click(); setTimeout(function(){ var b = $("#payoutState"); if (b) b.scrollIntoView({block: "center"}); }, 50); }
 });
 document.addEventListener("submit", function(e){
   if (e.target.id !== "bpForm") return;
@@ -158,16 +161,14 @@ document.addEventListener("submit", function(e){
 function renderToday(me){
   var h = me.host || {}, st = state(h), bank = me.bank_account, el = $("#payBanner");
   if (!el) return;
-  if (st === "on"){
-    var acct = acctLine(h);
-    el.innerHTML = '<div class="bp-mini">' + STRIPE.replace("bp-stripe", "bp-stripe sm") + '<span class="t"><b>Payouts connected</b>' + (acct ? " · " + acct : "") + (h.payout_schedule ? " · " + esc(h.payout_schedule) : "") + "</span>" + badge(st) + '<button type="button" class="btn ghost sm" data-bp-go>Details</button></div>';
-    return;
-  }
-  var head = st === "more" ? "Stripe needs more details for your payouts." : st === "checking" ? "Stripe is checking your payout details." : "Your payouts are not connected yet.";
-  var tail = st === "checking" ? "You'll get paid automatically once it's done." : "Please set up Stripe so you can get paid automatically.";
+  // Connected: nothing to do, so Today stays quiet (bank and schedule are on the Earnings tab)
+  if (st === "on"){ el.innerHTML = ""; return; }
+  // One short line and one button (the full details live on the Earnings tab)
+  var head = st === "more" ? "Stripe needs a few more details." : st === "checking" ? "Stripe is checking your details." : "Set up payouts";
+  var tail = st === "checking" ? "Nothing to do for now." : st === "more" ? "Finish setup to get paid automatically." : "to get paid straight to your bank.";
   var btn = st === "checking" ? '<button type="button" class="btn ghost sm" data-bp-go>Details</button>' : '<button type="button" class="btn sm" data-gopayout>' + (h.has_stripe ? "Finish setup" : "Set up payouts") + "</button>";
-  el.innerHTML = '<div class="notice" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap"><span>' + STRIPE.replace("bp-stripe", "bp-stripe sm") + " <b>" + head + "</b> " + tail +
-    (bank ? " Until then we pay by bank transfer to the account ending " + esc(bank.last4) + "." : "") + "</span>" + badge(st) + btn + "</div>";
+  el.innerHTML = '<div class="notice bp-today"><span>' + STRIPE.replace("bp-stripe", "bp-stripe sm") + " <b>" + head + "</b> " + tail +
+    (bank && st === "none" ? " Until then we pay you by bank transfer." : "") + "</span>" + btn + "</div>";
 }
 
 /* Refresh the payout details from Stripe once per visit when the host has a Stripe account (bank name, last 4, schedule). */
@@ -190,7 +191,7 @@ window.BHPay = {
   }
 };
 document.addEventListener("click", function(e){
-  var t = e.target.closest && e.target.closest('.tabs button[data-tab="menu"]');
+  var t = e.target.closest && e.target.closest('.tabs button[data-tab="earnings"], .tabs button[data-tab="menu"]');
   if (t && H() && H().me()) refreshFromStripe(H().me());
 });
 })();

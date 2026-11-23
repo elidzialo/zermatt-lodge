@@ -207,7 +207,7 @@ TRIPS_CSS = """<style>
 
 MESSAGES = f"""<main class="wrap im" id="content">
 <div class="im-top"><h1>Messages</h1><a href="/trips">Trips</a></div>
-<p class="tr-help" id="imSignin" hidden style="margin:0 0 14px"><a href="/host?next=/trips/messages">Log in</a> to see every conversation for your email. Without logging in you see the ones opened on this device.</p>
+<p class="tr-help" id="imSignin" hidden style="margin:0 0 14px"><a href="/host?next=/trips/messages">Log in</a> to see all your messages.</p>
 <div class="im-grid" id="imGrid"><div class="im-list" id="imList" aria-label="Conversations"><div class="im-empty">Loading...</div></div><div class="im-pane" id="imPane"><div class="im-empty">Choose a conversation.</div></div></div>
 <div id="imRoot"></div>
 </main>
