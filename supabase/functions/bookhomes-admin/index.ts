@@ -116,6 +116,65 @@ async function hostLink(type: "magiclink" | "recovery", email: string, extra = "
   return `${LIVE_SITE}/host/?${extra}token_hash=${encodeURIComponent(hashed)}&type=${type}`;
 }
 
+// ---------- Listing review (23 Nov 2026): approve / request changes / reject / pause / unpause, one place for single and bulk ----------
+type Admin = Awaited<ReturnType<typeof requireAdmin>>;
+async function listingOp(admin: Admin, op: string, id: number, reason: string | null): Promise<{ status: string; rebuild: boolean }> {
+  const l = (await sql`select l.id, l.slug, l.title, l.status, l.legacy_source, l.approved_at, p.approved as host_approved, p.email, p.phone
+                         from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
+                        where l.id = ${id}`)[0];
+  if (!l) throw new HttpError(404, "Listing not found");
+  if (l.legacy_source) throw new HttpError(409, "Zermatt Lodge runs on its own booking system.");
+  if (l.status === "archived") throw new HttpError(409, "This listing was deleted.");
+  const from = String(l.status);
+  let status = from, rebuild = false;
+  if (op === "approve_listing") {
+    if (!l.host_approved) throw new HttpError(409, "Approve the host first (Hosts tab).");
+    if (from === "approved") throw new HttpError(409, "Already live.");
+    const slug = await safeSlug(id, String(l.slug ?? ""));
+    await sql`update bookhomes.listings set status = 'approved', slug = ${slug}, approved_at = now(), reviewed_by = ${admin.email}, reject_reason = null where id = ${id}`;
+    status = "approved"; rebuild = true;
+    await notify(l.email, `Your listing is live: ${l.title}`, [`"${l.title}" is approved and now bookable on Book Homes.`, `Your page: ${siteUrl()}/${slug}`, "It appears in search straight away."]);
+    await sendSms({ kind: "listing_approved", to: l.phone, email: l.email, listingId: id, dedupe: `listing_approved:${id}:${new Date().toISOString().slice(0, 10)}`,
+      body: smsText.listingApproved(String(l.title), `${siteUrl()}/${slug}`) });
+  } else if (op === "request_changes" || op === "reject_listing") {
+    // Both leave the listing 'rejected' so the host can edit and submit again; the email wording differs.
+    if (!reason) throw new HttpError(400, op === "request_changes" ? "Say what the host should change." : "Give a reason (it is emailed to the host).");
+    await sql`update bookhomes.listings set status = 'rejected', reviewed_by = ${admin.email}, reject_reason = ${reason} where id = ${id}`;
+    status = "rejected"; rebuild = from === "approved";
+    if (op === "request_changes") await notify(l.email, `Changes needed: ${l.title}`, [`"${l.title}" needs a few changes before it can go live.`, `What to change: ${reason}`, "Edit it in your host dashboard and submit it again."]);
+    else await notify(l.email, `Your listing: ${l.title}`, [`Sorry, we can't accept "${l.title}" on Book Homes at the moment.`, `Reason: ${reason}`, "If you can fix this, edit the listing in your host dashboard and submit it again, or reply to this email."]);
+  } else if (op === "pause_listing") {
+    if (!["approved", "pending"].includes(from)) throw new HttpError(409, "Only live or waiting listings can be paused.");
+    await sql`update bookhomes.listings set status = 'paused', reviewed_by = ${admin.email} where id = ${id}`;
+    status = "paused"; rebuild = from === "approved";
+    await notify(l.email, `Your listing is paused: ${l.title}`, [`We've paused "${l.title}", so guests can't find or book it for now. Bookings you already have are not affected.`, reason ? `Why: ${reason}` : "", "Reply to this email if you have questions."]);
+  } else if (op === "unpause_listing") {
+    if (from !== "paused") throw new HttpError(409, "This listing is not paused.");
+    const back = l.approved_at && l.host_approved ? "approved" : "pending";
+    await sql`update bookhomes.listings set status = ${back}, reviewed_by = ${admin.email} where id = ${id}`;
+    status = back; rebuild = back === "approved";
+    if (back === "approved") await notify(l.email, `Your listing is live again: ${l.title}`, [`"${l.title}" is bookable on Book Homes again.`, `Your page: ${siteUrl()}/${l.slug}`]);
+  } else throw new HttpError(400, "Unknown listing action");
+  await audit(admin, op, "listing", String(id), { reason, from, to: status });
+  return { status, rebuild };
+}
+async function setFeatured(admin: Admin, id: number, on: boolean): Promise<number[]> {
+  const l = (await sql`select status from bookhomes.listings where id = ${id}`)[0];
+  if (!l) throw new HttpError(404, "Listing not found");
+  if (on && l.status !== "approved") throw new HttpError(409, "Only live listings can be featured.");
+  const cur = await getSetting<number[]>("featured_listings", []);
+  const next = on ? [...new Set([...cur, id])] : cur.filter((x) => x !== id);
+  await setSetting("featured_listings", next, admin.email);
+  await audit(admin, on ? "feature_listing" : "unfeature_listing", "listing", String(id), {});
+  return next;
+}
+// Stripe dashboard link for a payment: connected-account (direct) charges live under the host's account.
+function stripePayUrl(pi: string | null, acct: string | null): string | null {
+  if (!pi || !/^pi_[A-Za-z0-9_]+$/.test(pi)) return null;
+  return acct && /^acct_[A-Za-z0-9]+$/.test(acct) ? `https://dashboard.stripe.com/${acct}/payments/${pi}` : `https://dashboard.stripe.com/payments/${pi}`;
+}
+const HOST_TYPES = ["standard", "kosher"];
+
 Deno.serve(handle(async (req) => {
   if (req.method !== "POST") throw new HttpError(405, "Method not allowed");
   const admin = await requireAdmin(req);
@@ -165,32 +224,55 @@ Deno.serve(handle(async (req) => {
 
     case "approve_listing":
     case "reject_listing":
-    case "pause_listing": {
+    case "request_changes":
+    case "pause_listing":
+    case "unpause_listing": {
       const id = int(b.id, 1, 1e12);
       if (!id) throw new HttpError(400, "Invalid listing");
-      const l = (await sql`select l.id, l.slug, l.title, l.status, l.legacy_source, p.approved as host_approved, p.email, p.phone
-                             from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
-                            where l.id = ${id}`)[0];
-      if (!l) throw new HttpError(404, "Listing not found");
-      const reason = str(b.reason, 400);
-      if (action === "approve_listing") {
-        if (!l.host_approved) throw new HttpError(409, "Approve the host first (Hosts tab).");
-        const slug = await safeSlug(id, String(l.slug ?? ""));
-        await sql`update bookhomes.listings set status = 'approved', slug = ${slug}, approved_at = now(), reviewed_by = ${admin.email}, reject_reason = null where id = ${id}`;
-        const rebuilt = await rebuildSite();
-        await audit(admin, "rebuild_site", "listing", String(id), { rebuilt, slug });
-        await notify(l.email, `Your listing is live: ${l.title}`, [`"${l.title}" is approved and now bookable on Book Homes.`, `Your page: ${siteUrl()}/${slug}`, "It appears in search straight away."]);
-        await sendSms({ kind: "listing_approved", to: l.phone, email: l.email, listingId: id, dedupe: `listing_approved:${id}:${new Date().toISOString().slice(0, 10)}`,
-          body: smsText.listingApproved(String(l.title), `${siteUrl()}/${slug}`) });
-      } else if (action === "reject_listing") {
-        await sql`update bookhomes.listings set status = 'rejected', reviewed_by = ${admin.email}, reject_reason = ${reason} where id = ${id}`;
-        await notify(l.email, `Changes needed: ${l.title}`, [`"${l.title}" needs a few changes before it can go live.`, reason ? `What to change: ${reason}` : "", "Edit it in your host dashboard and submit it again."]);
-      } else {
-        await sql`update bookhomes.listings set status = 'paused', reviewed_by = ${admin.email} where id = ${id}`;
+      const r = await listingOp(admin, action, id, str(b.reason, 600));
+      if (r.rebuild) await audit(admin, "rebuild_site", "listing", String(id), { rebuilt: await rebuildSite(), after: action });
+      return jsonRes({ ok: true, status: r.status });
+    }
+
+    case "bulk_listings": {
+      // { op, ids: [..], reason? }  one audit row per listing plus one for the batch; the site is rebuilt once at the end.
+      const op = String(b.op ?? "");
+      if (!["approve_listing", "reject_listing", "request_changes", "pause_listing", "unpause_listing", "feature_listing", "unfeature_listing"].includes(op)) throw new HttpError(400, "Choose an action.");
+      const ids = [...new Set((Array.isArray(b.ids) ? b.ids : []).map((x) => int(x, 1, 1e12)).filter((x): x is number => !!x))].slice(0, 100);
+      if (!ids.length) throw new HttpError(400, "Select at least one listing.");
+      const reason = str(b.reason, 600);
+      const done: number[] = [], failed: { id: number; error: string }[] = [];
+      let rebuild = false;
+      for (const id of ids) {
+        try {
+          if (op === "feature_listing" || op === "unfeature_listing") { await setFeatured(admin, id, op === "feature_listing"); rebuild = true; }
+          else { const r = await listingOp(admin, op, id, reason); rebuild = rebuild || r.rebuild; }
+          done.push(id);
+        } catch (e) { failed.push({ id, error: (e as Error).message }); }
       }
-      await audit(admin, action, "listing", String(id), { reason });
-      if (action === "pause_listing") await rebuildSite();
-      return jsonRes({ ok: true });
+      const rebuilt = rebuild ? await rebuildSite() : false;
+      await audit(admin, "bulk_listings", "listing", null, { op, done, failed, reason, rebuilt });
+      return jsonRes({ ok: true, done, failed, rebuilt });
+    }
+
+    case "listing_detail": {
+      const id = int(b.id, 1, 1e12);
+      if (!id) throw new HttpError(400, "Invalid listing");
+      const l = (await sql.unsafe(`select ${COLS}, l.reject_reason, l.reviewed_by, l.deleted_at,
+                                          coalesce(nullif(h.display_name, ''), p.name) as host_name, p.email as host_email, p.user_id as host_user_id,
+                                          p.approved as host_approved, h.host_type
+                                     from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
+                                    where l.id = $1`, [id]))[0];
+      if (!l) throw new HttpError(404, "Listing not found");
+      const [photos, history, counts, featured] = await Promise.all([
+        sql`select url, thumb_url from bookhomes.listing_photos where listing_id = ${id} order by sort, created_at`,
+        sql`select at, actor_email, action, details from bookhomes.audit_log where (entity = 'listing' and entity_id = ${String(id)})
+              or (action = 'bulk_listings' and (details -> 'done') @> ${sql.json([id])}) order by at desc limit 100`,
+        sql`select count(*) filter (where status = 'paid')::int as paid, count(*) filter (where status = 'paid' and check_out >= bookhomes.uk_today())::int as upcoming
+              from bookhomes.bookings where listing_id = ${id}`,
+        getSetting<number[]>("featured_listings", []),
+      ]);
+      return jsonRes({ listing: { ...l, featured: featured.includes(id) }, photos, history, bookings: counts[0], site: siteUrl() });
     }
 
     case "set_commission": {
@@ -343,9 +425,11 @@ Deno.serve(handle(async (req) => {
       const featured = await getSetting<number[]>("featured_listings", []);
       const rows = await sql.unsafe(`
         select ${COLS}, l.reject_reason, l.reviewed_by, coalesce(nullif(h.display_name, ''), p.name) as host_name, p.email as host_email,
-               (select count(*)::int from bookhomes.listing_photos x where x.listing_id = l.id) as photos
+               (select count(*)::int from bookhomes.listing_photos x where x.listing_id = l.id) as photos,
+               (select coalesce(x.thumb_url, x.url) from bookhomes.listing_photos x where x.listing_id = l.id order by x.sort, x.created_at limit 1) as cover,
+               (l.approved_at is not null and l.updated_at > l.approved_at + interval '1 minute') as edited_since_approval
           from bookhomes.listings l join bookhomes.hosts h on h.id = l.host_id join bookhomes.profiles p on p.user_id = h.user_id
-         where ($1 = '' or l.title ilike $2 or l.area ilike $2 or l.slug ilike $2 or p.email ilike $2) and ($3 = '' or l.status = $3)
+         where ($1 = '' or l.title ilike $2 or l.area ilike $2 or l.slug ilike $2 or p.email ilike $2 or l.id::text = $1) and ($3 = '' or l.status = $3)
          order by case l.status when 'pending' then 0 else 1 end, l.updated_at desc limit $4 offset $5`,
         [String(b.q ?? "").trim(), like(b.q), st ?? "", limit, offset]);
       // deno-lint-ignore no-explicit-any
@@ -386,7 +470,23 @@ Deno.serve(handle(async (req) => {
       const emails = await sql`select created_at, to_role, to_address, template, subject, status, error from zermatt.email_log where booking_id = ${String(b.id)} order by created_at desc limit 50`.catch(() => []);
       const full = bk.source === "bookhomes" ? (await sql`select cleaning_pence, refund_id, cancel_reason from bookhomes.bookings where id = ${String(b.id)}`)[0] : null;
       const refund = bk.source === "bookhomes" && bk.status === "paid" ? policyRefund(bk.cancellation_policy ?? "moderate", bk.ci, bk.amount_pence, full?.cleaning_pence ?? 0) : null;
-      return jsonRes({ booking: { ...bk, ...full }, notes, emails, policy_refund: refund });
+      // Payment status straight from Stripe (read only). Direct charges are on the host's connected account.
+      const acct = bk.source === "bookhomes" && bk.payout_mode === "connect"
+        ? ((await sql`select h.stripe_account_id from bookhomes.bookings x join bookhomes.hosts h on h.id = x.host_id where x.id = ${String(b.id)}`)[0]?.stripe_account_id ?? null) : null;
+      const pi = bk.stripe_payment_intent_id as string | null;
+      let stripe: Record<string, unknown> | null = pi ? { url: stripePayUrl(pi, acct), account: acct } : null;
+      if (pi && stripe && optionalEnv("STRIPE_SECRET_KEY")) {
+        try {
+          const p = await stripeClient().paymentIntents.retrieve(pi, { expand: ["latest_charge"] }, acct ? { stripeAccount: acct } : undefined);
+          const ch = p.latest_charge && typeof p.latest_charge === "object" ? p.latest_charge : null;
+          stripe = { ...stripe, status: p.status, amount_pence: p.amount, received_pence: p.amount_received, refunded_pence: ch?.amount_refunded ?? 0,
+            card: ch?.payment_method_details?.card ? `${ch.payment_method_details.card.brand} ending ${ch.payment_method_details.card.last4}` : null,
+            application_fee_pence: p.application_fee_amount ?? null };
+        } catch (e) { stripe = { ...stripe, error: (e as Error).message }; }
+      }
+      const payouts = bk.source === "bookhomes" ? await sql`select id, amount_pence, status, note, paid_at, created_at from bookhomes.payouts where booking_id = ${String(b.id)} order by created_at` : [];
+      const history = await sql`select at, actor_email, action, details from bookhomes.audit_log where entity = 'booking' and entity_id = ${String(b.id)} order by at desc limit 50`;
+      return jsonRes({ booking: { ...bk, ...full }, notes, emails, policy_refund: refund, stripe, payouts, history });
     }
 
     case "add_note": {
@@ -475,12 +575,9 @@ Deno.serve(handle(async (req) => {
     case "feature_listing": {
       const id = int(b.id, 1, 1e12);
       if (!id) throw new HttpError(400, "Invalid listing");
-      const cur = await getSetting<number[]>("featured_listings", []);
-      const on = b.featured !== false;
-      const next = on ? [...new Set([...cur, id])] : cur.filter((x) => x !== id);
-      await setSetting("featured_listings", next, admin.email);
-      await audit(admin, on ? "feature_listing" : "unfeature_listing", "listing", String(id), {});
-      return jsonRes({ ok: true, featured: next });
+      const next = await setFeatured(admin, id, b.featured !== false);
+      const rebuilt = await rebuildSite(); // the homepage shows featured homes first (build_listings.py)
+      return jsonRes({ ok: true, featured: next, rebuilt });
     }
 
     case "edit_listing": {
@@ -489,10 +586,21 @@ Deno.serve(handle(async (req) => {
       const raw = (b.listing ?? {}) as Record<string, unknown>;
       const f = { ...listingFields(raw), ...(await feeFields(raw)) };
       if (!Object.keys(f).length) throw new HttpError(400, "Nothing to change.");
-      const r = await sql`update bookhomes.listings set ${sql(f)} where id = ${id} and legacy_source is null returning id`;
-      if (!r.length) throw new HttpError(404, "Listing not found (Zermatt Lodge is edited in its own admin).");
-      await audit(admin, "edit_listing", "listing", String(id), { fields: Object.keys(f) });
-      return jsonRes({ ok: true });
+      const before = (await sql`select * from bookhomes.listings where id = ${id} and legacy_source is null`)[0];
+      if (!before) throw new HttpError(404, "Listing not found (Zermatt Lodge is edited in its own admin).");
+      // before -> after for each field that really changes (sql.json values carry the plain value in .value)
+      const plain = (v: unknown) => v && typeof v === "object" && "value" in (v as Record<string, unknown>) && !Array.isArray(v) ? (v as { value: unknown }).value : v;
+      const changes: Record<string, { from: unknown; to: unknown }> = {};
+      for (const [k, v] of Object.entries(f)) {
+        const a = before[k] ?? null, nv = plain(v) ?? null;
+        const same = typeof a === "object" || typeof nv === "object" ? JSON.stringify(a) === JSON.stringify(nv) : String(a ?? "") === String(nv ?? "");
+        if (!same) changes[k] = { from: typeof a === "string" && a.length > 300 ? a.slice(0, 300) + "..." : a, to: typeof nv === "string" && nv.length > 300 ? nv.slice(0, 300) + "..." : nv };
+      }
+      if (!Object.keys(changes).length) return jsonRes({ ok: true, changed: [] });
+      await sql`update bookhomes.listings set ${sql(f)} where id = ${id} and legacy_source is null`;
+      await audit(admin, "edit_listing", "listing", String(id), { fields: Object.keys(changes), changes });
+      const rebuilt = before.status === "approved" ? await rebuildSite() : false;
+      return jsonRes({ ok: true, changed: Object.keys(changes), rebuilt });
     }
 
     case "suspend_user": {
@@ -700,6 +808,83 @@ Deno.serve(handle(async (req) => {
       await audit(admin, "delete_host", "profile", h.user_id, { mode: "soft", email: h.email, host_id: hid, stripe_account_id: h.stripe_account_id,
         archived_listings: archived, rebuilt, name: h.name });
       return jsonRes({ ok: true, mode: "soft", archived, rebuilt });
+    }
+
+    // ---------- Owner's daily view (23 Nov 2026) ----------
+    case "dashboard": {
+      const [moves, pend, msgs, month] = await Promise.all([
+        sql`select a.id, a.listing_title, a.guest_name, a.guest_phone, a.guests, a.nights, a.check_in::text as check_in, a.check_out::text as check_out, a.source, a.amount_pence,
+                   case when a.check_in = bookhomes.uk_today() then 'arrival' when a.check_out = bookhomes.uk_today() then 'departure'
+                        when a.check_in = bookhomes.uk_today() + 1 then 'tomorrow' else 'staying' end as kind
+              from bookhomes.all_bookings a
+             where a.status = 'paid' and a.check_in <= bookhomes.uk_today() + 1 and a.check_out >= bookhomes.uk_today()
+             order by a.check_in, a.listing_title`,
+        sql`select (select count(*)::int from bookhomes.profiles where approved is not true and role = 'host' and deleted_at is null) as hosts,
+                   (select count(*)::int from bookhomes.listings where status = 'pending') as listings,
+                   (select count(*)::int from bookhomes.payouts where status = 'manual_pending') as payouts,
+                   (select coalesce(sum(amount_pence), 0)::bigint from bookhomes.payouts where status = 'manual_pending') as payouts_pence`,
+        sql`select coalesce(sum(host_unread), 0)::int as unread, count(*) filter (where host_unread > 0)::int as threads,
+                   count(*) filter (where host_unread > 0 and last_message_at < now() - interval '24 hours')::int as waiting_over_day,
+                   count(*) filter (where flagged)::int as flagged
+              from bookhomes.threads`.catch(() => [{ unread: 0, threads: 0, waiting_over_day: 0, flagged: 0 }]),
+        sql`select count(*)::int as bookings, coalesce(sum(amount_pence), 0)::bigint as revenue_pence, coalesce(sum(fee_pence), 0)::bigint as commission_pence,
+                   coalesce(sum(amount_pence) filter (where source = 'bookhomes'), 0)::bigint as marketplace_pence
+              from bookhomes.all_bookings
+             where status = 'paid' and (coalesce(paid_at, created_at) at time zone 'Europe/London') >= date_trunc('month', now() at time zone 'Europe/London')`,
+      ]);
+      return jsonRes({ today: ukToday(), moves, pending: pend[0], messages: msgs[0], month: month[0] });
+    }
+
+    case "connect_payouts": {
+      // Payouts Stripe sends from each connected host account to their bank (read only, newest first).
+      if (!optionalEnv("STRIPE_SECRET_KEY")) return jsonRes({ rows: [], note: "Stripe is not set up on the server." });
+      const hosts = await sql`select h.id, h.stripe_account_id, coalesce(nullif(h.display_name, ''), p.name) as host_name, p.email, h.payouts_enabled
+                                from bookhomes.hosts h join bookhomes.profiles p on p.user_id = h.user_id
+                               where h.stripe_account_id is not null and h.deleted_at is null order by h.updated_at desc limit 30`;
+      const st = stripeClient();
+      const rows = await Promise.all(hosts.map(async (h: { id: string; stripe_account_id: string; host_name: string; email: string; payouts_enabled: boolean }) => {
+        try {
+          const [po, bal] = await Promise.all([st.payouts.list({ limit: 10 }, { stripeAccount: h.stripe_account_id }), st.balance.retrieve({}, { stripeAccount: h.stripe_account_id })]);
+          const sum = (a: { amount: number; currency: string }[]) => a.filter((x) => x.currency === "gbp").reduce((t, x) => t + x.amount, 0);
+          return { ...h, available_pence: sum(bal.available), pending_pence: sum(bal.pending),
+            payouts: po.data.map((p) => ({ id: p.id, amount_pence: p.amount, currency: p.currency, status: p.status, arrival_date: new Date(p.arrival_date * 1000).toISOString().slice(0, 10), created: new Date(p.created * 1000).toISOString() })) };
+        } catch (e) { return { ...h, error: (e as Error).message, payouts: [] }; }
+      }));
+      return jsonRes({ rows });
+    }
+
+    // ---------- Commission by host type (23 Nov 2026). bookhomes.commission_for(): host override, else the rate for the host's type, else standard. ----------
+    case "commission_settings": {
+      const [pct, byType, hosts] = await Promise.all([
+        getSetting<number>("commission_pct", 15), getSetting<Record<string, number>>("commission_by_type", {}),
+        sql`select h.id as host_id, p.user_id, coalesce(nullif(h.display_name, ''), p.name, p.email) as host_name, p.email, h.host_type, h.commission_override,
+                   bookhomes.commission_for(h.id) as effective_pct,
+                   (select count(*)::int from bookhomes.listings l where l.host_id = h.id and l.status <> 'archived' and coalesce((l.kosher ->> 'kitchen')::boolean, false)) as kosher_listings
+              from bookhomes.hosts h join bookhomes.profiles p on p.user_id = h.user_id where h.deleted_at is null and p.deleted_at is null order by host_name`,
+      ]);
+      return jsonRes({ standard: Number(pct), by_type: { kosher: byType.kosher ?? null }, types: HOST_TYPES, hosts });
+    }
+
+    case "set_commission_types": {
+      const standard = num(b.standard, 0, 50), kosher = num(b.kosher, 0, 50);
+      if (standard === null || kosher === null) throw new HttpError(400, "Enter a percentage from 0 to 50 for each type.");
+      const before = { standard: await getSetting<number>("commission_pct", 15), by_type: await getSetting<Record<string, number>>("commission_by_type", {}) };
+      await setSetting("commission_pct", standard, admin.email);
+      await setSetting("commission_by_type", { ...before.by_type, kosher }, admin.email);
+      await audit(admin, "set_commission_types", "settings", "commission", { before, after: { standard, kosher } });
+      return jsonRes({ ok: true });
+    }
+
+    case "set_host_type": {
+      const hid = String(b.host_id ?? "");
+      const t = String(b.host_type ?? "");
+      if (!UUID_RE.test(hid) || !HOST_TYPES.includes(t)) throw new HttpError(400, "Invalid request");
+      const r = await sql`update bookhomes.hosts h set host_type = ${t}, updated_at = now() from (select host_type as old from bookhomes.hosts where id = ${hid}) o
+                           where h.id = ${hid} returning o.old`;
+      if (!r.length) throw new HttpError(404, "Host not found");
+      await audit(admin, "set_host_type", "host", hid, { from: r[0].old, to: t });
+      const pct = (await sql`select bookhomes.commission_for(${hid}::uuid) as pct`)[0].pct;
+      return jsonRes({ ok: true, effective_pct: Number(pct) });
     }
 
     default:

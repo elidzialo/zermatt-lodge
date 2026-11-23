@@ -1216,7 +1216,7 @@ function mpApi(body){
     return fetch(SUPABASE_URL + "/functions/v1/bookhomes-admin", {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
   }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok){ var er = new Error(j.error || ("Error " + res.status)); er.code = j.code; er.bookings = j.bookings; throw er; } return j; }); });
 }
-window.BHAdmin = {api: mpApi}; // assets/admin-bank.js (host bank details on Payouts)
+window.BHAdmin = {api: mpApi, refresh: function(){ MP = null; return mpLoad(true); }}; // assets/admin-bank.js, assets/admin-ops.js
 function mpLoad(force){
   if (MP && !force) return Promise.resolve(mpRender());
   if (MP_LOADING) return MP_LOADING;
@@ -1773,6 +1773,7 @@ function deleteHost(h){
 })();
 </script>
 <script src="/assets/admin-bank.js?v=817b2340" defer></script>
+<script src="/assets/admin-ops.js?v=d114ecd5" defer></script>
 <script src="/assets/bh-feedback.js?v=063b82dd" defer></script>
 </body>
 </html>

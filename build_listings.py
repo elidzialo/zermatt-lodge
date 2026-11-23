@@ -1338,7 +1338,9 @@ def build():
                   + (f', and we are now taking hosts in {esc(bh_areas.join(soon))}' if soon else "") + '. Total prices, no booking fees.</p>') if live else ""
     cities = [a["name"] for a, n, _ in bh_areas.status(listings) if n and not a.get("parent")][:2]
     home_title = f"Holiday Homes in {' & '.join(cities)} | Book Homes" if cities else HOME_TITLE
-    write("index.html", home_page(listings, guides, title=home_title, desc=home_desc, intro=home_intro, areas=bh_areas.chips_html(listings)))
+    # Featured homes (admin Listings > Feature on homepage) come first on the homepage; the order is otherwise unchanged.
+    home_listings = sorted(listings, key=lambda l: not l.get("featured"))
+    write("index.html", home_page(home_listings, guides, title=home_title, desc=home_desc, intro=home_intro, areas=bh_areas.chips_html(listings)))
     write("kosher-homes/index.html", kosher_page(listings, guides))
     write("saved/index.html", saved_page(listings))
     import shutil
