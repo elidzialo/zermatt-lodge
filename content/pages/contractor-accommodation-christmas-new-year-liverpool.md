@@ -55,7 +55,7 @@ Because Boxing Day falls on a Saturday in 2026, the bank holiday moves to **Mond
 ## Food and supplies
 
 - **Large shops must close on Christmas Day** in England and Wales. Shop on Christmas Eve
-- **Holiday hours change.** The Lidl on Longmoor Lane near the house normally lists 8am to 10pm Monday to Saturday, but check its Christmas hours
+- **Holiday hours change.** The nearest Lidl normally lists 8am to 10pm Monday to Saturday, but check its Christmas hours
 - **Stock the freezer** with batch-cooked meals. See our [self-catering guide for work crews](/guides/self-catering-for-work-crews)
 - **Takeaways** are limited on Christmas Day. Don't rely on one
 
