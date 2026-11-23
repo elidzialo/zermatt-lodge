@@ -1295,7 +1295,7 @@ def write_llms_homes(listings):
     rows = []
     for l in sorted(listings, key=lambda x: x["id"]):
         bits = [f'{l["bedrooms"]}-bedroom {(l.get("property_type") or "home").lower()}' if l.get("bedrooms") else "",
-                f'{l["baths"]} bathrooms' if l.get("baths") else "", f'sleeps {l["max_guests"]}' if l.get("max_guests") else "",
+                f'{l["baths"]} bathroom{"" if float(l["baths"]) == 1 else "s"}' if l.get("baths") else "", f'sleeps {l["max_guests"]}' if l.get("max_guests") else "",
                 area_name(l) or l.get("city") or ""]
         rows.append((" ".join((l.get("title") or "Home").split()), DOMAIN + listing_url(l), ", ".join(b for b in bits if b)))
     sec = {"llms.txt": "## Homes on Book Homes\n\n" + "\n".join(f"- [{t}]({u}): {d}" for t, u, d in rows),

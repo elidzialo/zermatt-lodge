@@ -56,7 +56,7 @@ We checked everything below on 21 November 2026. Dates and kick-off times change
 
 ## Week 2: 4 to 10 January
 
-- **Tue 5 Jan, 7.30pm:** Everton v Aston Villa, Hill Dickinson Stadium (Sky Sports). Liverpool are away at Sunderland that night
+- **Tue 5 Jan, 7.30pm (TBC):** Everton v Aston Villa, Hill Dickinson Stadium. Liverpool are away at Sunderland that night
 - **Weekend of 9 and 10 Jan:** FA Cup third round. Opponents and venues depend on the draw
 - **Sat 9 Jan:** **Little Shop of Horrors** at Liverpool Playhouse, listed to run until this date
 - **Sun 10 Jan:** last day of **Icebox at Boxpark Liverpool**. See our [ice skating guide](/guides/liverpool-ice-skating-winter)

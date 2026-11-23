@@ -25,7 +25,7 @@ faqs:
   - q: "Where can I buy kosher food near Liverpool?"
     a: "Liverpool has a small kosher deli. For a wider choice, use the Manchester Beth Din's official licensee list of grocers, butchers and bakeries. Check current supervision before you buy."
   - q: "Can I get kosher meals in a Liverpool hospital?"
-    a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. Call 0151 733 2292 if there is a problem."
+    a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. If there is a problem, ask the ward or contact the local community directly."
   - q: "Is Zermatt Lodge kosher?"
     a: "No. Zermatt Lodge has no kosher kitchen or Shabbat features declared, and it is not within walking distance of a shul. Use the Book Homes kosher homes page to find homes where hosts have declared these details."
 sources:
@@ -77,7 +77,7 @@ Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-h
 
 ## Visiting a patient?
 
-Merseyside Jewish Community Care says **kosher meals are available on request at all Merseyside hospitals**. Call 0151 733 2292 if there's a problem.
+Merseyside Jewish Community Care says **kosher meals are available on request at all Merseyside hospitals**. If there's a problem, ask the ward or contact the local community directly.
 
 ## An honest note about Zermatt Lodge
 

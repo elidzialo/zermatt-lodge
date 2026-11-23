@@ -61,7 +61,7 @@ Liverpool host **Bournemouth in the Carabao Cup quarter-final** at Anfield in De
 | Date | Fixture | Venue | Kick-off |
 |---|---|---|---|
 | Sat 2 Jan | Leeds United v Everton | Away | 3pm (original listing) |
-| Tue 5 Jan | Everton v Aston Villa | Hill Dickinson Stadium | 7.30pm (Sky Sports) |
+| Tue 5 Jan | Everton v Aston Villa | Hill Dickinson Stadium | 7.30pm (TBC) |
 | Sat 16 Jan | Coventry City v Everton | Away | 12.30pm (TNT Sports) |
 | Sun 24 Jan | Everton v Brentford | Hill Dickinson Stadium | 2pm (Sky Sports) |
 | Sat 30 Jan | Liverpool v Everton | Anfield | 12.30pm (TNT Sports) |

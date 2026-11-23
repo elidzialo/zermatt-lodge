@@ -1,6 +1,6 @@
 # Book Homes launch checklist
 
-Last checked: 22 November 2026, built site served locally, at 390px and 1280px (headless Chrome). The QA sandbox cannot reach Supabase, jsdelivr or Vercel image resizing, so live data, resized listing photos and the host sign-in screen were not run in the browser; one live page was read with a fetch. Previous pass: 21 November.
+Last checked: 23 November 2026, built site served locally, at 390px and 1280px (headless Chrome). The QA sandbox cannot reach Supabase, jsdelivr or Vercel image resizing, so live data, resized listing photos and the host sign-in screen were not run in the browser; one live page was read with a fetch. Previous pass: 22 November.
 
 **Status: ready to take bookings. Blocked on Eli for email, Stripe and legal sign-off (below).**
 
@@ -12,6 +12,18 @@ Last checked: 22 November 2026, built site served locally, at 390px and 1280px (
 - 122 internal links checked: none broken.
 - Booking: Zermatt Lodge and the Stylish Liverpool Apartment both create a Stripe Checkout session (15 to 17 Feb 2027, nothing paid). The apartment hold was released at once; the Zermatt hold lapses by itself after 15 minutes (Zermatt has no release call).
 - Zermatt checkout, /api/* and the Guesty iCal were not changed (22 Nov too).
+
+## 23 November pass
+
+- Passing at 390px and 1280px: home, all 11 listing pages (Zermatt Lodge, 2 Merseyside apartments, 6 Prestwich/Crumpsall homes, Salford studio, Greater Manchester flat), /stays-in and all 8 area hubs, kosher homes, guides hub, the 3 newest guides (Heaton Park, Manchester Christmas markets, Manchester short-let rules) and 2 edited guides, become a host, saved, trips, trips/messages, host terms, guest terms, privacy, host login, admin login, 404 (real 404 status). No console errors, no failed requests, no sideways scroll (only scrolling carousels and tables are wider), no images without alt text, no unlabelled fields, one h1 per page (host login: h1 needs supabase-js, not reachable here).
+- Static: 225 pages, 206 JSON-LD blocks all valid (11 VacationRental, 184 FAQPage, 182 Article), 205 sitemap URLs all exist and none is noindex, no broken internal links, no em or en dashes, no duplicate titles or descriptions. Canonicals match the URL on every indexed page.
+- Area hubs: Manchester (8), Liverpool (3), Prestwich (5), Salford (1) indexed and in the sitemap; London, Golders Green, Stamford Hill, Gateshead (0 homes) noindex and not in the sitemap. Hub copy has no community location or population claims.
+- No eli@zelr.co.uk or zelr.co.uk anywhere public; no Book Homes or owner phone numbers. Third-party public numbers in guides (hospital switchboards, Merseyrail, taxi firms, GP practices) kept as useful guest info. Zermatt Lodge page has no "Fazakerley" or "north Liverpool".
+- Fixed: removed the Merseyside Jewish Community Care phone number from 2 guides (Royal Liverpool hospital, kosher hotels); they now say ask the ward or contact the local community directly (community safety rule).
+- Fixed: llms.txt and llms-full.txt said "1 bathrooms"; now "1 bathroom".
+- Fixed: seo/events-calendar.md Everton v Aston Villa row (was "Recheck"). Fixture feeds list Tue 5 Jan 2027, about 7.30pm, to be confirmed; no TV pick announced. Row is now Tue 5 Jan, Unverified, recheck when January TV picks come out. Three guides that said "7.30pm (Sky Sports)" now say "7.30pm (TBC)".
+- Left (host data): listing 15 "Studio Appartement In Salford" has slug my-home-505b4, city Manchester, says one bedroom in the description but 2 bedrooms in the facts. Listings 4 and 15 have 6 and 5 photos (Google wants 8+ for vacation rental rich results).
+- Left: events calendar says Everton v Man City is Wed 30 Dec 8pm; guides say Tue 29 Dec 8.15pm (moved for Sky). Recheck before reuse.
 
 ## 22 November pass
 

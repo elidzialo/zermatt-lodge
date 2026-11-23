@@ -75,7 +75,7 @@ A Carabao Cup quarter-final on 15 or 16 December could be added if Liverpool are
 | Sat 26 Dec | Everton v Sunderland | Hill Dickinson Stadium | See note |
 | Tue 29 Dec | Everton v Manchester City | Hill Dickinson Stadium | 8.15pm (Sky Sports) |
 | Fri 1 Jan | Leeds United v Everton | Away | 8pm (Sky Sports) |
-| Tue 5 Jan | Everton v Aston Villa | Hill Dickinson Stadium | 7.30pm (Sky Sports) |
+| Tue 5 Jan | Everton v Aston Villa | Hill Dickinson Stadium | 7.30pm (TBC) |
 
 **Fulham:** the original fixture list had Saturday 5 December at 3pm. An Everton fixtures site now lists Sunday 6 December at 2pm. Check evertonfc.com.
 

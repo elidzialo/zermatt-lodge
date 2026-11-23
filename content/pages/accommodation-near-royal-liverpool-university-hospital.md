@@ -27,7 +27,7 @@ faqs:
   - q: "Which train station is nearest?"
     a: "Liverpool Central (Northern and Wirral lines) is less than a mile on foot, and Liverpool Lime Street is about a mile. From Fazakerley, the train to Liverpool Central takes about 15 minutes."
   - q: "Can patients get kosher meals?"
-    a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals, and asks families to call 0151 733 2292 if there is a problem."
+    a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. If there is a problem, ask the ward or contact the local community directly."
 sources:
   - https://www.uhliverpool.nhs.uk/our-hospitals/royal-liverpool-university-hospital/getting-here
   - https://www.uhliverpool.nhs.uk/about-us/our-stories/updated-car-parking-prices-uhl-group-sites
@@ -81,7 +81,7 @@ Liverpool University Hospitals (UHL), which runs the Royal, Aintree, Broadgreen 
 - **Eat properly.** A kitchen lets you cook real meals instead of living on hospital cafe food.
 - **Wash clothes.** A washer and dryer helps on long stays, for you and for the patient's things.
 - **Register with a GP** if you're staying for weeks. See our [temporary resident GP guide](/guides/temporary-resident-gp-liverpool).
-- **Kosher meals:** Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. Call 0151 733 2292 if there's a problem.
+- **Kosher meals:** Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. If there's a problem, ask the ward or contact the local community directly.
 
 More ideas in our [long-stay hospital visiting tips](/guides/long-stay-hospital-visiting-tips-liverpool).
 
