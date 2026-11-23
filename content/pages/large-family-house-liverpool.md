@@ -85,7 +85,7 @@ Antony Gormley's **100 cast-iron figures** stand along more than 3km of Crosby B
 
 ### Liverpool's museums
 
-The Museum of Liverpool, World Museum and the Merseyside Maritime Museum are all in or near the city centre, a short train ride from Fazakerley to Liverpool Central. They're great for rainy days.
+The Museum of Liverpool, World Museum and the Walker Art Gallery are all in or near the city centre (the Merseyside Maritime Museum is closed until 2028), a short train ride from Fazakerley to Liverpool Central. They're great for rainy days.
 
 For a fuller list, see [family days out in north Liverpool](/guides/family-days-out-north-liverpool).
 

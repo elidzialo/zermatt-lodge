@@ -19,9 +19,9 @@ faqs:
   - q: "What are the best things to do in Liverpool with a group of friends?"
     a: "A Mersey ferry cruise, the Royal Albert Dock and the free waterfront museums, a stadium tour at Anfield or Everton, a food hall in the Baltic Triangle, competitive socialising venues such as crazy golf or darts, and a night out in the Ropewalks."
   - q: "How long is the Mersey ferry cruise?"
-    a: "Mersey Ferries says the River Explorer cruise takes about 50 minutes from the Pier Head, calling at Seacombe and Woodside, with commentary throughout."
+    a: "Mersey Ferries says the River Explorer cruise takes about 50 minutes, with commentary throughout. It currently runs between the Pier Head and Woodside, as Seacombe is closed for refurbishment."
   - q: "Are Liverpool's museums free?"
-    a: "The national museums in Liverpool, including the Museum of Liverpool, World Museum, Walker Art Gallery and Merseyside Maritime Museum, have free general entry. Some special exhibitions charge."
+    a: "The national museums in Liverpool, including the Museum of Liverpool, World Museum and Walker Art Gallery, have free general entry (the Merseyside Maritime Museum is closed until 2028). Some special exhibitions charge."
   - q: "Do we need to book group activities in advance?"
     a: "For groups of 5 or more, yes, where possible. Stadium tours, escape rooms, crazy golf, restaurants and anything on a weekend evening can sell out."
   - q: "What can we do as a group in the evening without a big night out?"
@@ -41,7 +41,7 @@ The best things to do in Liverpool with a group mix the big sights with activiti
 
 Take the Merseyrail Northern line from Fazakerley to **Liverpool Central** (about 15 minutes), then walk down to the **Pier Head**. Start with the **Three Graces**: the Royal Liver Building, the Cunard Building and the Port of Liverpool Building.
 
-Then hop on the **Mersey Ferries River Explorer cruise**. It takes about 50 minutes from the Pier Head, calls at Seacombe and Woodside on the Wirral, and has commentary throughout. It's a great way for a group to see the skyline together and get your bearings. See our [Mersey ferry cruise guide](/guides/mersey-ferry-cruise-guide).
+Then hop on the **Mersey Ferries River Explorer cruise**. It takes about 50 minutes and has commentary throughout. It currently runs between the Pier Head and Woodside on the Wirral, as Seacombe is closed for refurbishment. It's a great way for a group to see the skyline together and get your bearings. See our [Mersey ferry cruise guide](/guides/mersey-ferry-cruise-guide).
 
 ### Late morning: Museum of Liverpool
 
@@ -56,7 +56,7 @@ Walk south to the **Royal Albert Dock** for lunch. Groups can usually find space
 Split up for a couple of hours, then meet up again:
 
 - **Music fans:** The Beatles Story at the Albert Dock, then Mathew Street and the Cavern Club
-- **History fans:** the Merseyside Maritime Museum and International Slavery Museum, in the same building on the dock
+- **History fans:** the Museum of Liverpool at the Pier Head (the Maritime Museum and International Slavery Museum on the dock are closed until 2028)
 - **Shoppers:** Liverpool ONE, a short walk from the dock
 
 ### Evening: food hall and games

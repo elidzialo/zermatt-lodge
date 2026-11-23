@@ -61,7 +61,7 @@ The city centre is the obvious choice for a first visit. A travel guide updated 
 
 ## Royal Albert Dock
 
-The waterfront is home to the **Merseyside Maritime Museum**, the **Beatles Story** and plenty of places to eat. It's lovely for a couple or a small family on a museum-focused trip. Like the centre, expect paid parking and mostly flats or hotels.
+The waterfront is home to the **Museum of Liverpool**, the **Beatles Story** and plenty of places to eat. It's lovely for a couple or a small family on a museum-focused trip. Like the centre, expect paid parking and mostly flats or hotels.
 
 ## Baltic Triangle
 

@@ -44,7 +44,7 @@ Liverpool city centre is **compact and walkable**, with distinct districts close
 
 | District | What it's like | Good for |
 |---|---|---|
-| **Waterfront and Royal Albert Dock** | Former cotton and coffee warehouses on the Mersey, now museums. Home to the Merseyside Maritime Museum and International Slavery Museum, with the Three Graces at the Pier Head | Sightseeing, history, river views |
+| **Waterfront and Royal Albert Dock** | Former cotton and coffee warehouses on the Mersey, now museums. Home to the Merseyside Maritime Museum and International Slavery Museum (both closed for redevelopment until 2028), with the Three Graces at the Pier Head | Sightseeing, history, river views |
 | **Liverpool ONE** | Large open-air shopping area behind the waterfront, redeveloped in the late 2000s. Visit Liverpool says all areas are reachable by lifts or ramps | Shopping, restaurants, rainy days |
 | **Ropewalks** | Named after the rope-makers who served the port. Bold Street, Fleet Street and Concert Square | Nightlife, cafés, independent shops |
 | **Baltic Triangle** | Former warehouse district between the centre and the waterfront, compared by Visit Liverpool to Shoreditch or Brooklyn. Baltic Market was Liverpool's first street food market | Food, craft beer, live music, street art |
@@ -107,7 +107,7 @@ Check dates and [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt
 ## A one-day city-centre plan from north Liverpool
 
 - **10am:** train to Liverpool Central
-- **10.30am:** walk down to the Royal Albert Dock and the Maritime Museum
+- **10.30am:** walk down to the Royal Albert Dock and the Museum of Liverpool at the Pier Head (the Maritime Museum is closed until 2028)
 - **1pm:** lunch in the Baltic Triangle
 - **3pm:** shopping in Liverpool ONE, or up to the cathedrals in the Georgian Quarter
 - **6pm:** dinner on Bold Street

@@ -23,7 +23,7 @@ faqs:
   - q: "Can we use the games room for a party?"
     a: "No. The games room is for guests to enjoy relaxed evenings in. Zermatt Lodge has no parties, no smoking and no pets."
   - q: "What can we do in Liverpool on a rainy day?"
-    a: "Liverpool's national museums, such as the Museum of Liverpool, World Museum and Merseyside Maritime Museum, are free and indoors, and a short train ride from Fazakerley. Then come back for pool, board games and a film."
+    a: "Liverpool's national museums, such as the Museum of Liverpool, World Museum and the Walker Art Gallery, are free and indoors, and a short train ride from Fazakerley. Then come back for pool, board games and a film."
   - q: "Is the games room suitable for children?"
     a: "Families enjoy it. Supervise younger children around the pool table and cues, and keep drinks away from the cloth."
 sources:
