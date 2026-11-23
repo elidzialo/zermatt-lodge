@@ -134,9 +134,10 @@ ASK_HOST_KOSHER = ("If you need a kosher kitchen, ask the host how the kitchen i
                    "Book Homes are declared by the host. Book Homes does not inspect or certify kashrut.")
 
 
-def _hub_card(l):
-    """Listing card without the carousel (one photo, no heart): the hub has no card script."""
-    h = B.card_html(dict(l, card_photos=(l.get("card_photos") or [])[:1]))
+def _hub_card(l, eager=False):
+    """Listing card without the carousel (one photo, no heart): the hub has no card script.
+    eager: the first cards are the page's LCP, so their photo loads at once (fetchpriority high) instead of lazily."""
+    h = B.card_html(dict(l, card_photos=(l.get("card_photos") or [])[:1]), eager=eager)
     return re.sub(r'<button type="button" class="heart".*?</button>', "", h, count=1, flags=re.S)
 
 
@@ -173,7 +174,7 @@ def hub_page(a, listings, guides):
         feat = (f'<div class="area-feat"><div><span class="eyebrow">Featured home in {B.esc(name)}</span><h2>{B.esc(fl["title"])}: large house to rent in {B.esc(name)}, sleeps {fl.get("max_guests")}</h2>'
                 f'<p>An entire {fl.get("bedrooms")}-bedroom house for groups, families and contractors, with free parking, a garden and a games room. Book direct with no booking fees.</p></div>'
                 f'<a class="btn" href="{B.esc(fl["url"])}">See {B.esc(fl["title"])}</a></div>')
-    cards = "".join(_hub_card(l) for l in sorted(shown, key=lambda l: (l.get("slug") != a.get("featured_listing"), l["id"])))
+    cards = "".join(_hub_card(l, eager=i < 2) for i, l in enumerate(sorted(shown, key=lambda l: (l.get("slug") != a.get("featured_listing"), l["id"]))))
     live_others = [x for x, c, _ in status(listings) if c and x["slug"] != a["slug"] and not x.get("parent")]
     empty = (f'<div class="empty" id="areaEmpty"><h2>No homes live in {B.esc(name)} yet</h2><p>We are signing up hosts in {B.esc(name)} now. '
              + (f'Homes are live in {B.esc(join(x["name"] for x in live_others))}. ' if live_others else "")

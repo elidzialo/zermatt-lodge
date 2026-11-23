@@ -132,6 +132,8 @@ function go(m){
   if (m < C.start) m = C.start; if (m > shiftMonth(C.start, MAX_AHEAD)) m = shiftMonth(C.start, MAX_AHEAD);
   C.month = m; draw();
   fetchMonth(m).catch(function(){}); fetchMonth(shiftMonth(m, 1)).catch(function(){});
+  // host-speed: also two months ahead, so quick clicks on > still find the month ready
+  var m2 = shiftMonth(m, 2); if (m2 <= shiftMonth(C.start, MAX_AHEAD)) fetchMonth(m2).catch(function(){});
 }
 function monthsOf(lo, hi){ var out = [], m = lo.slice(0, 7); while (m <= hi.slice(0, 7)){ out.push(m); m = shiftMonth(m, 1); } return out; }
 

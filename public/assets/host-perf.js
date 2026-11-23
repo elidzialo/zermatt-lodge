@@ -58,6 +58,37 @@
   // warm the connection while the browser is idle, so the first map opens fast
   HP.warm = function(){ ["https://unpkg.com", "https://a.tile.openstreetmap.org"].forEach(function(h){ var l = document.createElement("link"); l.rel = "preconnect"; l.href = h; l.crossOrigin = ""; document.head.appendChild(l); }); };
 
+  /* ---------- Calendar tab on demand ----------
+     host-calendar.js/.css (BHCal, ~15KB gz) are not in the first load: their URLs sit on this script's tag
+     (data-cal-js / data-cal-css, hashed by build.py). This stand-in BHCal loads them when host.js first calls
+     open() (Calendar tab) or warm() (idle after boot), then hands over to the real BHCal, which replaces it. */
+  var me = document.currentScript, CJS = me && me.getAttribute("data-cal-js"), CCSS = me && me.getAttribute("data-cal-css");
+  if (CJS && !window.BHCal){
+    var calP = null;
+    var loadCal = function(){
+      if (calP) return calP;
+      var cssP = !CCSS ? Promise.resolve() : new Promise(function(res){
+        var l = document.createElement("link"); l.rel = "stylesheet"; l.href = CCSS; l.onload = l.onerror = function(){ res(); }; document.head.appendChild(l);
+      });
+      calP = Promise.all([cssP, script(CJS)]).then(function(){ if (!window.BHCal || window.BHCal === STUB) throw new Error("Calendar did not load"); return window.BHCal; });
+      calP.catch(function(){ calP = null; });
+      return calP;
+    };
+    var STUB = window.BHCal = {
+      open: function(){
+        var hc = document.getElementById("hc"); if (hc) hc.classList.add("hp-wait");
+        loadCal().then(function(C){ if (hc) hc.classList.remove("hp-wait"); C.open(); }, function(e){
+          if (hc) hc.classList.remove("hp-wait"); var er = document.getElementById("hcErr"); if (er) er.textContent = e.message + ". Please refresh the page.";
+        });
+      },
+      warm: function(){
+        var go = function(){ loadCal().then(function(C){ C.warm(); }, function(){}); };
+        if (window.requestIdleCallback) requestIdleCallback(go, {timeout: 2500}); else setTimeout(go, 1200);
+      },
+      reload: function(){ if (window.BHCal !== STUB) window.BHCal.reload(); } // nothing to reload before the calendar was opened
+    };
+  }
+
   /* ---------- thumbnails ---------- */
   // New uploads are named "<id>-w.jpg" and get a 640px "<id>-w.t.jpg" next to them (see host.js upload).
   var OWN = /\/storage\/v1\/object\/public\/listing-photos\/.+-w\.(jpg|png|webp)$/;
@@ -80,7 +111,7 @@
 
   /* ---------- loading states (functional only; look and feel stays in host-ux.css) ---------- */
   var st = document.createElement("style");
-  st.textContent = "#cal2.loading{opacity:.5;transition:opacity .15s}#pmap.loading{background:#eef1ef}";
+  st.textContent = "#cal2.loading{opacity:.5;transition:opacity .15s}#pmap.loading{background:#eef1ef}#hc.hp-wait{visibility:hidden}";
   document.head.appendChild(st);
 
   /* ---------- timing (open the console and run HP.marks() to see them) ---------- */

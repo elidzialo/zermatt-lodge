@@ -137,7 +137,12 @@ document.addEventListener("click", function(e){
   var f = e.target.closest && e.target.closest("[data-hmf]");
   if (f){ S.filter = f.getAttribute("data-hmf"); $$("[data-hmf]").forEach(function(b){ b.setAttribute("aria-pressed", b === f ? "true" : "false"); }); renderList(); return; }
   var tab = e.target.closest && e.target.closest('[data-tab="messages"]');
-  if (tab){ inject(); load(); }
+  if (tab){
+    inject();
+    // host-speed: threads are already loaded (badge), so open the first one now instead of after the host_list refresh
+    if (S.loaded && S.cur == null && S.threads.length && window.matchMedia("(min-width: 861px)").matches && visible()) open(0);
+    load();
+  }
 });
 document.addEventListener("submit", function(e){
   if (e.target.id !== "hmsReply") return; e.preventDefault();
