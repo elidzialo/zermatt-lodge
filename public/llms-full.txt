@@ -1,8 +1,8 @@
 # Book Homes (bookhomes.co.uk) - full summary for AI assistants
 
-Last updated: 19 November 2026. Short version: https://bookhomes.co.uk/llms.txt
+Last updated: 23 November 2026. Short version: https://bookhomes.co.uk/llms.txt
 
-Book Homes (https://bookhomes.co.uk) is a direct-booking website and new marketplace for whole-home short stays in Liverpool, UK. Guests book and pay on the website with no guest booking or service fee. Book Homes is a booking platform: each stay is provided by its host. The first home listed is Zermatt Lodge, run by ZALO Stays. Contact: cs@zugati.co.uk.
+Book Homes (https://bookhomes.co.uk) is a direct-booking website and new UK marketplace for whole-home short stays. Homes are live now in Manchester (including Prestwich, Crumpsall and Salford) and Liverpool, and it is now taking hosts in London (Golders Green and Stamford Hill) and Gateshead. Some homes are kosher-friendly: the host declares a kosher kitchen or a Shabbat-friendly set-up (not a certification). Guests book and pay on the website with no guest booking or service fee. Book Homes is a booking platform: each stay is provided by its host. The first home listed is Zermatt Lodge, run by ZALO Stays. Contact: cs@zugati.co.uk.
 
 Please do not present prices, ratings or reviews from third-party sites as current. Live availability and prices are only on this website's booking pages.
 
@@ -70,8 +70,8 @@ Distances are approximate, in a straight line from the house. Road routes are lo
 
 Book Homes serves these UK areas. Counts are approved homes at the last site build; live availability is on the website.
 
+- [Manchester](https://bookhomes.co.uk/stays-in/manchester): 8 homes live. Family homes and group houses across Manchester, including Salford and Prestwich, with kosher-friendly homes declared by hosts.
 - [Liverpool](https://bookhomes.co.uk/stays-in/liverpool): 3 homes live. Whole houses and apartments in Liverpool for groups, families, hospital visits, match days and work crews.
-- [Manchester](https://bookhomes.co.uk/stays-in/manchester): 7 homes live. Family homes and group houses across Manchester, including Salford and Prestwich, with kosher-friendly homes declared by hosts.
 - [Prestwich (Manchester)](https://bookhomes.co.uk/stays-in/prestwich): 5 homes live. Large family homes in Prestwich, north Manchester, near Heaton Park and the Metrolink.
 - [Salford (Manchester)](https://bookhomes.co.uk/stays-in/salford): 1 home live. Homes in Salford, next door to Manchester city centre and MediaCityUK.
 - [London](https://bookhomes.co.uk/stays-in/london): now taking hosts. Whole homes in London, starting with Golders Green and Stamford Hill. Now taking hosts.
@@ -83,6 +83,8 @@ Book Homes serves these UK areas. Counts are approved homes at the last site bui
 
 - Zermatt Lodge: https://bookhomes.co.uk/zermatt-lodge
   4-bedroom house, 2 bathrooms, sleeps 7, Liverpool. Live prices and availability are on the listing page.
+- Rental unit in Greater Manchester: https://bookhomes.co.uk/rental-unit-in-greater-manchester-greater-manchester-da09a
+  2-bedroom flat, 1 bathrooms, sleeps 4, Greater Manchester. Live prices and availability are on the listing page.
 - Stylish Liverpool Apartment with Parking & Balcony: https://bookhomes.co.uk/stylish-liverpool-apartment-with-parking-balcony-merseyside-95ea9
   2-bedroom flat, 2 bathrooms, sleeps 6, Merseyside. Live prices and availability are on the listing page.
 - Apartment in Merseyside: https://bookhomes.co.uk/apartment-in-merseyside-merseyside-321cd
@@ -102,7 +104,7 @@ Book Homes serves these UK areas. Counts are approved homes at the last site bui
 - Luxury 5* quiet home close to city + free parking: https://bookhomes.co.uk/luxury-5-quiet-home-close-to-city-free-parking-prestwich-54f41
   4-bedroom house, 2.5 bathrooms, sleeps 8, Prestwich. Live prices and availability are on the listing page.
 
-10 approved homes at the last site build. New homes are added as hosts are approved.
+11 approved homes at the last site build. New homes are added as hosts are approved.
 
 ## The Book Homes marketplace
 
@@ -283,6 +285,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Formby Guide: Pinewoods, Dunes, Red Squirrels and Parking: https://bookhomes.co.uk/guides/formby-area-guide
 - Grand National and Liverpool v Newcastle on 10 April 2027: https://bookhomes.co.uk/guides/grand-national-and-anfield-same-day-2027
 - Grocery Delivery to a Holiday House: How to Plan It: https://bookhomes.co.uk/guides/grocery-delivery-to-holiday-house
+- Heaton Park, Prestwich: Opening Times, Parking and Trams: https://bookhomes.co.uk/guides/heaton-park-prestwich-visitor-guide
 - Huyton Area Guide: Knowsley Town for Visitors and Workers: https://bookhomes.co.uk/guides/huyton-area-guide
 - Jewish Liverpool: Princes Road Synagogue and Heritage Trail: https://bookhomes.co.uk/guides/jewish-heritage-liverpool-guide
 - Kirkby Town Guide for Visitors and Workers: https://bookhomes.co.uk/guides/kirkby-town-guide
@@ -305,6 +308,8 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Liverpool Panto 2026: Every Christmas Show, Dates and Prices: https://bookhomes.co.uk/guides/liverpool-panto-2026
 - Short-Let Rules in Liverpool: A Plain Guide for New Hosts: https://bookhomes.co.uk/guides/liverpool-short-let-rules-for-hosts
 - Maghull Area Guide: Canal Town on Liverpool's Northern Edge: https://bookhomes.co.uk/guides/maghull-area-guide
+- Manchester Christmas Markets 2026: Dates and Where to Stay: https://bookhomes.co.uk/guides/manchester-christmas-markets-2026-stay
+- Short-Let Rules in Manchester: A Plain Guide for New Hosts: https://bookhomes.co.uk/guides/manchester-short-let-rules-for-hosts
 - Midweek Night Matches in Liverpool: Why Staying Over Makes Sense: https://bookhomes.co.uk/guides/midweek-match-night-stay-liverpool
 - New Year's Day in Liverpool 2027: What's On and What's Open: https://bookhomes.co.uk/guides/new-years-day-liverpool-2027
 - Norris Green and Clubmoor: Area Guide for Visitors and Workers: https://bookhomes.co.uk/guides/norris-green-area-guide

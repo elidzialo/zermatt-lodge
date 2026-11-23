@@ -54,7 +54,7 @@ RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "beco
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
             "listing", "listings", "data", "public", "saved", "stays-in", "areas", "wishlists", "trips", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
-HOME_TITLE = "Holiday Homes in Manchester, Liverpool & London | Book Homes"
+HOME_TITLE = "Holiday Homes in Manchester & Liverpool | Book Homes"  # build() rewrites from live areas
 HOME_DESC = ("Whole holiday homes in Manchester, Prestwich and Liverpool, booked direct. Kosher-friendly, no booking fees. "
              "Now taking hosts in London and Gateshead.")  # build() rewrites the place names from data/focus-areas.json
 
@@ -1336,7 +1336,9 @@ def build():
                           + (f" Now taking hosts in {bh_areas.join(soon)}." if soon else ""), 155) if live else HOME_DESC
     home_intro = (f'<p class="lead-p">Book whole homes direct with the host. Homes live now in {esc(bh_areas.join(bh_areas.live_names(listings)))}'
                   + (f', and we are now taking hosts in {esc(bh_areas.join(soon))}' if soon else "") + '. Total prices, no booking fees.</p>') if live else ""
-    write("index.html", home_page(listings, guides, desc=home_desc, intro=home_intro, areas=bh_areas.chips_html(listings)))
+    cities = [a["name"] for a, n, _ in bh_areas.status(listings) if n and not a.get("parent")][:2]
+    home_title = f"Holiday Homes in {' & '.join(cities)} | Book Homes" if cities else HOME_TITLE
+    write("index.html", home_page(listings, guides, title=home_title, desc=home_desc, intro=home_intro, areas=bh_areas.chips_html(listings)))
     write("kosher-homes/index.html", kosher_page(listings, guides))
     write("saved/index.html", saved_page(listings))
     import shutil

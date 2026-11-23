@@ -32,7 +32,7 @@ with `center` and `radius_km`) its lat/lng is inside that circle. A city hub als
   (fetch `https://bookhomes.co.uk/api/bh/listings?action=list`, for example with the Vercel MCP `web_fetch_vercel_url`,
   keep the existing `reviews` key) or a newly live area stays noindex until the next refresh.
 
-Status at 22 Nov 2026: indexed = Liverpool (3 homes), Manchester (7, incl. Prestwich and Crumpsall), Prestwich (5),
+Status at 23 Nov 2026: indexed = Manchester (8, incl. Prestwich, Crumpsall and Salford; priority 1), Liverpool (3), Prestwich (5),
 Salford (1). Noindex, now taking hosts = London, Golders Green, Stamford Hill, Gateshead.
 
 ## Safety rules (same as seo/next-posts.md)

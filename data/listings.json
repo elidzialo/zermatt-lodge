@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T17:16:46.108Z",
+ "updated": "2026-11-23T09:00:00.000Z",
  "listings": [
   {
    "id": 1,
@@ -1930,6 +1930,139 @@
     "shabbat_friendly": false,
     "near_shul": false,
     "kosher": false,
+    "business_ready": false,
+    "work_crew": false
+   },
+   "featured": false
+  },
+  {
+   "id": 4,
+   "lat": 53.49,
+   "lng": -2.24,
+   "area": "Greater Manchester",
+   "beds": 2,
+   "city": "Greater Manchester",
+   "slug": "rental-unit-in-greater-manchester-greater-manchester-da09a",
+   "baths": 1,
+   "title": "Rental unit in Greater Manchester",
+   "kosher": {
+    "eruv": "unknown",
+    "mikvah": null,
+    "kitchen": true,
+    "shabbat": {
+     "urn": false,
+     "hotplate": false,
+     "lamp_timers": false,
+     "non_electric_key": false,
+     "no_motion_sensors": false
+    },
+    "shul_name": null,
+    "supervision": null,
+    "kitchen_type": null,
+    "kosher_shops": null,
+    "separate_ovens": false,
+    "separate_sinks": false,
+    "shul_walk_mins": null
+   },
+   "photos": [
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rh9vugu-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rh9vugu-w.t.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rpii1nh-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rpii1nh-w.t.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rnaxh8p-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco6rnaxh8p-w.t.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7cifd8uv-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7cifd8uv-w.t.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7ddf2004-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7ddf2004-w.t.jpg",
+     "caption": null
+    },
+    {
+     "url": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7di8yqs4-w.jpg",
+     "thumb": "https://kddhkuwnkkjcnbjegsmc.supabase.co/storage/v1/object/public/listing-photos/b7c0fc79-2a43-4654-a304-783c96ca72ca/4/mwsco7di8yqs4-w.t.jpg",
+     "caption": null
+    }
+   ],
+   "pet_fee": 0,
+   "reviews": {
+    "count": 0,
+    "average": null
+   },
+   "bedrooms": 2,
+   "business": {
+    "desk": false,
+    "wifi_mbps": null,
+    "van_parking": false,
+    "monthly_rates": false,
+    "separate_beds": false
+   },
+   "page_url": null,
+   "amenities": [
+    "bath",
+    "hairdryer",
+    "washer",
+    "dryer",
+    "iron",
+    "tv",
+    "cot",
+    "highchair",
+    "heating",
+    "wifi",
+    "workspace",
+    "kitchen",
+    "coffee",
+    "garden"
+   ],
+   "host_name": "ZALO Stays",
+   "prep_days": 0,
+   "airbnb_url": "https://www.airbnb.co.uk/rooms/1816927753349938045",
+   "base_price": 109,
+   "categories": [],
+   "from_price": 109,
+   "max_guests": 4,
+   "max_nights": 28,
+   "min_nights": 1,
+   "updated_at": "2026-11-22T21:31:25.248Z",
+   "approved_at": "2026-11-22T21:31:25.248Z",
+   "booking_url": null,
+   "description": "NEW! 2 Bed | Free Parking | Central | Balcony\nA central, stylish place to stay. One bedroom fully furnished flat with en-suite bathroom, kosher kitchen, washing machine and dryer, air conditioning and onsite parking.",
+   "house_rules": null,
+   "checkin_days": [],
+   "cleaning_fee": 0,
+   "pets_allowed": false,
+   "check_in_time": "15:00",
+   "checkout_days": [],
+   "legacy_source": null,
+   "property_type": "flat",
+   "trader_status": "trader",
+   "weekend_price": null,
+   "check_out_time": "11:00",
+   "extra_guest_fee": 0,
+   "guests_included": null,
+   "advance_notice_days": 0,
+   "booking_window_days": 365,
+   "cancellation_policy": "moderate",
+   "weekly_discount_pct": 0,
+   "monthly_discount_pct": 0,
+   "url": "/rental-unit-in-greater-manchester-greater-manchester-da09a",
+   "features": {
+    "kosher_kitchen": true,
+    "shabbat_friendly": false,
+    "near_shul": false,
+    "kosher": true,
     "business_ready": false,
     "work_crew": false
    },
