@@ -134,6 +134,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Working in St Helens or Haydock: Where Contractors Can Stay: https://bookhomes.co.uk/guides/haydock-and-st-helens-work-stays
 - Business Stays Booked Direct: Invoices, VAT and Payment: https://bookhomes.co.uk/guides/invoice-and-vat-for-business-stays
 - Accommodation near Knowsley Business Park & Kirkby: https://bookhomes.co.uk/guides/kirkby-knowsley-business-park-accommodation
+- A Kosher Business Trip to Manchester: Food, Meetings and Where to Stay: https://bookhomes.co.uk/guides/kosher-business-trip-manchester
 - Laundry and Workwear Washing on a Work Stay in Liverpool: https://bookhomes.co.uk/guides/laundry-for-workers-liverpool
 - Business Travel to Liverpool: A Practical Guide: https://bookhomes.co.uk/guides/liverpool-business-travel-guide
 - Liverpool Construction Projects 2026-27: Where the Work Is: https://bookhomes.co.uk/guides/liverpool-construction-pipeline-overview
@@ -141,6 +142,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Working on Liverpool Waters and the North Docks: Crew Accommodation: https://bookhomes.co.uk/guides/liverpool-waters-and-docks-projects
 - Locum & Agency Nurse Accommodation in Liverpool: https://bookhomes.co.uk/guides/locum-and-agency-nurse-accommodation-liverpool
 - Long Stay Accommodation in Liverpool: A Practical Guide: https://bookhomes.co.uk/guides/long-stay-accommodation-liverpool
+- Business Accommodation for MediaCityUK and Salford Quays: https://bookhomes.co.uk/guides/mediacityuk-salford-business-accommodation
 - Booking Accommodation for NHS Agency Staff in Liverpool: A Guide: https://bookhomes.co.uk/guides/nhs-agency-booking-accommodation-guide
 - NHS Placement Accommodation in Liverpool: A Guide for Students: https://bookhomes.co.uk/guides/nhs-placement-student-accommodation
 - Night Shift Sleep Tips for Work Stays and Crew Houses: https://bookhomes.co.uk/guides/night-shift-sleep-tips-work-stay
@@ -154,6 +156,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Skelmersdale Work Accommodation: Stay on the Liverpool Side: https://bookhomes.co.uk/guides/skelmersdale-work-accommodation
 - Working at Speke or Halewood: Accommodation for Contractors and Teams: https://bookhomes.co.uk/guides/speke-and-halewood-work-stays
 - House Share Etiquette for Trades Teams and Contractors: https://bookhomes.co.uk/guides/trades-team-house-share-etiquette
+- Contractor Accommodation for Trafford Park, Manchester: https://bookhomes.co.uk/guides/trafford-park-contractor-accommodation-manchester
 - Accommodation for Visiting Academics and Researchers in Liverpool: https://bookhomes.co.uk/guides/university-visiting-academic-stay
 - Accommodation with Van Parking in Liverpool: An Honest Guide: https://bookhomes.co.uk/guides/van-parking-accommodation-liverpool
 
@@ -189,6 +192,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Visiting Ashworth Hospital, Maghull: Booking, Security and Staying Nearby: https://bookhomes.co.uk/guides/ashworth-hospital-visitor-accommodation
 - Broadgreen Hospital Visitor Guide: Parking, Trains and Stays: https://bookhomes.co.uk/guides/broadgreen-hospital-visitor-guide
 - Clatterbridge Cancer Centre Liverpool: Family Stays: https://bookhomes.co.uk/guides/clatterbridge-cancer-centre-liverpool-family-stay
+- Visiting Fairfield General Hospital, Bury: Parking, Buses and Where to Stay: https://bookhomes.co.uk/guides/fairfield-general-hospital-bury-visitor-stay
 - Early Hospital Appointment in Liverpool? Stay the Night: https://bookhomes.co.uk/guides/hospital-appointment-early-morning-stay
 - Long Hospital Stays in Liverpool: Tips for Families: https://bookhomes.co.uk/guides/long-stay-hospital-visiting-tips-liverpool
 - Accommodation Near Manchester Hospitals: North Manchester General, the Christie and the Children's Hospital: https://bookhomes.co.uk/guides/manchester-hospital-visitor-accommodation
@@ -242,6 +246,8 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Liverpool Graduation Accommodation for the Whole Family: https://bookhomes.co.uk/guides/liverpool-graduation-family-stay
 - Liverpool Half Marathon 2027: Where Runners Can Stay: https://bookhomes.co.uk/guides/liverpool-half-marathon-stay
 - Liverpool Philharmonic Hall: Visitor Guide and Christmas 2026 Concerts: https://bookhomes.co.uk/guides/liverpool-philharmonic-hall-guide
+- Co-op Live and AO Arena Concerts, December 2026 to February 2027: Travel and Stays: https://bookhomes.co.uk/guides/manchester-arena-concerts-december-2026-february-2027
+- University Open Days in Manchester and Salford: Where Families Can Stay: https://bookhomes.co.uk/guides/manchester-salford-university-open-day-stay
 - M&S Bank Arena Concerts: Where to Stay as a Group: https://bookhomes.co.uk/guides/ms-bank-arena-concert-accommodation
 - Liverpool's Royal Court Theatre: Visitor Guide and The Scouse Nativity 2026: https://bookhomes.co.uk/guides/royal-court-liverpool-guide
 - St George's Hall Liverpool: Events, Skating and Christmas 2026: https://bookhomes.co.uk/guides/st-georges-hall-events-guide
@@ -253,12 +259,15 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Fazakerley to Liverpool City Centre by Train: https://bookhomes.co.uk/guides/fazakerley-to-liverpool-city-centre-by-train
 - Isle of Man Ferry from Liverpool: Stay the Night Before: https://bookhomes.co.uk/guides/isle-of-man-ferry-liverpool-stay
 - Liverpool Airport to Fazakerley: All Your Options: https://bookhomes.co.uk/guides/liverpool-airport-to-fazakerley
+- Staying Before or After a Flight from Manchester Airport: https://bookhomes.co.uk/guides/manchester-airport-stay-guide
 - Sandhills Station Guide for Football Fans: https://bookhomes.co.uk/guides/sandhills-station-guide
 
 ### Things to do and seasonal trips
 
+- Bury Visitor Guide: Bury Market, the East Lancashire Railway and Museums: https://bookhomes.co.uk/guides/bury-town-visitor-guide
 - Christmas in Liverpool: Self-Catering Family Stay: https://bookhomes.co.uk/guides/christmas-family-stay-liverpool
 - Christmas Light Trails Around Manchester 2026: Dates and Where to Stay: https://bookhomes.co.uk/guides/christmas-light-trails-manchester-2026
+- East Lancashire Railway Santa Specials 2026: Dates, Prices and Where to Stay: https://bookhomes.co.uk/guides/east-lancashire-railway-santa-specials-2026
 - Family Days Out in North Liverpool and Merseyside: https://bookhomes.co.uk/guides/family-days-out-north-liverpool
 - Half Term in Liverpool: A Five-Day Family Plan for 2027: https://bookhomes.co.uk/guides/half-term-liverpool-family
 - LEGOLAND Discovery Centre and SEA LIFE Manchester: A Family Guide: https://bookhomes.co.uk/guides/legoland-discovery-and-sea-life-manchester
@@ -275,6 +284,8 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Mersey Ferry River Explorer Cruise: Times, Stops and Tips: https://bookhomes.co.uk/guides/mersey-ferry-cruise-guide
 - New Year's Eve in Liverpool 2026: Events, Travel and Stays: https://bookhomes.co.uk/guides/new-year-family-stay-liverpool
 - Rainy Day in Liverpool with Kids: Indoor Ideas That Work: https://bookhomes.co.uk/guides/rainy-day-liverpool-kids
+- Rainy Day Ideas for Kids in Manchester: Free Museums and Indoor Days Out: https://bookhomes.co.uk/guides/rainy-day-manchester-kids
+- Salford Quays Visitor Guide: The Lowry, IWM North and MediaCityUK: https://bookhomes.co.uk/guides/salford-quays-visitor-guide
 - Things to Do in Liverpool with a Group: https://bookhomes.co.uk/guides/things-to-do-in-liverpool-with-a-group
 
 ### Relocation, insurance and renovation stays
@@ -305,6 +316,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Corporate Housing in Liverpool: A Guide for Companies and Relocators: https://bookhomes.co.uk/guides/corporate-housing-liverpool
 - Crosby, Merseyside: Area Guide for Visitors and Relocators: https://bookhomes.co.uk/guides/crosby-area-guide
 - Croxteth and Gillmoss: Area Guide for Visitors and Workers: https://bookhomes.co.uk/guides/croxteth-area-guide
+- Crumpsall, Manchester: Area Guide for Visitors and Hospital Families: https://bookhomes.co.uk/guides/crumpsall-area-guide-manchester
 - Liverpool Events 2026 and 2027: Where to Stay for the Big Dates: https://bookhomes.co.uk/guides/events-concerts-liverpool-stays
 - Fazakerley Area Guide: Staying in North Liverpool: https://bookhomes.co.uk/guides/fazakerley-area-guide
 - Food Shopping near Fazakerley for a Self-Catering Stay: https://bookhomes.co.uk/guides/food-shopping-near-fazakerley
@@ -343,6 +355,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - Orrell Park Area Guide: A Small North Liverpool Neighbourhood: https://bookhomes.co.uk/guides/orrell-park-area-guide
 - Pesach in a Holiday House: Self-Catering in the North West: https://bookhomes.co.uk/guides/pesach-holiday-house-north-west
 - Prescot Town Guide: Shakespeare North, Clocks and the Safari: https://bookhomes.co.uk/guides/prescot-town-guide
+- Prestwich Area Guide for Visitors: Trams, Parks and Where to Stay: https://bookhomes.co.uk/guides/prestwich-area-guide-visitors
 - Run Aintree Half Marathon, 10k and 5k: December 2026 and January 2027: https://bookhomes.co.uk/guides/run-aintree-winter-races-stay
 - Self-Catering Meal Plan for a Group of 7: Three Days, One Shop: https://bookhomes.co.uk/guides/self-catering-meal-plan-group-of-7
 - Serviced Accommodation in Liverpool with Free Parking: https://bookhomes.co.uk/guides/serviced-accommodation-liverpool-with-parking
@@ -358,6 +371,7 @@ First-hand guides written by the hosts of Zermatt Lodge. Each guide has a short 
 - West Derby Village, Liverpool: Area Guide for Visitors: https://bookhomes.co.uk/guides/west-derby-village-guide
 - What Is Serviced Accommodation? A Plain Guide for Liverpool Bookers: https://bookhomes.co.uk/guides/what-is-serviced-accommodation
 - Where to Stay in Liverpool: Areas Compared for Holiday Homes: https://bookhomes.co.uk/guides/where-to-stay-in-liverpool
+- Whitefield Area Guide: Trams, Motorways and Staying Nearby: https://bookhomes.co.uk/guides/whitefield-area-guide
 - Winter Walks near Liverpool 2026: Crosby, Formby and Croxteth: https://bookhomes.co.uk/guides/winter-walks-near-liverpool-2026
 
 ## Other pages
