@@ -243,6 +243,7 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
 .list .item .h .pill{margin-top:1px}
 /* filter chips (drive the hidden selects) */
 .chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 -2px;scrollbar-width:none}
+@media (min-width:760px){.chips{flex-wrap:wrap;overflow:visible}}
 .chips::-webkit-scrollbar{display:none}
 .chips button{flex:0 0 auto;border:1px solid #d8d8d8;background:#fff;border-radius:999px;min-height:36px;padding:0 14px;font-size:13.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
 .chips button:hover{border-color:var(--ink)}
@@ -627,7 +628,7 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
     <section data-panel="mpsettings" class="hidden">
       <div class="card"><h2>Commission</h2><div id="mpSetMsg"></div>
         <form id="mpCommission" novalidate><label class="f">Standard commission (% of each booking)<input type="number" id="mpPct" min="0" max="50" step="0.5"></label><button class="btn" type="submit">Save</button></form>
-        <p class="muted" style="margin-top:8px">Applies to new bookings. Per-host overrides are on the Hosts tab. Also update the % on the "List your property" page (build_listings.py COMMISSION_TEXT).</p></div>
+        <p class="muted" style="margin-top:8px">Applies to new bookings. Per-host overrides are on the Hosts tab. The % shown on the public "List your property" page is separate: ask for it to be updated too.</p></div>
       <div class="card"><h2>Stripe Connect</h2><p class="muted" id="mpConnect"></p></div>
       <div class="card"><h2>Recent changes</h2><div id="mpAudit" class="list"></div></div>
     </section>
@@ -1276,7 +1277,7 @@ function mpRender(){
   var due = 0, paidOut = 0, sched = 0;
   MP.payouts.forEach(function(p){ if (p.status === "manual_pending") due += p.amount_pence; else if (p.status === "paid") paidOut += p.amount_pence; else if (p.status === "connect_scheduled") sched += p.amount_pence; });
   $("#mpPayStats").innerHTML = '<div class="stat"><small>Due by bank transfer</small><b style="color:' + (due ? "var(--accent-ink)" : "var(--brand-ink)") + '">' + money(due) + '</b><span>Hosts without Stripe payouts</span></div>' +
-    '<div class="stat"><small>Paid by you</small><b>' + money(paidOut) + '</b><span>Marked paid</span></div><div class="stat"><small>Paid by Stripe</small><b>' + money(sched) + '</b><span>Connect destination charges</span></div>';
+    '<div class="stat"><small>Paid by you</small><b>' + money(paidOut) + '</b><span>Marked paid</span></div><div class="stat"><small>Paid by Stripe</small><b>' + money(sched) + '</b><span>Paid straight to hosts by Stripe</span></div>';
   $("#mpPayouts").innerHTML = listOr(MP.payouts, function(p){
     return '<div class="item"><div class="h"><span>' + esc(p.host_name) + " · " + esc(p.title) + '</span><span class="pill ' + (p.status === "manual_pending" ? "warn" : p.status === "cancelled" ? "cancelled" : "ok") + '">' + esc(p.status.replace("_", " ")) + '</span></div>' +
       '<div class="m">' + money(p.amount_pence) + " · stay " + dfmt(p.check_in) + " to " + dfmt(p.check_out) + " · " + esc(p.host_email) + (p.note ? " · " + esc(p.note) : "") + (p.paid_at ? " · paid " + esc(tfmt(p.paid_at)) : "") + '</div>' +
@@ -1290,7 +1291,7 @@ function mpRender(){
   if (document.activeElement !== $("#mpPct")) $("#mpPct").value = set.commission_pct != null ? set.commission_pct : 15;
   $("#mpConnect").textContent = set.connect_status === "enabled" ? "Connect is working: hosts can connect payouts." : set.connect_status === "not_enabled"
     ? "Stripe Connect is not switched on for this Stripe account yet. Bookings charge to Book Homes and host payouts are recorded as 'manual_pending'. Turn it on in Stripe: Dashboard > Connect > Get started (platform, UK)."
-    : "Not tested yet. It is checked the first time a host taps 'Connect payouts with Stripe'.";
+    : "Hosts connect their own Stripe account from Earnings in /host. The Hosts tab shows who is connected.";
   $("#mpAudit").innerHTML = listOr(MP.audit.slice(0, 40), function(a){ return '<div class="item"><div class="h"><span>' + esc(a.action) + " · " + esc(a.entity) + " " + esc(a.entity_id || "") + '</span><span class="muted">' + esc(tfmt(a.at)) + '</span></div><div class="m">' + esc(a.actor_email || "system") + (a.details ? " · " + esc(JSON.stringify(a.details)) : "") + '</div></div>'; }, "Nothing yet.");
 }
 /* ---------- overview: KPIs, monthly bars, to-do ---------- */
@@ -1319,7 +1320,7 @@ function ovRender(){
   var max = Math.max.apply(null, months.map(function(m){ return byM[m] || 0; }).concat([1]));
   var fm = new Intl.DateTimeFormat("en-GB", {month: "short"});
   $("#ovBars").innerHTML = months.map(function(m){ var v = byM[m] || 0; return '<div title="' + esc(m + ": " + money(v)) + '"><i style="height:' + Math.max(2, Math.round(v / max * 100)) + '%;' + (m > month ? "opacity:.45" : "") + '"></i><small>' + fm.format(new Date(m + "-15T12:00:00Z")) + "</small></div>"; }).join("");
-  var todo = [[pendL, "listing" + (pendL === 1 ? "" : "s") + " waiting for approval", "mplistings"], [pendH, "host" + (pendH === 1 ? "" : "s") + " waiting for approval", "mphosts"],
+  var todo = [[pendL, "listing" + (pendL === 1 ? "" : "s") + " waiting for approval", "mplistings", "pending"], [pendH, "host" + (pendH === 1 ? "" : "s") + " waiting for approval", "mphosts"],
     [edited, "live listing" + (edited === 1 ? "" : "s") + " edited since approval", "mplistings", "edited"], [due.length, "payout" + (due.length === 1 ? "" : "s") + " to send by bank transfer" + (due.length ? " (" + money(dueAmt) + ")" : ""), "mppayouts"]];
   var open = todo.filter(function(t){ return t[0] > 0; });
   $("#ovTodo").innerHTML = open.length ? open.map(function(t){ return '<button type="button" class="need" data-go="' + t[2] + '"' + (t[3] ? ' data-lf="' + t[3] + '"' : "") + "><b>" + t[0] + "</b><span>" + esc(t[1]) + "</span><em>Review</em></button>"; }).join("")

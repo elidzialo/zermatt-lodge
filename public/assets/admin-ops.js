@@ -84,6 +84,7 @@ css.textContent = [
   ".ao-today{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}",
   ".ao-today a,.ao-today button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink);font:inherit;min-height:84px}",
   ".ao-today a:hover,.ao-today button:hover{border-color:var(--ink)}",
+  "@media (max-width:759px){.ao-today{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ao-today a,.ao-today button{padding:10px}}",
   ".ao-today small{font-size:12.5px;color:var(--muted);font-weight:600}.ao-today b{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:2px}.ao-today span{font-size:12px;color:var(--muted)}",
   ".ao-today .hot{border-color:var(--accent);background:var(--accent-tint)}.ao-today .hot b{color:var(--accent-ink)}",
   ".ao-mv{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line-2);font-size:14px}",
@@ -157,11 +158,8 @@ function loadDash(force){
     $("#aoTodayStats").innerHTML =
       t("Arrivals today", arr.length, tom.length ? tom.length + " tomorrow" : "None tomorrow", 'data-aomv="1"', false) +
       t("Departures today", dep.length, stay.length + " staying tonight", 'data-aomv="1"', false) +
-      t("Unread guest messages", m.unread || 0, (m.threads || 0) + " conversation" + (m.threads === 1 ? "" : "s") + (m.waiting_over_day ? ", " + m.waiting_over_day + " over a day" : ""), 'href="/admin/messages/"', (m.waiting_over_day || 0) > 0) +
-      t("Waiting for approval", approvals, (p.listings || 0) + " listing" + (p.listings === 1 ? "" : "s") + ", " + (p.hosts || 0) + " host" + (p.hosts === 1 ? "" : "s"), 'data-go="mplistings" data-lf="pending"', approvals > 0) +
-      t("Revenue, " + mName, money(mo.revenue_pence), (mo.bookings || 0) + " paid booking" + (mo.bookings === 1 ? "" : "s"), 'data-go="mpbookings"', false) +
-      t("Commission, " + mName, money(mo.commission_pence), "Book Homes share", 'data-go="mppayouts"', false) +
-      (p.payouts ? t("Payouts to send", money(p.payouts_pence), p.payouts + " bank transfer" + (p.payouts === 1 ? "" : "s"), 'data-go="mppayouts"', true) : "");
+      t("Unread messages", m.unread || 0, (m.threads || 0) + " conversation" + (m.threads === 1 ? "" : "s") + (m.waiting_over_day ? ", " + m.waiting_over_day + " over a day" : ""), 'href="/admin/messages/"', (m.waiting_over_day || 0) > 0) +
+      ""; /* approvals, payouts and this month's money are in "Needs you" and "This month" just below, so they are not repeated here */
     var list = arr.concat(dep, tom);
     $("#aoMovesCard").classList.toggle("hidden", !list.length);
     var lbl = {arrival: "Arriving", departure: "Leaving", tomorrow: "Tomorrow"};
@@ -656,7 +654,7 @@ function csCard(){
     c.innerHTML = '<h2>Commission</h2><div id="aoCsMsg"></div><form id="aoCsForm" novalidate><div class="row">' +
       '<label class="f">Standard hosts (% of each booking)<input type="number" name="standard" min="0" max="50" step="0.5" required></label>' +
       '<label class="f">Kosher hosts (%)<input type="number" name="kosher" min="0" max="50" step="0.5" required></label></div><button class="btn" type="submit">Save rates</button></form>' +
-      '<p class="muted" style="margin:8px 0 14px;font-size:13px">Applies to new bookings. A host\'s own override (Hosts tab) wins over these. Also update the % on the "List your property" page (build_listings.py COMMISSION_TEXT).</p>' +
+      '<p class="muted" style="margin:8px 0 14px;font-size:13px">Applies to new bookings. A host\'s own override (Hosts tab) wins over these. The % shown on the public "List your property" page is separate: ask for it to be updated too.</p>' +
       '<h2 style="margin-top:6px">Host types</h2><div class="tools"><input type="search" id="aoCsQ" placeholder="Search hosts" aria-label="Search hosts"></div><div id="aoCsHosts"><p class="zero">Loading...</p></div>';
     sec.insertBefore(c, sec.firstChild);
     $("#aoCsForm").addEventListener("submit", function(e){

@@ -144,4 +144,7 @@
   .hc-nav{width:100%;justify-content:flex-end}
   .hc-nav b{margin-right:auto;margin-left:0;order:-1}
   .hc-bar{top:33%;height:16px;line-height:16px}
+  /* phones: taller cells so the booking bar sits under the date, not on it */
+  .hc-d{aspect-ratio:auto;height:60px}
+  .hc-bar{top:25px}
 }

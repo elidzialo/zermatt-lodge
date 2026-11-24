@@ -68,6 +68,8 @@ function rangeTxt(){ return B.ci && B.co ? fmtD.format(parse(B.ci)) + " to " + f
 function mbar(){
   var q = quote(), el = $("#mbookPrice"), cp = $("#cardPrice"), from = cp ? cp.getAttribute("data-from") : "";
   var has = q && q.total != null;
+  /* marketplace homes: once the server has priced these dates (extra guests, pets, discounts), show its total here too */
+  if (has && B.sq && B.sq.key === [B.ci, B.co, B.guests, B.pets || 0].join("|")) q.total = B.sq.total;
   if (cp) cp.innerHTML = has ? "<b>" + fmtMoney(q.total) + "</b> <span>total for " + q.nights.length + " night" + (q.nights.length === 1 ? "" : "s") + "</span>"
     : from ? '<span class="from">From</span> <b>' + from + "</b> <span>night</span>" : "<b>Add dates</b> <span>for prices</span>";
   if (el) el.innerHTML = has ? "<b>" + fmtMoney(q.total) + " total</b><small>" + rangeTxt() + ", no booking fees</small>"
@@ -113,6 +115,7 @@ function serverQuote(){
       var bd = $("#breakdown"); if (!bd) return;
       if (!j.ok){ if (j.error) bd.innerHTML = '<p class="bd-note bd-err">' + j.error.replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }) + "</p>"; return; }
       var q = j.quote, h = "";
+      B.sq = {key: key, total: q.total_pence / 100}; mbar();
       q.lines.forEach(function(l){ h += '<div class="bd-row' + (l.pence < 0 ? " bd-disc" : "") + '"><span>' + l.label.replace(/[&<>]/g, "") + "</span><span>" + (l.pence < 0 ? "-" : "") + fmtMoney(Math.abs(l.pence) / 100) + "</span></div>"; });
       h += '<details><summary>Night-by-night breakdown</summary><ul>' + q.nightly.map(function(n){ return "<li><span>" + fmtShort.format(parse(n.date)) + "</span><span>" + fmtMoney(n.price) + "</span></li>"; }).join("") + "</ul></details>";
       h += '<div class="bd-row bd-total"><span>Total, no booking fees</span><span>' + fmtMoney(q.total_pence / 100) + "</span></div>";
