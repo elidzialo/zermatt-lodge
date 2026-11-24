@@ -156,6 +156,8 @@ def strip_empty_faq(h):
 urls = [f"{DOMAIN}/", f"{DOMAIN}/guides"]
 for slug, (meta, body) in pages.items():
     body = body.replace("](/#book)", "](/zermatt-lodge#book)").replace("](/stays/kosher)", "](/kosher-homes)").replace("](/stays)", "](/)")
+    # a bare Airbnb URL as link text runs off the screen at 390px; give it a readable name
+    body = re.sub(r"<(https://www\.airbnb\.co\.uk/rooms/1801505261909570677)>", r"[Book Zermatt Lodge on Airbnb](\1)", body)
     body_html = fix_links(markdown.markdown(body, extensions=["tables", "sane_lists"]))
     body_html = re.sub(r"<h1>.*?</h1>", "", body_html, count=1, flags=re.S)
     faqs = meta.get("faqs") or []
@@ -169,7 +171,7 @@ for slug, (meta, body) in pages.items():
          "author": {"@type": "Organization", "name": "Book Homes"}, "publisher": {"@type": "Organization", "name": "Book Homes"}},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{DOMAIN}/"},
-            {"@type": "ListItem", "position": 2, "name": "Liverpool guides", "item": f"{DOMAIN}/guides"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": f"{DOMAIN}/guides"},
             {"@type": "ListItem", "position": 3, "name": meta["title"], "item": canon}]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["q"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]}} for q in faqs]}]}
     if not faqs:

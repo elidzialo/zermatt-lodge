@@ -1,10 +1,37 @@
 # Book Homes launch checklist
 
-Last checked: 23 November 2026, built site served locally, at 390px and 1280px (headless Chrome). The QA sandbox cannot reach Supabase, jsdelivr or Vercel image resizing, so live data, resized listing photos and the host sign-in screen were not run in the browser; one live page was read with a fetch. Previous pass: 22 November.
+Last checked: 24 November 2026, built site served locally, at 390px and 1280px (headless Chrome). The QA sandbox cannot reach Supabase, Vercel or the live site, so live data, /api/*, resized listing photos and the host sign-in screen were not run in the browser. Previous pass: 23 November.
 
-**Status: ready to take bookings. Blocked on Eli for email, Stripe and legal sign-off (below).**
+## Launch readiness (24 Nov)
 
-## Ready
+**Ready**
+- Site: all public pages pass at 390px and 1280px (no console errors, no sideways scroll, alt text, labels, one h1). 253 pages, 234 JSON-LD blocks valid, 233 sitemap URLs all exist and none is noindex, robots.txt and llms.txt correct.
+- Privacy and safety: no eli@zelr.co.uk, no owner phone. Jewish pages follow the community safety rule (no locations, times, eruv or population details; all say contact the community or Beth Din). Zermatt Lodge page has no Fazakerley, north Liverpool, Longmoor or street name; map point is approximate.
+- Booking: Zermatt and marketplace checkout create Stripe sessions (tested 22 Nov, code unchanged since).
+
+**Not ready**
+- Sign-up and password-reset emails (Supabase hourly limit until Resend SMTP is on).
+- Paid bookings do not confirm by themselves and hosts are not paid out until the Stripe webhook secrets are set.
+- Legal pages still say "(draft)".
+
+**Eli must do**
+1. Resend: approve DNS in Namecheap, add API key, set as SMTP in Supabase.
+2. Stripe: add webhook secrets (zermatt-stripe-webhook, bookhomes-stripe-webhook), set `BOOKHOMES_CONNECT=on`.
+3. Stripe: change public business name from "ZUGATI" (or use a Book Homes account). Site contact email is also cs@zugati.co.uk on every page; switch to a Book Homes address when one exists.
+4. Solicitor sign-off on host terms, guest terms and privacy, then remove "(draft)".
+5. Run `supabase/PENDING_analytics.sql`.
+6. Fix listing 15 in the host area: "Studio Appartement In Salford" says studio but facts say 2 bedrooms (title shows "2-bedroom flat").
+7. After launch: delete test host test+launch@zelr.co.uk and its expired test holds.
+
+## 24 November pass
+
+- Passing at 390px and 1280px: home, all 11 listing pages, /stays-in and all 8 hubs, kosher homes, guides hub, 10 of the 28 guides added on 23 Nov, become a host, saved, trips, trips/messages, host terms, guest terms, privacy, host login, admin login, 404 (real 404 status).
+- Hubs: Manchester, Liverpool, Prestwich, Salford indexed with self canonical and in the sitemap; London, Golders Green, Stamford Hill, Gateshead noindex and not in the sitemap. No community claims on hubs.
+- Fixed: 27 guides (incl. 5 of the new Liverpool ones) showed the bare Airbnb URL as link text, which ran off the screen at 390px. The build now renders it as "Book Zermatt Lodge on Airbnb" (build.py, no content edits).
+- Fixed: guide breadcrumbs (JSON-LD) said "Liverpool guides" on every guide, including Manchester ones; now "Guides", matching the hub.
+- Checked, left: "Notify me" button is inside a closed details box (not a real unnamed button). Third-party public numbers in Liverpool guides (hospitals, Merseyrail, GPs) kept. One Shabbat guide says Zermatt Lodge is in north Liverpool (guide, not the listing page; Fazakerley guides are allowed).
+
+## Ready (23 Nov)
 
 - All main pages checked at 390px and 1280px: home, Zermatt Lodge, Stylish Liverpool Apartment, kosher homes, guides hub and 3 guides, become a host, saved, trips, host terms, guest terms, privacy, host login, admin login, 404.
 - No console errors, no failed requests, no sideways scroll, no broken images, no images without alt text, no unnamed buttons or links, no unlabelled form fields, one h1 per page. LCP under 0.3s on every page (warm cache).
