@@ -111,7 +111,7 @@ We couldn't confirm the opening dates, hours or prices when we checked, and the 
 
 ## Getting there by train
 
-From Fazakerley, direct Merseyrail trains take **about 15 minutes to Liverpool Central**.
+From Zermatt Lodge, trains take **about 15 minutes to Liverpool Central**.
 
 - **Skate St George's:** opposite Lime Street station, a short walk from Central
 - **Icebox at Boxpark:** a walk south from Central towards the Baltic Triangle
@@ -121,7 +121,7 @@ Merseyrail takes contactless: tap in and tap out.
 
 ## Where to stay for a skating trip
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. After an evening on the ice, you come back to a warm house rather than a cramped hotel room.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. After an evening on the ice, you come back to a warm house rather than a cramped hotel room.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, so wet kit dries and everyone gets a warm shower

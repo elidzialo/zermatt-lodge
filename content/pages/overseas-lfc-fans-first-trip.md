@@ -37,7 +37,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-sandhills
 ---
 
-For an overseas fan, the most important thing to know before booking flights is how Liverpool's tickets actually work: home tickets go mainly to the club's members, so sort your ticket through official channels first, then book travel and accommodation around it. Once you have a ticket, Liverpool is an easy city to visit, with a compact centre, simple trains and plenty to do the day before the match. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, the same side of the city as Anfield, about 15 minutes by train from the city centre, sleeping up to 7.
+For an overseas fan, the most important thing to know before booking flights is how Liverpool's tickets actually work: home tickets go mainly to the club's members, so sort your ticket through official channels first, then book travel and accommodation around it. Once you have a ticket, Liverpool is an easy city to visit, with a compact centre, simple trains and plenty to do the day before the match. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7.
 
 This guide walks you from planning to the final whistle.
 
@@ -66,11 +66,11 @@ If a website offers guaranteed tickets at a big mark-up, be very cautious. Don't
 
 ### Liverpool John Lennon Airport
 
-The closest airport, with flights from across the UK, Ireland and Europe. The **Arriva 500** bus runs to the city centre about every 30 minutes, taking around 30 minutes. See our [airport to Fazakerley guide](/guides/liverpool-airport-to-fazakerley) if you're staying in north Liverpool.
+The closest airport, with flights from across the UK, Ireland and Europe. The **Arriva 500** bus runs to the city centre about every 30 minutes, taking around 30 minutes. See our [airport transport guide](/guides/liverpool-airport-to-fazakerley).
 
 ### Manchester Airport
 
-A bigger airport with more long-haul flights. It's a longer journey to Liverpool, by rail or road. See our guide to [Manchester Airport to Fazakerley](/guides/manchester-airport-to-fazakerley).
+A bigger airport with more long-haul flights. It's a longer journey to Liverpool, by rail or road. 
 
 ## Step 3: Practical things for visitors
 
@@ -122,7 +122,7 @@ For more ideas, see our [two-day football and city itinerary](/guides/liverpool-
 
 The city centre has the most hotels but they fill up and get expensive on match weekends. If you're travelling as a family or group of friends, a whole house can be better value and more comfortable.
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station. It isn't in the city centre and isn't walking distance to Anfield, but trains to Sandhills, for the Soccerbus, take about 8 minutes, and Liverpool Central about 15.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre and isn't walking distance to Anfield, but trains to Sandhills, for the Soccerbus, take about 8 minutes, and Liverpool Central about 15.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

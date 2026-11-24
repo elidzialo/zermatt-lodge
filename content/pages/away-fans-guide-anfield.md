@@ -108,7 +108,7 @@ For evening kick-offs, late Sunday games or long journeys home, a night in Liver
 
 If your group is 5 to 7 people, a whole house can work out simpler than several hotel rooms, and it means you can travel together in one or two cars and leave them parked while you take the train in.
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's not in the city centre and not walking distance to Anfield, but Trainline shows trains from Fazakerley to Sandhills in about 8 minutes, where the Soccerbus runs to the ground.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre and not walking distance to Anfield, but it's easy to get the train to Sandhills, where the Soccerbus runs to the ground.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

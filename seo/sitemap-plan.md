@@ -1,5 +1,7 @@
 # Sitemap plan - Zermatt Lodge
 
+> **Location rule (Eli, 22 Nov 2026):** describe Zermatt Lodge only as "a 4-bedroom house in Liverpool" (or "our house in Liverpool"). Never say or imply it is in or near Fazakerley, Aintree or north Liverpool, never use L9/L10, nearby streets or shops, walking or drive times or distances from the house, or a phone number. "Liverpool city centre is about 15 minutes by train or car" is fine. Area guides about Fazakerley or Aintree are fine as neutral visitor guides.
+
 Domain placeholder: `https://www.example-domain.co.uk` (swap for the real domain; pick www or non-www and 301 the other).
 
 ## Rules

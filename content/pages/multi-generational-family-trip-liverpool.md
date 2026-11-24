@@ -34,7 +34,7 @@ sources:
   - https://thrillzing.com/news/cavern-club-70th-anniversary-exhibition-july-2026/
 ---
 
-A Liverpool trip with grandparents, parents and children works best when you plan around the slowest walker and the youngest napper: pick step-free sights, keep each day to one main outing, and stay somewhere with a shared kitchen and living room so people can rest without splitting up. The city helps, with level-access museums, Shopmobility at Liverpool ONE and plenty of free attractions. Zermatt Lodge is a 4-bedroom house in north Liverpool that sleeps 7, with free parking for 2 cars, about 15 minutes by train from the city centre.
+A Liverpool trip with grandparents, parents and children works best when you plan around the slowest walker and the youngest napper: pick step-free sights, keep each day to one main outing, and stay somewhere with a shared kitchen and living room so people can rest without splitting up. The city helps, with level-access museums, Shopmobility at Liverpool ONE and plenty of free attractions. Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7, with free parking for 2 cars, about 15 minutes by train from the city centre.
 
 ## Start with who's coming
 
@@ -76,7 +76,7 @@ With older relatives, a car is often the easiest way to reach parks, the coast a
 
 ### Trains
 
-Merseyrail serves north Liverpool and the city centre. Fazakerley station, for example, is about 15 minutes from Liverpool Central by train, according to Trainline. National Rail lists Fazakerley as having lifts and step-free access, but also notes that step-free access isn't available between platform 1 and the exit. It has no car park, only a drop-off point. Always check the accessibility details for your stations on National Rail or Merseyrail before you travel, and book passenger assistance if you need it.
+Merseyrail serves the suburbs and the city centre. Zermatt Lodge is about 15 minutes from Liverpool Central by train. Station access varies, and National Rail lists step-free details for each station, so check before you travel. Step-free access isn't always available between platform 1 and the exit. It has no car park, only a drop-off point. Always check the accessibility details for your stations on National Rail or Merseyrail before you travel, and book passenger assistance if you need it.
 
 ### Shopmobility
 
@@ -114,7 +114,7 @@ Visit Liverpool lists the cathedral among its accessible attractions. It's huge 
 
 ### Parks and the coast
 
-On a dry day, a park or beach gives children space to run while adults sit down. See our [family days out in north Liverpool](/guides/family-days-out-north-liverpool) for ideas close to Fazakerley.
+On a dry day, a park or beach gives children space to run while adults sit down. See our [family days out in north Liverpool](/guides/family-days-out-north-liverpool) for ideas.
 
 ## Pacing the days
 
@@ -138,7 +138,7 @@ Bring a few games that work across ages, such as cards, dominoes or a quiz. A po
 
 ## Zermatt Lodge for multi-generational trips
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, plus a bath in the house
@@ -160,6 +160,6 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Holiday house with a games room](/guides/holiday-house-liverpool-games-room)
 - [Where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group)

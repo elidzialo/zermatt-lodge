@@ -3,7 +3,7 @@ title: "Group Accommodation in Liverpool with Parking"
 meta_description: "Group accommodation in Liverpool with free parking for 2 cars: a whole 4-bed house that sleeps 7, 15 minutes by train from the city centre. What to check."
 slug: group-accommodation-liverpool-with-parking
 h1: "Group Accommodation in Liverpool with Free Parking"
-quick_answer: "If your group is driving, check parking first, as many city-centre group stays have none. Zermatt Lodge is a whole 4-bedroom house in Fazakerley that sleeps 7, with free parking for two cars and direct trains to the city centre in about 15 minutes."
+quick_answer: "If your group is driving, check parking first, as many city-centre group stays have none. Zermatt Lodge is a whole 4-bedroom house in Liverpool that sleeps 7, with free parking for two cars and direct trains to the city centre in about 15 minutes."
 primary_keyword: "group accommodation liverpool"
 secondary_keywords:
   - "large group accommodation liverpool"
@@ -18,7 +18,7 @@ related:
   - things-to-do-in-liverpool-with-a-group
 faqs:
   - q: "Where can a group of 7 stay in Liverpool with parking?"
-    a: "Zermatt Lodge in Fazakerley, north Liverpool, is a whole 4-bedroom house sleeping 7, with free parking for 2 cars. It's near Fazakerley station, with direct trains to Liverpool Central in about 15 minutes."
+    a: "Zermatt Lodge is a whole 4-bedroom house in Liverpool sleeping 7, with free parking for 2 cars, about 15 minutes by train from Liverpool Central."
   - q: "Is it hard to park a group's cars in Liverpool city centre?"
     a: "It can be. Many city-centre apartments and hotels don't include parking, so groups arriving in two cars often end up paying for multi-storey car parks overnight, which adds up across a weekend."
   - q: "What bed layout does Zermatt Lodge have?"
@@ -33,9 +33,9 @@ sources:
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
 ---
 
-If your group is driving to Liverpool, the most important thing to check is parking. Many city-centre group stays have none, which means paying for a multi-storey car park every night on top of the room rate. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, that sleeps 7, with **free parking for two cars** and direct trains to the city centre in about 15 minutes.
+If your group is driving to Liverpool, the most important thing to check is parking. Many city-centre group stays have none, which means paying for a multi-storey car park every night on top of the room rate. Zermatt Lodge is a whole 4-bedroom house in Liverpool, that sleeps 7, with **free parking for two cars** and direct trains to the city centre in about 15 minutes.
 
-This guide covers what to look for in group accommodation with parking, how a north Liverpool base works day to day, and the questions to ask before you book.
+This guide covers what to look for in group accommodation with parking, how a base outside the city centre works day to day, and the questions to ask before you book.
 
 ## Why parking matters for groups
 
@@ -49,18 +49,18 @@ A group of five to seven people usually arrives in two cars, especially families
 
 Over a long weekend, parking two cars in town can become one of the biggest costs of the trip. Free off-street parking at the house removes that cost.
 
-## How a north Liverpool base works
+## How a base outside the centre works
 
 ### Park once, use the train
 
-Fazakerley station is on Merseyrail's Northern line, with direct trains to **Liverpool Central in about 15 minutes**. Trainline lists the first train at 04:46 and the last at 23:36 on its standard timetable (it varies at weekends and on holidays). A typical day looks like this:
+Trains reach **Liverpool Central in about 15 minutes**. Check first and last trains for your dates, as they vary at weekends and on holidays. A typical day looks like this:
 
 1. Leave the cars at the house.
-2. Walk to Fazakerley station.
+2. Take the train into town.
 3. Get off at Liverpool Central for Liverpool ONE, Bold Street, the Albert Dock or the waterfront.
 4. Come back in the evening without worrying about who's driving.
 
-See our step-by-step guide to [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train).
+
 
 ### Use the cars for days out
 
@@ -100,7 +100,7 @@ See [who gets which room?](/guides/room-allocation-guide-group-house) for ideas 
 
 **Friday:** arrive from 3pm, park both cars at the house, do a big food shop and cook a group dinner.
 
-**Saturday:** leave the cars. Train from Fazakerley to Liverpool Central, then the waterfront, a Mersey ferry and the Royal Albert Dock. Dinner in town, then the train or a taxi back.
+**Saturday:** leave the cars. Train to Liverpool Central, then the waterfront, a Mersey ferry and the Royal Albert Dock. Dinner in town, then the train or a taxi back.
 
 **Sunday:** take the cars. Drive to Crosby Beach or Formby for a walk, or Knowsley Safari via the M57, then a late lunch.
 
@@ -115,7 +115,7 @@ This mix gives you a full city day without paying for parking in town, and a coa
 - **Football fans** going to Anfield or Everton
 - **Racegoers** heading to Aintree
 - **Work teams and contractors** who need vehicles for site visits
-- **Families visiting someone in hospital**, especially at Aintree, which is close to Fazakerley
+- **Families visiting someone in hospital**, with free parking for two cars
 
 ## Why Zermatt Lodge suits groups with cars
 
@@ -125,7 +125,7 @@ This mix gives you a full city day without paying for parking in town, and a coa
 - **Big kitchen and dining room** for group meals
 - **Games room with a pool table**, plus **board games** and a **55" Smart TV with Netflix**
 - **Large private back garden**
-- **Near Fazakerley station, the M57/M58 and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**.

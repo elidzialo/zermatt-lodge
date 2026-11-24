@@ -1,9 +1,9 @@
 ---
 title: "M&S Bank Arena Concerts: Where to Stay as a Group"
-meta_description: "Going to a gig at M&S Bank Arena Liverpool with friends or family? Getting there, parking, the journey home and a 4-bed house in Fazakerley."
+meta_description: "Going to a gig at M&S Bank Arena Liverpool with friends or family? Getting there, parking, the journey home and a 4-bed house in Liverpool."
 slug: ms-bank-arena-concert-accommodation
 h1: "M&S Bank Arena Concerts: Where to Stay with a Group"
-quick_answer: "For an M&S Bank Arena concert with a group, stay somewhere with an easy route to the waterfront and home again. Zermatt Lodge in Fazakerley sleeps up to 7, about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena."
+quick_answer: "For an M&S Bank Arena concert with a group, stay somewhere with an easy route to the waterfront and home again. Zermatt Lodge in Liverpool sleeps up to 7, about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena."
 primary_keyword: "m&s bank arena accommodation"
 secondary_keywords:
   - "places to stay near m&s bank arena"
@@ -20,11 +20,11 @@ faqs:
   - q: "Where is M&S Bank Arena Liverpool?"
     a: "It's on Liverpool's waterfront at King's Dock (postcode L3 4BX), between the Royal Albert Dock and the Baltic Triangle. It was formerly known as the Echo Arena."
   - q: "What's the nearest station to M&S Bank Arena?"
-    a: "James Street on Merseyrail is a short walk. Liverpool Central, on the Northern line from Fazakerley, is about a mile away, a walk of around 20 minutes through Liverpool ONE. Lime Street is about 20 minutes' walk."
+    a: "James Street on Merseyrail is a short walk. Liverpool Central is about a mile away, a walk of around 20 minutes through Liverpool ONE. Lime Street is about 20 minutes' walk."
   - q: "Where can I park for M&S Bank Arena?"
     a: "Options include a 24-hour car park on Kings Dock Street, parking around the Royal Albert Dock and car parks near James Street. Prices vary by event, and there's a controlled parking zone with penalty risk on-street."
-  - q: "How do I get back to north Liverpool after a concert?"
-    a: "Walk to Liverpool Central and take the Northern line towards Kirkby or Headbolt Lane for Fazakerley. If the show finishes late, check the last train for your date in advance or book a taxi."
+  - q: "How do I get back after a concert?"
+    a: "Walk to Liverpool Central for Merseyrail. If the show finishes late, check the last train for your date in advance or book a taxi."
   - q: "Is it cheaper to stay outside the city centre for a concert?"
     a: "For a group, often yes. City-centre hotels raise prices on big gig nights. A shared house a short train ride away, with free parking, can work out better value, especially if you're also paying for parking."
 sources:
@@ -33,7 +33,7 @@ sources:
   - https://www.merseyrail.org/journey-planning/plan-your-journey/three-trains-per-hour-between-headbolt-lane-and-liverpool-central/
 ---
 
-If you're going to a concert at M&S Bank Arena with a group, the best place to stay is one that gets you to the waterfront easily and home again safely afterwards, without paying city-centre hotel prices for several rooms. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping up to 7. It's near Fazakerley station, about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena. There's free parking for two cars too.
+If you're going to a concert at M&S Bank Arena with a group, the best place to stay is one that gets you to the waterfront easily and home again safely afterwards, without paying city-centre hotel prices for several rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7. It's about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena. There's free parking for two cars too.
 
 This guide covers getting to the arena, parking, the journey home and how to make a weekend of it.
 
@@ -43,9 +43,9 @@ M&S Bank Arena (formerly the Echo Arena) sits on the waterfront at **King's Dock
 
 ## Getting to the arena
 
-### From Fazakerley by train
+### By train
 
-1. Take a Merseyrail Northern line train from **Fazakerley** to **Liverpool Central**. Direct trains take about 15 minutes.
+1. Take the train to **Liverpool Central**, about 15 minutes from the house.
 2. Walk from Central to the arena through **Liverpool ONE**, down towards the waterfront and King's Dock. It's about a mile, around 20 minutes.
 
 If someone in your group has mobility needs, a taxi from Central or a drop-off near the arena is easier.
@@ -71,7 +71,7 @@ On-street bays fall within the city's controlled parking zone, so you risk a pen
 
 Getting home is where concert nights go wrong. A few tips:
 
-- **Check the last train.** Northern line trains back towards Kirkby and Headbolt Lane, via Fazakerley, run less often in the evening. Check the exact last train for your date on the Merseyrail app before you go.
+- **Check the last train.** Trains run less often in the evening. Check the exact last train for your date on the Merseyrail app before you go.
 - **Leave a few minutes before the encore** if catching a train really matters, or accept that you'll get a taxi.
 - **Pre-book a taxi** for big shows. Ranks get long queues at the end. See our [guide to taxis in Liverpool](/guides/taxis-in-liverpool).
 - **Agree a meeting point** outside, away from the main doors, in case anyone gets separated.
@@ -99,11 +99,11 @@ The arena is right next to some of Liverpool's best sights:
 
 ## Sample gig day
 
-Arrive at the house from 3pm, cook an early dinner, then catch a train to Liverpool Central around 6pm. Walk down to King's Dock, with time for a drink near the Albert Dock. After the show, walk back to Central for a train, or take a pre-booked taxi back to Fazakerley.
+Arrive at the house from 3pm, cook an early dinner, then catch a train to Liverpool Central around 6pm. Walk down to King's Dock, with time for a drink near the Albert Dock. After the show, walk back to Central for a train, or take a pre-booked taxi back.
 
 ## Why Zermatt Lodge suits concert groups
 
-Zermatt Lodge is a whole house in Fazakerley, near the station, with direct trains to Liverpool Central.
+Zermatt Lodge is a whole house in Liverpool, with direct trains to Liverpool Central.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready before the show
@@ -119,7 +119,6 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 ## Related guides
 
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Arriving late in Liverpool: last trains and taxis](/guides/arriving-late-liverpool)
 - [Taxis in Liverpool](/guides/taxis-in-liverpool)
 - [Royal Albert Dock guide](/guides/royal-albert-dock-guide)

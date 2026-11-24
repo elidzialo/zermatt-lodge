@@ -3,7 +3,7 @@ title: "Insurance Alternative Accommodation in Liverpool"
 meta_description: "Displaced by a flood, fire or leak in Liverpool? How insurance alternative accommodation works, what to ask your insurer, and a 4-bed house with parking."
 slug: insurance-temporary-accommodation-liverpool
 h1: "Insurance Alternative Accommodation in Liverpool: A Guide for Displaced Families"
-quick_answer: "If a flood, fire or major leak makes your Liverpool home unliveable, home insurance may pay for alternative accommodation, usually arranged by your insurer or its provider. Zermatt Lodge, a 4-bedroom house in Fazakerley sleeping 7, can be booked by insurers and families for these stays."
+quick_answer: "If a flood, fire or major leak makes your Liverpool home unliveable, home insurance may pay for alternative accommodation, usually arranged by your insurer or its provider. Zermatt Lodge, a 4-bedroom house in Liverpool sleeping 7, can be booked by insurers and families for these stays."
 primary_keyword: "insurance temporary accommodation liverpool"
 secondary_keywords:
   - "alternative accommodation insurance claim liverpool"
@@ -23,7 +23,7 @@ faqs:
   - q: "What counts as uninhabitable?"
     a: "Typically, structural damage or a lack of essentials such as running water, heating, electricity, or working toilets and washing facilities. A loss adjuster usually assesses this."
   - q: "Can Zermatt Lodge be used for an insurance claim stay?"
-    a: "Yes, if your insurer or its accommodation provider agrees. It's a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, with a kitchen, garden and free parking for 2 cars. Email cs@zugati.co.uk to discuss dates."
+    a: "Yes, if your insurer or its accommodation provider agrees. It's a whole 4-bedroom house in Liverpool, sleeping 7, with a kitchen, garden and free parking for 2 cars. Email cs@zugati.co.uk to discuss dates."
   - q: "Can we bring our pets?"
     a: "Sorry, Zermatt Lodge has a no-pets rule. Ask your insurer whether your policy covers kennel or boarding fees, or pet-friendly accommodation."
 sources:
@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If a flood, fire or major leak has made your Liverpool home unliveable, your home insurance may pay for temporary "alternative accommodation" while repairs are done. Usually your insurer, or a provider it uses, arranges the property. You can often ask for something that fits your family, such as enough bedrooms, a kitchen, parking and a location near school and work. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, which insurers and families can book for these stays.
+If a flood, fire or major leak has made your Liverpool home unliveable, your home insurance may pay for temporary "alternative accommodation" while repairs are done. Usually your insurer, or a provider it uses, arranges the property. You can often ask for something that fits your family, such as enough bedrooms, a kitchen, parking and a location near school and work. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, which insurers and families can book for these stays.
 
 This guide explains how alternative accommodation typically works, what to ask, and how to make a disrupted few weeks or months more manageable.
 
@@ -107,13 +107,13 @@ When your normal life has been turned upside down, the right temporary home real
 - **Whole property:** no shared spaces with other guests
 - **Layout:** 4 bedrooms (king en-suite, king, queen, single) and 2 bathrooms, sleeping up to 7
 - **Parking:** free off-street parking for 2 cars
-- **Location:** Fazakerley, north Liverpool, near the M57/M58 and a Merseyrail station
+- **Location:** Liverpool, about 15 minutes by train or car from the city centre
 - **House rules:** no parties, no smoking, no pets
 - **Contact:** one point of contact by email at cs@zugati.co.uk
 
 ## Why Zermatt Lodge suits insurance stays
 
-Zermatt Lodge is a whole house in Fazakerley, north Liverpool, near Aintree, Walton, Kirkby, Maghull and Croxteth. It's handy for families displaced from homes across north Liverpool, Sefton and Knowsley.
+Zermatt Lodge is a whole house in Liverpool, with free parking for families who still need to get to school and work.
 
 - **4 bedrooms, sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -121,7 +121,7 @@ Zermatt Lodge is a whole house in Fazakerley, north Liverpool, near Aintree, Wal
 - **Large private back garden**
 - **Free parking for 2 cars**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
-- **Near Fazakerley station** (about 15 minutes to Liverpool Central), **the M57/M58** and a **Lidl**
+- **About 15 minutes by train** to Liverpool Central
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

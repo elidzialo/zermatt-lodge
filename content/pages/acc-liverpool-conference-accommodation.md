@@ -3,7 +3,7 @@ title: "ACC Liverpool Conference Accommodation for Teams"
 meta_description: "Attending a conference at ACC Liverpool, now Liverpool Experience Campus? Parking prices, trains to James Street and a 4-bed house for your team."
 slug: acc-liverpool-conference-accommodation
 h1: "Conference Accommodation for ACC Liverpool (Liverpool Experience Campus)"
-quick_answer: "For a team at ACC Liverpool (now branded Liverpool Experience Campus), one shared house can replace several waterfront hotel rooms. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, sleeping up to 7 with free parking for two cars."
+quick_answer: "For a team at ACC Liverpool (now branded Liverpool Experience Campus), one shared house can replace several waterfront hotel rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7 with free parking for two cars."
 primary_keyword: "acc liverpool conference accommodation"
 secondary_keywords:
   - "liverpool experience campus accommodation"
@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If your team is heading to a conference at ACC Liverpool, now branded Liverpool Experience Campus, you can either pay waterfront hotel prices for several rooms or share a house and commute in. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for two cars. It's a practical option for teams of colleagues who'd rather have one base, one invoice and space to prepare in the evenings.
+If your team is heading to a conference at ACC Liverpool, now branded Liverpool Experience Campus, you can either pay waterfront hotel prices for several rooms or share a house and commute in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for two cars. It's a practical option for teams of colleagues who'd rather have one base, one invoice and space to prepare in the evenings.
 
 This guide is for **delegates and speakers** attending conferences. If your team is building a stand, see our separate [exhibitor stay guide](/guides/exhibition-centre-liverpool-exhibitor-stay).
 
@@ -55,11 +55,11 @@ The venue's joining instructions say:
 - There's a riverside **drop-off point** for taxis and coaches
 - Visitors to meetings report to the **Guest Relations desk in the Atrium**. The phone number given is 0151 239 6002
 
-## Getting there from north Liverpool
+## Getting there
 
 ### By train
 
-From Fazakerley station, direct Merseyrail trains reach **Liverpool Central in about 15 minutes**. From there you can:
+Trains from the house reach **Liverpool Central in about 15 minutes**. From there you can:
 
 - Walk to the waterfront, or
 - Use the Wirral line to **James Street**. The venue says James Street is about a 10-minute walk from the campus
@@ -112,7 +112,7 @@ Our guide to [corporate team stays in Liverpool](/guides/corporate-team-stay-liv
 
 ## Why Zermatt Lodge works for conference teams
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station. It's not in the city centre and not walking distance to the waterfront, so plan on a short train ride each day.
+Zermatt Lodge is a whole house in Liverpool. It's not in the city centre and not walking distance to the waterfront, so plan on a short train ride each day.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for morning starts

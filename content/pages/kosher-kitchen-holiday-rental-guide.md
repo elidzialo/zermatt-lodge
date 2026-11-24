@@ -91,7 +91,7 @@ Supply in Liverpool is limited, so most visitors bring supplies or order ahead. 
 
 ## Is Zermatt Lodge suitable?
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It is **not kosher**. It does have a **big kitchen** and a **separate dining room**, which helps if you're bringing your own equipment, plus free parking for 2 cars for unloading.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It is **not kosher**. It does have a **big kitchen** and a **separate dining room**, which helps if you're bringing your own equipment, plus free parking for 2 cars for unloading.
 
 - Sleeps 7 in 4 bedrooms, with 2 bathrooms
 - Washer and dryer

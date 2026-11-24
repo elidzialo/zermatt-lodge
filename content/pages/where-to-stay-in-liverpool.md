@@ -1,9 +1,9 @@
 ---
 title: "Where to Stay in Liverpool: Areas Compared for Holiday Homes"
-meta_description: "Where to stay in Liverpool: city centre, Albert Dock, Baltic Triangle, south and north Liverpool and the coast compared for holiday homes and groups."
+meta_description: "Where to stay in Liverpool: city centre, Albert Dock, Baltic Triangle, the suburbs and the coast compared for holiday homes and groups."
 slug: where-to-stay-in-liverpool
 h1: "Where to Stay in Liverpool: Which Area Suits Your Trip?"
-quick_answer: "Stay in the city centre or around the Albert Dock for a short break on foot, the Baltic Triangle for bars, and south Liverpool for leafy streets near Sefton Park. For families, groups, race goers and anyone driving, north Liverpool gives you a whole house with parking for the price of a city flat, with trains to Liverpool Central in about 15 minutes from stations such as Fazakerley."
+quick_answer: "Stay in the city centre or around the Albert Dock for a short break on foot, the Baltic Triangle for bars, and south Liverpool for leafy streets near Sefton Park. For families, groups, race goers and anyone driving, north Liverpool gives you a whole house with parking for the price of a city flat, with trains to Liverpool Central in about 15."
 primary_keyword: "where to stay in liverpool"
 secondary_keywords:
   - "best area to stay in liverpool"
@@ -81,7 +81,7 @@ North Liverpool is where you'll find **whole houses with gardens and parking**. 
 - **Hospital visitors** to Aintree University Hospital in Fazakerley
 - **Contractors and business travellers** working near the M57 and M58
 
-**Getting into town:** from **Fazakerley station**, direct trains reach **Liverpool Central in about 15 minutes**, around 69 times a day according to Trainline. Junction 6 of the **M57** is about 1.5 miles from Fazakerley.
+**Getting into town:** Northern line trains run direct to **Liverpool Central**, and the **M57** and **M58** serve drivers.
 
 **The trade-off:** you can't walk to the city's bars and restaurants. You'll take a train, bus or taxi in, and plan your last train home.
 
@@ -96,9 +96,9 @@ North Liverpool is where you'll find **whole houses with gardens and parking**. 
 3. **What's the main event?** Racing, football, a hospital visit or a concert all point to different areas.
 4. **Do you want nightlife on the doorstep,** or a quiet night and a big breakfast table?
 
-## Zermatt Lodge in north Liverpool
+## Zermatt Lodge in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house **near Fazakerley station** in north Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room

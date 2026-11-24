@@ -25,7 +25,7 @@ faqs:
   - q: "Do we need to book group activities in advance?"
     a: "For groups of 5 or more, yes, where possible. Stadium tours, escape rooms, crazy golf, restaurants and anything on a weekend evening can sell out."
   - q: "What can we do as a group in the evening without a big night out?"
-    a: "Head back to your accommodation for a home-cooked dinner, board games, pool and a film. At Zermatt Lodge there's a games room with a pool table and a 55-inch Smart TV with Netflix."
+    a: "Head back to your accommodation for a home-cooked dinner, board games, pool and a film. At Zermatt Lodge's a games room with a pool table and a 55-inch Smart TV with Netflix."
 sources:
   - https://www.merseyferries.co.uk/about
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
@@ -39,7 +39,7 @@ The best things to do in Liverpool with a group mix the big sights with activiti
 
 ### Morning: Pier Head and a Mersey ferry
 
-Take the Merseyrail Northern line from Fazakerley to **Liverpool Central** (about 15 minutes), then walk down to the **Pier Head**. Start with the **Three Graces**: the Royal Liver Building, the Cunard Building and the Port of Liverpool Building.
+Take the train to **Liverpool Central** (about 15 minutes from the house), then walk down to the **Pier Head**. Start with the **Three Graces**: the Royal Liver Building, the Cunard Building and the Port of Liverpool Building.
 
 Then hop on the **Mersey Ferries River Explorer cruise**. It takes about 50 minutes and has commentary throughout. It currently runs between the Pier Head and Woodside on the Wirral, as Seacombe is closed for refurbishment. It's a great way for a group to see the skyline together and get your bearings. See our [Mersey ferry cruise guide](/guides/mersey-ferry-cruise-guide).
 
@@ -65,13 +65,13 @@ Food halls work brilliantly for groups, because everyone chooses their own food 
 
 Then try something competitive: **crazy golf, darts, shuffleboard or bowling**. Liverpool has plenty of competitive socialising venues. Book a slot for your whole group. See [competitive socialising in Liverpool](/guides/competitive-socialising-liverpool).
 
-Take the train back to Fazakerley, or a taxi if it's late.
+Take the train back, or a taxi if it's late.
 
 ## Day 2: Football, views or the coast
 
 ### Option A: Stadium tour
 
-Football fans can tour **Anfield** or Everton's new stadium at **Bramley-Moore Dock**. From Fazakerley, both are easy to reach via **Sandhills** station. Book tours ahead, especially around match days. See our [Anfield Stadium Tour guide](/guides/anfield-stadium-tour-guide).
+Football fans can tour **Anfield** or Everton's new stadium at **Bramley-Moore Dock**. Both are easy to reach via **Sandhills** station. Book tours ahead, especially around match days. See our [Anfield Stadium Tour guide](/guides/anfield-stadium-tour-guide).
 
 ### Option B: Cathedrals and views
 
@@ -105,7 +105,7 @@ After two busy days, most groups love a relaxed afternoon: pool in the games roo
 
 ## Why Zermatt Lodge makes a good group base
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -113,7 +113,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
 - **Big kitchen and dining room** for group meals
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **Near Fazakerley station** (about 15 minutes to Liverpool Central) and the M57/M58
+- **About 15 minutes by train** to Liverpool Central
 - **Check-in 3pm, checkout 11am**
 
 It's a quiet residential home: **no parties, no smoking and no pets**. Enjoy the city, then come back to a calm base.

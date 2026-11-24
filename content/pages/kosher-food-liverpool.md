@@ -96,9 +96,9 @@ If you're keeping Shabbat, stay within walking distance of the shul you'll use. 
 
 ### A note on Zermatt Lodge
 
-Zermatt Lodge is our 4-bedroom house in **north Liverpool**, about 15 minutes by train from the city centre, with free parking for 2 cars. **It is not kosher**, and no kosher kitchen or Shabbat features have been declared for it.
+Zermatt Lodge is our 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for 2 cars. **It is not kosher**, and no kosher kitchen or Shabbat features have been declared for it.
 
-It can work for a **weekday** visit, for example a hospital stay or a work trip, if you bring your own supplies. The house is near the M57, which links to the M62 towards Manchester.
+It can work for a **weekday** visit, for example a hospital stay or a work trip, if you bring your own supplies. The house is, which links to the M62 towards Manchester.
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen and dining room**

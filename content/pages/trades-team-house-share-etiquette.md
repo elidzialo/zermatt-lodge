@@ -23,7 +23,7 @@ faqs:
   - q: "How do you stop arguments over the kitchen?"
     a: "Either run a food kitty and cook together, or give everyone their own shelf and fridge space. Wash up straight after eating and take bins out daily."
   - q: "Can the crew have visitors at the house?"
-    a: "Check the house rules. Many holiday homes limit guests to the people on the booking, and parties are commonly banned. At Zermatt Lodge there are strictly no parties or events."
+    a: "Check the house rules. Many holiday homes limit guests to the people on the booking, and parties are commonly banned. At Zermatt Lodge are strictly no parties or events."
   - q: "What happens if something gets damaged?"
     a: "Tell the host straight away. It's much easier to sort a broken glass or a scuffed wall at the time than to argue about it after checkout."
   - q: "How can a crew sleep well with mixed shifts?"
@@ -106,9 +106,9 @@ See our [van parking guide](/guides/van-parking-accommodation-liverpool).
 - **Report any damage** before you leave
 - **Leave keys** exactly as instructed
 
-## A crew house in north Liverpool
+## A crew house in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58 and about 15 minutes by train from Liverpool Central.
+Zermatt Lodge is our 4-bedroom house in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

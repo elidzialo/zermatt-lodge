@@ -74,7 +74,7 @@ Many Liverpool homes are listed on Airbnb and also bookable direct. Since 27 Oct
 
 ## Zermatt Lodge: a Liverpool Airbnb you can also book direct
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre and close to Aintree Racecourse, Anfield and Everton's stadium.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

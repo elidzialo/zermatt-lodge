@@ -27,7 +27,7 @@ faqs:
   - q: "Is there anything on for Black Friday in Liverpool?"
     a: "Black Friday is Friday 27 November 2026. We could not find any official Liverpool ONE Black Friday events announced, but its Christmas tree, lights and Stone's Throw Social curling lanes are already open."
   - q: "Is Zermatt Lodge in Liverpool city centre?"
-    a: "No. It's a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool Central, with free parking for 2 cars."
+    a: "No. It's a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool Central, with free parking for 2 cars."
 sources:
   - https://skatestgeorges.co.uk
   - https://underbelly.co.uk/events/skate-st-georges-liverpool/
@@ -104,13 +104,13 @@ The National Trust's Christmas page for Speke Hall lists the house opening on **
 
 ## Getting around
 
-### By train from north Liverpool
+### By train
 
-Direct Merseyrail trains run from Fazakerley to **Liverpool Central in about 15 minutes**. From Central, St George's Plateau, Liverpool ONE and the Empire are all a short walk. Merseyrail takes contactless: tap in and tap out.
+Trains from Zermatt Lodge reach **Liverpool Central in about 15 minutes**. From Central, St George's Plateau, Liverpool ONE and the Empire are all a short walk. Merseyrail takes contactless: tap in and tap out.
 
 ### On match days
 
-For Hill Dickinson Stadium, Sandhills station is the usual stop, and it's on the same line as Fazakerley with no change needed. For Anfield, see our [match day parking guide](/guides/liverpool-match-day-parking-guide) if you're driving.
+For Hill Dickinson Stadium, Sandhills station is the usual stop. For Anfield, see our [match day parking guide](/guides/liverpool-match-day-parking-guide) if you're driving.
 
 ## Planning tips for late November
 
@@ -122,7 +122,7 @@ For Hill Dickinson Stadium, Sandhills station is the usual stop, and it's on the
 
 ## Where to stay for a late November weekend
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**: it's about 15 minutes by train to Liverpool Central. For families and small groups that's often a better trade than paying for several city-centre hotel rooms on derby weekend.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: it's about 15 minutes by train to Liverpool Central. For families and small groups that's often a better trade than paying for several city-centre hotel rooms on derby weekend.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, a big kitchen and a dining room

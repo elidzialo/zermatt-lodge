@@ -122,11 +122,11 @@ Crosby is popular with families moving to the Liverpool area because of its beac
 
 ## Visiting Crosby from north Liverpool
 
-If you're staying in north Liverpool, Crosby makes an easy half-day out: by car for a beach walk and lunch on South Road, or by train with a change at Sandhills. Combine it with **Formby** for the pinewoods and red squirrels, a little further up the coast. See our [Formby area guide](/guides/formby-area-guide) and [family days out in north Liverpool](/guides/family-days-out-north-liverpool).
+If you're staying in Liverpool, Crosby makes an easy half-day out: by car for a beach walk and lunch on South Road, or by train with a change at Sandhills. Combine it with **Formby** for the pinewoods and red squirrels, a little further up the coast. See our [Formby area guide](/guides/formby-area-guide) and [family days out guide](/guides/family-days-out-north-liverpool).
 
 ## Zermatt Lodge, a base for the coast and the city
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's inland, not on the coast, but it's about 15 minutes by train from the city centre and a short drive from Crosby and the Sefton coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's inland, not on the coast, but it's about 15 minutes by train from the city centre, and with free parking you can drive to Crosby and the Sefton coast.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -145,6 +145,6 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Formby area guide](/guides/formby-area-guide)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [House-hunting trip to Liverpool](/guides/house-hunting-trip-liverpool)
 - [Golf group trip to Liverpool](/guides/golf-group-trip-liverpool)

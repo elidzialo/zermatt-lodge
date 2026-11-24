@@ -26,8 +26,8 @@ faqs:
     a: "The University of Liverpool's School of the Arts advises applying at least 4 months before arrival: 12 weeks for approval plus 4 weeks for visas. Book accommodation once your dates are confirmed."
   - q: "Can my university or funder pay for the stay?"
     a: "Often, yes. Ask the host for an invoice in the name of your institution or funder, with your name and the dates, before you pay."
-  - q: "Is north Liverpool convenient for the universities?"
-    a: "Fazakerley is about 15 minutes by train from Liverpool Central on Merseyrail's Northern line. Check the walk or connection from Central to your department."
+  - q: "Is Zermatt Lodge convenient for the universities?"
+    a: "It's about 15 minutes by train from Liverpool Central. Check the walk or connection from Central to your department."
 sources:
   - https://www.liverpool.ac.uk/arts/work-with-us/visiting-scholars/
   - https://www.liverpool.ac.uk/working/relocating/visasandimmigration/visiting/academic-visitors-visa/
@@ -86,9 +86,9 @@ Check your own eligibility on GOV.UK before you book anything non-refundable.
 
 Merseyrail is the easiest way in from the suburbs. Since **25 February 2026** you can **tap in and out with a contactless card, phone or watch**, and Merseytravel says fares are frozen until March 2027.
 
-## A base in north Liverpool
+## A base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, about **15 minutes by train** from Liverpool Central.
+Zermatt Lodge is our 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
 
 - Sleeps 7, so there's room for family visits
 - Dining room and big kitchen, with space to work
@@ -107,5 +107,4 @@ Prefer Airbnb? <https://www.airbnb.co.uk/rooms/1801505261909570677>
 
 - [Long-stay accommodation in Liverpool](/guides/long-stay-accommodation-liverpool)
 - [Relocating to Liverpool: a temporary house](/guides/relocating-to-liverpool-temporary-house)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Invoices and VAT for business stays](/guides/invoice-and-vat-for-business-stays)

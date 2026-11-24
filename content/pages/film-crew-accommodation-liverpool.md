@@ -65,7 +65,7 @@ Many productions don't stay in one place. A crew might be on the waterfront one 
 
 - **Motorways:** the M57 runs around the east of Liverpool, connecting to the M62 at its southern end and to the M58 at Switch Island in the north. The M62 runs east towards Manchester.
 - **City centre:** filming in town often means closures, permits and expensive parking. A crew base with trains into the centre lets people who aren't driving the kit travel separately.
-- **Coast and countryside:** the Sefton coast and West Lancashire are reached via the A59 and M58 from north Liverpool.
+- **Coast and countryside:** the Sefton coast and West Lancashire are reached via the A59 and M58.
 
 Always check live journey times for your call times. Morning traffic on routes into Liverpool can be slow.
 
@@ -111,7 +111,7 @@ Our [contractor accommodation guide](/guides/contractor-accommodation-liverpool)
 
 ## Why Zermatt Lodge suits a small crew
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M58 and close to Fazakerley station. It's not in the city centre or next to the studios, but it gives a crew a quiet base with road access in several directions and a train to Liverpool Central in about 15 minutes for anyone not driving.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or next to the studios, but it gives a crew a quiet base with road access in several directions and a train to Liverpool Central in about 15 minutes for anyone not driving.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single. Ideal for four people with a room each, or up to seven sharing
 - **2 bathrooms** for early calls

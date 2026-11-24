@@ -27,7 +27,7 @@ faqs:
   - q: "Where is the Liverpool Empire?"
     a: "On the corner of Lime Street and London Road in Liverpool city centre, close to Lime Street station."
   - q: "How do I get back from a late show if I'm staying outside the city centre?"
-    a: "From the Empire, walk to Liverpool Central for Merseyrail. Trains from Central to Fazakerley take about 15 minutes, and the last train on a sample day left at 23.36. Check the timetable on the night."
+    a: "From the Empire, walk to Liverpool Central for Merseyrail. Check the last train home on the night."
 sources:
   - https://en.wikipedia.org/wiki/Liverpool_Empire_Theatre
   - https://www.atgtickets.com/venues/liverpool-empire/whats-on/
@@ -91,17 +91,17 @@ For Christmas shows across the city, see our [Liverpool panto 2026 guide](/guide
 
 ## Getting there and back
 
-Liverpool Central and Lime Street are both a short walk from the theatre. If you're staying in north Liverpool:
+Liverpool Central and Lime Street are both a short walk from the theatre. If you're staying at Zermatt Lodge:
 
-- **Fazakerley to Liverpool Central:** about 15 minutes direct on Merseyrail
-- **Last trains:** on a sample day the last train from Central to Fazakerley left at 23.36. Check the timetable on the night, especially for a long show
+- **To Liverpool Central:** about 15 minutes by train
+- **Last trains:** check the timetable on the night, especially for a long show
 - **Tap and go:** Merseyrail accepts contactless cards and phones, so nobody needs a paper ticket
 
 Driving into town for a show means paying for city centre parking. Leaving the cars at the house and taking the train is usually simpler.
 
 ## A theatre weekend for up to 7
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station, about 15 minutes by train from the city centre. It's **not in the city centre**, which keeps the price per person down for a group.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's **not in the city centre**, which keeps the price per person down for a group.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so getting ready for the show isn't a queue

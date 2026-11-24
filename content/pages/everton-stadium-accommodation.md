@@ -1,9 +1,9 @@
 ---
 title: "Accommodation near Everton's New Stadium"
-meta_description: "Staying for an Everton game at Hill Dickinson Stadium? A 4-bed house in Fazakerley, a short train ride to Sandhills, with free parking for 2 cars."
+meta_description: "Staying for an Everton game at Hill Dickinson Stadium? A 4-bed house in Liverpool, a short train ride to Sandhills, with free parking for 2 cars."
 slug: everton-stadium-accommodation
 h1: "Accommodation near Everton's New Stadium at Bramley-Moore Dock"
-quick_answer: "For Everton at Bramley-Moore Dock, stay on the Merseyrail Northern line, as Sandhills is the closest station to the ground. Zermatt Lodge in Fazakerley is a few stops up the same line, sleeps up to 7 and has free parking for two cars."
+quick_answer: "For Everton at Bramley-Moore Dock, Sandhills on the Merseyrail Northern line is the closest station to the ground. Zermatt Lodge, a 4-bedroom house in Liverpool, sleeps up to 7 and has free parking for two cars."
 primary_keyword: "everton stadium accommodation"
 secondary_keywords:
   - "hill dickinson stadium accommodation"
@@ -19,8 +19,8 @@ related:
 faqs:
   - q: "What's the nearest station to Everton's new stadium?"
     a: "Sandhills on Merseyrail's Northern line is the closest station, about a 15-minute walk from the stadium entrance."
-  - q: "How do I get from Fazakerley to the Hill Dickinson Stadium?"
-    a: "Take a Northern line train from Fazakerley towards Liverpool and get off at Sandhills, a few stops down the line via Rice Lane and Kirkdale. From Sandhills, follow the crowds on foot to Bramley-Moore Dock."
+  - q: "How do I get to the Hill Dickinson Stadium by train?"
+    a: "Take a Northern line train to Sandhills. From Sandhills, follow the crowds on foot to Bramley-Moore Dock."
   - q: "Is there parking at Everton's new stadium?"
     a: "Matchday parking is limited, and Everton encourages fans to use public transport. Liverpool City Council has brought in a matchday parking zone around the stadium covering a wide area, so don't count on finding a street space nearby."
   - q: "Are there shuttle buses to the stadium?"
@@ -35,21 +35,21 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-If you're going to watch Everton at their new waterfront stadium at Bramley-Moore Dock, staying on the Merseyrail Northern line makes match day simple. Sandhills is the closest station to the ground. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, near Fazakerley station, which is on the same line a few stops from Sandhills. It sleeps up to 7, with free parking for two cars, so you can leave the car at home and avoid the matchday parking zone.
+If you're going to watch Everton at their new waterfront stadium at Bramley-Moore Dock, the train makes match day simple. Sandhills is the closest station to the ground. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It sleeps up to 7, with free parking for two cars, so you can leave the car at home and avoid the matchday parking zone.
 
-Here's how to plan your trip to the Hill Dickinson Stadium from a north Liverpool base.
+Here's how to plan your trip to the Hill Dickinson Stadium.
 
 ## Where the stadium is
 
 Everton's stadium sits on Liverpool's northern docklands at **Bramley-Moore Dock**, off Regent Road (A565). It replaced Goodison Park for the men's team. Goodison is now the permanent home of **Everton Women**, so both grounds stay busy with football. If you'd like to see the women's team, read our [guide to Goodison Park](/guides/goodison-park-everton-women-guide).
 
-## Getting there from Fazakerley
+## Getting there
 
 ### By train to Sandhills (best option)
 
 According to the fan site Grand Old Team's visitor guide, **Sandhills** is the closest station, about a **15-minute walk** from the stadium entrance.
 
-Fazakerley and Sandhills are on the same Merseyrail line. The Kirkby branch runs Fazakerley, Rice Lane, Kirkdale, Sandhills, then into the city. So it's a short direct train ride with no changes.
+Sandhills is on all three branches of the Merseyrail Northern line (Southport, Ormskirk and Kirkby), so many stations reach it with no changes.
 
 The council's stadium plans also included an additional entrance at Sandhills station, developed with Merseyrail, Network Rail and Everton, to help match crowds.
 
@@ -77,7 +77,7 @@ There's a scenic waterfront walk from the city centre via Princes Dock and the L
 
 Matchday parking near the stadium is limited, and Everton encourages public transport. Liverpool City Council has introduced a **football match parking zone** around the stadium. The original proposals covered everything within about a 30-minute walk, including the Ten Streets area and into the city centre, with new residents' parking areas and restrictions. The scheme has been adjusted since, so check the council's latest information before you drive.
 
-Leaving your car at a house in Fazakerley and taking the train is the simplest approach. See our [match day parking guide](/guides/liverpool-match-day-parking-guide).
+Leaving your car at your accommodation and taking the train is the simplest approach. See our [match day parking guide](/guides/liverpool-match-day-parking-guide).
 
 ## Match day tips
 
@@ -99,12 +99,12 @@ Away supporters travelling a long way often stay over after evening or late kick
 
 ## Why Zermatt Lodge suits Everton match days
 
-Zermatt Lodge is a whole house in Fazakerley, on the same Merseyrail line as Sandhills.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
 - **Free parking for 2 cars**, so you can leave the cars at the house and avoid the matchday parking zone
-- **Near Fazakerley station**, a few stops from Sandhills
+- **Easy train links** to Sandhills
 - **55" Smart TV with Netflix** for the other games and the highlights
 - **Games room with a pool table and board games**
 - **Big kitchen and dining room** for a pre-match breakfast or post-match meal
@@ -117,7 +117,6 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 ## Related guides
 
-- [Getting to Everton's stadium from Fazakerley](/guides/getting-to-everton-stadium-from-fazakerley)
 - [Away fans' guide to Everton's new stadium](/guides/away-fans-guide-everton-stadium)
 - [Sandhills station guide for football fans](/guides/sandhills-station-guide)
 - [Liverpool match day parking guide](/guides/liverpool-match-day-parking-guide)

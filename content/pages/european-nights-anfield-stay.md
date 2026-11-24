@@ -108,7 +108,7 @@ If you're travelling from abroad for a European night, read our [first trip for 
 
 ## Why Zermatt Lodge suits a European night away
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station on the Merseyrail Northern line. The same line runs through Sandhills, where the Soccerbus leaves for Anfield. It's not in the city centre, and it's not walking distance to the ground, but it's an easy train ride, and it lets a group of friends or family stay together after the game.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. On match nights, take the train to Sandhills, where the Soccerbus leaves for Anfield. It's not in the city centre, and it's not walking distance to the ground, but it's an easy train ride, and it lets a group of friends or family stay together after the game.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -127,4 +127,3 @@ House rules are strict: no parties or events, no smoking and no pets. The Modera
 - [Liverpool match day parking guide](/guides/liverpool-match-day-parking-guide)
 - [Anfield stadium tour guide](/guides/anfield-stadium-tour-guide)
 - [Football weekend with two matches in Liverpool](/guides/football-weekend-two-matches-liverpool)
-- [Getting to Anfield from Fazakerley](/guides/getting-to-anfield-from-fazakerley)

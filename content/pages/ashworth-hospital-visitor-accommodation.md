@@ -103,11 +103,11 @@ Our [long-stay hospital visiting tips](/guides/long-stay-hospital-visiting-tips-
 
 ## Where to stay
 
-Maghull has few large holiday homes. For a family travelling together, look at **Aintree and Fazakerley**, just south of Switch Island on the Liverpool side, which have whole houses with parking.
+Maghull has few large holiday homes. For a family travelling together, a whole house with parking elsewhere in Liverpool is often easier.
 
-## Zermatt Lodge, near Maghull
+## Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58. It's private and self-contained, so families can rest and cook their own meals between visits.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's private and self-contained, so families can rest and cook their own meals between visits.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, a big kitchen and a washer and dryer
@@ -125,4 +125,3 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 - [Maghull area guide](/guides/maghull-area-guide)
 - [Long-stay hospital visiting tips](/guides/long-stay-hospital-visiting-tips-liverpool)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)
-- [Fazakerley area guide](/guides/fazakerley-area-guide)

@@ -122,11 +122,11 @@ Weighing it up? Read our [house vs hotel guide for groups](/guides/house-vs-hote
 
 ## Getting into the city
 
-From Fazakerley, direct Merseyrail trains reach **Liverpool Central in about 15 minutes**, with fares from £4.85 when booked in advance according to Trainline. Merseyrail also takes contactless. For Hill Dickinson Stadium and the Anfield Soccerbus, Sandhills is a few stops down the same line.
+From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. Merseyrail also takes contactless. For Hill Dickinson Stadium and the Anfield Soccerbus, Sandhills is the station to use.
 
 ## Where to stay
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central, in a quiet residential area.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central, in a quiet residential area.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

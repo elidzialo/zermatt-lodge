@@ -34,7 +34,7 @@ sources:
   - https://www.liverpoolcityregion-ca.gov.uk/news/11-projects-to-transform-the-liverpool-city-region-2026-2
 ---
 
-The best time to visit Liverpool depends on what you want. For mild weather and fewer crowds, May, June and September are hard to beat. For atmosphere, plan around the big events: the Grand National in April, stadium concerts in early summer, Beatleweek in late August, the River of Light in late autumn and the Christmas markets. Winter is the wettest and quietest season, which can mean better value. Wherever you land, book early for event weeks. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
+The best time to visit Liverpool depends on what you want. For mild weather and fewer crowds, May, June and September are hard to beat. For atmosphere, plan around the big events: the Grand National in April, stadium concerts in early summer, Beatleweek in late August, the River of Light in late autumn and the Christmas markets. Winter is the wettest and quietest season, which can mean better value. Wherever you land, book early for event weeks. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
 
 ## Liverpool weather by month
 
@@ -141,12 +141,12 @@ If your dates are flexible, a midweek stay outside those periods is usually the 
 - **Check fixtures** before booking. A home game changes traffic and trains in north Liverpool
 - **Book restaurants** on event weekends
 - **Pack layers and a waterproof** all year round
-- **Use the train** into the centre. From Fazakerley it's about 15 minutes to Liverpool Central
+- **Use the train** into the centre. From Zermatt Lodge it's about 15 minutes to Liverpool Central
 - **Have a rainy day plan.** The waterfront museums are a good bet
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, near Aintree.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, near Aintree.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen and dining room

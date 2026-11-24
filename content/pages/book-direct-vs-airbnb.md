@@ -29,7 +29,7 @@ sources:
   - https://blog.moneysavingexpert.com/news/2025/05/holiday-booking-scams
 ---
 
-Booking a holiday home direct with the host is often cheaper than booking through Airbnb or Booking.com, because no platform commission has to be built into the price. The trade-off is that you rely on the host's own terms instead of the platform's, so you need to check the site is genuine and pay by card. If you do those checks, booking direct is a sensible way to save money, especially for longer or larger group stays. Zermatt Lodge, a whole 4-bedroom house in north Liverpool, can be booked either way: direct on this site with no booking fees, or on Airbnb.
+Booking a holiday home direct with the host is often cheaper than booking through Airbnb or Booking.com, because no platform commission has to be built into the price. The trade-off is that you rely on the host's own terms instead of the platform's, so you need to check the site is genuine and pay by card. If you do those checks, booking direct is a sensible way to save money, especially for longer or larger group stays. Zermatt Lodge, a whole 4-bedroom house in Liverpool, can be booked either way: direct on this site with no booking fees, or on Airbnb.
 
 This guide explains how platform fees work, what each route gives you, and how to book direct safely anywhere.
 
@@ -119,7 +119,7 @@ That's fine. We list there too.
 
 ## About the house
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre, near Aintree, with free parking for 2 cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre, with free parking for 2 cars.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, dining room

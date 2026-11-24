@@ -1,6 +1,6 @@
 ---
 title: "Anfield Area Guide: Beyond Match Day"
-meta_description: "Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area's regeneration and how to visit from north Liverpool."
+meta_description: "Anfield away from match day: Stanley Park and the Isla Gladstone Conservatory, Homebaked, the area's regeneration and how to visit."
 slug: anfield-area-guide
 h1: "Anfield Area Guide: What to See Beyond Match Day"
 primary_keyword: "anfield area"
@@ -24,7 +24,7 @@ faqs:
   - q: "Is Goodison Park still used?"
     a: "Yes. Everton's men's team moved to the Hill Dickinson Stadium at Bramley-Moore Dock, and Goodison Park became the permanent home of Everton Women from the 2025-26 season."
   - q: "Is Anfield a good place to stay?"
-    a: "It's very convenient for match days, but much of the high street is quiet between games and accommodation choice is limited. Many visitors stay elsewhere in north Liverpool or the city centre and travel in."
+    a: "It's very convenient for match days, but much of the high street is quiet between games and accommodation choice is limited. Many visitors stay elsewhere in Liverpool or the city centre and travel in."
 sources:
   - https://en.wikipedia.org/wiki/Stanley_Park,_Liverpool
   - https://www.liverpoolfc.com/news/new-anfield-capacity-confirmed-ahead-2024-25
@@ -33,7 +33,7 @@ sources:
   - https://www.skysports.com/football/news/12040/13367219/goodison-park-everton-women-to-make-stadium-their-permanent-home-from-the-2025-26-season
 ---
 
-Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house elsewhere in north Liverpool, in Fazakerley, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
+Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
 
 ## Where Anfield is
 
@@ -93,13 +93,13 @@ Anfield's streets tell a long story. According to reporting on the area:
 
 The honest picture for visitors is that some shops and pubs on the main roads rely heavily on match days and can be quiet in between. That's changing slowly, but don't expect a busy high street on a Tuesday.
 
-## Getting to Anfield from north Liverpool
+## Getting to Anfield
 
-From Fazakerley, the usual route on match days is the Merseyrail Northern line to **Sandhills**, then the matchday **Soccerbus** to Anfield. On non-match days, a bus or a short drive is simplest, and parking is easier when there's no game. See our [match day parking guide](/guides/liverpool-match-day-parking-guide) before driving on a game day.
+On match days, the usual route is Merseyrail's Northern line to **Sandhills**, then the matchday **Soccerbus** to Anfield. On non-match days, a bus or a short drive is simplest, and parking is easier when there's no game. See our [match day parking guide](/guides/liverpool-match-day-parking-guide) before driving on a game day.
 
 ## Should you stay in Anfield?
 
-| | Staying in Anfield | Staying elsewhere in north Liverpool |
+| | Staying in Anfield | Staying elsewhere in Liverpool |
 |---|---|---|
 | Walk to the stadium | Yes | Train and bus, or a drive |
 | Match day noise and crowds | Right outside | Further away |
@@ -118,7 +118,7 @@ For a match, being close is convenient. For a longer stay, many people prefer a 
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in Anfield and not walking distance to the stadium, but it's on the same side of the city, about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Anfield and not walking distance to the stadium, and it's about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, dining room

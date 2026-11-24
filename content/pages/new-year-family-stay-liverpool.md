@@ -1,6 +1,6 @@
 ---
 title: "New Year's Eve in Liverpool 2026: Events, Travel and Stays"
-meta_description: "New Year's Eve in Liverpool 2026: what's on, NYE parties, skating on 31 December, New Year football and getting home safely to a north Liverpool house."
+meta_description: "New Year's Eve in Liverpool 2026: what's on, NYE parties, skating on 31 December, New Year football and getting home safely to a Liverpool house."
 slug: new-year-family-stay-liverpool
 h1: "New Year's Eve in Liverpool 2026: A Guide for Families and Groups"
 quick_answer: "New Year's Eve 2026 falls on a Thursday. When we checked on 19 November 2026, Liverpool City Council had not announced an official city fireworks display, but venues across the city have ticketed NYE parties, including the Cavern Club (7.30pm to 1.30am, 18+). For families, Skate St George's is open on 31 December, and Liverpool host Coventry at Anfield on Saturday 2 January 2027."
@@ -101,7 +101,7 @@ This is where planning matters most.
 - **Taxis:** demand peaks just after midnight. Pre-book if you can, or agree to leave at 12.30am rather than 12.05am
 - **Driving:** don't. Leave the car at your accommodation
 
-From Fazakerley, direct trains normally take **about 15 minutes to Liverpool Central**. If you're out late, a taxi back to north Liverpool is a shorter ride than to towns further out.
+From Zermatt Lodge, trains normally take **about 15 minutes to Liverpool Central**. If you're out late, book a taxi back in advance.
 
 ## Tips for a New Year trip
 
@@ -113,7 +113,7 @@ From Fazakerley, direct trains normally take **about 15 minutes to Liverpool Cen
 
 ## Where to stay for New Year
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**, about 15 minutes by train from Liverpool Central. It suits families and small groups who want their own space over New Year.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central. It suits families and small groups who want their own space over New Year.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

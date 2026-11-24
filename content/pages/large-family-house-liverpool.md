@@ -3,7 +3,7 @@ title: "Large Family House to Rent in Liverpool"
 meta_description: "A whole 4-bed family house in Liverpool sleeping 7: king en-suite, king, queen and single, 2 bathrooms, a garden, games room and free parking for 2 cars."
 slug: large-family-house-liverpool
 h1: "Large Family House to Rent in Liverpool for Holidays and Visits"
-quick_answer: "Zermatt Lodge is a whole 4-bedroom family house in Fazakerley, north Liverpool, sleeping 7: a king master with en-suite, a second king, a queen and a single, plus two bathrooms. It has a big kitchen, games room, large private garden and free parking for two cars."
+quick_answer: "Zermatt Lodge is a whole 4-bedroom family house in Liverpool, sleeping 7: a king master with en-suite, a second king, a queen and a single, plus two bathrooms. It has a big kitchen, games room, large private garden and free parking for two cars."
 primary_keyword: "large family house liverpool"
 secondary_keywords:
   - "family holiday home liverpool"
@@ -18,12 +18,12 @@ related:
   - self-catering-meal-plan-group-of-7
 faqs:
   - q: "Is there a large family holiday house in Liverpool that sleeps 7?"
-    a: "Yes. Zermatt Lodge in Fazakerley, north Liverpool, is a whole 4-bedroom house sleeping 7, with 2 bathrooms, a large private back garden and free parking for 2 cars."
+    a: "Yes. Zermatt Lodge in Liverpool, is a whole 4-bedroom house sleeping 7, with 2 bathrooms, a large private back garden and free parking for 2 cars."
   - q: "How are the bedrooms set up?"
     a: "There's a king master bedroom with en-suite, a second king bedroom, a queen bedroom and a single bedroom."
   - q: "Is the house good for children?"
     a: "Families like the large private garden, games room with a pool table, board games and 55-inch Smart TV with Netflix. If you need anything specific for babies or toddlers, ask before booking."
-  - q: "What family days out are near Fazakerley?"
+  - q: "What family days out are there in north Liverpool?"
     a: "Croxteth Hall and Country Park is close by. Knowsley Safari is reached via the M57, and Crosby Beach with Antony Gormley's Another Place is via Switch Island. Liverpool's free museums are a short train ride away."
   - q: "Can we bring the family dog?"
     a: "Sorry, no. Zermatt Lodge has a no-pets rule, as well as no parties and no smoking."
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you need a large family house to rent in Liverpool, look for real bedrooms for everyone, at least two bathrooms, a garden and parking, so the holiday doesn't turn into a daily logistics puzzle. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7. It has a king master with en-suite, a second king, a queen and a single, plus two bathrooms, a big kitchen, a dining room, a games room and a large private back garden. There's free parking for two cars, and trains to the city centre take about 15 minutes.
+If you need a large family house to rent in Liverpool, look for real bedrooms for everyone, at least two bathrooms, a garden and parking, so the holiday doesn't turn into a daily logistics puzzle. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7. It has a king master with en-suite, a second king, a queen and a single, plus two bathrooms, a big kitchen, a dining room, a games room and a large private back garden. There's free parking for two cars, and trains to the city centre take about 15 minutes.
 
 This guide shows how a family can use the house, which days out are nearby and some tips for a smooth stay.
 
@@ -69,11 +69,11 @@ With two bathrooms, including the en-suite, mornings are far less chaotic than i
 
 Our [house vs hotel comparison](/guides/house-vs-hotel-liverpool-groups) sets out when a hotel is still the better fit.
 
-## Family days out near Fazakerley
+## Family days out
 
 ### Croxteth Hall and Country Park
 
-Croxteth is close to Fazakerley and makes an easy first-day outing. The **Victorian Walled Garden** opens daily from 10am to 3pm (last admission 2:30pm). The **country park** is open all year, with inner park hours varying by season. There's also **Home Farm**, which is run separately, so check its own opening times. The hall itself opens for tours and events, so contact it before visiting. See our [Croxteth Hall visitor guide](/guides/croxteth-hall-visitor-guide).
+Croxteth Hall and Country Park makes an easy first-day outing. The **Victorian Walled Garden** opens daily from 10am to 3pm (last admission 2:30pm). The **country park** is open all year, with inner park hours varying by season. There's also **Home Farm**, which is run separately, so check its own opening times. The hall itself opens for tours and events, so contact it before visiting. See our [Croxteth Hall visitor guide](/guides/croxteth-hall-visitor-guide).
 
 ### Knowsley Safari
 
@@ -85,13 +85,13 @@ Antony Gormley's **100 cast-iron figures** stand along more than 3km of Crosby B
 
 ### Liverpool's museums
 
-The Museum of Liverpool, World Museum and the Walker Art Gallery are all in or near the city centre (the Merseyside Maritime Museum is closed until 2028), a short train ride from Fazakerley to Liverpool Central. They're great for rainy days.
+The Museum of Liverpool, World Museum and the Walker Art Gallery are all in or near the city centre (the Merseyside Maritime Museum is closed until 2028), a short train ride from the house. They're great for rainy days.
 
 For a fuller list, see [family days out in north Liverpool](/guides/family-days-out-north-liverpool).
 
 ## Tips for a smooth family stay
 
-1. **Arrive after 3pm and do a big shop.** There's a Lidl close by.
+1. **Arrive after 3pm and do a big shop,** or book a delivery slot for arrival.
 2. **Plan one outing per day.** Children (and grandparents) tire quickly.
 3. **Mix train days and car days.** Use the train for the city and the car for the safari or beach.
 4. **Book popular activities ahead** in school holidays.
@@ -118,7 +118,7 @@ Give each adult a night to cook and get the children to set the table. See our [
 - **Large private back garden**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Free parking for 2 cars**
-- **Near Fazakerley station, the M57/M58 and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**, so it's a calm family home.
@@ -127,7 +127,7 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 ## Related guides
 
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Multi-generational family trip to Liverpool](/guides/multi-generational-family-trip-liverpool)
 - [Holiday house in Liverpool with a games room](/guides/holiday-house-liverpool-games-room)
 - [Self-catering meal plan for a group of 7](/guides/self-catering-meal-plan-group-of-7)

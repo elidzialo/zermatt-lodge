@@ -36,7 +36,7 @@ sources:
   - https://www.legislation.gov.uk/ukpga/1994/33/section/166/enacted
 ---
 
-The honest answer is that tickets for Liverpool at Anfield and Everton at the Hill Dickinson Stadium go mainly to club members, so the first step is joining the right membership and learning how each club's sales and ballots work. Liverpool sells most tickets through All Red membership sales and ballots; Everton gives its Forever Blue+ members first priority through a ballot before each game. Buy only through official channels, because selling football tickets without the club's authority is a criminal offence in England. Once you have tickets, Zermatt Lodge is a whole 4-bedroom house in north Liverpool, the same side of the city as both stadiums, about 15 minutes by train from Liverpool city centre.
+The honest answer is that tickets for Liverpool at Anfield and Everton at the Hill Dickinson Stadium go mainly to club members, so the first step is joining the right membership and learning how each club's sales and ballots work. Liverpool sells most tickets through All Red membership sales and ballots; Everton gives its Forever Blue+ members first priority through a ballot before each game. Buy only through official channels, because selling football tickets without the club's authority is a criminal offence in England. Once you have tickets, Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre.
 
 ## Liverpool FC: how home tickets are sold
 
@@ -119,16 +119,16 @@ Football fixtures are often moved for TV, sometimes only a few weeks before the 
 1. **Get the ticket first** where you can, or at least know which sale or ballot you're entering.
 2. **Book flexible accommodation** if you book early.
 3. **Allow for evening kick-offs.** If a game moves to a Sunday or a weekday evening, you may need an extra night.
-4. **Plan your journey home.** Both stadiums are in north Liverpool, so staying on the same side of the city shortens the trip back.
+4. **Plan your journey home.** Both stadiums are in north Liverpool, so check how you'll get back before you book.
 
-## Getting to the stadiums from north Liverpool
+## Getting to the stadiums
 
-- **Anfield:** driving on match days is hard work because of the residents' parking zone. From Fazakerley, take the train to Sandhills and the matchday Soccerbus to Anfield. See [Anfield match day accommodation](/guides/anfield-match-day-accommodation).
-- **Hill Dickinson Stadium:** on the dock road. Sandhills station is the nearest Merseyrail stop, on the same line as Fazakerley. See [Everton stadium accommodation](/guides/everton-stadium-accommodation).
+- **Anfield:** driving on match days is hard work because of the residents' parking zone. Take the train to Sandhills and the matchday Soccerbus to Anfield. See [Anfield match day accommodation](/guides/anfield-match-day-accommodation).
+- **Hill Dickinson Stadium:** on the dock road. Sandhills station is the nearest Merseyrail stop. See [Everton stadium accommodation](/guides/everton-stadium-accommodation).
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not walking distance to either stadium, but it's on the right side of the city, about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not walking distance to either stadium, but it's on the right side of the city, about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7** across 4 bedrooms, with 2 bathrooms
 - **Games room** with a pool table and a 55" Smart TV for the other games of the weekend

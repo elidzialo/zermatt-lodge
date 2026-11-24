@@ -27,7 +27,7 @@ faqs:
   - q: "What is the North Docks development zone?"
     a: "In December 2025 the Metro Mayor and Liverpool City Council proposed a North Docks Mayoral Development Corporation covering about 174 hectares, with potential for more than 17,500 homes and 5 million sq ft of commercial space over 15 years, according to Liverpool Express."
   - q: "What's the nearest station to Liverpool Waters?"
-    a: "Sandhills, on Merseyrail's Northern line, is the usual station for Hill Dickinson Stadium at Bramley-Moore Dock. From Fazakerley it is about 8 minutes by train."
+    a: "Sandhills, on Merseyrail's Northern line, is the usual station for Hill Dickinson Stadium at Bramley-Moore Dock."
 sources:
   - https://www.placenorthwest.co.uk/update-on-81m-central-docks-in-liverpool/
   - https://liverpoolexpress.co.uk/new-development-zone-announced-to-accelerate-regeneration-across-north-docks/?nb=1
@@ -64,7 +64,7 @@ For the office scheme, see our [Pall Mall project stays guide](/guides/pall-mall
 
 ## Getting to the waterfront
 
-- **Train:** **Sandhills** station on the Northern line is the usual stop for Hill Dickinson Stadium. From **Fazakerley** it's about **8 minutes** (fastest 7). Our [Sandhills station guide](/guides/sandhills-station-guide) covers the walk
+- **Train:** **Sandhills** station on the Northern line is the usual stop for Hill Dickinson Stadium. Our [Sandhills station guide](/guides/sandhills-station-guide) covers the walk
 - **Road:** the dock road is busy with port traffic. Allow extra time at shift change
 - **Match days:** Hill Dickinson Stadium holds 52,769. On Everton home days, roads and trains around Sandhills get very busy, so check the fixture list against your shifts
 
@@ -80,7 +80,7 @@ Our [van parking guide](/guides/van-parking-accommodation-liverpool) and [contra
 
 ## Zermatt Lodge for waterfront crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 8 minutes by train to Sandhills and close to the M57 and M58.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms** for after-shift showers

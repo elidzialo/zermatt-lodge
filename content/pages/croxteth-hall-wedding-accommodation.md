@@ -1,9 +1,9 @@
 ---
 title: "Croxteth Hall Wedding Accommodation for Families"
-meta_description: "Going to a wedding at Croxteth Hall? Venue facts, getting there and back, timing the day, and a 4-bed house in north Liverpool for the family."
+meta_description: "Going to a wedding at Croxteth Hall? Venue facts, getting there and back, timing the day, and a 4-bed house in Liverpool for the family."
 slug: croxteth-hall-wedding-accommodation
 h1: "Croxteth Hall Wedding Accommodation: Where the Family Can Stay"
-quick_answer: "For a wedding at Croxteth Hall, stay in north Liverpool with parking so you are not crossing the city on the day. Zermatt Lodge sleeps up to 7, with two bathrooms for getting ready and free parking for two cars."
+quick_answer: "For a wedding at Croxteth Hall, stay somewhere with parking and book taxis early. Zermatt Lodge sleeps up to 7, with two bathrooms for getting ready and free parking for two cars."
 primary_keyword: "croxteth hall wedding accommodation"
 secondary_keywords:
   - "where to stay near croxteth hall"
@@ -21,8 +21,8 @@ faqs:
     a: "Croxteth Hall is on Muirhead Avenue East, Liverpool, L11 1EH, in Croxteth Country Park on the West Derby side of north-east Liverpool."
   - q: "Is Croxteth Hall licensed for wedding ceremonies?"
     a: "Yes. Liverpool City Council lists Croxteth Hall as an approved venue for marriages and civil partnerships. Couples still give notice and book a registrar separately."
-  - q: "How far is Zermatt Lodge from Croxteth Hall?"
-    a: "Both are in north Liverpool. In a straight line, Croxteth Hall is roughly 2.6 miles from Fazakerley station. Road distance is longer, so check a live route and book taxis in advance for the evening."
+  - q: "How do I get to Croxteth Hall?"
+    a: "Croxteth Hall is in north Liverpool, off the East Lancashire Road side of the city. Most guests drive or take a taxi, so check a live route and book taxis in advance for the evening."
   - q: "Can the wedding party get ready at the house?"
     a: "Yes. With 4 bedrooms and 2 bathrooms, the house works well for a family getting ready on the morning. It isn't a venue, though: strictly no parties or events, so no after-parties or receptions at the house."
   - q: "What else is at Croxteth Hall?"
@@ -34,7 +34,7 @@ sources:
   - https://www.gov.uk/marriages-civil-partnerships/give-notice
 ---
 
-If you're going to a wedding at Croxteth Hall, the easiest place to stay is somewhere in north Liverpool with parking, so you aren't crossing the city on the morning or hunting for a taxi from the centre late at night. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for two cars and two bathrooms for getting ready. It's ideal for the bride's or groom's family, or a group of guests travelling together.
+If you're going to a wedding at Croxteth Hall, the easiest place to stay is somewhere with parking and enough room for the family, so you aren't hunting for a taxi from the centre late at night. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars and two bathrooms for getting ready. It's ideal for the bride's or groom's family, or a group of guests travelling together.
 
 This page covers the venue, the practical timings of a wedding day there and how to plan your stay.
 
@@ -64,11 +64,11 @@ For the couple's family, the morning is the busiest part of the day. A whole hou
 - **Breakfast.** A big kitchen means everyone eats properly before a long day.
 - **Outfits.** Hang everything up the night before so nothing creases.
 
-Tell your hair and make-up artist the arrival time and confirm they're happy to travel to north Liverpool.
+Tell your hair and make-up artist the arrival time and confirm they're happy to travel to the house.
 
 ### Getting to the venue
 
-Croxteth Hall is a short drive across north Liverpool. Straight-line distance from Fazakerley station is roughly 2.6 miles, but the road route is longer and depends on traffic. Always:
+Croxteth Hall is in north Liverpool, and journey times depend on traffic. Always:
 
 - Check a live route the day before, at the same time of day
 - Book wedding cars and taxis well in advance
@@ -86,7 +86,7 @@ Many wedding guests come from out of town and stay two or three nights. While yo
 
 - **Croxteth Country Park** has woodland walks, a working farm and the walled garden. See our [Croxteth Hall visitor guide](/guides/croxteth-hall-visitor-guide).
 - **West Derby village** has cafes and pubs for a lazy lunch the day after. See the [West Derby village guide](/guides/west-derby-village-guide).
-- **Liverpool city centre** is about 15 minutes by train from Fazakerley to Liverpool Central, for the waterfront, museums and shops.
+- **Liverpool city centre** is about 15 minutes by train, for the waterfront, museums and shops.
 
 ## Hotel or house for wedding guests?
 
@@ -101,7 +101,7 @@ For more on this, see our main [wedding guest accommodation guide](/guides/weddi
 
 ## Why Zermatt Lodge suits Croxteth Hall wedding guests
 
-Zermatt Lodge is a whole house in north Liverpool, on the same side of the city as Croxteth Hall.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for wedding-morning preparations

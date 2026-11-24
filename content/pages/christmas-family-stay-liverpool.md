@@ -1,9 +1,9 @@
 ---
 title: "Christmas in Liverpool: Self-Catering Family Stay"
-meta_description: "Spending Christmas in Liverpool with family? Festive events, Christmas Day transport, cooking dinner for 7 and a 4-bed house in Fazakerley with parking."
+meta_description: "Spending Christmas in Liverpool with family? Festive events, Christmas Day transport, cooking dinner for 7 and a 4-bed house in Liverpool with parking."
 slug: christmas-family-stay-liverpool
 h1: "Christmas in Liverpool with the Family: A Self-Catering Stay Guide"
-quick_answer: "A Liverpool family Christmas works best from a whole house with a big kitchen and dining table. Zermatt Lodge in Fazakerley sleeps 7, with a dining room, games room, free parking for two cars and trains to the city centre in about 15 minutes."
+quick_answer: "A Liverpool family Christmas works best from a whole house with a big kitchen and dining table. Zermatt Lodge in Liverpool sleeps 7, with a dining room, games room, free parking for two cars and trains to the city centre in about 15 minutes."
 primary_keyword: "christmas accommodation liverpool family"
 secondary_keywords:
   - "liverpool christmas house rental"
@@ -21,7 +21,7 @@ faqs:
   - q: "Do trains run in Liverpool on Christmas Day?"
     a: "Merseyrail doesn't normally run on Christmas Day, and Boxing Day services have varied from year to year. The Liverpool City Region Combined Authority publishes festive bus, train, ferry and tunnel timetables each year, so check before you plan journeys."
   - q: "Are supermarkets open on Christmas Day?"
-    a: "Large shops in England are closed on Christmas Day, so do your big food shop before Christmas Eve evening. There's a Lidl near Zermatt Lodge."
+    a: "Large shops in England are closed on Christmas Day, so do your big food shop before Christmas Eve evening. Book a delivery slot or click and collect early."
   - q: "Is a house better than a hotel for Christmas?"
     a: "For a family, usually yes. You can cook your own Christmas dinner, open presents round the tree and eat together at one table, without restaurant set menus or booking deadlines."
   - q: "How many people can stay at Zermatt Lodge for Christmas?"
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Spending Christmas in Liverpool with family works best from a whole house with a big kitchen and dining table, where you can cook Christmas dinner your way and still pop into the city for the festive events. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, with a big kitchen, a dining room, a games room and free parking for two cars. Trains reach the city centre in about 15 minutes.
+Spending Christmas in Liverpool with family works best from a whole house with a big kitchen and dining table, where you can cook Christmas dinner your way and still pop into the city for the festive events. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, with a big kitchen, a dining room, a games room and free parking for two cars. Trains reach the city centre in about 15 minutes.
 
 Here's how to plan a family Christmas in Liverpool, from festive days out to the realities of Christmas Day transport.
 
@@ -51,11 +51,11 @@ Dates and ticketing are announced by each organiser, so check their websites and
 
 ### For racing fans
 
-Aintree's **Becher Chase Day**, run over the Grand National fences, falls in early December. In 2026 it's on **Saturday 5 December**. Aintree is next door to Fazakerley. See our [Becher Chase weekend guide](/guides/becher-chase-weekend-liverpool).
+Aintree's **Becher Chase Day**, run over the Grand National fences, falls in early December. In 2026 it's on **Saturday 5 December**. See our [Becher Chase weekend guide](/guides/becher-chase-weekend-liverpool).
 
 ### Getting into town
 
-Take the Merseyrail Northern line from Fazakerley to **Liverpool Central** (about 15 minutes). St George's Hall is a short walk from Central and Lime Street, and the Pier Head is about 15 minutes' walk through Liverpool ONE. Leave the car at the house, because city-centre car parks get busy in December.
+Take the train to **Liverpool Central** (about 15 minutes from the house). St George's Hall is a short walk from Central and Lime Street, and the Pier Head is about 15 minutes' walk through Liverpool ONE. Leave the car at the house, because city-centre car parks get busy in December.
 
 ## Christmas Day and Boxing Day: plan your transport
 
@@ -72,7 +72,7 @@ If family are visiting you on Christmas Day, make sure they have a way to get th
 
 ### Shop early
 
-Large shops in England are closed on Christmas Day, and supermarkets get very busy in the days before. Order your turkey or centrepiece in advance. Do the big shop by the 23rd, and pick up fresh bits on Christmas Eve. There's a **Lidl** near the house.
+Large shops in England are closed on Christmas Day, and supermarkets get very busy in the days before. Order your turkey or centrepiece in advance. Do the big shop by the 23rd, and pick up fresh bits on Christmas Eve. Book a supermarket delivery slot early.
 
 ### Plan the oven
 
@@ -121,7 +121,7 @@ Adjust to suit your family, and always check the festive transport timetables fo
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
 - **Free parking for 2 cars**, important when public transport stops on Christmas Day
-- **Near Fazakerley station, the M57/M58 and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **No parties, no smoking, no pets**, so it's a calm family Christmas
 
 Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk to check festive dates.

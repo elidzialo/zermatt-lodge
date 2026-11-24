@@ -89,9 +89,9 @@ Supermarkets stock some kosher-certified products, but check the hechsher on eac
 
 ## Staying at Zermatt Lodge?
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, with a **big kitchen and a dining room** for group meals. Check-in is **3pm** and checkout **11am**, so book your delivery slot for after you arrive. There's free parking for 2 cars.
+Zermatt Lodge is our 4-bedroom house in Liverpool, with a **big kitchen and a dining room** for group meals. Check-in is **3pm** and checkout **11am**, so book your delivery slot for after you arrive. There's free parking for 2 cars.
 
-If you'd rather shop yourself, **Lidl Fazakerley** on Longmoor Lane is listed as open Monday to Saturday 8am to 10pm and Sunday 10am to 4pm. Check holiday hours before you go.
+If you'd rather shop yourself, large supermarkets in England can open for six hours on Sundays. Check holiday hours before you go.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

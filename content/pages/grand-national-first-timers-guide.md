@@ -102,7 +102,7 @@ The Jockey Club's travel plan recommends public transport:
 - **Taxi or lift:** road closures apply. Drop-offs are directed to a shuttle into the racecourse enclosures
 - **Car:** parking must be booked online in advance. At the Steeplechase Car Park, the course crossing closes 30 minutes before the feature race and reopens 30 minutes after
 
-If you're staying in north Liverpool near Fazakerley, note that Kirkby-line trains start and end at Sandhills during the busiest hours on festival days, so you change there. See [getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
+If you're staying on the Kirkby line, note that its trains start and end at Sandhills during the busiest hours on festival days, so you change there. See [getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
 
 ## Getting home without the crush
 
@@ -116,7 +116,7 @@ If you're staying in north Liverpool near Fazakerley, note that Kirkby-line trai
 
 Accommodation near Aintree books up months ahead for festival week. If you're a group or family of up to 7, a whole house is often easier than finding several hotel rooms.
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and a few miles from Aintree. It isn't in the city centre. It sleeps up to 7 (king master with en-suite, second king, queen and single), with 2 bathrooms, a big kitchen and dining room, a games room with a pool table, a 55" Smart TV with Netflix, a large private garden and free parking for 2 cars. Check-in is 3pm and checkout 11am.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't in the city centre. It sleeps up to 7 (king master with en-suite, second king, queen and single), with 2 bathrooms, a big kitchen and dining room, a games room with a pool table, a 55" Smart TV with Netflix, a large private garden and free parking for 2 cars. Check-in is 3pm and checkout 11am.
 
 It's a quiet residential home: **strictly no parties or events**, no smoking and no pets.
 
@@ -125,6 +125,5 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk. O
 ## Related guides
 
 - [Grand National accommodation: where to stay near Aintree](/guides/grand-national-accommodation)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Taking the family to the Grand National Festival](/guides/grand-national-family-trip)
 - [Aintree race day checklist](/guides/aintree-race-day-checklist)

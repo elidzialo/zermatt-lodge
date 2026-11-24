@@ -1,6 +1,6 @@
 ---
 title: "Where to Stay in Liverpool for a Group: Area Guide"
-meta_description: "Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter, south and north Liverpool compared honestly."
+meta_description: "Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter and the suburbs compared honestly."
 slug: where-to-stay-in-liverpool-for-a-group
 h1: "Where to Stay in Liverpool for a Group: An Honest Area Guide"
 quick_answer: "For a car-free nightlife weekend, Liverpool city centre is hard to beat. For families, groups with cars, football, the Grand National or hospital visits, north Liverpool offers more space and free parking, with trains into town in about 15 minutes."
@@ -21,9 +21,9 @@ faqs:
   - q: "Is it noisy staying in Liverpool city centre?"
     a: "Parts can be, especially around Concert Square, Seel Street and the Ropewalks at weekends. If sleep matters, choose a quieter street, ask for a room away from the street, or stay out of the centre."
   - q: "How far is north Liverpool from the city centre?"
-    a: "From Fazakerley station, Merseyrail's Northern line reaches Liverpool Central in about 15 minutes."
+    a: "Stations on Merseyrail's Northern line reach Liverpool Central in roughly 10 to 20 minutes."
   - q: "Where should a group stay for a Liverpool or Everton match?"
-    a: "Anywhere on the Northern line's Kirkby branch (Fazakerley, Rice Lane, Kirkdale) works well. Sandhills, on the same line, is the closest station to Everton's stadium and has a Soccerbus to Anfield."
+    a: "Anywhere on Merseyrail's Northern line works well. Sandhills, on that line, is the closest station to Everton's stadium and has a Soccerbus to Anfield."
   - q: "Where should a group stay for the Grand National?"
     a: "As close to Aintree as you can, with a plan for race-day transport. Fazakerley, Aintree, Maghull and nearby suburbs are popular. Book early, because demand is very high."
 sources:
@@ -94,7 +94,7 @@ Sefton Park and Lark Lane offer a village atmosphere. The Northern line's southe
 
 North Liverpool is residential and greener, with more houses and fewer apartments. That means more bedrooms, gardens and off-street parking.
 
-- **City centre:** direct trains from Fazakerley to Liverpool Central in about 15 minutes
+- **City centre:** direct Northern line trains to Liverpool Central
 - **Football:** Sandhills, a few stops down the line, is the closest station to Everton's stadium and has the Soccerbus to Anfield
 - **Racing:** Aintree Racecourse is the next suburb along
 - **Hospitals:** Aintree University Hospital and The Walton Centre are in Fazakerley
@@ -119,14 +119,14 @@ Our [Fazakerley vs city centre comparison](/guides/fazakerley-vs-city-centre-bas
 
 ## Why Zermatt Lodge suits many groups
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
 - **Free parking for 2 cars**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Big kitchen, dining room and a large private back garden**
-- **Near Fazakerley station, the M57/M58, Aintree Hospital and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

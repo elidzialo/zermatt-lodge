@@ -61,16 +61,16 @@ Defence and repair work often comes in peaks, with extra crews for a dry dock pe
 ### By train
 
 - Merseyrail's **Wirral line** runs under the river from Liverpool city centre stations to Birkenhead
-- From **Fazakerley**, take the Northern line into the city and change to the Wirral line at **Moorfields** or **Liverpool Central**, which interchange with both lines. Check the full journey in a planner
+- From the Liverpool side, take the train into the city and change to the Wirral line at **Moorfields** or **Liverpool Central**, which interchange with both lines. Check the full journey in a planner
 
 ## Wirral base or Liverpool base?
 
 | Base | Best for |
 |---|---|
 | Birkenhead or the Wirral | Crews working every shift at the yard, no tunnel tolls |
-| North Liverpool | Crews who drive, also work Liverpool or Merseyside sites, or want a whole house |
+| Liverpool | Crews who drive, also work Liverpool or Merseyside sites, or want a whole house |
 
-Be realistic: if your team's only job is at the yard, a Wirral base will usually mean a shorter commute. If the crew moves between the yard, the Liverpool docks and sites off the M57 and M58, north Liverpool can work well.
+Be realistic: if your team's only job is at the yard, a Wirral base will usually mean a shorter commute. If the crew moves between the yard, the Liverpool docks and sites off the M57 and M58, a Liverpool base can work well.
 
 ## What crews need
 
@@ -82,7 +82,7 @@ Be realistic: if your team's only job is at the yard, a Wirral base will usually
 
 ## Zermatt Lodge for marine crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58 and about 15 minutes by train to Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**

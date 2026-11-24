@@ -87,13 +87,13 @@ We checked every date below on 22 November 2026. Shows can move and football fix
 
 For arena shows, the city centre is closest. For football, half term and family trips, a **whole house with parking** often works out better, especially for groups.
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool:
+Zermatt Lodge is our 4-bedroom house in Liverpool:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a dining room
 - **Games room** with a pool table, for a rainy February evening
 - **Free parking for 2 cars**
-- About **15 minutes by train** from Fazakerley to Liverpool Central, and a short train ride to Sandhills for Hill Dickinson Stadium
+- About **15 minutes by train** from Liverpool Central
 - Check-in 3pm, checkout 11am
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.

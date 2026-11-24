@@ -109,9 +109,9 @@ Everton runs guided tours of about **90 minutes**, covering the dressing room, p
 
 For a stadium event, staying on the **Merseyrail Northern line** makes life easy, because every route into Sandhills is on it. You avoid city-centre prices and get a quieter night.
 
-### Zermatt Lodge in north Liverpool
+### Zermatt Lodge in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house **near Fazakerley station**, a few stops up the line from Sandhills. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**. It's also close to the M57.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**. It has free parking for 2 cars.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room

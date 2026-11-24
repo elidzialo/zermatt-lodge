@@ -1,9 +1,9 @@
 ---
 title: "Edge Hill Graduation 2027: Where Families Can Stay"
-meta_description: "Edge Hill University graduation week is planned for 19-23 July 2027. Timings, getting to Ormskirk and a 4-bed family house in north Liverpool."
+meta_description: "Edge Hill University graduation week is planned for 19-23 July 2027. Timings, getting to Ormskirk and a 4-bed family house in Liverpool."
 slug: edge-hill-university-graduation-stay
 h1: "Edge Hill University Graduation: A Family Stay Guide"
-quick_answer: "Edge Hill University's 2027 graduations are planned for Monday 19 to Friday 23 July 2027 at its Ormskirk campus, where accommodation is scarce. North Liverpool, near the start of the M58, gives more choice; Zermatt Lodge sleeps up to 7 with free parking for two cars."
+quick_answer: "Edge Hill University's 2027 graduations are planned for Monday 19 to Friday 23 July 2027 at its Ormskirk campus, where accommodation is scarce. Staying in Liverpool gives more choice; Zermatt Lodge sleeps up to 7 with free parking for two cars."
 primary_keyword: "edge hill graduation accommodation"
 secondary_keywords:
   - "edge hill university graduation 2027"
@@ -26,7 +26,7 @@ faqs:
   - q: "How do you get to Edge Hill from Liverpool?"
     a: "By car, leave the M58 at junction 3 and follow the A570 towards Ormskirk. The university says it's 2.8 miles and about 5 minutes from the junction. By train, Ormskirk station is about a 20-minute walk from campus."
   - q: "Is Ormskirk close to Liverpool?"
-    a: "Ormskirk is in West Lancashire, north of Liverpool. Staying in north Liverpool, near the start of the M58, means a straightforward drive up the motorway. Check a live route for your timings."
+    a: "Ormskirk is in West Lancashire, north of Liverpool. From Liverpool, the M58 means a straightforward drive up the motorway. Check a live route for your timings."
 sources:
   - https://www.edgehill.ac.uk/graduation/dates-and-times/
   - https://www.edgehill.ac.uk/graduation/your-graduation-day/
@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/M57_motorway
 ---
 
-Edge Hill University's 2027 graduation ceremonies are planned for **Monday 19 to Friday 23 July 2027** on its Ormskirk campus, and families often find Ormskirk itself has very little accommodation for that week. Staying in north Liverpool, close to where the M58 starts, gives you more choice and an easy drive up to campus. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for two cars: room for the graduate, parents, grandparents and siblings together.
+Edge Hill University's 2027 graduation ceremonies are planned for **Monday 19 to Friday 23 July 2027** on its Ormskirk campus, and families often find Ormskirk itself has very little accommodation for that week. Staying in Liverpool gives you more choice, and the M58 makes it an easy drive up to campus. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars: room for the graduate, parents, grandparents and siblings together.
 
 This guide covers the ceremony timings, getting to campus, and how to plan the trip so nobody is rushing on the big day.
 
@@ -67,7 +67,7 @@ For a 10:30am ceremony, the graduate needs to register no later than 9:30am, and
 
 ### By car
 
-Edge Hill's directions say to leave the **M58 at junction 3** and take the **A570 towards Southport and Ormskirk**. From the junction it's 2.8 miles, about 5 minutes. The M58 begins at Switch Island (M57 junction 7) in north Liverpool, so a north Liverpool base keeps you clear of the city centre entirely.
+Edge Hill's directions say to leave the **M58 at junction 3** and take the **A570 towards Southport and Ormskirk**. From the junction it's 2.8 miles, about 5 minutes. The M58 begins at Switch Island (M57 junction 7) in north Liverpool.
 
 Edge Hill's graduation pages don't set out guest parking arrangements. Check the information sent with your tickets, or call the Ceremonies Team.
 
@@ -75,13 +75,13 @@ Edge Hill's graduation pages don't set out guest parking arrangements. Check the
 
 Ormskirk station is on Merseyrail's Northern line. Edge Hill says the walk to campus takes about 20 minutes, along Station Approach, Stanley Street and Knowsley Road to St Helens Road. The **EL1 bus** runs about every 20 minutes between Ormskirk bus station and campus (not on Sundays or bank holidays). It's free with a student or staff card, and other passengers pay the normal fare.
 
-If you're staying near Fazakerley, you'll need to change trains at Sandhills for the Ormskirk branch, so driving is usually simpler on graduation day, especially with grandparents.
+From most of Liverpool you'll need to change trains for the Ormskirk branch, so driving is usually simpler on graduation day, especially with grandparents.
 
 ## Planning the trip
 
 ### Book early
 
-Graduation week fills accommodation across West Lancashire and north Liverpool, particularly for larger families. Edge Hill has offered its own campus rooms during graduation week in past years, and these go quickly too.
+Graduation week fills accommodation across West Lancashire and Liverpool, particularly for larger families. Edge Hill has offered its own campus rooms during graduation week in past years, and these go quickly too.
 
 ### Think about the whole family
 
@@ -95,11 +95,11 @@ Restaurants in Ormskirk and Liverpool get busy during graduation week. Book a ta
 
 ### Make a weekend of it
 
-If you're coming from far away, add a day in Liverpool. The waterfront, museums and the Albert Dock are about 15 minutes by train from Fazakerley to Liverpool Central.
+If you're coming from far away, add a day in Liverpool. The waterfront, museums and the Albert Dock are about 15 minutes by train from the house.
 
 ## Why Zermatt Lodge suits Edge Hill graduation families
 
-Zermatt Lodge is in north Liverpool, near Fazakerley station and the start of the M57/M58. It's not in Ormskirk, so you'll drive up to campus, but you get a full house for the family.
+Zermatt Lodge is in Liverpool. It's not in Ormskirk, so you'll drive up to campus, but you get a full house for the family.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for getting everyone ready on ceremony morning

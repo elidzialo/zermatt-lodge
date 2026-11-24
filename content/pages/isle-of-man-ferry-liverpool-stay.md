@@ -3,7 +3,7 @@ title: "Isle of Man Ferry from Liverpool: Stay the Night Before"
 meta_description: "Catching the Isle of Man ferry from Liverpool? Terminal address, check-in times, parking, TT 2027 dates and a 4-bed house with parking the night before."
 slug: isle-of-man-ferry-liverpool-stay
 h1: "Isle of Man Ferry from Liverpool: Where to Stay the Night Before"
-quick_answer: "Staying in Liverpool the night before an Isle of Man sailing means no rush up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
+quick_answer: "Staying in Liverpool the night before an Isle of Man sailing means no rush up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
 primary_keyword: "isle of man ferry liverpool accommodation"
 secondary_keywords:
   - "liverpool isle of man ferry terminal"
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're sailing to the Isle of Man from Liverpool, staying in the city the night before means you won't be racing up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7. It suits families, groups of friends and work crews heading over, or coming back late and not wanting to drive home the same night.
+If you're sailing to the Isle of Man from Liverpool, staying in the city the night before means you won't be racing up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7. It suits families, groups of friends and work crews heading over, or coming back late and not wanting to drive home the same night.
 
 This guide covers the Liverpool terminal, check-in, parking and the extra planning needed around TT.
 
@@ -63,11 +63,11 @@ From the Steam Packet's port page:
 - **Foot passengers:** check in inside the passenger terminal. **Last check-in is 25 minutes before departure**
 - Example: check-in opens at 08:45 for the 11:15 sailing and 16:45 for the 19:15 sailing
 
-## Getting to the terminal from north Liverpool
+## Getting to the terminal
 
 ### Driving with a vehicle on the ferry
 
-If you're taking your car, van or bike across, staying in north Liverpool makes the morning easy. You drive through the north end of the city towards the waterfront, avoiding the motorway rush from Manchester or the M6. Check a live route the night before and leave a margin for traffic.
+If you're taking your car, van or bike across, staying in Liverpool the night before makes the morning easy, avoiding the motorway rush from Manchester or the M6. Check a live route the night before and leave a margin for traffic.
 
 ### Foot passengers
 
@@ -76,7 +76,7 @@ If you're travelling on foot, don't plan to leave a car at the port. The Steam P
 - **Princes Dock multi-storey**, about a 5-minute walk, open 24/7 with CCTV and EV charging, bookable through JustPark
 - **Q-Park Liverpool ONE**, a short walk away, with a discount code listed on the Steam Packet site
 
-Alternatively, leave the car at your accommodation and take the train. From Fazakerley, Merseyrail reaches Liverpool Central in about 15 minutes, and Moorfields a stop earlier. The Steam Packet says a council bus (£2, pay on board) runs to the terminal from Skelhorne Street via Lime Street and Liverpool ONE bus station, starting two hours before departure. It also names local taxi firms and Uber.
+Alternatively, leave the car at your accommodation and take the train. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. The Steam Packet says a council bus (£2, pay on board) runs to the terminal from Skelhorne Street via Lime Street and Liverpool ONE bus station, starting two hours before departure. It also names local taxi firms and Uber.
 
 ### Left luggage
 
@@ -107,7 +107,7 @@ TT is the busiest fortnight of the year on the route. **TT 2027 runs from Monday
 
 ## Why Zermatt Lodge works before or after a sailing
 
-Zermatt Lodge is in north Liverpool, near Fazakerley station and the M57/M58. It isn't on the waterfront and isn't walking distance to the terminal, but it's a straightforward drive or train ride away.
+Zermatt Lodge is in Liverpool. It isn't on the waterfront and isn't walking distance to the terminal, but it's a straightforward drive or train ride away.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **Free parking for 2 cars**

@@ -3,7 +3,7 @@ title: "Liverpool Half Marathon 2027: Where Runners Can Stay"
 meta_description: "Liverpool Half Marathon 2027 is on Sun 14 March, starting at Hill Dickinson Stadium at 9.30am. Start, finish, bag drop, trains and where to stay."
 slug: liverpool-half-marathon-stay
 h1: "Liverpool Half Marathon 2027: Race Day Logistics and Where Runners Can Stay"
-quick_answer: "The 2027 Liverpool Half Marathon is on Sunday 14 March. The half starts at 9.30am at Hill Dickinson Stadium on Regent Road and finishes at the Pier Head, with a new 10K starting at 8.45am. Sandhills is the nearest station, about 14 minutes by train from Fazakerley. Book a bed for the Saturday night, as the race sold out at 15,000 places in 2025."
+quick_answer: "The 2027 Liverpool Half Marathon is on Sunday 14 March. The half starts at 9.30am at Hill Dickinson Stadium on Regent Road and finishes at the Pier Head, with a new 10K starting at 8.45am. Sandhills is the nearest station. Book a bed for the Saturday night, as the race sold out at 15,000 places in 2025."
 primary_keyword: "Liverpool Half Marathon 2027 accommodation"
 secondary_keywords:
   - "Liverpool Half Marathon 14 March 2027"
@@ -22,7 +22,7 @@ faqs:
   - q: "Where does the Liverpool Half Marathon start and finish?"
     a: "The half marathon starts at Hill Dickinson Stadium on Regent Road at 9.30am and finishes at the Pier Head, in front of the Three Graces."
   - q: "What is the nearest station to the start?"
-    a: "Sandhills, on the Merseyrail Northern line. Trains from Fazakerley to Sandhills take about 14 minutes on average. BTR also lists an Arriva shuttle bus from Liverpool ONE to the start for £2 one way."
+    a: "Sandhills, on the Merseyrail Northern line. Check train times to Sandhills for the Sunday timetable. BTR also lists an Arriva shuttle bus from Liverpool ONE to the start for £2 one way."
   - q: "Is there a 10K as well?"
     a: "Yes. A new Liverpool 10K runs on the same morning, starting at 8.45am from Canada Boulevard at the Pier Head, with 3,000 places at its first edition."
   - q: "What is the cut-off time?"
@@ -62,7 +62,7 @@ BTR says the first four miles of the half were updated for 2025 and pass **Liver
 
 ## Getting to the start
 
-**By train.** Sandhills, on the Merseyrail Northern line, is the nearest station. From Fazakerley, trains to Sandhills take **about 14 minutes** on average (fastest around 9 minutes), with advance fares from about £4.30. It's a Sunday, so services are less frequent than on weekdays. Check the timetable the night before and aim for a train that gets you there well before the 9.10am bag drop deadline.
+**By train.** Sandhills, on the Merseyrail Northern line, is the nearest station. It's a Sunday, so services are less frequent than on weekdays. Check the timetable the night before and aim for a train that gets you there well before the 9.10am bag drop deadline.
 
 **By shuttle.** BTR lists an **Arriva shuttle bus from Liverpool ONE** to the start line at **£2 per person**, one way.
 
@@ -90,14 +90,14 @@ Walk it off along the waterfront, refuel, and give yourself time before travelli
 Think about the morning, not the night before.
 
 - **City centre:** walkable to the finish and the 10K start, but you'll still need to get to Regent Road for the half
-- **North Liverpool:** handy for the start. The Northern line runs through Sandhills, so places like Fazakerley, Walton and Kirkdale have a direct train to the start station
+- **North Liverpool:** handy for the start. The Northern line runs through Sandhills, so stations on all three of its branches have a direct train to the start
 - **A whole house for a running club:** if several of you are running, a house means a shared kitchen for pasta on Saturday, porridge on Sunday and space to stretch
 
 Supporters can watch at the start, then take the train or walk into town to see runners finish at the Pier Head.
 
 ## Zermatt Lodge for race weekend
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station. It's about **15 minutes by train** to Liverpool Central and around 14 minutes to Sandhills for the start. It isn't in the city centre. For a half marathon that starts in north Liverpool, that can be an advantage.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's about **15 minutes by train** to Liverpool Central. It isn't in the city centre, and free parking means you can leave the car at the house on race morning.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**, so the pre-race queue moves
@@ -129,5 +129,4 @@ Book your race weekend: [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book
 
 - [Sandhills station guide](/guides/sandhills-station-guide)
 - [Accommodation near Everton's new stadium](/guides/everton-stadium-accommodation)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Self-catering meal plan for a group of 7](/guides/self-catering-meal-plan-group-of-7)

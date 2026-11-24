@@ -85,9 +85,9 @@ If you need **kosher** food, supply in Liverpool is limited, so plan ahead. See 
 
 Crews on early shifts usually shop once a week and top up in between. A big fridge and freezer make a difference. See our [self-catering guide for work crews](/guides/self-catering-for-work-crews).
 
-## Stay near the shops
+## Where to stay
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Big fitted kitchen** and a **dining room** that seats the whole group
 - **Sleeps 7:** king master with en-suite, second king, queen and single
@@ -96,7 +96,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 1
 - **Washer and dryer**, Wi-Fi
 - **Check-in 3pm, checkout 11am**
 
-Strictly no parties or events - bookings found to be for parties are cancelled.
+Strictly no parties or events. Bookings found to be for parties are cancelled.
 
 [Book direct](/zermatt-lodge#book) with no booking fees.
 
@@ -107,7 +107,6 @@ Or [see all homes](/) on Book Homes.
 ## Related guides
 
 - [Self-catering meal plan for a group of 7](/guides/self-catering-meal-plan-group-of-7)
-- [Fazakerley area guide](/guides/fazakerley-area-guide)
 - [Self-catering for work crews](/guides/self-catering-for-work-crews)
 - [Aintree area guide](/guides/aintree-area-guide)
 - [Christmas family stay in Liverpool](/guides/christmas-family-stay-liverpool)

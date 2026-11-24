@@ -23,7 +23,7 @@ faqs:
   - q: "When is Everton v Manchester City?"
     a: "Manchester City say the game at Hill Dickinson Stadium was brought forward to Tuesday 29 December 2026, kicking off at 8.15pm and shown live on Sky Sports."
   - q: "How do I get back from Anfield after an evening game?"
-    a: "The matchday Soccerbus runs from Anfield back to Sandhills station for about 90 minutes after the game, with the last bus from Walton Lane about 75 minutes after the final whistle. From Sandhills, Merseyrail's Northern line runs north to Fazakerley. Check the last trains on the night."
+    a: "The matchday Soccerbus runs from Anfield back to Sandhills station for about 90 minutes after the game, with the last bus from Walton Lane about 75 minutes after the final whistle. From Sandhills, take the train back. Check the last trains on the night."
   - q: "Is it worth staying over after a midweek match?"
     a: "If you live more than an hour or so away, often yes. An evening game finishes late, crowds slow the trip out of the city, and you avoid driving tired. A whole house shared by a group can cost less per person than several hotel rooms."
 sources:
@@ -54,11 +54,11 @@ The Tottenham game isn't midweek, but a 5.30pm Saturday kick-off in December mea
 
 ### From Anfield
 
-The matchday Soccerbus links Anfield with Sandhills station. It runs back to Sandhills for about 90 minutes after the game, with the last bus from Walton Lane about 75 minutes after the final whistle. From Sandhills, Merseyrail's Northern line runs north towards Kirkby and Fazakerley.
+The matchday Soccerbus links Anfield with Sandhills station. It runs back to Sandhills for about 90 minutes after the game, with the last bus from Walton Lane about 75 minutes after the final whistle. From Sandhills, Merseyrail's Northern line runs north towards Southport, Ormskirk and Kirkby.
 
 ### From Hill Dickinson Stadium
 
-Everton's stadium is at Bramley-Moore Dock on the north docks. Sandhills is the nearest Merseyrail station for most fans and is walkable from the ground. Trainline lists the Fazakerley to Sandhills trip at around 8 minutes.
+Everton's stadium is at Bramley-Moore Dock on the north docks. Sandhills is the nearest Merseyrail station for most fans and is walkable from the ground. 
 
 ### Check the last train
 
@@ -77,7 +77,7 @@ If you're going with friends or family, a whole house means everyone stays toget
 
 ## Zermatt Lodge for match nights
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near Fazakerley station on the same Northern line as Sandhills. It's about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for a quick start the next morning

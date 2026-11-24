@@ -26,8 +26,8 @@ faqs:
     a: "The official listing shows a 7.30pm start for the opening night. Check your ticket for matinee and evening times."
   - q: "Can I combine the show with a football match?"
     a: "Yes. During the run Liverpool host Crystal Palace on Saturday 16 January and Everton on Saturday 30 January (12.30pm), and Everton host Brentford on Sunday 24 January. Check kick-off times, as they can change."
-  - q: "How do I get to the Empire from Fazakerley?"
-    a: "Take the Merseyrail train from Fazakerley to Liverpool Central, about 15 minutes, then walk to Lime Street. Check the last train home before the show."
+  - q: "How do I get to the Empire by train?"
+    a: "Take the train to Liverpool Central or Lime Street, then walk. Check the last train home before the show."
 sources:
   - https://www.backtothefuture.com/events/2027/01/12/back-to-the-future-the-musical-liverpool
   - https://www.atgtickets.com/shows/liverpool-legends/liverpool-empire/
@@ -52,7 +52,7 @@ Here's how to plan a trip, checked on 21 November 2026.
 
 The Empire faces **Lime Street station**, so it's one of the easiest theatres in the city to reach.
 
-- **By Merseyrail:** from north Liverpool, trains run to **Liverpool Central** in about 15 minutes from Fazakerley. It's a short walk from Central to Lime Street
+- **By Merseyrail:** trains run to **Liverpool Central**, about 15 minutes from the house. It's a short walk from Central to Lime Street
 - **By car:** city-centre parking is limited and charged. Leaving the car at your accommodation and taking the train is usually simpler
 - **After the show:** check the time of the last train back before you go, especially on Sundays
 
@@ -83,7 +83,7 @@ Our [house vs hotel guide](/guides/house-vs-hotel-liverpool-groups) compares the
 
 ## A house for your theatre weekend
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes, then it's a short walk to the Empire.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes, then it's a short walk to the Empire.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room
@@ -104,5 +104,4 @@ Or [see all homes](/) on Book Homes.
 - [Liverpool January 2027 events](/guides/liverpool-january-2027-events)
 - [Liverpool panto 2026](/guides/liverpool-panto-2026)
 - [Liverpool city centre area guide](/guides/liverpool-city-centre-area-guide)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group)

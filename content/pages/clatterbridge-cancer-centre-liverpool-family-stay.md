@@ -1,9 +1,9 @@
 ---
 title: "Clatterbridge Cancer Centre Liverpool: Family Stays"
-meta_description: "Here for Clatterbridge Cancer Centre Liverpool treatment? Free Paddington Village parking, the shuttle bus and a 4-bed family house in north Liverpool."
+meta_description: "Here for Clatterbridge Cancer Centre Liverpool treatment? Free Paddington Village parking, the shuttle bus and a 4-bed family house in Liverpool."
 slug: clatterbridge-cancer-centre-liverpool-family-stay
 h1: "Family Stays for Clatterbridge Cancer Centre Liverpool"
-quick_answer: "During treatment at Clatterbridge Cancer Centre Liverpool, a base with free parking and a kitchen helps families rest between appointments. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, sleeping up to 7."
+quick_answer: "During treatment at Clatterbridge Cancer Centre Liverpool, a base with free parking and a kitchen helps families rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7."
 primary_keyword: "clatterbridge cancer centre liverpool accommodation"
 secondary_keywords:
   - "clatterbridge liverpool parking"
@@ -23,8 +23,8 @@ faqs:
     a: "The centre's Where to Find Us page says Paddington Village Car Park is free for patients and visitors, as long as you validate your ticket or give your registration at a hospital reception desk. Levels 9 to 12 are reserved for the cancer centre."
   - q: "Is there a shuttle bus from the car park to the hospital?"
     a: "Yes. The centre runs a free, wheelchair-accessible shuttle every 15 minutes, Monday to Friday in the daytime, between Smithdown Lane outside the car park and the hospital stop on Pembroke Place. The walk is about 0.4 miles."
-  - q: "Can I stay in north Liverpool and still get to Clatterbridge easily?"
-    a: "Yes, if you plan for it. You can drive in and use the free car park, or take the Merseyrail train from Fazakerley to Liverpool Central in about 15 minutes. The hospital names Lime Street and Liverpool Central as its nearest stations."
+  - q: "Can I stay outside the city centre and still get to Clatterbridge easily?"
+    a: "Yes, if you plan for it. You can drive in and use the free car park, or take the train to Liverpool Central. The hospital names Lime Street and Liverpool Central as its nearest stations."
   - q: "Does Clatterbridge have accommodation for families?"
     a: "The centre's travel page doesn't list visitor accommodation. Call 0151 556 5000 or ask your treatment team what's available before you book elsewhere."
 sources:
@@ -34,7 +34,7 @@ sources:
   - https://www.nhs.uk/nhs-services/help-with-health-costs/healthcare-travel-costs-scheme-htcs/
 ---
 
-If someone you love is starting a course of treatment at Clatterbridge Cancer Centre in Liverpool, the most practical base is one where you can park for free, cook proper meals and rest between appointments. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for two cars and room for up to 7 people.
+If someone you love is starting a course of treatment at Clatterbridge Cancer Centre in Liverpool, the most practical base is one where you can park for free, cook proper meals and rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for two cars and room for up to 7 people.
 
 This guide covers where the hospital is, how its free car park and shuttle work, and how to organise a family stay that might last several weeks.
 
@@ -69,15 +69,15 @@ If you'd rather walk, the hospital says it's about **0.4 miles (0.6km)**.
 
 There's a small pick-up and drop-off area at the main entrance on Pembroke Place. Cars can pull in, but they can't wait there. A common routine is for one person to drop the patient at the door, then park and catch the shuttle.
 
-## Getting there from north Liverpool
+## Getting there from outside the centre
 
 ### By car
 
-From the north of the city, you'll drive in towards the Knowledge Quarter. Allow extra time at rush hour, and check a live route the evening before your first appointment. Because the car park is free and open 24 hours, driving is often the simplest choice for daily treatment.
+If you drive, head for the Knowledge Quarter. Allow extra time at rush hour, and check a live route the evening before your first appointment. Because the car park is free and open 24 hours, driving is often the simplest choice for daily treatment.
 
 ### By train
 
-The hospital lists **Liverpool Lime Street** and **Liverpool Central** as its nearest stations. From Fazakerley station, on Merseyrail's Northern line, direct trains reach Liverpool Central in about 15 minutes. That's handy for relatives who don't want to drive, or for days when the patient is too tired for a car journey and someone else is attending a meeting with the team. See our guide to [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train).
+The hospital lists **Liverpool Lime Street** and **Liverpool Central** as its nearest stations. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. That's handy for relatives who don't want to drive, or for days when the patient is too tired for a car journey and someone else is attending a meeting with the team. 
 
 ## Planning a stay around a treatment course
 
@@ -100,18 +100,18 @@ Radiotherapy and chemotherapy are often given over several weeks, with appointme
 
 For more ideas, see our [tips for long hospital stays in Liverpool](/guides/long-stay-hospital-visiting-tips-liverpool).
 
-## Honest comparison: city centre vs north Liverpool
+## Honest comparison: city centre vs a house outside it
 
-If the patient is attending alone, without a car, a city-centre hotel within walking distance of Pembroke Place is hard to beat. A house in north Liverpool makes more sense when:
+If the patient is attending alone, without a car, a city-centre hotel within walking distance of Pembroke Place is hard to beat. A house outside the centre makes more sense when:
 
 - Several family members are travelling together
 - You're driving and can use the free car park
 - The stay is long enough that cooking and laundry matter
-- Some of the family also need to visit Aintree University Hospital or The Walton Centre, which are on the north side of the city
+- Some of the family also need to visit Aintree University Hospital or The Walton Centre
 
 ## Why Zermatt Lodge suits families during treatment
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station. It isn't in the city centre, so you'll drive or take the train to the hospital. In return, you get space and quiet that a hotel can't offer.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, so you'll drive or take the train to the hospital. In return, you get space and quiet that a hotel can't offer.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so the patient isn't queuing on a treatment morning

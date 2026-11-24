@@ -64,7 +64,7 @@ If you're cooking for family, ask which hechsher they keep.
 
 ## Staying in Liverpool for part of the trip
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, near the M57, which links to the M62 towards Manchester. It sleeps 7, with a big kitchen, 2 bathrooms and free parking for 2 cars. **It is not kosher** and has no declared kosher or Shabbat features. It suits a weekday stay if you bring your own food.
+Zermatt Lodge is our 4-bedroom house in Liverpool, and the M62 links Liverpool to Manchester. It sleeps 7, with a big kitchen, 2 bathrooms and free parking for 2 cars. **It is not kosher** and has no declared kosher or Shabbat features. It suits a weekday stay if you bring your own food.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

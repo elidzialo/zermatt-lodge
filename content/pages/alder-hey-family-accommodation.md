@@ -3,7 +3,7 @@ title: "Alder Hey Family Accommodation with Parking"
 meta_description: "Where whole families can stay near Alder Hey Children's Hospital. Parking tariff, frequent-visitor concession, buses and a 4-bed house with free parking."
 slug: alder-hey-family-accommodation
 h1: "Alder Hey Family Accommodation: Where the Whole Family Can Stay"
-quick_answer: "When the whole family needs to stay near Alder Hey, a self-catering house a short drive away is often easiest, as on-site parent rooms are usually limited to one or two parents. Zermatt Lodge in Fazakerley sleeps up to 7 with free parking for two cars."
+quick_answer: "When the whole family needs to stay near Alder Hey, a self-catering house a short drive away is often easiest, as on-site parent rooms are usually limited to one or two parents. Zermatt Lodge in Liverpool sleeps up to 7 with free parking for two cars."
 primary_keyword: "alder hey family accommodation"
 secondary_keywords:
   - "where to stay near alder hey"
@@ -23,15 +23,15 @@ faqs:
     a: "Alder Hey lists its multi-storey tariff as free for up to 30 minutes, £3.68 up to 2 hours, £5.25 for 2 to 6 hours, £6.30 for 6 to 8 hours and £8.40 for 8 to 24 hours. Blue Badge holders don't pay, and inpatient overnight stays are free."
   - q: "What postcode should I use for Alder Hey?"
     a: "Use L14 5AB for the main car park and L12 2AP (Eaton Road) for the Emergency Department."
-  - q: "How far is Fazakerley from Alder Hey?"
-    a: "It's a short drive across north-east Liverpool, usually around 15 to 25 minutes depending on traffic. Check a live route planner at school-run times."
+  - q: "How long does it take to drive to Alder Hey?"
+    a: "Drive times across the city vary a lot with traffic, especially at school-run times. Check a live route planner before a timed appointment."
   - q: "Is there a parking concession for frequent visits?"
     a: "Yes. Alder Hey says you get free parking if you have at least 3 outpatient appointments within 30 days and the visits span at least 3 months. Register your vehicle at the concierge desk."
 sources:
   - https://alderhey.nhs.uk/parents-and-patients/before-you-visit/getting-to-alder-hey
 ---
 
-If your child is being treated at Alder Hey and the whole family needs to stay nearby, a self-catering house within a short drive is often the easiest answer. On-site parent rooms tend to be limited to one or two parents, and siblings and grandparents need somewhere too. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, a short drive from Alder Hey, with free parking for two cars and space for up to seven people.
+If your child is being treated at Alder Hey and the whole family needs to stay nearby, a self-catering house within a short drive is often the easiest answer. On-site parent rooms tend to be limited to one or two parents, and siblings and grandparents need somewhere too. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars and space for up to seven people.
 
 This guide covers getting to Alder Hey, parking costs and concessions, and how to keep family life ticking over while your child is in hospital.
 
@@ -42,9 +42,9 @@ Alder Hey is on **East Prescot Road, West Derby, Liverpool**. The hospital gives
 - **L14 5AB** for the main car park
 - **L12 2AP** (Eaton Road) for the Emergency Department
 
-### Driving from Fazakerley
+### Driving in
 
-From Fazakerley, Alder Hey is a cross-suburb drive through north-east Liverpool, usually around 15 to 25 minutes. It can take longer at school-run and rush-hour times, so check a live route before setting off for a timed appointment or ward round.
+Alder Hey is in West Derby, east of the city centre. Journeys can take longer at school-run and rush-hour times, so check a live route before setting off for a timed appointment or ward round.
 
 ### Buses
 
@@ -87,7 +87,7 @@ One parent stays at the bedside while the other handles siblings, meals and phon
 
 ### Keep siblings' routines
 
-Brothers and sisters can feel forgotten. Normal bedtimes, a film night, a board game or an hour in a garden all help. If they need a proper day out, [Croxteth Hall and Country Park](/guides/croxteth-hall-visitor-guide) is close to both Fazakerley and West Derby.
+Brothers and sisters can feel forgotten. Normal bedtimes, a film night, a board game or an hour in a garden all help. If they need a proper day out, [Croxteth Hall and Country Park](/guides/croxteth-hall-visitor-guide) is close to West Derby.
 
 ### Cook proper food
 
@@ -103,16 +103,16 @@ Keep a notebook of doctors' names, ward numbers and questions. Photograph discha
 
 For more ideas, see our [tips for long stays at Alder Hey](/guides/alder-hey-long-stay-tips).
 
-## Quick, sibling-friendly breaks near Fazakerley
+## Quick, sibling-friendly breaks
 
-- **Croxteth Country Park:** woodland walks and the walled garden, a few minutes' drive away
+- **Croxteth Country Park:** woodland walks and the walled garden
 - **A local park:** half an hour on the swings makes a big difference to a stressed sibling
 - **The garden at the house:** a ball, some chalk and fresh air
 - **A games night:** pool and board games bring the family together after a hard day
 
 ## Why Zermatt Lodge suits Alder Hey families
 
-Zermatt Lodge is a whole house, not a room, in Fazakerley, a short drive from Alder Hey.
+Zermatt Lodge is a whole house, not a room, in Liverpool.
 
 - **4 bedrooms, sleeps 7:** a king master with en-suite, a second king, a queen and a single, so parents, siblings and grandparents can all stay together
 - **2 bathrooms** for busy mornings
@@ -120,7 +120,7 @@ Zermatt Lodge is a whole house, not a room, in Fazakerley, a short drive from Al
 - **Large private back garden** where children can let off steam
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** to give siblings something normal to do
 - **Free parking for 2 cars**, so one parent can be at the hospital while the other is out with the kids
-- **A Lidl nearby** for quick food shops
+- **A big kitchen** for proper meals between visits
 - **Check-in 3pm, checkout 11am**
 
 It's a calm house: no parties, no smoking and no pets.

@@ -1,9 +1,9 @@
 ---
 title: "Skelmersdale Work Accommodation: Stay on the Liverpool Side"
-meta_description: "Working in Skelmersdale? Why crews stay on the Liverpool side of the M58, the main estates and employers, the lack of a station, and a 4-bed house option."
+meta_description: "Working in Skelmersdale? Why crews often stay in Liverpool, the main estates and employers, the lack of a station, and a 4-bed house option."
 slug: skelmersdale-work-accommodation
-h1: "Skelmersdale Work Accommodation: Why Crews Stay on the Liverpool End of the M58"
-quick_answer: "Skelmersdale sits on the M58 about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island in north Liverpool. Crews working in Skelmersdale can stay near there for a short commute and more choice of shops, food and accommodation."
+h1: "Skelmersdale Work Accommodation: Why Crews Often Stay in Liverpool"
+quick_answer: "Skelmersdale sits on the M58 about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island in north Liverpool. Crews working in Skelmersdale can stay in Liverpool for more choice of shops, food and accommodation."
 primary_keyword: "skelmersdale accommodation"
 secondary_keywords:
   - "contractor accommodation skelmersdale"
@@ -24,8 +24,8 @@ faqs:
   - q: "What are the main employers in Skelmersdale?"
     a: "Wikipedia lists the Co-operative Bank, distribution centres for Asda, P&G and Victorian Plumbing, and a Walkers snack food factory, among others. Pimbo is one of the main industrial estates."
   - q: "Why stay in Liverpool when working in Skelmersdale?"
-    a: "Skelmersdale has limited short-stay accommodation for groups. A house on the north side of Liverpool, near the end of the M58, gives a crew more choice of shops and food and a train into the city in their downtime."
-  - q: "How long is the drive from north Liverpool to Skelmersdale?"
+    a: "Skelmersdale has limited short-stay accommodation for groups. A house in Liverpool gives a crew more choice of shops and food and a train into the city in their downtime."
+  - q: "How long is the drive from Liverpool to Skelmersdale?"
     a: "It's a straightforward motorway run along the M58, but times vary with traffic and exactly where your site is. Check a live route at the time you'll be travelling."
 sources:
   - https://en.wikipedia.org/wiki/Skelmersdale
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're working in Skelmersdale and need somewhere for a crew to stay, look on the north side of Liverpool as well as in the town itself. Skelmersdale sits right on the M58, about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island on the edge of north Liverpool, so a house near there gives you a short commute plus far more shops, food and accommodation choice.
+If you're working in Skelmersdale and need somewhere for a crew to stay, look in Liverpool as well as in the town itself. Skelmersdale sits right on the M58, about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island on the edge of north Liverpool, so a house in Liverpool gives you a short commute plus far more shops, food and accommodation choice.
 
 This guide is for site managers, contractors and agency teams working at Skelmersdale's estates and distribution centres.
 
@@ -63,11 +63,11 @@ The practical upshot:
 
 ### More accommodation, especially for groups
 
-Skelmersdale's own short-stay options are limited, particularly whole houses for crews of five to seven. Widening the search to north Liverpool gives you more choice.
+Skelmersdale's own short-stay options are limited, particularly whole houses for crews of five to seven. Widening the search to Liverpool gives you more choice.
 
 ### Short motorway commute
 
-From the north Liverpool end of the M58, it's a straight motorway run to Skelmersdale. Traffic varies, so check live journey times for your shift start.
+The M58 is a straight motorway run to Skelmersdale. Traffic varies, so check live journey times for your shift start.
 
 ### Better downtime
 
@@ -75,7 +75,8 @@ After a long shift, a crew wants food, a supermarket and something to do. North 
 
 ### Access to other sites
 
-Plenty of contractors work on more than one job. North Liverpool is also close to Knowsley's industrial areas in Kirkby, the Aintree area and the M57 for south and east Liverpool. See our guides to [Kirkby and Knowsley Business Park](/guides/kirkby-knowsley-business-park-accommodation) and [Haydock and St Helens](/guides/haydock-and-st-helens-work-stays).
+Plenty of contractors work on more than one job. From Liverpool you can also reach Knowsley's industrial areas in Kirkby and the M57 for south and east Liverpool.
+See our guides to [Kirkby and Knowsley Business Park](/guides/kirkby-knowsley-business-park-accommodation) and [Haydock and St Helens](/guides/haydock-and-st-helens-work-stays).
 
 ## What to check before booking a crew house
 
@@ -105,7 +106,7 @@ Many Skelmersdale jobs are at distribution centres and factories that run around
 
 ## Why Zermatt Lodge works for Skelmersdale jobs
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M58 and close to Fazakerley station. It's not in Skelmersdale. It's a Liverpool-side base with a motorway run to the town, plus trains into the city for nights off.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Skelmersdale. It's a Liverpool-side base with a motorway run to the town, plus trains into the city for nights off.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, a second king, a queen and a single, so a crew of four gets a room each
 - **2 bathrooms** for early starts

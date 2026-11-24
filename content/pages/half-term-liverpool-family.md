@@ -1,6 +1,6 @@
 ---
 title: "Half Term in Liverpool: A Five-Day Family Plan for 2027"
-meta_description: "Liverpool half term dates for 2027 and a five-day family plan with rainy-day options, opening-day traps to avoid and a base in north Liverpool."
+meta_description: "Liverpool half term dates for 2027 and a five-day family plan with rainy-day options, opening-day traps to avoid and a family house in Liverpool."
 slug: half-term-liverpool-family
 h1: "Half Term in Liverpool: A Five-Day Family Plan"
 primary_keyword: "half term liverpool"
@@ -37,7 +37,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-For Liverpool City Council schools, the next half terms are **15 to 19 February 2027** and **31 May to 4 June 2027**. A good half term in Liverpool mixes one big city day, one free museum, a park or beach when the weather allows, and a slower day at home. Plan around opening days: World Museum, for example, is listed as closed on Mondays and Tuesdays. Staying in north Liverpool gives you parking for days out by car and a 15-minute train into the city. Zermatt Lodge is a 4-bedroom house in Fazakerley that sleeps 7.
+For Liverpool City Council schools, the next half terms are **15 to 19 February 2027** and **31 May to 4 June 2027**. A good half term in Liverpool mixes one big city day, one free museum, a park or beach when the weather allows, and a slower day at home. Plan around opening days: World Museum, for example, is listed as closed on Mondays and Tuesdays. A house with parking gives you days out by car and a quick train into the city. Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7.
 
 ## Liverpool half term dates for 2026/27
 
@@ -122,7 +122,7 @@ A car is the easiest way to reach Croxteth, Knowsley Safari and the coast. City-
 
 ### By train
 
-From Fazakerley, Merseyrail's Northern line runs to **Liverpool Central** in about **15 minutes**, according to Trainline. Children travel at reduced fares. Check the Merseyrail app for engineering works, which sometimes happen in school holidays.
+From Zermatt Lodge, trains run to **Liverpool Central** in about **15 minutes**. Children travel at reduced fares. Check the Merseyrail app for engineering works, which sometimes happen in school holidays.
 
 ## Half term tips
 
@@ -134,7 +134,7 @@ From Fazakerley, Merseyrail's Northern line runs to **Liverpool Central** in abo
 
 ## Zermatt Lodge for half term
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre. It's handy for Croxteth, Knowsley Safari and the motorways to the coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's handy for Croxteth, Knowsley Safari and the motorways to the coast.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -153,7 +153,7 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 ## Related guides
 
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
 - [Holiday house with a games room](/guides/holiday-house-liverpool-games-room)
 - [Christmas family stay in Liverpool](/guides/christmas-family-stay-liverpool)

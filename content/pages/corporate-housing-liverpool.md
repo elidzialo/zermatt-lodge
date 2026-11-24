@@ -84,9 +84,9 @@ For stays of several weeks, a furnished home usually costs less per month than a
 
 Liverpool's city centre suits single professionals working in the business district. Families and teams with cars often prefer a house outside the centre, with gardens, parking and room to spread out. Our [moving to Liverpool guide](/guides/moving-to-liverpool-guide) and [temporary house for relocating guide](/guides/relocating-to-liverpool-temporary-house) cover areas and schools.
 
-## A furnished family house in north Liverpool
+## A furnished family house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It suits the **shorter end of corporate housing**: a first month for a relocating family, or a project team for a few weeks. Direct trains reach Liverpool Central in about 15 minutes.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It suits the **shorter end of corporate housing**: a first month for a relocating family, or a project team for a few weeks. Direct trains reach Liverpool Central in about 15 minutes.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

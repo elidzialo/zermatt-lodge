@@ -1,9 +1,9 @@
 ---
 title: "Norris Green and Clubmoor: Area Guide for Visitors and Workers"
-meta_description: "Staying near Norris Green or Clubmoor in north Liverpool? Area history, Broadway shops, Norris Green Park, buses and a 4-bed house next door."
+meta_description: "Staying near Norris Green or Clubmoor in north Liverpool? Area history, Broadway shops, Norris Green Park, buses and a 4-bed house in Liverpool."
 slug: norris-green-area-guide
 h1: "Norris Green and Clubmoor, Liverpool: An Area Guide for Visitors and Workers"
-quick_answer: "Norris Green is a residential suburb in north-east Liverpool, bordered by Fazakerley, Croxteth, West Derby, Clubmoor and Walton. Its shops are around Broadway and Broad Lane, it has the 17-acre Norris Green Park, and frequent buses run to the city centre. There are few holiday lets in the area itself; Zermatt Lodge is next door in Fazakerley, about 15 minutes by train from the city centre."
+quick_answer: "Norris Green is a residential suburb in north-east Liverpool, bordered by Fazakerley, Croxteth, West Derby, Clubmoor and Walton. Its shops are around Broadway and Broad Lane, it has the 17-acre Norris Green Park, and frequent buses run to the city centre. There are few holiday lets in the area itself; Zermatt Lodge is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre."
 primary_keyword: "accommodation Norris Green"
 secondary_keywords:
   - "4 bed house Norris Green"
@@ -24,9 +24,9 @@ faqs:
   - q: "Where are the shops in Norris Green?"
     a: "The district centre is around Broadway and Broad Lane. Wikipedia notes that Broad Lane is technically in Clubmoor ward."
   - q: "How do you get from Norris Green to Liverpool city centre?"
-    a: "By bus. Frequent services run to and from the city centre via Norris Green and Broadway. For the train, the nearest Merseyrail stations are in neighbouring districts such as Fazakerley, where trains take about 15 minutes to Liverpool Central."
+    a: "By bus. Frequent services run to and from the city centre via Norris Green and Broadway. For the train, the nearest Merseyrail stations are in neighbouring districts, with trains to Liverpool Central."
   - q: "Are there holiday homes in Norris Green?"
-    a: "Very few. Norris Green is mainly residential. Zermatt Lodge, a whole 4-bed house sleeping 7, is in neighbouring Fazakerley, near Fazakerley station."
+    a: "Very few. Norris Green is mainly residential. Zermatt Lodge, a whole 4-bed house sleeping 7, is in Liverpool."
 sources:
   - https://en.wikipedia.org/wiki/Norris_Green
   - https://en.wikipedia.org/wiki/Norris_Green_Park
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Norris Green is a residential suburb in **north-east Liverpool**, bordered by **Fazakerley, Croxteth, West Derby, Clubmoor and Walton**. Its shops are around **Broadway and Broad Lane**, it has the **17-acre Norris Green Park**, and frequent buses run into the city centre. There are very few holiday lets in Norris Green itself. If you're searching for a house to rent nearby, [Zermatt Lodge](/zermatt-lodge) is next door in Fazakerley, about 15 minutes by train from the city centre.
+Norris Green is a residential suburb in **north-east Liverpool**, bordered by **Fazakerley, Croxteth, West Derby, Clubmoor and Walton**. Its shops are around **Broadway and Broad Lane**, it has the **17-acre Norris Green Park**, and frequent buses run into the city centre. There are very few holiday lets in Norris Green itself. If you're searching for a whole house, [Zermatt Lodge](/zermatt-lodge) is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 ## Where Norris Green is
 
@@ -99,12 +99,12 @@ The district centre is around **Broadway**, with more shops along **Broad Lane**
 - **Bring the car, or use the train.** Free parking at a house lets you drive to Croxteth Hall, the coast or the motorway, then take the Merseyrail train into town without paying city-centre parking
 - **Shop on arrival.** A single big supermarket shop on day one saves money for a family or work crew
 - **Match days.** When Liverpool or Everton play at home, roads towards Anfield and the docks are busy. Plan journeys around kick-off
-- **Hospital visits.** Aintree University Hospital and the Walton Centre are in neighbouring Fazakerley, so staying nearby avoids long daily drives
+- **Hospital visits.** Aintree University Hospital and the Walton Centre are in neighbouring Fazakerley, so check the journey from wherever you stay
 - **Respect the neighbours.** This is a residential area of family homes, and quiet evenings are expected
 
-## Staying nearby: Zermatt Lodge
+## Staying in Liverpool: Zermatt Lodge
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **Fazakerley**, Norris Green's northern neighbour, near Fazakerley station. It's in north Liverpool, about **15 minutes by train** from the city centre. It isn't in the centre, but it's a quiet family house with room for everyone.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's about **15 minutes by train** from the city centre. It isn't in the centre, but it's a quiet family house with room for everyone.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**
@@ -122,4 +122,3 @@ Check dates and [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt
 - [Aintree area guide](/guides/aintree-area-guide)
 - [West Derby Village guide](/guides/west-derby-village-guide)
 - [Anfield area guide](/guides/anfield-area-guide)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)

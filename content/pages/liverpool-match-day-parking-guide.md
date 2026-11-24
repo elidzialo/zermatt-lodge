@@ -35,7 +35,7 @@ sources:
   - https://www.q-park.co.uk/en-gb/events/hill-dickinson-stadium
 ---
 
-The short answer: you can't park at either Liverpool football stadium on match days, and the streets around both are covered by parking restrictions. The easiest approach is to leave your car somewhere you're allowed to stay all day, then travel in by Merseyrail or the official matchday buses. Sandhills station serves both clubs. If you're staying over, a base on the Northern line with its own off-street parking, like Zermatt Lodge in Fazakerley, solves the problem completely.
+The short answer: you can't park at either Liverpool football stadium on match days, and the streets around both are covered by parking restrictions. The easiest approach is to leave your car somewhere you're allowed to stay all day, then travel in by Merseyrail or the official matchday buses. Sandhills station serves both clubs. If you're staying over, a base with its own off-street parking, like Zermatt Lodge in Liverpool, solves the problem completely.
 
 This guide explains the rules at Anfield and at Everton's stadium at Bramley-Moore Dock, and your realistic options.
 
@@ -90,7 +90,7 @@ If someone's driving you, agree a drop-off point well outside the zone, and walk
 
 ## The train-in approach: step by step
 
-From a north Liverpool base on the Kirkby branch (Fazakerley, Rice Lane or Kirkdale):
+From any station on the Merseyrail Northern line:
 
 **For Anfield**
 
@@ -114,7 +114,7 @@ Or get off at **Kirkdale** and follow the signposted walking route.
 
 ## Why Zermatt Lodge makes match day parking simple
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley with **free off-street parking for 2 cars**, near Fazakerley station on the Northern line. That's the same line as Sandhills and Kirkdale. Park once when you arrive, and use the train for the match.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool with **free off-street parking for 2 cars**. Park once when you arrive, and use the train for the match.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms, a big kitchen and dining room**

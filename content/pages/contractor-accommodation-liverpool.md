@@ -1,9 +1,9 @@
 ---
 title: "Contractor Accommodation in Liverpool with Parking"
-meta_description: "Contractor and work crew accommodation in Liverpool: a 4-bed house near the M57/M58 with free parking for 2 vehicles, separate beds and a full kitchen."
+meta_description: "Contractor and work crew accommodation in Liverpool: a 4-bed house, separate beds and a full kitchen."
 slug: contractor-accommodation-liverpool
 h1: "Contractor Accommodation in Liverpool: A Whole House for Your Crew"
-quick_answer: "Good contractor accommodation gives each worker a proper bed, free vehicle parking, a kitchen and quick motorway access. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to the M57 and M58, with free parking for two vehicles, two bathrooms and beds for up to 7."
+quick_answer: "Good contractor accommodation gives each worker a proper bed, free vehicle parking, a kitchen and quick motorway access. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two vehicles, two bathrooms and beds for up to 7."
 primary_keyword: "contractor accommodation liverpool"
 secondary_keywords:
   - "work crew accommodation liverpool"
@@ -21,8 +21,8 @@ faqs:
     a: "Up to 7 people in 4 bedrooms: a king master with en-suite, a second king, a queen and a single. For a crew who each want their own bed, it works well for 4 people, or up to 7 if some are happy to share a king or queen."
   - q: "Is there parking for work vans?"
     a: "There's free parking for 2 vehicles. If you're bringing large or high-sided vans, email cs@zugati.co.uk before booking to check they'll fit."
-  - q: "Which parts of Liverpool can I reach easily from Fazakerley?"
-    a: "Fazakerley is close to the M57 and M58, so Knowsley, Kirkby, the north docks via Switch Island, Skelmersdale and the M62 and M6 are all straightforward. The city centre is about 15 minutes by Merseyrail from Fazakerley station."
+  - q: "Which parts of the city region can I reach easily from Zermatt Lodge?"
+    a: "With free parking for two vans and the motorway network, Knowsley, Kirkby, the north docks, Skelmersdale and the M62 and M6 are all straightforward. The city centre is about 15 minutes by train or car."
   - q: "Can my company book and pay directly?"
     a: "Yes. Book direct at bookhomes.co.uk/zermatt-lodge#book or call to arrange dates. Booking direct means no platform fees and one point of contact."
   - q: "Is the house suitable for long contracts?"
@@ -35,9 +35,9 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-The best contractor accommodation in Liverpool gives each worker a proper bed, parks your vehicles for free, lets the crew cook and sits close to the motorways so you aren't stuck in city-centre traffic every morning. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58. It has free parking for two vehicles, a big kitchen and two bathrooms, and sleeps up to 7.
+The best contractor accommodation in Liverpool gives each worker a proper bed, parks your vehicles for free, lets the crew cook and sits close to the motorways so you aren't stuck in city-centre traffic every morning. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It has free parking for two vehicles, a big kitchen and two bathrooms, and sleeps up to 7.
 
-This guide explains what crews need, where the work is in the Liverpool City Region, and how a north Liverpool base helps.
+This guide explains what crews need, where the work is in the Liverpool City Region, and how a house with parking helps.
 
 ## What work crews actually need
 
@@ -59,17 +59,17 @@ The Liverpool City Region has a busy construction and regeneration pipeline. Som
 
 - **Pall Mall, city centre:** VINCI Construction was appointed design and build partner in 2026 for the first phase of this commercial development, which includes net zero carbon-enabled offices and new green space.
 - **Housing growth:** in January 2026, the Liverpool City Region mayor set out a £2bn plan to unlock 64,000 homes across the region.
-- **Knowsley:** Knowsley Council describes Knowsley Business Park as one of the largest employment sites in Europe, with over 800 businesses and 18,000 jobs. It's next door to Fazakerley, and our [Kirkby and Knowsley Business Park guide](/guides/kirkby-knowsley-business-park-accommodation) covers it in more detail.
+- **Knowsley:** Knowsley Council describes Knowsley Business Park as one of the largest employment sites in Europe, with over 800 businesses and 18,000 jobs. Our [Kirkby and Knowsley Business Park guide](/guides/kirkby-knowsley-business-park-accommodation) covers it in more detail.
 - **The northern docklands:** the area around Bramley-Moore Dock and the north docks continues to see major investment.
 - **Hospitals and public buildings:** sites such as Aintree University Hospital, near the M57, regularly need maintenance and fit-out crews.
 
 For an overview, see [Liverpool's construction pipeline](/guides/liverpool-construction-pipeline-overview).
 
-## Why north Liverpool works for crews
+## Why a house with parking works for crews
 
 ### Motorway access
 
-Fazakerley sits near the end of two motorways:
+Liverpool's motorways reach most of the city region:
 
 - **M57:** south to the **M62** for Warrington and Manchester, past Knowsley and Prescot
 - **M58:** east to **Skelmersdale** and the **M6** for Wigan, Preston and the north
@@ -79,11 +79,11 @@ You can reach a lot of the city region without going near the city centre.
 
 ### Train into town
 
-If the job is in the city centre, Fazakerley station is on Merseyrail's Northern line, with direct trains to Liverpool Central in about 15 minutes. Trainline lists the first train at 04:46. That's handy when city sites have tight parking or delivery restrictions.
+If the job is in the city centre, trains from the house reach Liverpool Central in about 15 minutes. That's handy when city sites have tight parking or delivery restrictions.
 
 ### Supplies
 
-There's a Lidl near the house, plus retail parks and trade counters around north Liverpool for anything you need.
+Retail parks and trade counters around Liverpool cover anything you need.
 
 ## Living well on a long contract
 
@@ -95,21 +95,21 @@ Long contracts are easier when the house works for everyone:
 - **Keep work boots and hi-vis by the door.** Don't take muddy kit upstairs.
 - **Check out washing arrangements** before you arrive. See our [laundry guide for workers](/guides/laundry-for-workers-liverpool).
 
-## A typical working week from Fazakerley
+## A typical working week
 
 Here's how a small crew might use the house on a multi-site job:
 
 | Time | What happens |
 |---|---|
 | 05:45 to 06:30 | Two bathrooms and a shower rota get four people out of the door |
-| 06:30 | Vans away. The M57 and M58 are close, so sites in Knowsley, Kirkby or Skelmersdale are a short drive |
+| 06:30 | Vans away. Motorways out of the city lead to sites in Knowsley, Kirkby or Skelmersdale |
 | 07:00 | On the gate for site induction or the morning briefing |
 | 17:30 | Back at the house. Boots off at the door, kit in the vans |
 | 18:30 | One person cooks for everyone from the batch-cook plan |
 | 19:30 | Downtime: pool, a match on the 55" TV or an early night |
 | Friday | Clean-down, then home for the weekend, or stay on for weekend work |
 
-For a city-centre job with tight parking, swap the van for the Merseyrail Northern line from Fazakerley to Liverpool Central, about 15 minutes, and leave the vehicles parked at the house. Many city-centre sites have strict delivery and parking windows, so this can save a lot of hassle.
+For a city-centre job with tight parking, swap the van for the train to Liverpool Central, about 15 minutes, and leave the vehicles parked at the house. Many city-centre sites have strict delivery and parking windows, so this can save a lot of hassle.
 
 ### Booking tips for site managers
 
@@ -127,7 +127,7 @@ Zermatt Lodge is a whole house, not a shared house or rooms let individually. Yo
 - **Big kitchen and dining room** for proper meals
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** for downtime
 - **Large private back garden**
-- **Near the M57/M58, Fazakerley station and a Lidl**
+- **About 15 minutes by train or car** from the city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**. That keeps it a calm place to rest between shifts.

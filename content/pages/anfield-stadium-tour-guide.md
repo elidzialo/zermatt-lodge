@@ -122,7 +122,7 @@ Goodison Park, across the park, is now home to Everton Women. Everton's men's te
 
 ## Where to stay for a football weekend
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station on the Merseyrail Northern line. The same line stops at Kirkdale, the nearest station to Anfield, and Sandhills, where the match day Soccerbus leaves. It isn't walking distance to the stadium or in the city centre, but it's a short train ride, and a group can park two cars and stay together.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. Kirkdale is the nearest station to Anfield, and Sandhills is where the match day Soccerbus leaves. The house isn't walking distance to the stadium or in the city centre, but a group can park two cars and stay together.
 
 - Sleeps 7 in 4 bedrooms (king master with en-suite, second king, queen, single)
 - 2 bathrooms, a big kitchen and a dining room

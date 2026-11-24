@@ -1,6 +1,6 @@
 ---
 title: "Shutdown and Turnaround Crew Accommodation in the North West"
-meta_description: "Housing a shutdown or turnaround crew in the North West? Early starts, parking, river crossings and tolls, tax rules and a 4-bed house in north Liverpool."
+meta_description: "Housing a shutdown or turnaround crew in the North West? Early starts, parking, river crossings and tolls, tax rules and a 4-bed house in Liverpool."
 slug: shutdown-turnaround-crew-accommodation-north-west
 h1: "Shutdown and Turnaround Crew Accommodation in the North West: A Planner's Guide"
 quick_answer: "Shutdowns and turnarounds bring large crews to North West industrial sites for weeks at a time, with early starts and long shifts. Book a whole house with parking for vans, check the drive to site at 6am, budget for river crossing tolls if you cross the Mersey, and agree invoicing up front. A 4-bed house can take up to 7 workers in separate beds."
@@ -89,7 +89,7 @@ Most shutdowns are well under that. But the rules on accommodation and subsisten
 
 ## Zermatt Lodge for shutdown crews
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station and close to the **M57 and M58**. It's about **15 minutes by train** from Liverpool city centre. It suits crews working at sites in north Liverpool, Knowsley, Kirkby, the docks and along the motorway network. For sites over the river, check the drive and the tolls first.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's about **15 minutes by train** from Liverpool city centre. It suits crews working at sites around Liverpool, Knowsley, Kirkby, the docks and along the motorway network. For sites over the river, check the drive and the tolls first.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so mornings move faster

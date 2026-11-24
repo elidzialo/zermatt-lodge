@@ -23,7 +23,7 @@ faqs:
   - q: "How much is parking at Formby beach?"
     a: "The National Trust lists £9 at either Lifeboat Road or Victoria Road car park, free for National Trust members and Blue Badge holders. Both are ticketless with ANPR, and you can pay at the machines or with JustPark."
   - q: "Can you get to Formby and Crosby by train?"
-    a: "Yes, on Merseyrail's Southport line. Blundellsands and Crosby is the nearest station to the Iron Men, and Formby and Freshfield stations are a short walk from the Formby car parks. From Fazakerley, change at Sandhills."
+    a: "Yes, on Merseyrail's Southport line. Blundellsands and Crosby is the nearest station to the Iron Men, and Formby and Freshfield stations are a short walk from the Formby car parks. From the Kirkby or Ormskirk branches, change at Sandhills."
   - q: "Are there red squirrels at Formby?"
     a: "Yes. The National Trust says Formby's woodlands are habitat for rare red squirrels. Sightings aren't guaranteed, and conservation work is happening in the woods this autumn and winter."
   - q: "Is Formby open on Christmas Day and Boxing Day?"
@@ -97,13 +97,13 @@ Note that the National Trust asks all group visits to be booked in advance, and 
 
 ## Croxteth Country Park
 
-For something closer to north Liverpool, **Croxteth Hall and Country Park** in West Derby has woodland and open parkland around the historic hall. In 2024, Croxteth Hall's website listed **free parking from 7am to 6pm**, using postcode **L11 1EH** for the Muirhead Avenue entrance. Check current arrangements, and look out for Christmas events at the hall. Our [West Derby village guide](/guides/west-derby-village-guide) covers the area.
+For something inland, **Croxteth Hall and Country Park** in West Derby has woodland and open parkland around the historic hall. In 2024, Croxteth Hall's website listed **free parking from 7am to 6pm**, using postcode **L11 1EH** for the Muirhead Avenue entrance. Check current arrangements, and look out for Christmas events at the hall. Our [West Derby village guide](/guides/west-derby-village-guide) covers the area.
 
-## Getting to the coast from north Liverpool
+## Getting to the coast
 
-From Fazakerley, trains run down the line to **Sandhills**, where you can change for the Southport line north to Blundellsands and Crosby, Formby and Freshfield. Our [Sandhills station guide](/guides/sandhills-station-guide) explains the station. Over Christmas and New Year, check the festive timetable first: in past years Merseyrail hasn't run on Christmas Day.
+From the Kirkby or Ormskirk branches of the Northern line, change at **Sandhills** for the Southport line north to Blundellsands and Crosby, Formby and Freshfield. Our [Sandhills station guide](/guides/sandhills-station-guide) explains the station. Over Christmas and New Year, check the festive timetable first: in past years Merseyrail hasn't run on Christmas Day.
 
-By car, both Crosby and Formby are a short drive from north Liverpool, which is easier with a family and wet kit.
+By car, both Crosby and Formby are easy to reach, which helps with a family and wet kit.
 
 ## Winter walk checklist
 
@@ -120,7 +120,7 @@ Pair a coastal walk with the city: a Saturday at the [Christmas market](/guides/
 
 ## Where to stay
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, and well placed for drives to the Sefton coast. Come back to space to dry boots and coats, and a big kitchen to warm up in.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, and well placed for drives to the Sefton coast. Come back to space to dry boots and coats, and a big kitchen to warm up in.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms
@@ -141,5 +141,5 @@ Or [see all homes](/) on Book Homes.
 - [Crosby area guide](/guides/crosby-area-guide)
 - [Formby area guide](/guides/formby-area-guide)
 - [Boxing Day in Liverpool 2026](/guides/boxing-day-liverpool-2026)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Sandhills station guide](/guides/sandhills-station-guide)

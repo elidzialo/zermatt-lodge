@@ -78,11 +78,11 @@ Stay within walking distance of the shul you'll use. Check the walking route on 
 
 ### For weekday visits
 
-If you're in Liverpool for a midweek event, a hospital visit or work, you have more choice. North Liverpool, for example, has larger houses with parking and quick train links into town.
+If you're in Liverpool for a midweek event, a hospital visit or work, you have more choice. Suburbs outside the centre have larger houses with parking and quick train links into town.
 
 ## A note on Zermatt Lodge
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre, with free parking for 2 cars. **No kosher or Shabbat details have been declared for it,** so we don't describe it as kosher or Shabbat-friendly. It's also too far from a synagogue to walk on Shabbat.
+Zermatt Lodge is our 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for 2 cars. **No kosher or Shabbat details have been declared for it,** so we don't describe it as kosher or Shabbat-friendly. It's also too far from a synagogue to walk on Shabbat.
 
 It can still work for a weekday family visit if you bring your own supplies. Please ask us any questions before you book.
 

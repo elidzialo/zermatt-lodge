@@ -27,7 +27,7 @@ faqs:
   - q: "Can I just buy tickets for these games?"
     a: "Liverpool home tickets are sold through the club's membership schemes and are very hard to get. Everton tickets can be easier for some games. Only buy from official club sales. See our LFC and Everton ticket guide."
   - q: "How far is Zermatt Lodge from Anfield and Hill Dickinson Stadium?"
-    a: "It's in north Liverpool near Fazakerley station. For both grounds, Sandhills station is a few stops down the same line with no change. Everton fans walk from there, and the matchday Soccerbus runs from Sandhills to Anfield."
+    a: "It's a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. For both grounds, Sandhills is the station to use. Everton fans walk from there, and the matchday Soccerbus runs from Sandhills to Anfield."
 sources:
   - https://www.empireofthekop.com/2026/10/19/liverpool-fixture-updates-december-2026/amp/
   - https://www.liverpoolfc.com/news/fixture-updates-three-premier-league-changes-liverpool-november
@@ -94,15 +94,15 @@ Some match days stack up with other big events, which affects trains, roads and 
 
 Liverpool home tickets are sold through the club's membership schemes and are very hard to get for most games. Everton tickets are sometimes easier. Always buy through official club channels. Our [LFC and Everton ticket guide](/guides/lfc-and-everton-ticket-guide) explains the options.
 
-## Getting to the grounds from north Liverpool
+## Getting to the grounds
 
 ### Hill Dickinson Stadium (Everton)
 
-Sandhills is the usual station. From Fazakerley, it's a few stops down the same Merseyrail line with no change. Our [Everton stadium guide](/guides/everton-stadium-accommodation) has the walking route.
+Sandhills is the usual station, on the Merseyrail Northern line. Our [Everton stadium guide](/guides/everton-stadium-accommodation) has the walking route.
 
 ### Anfield (Liverpool)
 
-There's no station right next to Anfield. From Fazakerley, take the train a few stops to Sandhills and use the matchday Soccerbus, or walk in from Kirkdale. Our [Anfield match day guide](/guides/anfield-match-day-accommodation) has the details. If you're driving, read our [match day parking guide](/guides/liverpool-match-day-parking-guide), as parking is restricted around the ground.
+There's no station right next to Anfield. Take the train to Sandhills and use the matchday Soccerbus, or walk in from Kirkdale. Our [Anfield match day guide](/guides/anfield-match-day-accommodation) has the details. If you're driving, read our [match day parking guide](/guides/liverpool-match-day-parking-guide), as parking is restricted around the ground.
 
 ### Festive transport
 
@@ -110,7 +110,7 @@ The 2026 festive timetables hadn't been published when we checked. In past years
 
 ## Where to stay for a festive match
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**, it's about 15 minutes by train to Liverpool Central, and handy for Sandhills on Everton match days. For a group of fans or a family trip around a game, one house often beats several hotel rooms when match-day prices rise.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train to Liverpool Central, and handy for Sandhills on Everton match days. For a group of fans or a family trip around a game, one house often beats several hotel rooms when match-day prices rise.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

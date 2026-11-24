@@ -1,6 +1,6 @@
 ---
 title: "Grand National Weekend 2027: A Four-Day Itinerary"
-meta_description: "A Thursday to Sunday Grand National plan for 8-10 April 2027: race-day timings, trains to Aintree, a city day and a slow Sunday from north Liverpool."
+meta_description: "A Thursday to Sunday Grand National plan for 8-10 April 2027: race-day timings, trains to Aintree, a city day and a slow Sunday."
 slug: grand-national-weekend-itinerary
 h1: "Grand National Weekend Itinerary: Thursday to Sunday"
 primary_keyword: "grand national weekend itinerary"
@@ -35,7 +35,7 @@ sources:
   - https://www.savemyexams.com/learning-hub/school-holidays/england/merseyside/liverpool-city-council/fazakerley/
 ---
 
-The 2027 Grand National Festival runs from Thursday 8 to Saturday 10 April, with the big race at 4pm on the Saturday. The best weekend plan mixes one or two race days with a day in Liverpool city centre and a slow Sunday before the drive home. This itinerary assumes you're staying in north Liverpool, close to Aintree: Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree, sleeping up to 7, with free parking for 2 cars and trains to Liverpool city centre in about 15 minutes.
+The 2027 Grand National Festival runs from Thursday 8 to Saturday 10 April, with the big race at 4pm on the Saturday. The best weekend plan mixes one or two race days with a day in Liverpool city centre and a slow Sunday before the drive home. This itinerary assumes you're staying in Liverpool: Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars and trains to Liverpool city centre in about 15 minutes.
 
 You don't need to go racing every day. Most groups pick one or two days and spend the rest exploring.
 
@@ -90,7 +90,7 @@ Ladies Day is the social highlight for many groups. See our [Ladies Day group st
 
 ### Getting to the course
 
-From the Fazakerley area, you can drive (with pre-booked parking) or take a taxi to a drop-off point. By train, Aintree station is on Merseyrail's Ormskirk branch, while Fazakerley is on the Kirkby branch, so you'd need to change. The Jockey Club's festival travel plan says Kirkby-line trains start and end at Sandhills at certain times on festival days, and Aintree trains run more often than usual. Check Merseyrail's live planner on the day. Our guide to [getting to Aintree from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley) has the details.
+You can drive (with pre-booked parking) or take a taxi to a drop-off point. By train, Aintree station is on Merseyrail's Ormskirk branch, with frequent trains from Liverpool Central and Moorfields. The Jockey Club's festival travel plan says Kirkby-line trains start and end at Sandhills at certain times on festival days, and Aintree trains run more often than usual. Check Merseyrail's live planner on the day. Our guide to [getting to Aintree from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley) has the details.
 
 ## Saturday: Grand National Day
 
@@ -114,7 +114,7 @@ Plenty of groups only buy tickets for one day. If some of you aren't at the cour
 After two days of racing, Sunday is for a relaxed lie-in and a gentle look around Liverpool.
 
 - **Late breakfast** at the house
-- **Train into the city** from Fazakerley: about 15 minutes to Liverpool Central
+- **Train into the city:** about 15 minutes to Liverpool Central
 - **Waterfront walk** from Liverpool ONE to the Royal Albert Dock and Pier Head
 - **Free museums** on the waterfront for a rainy afternoon
 - **Sunday roast** in the city or back at the house
@@ -123,7 +123,7 @@ If you're driving home on Monday, Sunday evening is a good time for a game of po
 
 ## Monday: checkout and home
 
-Checkout is by **11am**. Leave the M57 and M58 traffic to settle after the weekend and you'll be on the motorway in minutes.
+Checkout is by **11am**. Let the post-festival traffic settle before you set off.
 
 ## Budgeting the weekend
 
@@ -138,7 +138,7 @@ Sharing a whole house can keep the accommodation cost per person down compared w
 
 ## Staying at Zermatt Lodge for the Grand National
 
-Zermatt Lodge is a whole house in Fazakerley, the suburb next to Aintree. It's not in the city centre: it's a quiet residential area about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole house in Liverpool. It's not in the city centre: it's a quiet residential area about 15 minutes by train from Liverpool city centre.
 
 - **4 bedrooms, sleeps 7**: king master with en-suite, second king, queen and single
 - **2 bathrooms**, so getting ready on Ladies Day is easier
@@ -158,4 +158,3 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 - [Grand National accommodation](/guides/grand-national-accommodation)
 - [Grand National first-timers' guide](/guides/grand-national-first-timers-guide)
 - [Grand National parking guide](/guides/grand-national-parking-guide)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)

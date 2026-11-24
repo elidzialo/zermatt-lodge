@@ -47,7 +47,7 @@ See our [guide to taxis in Liverpool](/guides/taxis-in-liverpool) for how hackne
 
 ## Option 2: Hire car
 
-If you're planning days out to Knowsley Safari, Formby or North Wales, a hire car from the airport makes sense. You can then park free at Zermatt Lodge (there's space for two cars) and take the train into the city centre when you want to.
+If you're planning days out to Knowsley Safari, Formby or North Wales, a hire car from the airport makes sense. Check that your accommodation has parking.
 
 **Route outline:** follow signs from the airport towards the M62, join the M57 north and leave at the Kirkby/Fazakerley junction. Your sat nav will give you the best route for the time of day.
 
@@ -91,20 +91,21 @@ This route involves an extra change, so it's handy mainly if you're already head
 - Merseyrail has published late-evening departures from Liverpool Central towards Headbolt Lane (via Fazakerley) until just before midnight, but evening trains are less frequent and timetables change. Check the last train for your date in the Merseyrail app.
 - If you land late, a pre-booked taxi is usually the safest choice.
 
-Check-in at Zermatt Lodge is from 3pm. If your flight lands very early or very late, call us to talk through your arrival. See our guide to [arriving late in Liverpool](/guides/arriving-late-liverpool).
+If your flight lands very early or very late, check your accommodation's check-in times. See our guide to [arriving late in Liverpool](/guides/arriving-late-liverpool).
 
 ## Flying into Manchester instead?
 
-Manchester Airport is further away. See our guide to [Manchester Airport to Fazakerley](/guides/manchester-airport-to-fazakerley).
+Manchester Airport is further away, so allow extra time by road or rail.
 
-## Why Zermatt Lodge is easy to reach
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, near Fazakerley station and the M57/M58.
+## Looking for a house in Liverpool?
+
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Free parking for 2 cars**, ideal if you hire at the airport
-- **Near Fazakerley station** on the Merseyrail Northern line
+- **About 15 minutes by train or car** from the city centre
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
-- **2 bathrooms, a big kitchen and dining room**, plus a Lidl nearby for your first shop
+- **2 bathrooms, a big kitchen and dining room**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
 - **Check-in 3pm, checkout 11am**
@@ -114,7 +115,5 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 ## Related guides
 
-- [Manchester Airport to Fazakerley](/guides/manchester-airport-to-fazakerley)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Liverpool South Parkway interchange guide](/guides/liverpool-south-parkway-guide)
 - [Arriving late in Liverpool](/guides/arriving-late-liverpool)

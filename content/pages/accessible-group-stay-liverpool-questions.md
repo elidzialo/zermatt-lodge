@@ -105,7 +105,7 @@ Merseyrail's new trains have a **sliding step** that meets the platform edge to 
 
 To book help, Merseyrail lists its passenger assist line as **0800 0277 347** (Freephone) or 0151 555 1111, 7am to 7pm, Monday to Friday, with 0151 702 2704 outside those hours.
 
-Stations vary. National Rail, for example, lists Fazakerley station in north Liverpool as having lifts and step-free category A, but also says step-free access isn't available between platform 1 and the exit, and there's no car park. Always check your exact stations before you travel.
+Stations vary. Some are listed by National Rail as step-free to the platforms but not between every platform and the exit, and some have no car park. Always check your exact stations before you travel.
 
 ### Mobility equipment
 
@@ -139,7 +139,7 @@ It's better to change plan before booking than to arrive and find the bathroom i
 
 ## About Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre. It sleeps 7, with 2 bathrooms and free parking for 2 cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It sleeps 7, with 2 bathrooms and free parking for 2 cars.
 
 We don't describe it as wheelchair accessible. It's a family house, and we'd rather you knew exactly what it's like before you book. If anyone in your group has access needs, send us the questions above and we'll answer them honestly, with photos where we can.
 

@@ -81,7 +81,7 @@ If you want to walk to shul, contact the local community first and stay within w
 
 ## Is Zermatt Lodge suitable?
 
-Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It may suit families who aren't walking to shul and who bring their own food and equipment.
+Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It may suit families who aren't walking to shul and who bring their own food and equipment.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

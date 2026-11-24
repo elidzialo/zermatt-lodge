@@ -34,7 +34,7 @@ sources:
   - https://alderhey.nhs.uk/parents-and-patients/before-you-visit/getting-to-alder-hey
 ---
 
-West Derby is a historic village in east Liverpool, older than Liverpool itself, with a 16th-century courthouse, a listed Victorian village cross and a cluster of independent restaurants and cafes at its heart. On its doorstep is Croxteth Hall and Country Park, one of the city's biggest green spaces, and it's home to Alder Hey Children's Hospital. Beatles fans know it for the Casbah Club, where the band played before they were famous. There's no train station, so most visitors drive or take the bus. Our house, Zermatt Lodge, is in neighbouring Fazakerley in north Liverpool, a short drive away.
+West Derby is a historic village in east Liverpool, older than Liverpool itself, with a 16th-century courthouse, a listed Victorian village cross and a cluster of independent restaurants and cafes at its heart. On its doorstep is Croxteth Hall and Country Park, one of the city's biggest green spaces, and it's home to Alder Hey Children's Hospital. Beatles fans know it for the Casbah Club, where the band played before they were famous. There's no train station, so most visitors drive or take the bus. Our house, Zermatt Lodge, is a 4-bedroom house in Liverpool.
 
 ## A little history
 
@@ -101,7 +101,7 @@ Check current timetables with Merseytravel before you travel.
 
 ### By train
 
-There's no station in West Derby today. Alder Hey says its nearest station is Broad Green, about 1.5 miles away, with trains to Lime Street, Wigan and Manchester. If you're staying in north Liverpool, Fazakerley station has direct Merseyrail trains to Liverpool Central in about **15 minutes**, according to Trainline, and West Derby is a short drive from there.
+There's no station in West Derby today. Alder Hey says its nearest station is Broad Green, about 1.5 miles away, with trains to Lime Street, Wigan and Manchester. Most visitors drive or take a bus, and West Derby is a short drive from there.
 
 ### By car
 
@@ -111,9 +111,9 @@ West Derby sits between Liverpool city centre and the M57. Parking in the villag
 
 West Derby is popular with families for its village centre, green space and choice of schools. It's within Liverpool City Council, so council tax, bins and school admissions are run by Liverpool. If you're thinking of moving to the area, see our [house-hunting trip planner](/guides/house-hunting-trip-liverpool) and [school admissions guide](/guides/liverpool-school-admissions-relocating).
 
-## Staying nearby
+## Staying in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, a short drive from West Derby village, Croxteth Park and Alder Hey, and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -134,5 +134,5 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 - [Alder Hey family accommodation](/guides/alder-hey-family-accommodation)
 - [Croxteth Hall wedding accommodation](/guides/croxteth-hall-wedding-accommodation)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Anfield area guide](/guides/anfield-area-guide)

@@ -3,7 +3,7 @@ title: "Staying Elsewhere During a Renovation in Liverpool"
 meta_description: "Moving out while your Liverpool home is renovated? How to plan timings, allow for slippage, handle party wall notices, and book a 4-bed house nearby."
 slug: renovation-stay-liverpool
 h1: "Renovating Your Liverpool Home? How to Plan a Stay Elsewhere"
-quick_answer: "During a major renovation, moving into a furnished house nearby lets the family live normally while the work is done. Zermatt Lodge is a whole 4-bedroom house in north Liverpool with a full kitchen, two bathrooms and free parking for two cars."
+quick_answer: "During a major renovation, moving into a furnished house nearby lets the family live normally while the work is done. Zermatt Lodge is a whole 4-bedroom house in Liverpool with a full kitchen, two bathrooms and free parking for two cars."
 primary_keyword: "accommodation during renovation liverpool"
 secondary_keywords:
   - "where to live during house renovation liverpool"
@@ -26,14 +26,14 @@ faqs:
   - q: "Can our builder visit or store materials at the rental?"
     a: "No. A short-term rental is for your household only. Keep materials and deliveries at the work site, and arrange site meetings there."
   - q: "Is Zermatt Lodge suitable for a family during building work?"
-    a: "Yes, if you're working on a home in or near north Liverpool. It's a whole 4-bedroom house sleeping up to 7, with a full kitchen, two bathrooms and free parking for two cars."
+    a: "Yes, if you're working on a home in or near Liverpool. It's a whole 4-bedroom house sleeping up to 7, with a full kitchen, two bathrooms and free parking for two cars."
 sources:
   - https://www.rics.org/consumer-guides/party-walls
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
 ---
 
-If your Liverpool home is having a major renovation, such as a new kitchen, a rewire, an extension or structural work, moving into a furnished house nearby for the duration can save your sanity. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with a full kitchen, two bathrooms and free parking for two cars. It lets a family live normally while the builders get on with it.
+If your Liverpool home is having a major renovation, such as a new kitchen, a rewire, an extension or structural work, moving into a furnished house nearby for the duration can save your sanity. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with a full kitchen, two bathrooms and free parking for two cars. It lets a family live normally while the builders get on with it.
 
 This guide covers how to decide whether to move out, how to time the stay, and how to plan for the delays that almost every building job brings.
 
@@ -99,7 +99,7 @@ Set up a Royal Mail redirection if you'll be away for weeks. Keep building deliv
 
 ### School and work routines
 
-Choose a base that keeps school runs and commutes manageable. If you live in north Liverpool, Sefton or Knowsley, staying nearby means very little changes. From Fazakerley, trains reach Liverpool Central in about 15 minutes for anyone working in town.
+Choose a base that keeps school runs and commutes manageable. Staying close to home means very little changes. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes for anyone working in town.
 
 ### Health
 
@@ -115,7 +115,8 @@ If the work is repairing damage from a flood, fire or escape of water, your home
 
 ## Why Zermatt Lodge suits families during a renovation
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, Aintree and the M57/M58. It isn't in the city centre. It's in a residential area, which feels much closer to normal family life than a hotel.
+Zermatt Lodge is a whole house in Liverpool. It isn't
+in the city centre. It's in a residential area, which feels much closer to normal family life than a hotel.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

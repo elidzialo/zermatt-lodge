@@ -69,7 +69,7 @@ Kosher supply in Liverpool is more limited. If you have a choice, Manchester is 
 
 ### A weekday base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. **It is not kosher** and has no declared Shabbat features, so it suits a weekday stay, for example a hospital visit, before you drive to Manchester for Shabbat.
+Zermatt Lodge is our 4-bedroom house in Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. **It is not kosher** and has no declared Shabbat features, so it suits a weekday stay, for example a hospital visit, before you drive to Manchester for Shabbat.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

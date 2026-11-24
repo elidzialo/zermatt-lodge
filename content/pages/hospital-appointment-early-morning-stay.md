@@ -3,7 +3,7 @@ title: "Early Hospital Appointment in Liverpool? Stay the Night"
 meta_description: "Got a 7am admission or early scan in Liverpool? How to plan the night before: check-in timing, route rehearsal, fasting rules, parking and companions."
 slug: hospital-appointment-early-morning-stay
 h1: "Early Hospital Appointment in Liverpool? Stay the Night Before"
-quick_answer: "If your hospital letter says to arrive at 7am, staying in Liverpool the night before is usually the calmest option. Zermatt Lodge is a whole house near Aintree University Hospital, with check-in from 3pm."
+quick_answer: "If your hospital letter says to arrive at 7am, staying in Liverpool the night before is usually the calmest option. Zermatt Lodge is a whole house, with check-in from 3pm."
 primary_keyword: "stay night before hospital appointment liverpool"
 secondary_keywords:
   - "pre-surgery overnight stay liverpool"
@@ -20,7 +20,7 @@ faqs:
   - q: "Should I stay in Liverpool the night before an early operation?"
     a: "If you live more than an hour or so away, or your admission time is 7am or 7:30am, staying nearby the night before takes the pressure off. You avoid a pre-dawn motorway drive, rush-hour traffic and the risk of arriving late and losing your slot."
   - q: "What time do Merseyrail trains start in the morning?"
-    a: "On a typical weekday, Trainline shows the first train from Fazakerley to Liverpool Central at 04:46, taking about 15 minutes. Sunday and bank holiday services start later, so check the timetable for your date."
+    a: "Merseyrail's first weekday trains run very early, before 5am on many lines. Sunday and bank holiday services start later, so check the timetable for your station and date."
   - q: "Can I eat the evening before surgery?"
     a: "Usually yes, but follow your hospital's own instructions exactly. Under the widely used SipTilSend approach, patients stop solid food at least 6 hours before surgery and can sip clear fluids until called to theatre, unless told otherwise."
   - q: "Where do I park for an early admission at Aintree University Hospital?"
@@ -34,7 +34,7 @@ sources:
   - https://cpoc.org.uk/sites/cpoc/files/documents/2025-02/Sip%20Til%20Send%20information%20for%20patients.pdf
 ---
 
-If your hospital letter says to arrive at 7am, staying in Liverpool the night before is usually the calmest option, especially if you'd otherwise be driving in from North Wales, Lancashire or further afield. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Aintree University Hospital and about 15 minutes by train from the city centre, where you and a companion can check in at 3pm, have a quiet evening and get a proper night's sleep.
+If your hospital letter says to arrive at 7am, staying in Liverpool the night before is usually the calmest option, especially if you'd otherwise be driving in from North Wales, Lancashire or further afield. Zermatt Lodge is a whole 4-bedroom house in Liverpool, where you and a companion can check in at 3pm, have a quiet evening and get a proper night's sleep.
 
 This guide walks through the evening before and the morning of an early admission, whichever Liverpool hospital you're heading to.
 
@@ -49,16 +49,16 @@ Early admissions are scheduled tightly. Arriving late can mean your slot goes to
 
 ## Which hospital, and how far?
 
-Liverpool's main hospitals are spread across the city. North Liverpool is a good base for some and a reasonable drive or train ride for others.
+Liverpool's main hospitals are spread across the city. Pick a base that suits your hospital and leave extra time for the others.
 
 | Hospital | Where | Useful notes |
 |---|---|---|
-| Aintree University Hospital and The Walton Centre | Lower Lane, Fazakerley, L9 7AL | Close to Zermatt Lodge. Fazakerley station is opposite the Longmoor Lane entrance, about 15 minutes' walk to the main entrance, according to the hospital |
+| Aintree University Hospital and The Walton Centre | Lower Lane, Fazakerley, L9 7AL | Fazakerley station is opposite the Longmoor Lane entrance, about 15 minutes' walk to the main entrance, according to the hospital |
 | Royal Liverpool University Hospital | Knowledge Quarter, sat nav L7 8YE | City centre edge. Drive in, or train to Liverpool Central |
 | Clatterbridge Cancer Centre Liverpool | 65 Pembroke Place, L7 8YA | Free parking at Paddington Village Car Park (open 24 hours) for patients and visitors |
 | Alder Hey Children's Hospital | East Prescot Road, sat nav L14 5AB for the car park | East Liverpool, best reached by car |
 
-If you're having treatment at Aintree or The Walton Centre, staying in north Liverpool means a very short trip in the morning. For the Royal or Clatterbridge, it's still easier than a long motorway drive, but leave extra time.
+Whichever hospital you're attending, staying the night before is easier than a long motorway drive on the morning, but leave extra time.
 
 ## The afternoon before
 
@@ -107,7 +107,7 @@ Leave earlier than your rehearsal suggested. Have your registration number to ha
 
 ### If you're taking the train
 
-Trainline shows the first weekday train from Fazakerley to Liverpool Central at **04:46**, with the journey taking about 15 minutes. That's useful if your companion needs to get into the city for the Royal or Clatterbridge without a car. Check the timetable for your exact date, as early services differ at weekends.
+From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes, and early weekday trains start before 5am. That's useful if your companion needs to get into the city for the Royal or Clatterbridge without a car. Check the timetable for your exact date, as early services differ at weekends.
 
 ### Taxis
 
@@ -129,9 +129,9 @@ If you're discharged the same day but feel too tired for a long journey home, a 
 
 ## Why Zermatt Lodge works for early admissions
 
-Zermatt Lodge is a quiet, whole house in north Liverpool. It's not a hotel, so there's no lobby or late-night noise, just your own space.
+Zermatt Lodge is a quiet, whole house in Liverpool. It's not a hotel, so there's no lobby or late-night noise, just your own space.
 
-- **Close to Aintree University Hospital and The Walton Centre**, and near Fazakerley station for trains into the city
+- **About 15 minutes by train or car** from the city centre
 - **Free parking for 2 cars**, so you and your companion can each bring a car if needed
 - **King master bedroom with en-suite** for the patient, plus three more bedrooms
 - **2 bathrooms**, so no queues on an early morning

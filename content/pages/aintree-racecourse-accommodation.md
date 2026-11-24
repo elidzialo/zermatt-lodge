@@ -1,9 +1,9 @@
 ---
 title: "Aintree Racecourse Accommodation: Non-National Days"
-meta_description: "Going to Aintree outside Grand National week? Becher Chase Day, autumn meetings, getting there by train or car, and a 4-bed house nearby in Fazakerley."
+meta_description: "Going to Aintree outside Grand National week? Becher Chase Day, autumn meetings, getting there by train or car, and a 4-bed house in Liverpool."
 slug: aintree-racecourse-accommodation
 h1: "Aintree Racecourse Accommodation for Race Days Beyond the Grand National"
-quick_answer: "Aintree runs jump racing through autumn and winter, including Becher Chase Day in December, and accommodation is much easier to find than in Grand National week. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree, with free parking for two cars."
+quick_answer: "Aintree runs jump racing through autumn and winter, including Becher Chase Day in December, and accommodation is much easier to find than in Grand National week. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars."
 primary_keyword: "aintree racecourse accommodation"
 secondary_keywords:
   - "becher chase accommodation"
@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-Aintree isn't just the Grand National. The racecourse runs jump racing through the autumn and winter, including Becher Chase Day in December over the famous National fences. Accommodation is much easier to find for these fixtures. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, the suburb next to Aintree, with free parking for two cars. It makes a relaxed base for a racing weekend without festival-week crowds.
+Aintree isn't just the Grand National. The racecourse runs jump racing through the autumn and winter, including Becher Chase Day in December over the famous National fences. Accommodation is much easier to find for these fixtures. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars. It makes a relaxed base for a racing weekend without festival-week crowds.
 
 This guide covers Aintree's other race days, how to get there and how to turn a race day into a Liverpool weekend.
 
@@ -102,12 +102,12 @@ See our full [Aintree race day checklist](/guides/aintree-race-day-checklist).
 
 ## Why Zermatt Lodge suits Aintree race weekends
 
-Zermatt Lodge is a whole house in Fazakerley, one of the closest residential areas to the racecourse.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
 - **Free parking for 2 cars**, so you can drive to the course or leave the cars and take the train
-- **Near Fazakerley station** for the Sandhills change to Aintree
+- **Trains or a taxi** to the racecourse on race days
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**, handy for watching the rest of the day's racing on TV
 - **Big kitchen and dining room** for a relaxed group dinner
 - **Large private back garden**
@@ -120,6 +120,5 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 ## Related guides
 
 - [Grand National accommodation](/guides/grand-national-accommodation)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Becher Chase weekend in Liverpool](/guides/becher-chase-weekend-liverpool)
 - [Aintree race day checklist](/guides/aintree-race-day-checklist)

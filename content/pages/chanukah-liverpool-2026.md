@@ -92,7 +92,7 @@ Chanukah overlaps a busy week in the city. **Becher Chase Day** is at Aintree on
 
 ## Is Zermatt Lodge right for Chanukah?
 
-Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It suits families who are visiting for the city, the football or the racing and who bring their own food and arrangements.
+Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It suits families who are visiting for the city, the football or the racing and who bring their own food and arrangements.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

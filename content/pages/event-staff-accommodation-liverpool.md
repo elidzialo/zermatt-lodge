@@ -84,9 +84,9 @@ The HSE also notes that fatigue has been implicated in **20% of accidents on maj
 6. **An invoice** in the company's name. See [invoices and VAT for business stays](/guides/invoice-and-vat-for-business-stays)
 7. **Clear house rules**, especially on noise after a late finish
 
-## A crew base in north Liverpool
+## A crew base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, about **15 minutes by train** from Liverpool Central and close to the M57 and M58.
+Zermatt Lodge is our 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

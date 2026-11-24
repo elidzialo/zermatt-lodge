@@ -26,7 +26,7 @@ faqs:
     a: "A Christmas light trail through the Foot Safari with illuminated displays, animal installations, fire pits and family rides. It runs on selected evenings between 20 November and 23 December 2026, with tickets from £9.95. Refreshments, rides and Santa are extra."
   - q: "Is there a sensory-friendly Santa in Liverpool?"
     a: "Yes. Knowsley Safari has a Santa's Grotto SEN Evening on 9 December and a new Enchanted SEN Night. Visit Liverpool says Story Time with Santa at Liverpool Town Hall also offers a sensory-friendly session."
-  - q: "How far is Knowsley Safari from north Liverpool?"
+  - q: "How do I get to Knowsley Safari?"
     a: "It's near Prescot, east of the city. From north Liverpool it's a drive along the M57, so having a car helps."
 sources:
   - https://www.knowsleysafariexperience.co.uk/events/santa-at-knowsley-safari
@@ -112,15 +112,15 @@ Or reverse it: city lights on one night, Enchanted on another.
 
 ## Getting around
 
-- **City centre:** from Fazakerley, direct trains reach Liverpool Central in about 15 minutes
+- **City centre:** trains from the house reach Liverpool Central in about 15 minutes
 - **Knowsley Safari:** near Prescot, east of Liverpool. Easiest by car via the M57
 - **Speke Hall:** south Liverpool, near the airport. Easiest by car
 
-Our [family days out in north Liverpool guide](/guides/family-days-out-north-liverpool) has more ideas close to home.
+Our [family days out guide](/guides/family-days-out-north-liverpool) has more ideas.
 
 ## Where to stay for a festive family trip
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central, with **free parking for 2 cars**, so it works for days out by car to Knowsley Safari too.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central, with **free parking for 2 cars**, so it works for days out by car to Knowsley Safari too.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

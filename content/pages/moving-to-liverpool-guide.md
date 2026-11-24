@@ -27,7 +27,7 @@ faqs:
   - q: "Is it easy to get around Liverpool without a car?"
     a: "In many areas, yes. Merseyrail's Northern and Wirral lines cover much of the city region, and since February 2026 you can tap in and out with a contactless bank card, phone or watch. Fares are frozen until March 2027."
   - q: "Where can we stay while we look for a home?"
-    a: "A furnished short-stay house gives a family space, a kitchen and parking while you view homes. Zermatt Lodge in north Liverpool sleeps 7 and takes stays of up to 30 nights, with monthly rates available."
+    a: "A furnished short-stay house gives a family space, a kitchen and parking while you view homes. Zermatt Lodge in Liverpool sleeps 7 and takes stays of up to 30 nights, with monthly rates available."
 sources:
   - https://housecheckup.co.uk/average-rent/liverpool
   - https://liverpool.gov.uk/council-tax/your-guide-to-council-tax/how-we-are-funded
@@ -114,7 +114,7 @@ The M62 runs east to Manchester, and the M57 and M58 serve the north and east of
 
 ### Example commute
 
-From **Fazakerley** in north Liverpool, direct trains reach **Liverpool Central in about 15 minutes**, with around 69 trains a day. The first train is around 4.46am, and the last around 11.36pm on a sample day.
+From the north Liverpool suburbs on the Northern line, direct trains reach **Liverpool Central** in roughly 10 to 20 minutes. Check first and last trains for your station.
 
 ## Your first weeks: a checklist
 
@@ -130,7 +130,7 @@ Many families don't want to sign a 12-month lease on a home they've only seen on
 
 ### Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in **north Liverpool, near Fazakerley station**. It's **not in the city centre**: trains reach Liverpool Central in about **15 minutes**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in about **15 minutes**.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen, dining room, washer and dryer

@@ -67,7 +67,7 @@ More in our [Santa grottos and Christmas lights guide](/guides/liverpool-christm
 
 ### Boxing Day at Aintree
 
-Racing on **Saturday 26 December**: gates 10.30am, first race 11.55am, last race 3.20pm. General admission from £39, and **Grandstand and Paddock tickets are free for under-18s**. It's a big family day out a short drive from north Liverpool. See our [Boxing Day guide](/guides/boxing-day-liverpool-2026).
+Racing on **Saturday 26 December**: gates 10.30am, first race 11.55am, last race 3.20pm. General admission from £39, and **Grandstand and Paddock tickets are free for under-18s**. It's a big family day out in north Liverpool. See our [Boxing Day guide](/guides/boxing-day-liverpool-2026).
 
 ## Pantos and shows
 
@@ -119,7 +119,7 @@ Travelling with very little ones? Our [babies and toddlers guide](/guides/babies
 
 ## Where to stay for a Christmas family break
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, with **free parking for 2 cars** for days out to Knowsley Safari, Aintree and the coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, with **free parking for 2 cars** for days out to Knowsley Safari, Aintree and the coast.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

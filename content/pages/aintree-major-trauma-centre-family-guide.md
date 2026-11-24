@@ -26,7 +26,8 @@ faqs:
   - q: "How do I get to Aintree hospital from Liverpool city centre?"
     a: "Take a Merseyrail Northern line train towards Kirkby or Headbolt Lane from Liverpool Central or Moorfields to Fazakerley, which takes about 15 minutes. The station is across the road from the Longmoor Lane entrance."
   - q: "Where can a family stay near Aintree hospital?"
-    a: "Options are limited right next to the site, which is in a residential part of north Liverpool. Zermatt Lodge is a whole 4-bedroom house nearby that sleeps 7 and has free parking for 2 cars, which suits families arriving from different places who want to stay together."
+    a: "Options are limited right next to the site. A whole house with free parking, like our 4-bedroom house in Liverpool that sleeps 7, suits families arriving from different places who want to stay together."
+
 sources:
   - https://uhliverpool.nhs.uk/about-us/our-stories/life-saving-hospital-helipad-marks-over-600-landings
   - https://uhliverpool.nhs.uk/our-hospitals/aintree-university-hospital/location
@@ -125,7 +126,7 @@ Three things matter most when you book:
 
 ## Why Zermatt Lodge can help in a crisis
 
-Zermatt Lodge is a whole house in north Liverpool, close to the Aintree hospital site and Fazakerley station. It isn't in the city centre, which is exactly the point here: you're near the ward, not stuck in traffic.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, so you avoid city-centre traffic and parking charges.
 
 - **4 bedrooms sleeping up to 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, so a family on different shifts isn't queuing
@@ -143,5 +144,4 @@ If you need somewhere tonight or tomorrow, email **cs@zugati.co.uk** to check av
 - [Accommodation near Aintree University Hospital](/guides/accommodation-near-aintree-university-hospital)
 - [Long hospital stays in Liverpool: tips for families](/guides/long-stay-hospital-visiting-tips-liverpool)
 - [Aintree hospital parking guide](/guides/aintree-hospital-parking-guide)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Seeing a GP as a temporary resident in Liverpool](/guides/temporary-resident-gp-liverpool)

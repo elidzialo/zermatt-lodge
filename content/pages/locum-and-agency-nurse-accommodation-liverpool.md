@@ -3,7 +3,7 @@ title: "Locum & Agency Nurse Accommodation in Liverpool"
 meta_description: "Short-term accommodation for locum doctors, agency nurses and NHS contractors in Liverpool. Shift-friendly house near Aintree Hospital with free parking."
 slug: locum-and-agency-nurse-accommodation-liverpool
 h1: "Locum and Agency Nurse Accommodation in Liverpool"
-quick_answer: "Locum doctors, agency nurses and other NHS contractors usually do best somewhere quiet near their hospital, with parking and a kitchen. Zermatt Lodge in Fazakerley is close to Aintree University Hospital, The Walton Centre and Fazakerley station."
+quick_answer: "Locum doctors, agency nurses and other NHS contractors usually do best somewhere quiet near their hospital, with parking and a kitchen. Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for 2 cars."
 primary_keyword: "locum accommodation liverpool"
 secondary_keywords:
   - "agency nurse accommodation liverpool"
@@ -18,11 +18,11 @@ related:
   - contractor-accommodation-liverpool
 faqs:
   - q: "Where should a locum stay for a placement at Aintree Hospital?"
-    a: "Fazakerley is the obvious choice. The hospital is in Fazakerley, and Fazakerley station is across the road from its Longmoor Lane entrance. Staying in the same suburb takes the commute out of early and late shifts."
+    a: "Somewhere with a short, predictable commute. The hospital is in Fazakerley, and Fazakerley station is across the road from its Longmoor Lane entrance, so a base with a direct train or an easy drive takes the stress out of early and late shifts."
   - q: "Can several agency staff share a house in Liverpool?"
     a: "Yes. A whole house with separate bedrooms is often better value and more comfortable than several hotel rooms. Zermatt Lodge sleeps up to 7 in 4 bedrooms, with 2 bathrooms and parking for 2 cars."
-  - q: "How early do trains run from Fazakerley?"
-    a: "Trainline lists the first Fazakerley to Liverpool Central train at 04:46 and the last at 23:36, with a journey of about 15 minutes. Weekend and holiday times can differ, so check Merseyrail before a shift."
+  - q: "How early do Merseyrail trains run?"
+    a: "On many lines the first weekday trains run before 5am and the last leave the city centre before midnight. Weekend and holiday times can differ, so check Merseyrail before a shift."
   - q: "Is Zermatt Lodge suitable for night-shift workers?"
     a: "It's a quiet, residential house with no parties allowed, and each sharer gets their own room. Bring an eye mask and earplugs as you would anywhere, and agree quiet hours with housemates on different rotas."
   - q: "Can a staffing agency book on behalf of a clinician?"
@@ -35,23 +35,23 @@ sources:
   - https://www.thewaltoncentre.nhs.uk/directions-and-car-parking
 ---
 
-For locum doctors, agency nurses and other NHS contractors working in Liverpool, the best accommodation is usually somewhere quiet near your main hospital, with parking and a kitchen, rather than a city-centre hotel. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to Aintree University Hospital, The Walton Centre and Fazakerley station. It suits clinicians on placement, alone or sharing with colleagues.
+For locum doctors, agency nurses and other NHS contractors working in Liverpool, the best accommodation is usually somewhere quiet near your main hospital, with parking and a kitchen, rather than a city-centre hotel. Zermatt Lodge is a whole 4-bedroom house in Liverpool with free parking for 2 cars. It suits clinicians on placement, alone or sharing with colleagues.
 
-This guide covers how Liverpool's main hospital sites connect to a north Liverpool base, what shift workers need from accommodation, and how agencies can book.
+This guide covers how Liverpool's main hospital sites connect, what shift workers need from accommodation, and how agencies can book.
 
 ## Liverpool's main hospital sites and how they connect
 
 ### Aintree University Hospital and The Walton Centre (Fazakerley)
 
-These share one campus on Lower Lane and Longmoor Lane in Fazakerley, near junction 6 of the M57. The hospital says Fazakerley station is across the road from the Longmoor Lane entrance, about 15 minutes' walk from the main entrance. Woodlands Hospice is on the same site. If you're placed here, staying in Fazakerley means a short walk or drive to work, even before a 7am handover.
+These share one campus on Lower Lane and Longmoor Lane in Fazakerley, near junction 6 of the M57. The hospital says Fazakerley station is across the road from the Longmoor Lane entrance, about 15 minutes' walk from the main entrance. Woodlands Hospice is on the same site. If you're placed here, check the commute for a 7am handover before you book.
 
 ### Royal Liverpool University Hospital (city centre)
 
-The Royal is about a mile from both Lime Street and Liverpool Central. From Fazakerley you can take the Northern line to Central, about 15 minutes, then walk. The hospital also lists the Paddington Village car park (open 24 hours) and the Q-Park on Prescot Street (6am to 10pm) for drivers. Check staff parking arrangements with your trust, because visitor parking adds up quickly.
+The Royal is about a mile from both Lime Street and Liverpool Central. From Zermatt Lodge you can take the train to Central, about 15 minutes, then walk. The hospital also lists the Paddington Village car park (open 24 hours) and the Q-Park on Prescot Street (6am to 10pm) for drivers. Check staff parking arrangements with your trust, because visitor parking adds up quickly.
 
 ### Alder Hey Children's Hospital (West Derby)
 
-Alder Hey is on East Prescot Road in West Derby. From Fazakerley it's a cross-suburb drive rather than a train journey. The nearest station, Broad Green, is about 1.5 miles away. Allow time for school-run and rush-hour traffic.
+Alder Hey is on East Prescot Road in West Derby. For most people it's a drive rather than a train journey. The nearest station, Broad Green, is about 1.5 miles away. Allow time for school-run and rush-hour traffic.
 
 ### Liverpool Women's and other sites
 
@@ -70,7 +70,7 @@ Hotels are designed for people who sleep at night and go out during the day. Cli
 
 ### Getting around at odd hours
 
-Trainline lists the first Fazakerley to Liverpool Central train at 04:46 and the last at 23:36, with direct journeys of about 15 minutes. Times vary at weekends and on holidays, so check Merseyrail the day before. For night shifts at the Royal, many people drive. For Aintree and The Walton Centre, staying in Fazakerley largely solves the problem.
+Merseyrail's first and last trains vary by line, and times change at weekends and on holidays, so check the day before. For night shifts, many people drive, which is why free parking at the house matters.
 
 ## Sharing with colleagues
 
@@ -88,7 +88,7 @@ Agree a few house rules on day one: quiet hours for night workers, a kitchen rot
 1. **Ask your agency for the exact site and department** before booking. "Liverpool" covers several hospitals miles apart.
 2. **Check staff parking rules** with the trust. They're often different from visitor tariffs.
 3. **Do a dry run** of your commute the evening you arrive, at the same time as your first shift.
-4. **Stock up on day one.** There's a Lidl near Zermatt Lodge.
+4. **Stock up on day one,** or book a supermarket delivery.
 5. **Plan for sleep.** See our [night-shift sleep tips](/guides/night-shift-sleep-tips-work-stay).
 6. **Keep receipts** for any expenses your agency covers.
 
@@ -104,7 +104,7 @@ Knowing this before you book makes it much easier to choose the right base and d
 
 ## Why Zermatt Lodge works for NHS staff on placement
 
-Zermatt Lodge is a whole house in Fazakerley, near the Aintree hospital site, Fazakerley station and the M57/M58.
+Zermatt Lodge is a whole house in Liverpool, about 15 minutes by train or car from the city centre.
 
 - **4 bedrooms, sleeps up to 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, which helps with staggered shifts

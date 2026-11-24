@@ -32,7 +32,7 @@ sources:
   - https://retailparks.thecrownestate.co.uk/aintree-shopping-park
 ---
 
-Before you book accommodation for a work crew, check twelve things: real beds for everyone, parking for your vans, a full kitchen, laundry, cleaning during long stays, quiet hours, Wi-Fi, check-in times that suit shifts, the cancellation policy, how payment works, whether you'll get a proper invoice, and the house rules. Getting these right avoids the most common problems: tired workers, parking tickets and expense claims that bounce. This checklist works for any provider. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for 2 cars, about 15 minutes by train from Liverpool city centre and minutes from the M57 and M58.
+Before you book accommodation for a work crew, check twelve things: real beds for everyone, parking for your vans, a full kitchen, laundry, cleaning during long stays, quiet hours, Wi-Fi, check-in times that suit shifts, the cancellation policy, how payment works, whether you'll get a proper invoice, and the house rules. Getting these right avoids the most common problems: tired workers, parking tickets and expense claims that bounce. This checklist works for any provider. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars, about 15 minutes by train from Liverpool city centre and.
 
 ## The 12 questions
 
@@ -142,17 +142,17 @@ HMRC's manual also says the 24-month rule is overridden for **fixed-term appoint
 | Laundry | Washing machine and tumble dryer |
 | Check-in | Self check-in with a lockbox from 3pm; checkout by 11am |
 | Wi-Fi | Yes |
-| Location | Fazakerley, north Liverpool, minutes from the M57 and M58 |
+| Location | Liverpool, about 15 minutes by train or car from the city centre |
 | Payment | Secure card payment via Stripe, no booking fees when booking direct |
 | Rules | No parties or events, no smoking, no pets. Guest ID and a signed rental agreement required |
 
 For crews of more than 7, or with more than two vans, you'd need a second property. Ask us about mid-stay cleaning and invoicing when you book.
 
-Aintree Shopping Park, with an M&S Foodhall, B&Q and Halfords, is a short drive away for food and supplies.
+Retail parks around the city, such as Aintree Shopping Park with an M&S Foodhall, B&Q and Halfords, cover food and supplies.
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole house in a quiet residential part of Fazakerley, north Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre and close to the motorways for sites around Merseyside.
+Zermatt Lodge is a whole house in a quiet residential part of Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre and close to the motorways for sites around Merseyside.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. Please respect the neighbours, especially with early starts.
 

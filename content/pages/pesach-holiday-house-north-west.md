@@ -27,7 +27,7 @@ faqs:
   - q: "Are there communal seders for visitors?"
     a: "Contact the local community directly nearer the time for seder, shul and service details."
   - q: "Is Zermatt Lodge kosher for Pesach?"
-    a: "No. Zermatt Lodge is not described as kosher and has no Pesach set-up. It is a self-catering house in north Liverpool. Use the Book Homes kosher stays page for homes where hosts have declared kosher details."
+    a: "No. Zermatt Lodge is not described as kosher and has no Pesach set-up. It is a self-catering house in Liverpool. Use the Book Homes kosher stays page for homes where hosts have declared kosher details."
 sources:
   - https://hebcal.com/h/pesach-2027?um=api&us=js
   - https://kashrut.com/articles/AirBnB
@@ -112,7 +112,7 @@ Think about what matters most on yom tov:
 
 ## An honest note about Zermatt Lodge
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, sleeping 7, about **15 minutes by train** from the city centre, with **free parking for 2 cars**, a dining room, a big kitchen and a large private garden. It is **not** kosher, has **no Pesach set-up**, and is **not within walking distance** of a synagogue. We'd only suggest it for families who are planning to bring everything and are not walking to shul on yom tov.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, sleeping 7, about **15 minutes by train** from the city centre, with **free parking for 2 cars**, a dining room, a big kitchen and a large private garden. It is **not** kosher, has **no Pesach set-up**, and is **not within walking distance** of a synagogue. We'd only suggest it for families who are planning to bring everything and are not walking to shul on yom tov.
 
 If that's you, [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). For other homes, [see all homes](/) or use the [kosher stays filter](/kosher-homes).
 

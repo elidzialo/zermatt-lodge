@@ -35,7 +35,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/event-schedule/
 ---
 
-Aintree is a village in north Liverpool, best known for the Grand National, but it also has a canal towpath, a historic motor racing circuit, a large shopping park with free parking, and fast trains into the city. If you're staying in the area, you're about 6 miles from Liverpool city centre with the motorway network on your doorstep. Zermatt Lodge is a whole 4-bedroom house in neighbouring Fazakerley, sleeping up to 7, with free parking for 2 cars and trains to Liverpool city centre in about 15 minutes.
+Aintree is a village in north Liverpool, best known for the Grand National, but it also has a canal towpath, a historic motor racing circuit, a large shopping park with free parking, and fast trains into the city. Aintree is about 6 miles from Liverpool city centre, with the M57 and M58 close by.
 
 This guide covers what Aintree is like, what there is to do beyond race week, and how to get around.
 
@@ -63,7 +63,7 @@ Aintree has two Merseyrail stations on the **Northern line (Ormskirk branch)**:
 - **Aintree station** serves the racecourse
 - **Old Roan station** is closer to the village and the shopping park
 
-Both run direct to **Liverpool Central** via Sandhills and Moorfields. Fazakerley, where Zermatt Lodge is, is on the **Kirkby branch** of the same line. The two branches split north of the city, so travelling between Fazakerley and Aintree by train means changing at a shared station nearer town (check the Merseyrail journey planner for the best change). By road it's a short drive.
+Both run direct to **Liverpool Central** via Sandhills and Moorfields. Fazakerley is on the **Kirkby branch** of the same line. The two branches split north of the city, so travelling between Fazakerley and Aintree by train means changing at a shared station nearer town (check the Merseyrail journey planner for the best change). By road it's a short drive.
 
 ## The racecourse
 
@@ -141,18 +141,19 @@ The trade-off is simple: you give up walking to bars and the waterfront, and in 
 
 1. **Check race-day road closures** if you're driving anywhere near the racecourse during a meeting.
 2. **Use Old Roan** for the shopping park and village, and **Aintree** for the racecourse.
-3. **Book early for April.** The Grand National festival fills accommodation across north Liverpool.
+3. **Book early for April.** The Grand National festival fills accommodation across the city.
+
 4. **Pack for the weather.** The canal towpath and racecourse are exposed in wind and rain.
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, next to Aintree. It's not in the city centre: you're in a quiet residential area, about 15 minutes by train from Liverpool city centre, with Fazakerley station nearby.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential area, about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a separate dining room
 - **Games room with a pool table**, board games and a 55" Smart TV with Netflix
 - **Large, fully fenced private garden**
-- **Free parking for 2 cars**, minutes from the M57 and M58
+- **Free parking for 2 cars**
 - **Self check-in** from 3pm, checkout by 11am
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
@@ -164,6 +165,5 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Aintree Racecourse accommodation](/guides/aintree-racecourse-accommodation)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Grand National accommodation](/guides/grand-national-accommodation)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)

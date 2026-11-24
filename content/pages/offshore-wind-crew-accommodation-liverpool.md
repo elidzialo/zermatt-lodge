@@ -62,7 +62,7 @@ If your work is at the shipyard, see our [Cammell Laird contractor guide](/guide
 
 ## A crew house in Liverpool
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool, close to the motorway network:
+Zermatt Lodge is our whole 4-bedroom house in Liverpool:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so early starts don't mean a queue

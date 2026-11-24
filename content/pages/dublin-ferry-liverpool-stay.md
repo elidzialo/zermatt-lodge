@@ -26,7 +26,7 @@ faqs:
   - q: "Do ferry booking sites still show Liverpool to Dublin?"
     a: "Some still do, which is confusing. Always check the operator's own website for a live timetable before you plan a trip around a route."
   - q: "Where should Irish visitors stay in Liverpool with a car?"
-    a: "Somewhere with free parking and easy motorway access saves a lot of hassle compared with paying for city-centre car parks. North Liverpool is close to the M57 and M58, with trains into the city centre."
+    a: "Somewhere with free parking and easy motorway access saves a lot of hassle compared with paying for city-centre car parks. Zermatt Lodge has free parking for two cars and trains into the city centre."
 sources:
   - https://afloat.ie/port-news/ferry-news/item/60212-operator-p-o-ferries-to-close-dublin-liverpool-route
   - https://www.freightlink.co.uk/knowledge/articles/po-ferries-update-timeline-permanent-closure-dublin-liverpool-terminals
@@ -101,7 +101,7 @@ Liverpool has deep Irish roots, and it shows in the visitors: football supporter
 
 ## Why Zermatt Lodge suits travellers from Ireland
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the M57 and M58 and near Fazakerley station. It's not in the city centre, but the Merseyrail Northern line gets you to Liverpool Central in about 15 minutes, and you can leave the car parked at the house all weekend.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but the train gets you to Liverpool Central in about 15 minutes, and you can leave the car parked at the house all weekend.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -119,5 +119,4 @@ Check-in is 3pm and checkout is 11am. If your sailing gets you in at an awkward 
 - [Belfast to Birkenhead ferry: where to stay](/guides/belfast-ferry-birkenhead-stay)
 - [Isle of Man ferry from Liverpool](/guides/isle-of-man-ferry-liverpool-stay)
 - [Grand National from Ireland](/guides/grand-national-from-ireland)
-- [Liverpool airport transport](/guides/liverpool-airport-to-fazakerley)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)

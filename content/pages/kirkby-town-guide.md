@@ -35,7 +35,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Kirkby is a town of around 45,000 people in Knowsley, about 6 miles north-east of Liverpool city centre. It's best known for its large industrial estate, a town centre that's been rebuilt in recent years, and Liverpool FC's training ground. Two Merseyrail stations, Kirkby and Headbolt Lane, run frequent trains into Liverpool, and Headbolt Lane also connects towards Wigan and Manchester. If you're working or visiting in Kirkby, Zermatt Lodge is a whole 4-bedroom house one stop down the line in Fazakerley, north Liverpool, sleeping up to 7 with free parking for 2 cars and about 15 minutes by train from Liverpool city centre.
+Kirkby is a town of around 45,000 people in Knowsley, about 6 miles north-east of Liverpool city centre. It's best known for its large industrial estate, a town centre that's been rebuilt in recent years, and Liverpool FC's training ground. Two Merseyrail stations, Kirkby and Headbolt Lane, run frequent trains into Liverpool, and Headbolt Lane also connects towards Wigan and Manchester. If you're working or visiting in Kirkby, Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars and about 15 minutes by train from Liverpool city centre.
 
 ## Kirkby at a glance
 
@@ -105,9 +105,7 @@ Kirkby is home to **Liverpool FC's training ground and youth academy**. The acad
 Kirkby has limited visitor accommodation of its own. Options include:
 
 - **Hotels** near the motorway junctions and in Liverpool city centre
-- **Whole houses** in nearby north Liverpool suburbs, which suit crews and families who need parking and a kitchen
-
-Fazakerley is one stop from Kirkby on the train and a short drive by road, so it works well as a base for both Kirkby and Liverpool.
+- **Whole houses** elsewhere in Liverpool, which suit crews and families who need parking and a kitchen
 
 ## Tips for working in Kirkby
 
@@ -118,12 +116,12 @@ Fazakerley is one stop from Kirkby on the train and a short drive by road, so it
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, one stop from Kirkby on the Merseyrail Northern line. It's not in Kirkby or the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Kirkby or the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen and separate dining room
 - **Washing machine and tumble dryer**
-- **Free parking for 2 cars**, close to the M57 and M58
+- **Free parking for 2 cars**
 - **Self check-in** from 3pm, checkout by 11am
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
@@ -135,6 +133,5 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Kirkby and Knowsley Business Park accommodation](/guides/kirkby-knowsley-business-park-accommodation)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)
 - [Contractor accommodation in Liverpool](/guides/contractor-accommodation-liverpool)

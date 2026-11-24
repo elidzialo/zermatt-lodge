@@ -1,9 +1,9 @@
 ---
 title: "Accommodation near Aintree University Hospital"
-meta_description: "Staying near Aintree University Hospital? A whole 4-bed house in Fazakerley near Fazakerley station, with free parking for 2 cars. Visitor tips inside."
+meta_description: "Visiting Aintree University Hospital? Parking prices, concessions, getting there by train or car, and a whole 4-bed house in Liverpool with free parking."
 slug: accommodation-near-aintree-university-hospital
 h1: "Accommodation near Aintree University Hospital: A Practical Guide for Families"
-quick_answer: "The closest option for a family or group is to stay in Fazakerley, the suburb Aintree University Hospital sits in. Zermatt Lodge is a whole 4-bedroom house there, close to Fazakerley station by the hospital's Longmoor Lane entrance, with free parking for two cars and a full kitchen."
+quick_answer: "Aintree University Hospital is north-east of Liverpool city centre, with very few hotels right beside it. Families and groups often choose a whole house instead: Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for two cars and a full kitchen."
 primary_keyword: "accommodation near aintree hospital"
 secondary_keywords:
   - "places to stay near aintree university hospital"
@@ -18,7 +18,7 @@ related:
   - fazakerley-to-liverpool-city-centre-by-train
 faqs:
   - q: "Is there accommodation within walking distance of Aintree University Hospital?"
-    a: "Yes. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to Fazakerley station, which the hospital says is across the road from its Longmoor Lane entrance. There are very few hotels right beside the hospital, so most families either stay in Fazakerley and the surrounding suburbs or travel in from the city centre."
+    a: "There are very few hotels right beside the hospital, so most families either stay in the surrounding suburbs or travel in from the city centre. Fazakerley station is across the road from the Longmoor Lane entrance, which makes a train-based stay practical."
   - q: "How much is parking at Aintree University Hospital?"
     a: "At the time of writing, the trust's Aintree page lists free parking for under 30 minutes, then £3 up to 1.5 hours, £4 up to 2.5 hours, £4.50 up to 4.5 hours and £5.50 over 4.5 hours, plus a weekly ticket. The Walton Centre's page, which covers the same site, lists higher figures, so check the machines on the day."
   - q: "Can you get free parking at Aintree Hospital?"
@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you need somewhere to stay near Aintree University Hospital, the closest option for a family or group is to stay in Fazakerley itself, the suburb the hospital sits in. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to Fazakerley station (which is right by the hospital's Longmoor Lane entrance), with free parking for two cars and a full kitchen for long days on the wards.
+If you need somewhere to stay while visiting Aintree University Hospital, there are very few hotels right beside it, so families and groups usually look at the surrounding suburbs or the city centre. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars and a full kitchen for long days on the wards.
 
 This guide covers how the hospital site works, what parking costs, which concessions exist, and how to choose somewhere to stay when you don't know how long you'll be needed.
 
@@ -116,14 +116,14 @@ For longer admissions, read our [tips for long hospital stays in Liverpool](/gui
 
 ## Why Zermatt Lodge works for hospital visitors
 
-Zermatt Lodge is a whole house in Fazakerley, so you aren't sharing it with anyone. It's set up for exactly the kind of stay a hospital admission brings:
+Zermatt Lodge is a whole house in Liverpool, so you aren't sharing it with anyone. It's set up for exactly the kind of stay a hospital admission brings:
 
 - **4 bedrooms sleeping 7:** a king master with en-suite, a second king, a queen and a single, so grandparents, parents and grown-up children can all have their own space
 - **2 bathrooms**, which helps when people are leaving for early visiting
 - **A big kitchen and dining room** for cooking real food at whatever hour you get back
 - **Free parking for 2 cars**, so you aren't adding a car park bill on top of hospital charges
 - **A large private back garden**, somewhere quiet to sit and take a phone call
-- **Close to Fazakerley station and a Lidl**, for quick trips into town or a food shop
+- **Trains to the city centre in about 15 minutes**, for quick trips into town
 - **Check-in from 3pm, checkout 11am**
 
 It's a calm, residential house. There are no parties, no smoking and no pets, so it stays quiet for people who need to rest.

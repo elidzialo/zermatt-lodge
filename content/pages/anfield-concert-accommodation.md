@@ -26,7 +26,7 @@ faqs:
   - q: "Are there Anfield concerts in 2027?"
     a: "Liverpool FC has said it will update residents ahead of summer 2027 shows, but at the time of writing no acts or dates had been confirmed on its residents' page. Check the official artist and club announcements."
   - q: "Where should a group stay for an Anfield concert?"
-    a: "City-centre hotels are handy for the shuttle from Commutation Row but get booked up and expensive on concert nights. A whole house a short train ride away, near the Northern line, keeps a group together and avoids paying for city parking."
+    a: "City-centre hotels are handy for the shuttle from Commutation Row but get booked up and expensive on concert nights. A whole house a short train ride away, keeps a group together and avoids paying for city parking."
 sources:
   - https://www.stagecoachbus.com/news/merseyside-and-south-lancashire/2026/june/stagecoach-merseyside-set-to-transport-thousands-as-anfield-stadium--hosts-summer-concerts
   - https://liverpoolfc.com/news/important-information-eagles-anfield
@@ -94,7 +94,7 @@ This is the part to plan properly.
 
 ## Where to stay: city centre or a short train ride out?
 
-| | City-centre hotel | House on the Northern line |
+| | City-centre hotel | House outside the centre |
 |---|---|---|
 | Shuttle access | Walk to Commutation Row | Train to Sandhills, then shuttle |
 | Price on concert nights | Often high, books up fast | Split between your group |
@@ -106,7 +106,7 @@ Neither is wrong. If you're two people who want to go out in town after, the cit
 
 ## Why Zermatt Lodge works for concert groups
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station on the Northern line. It's about 15 minutes by train to Liverpool Central, and the same line runs through Sandhills, where the concert shuttle picked up in 2026. It's not in the city centre and it's not walking distance to Anfield, but it gives a group a calm base with somewhere safe to leave bags and cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train to Liverpool Central, and Sandhills, where the concert shuttle picked up in 2026, is easy to reach by train. It's not in the city centre and it's not walking distance to Anfield, but it gives a group a calm base with somewhere safe to leave bags and cars.
 
 - **Sleeps up to 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready
@@ -124,4 +124,3 @@ To be clear: this is a quiet residential home with strict rules. **No parties or
 - [Hill Dickinson Stadium concerts: where to stay](/guides/hill-dickinson-stadium-concerts-stay)
 - [M&S Bank Arena concert accommodation](/guides/ms-bank-arena-concert-accommodation)
 - [Liverpool match day parking guide](/guides/liverpool-match-day-parking-guide)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)

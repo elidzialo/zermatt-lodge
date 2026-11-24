@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're booking accommodation for locums, agency nurses or other NHS staff on placement in Liverpool, start with the site they'll work at and their shift pattern, then work backwards. A base that's a short walk or drive from the hospital, with parking, blackout-friendly bedrooms and flexible dates, will do more for retention than a city-centre hotel. Check the host's safety basics, get the invoicing arrangements agreed before arrival, and build in flexibility for extensions. Zermatt Lodge, our 4-bedroom house in Fazakerley, is close to Aintree University Hospital and on the train line to the city centre, with free parking for 2 cars.
+If you're booking accommodation for locums, agency nurses or other NHS staff on placement in Liverpool, start with the site they'll work at and their shift pattern, then work backwards. A base that's a short walk or drive from the hospital, with parking, blackout-friendly bedrooms and flexible dates, will do more for retention than a city-centre hotel. Check the host's safety basics, get the invoicing arrangements agreed before arrival, and build in flexibility for extensions. Zermatt Lodge is our 4-bedroom house in Liverpool, with free parking for 2 cars.
 
 This guide is for **recruitment agencies, staff bank teams and trust coordinators** who book on behalf of clinicians. If you're a locum booking for yourself, see our [locum and agency nurse accommodation guide](/guides/locum-and-agency-nurse-accommodation-liverpool).
 
@@ -53,9 +53,9 @@ The Group employs more than 17,000 people. Other major employers include **Alder
 | Placement | Practical base | Why |
 |---|---|---|
 | Aintree or The Walton Centre | Fazakerley, Aintree, Walton | Walk or a short drive to work |
-| The Royal | City centre, or north Liverpool on the train | Close to Lime Street and Liverpool Central |
+| The Royal | City centre, or a suburb on the train | Close to Lime Street and Liverpool Central |
 | Alder Hey or Broadgreen | West Derby, Old Swan, Broadgreen | Short cross-suburb drive |
-| Rotating between sites | North Liverpool near the M57 with a train line | Options for driving and rail |
+| Rotating between sites | A house with parking and a train line | Options for driving and rail |
 
 ### Aintree in detail
 
@@ -67,7 +67,7 @@ Aintree University Hospital says the site is reached from **Lower Lane** and **L
 
 1. **How long is the journey** at shift times, not in the middle of the day? A 7am handover means leaving before rush hour; a night shift ends in the morning peak.
 2. **Is there parking** at the accommodation, and at the hospital?
-3. **Is there a train or bus option** if the clinician doesn't drive? Trainline puts Fazakerley to Liverpool Central at about 15 minutes, for example, but trains are less frequent late at night and on Sundays.
+3. **Is there a train or bus option** if the clinician doesn't drive? Many suburbs are 10 to 20 minutes from Liverpool Central by train, but trains are less frequent late at night and on Sundays.
 
 ### Rooms and sleep
 
@@ -139,7 +139,7 @@ Ask each clinician whether they're happy to share before you book, and make sure
 
 ## Zermatt Lodge for NHS placements
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to the Aintree hospital site and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **4 bedrooms with separate beds:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for staggered shifts

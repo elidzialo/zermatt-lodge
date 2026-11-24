@@ -27,7 +27,7 @@ faqs:
   - q: "Can a company book Zermatt Lodge over Christmas?"
     a: "Yes, subject to availability. Stays run from 2 to 30 nights, with monthly rates. Ask us for an invoice in your company's name before you book."
   - q: "Is the house quiet over the holidays?"
-    a: "It's a residential house in north Liverpool. Strictly no parties or events, including at Christmas and New Year."
+    a: "It's a residential house in Liverpool. Strictly no parties or events, including at Christmas and New Year."
 sources:
   - https://www.hoseasons.co.uk/blog/uk-bank-holidays
   - https://www.gov.uk/trading-hours-for-retailers-the-law
@@ -55,7 +55,7 @@ Because Boxing Day falls on a Saturday in 2026, the bank holiday moves to **Mond
 ## Food and supplies
 
 - **Large shops must close on Christmas Day** in England and Wales. Shop on Christmas Eve
-- **Holiday hours change.** The nearest Lidl normally lists 8am to 10pm Monday to Saturday, but check its Christmas hours
+- **Holiday hours change.** Supermarkets shorten their hours over Christmas, so check before you go
 - **Stock the freezer** with batch-cooked meals. See our [self-catering guide for work crews](/guides/self-catering-for-work-crews)
 - **Takeaways** are limited on Christmas Day. Don't rely on one
 
@@ -75,9 +75,9 @@ The 2026 festive timetable for Merseyrail and buses hadn't been published when w
 4. **Agree house rules with the crew.** Quiet hours and no gatherings apply at Christmas too
 5. **Plan for New Year's Eve.** Taxis are scarce and expensive late on 31 December
 
-## A crew base in north Liverpool
+## A crew base in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from Liverpool Central and close to the M57 and M58.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool Central.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

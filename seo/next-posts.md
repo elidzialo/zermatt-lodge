@@ -46,7 +46,7 @@ Picked on 19 November 2026 from seo/keywords.csv (including the new rows added t
 ## Why the top 5 come first
 
 1. **shabbat-in-liverpool-visitor-guide** - this is the main guide behind the new kosher filter. No competitor has a page about staying in Liverpool for Shabbat. It links straight to /kosher-homes.
-2. **grand-national-and-anfield-same-day-2027** - on Sat 10 Apr 2027 the Grand National and Liverpool v Newcastle are on the same day. That will be the busiest night of the year near the house, and nobody has written about the clash yet.
+2. **grand-national-and-anfield-same-day-2027** - on Sat 10 Apr 2027 the Grand National and Liverpool v Newcastle are on the same day. That will be the busiest night of the year, and nobody has written about the clash yet.
 3. **tour-de-france-liverpool-2027-stay** - Stage 2 finishes on The Strand on Sat 3 Jul 2027. Search interest is growing and few accommodation pages cover it.
 4. **serviced-accommodation-liverpool-with-parking** - "serviced accommodation Liverpool" is a search-verified money term. Most rival listings are city-centre flats with no free parking.
 5. **alternative-accommodation-insurance-claims-merseyside** - insurance stays run for months and are booked by loss adjusters. This post goes beyond the existing insurance page and is written for the people who do the booking.

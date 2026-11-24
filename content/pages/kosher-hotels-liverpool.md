@@ -81,7 +81,7 @@ Merseyside Jewish Community Care says **kosher meals are available on request at
 
 ## An honest note about Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in **north Liverpool**, sleeping 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. It is **not** kosher, has no declared Shabbat set-up and is **not** within walking distance of a shul. It can suit Jewish families visiting north Liverpool on weekdays, such as for an appointment at Aintree University Hospital or the Walton Centre, who are self-catering with their own food and equipment.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. It is **not** kosher, has no declared Shabbat set-up and is **not** within walking distance of a shul. It can suit Jewish families visiting Liverpool on weekdays, such as for an appointment at Aintree University Hospital or the Walton Centre, who are self-catering with their own food and equipment.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

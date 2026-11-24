@@ -1,5 +1,7 @@
 # Zermatt Lodge - keyword clusters and landing pages
 
+> **Location rule (Eli, 22 Nov 2026):** describe Zermatt Lodge only as "a 4-bedroom house in Liverpool" (or "our house in Liverpool"). Never say or imply it is in or near Fazakerley, Aintree or north Liverpool, never use L9/L10, nearby streets or shops, walking or drive times or distances from the house, or a phone number. "Liverpool city centre is about 15 minutes by train or car" is fine. Area guides about Fazakerley or Aintree are fine as neutral visitor guides.
+
 Data file: `keywords.csv` (13,767 unique keywords). Generator: `build_keywords.py`. Run `python3 build_keywords.py` to rebuild it.
 
 ## Please read first
@@ -13,7 +15,7 @@ Data file: `keywords.csv` (13,767 unique keywords). Generator: `build_keywords.p
 
 | # | Cluster | Keywords | Priority 1 | Landing page slug | Recommended page title |
 |---|---|---|---|---|---|
-| 1 | core-house-liverpool | 422 | 126 | `/` | Zermatt Lodge - 4 Bed Holiday Home in North Liverpool, Sleeps 7, Free Parking |
+| 1 | core-house-liverpool | 422 | 126 | `/` | Zermatt Lodge - 4 Bed Holiday Home in Liverpool, Sleeps 7, Free Parking |
 | 2 | group-accommodation | 1,431 | 429 | `/group-accommodation-liverpool` | Group Accommodation in Liverpool - Whole 4 Bed House for 7 with Games Room |
 | 3 | family-stays | 724 | 225 | `/family-holiday-home-liverpool` | Family Holiday Home in Liverpool with Garden, Games Room and Parking |
 | 4 | contractor-workforce | 1,946 | 525 | `/contractor-accommodation-liverpool` | Contractor Accommodation Liverpool - 4 Bed House, Sleeps 7, Parking for 2 Vans |
@@ -66,11 +68,11 @@ Priority split overall: 1 = 3,437, 2 = 8,577, 3 = 1,753.
 The homepage should target the broad offer that combines everything, and link down to each cluster page.
 
 - **Primary:** "holiday home Liverpool", "4 bed house Liverpool", "group accommodation Liverpool"
-- **Secondary:** "house to rent short term Liverpool", "self catering house Liverpool sleeps 7", "Airbnb north Liverpool with parking", "holiday home with games room Liverpool", "accommodation Aintree", "accommodation Fazakerley", "short let north Liverpool"
-- **Brand:** "Zermatt Lodge Liverpool", "Zermatt Lodge Fazakerley"
-- **Suggested title tag:** `Zermatt Lodge | 4 Bed House in North Liverpool - Sleeps 7, Games Room, Free Parking`
-- **Suggested H1:** "A 4-bedroom house in north Liverpool for groups, families and work crews"
-- **The first paragraph should name:** Fazakerley, Aintree, Aintree University Hospital, Aintree Racecourse, Fazakerley station, M57/M58, sleeps 7, 4 bedrooms, 2 bathrooms, pool table games room, garden, and parking for 2 cars.
+- **Secondary:** "house to rent short term Liverpool", "self catering house Liverpool sleeps 7", "Airbnb Liverpool with parking", "holiday home with games room Liverpool", "accommodation Aintree"
+- **Brand:** "Zermatt Lodge Liverpool"
+- **Suggested title tag:** `Zermatt Lodge | 4 Bed House in Liverpool - Sleeps 7, Games Room, Free Parking`
+- **Suggested H1:** "A 4-bedroom house in Liverpool for groups, families and work crews"
+- **The first paragraph should name:** Liverpool, about 15 minutes from the city centre, sleeps 7, 4 bedrooms, 2 bathrooms, pool table games room, garden, and parking for 2 cars.
 
 ## AI assistants (ChatGPT, Gemini, Perplexity, Claude) - how to use the conversational cluster
 

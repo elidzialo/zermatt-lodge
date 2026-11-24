@@ -83,9 +83,9 @@ The 2026 festive timetable hadn't been published when we checked. In past years 
 
 For the whole month, see our [December 2026 events guide](/guides/liverpool-december-2026-events).
 
-## A family house for Christmas in north Liverpool
+## A family house for Christmas in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's a quiet residential home, about 15 minutes by train from Liverpool Central when trains are running, and close to Aintree for Boxing Day.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's a quiet residential home, about 15 minutes by train from Liverpool Central when trains are running.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

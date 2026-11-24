@@ -1,6 +1,6 @@
 ---
 title: "Grand National and Liverpool v Newcastle on 10 April 2027"
-meta_description: "On Sat 10 April 2027 the Grand National and Liverpool v Newcastle fall on the same day. Times, trains, road advice and where to stay in north Liverpool."
+meta_description: "On Sat 10 April 2027 the Grand National and Liverpool v Newcastle fall on the same day. Times, trains, road advice and where to stay."
 slug: grand-national-and-anfield-same-day-2027
 h1: "Grand National Day and Liverpool v Newcastle on 10 April 2027: How to Plan It"
 quick_answer: "On Saturday 10 April 2027 the Grand National runs at Aintree at 4pm and Liverpool host Newcastle at Anfield, listed for 3pm (subject to TV changes). Both crowds will be on the move at the same time, so book accommodation early, travel by Merseyrail and expect changed timetables on the Kirkby line. You realistically can't attend both live."
@@ -27,7 +27,7 @@ faqs:
   - q: "How do trains work on Grand National days?"
     a: "The Jockey Club says Merseyrail runs Liverpool Central and Moorfields to Aintree every 7.5 minutes before and after racing. On the Kirkby line, trains start and end at Sandhills at busy times, so people travelling to or from Rice Lane, Fazakerley, Kirkby or Headbolt Lane must change there."
   - q: "Where should I stay if I want both events?"
-    a: "North Liverpool works well, because Aintree and Anfield are both close and the city centre is a short train ride away. Zermatt Lodge, near Fazakerley station, sleeps 7 with free parking for 2 cars. Book early, as this is one of the busiest nights of the year."
+    a: "Somewhere with parking and good train links, so you can reach both venues without driving. Zermatt Lodge, a 4-bedroom house in Liverpool, sleeps 7 with free parking for 2 cars. Book early, as this is one of the busiest nights of the year."
 sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/grand-national-day/
   - https://ppe.thejockeyclub.co.uk/the-grand-national/about-the-event/when-what-time-is-it/
@@ -59,7 +59,7 @@ The Liverpool fixture comes from the published 2026-27 Premier League list. As w
 
 Not live. A 3pm kick-off ends at about 4.50pm, after the race has been run. If the game moves to 12.30pm, it ends at about 2.20pm. In theory you could then cross north Liverpool to Aintree, but you would need a racing ticket, the trains will be packed, and roads near both venues will be closed or gridlocked. Most people pick one and watch the other on TV.
 
-A group of friends can split up, though. Some go racing and some go to the match, and you all meet back at the house in the evening. Fazakerley sits between the two venues, so that works well from north Liverpool.
+A group of friends can split up, though. Some go racing and some go to the match, and you all meet back at the house in the evening. Plan each group's transport separately.
 
 ## Getting to Aintree on Grand National Day
 
@@ -69,7 +69,7 @@ A group of friends can split up, though. Some go racing and some go to the match
 - **Aintree back to Central and Moorfields every 7.5 minutes** from about 4.30pm to 8.30pm, after racing
 - A **15-minute service on the Ormskirk line**, with a reduced service at Aughton Park and Town Green
 
-**An important point if you're staying near Fazakerley.** At busy times on race days, **Kirkby line trains start and end at Sandhills**. The Jockey Club says that between about 11am and 2pm and between 5pm and 9pm, people heading to or from Rice Lane, Fazakerley, Kirkby or Headbolt Lane must change at Sandhills. In 2026 Merseytravel also ran a reduced 30-minute service on the Headbolt Lane branch on all three race days. So allow extra time, or walk or take a taxi to the course if you're close enough.
+**An important point if you're staying on the Kirkby line.** At busy times on race days, **Kirkby line trains start and end at Sandhills**. The Jockey Club says that between about 11am and 2pm and between 5pm and 9pm, people heading to or from Rice Lane, Fazakerley, Kirkby or Headbolt Lane must change at Sandhills. In 2026 Merseytravel also ran a reduced 30-minute service on the Headbolt Lane branch on all three race days. So allow extra time, or walk or take a taxi to the course if you're close enough.
 
 **By bus.** Merseytravel says Stagecoach ran a racecourse shuttle from Elliot Street in the city centre in 2026, and routes 300, 310 and 345 serve the Aintree area on diversion.
 
@@ -107,7 +107,7 @@ Remember the Sandhills point above. If Kirkby line trains are terminating there,
 
 ## Where to stay: Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in **north Liverpool, near Fazakerley station**. It's not in the city centre. Direct trains reach Liverpool Central in **about 15 minutes**. For this weekend, the location matters: Aintree Racecourse and Anfield are both a short trip away, and you're out of the city-centre crowds at night.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre. Direct trains reach Liverpool Central in **about 15 minutes**. For this weekend, that keeps you out of the city-centre crowds at night.
 
 - **Sleeps 7:** king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, a big kitchen and a dining room for a group breakfast
@@ -128,5 +128,4 @@ Want to compare? [See all homes](/) on Book Homes.
 - [Grand National accommodation](/guides/grand-national-accommodation)
 - [Grand National weekend itinerary](/guides/grand-national-weekend-itinerary)
 - [Anfield match day accommodation](/guides/anfield-match-day-accommodation)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Liverpool match day parking guide](/guides/liverpool-match-day-parking-guide)

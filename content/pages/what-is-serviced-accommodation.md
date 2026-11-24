@@ -43,7 +43,7 @@ This guide explains the term in plain English and what to check before you book 
 
 The Valuation Office Agency, which values property for business rates, describes serviced apartments as **self-contained accommodation** that is **"fully serviced in terms of services, cleaning and provision of utilities"**. It notes they grew from hotel users wanting more independence, and that they usually aim at **business users** wanting short-term, good-quality accommodation.
 
-In practice, "serviced accommodation" in the UK also covers **whole houses** run the same way.
+In practice "serviced accommodation" in the UK also covers **whole houses** run the same way.
 
 ## What's usually included
 
@@ -92,9 +92,9 @@ The line is blurry. Many serviced operators list on Airbnb and Booking.com. The 
 
 Liverpool has many **city-centre serviced apartments**, close to offices and nightlife but often without parking. Outside the centre, **whole houses** give more space and free parking for crews and families. Our [house vs serviced apartment guide](/guides/house-vs-serviced-apartment-liverpool) compares the two.
 
-## A serviced house in north Liverpool
+## A serviced house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool Central.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

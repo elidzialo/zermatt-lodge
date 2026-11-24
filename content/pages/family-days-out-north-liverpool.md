@@ -1,9 +1,9 @@
 ---
 title: "Family Days Out in North Liverpool and Merseyside"
-meta_description: "Family days out north of Liverpool: Croxteth Hall, Knowsley Safari, Crosby Beach, Formby, Southport and free museums, with drive times from Fazakerley."
+meta_description: "Family days out north of Liverpool: Croxteth Hall, Knowsley Safari, Crosby Beach, Formby, Southport and free museums, with rough drive times."
 slug: family-days-out-north-liverpool
 h1: "Family Days Out in North Liverpool and Merseyside"
-quick_answer: "North Liverpool is a good base for family days out, with a country park with a farm, a drive-through safari, a beach with 100 iron statues, red squirrel woods and free museums within a short drive or train ride. Drive times from Fazakerley vary with traffic, so check a live route."
+quick_answer: "North Liverpool is a good base for family days out, with a country park with a farm, a drive-through safari, a beach with 100 iron statues, red squirrel woods and free museums within a short drive or train ride. Drive times vary with traffic, so check a live route."
 primary_keyword: "family days out north liverpool"
 secondary_keywords:
   - "things to do with kids north liverpool"
@@ -17,13 +17,13 @@ related:
   - rainy-day-liverpool-kids
 faqs:
   - q: "What are the best family days out near north Liverpool?"
-    a: "Croxteth Hall and Country Park, Knowsley Safari, Crosby Beach and Another Place, Formby's beach and pinewoods, Southport's seafront and Liverpool's free museums are all popular and within easy reach of Fazakerley."
+    a: "Croxteth Hall and Country Park, Knowsley Safari, Crosby Beach and Another Place, Formby's beach and pinewoods, Southport's seafront and Liverpool's free museums are all popular and within easy reach."
   - q: "What time is the last entry to Knowsley Safari's drive-through?"
     a: "Knowsley Safari says the last entry to the Safari Drive is 3pm, and you'll be refused entry if you arrive later. Check its website for seasonal hours."
   - q: "Is Crosby Beach safe for children?"
     a: "Stay near the promenade. Sefton Council warns against walking out to the furthest statues, where the sand is very soft and muddy, and the beach can't be accessed around high tide on big tides."
   - q: "What can families do in Liverpool on a rainy day?"
-    a: "The free national museums, especially World Museum and the Museum of Liverpool, are great with kids. Take the train from Fazakerley to Liverpool Central."
+    a: "The free national museums, especially World Museum and the Museum of Liverpool, are great with kids. Take the train to Liverpool Central."
   - q: "Is Croxteth Hall free?"
     a: "The country park is open all year. Some attractions, such as the walled garden, Home Farm and hall tours, have their own opening times and may charge, so check before you go."
 sources:
@@ -35,13 +35,13 @@ sources:
   - https://www.thejockeyclub.co.uk/aintree/media/press-releases/2026/07/100000-grand-sefton-chase-returns-to-becher-chase-day-as-aintree-welcomes-new-molyneux-hurdle/
 ---
 
-North Liverpool is a great base for family days out. Within a short drive or train ride you've got a country park with a farm, a drive-through safari, a beach with 100 iron statues, red squirrel woods and some of the best free museums in the country. Here's our pick, with rough drive times from Fazakerley (they vary with traffic, so always check a live route) and tips for each.
+North Liverpool is a great base for family days out. Within a short drive or train ride you've got a country park with a farm, a drive-through safari, a beach with 100 iron statues, red squirrel woods and some of the best free museums in the country. Here's our pick, with rough drive times from north Liverpool (they vary with traffic, so always check a live route) and tips for each.
 
-## Close to home (under 15 minutes)
+## In north Liverpool
 
 ### Croxteth Hall and Country Park
 
-**Rough drive from Fazakerley:** around 10 minutes
+**Getting there:** in north Liverpool, best by car
 
 A huge country park with woodland walks, a Victorian walled garden and **Home Farm**.
 
@@ -103,7 +103,7 @@ Southport has a long pier, Lord Street's shops and Pleasureland. Combine it with
 
 ## City days by train
 
-Take the Merseyrail Northern line from Fazakerley to **Liverpool Central** (about 15 minutes).
+Take the train to **Liverpool Central** (about 15 minutes from the house).
 
 - **World Museum:** an aquarium, planetarium shows, dinosaurs and space, all under one roof
 - **Museum of Liverpool:** hands-on galleries by the river
@@ -123,7 +123,7 @@ The national museums are free, which makes a city day very affordable for famili
 
 ## Why Zermatt Lodge is a great family base
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to Croxteth and the M57/M58.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -131,7 +131,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to Croxteth and th
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Big kitchen and dining room** for picnics and family dinners
 - **Free parking for 2 cars**, so you can split up for different days out
-- **Near Fazakerley station and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

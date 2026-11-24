@@ -35,7 +35,7 @@ sources:
   - https://www.placenorthwest.co.uk/liverpool-city-region-development-update-2026-summary-gallery/
 ---
 
-Prescot is a small market town in Knowsley, about 8 miles east of Liverpool city centre, with a surprising cultural draw: the Shakespeare North Playhouse, an award-winning theatre built to honour the Elizabethan playhouse that stood in the town in the 1590s. It also has a museum of its watch and clock-making past, a Grade I listed church, and Knowsley Safari on the edge of town. It's an easy half-day or evening out from north Liverpool. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre and a short drive down the M57 from Prescot.
+Prescot is a small market town in Knowsley, about 8 miles east of Liverpool city centre, with a surprising cultural draw: the Shakespeare North Playhouse, an award-winning theatre built to honour the Elizabethan playhouse that stood in the town in the 1590s. It also has a museum of its watch and clock-making past, a Grade I listed church, and Knowsley Safari on the edge of town. It's an easy half-day or evening out from Liverpool. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
 
 ## Prescot at a glance
 
@@ -132,7 +132,7 @@ Or split it: safari one day with the children, theatre another evening for the a
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in Prescot and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with the M57 close by for Prescot and Knowsley.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Prescot and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with free parking so you can drive to Prescot and Knowsley.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen and dining room
@@ -149,7 +149,7 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 ## Related guides
 
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Kirkby town guide](/guides/kirkby-town-guide)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)
 - [Things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group)

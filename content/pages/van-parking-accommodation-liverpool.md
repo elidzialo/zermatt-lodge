@@ -34,7 +34,7 @@ sources:
 
 If your crew is coming to Liverpool with vans, don't just look for "free parking" on a listing. Ask the host how many vehicles fit off-street, how long and high the space is, and whether vans are allowed. Many homes have driveways sized for cars, and city-centre multi-storeys often have height limits of around 2.1m. The good news is that Liverpool has no Clean Air Zone charge, and the suburbs near the M57 and M58 give quicker access to sites across the city region than the centre does. This guide covers what to ask, where vans can and can't go, and how to keep tools safe.
 
-We'll be upfront about our own house too: Zermatt Lodge in north Liverpool has free off-street parking for **2 cars**. We don't list it as having van parking, so if you're bringing vans, please ask before booking.
+We'll be upfront about our own house too: Zermatt Lodge in Liverpool has free off-street parking for **2 cars**. We don't list it as having van parking, so if you're bringing vans, please ask before booking.
 
 ## Why van parking matters more than people think
 
@@ -87,7 +87,7 @@ If your work takes you to the Wirral, the Mersey tunnels are tolled. Merseytrave
 
 ### Using the motorways
 
-North Liverpool sits near the ends of the **M57** and **M58**, which link to the M62 and M6. For sites at Knowsley, Kirkby, Aintree and Skelmersdale, or further out in Lancashire and Cheshire, starting from the north of the city means you avoid the city-centre traffic. Knowsley Safari's own directions, for example, use junction 6 of the M62 to join the M57, then junction 2. See our [M57 and M58 accommodation guide](/guides/accommodation-near-m57-m58-liverpool).
+The **M57** and **M58** link to the M62 and M6. For sites at Knowsley, Kirkby, Aintree and Skelmersdale, or further out in Lancashire and Cheshire, a base outside the centre means you avoid the city-centre traffic. Knowsley Safari's own directions, for example, use junction 6 of the M62 to join the M57, then junction 2. See our [M57 and M58 accommodation guide](/guides/accommodation-near-m57-m58-liverpool).
 
 ## Keeping tools safe
 
@@ -118,7 +118,7 @@ Be honest with the host about how many vehicles you're bringing. Turning up with
 
 ## Zermatt Lodge for work crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** in 4 bedrooms with **separate beds**: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for early starts

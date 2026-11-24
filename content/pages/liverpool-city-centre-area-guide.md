@@ -22,13 +22,13 @@ faqs:
   - q: "Is Liverpool city centre walkable?"
     a: "Yes. Visit Liverpool describes the city centre as compact and walkable, with Merseyrail's underground stations linking it. Most visitors walk between the waterfront, Liverpool ONE, Ropewalks and the Georgian Quarter."
   - q: "Can you rent a whole 4-bedroom house in Liverpool city centre?"
-    a: "They are rare. Most city-centre short lets are apartments. Groups who want a whole house with parking often stay in a suburb with a direct train, such as Fazakerley, about 15 minutes from Liverpool Central."
+    a: "They are rare. Most city-centre short lets are apartments. Groups who want a whole house with parking often stay in a suburb with a direct train, about 15 minutes out."
   - q: "Which area of the city centre is best for nightlife?"
     a: "Ropewalks, around Bold Street, Fleet Street and Concert Square, is the main nightlife area. The Baltic Triangle has bars, breweries, music venues and the Baltic Market street food hall."
   - q: "What is on in Liverpool city centre at Christmas 2026?"
     a: "The City Council's 2026 programme includes Skate St George's at St George's Hall, Liverpool Christmas Wonderland with a covered ice rink at the Pier Head, pop-up markets at Basnett Street and the Cunard Building, and festive events at the City Halls."
-  - q: "How late do trains run from the city centre to Fazakerley?"
-    a: "Trainline lists the last train from Fazakerley to Liverpool Central around 23:36 on a sample day, with about 69 trains a day. Check return times before a late night out."
+  - q: "How late do Merseyrail trains run from the city centre?"
+    a: "Last trains on most Merseyrail lines leave the city centre around midnight on a typical weekday. Check return times in the Merseyrail app before a late night out."
 sources:
   - https://www.visitliverpool.com/explore/liverpool-city-centre/
   - https://www.lonelyplanet.com/articles/best-neighborhoods-in-liverpool
@@ -38,7 +38,7 @@ sources:
   - https://liverpoolexpress.co.uk/liverpool-announced-as-a-host-for-the-2027-tour-de-france/
 ---
 
-Liverpool city centre is **compact and walkable**, with distinct districts close together: the **waterfront and Royal Albert Dock**, **Liverpool ONE** for shopping, **Ropewalks** for nightlife, the **Baltic Triangle** for street food and bars, and the **Georgian Quarter** with its two cathedrals. Whole 4-bedroom houses are rare in the centre itself, where most short lets are apartments. Many families and groups stay in a house outside the centre and take Merseyrail in. From Fazakerley in north Liverpool, that's about 15 minutes to Liverpool Central.
+Liverpool city centre is **compact and walkable**, with distinct districts close together: the **waterfront and Royal Albert Dock**, **Liverpool ONE** for shopping, **Ropewalks** for nightlife, the **Baltic Triangle** for street food and bars, and the **Georgian Quarter** with its two cathedrals. Whole 4-bedroom houses are rare in the centre itself, where most short lets are apartments. Many families and groups stay in a house outside the centre and take Merseyrail in. From Zermatt Lodge, that's about 15 minutes to Liverpool Central.
 
 ## The districts at a glance
 
@@ -59,7 +59,7 @@ Liverpool city centre is **compact and walkable**, with distinct districts close
 
 **Merseyrail.** The underground stations (Moorfields, Liverpool Central, James Street and Lime Street) link the centre to the suburbs.
 
-**From north Liverpool.** Trains from Fazakerley reach **Liverpool Central in about 15 minutes**, around 69 times a day on a sample weekday. The first leaves around 04:46 and the last around 23:36. Check the return time before a late night.
+**From Zermatt Lodge.** Trains reach **Liverpool Central in about 15 minutes**. Check the return time before a late night.
 
 **Driving.** City-centre parking is chargeable and fills up on event days. If you're staying outside the centre with free parking, leaving the car and taking the train is usually cheaper and easier.
 
@@ -91,7 +91,7 @@ Neither is better for everyone. For a couple on a short city break, a central fl
 
 ## A whole house within 15 minutes of the centre
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station. It is **not** in the city centre. It's about **15 minutes by train** to Liverpool Central, which puts the waterfront, Liverpool ONE and Ropewalks within easy reach.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It is **not** in the city centre. It's about **15 minutes by train** to Liverpool Central, which puts the waterfront, Liverpool ONE and Ropewalks within easy reach.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**
@@ -104,7 +104,7 @@ Strictly no parties or events - bookings found to be for parties are cancelled. 
 
 Check dates and [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Looking for something more central? [See all homes](/) on Book Homes.
 
-## A one-day city-centre plan from north Liverpool
+## A one-day city-centre plan
 
 - **10am:** train to Liverpool Central
 - **10.30am:** walk down to the Royal Albert Dock and the Museum of Liverpool at the Pier Head (the Maritime Museum is closed until 2028)
@@ -116,6 +116,5 @@ Check dates and [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt
 ## Related guides
 
 - [Where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Liverpool nightlife for groups](/guides/liverpool-nightlife-guide-groups)
 - [Liverpool Christmas markets](/guides/liverpool-christmas-markets-guide)

@@ -1,6 +1,6 @@
 ---
 title: "Merseyside Derby Weekend: Where to Stay in Liverpool"
-meta_description: "Planning a Merseyside derby weekend? 2026/27 derby dates, how to reach Anfield and Hill Dickinson Stadium, parking, and a 4-bed house in north Liverpool."
+meta_description: "Planning a Merseyside derby weekend? 2026/27 derby dates, how to reach Anfield and Hill Dickinson Stadium, parking, and a 4-bed house in Liverpool."
 slug: merseyside-derby-weekend
 h1: "Merseyside Derby Weekend: Planning Your Stay in Liverpool"
 quick_answer: "Everton host Liverpool at Hill Dickinson Stadium on Sunday 29 November 2026 at 12pm, and Liverpool host Everton at Anfield on Saturday 30 January 2027 at 12.30pm (moved for TNT Sports). Book early, as hotels fill fast for derby weekends."
@@ -38,7 +38,7 @@ sources:
   - https://www.liverpoolfc.com/news/protecting-fair-access-tickets-important-information-supporters
 ---
 
-A Merseyside derby weekend needs more planning than an ordinary match: hotels fill early, roads and pubs near both grounds are packed, and kick-off times often move for TV. For 2026/27, Everton host Liverpool at Hill Dickinson Stadium on **Sunday 29 November 2026 at 12pm**, and Liverpool host Everton at Anfield on **Saturday 30 January 2027** (listed for 3pm, subject to change). Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and about 15 minutes by train from the city centre, with room for up to 7 fans and free parking for two cars.
+A Merseyside derby weekend needs more planning than an ordinary match: hotels fill early, roads and pubs near both grounds are packed, and kick-off times often move for TV. For 2026/27, Everton host Liverpool at Hill Dickinson Stadium on **Sunday 29 November 2026 at 12pm**, and Liverpool host Everton at Anfield on **Saturday 30 January 2027** (listed for 3pm, subject to change). Zermatt Lodge is a whole 4-bedroom house in Liverpool, with room for up to 7 fans and free parking for two cars.
 
 This guide is specifically about derby days: dates, which station serves which ground, and how to plan a group weekend around one of the biggest games in the city.
 
@@ -61,7 +61,7 @@ Everton's men's team moved to their new stadium at Bramley-Moore Dock, on the wa
 - **Shuttle buses:** routes 919, 929 and 939 have run on match days (£2). Check Merseytravel for derby-day arrangements
 - **Parking:** a council matchday parking zone operates around the stadium. Check the latest rules before you drive
 
-From Fazakerley, Trainline shows Sandhills about 8 minutes away by train. See [getting to Everton's stadium from Fazakerley](/guides/getting-to-everton-stadium-from-fazakerley).
+Sandhills is the closest station. See our [Everton stadium guide](/guides/everton-stadium-accommodation).
 
 ### Anfield (Liverpool)
 
@@ -96,7 +96,7 @@ The November derby kicks off at **12pm on a Sunday**. Sunday trains start later 
 
 **Saturday**
 - Arrive, check in from 3pm, and do a food shop
-- Head into the city for the afternoon or evening. The train from Fazakerley reaches Liverpool Central in about 15 minutes
+- Head into the city for the afternoon or evening. The train from the house reaches Liverpool Central in about 15 minutes
 - Get back for a quiet night before an early start
 
 **Sunday (12pm kick-off)**
@@ -117,7 +117,7 @@ The November derby kicks off at **12pm on a Sunday**. Sunday trains start later 
 
 ## Why Zermatt Lodge works for a derby weekend
 
-Zermatt Lodge is in north Liverpool, the side of the city both grounds are on. It isn't in the city centre and isn't walking distance to either stadium, but it's near Fazakerley station on the same Merseyrail line that serves Sandhills.
+Zermatt Lodge is a 4-bedroom house in Liverpool. It isn't in the city centre and isn't walking distance to either stadium, but you can take the train to Sandhills for both grounds.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for match-day mornings

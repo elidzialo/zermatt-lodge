@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-For a long stay in Liverpool, of a month or more, the right place is the one where the boring details are agreed upfront: cleaning, linen, bills, parking and invoices. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars, a big kitchen and room for up to 7. It suits families between homes, project teams and anyone who needs more than a hotel room for several weeks.
+For a long stay in Liverpool, of a month or more, the right place is the one where the boring details are agreed upfront: cleaning, linen, bills, parking and invoices. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars, a big kitchen and room for up to 7. It suits families between homes, project teams and anyone who needs more than a hotel room for several weeks.
 
 This guide explains what to ask any host before booking a long stay, and how a house compares with an aparthotel.
 
@@ -105,11 +105,11 @@ NHS guidance says you don't need ID or proof of address to register with a GP. Y
 
 ### Shopping
 
-There's a Lidl close to Zermatt Lodge, which makes a weekly shop easy. Online grocery delivery works well too.
+Online grocery delivery makes a weekly shop easy.
 
 ### Getting around
 
-From Fazakerley station, Merseyrail trains reach Liverpool Central in about 15 minutes. Since February 2026, Merseyrail has accepted contactless bank cards, phones and watches: tap in and tap out. For longer stays, it's worth comparing weekly or monthly tickets on the Merseytravel website.
+From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. Since February 2026, Merseyrail has accepted contactless bank cards, phones and watches: tap in and tap out. For longer stays, it's worth comparing weekly or monthly tickets on the Merseytravel website.
 
 ### Tax and expenses
 
@@ -117,7 +117,7 @@ If you're working away from your usual workplace, tax rules may let you or your 
 
 ## Why Zermatt Lodge works for long stays
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, Aintree University Hospital and the M57/M58. It isn't in the city centre, which is exactly why it has space and parking.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, which is exactly why it has space and parking.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

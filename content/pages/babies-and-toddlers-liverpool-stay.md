@@ -38,7 +38,7 @@ sources:
   - https://www.nationaltrust.org.uk/visit/liverpool-lancashire/formby/formby-beach-what-to-know-before-you-plan-a-visit-this-summer
 ---
 
-Liverpool is an easy city to visit with a baby or toddler: under-5s travel free on Merseyside's buses, trains and ferries, the newer Merseyrail trains have level boarding for buggies, and some of the best toddler days out, like the Museum of Liverpool, are free. The key is choosing accommodation that works for naps, bedtimes and mess, and asking the right questions before you book. A whole house with a garden and a washing machine often suits families better than a hotel room. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, with a fully fenced garden and free parking for 2 cars.
+Liverpool is an easy city to visit with a baby or toddler: under-5s travel free on Merseyside's buses, trains and ferries, the newer Merseyrail trains have level boarding for buggies, and some of the best toddler days out, like the Museum of Liverpool, are free. The key is choosing accommodation that works for naps, bedtimes and mess, and asking the right questions before you book. A whole house with a garden and a washing machine often suits families better than a hotel room. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, with a fully fenced garden and free parking for 2 cars.
 
 ## Questions to ask before you book
 
@@ -82,7 +82,7 @@ Merseyrail's new trains have a **sliding step that meets the platform edge**, cr
 
 ### Stations
 
-Check stations before you travel. For example, National Rail lists **Fazakerley** as having step-free access to all platforms, but **not between platform 1 and the exit**, and the platforms are below street level. It also lists **baby changing** facilities. Merseyrail's passenger assistance line is 0800 0277 347.
+Check stations before you travel. National Rail lists step-free access and **baby changing** facilities for each station, and some stations have step-free platforms but **not step-free access to the exit**. Merseyrail's passenger assistance line is 0800 0277 347.
 
 ## Toddler-friendly days out
 
@@ -96,7 +96,7 @@ On the waterfront at Pier Head. Entry is free, and it's a strong choice for a ra
 
 ### Croxteth Hall and Country Park
 
-In west Liverpool, not far from Fazakerley by car:
+In west Liverpool, by car:
 
 - The **country park** is open all year
 - The **Victorian Walled Garden** is open 10am to 3pm daily (last admission 2.30pm)
@@ -152,7 +152,7 @@ Two outings a day is plenty. One in the morning and a short one in the afternoon
 
 ## Staying at Zermatt Lodge with little ones
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
 
 - **4 bedrooms, sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms, including a bathtub**
@@ -173,6 +173,6 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Christmas family stay in Liverpool](/guides/christmas-family-stay-liverpool)
 - [Alder Hey family accommodation](/guides/alder-hey-family-accommodation)

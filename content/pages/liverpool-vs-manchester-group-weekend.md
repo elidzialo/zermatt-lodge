@@ -1,9 +1,9 @@
 ---
 title: "Liverpool or Manchester for a Group Weekend? How to Choose a Base"
-meta_description: "Liverpool vs Manchester for a group or family weekend: travel between the two, what each city does best, and whole houses for groups in Prestwich, Crumpsall and north Liverpool."
+meta_description: "Liverpool vs Manchester for a group or family weekend: travel between the two, what each city does best, and whole houses for groups in Prestwich, Crumpsall and Liverpool."
 slug: liverpool-vs-manchester-group-weekend
 h1: "Liverpool vs Manchester for a Group Weekend: Which Base Suits You?"
-quick_answer: "Pick the city where most of your plans are, and day-trip to the other: TransPennine Express says Liverpool Lime Street to Manchester Piccadilly takes as little as 51 minutes, about 31 miles. Choose Manchester for two Premier League grounds, big arenas and a larger choice of group houses on Book Homes (8 in Greater Manchester, sleeping up to 12). Choose Liverpool for the waterfront, Anfield, Aintree and the Hill Dickinson Stadium, with Zermatt Lodge in Fazakerley sleeping 7 with free parking."
+quick_answer: "Pick the city where most of your plans are, and day-trip to the other: TransPennine Express says Liverpool Lime Street to Manchester Piccadilly takes as little as 51 minutes, about 31 miles. Choose Manchester for two Premier League grounds, big arenas and a larger choice of group houses on Book Homes (8 in Greater Manchester, sleeping up to 12). Choose Liverpool for the waterfront, Anfield, Aintree and the Hill Dickinson Stadium, with Zermatt Lodge in Liverpool sleeping 7 with free parking."
 primary_keyword: "liverpool vs manchester weekend"
 secondary_keywords:
   - "liverpool or manchester for a weekend"
@@ -23,7 +23,7 @@ faqs:
   - q: "Can we do both cities in one weekend?"
     a: "Yes. Stay in one and spend a day in the other. Check the last train back, especially on Sundays and during engineering works."
   - q: "Which city has more group houses on Book Homes?"
-    a: "Greater Manchester, with 8 whole homes sleeping 4 to 12. In Liverpool, Zermatt Lodge in Fazakerley sleeps 7, and other Liverpool homes are listed on the Liverpool hub."
+    a: "Greater Manchester, with 8 whole homes sleeping 4 to 12. In Liverpool, Zermatt Lodge in Liverpool sleeps 7, and other Liverpool homes are listed on the Liverpool hub."
   - q: "Are stag and hen parties allowed?"
     a: "No. Strictly no parties or events at our homes. Bookings found to be for parties are cancelled."
 sources:
@@ -51,7 +51,7 @@ Browse [homes in Manchester](/stays-in/manchester).
 
 - **You're going to Anfield, the Hill Dickinson Stadium or Aintree.** North Liverpool puts you close to all three.
 - **You want the waterfront, the museums and the Beatles.** See [things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group).
-- **There are up to 7 of you.** Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, sleeping 7, with free parking, a garden and a pool table.
+- **There are up to 7 of you.** Zermatt Lodge is our 4-bedroom house in Liverpool, sleeping 7, with free parking, a garden and a pool table.
 
 See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
 

@@ -1,6 +1,6 @@
 ---
 title: "Southport Guide: Christmas 2026, Events, the Pier and Where to Stay"
-meta_description: "Southport this winter: Christmas markets from 4 Dec, panto at The Atkinson, pier status, trains from north Liverpool and a house for groups."
+meta_description: "Southport this winter: Christmas markets from 4 Dec, panto at The Atkinson, pier status, trains and a house for groups."
 slug: southport-area-guide
 h1: "Southport Area Guide: What's On, Getting There and Where to Stay"
 quick_answer: "Southport is a Victorian seaside town on the Sefton coast, north of Liverpool. This winter it has Christmas markets on Market Street from 4 December 2026 and Cinderella at The Atkinson from 4 to 31 December. The pier has been closed for safety works since December 2022. From Fazakerley in north Liverpool the train takes about 1 hour 4 minutes with one change."
@@ -23,8 +23,8 @@ faqs:
     a: "No. Sefton Council closed the pier in December 2022 for safety reasons, and it stays closed during works. The council has sought £20 million for a full restoration. No reopening date had been published when we checked."
   - q: "What's on in Southport at Christmas 2026?"
     a: "Visit Southport lists Christmas markets on Market Street from 4 December, the Christmas lights from 20 November, Cinderella at The Atkinson from 4 to 31 December, and Santa's Secret Forest, a 40-acre woodland light trail, from 21 November."
-  - q: "How long does it take to get to Southport from north Liverpool?"
-    a: "From Fazakerley the train takes about 1 hour 4 minutes on average with one change, according to Trip.com, with fares from about £8.74. By car, allow extra time on summer weekends and event days."
+  - q: "How long does it take to get to Southport by train?"
+    a: "Merseyrail's Southport line runs direct from Liverpool Central and Moorfields; from the Kirkby or Ormskirk branches you change at Sandhills. By car, allow extra time on summer weekends and event days."
   - q: "When are the Southport Air Show and Flower Show?"
     a: "In 2026 the Flower Show ran from 20 to 23 August in Victoria Park and the Air Show from 29 to 30 August on the seafront. 2027 dates had not been confirmed in the sources we checked; check Visit Southport."
 sources:
@@ -87,9 +87,9 @@ Dates for **2027** had not been confirmed in the sources we checked. Watch Visit
 
 Further down the coast, **Formby** has pinewoods, dunes and red squirrels, and **Crosby** has Antony Gormley's *Another Place*. See our [Formby guide](/guides/formby-area-guide) and [Crosby guide](/guides/crosby-area-guide).
 
-## Getting to Southport from north Liverpool
+## Getting to Southport
 
-**By train.** From Fazakerley, Trip.com lists an average journey of **about 1 hour 4 minutes** with **one change**, run by Merseyrail, with fares from about **£8.74**. The sample timetable showed departures about every 15 minutes in the morning.
+**By train.** Merseyrail's Southport line runs direct from Liverpool Central and Moorfields, usually about every 15 minutes in the daytime. From the Kirkby or Ormskirk branches, change at Sandhills.
 
 **By car.** The coast roads north from Liverpool lead to Southport. Allow extra time on summer weekends and event days, when parking in the town fills up.
 
@@ -97,11 +97,11 @@ Further down the coast, **Formby** has pinewoods, dunes and red squirrels, and *
 
 **Stay in Southport** if you're here for the Air Show, Flower Show or golf and want to walk to the seafront.
 
-**Stay in Liverpool** if Southport is one day of several and you also want the city, the football or the waterfront. A north Liverpool base keeps you on the right side of the city for the coast, with the M57 and M58 nearby and direct trains into town.
+**Stay in Liverpool** if Southport is one day of several and you also want the city, the football or the waterfront. A house with parking gives you the coast by car and the city by train.
 
-## Zermatt Lodge: a north Liverpool base for the coast
+## Zermatt Lodge: a Liverpool base for the coast
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station, about **15 minutes by train** from Liverpool city centre. It isn't in Southport, and it isn't in the city centre. It's a quiet family house that works as a base for both.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool city centre. It isn't in Southport, and it isn't in the city centre. It's a quiet family house that works as a base for both.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**

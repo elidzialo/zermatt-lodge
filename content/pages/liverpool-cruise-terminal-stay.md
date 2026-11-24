@@ -111,7 +111,7 @@ Better for bigger families and groups travelling together, particularly with a c
 
 ## Why Zermatt Lodge works for cruise families
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M58. It isn't on the waterfront and it isn't in the city centre. Families heading for the terminal can drive in along the dock road or take a taxi, and travel time depends on the time of day, so check a live route for your embarkation slot. It's also near Fazakerley station, about 15 minutes by train to Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't on the waterfront and it isn't in the city centre. Families heading for the terminal can drive in along the dock road or take a taxi, and travel time depends on the time of day, so check a live route for your embarkation slot. It's about 15 minutes by train to Liverpool Central.
 
 What it offers a cruise family or group:
 
@@ -128,8 +128,6 @@ Check-in is from 3pm and checkout is 11am. It's a quiet home: no parties or even
 
 ## Related guides
 
-- [Liverpool airport transport](/guides/liverpool-airport-to-fazakerley)
-- [Lime Street to Fazakerley](/guides/lime-street-to-fazakerley)
 - [Parking in Liverpool city centre](/guides/parking-liverpool-city-centre)
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
 - [Liverpool weekend itinerary by car](/guides/liverpool-weekend-itinerary-by-car)

@@ -21,7 +21,7 @@ faqs:
     a: "The busiest area is the Ropewalks, around Concert Square, Seel Street and Wood Street, close to Liverpool Central station. Mathew Street in the Cavern Quarter is the other big late-night area, with live music bars."
   - q: "Is Liverpool safe at night?"
     a: "Liverpool has held Purple Flag status, an award for safe and well-run night-time economies, every year since 2010. In May 2026 Merseyside Police launched nine Halo Points, well-lit safe spaces linked to 999 and CCTV, around Concert Square, Seel Street and Mathew Street."
-  - q: "How do we get back to north Liverpool after a night out?"
+  - q: "How do we get back after a night out?"
     a: "Take the Merseyrail Northern line from Liverpool Central or Moorfields towards Kirkby or Headbolt Lane, and check the last train in the Merseyrail app. After that, use a licensed black cab from a rank or a pre-booked private hire car."
   - q: "Can private hire taxis pick you up off the street in Liverpool?"
     a: "No. Liverpool City Council says private hire journeys must be booked in advance. Only hackney carriages (black cabs) can be hailed or taken from a rank, and the meter should be on for trips within Liverpool."
@@ -70,7 +70,7 @@ South of the city centre, the Baltic Triangle is a former warehouse district wit
 Lark Lane, near Sefton Park in south Liverpool, is a street of pubs, bars and restaurants with a village feel. It's quieter than town.
 
 **Good for:** a relaxed evening, or a group with mixed tastes.
-**Bear in mind:** it's on the opposite side of the city from north Liverpool, so you'll want a taxi.
+**Bear in mind:** it's in south Liverpool, so you may want a taxi.
 
 ## Which area suits your group?
 
@@ -98,11 +98,11 @@ Our group tips:
 4. **Charge your phone** before you go out and carry a small power bank.
 5. **Pace it.** Eat a proper dinner before the bars.
 
-## Getting home to north Liverpool
+## Getting home
 
 ### By train
 
-From **Liverpool Central** or **Moorfields**, take a Merseyrail Northern line train **towards Kirkby or Headbolt Lane**. Fazakerley is about **15 minutes** from Central, according to Trainline. Trains run less often late in the evening, so **check the last train in the Merseyrail app** before you go out, and set a reminder.
+From **Liverpool Central** or **Moorfields**, take the Merseyrail train home. Zermatt Lodge is about **15 minutes** from Central. Trains run less often late in the evening, so **check the last train in the Merseyrail app** before you go out, and set a reminder.
 
 ### By taxi
 
@@ -121,7 +121,7 @@ A house outside the centre is a great base for a night out, but remember you're 
 
 ## Zermatt Lodge for a group night out
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre. It suits groups who want a calm, comfortable base to come back to after a night in town.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It suits groups who want a calm, comfortable base to come back to after a night in town.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready
@@ -139,6 +139,5 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Group booking checklist](/guides/group-booking-checklist)
 - [House vs hotel for groups](/guides/house-vs-hotel-liverpool-groups)

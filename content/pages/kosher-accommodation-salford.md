@@ -57,7 +57,7 @@ The **Manchester Jewish Museum** tells the story of Jewish life in Manchester, i
 
 ## If your trip includes Liverpool
 
-Some families split a trip between Salford and Liverpool, for example for a hospital appointment or a football match. Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. **It is not kosher**, and no kosher or Shabbat features have been declared for it, so it suits a weekday stay where you bring your own food.
+Some families split a trip between Salford and Liverpool, for example for a hospital appointment or a football match. Zermatt Lodge is our 4-bedroom house in Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars. **It is not kosher**, and no kosher or Shabbat features have been declared for it, so it suits a weekday stay where you bring your own food.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

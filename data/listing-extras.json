@@ -129,12 +129,12 @@
    [
     "parking",
     "Free parking for 2 cars",
-    "Minutes from the M57 and M58."
+    "Off-street parking at the house."
    ]
   ],
   "about": [
    "Zermatt Lodge is a spacious 4-bedroom house in Liverpool with room for up to 7 guests, made for groups, families and business or contractor stays. There is a king master bedroom with en-suite, a second king, a queen room and a single, plus two bathrooms in total. Downstairs you get a big kitchen, a separate dining room and a games room with a pool table and board games, and the 55-inch Smart TV has Netflix. Out back there is a large private garden, and there is free parking for 2 cars.",
-   "Liverpool city centre is about 15 minutes away by Merseyrail train (Northern line to Liverpool Central), and the M57 and M58 are close by for getting around Merseyside. The house is also near Aintree University Hospital, The Walton Centre and Aintree Racecourse. Check-in is from 3pm and checkout is by 11am. You book direct here, so you deal with the host, ZALO Stays, from start to finish.",
+   "Liverpool city centre is about 15 minutes away by train or car, and with free parking you can get around Merseyside easily. Check-in is from 3pm and checkout is by 11am. You book direct here, so you deal with the host, ZALO Stays, from start to finish.",
    "Every stay comes with fresh towels and hotel-quality bedding. The cleaning crew makes sure the house is spotless for every stay, and the local team inspects the property before each arrival. The property management team is available 24/7 by email or phone if you need anything."
   ],
   "rooms": [
@@ -270,52 +270,37 @@
    ],
    "note": "Reviews from verified stays on Airbnb and Google, shown with the source. They are not counted as Book Homes reviews."
   },
-  "where": "The house is a large home in a quiet residential area of Liverpool next to Aintree, about 15 minutes from Liverpool city centre by Merseyrail and close to the M57 and M58. The exact address is shared after booking.",
+  "where": "Zermatt Lodge is a 4-bedroom house in a quiet residential area of Liverpool, about 15 minutes from Liverpool city centre by train or car. The exact address is shared after booking.",
   "nearby": [
    [
-    "hospital",
-    "Aintree University Hospital and The Walton Centre",
-    "about 0.6 miles"
+    "train",
+    "Liverpool city centre and Lime Street",
+    "about 15 min by train or car"
+   ],
+   [
+    "events",
+    "Anfield and Hill Dickinson Stadium",
+    "by train to Sandhills"
    ],
    [
     "events",
     "Aintree Racecourse",
-    "about 0.5 to 1 mile"
+    "by train or taxi"
    ],
    [
-    "train",
-    "Local Merseyrail station, trains to Liverpool Central",
-    "around 15 min by train"
+    "hospital",
+    "Liverpool's main hospitals",
+    "by car or train"
    ],
    [
     "shop",
-    "Lidl, Tesco Express and Co-op",
-    "close by"
-   ],
-   [
-    "garden",
-    "Walton Hall Park",
-    "about 1 to 2 miles"
-   ],
-   [
-    "garden",
-    "Croxteth Hall and Country Park",
-    "about 2.5 miles"
-   ],
-   [
-    "events",
-    "Anfield",
-    "about 3 miles"
-   ],
-   [
-    "events",
-    "Hill Dickinson Stadium, Bramley-Moore Dock",
-    "about 4 miles"
+    "Supermarkets and delivery apps",
+    "cover the area"
    ],
    [
     "city",
-    "Liverpool city centre and Lime Street",
-    "about 4.5 miles"
+    "Royal Albert Dock and the waterfront",
+    "by train to Liverpool Central"
    ]
   ],
   "rules": {
@@ -380,35 +365,35 @@
    },
    {
     "q": "Where is Zermatt Lodge?",
-    "a": "Zermatt Lodge is a large, spacious home in Liverpool, Merseyside. Liverpool city centre is about 15 minutes away by Merseyrail train, or about 4.5 miles by road. The house is close to Aintree University Hospital, The Walton Centre, Aintree Racecourse and the M57 and M58. The full address is sent to confirmed guests."
+    "a": "Zermatt Lodge is a 4-bedroom house in Liverpool, Merseyside. Liverpool city centre is about 15 minutes away by train or car. The full address is sent to confirmed guests."
    },
    {
     "q": "Is the house in Liverpool city centre?",
-    "a": "No. Zermatt Lodge is a residential house in Liverpool, not in the city centre. Liverpool Central is about 15 minutes away by Merseyrail train, and the city centre is about 4.5 miles by road, so it suits guests who want more space, a garden and free parking with an easy trip into town."
+    "a": "No. Zermatt Lodge is a residential house in Liverpool, not in the city centre. The city centre is about 15 minutes away by train or car, so it suits guests who want more space, a garden and free parking with an easy trip into town."
    },
    {
     "q": "Is it close to Aintree University Hospital?",
-    "a": "Yes. Aintree University Hospital is about 0.6 miles away in a straight line. It is a good base for patients' families, visitors and NHS staff who want a whole house with free parking."
+    "a": "Many guests stay while visiting a Liverpool hospital, including Aintree University Hospital. Free parking for 2 cars means you can drive to the hospital, or you can use Merseyrail."
    },
    {
     "q": "How far is it from The Walton Centre?",
-    "a": "The Walton Centre shares the Aintree University Hospital site on Lower Lane, so it is about 0.6 miles away in a straight line. The local Merseyrail station is the closest station to the hospital site."
+    "a": "The Walton Centre shares the Aintree University Hospital site on Lower Lane. Free parking at the house means you can drive there, or use Merseyrail."
    },
    {
     "q": "Is there parking?",
-    "a": "Yes, there is free parking for 2 cars at the house. That is useful for hospital visits, as parking on the Aintree hospital site is chargeable."
+    "a": "Yes, there is free parking for 2 cars at the house. That is useful for hospital visits, as hospital parking in Liverpool is chargeable."
    },
    {
     "q": "How do I get to Liverpool city centre?",
-    "a": "The nearest station is on the Merseyrail Northern line, with trains to Liverpool Central taking about 15 minutes. You can tap in and out with a contactless card or phone. By car, the city centre is about 4.5 miles away."
+    "a": "Liverpool city centre is about 15 minutes away by train or car. Merseyrail takes contactless cards and phones: tap in and tap out."
    },
    {
     "q": "Is it good for the Grand National?",
-    "a": "Yes. Aintree Racecourse is very close, and Aintree station runs extra trains on race days. The 2027 Grand National Festival runs 8-10 April 2027, so book early as it is the busiest week of the year."
+    "a": "Yes. It sleeps 7 with free parking for 2 cars, and Aintree station runs extra trains on race days. The 2027 Grand National Festival runs 8-10 April 2027, so book early as it is the busiest week of the year."
    },
    {
     "q": "Is it close to Anfield and Everton's stadium?",
-    "a": "Anfield is about 3 miles away. Everton's Hill Dickinson Stadium at Bramley-Moore Dock is about 4 miles away, take the train from the local station to Sandhills (around 8 minutes) and walk from there."
+    "a": "It isn't walking distance to either ground. For both, take the train to Sandhills: Everton fans walk from there, and the matchday Soccerbus runs to Anfield."
    },
    {
     "q": "What time are check-in and check-out?",
@@ -420,11 +405,11 @@
    },
    {
     "q": "Is it contractor accommodation in Liverpool?",
-    "a": "Yes. Contractors and work crews book Zermatt Lodge for weekly and monthly stays: 4 bedrooms with separate beds, free parking for 2 cars, a washing machine and tumble dryer, and quick access to the M57 and M58. Email cs@zugati.co.uk for longer stays."
+    "a": "Yes. Contractors and work crews book Zermatt Lodge for weekly and monthly stays: 4 bedrooms with separate beds, free parking for 2 cars and a washing machine and tumble dryer. Email cs@zugati.co.uk for longer stays."
    },
    {
     "q": "Is the house suitable for contractors and work crews?",
-    "a": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room, and is close to the M57 and M58 for getting around Merseyside and the North West."
+    "a": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room, and the motorway network makes it easy to get around Merseyside and the North West."
    },
    {
     "q": "Do you take longer stays for work crews?",
@@ -476,15 +461,15 @@
    },
    {
     "q": "Are there shops nearby?",
-    "a": "Yes. There is a Lidl, a Tesco Express and a Co-op a short drive or walk away, and delivery apps cover the area."
+    "a": "Yes. There are supermarkets a short drive away, and delivery apps and supermarket home delivery cover the area."
    },
    {
     "q": "How far is Liverpool John Lennon Airport?",
-    "a": "Liverpool John Lennon Airport is about 10 miles away in a straight line. Most guests drive or take a taxi; by public transport you can go via the city centre."
+    "a": "Most guests drive or take a taxi from Liverpool John Lennon Airport; by public transport you can go via the city centre."
    },
    {
     "q": "Are there parks nearby?",
-    "a": "Yes. Walton Hall Park has 130 acres and two lakes, and Croxteth Hall and Country Park, about 2.5 miles away, has a working farm, a walled garden and a free Saturday parkrun."
+    "a": "Yes. Liverpool has plenty of green space, including Croxteth Hall and Country Park with a working farm, a walled garden and a free Saturday parkrun."
    }
   ],
   "contact": {

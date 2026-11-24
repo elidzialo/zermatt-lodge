@@ -36,7 +36,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-International Beatleweek is Liverpool's annual Beatles festival, held in late August with the Cavern Club as its hub and tribute bands, talks and fan events across the city. The 2026 festival ran from 26 August to 1 September; 2027 dates weren't confirmed when we checked, but late August is the pattern. Because the city centre fills up that week, many groups stay a short train ride out. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
+International Beatleweek is Liverpool's annual Beatles festival, held in late August with the Cavern Club as its hub and tribute bands, talks and fan events across the city. The 2026 festival ran from 26 August to 1 September; 2027 dates weren't confirmed when we checked, but late August is the pattern. Because the city centre fills up that week, many groups stay a short train ride out. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
 
 ## What International Beatleweek is
 
@@ -75,13 +75,13 @@ Staying near Mathew Street means you can walk everywhere. The downsides are pric
 
 ### A short train ride out
 
-A base in north Liverpool can work well, especially for groups:
+A base outside the city centre can work well, especially for groups:
 
-- **Trains to Liverpool Central take about 15 minutes** from Fazakerley on Merseyrail's Northern line, calling at Moorfields on the way
+- **Trains to Liverpool Central take about 15 minutes** from Zermatt Lodge
 - **Moorfields** is the handy stop for Mathew Street and the business district; **Liverpool Central** is closest to Bold Street and Liverpool ONE
 - You get **quiet nights**, parking and space to spread out
 
-The catch is the last train. Trainline lists the last train from Liverpool Central towards Fazakerley in the late evening on its standard timetable, so check the night you need. For very late gigs, agree a taxi plan in advance.
+The catch is the last train. Last trains leave Liverpool Central in the late evening, so check the night you need. For very late gigs, agree a taxi plan in advance.
 
 ### Why groups often choose a house
 
@@ -94,7 +94,7 @@ Beatles fans often travel in groups: friends, families with grown-up children, o
 
 See our comparison of [house vs hotel for groups](/guides/house-vs-hotel-liverpool-groups).
 
-## A sample Beatleweek day from north Liverpool
+## A sample Beatleweek day
 
 | Time | Plan |
 |---|---|
@@ -116,7 +116,7 @@ See our comparison of [house vs hotel for groups](/guides/house-vs-hotel-liverpo
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre or walking distance to Mathew Street: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or walking distance to Mathew Street: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: king with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and separate dining room
@@ -132,7 +132,6 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 ## Related guides
 
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group)
 - [M&S Bank Arena concert accommodation](/guides/ms-bank-arena-concert-accommodation)
 - [Where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group)

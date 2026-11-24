@@ -88,7 +88,7 @@ Sky Sports lists **Everton v Fulham at 3pm on Saturday 5 December** at Hill Dick
 
 ### Friday: arrive and settle in
 
-Arrive in the afternoon, do a food shop and have a relaxed night in. If you're arriving by train, see our guide to [Lime Street to Fazakerley](/guides/lime-street-to-fazakerley).
+Arrive in the afternoon, do a food shop and have a relaxed night in. If you're arriving by train, check your connection from Lime Street.
 
 ### Saturday: racing
 
@@ -120,7 +120,7 @@ If your group wants more racing history, look at [Aintree Racecourse tours](/gui
 
 ## Why Zermatt Lodge suits a Becher Chase weekend
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, in the same part of the city as Aintree Racecourse and near Fazakerley station. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes for the Christmas markets. For the races, it's a short taxi ride or the train via Sandhills.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes for the Christmas markets. For the races, take a taxi or the train via Sandhills.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -136,7 +136,6 @@ Check-in is 3pm and checkout is 11am. It's a quiet home with firm rules: **no pa
 ## Related guides
 
 - [Aintree Racecourse accommodation](/guides/aintree-racecourse-accommodation)
-- [Getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Grand National fences explained](/guides/grand-national-fences-explained)
 - [Liverpool Christmas markets guide](/guides/liverpool-christmas-markets-guide)
 - [Aintree Racecourse tours](/guides/aintree-racecourse-tours)

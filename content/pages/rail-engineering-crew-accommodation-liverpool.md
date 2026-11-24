@@ -3,7 +3,7 @@ title: "Rail Engineering Crew Accommodation on Merseyside"
 meta_description: "Booking beds for rail engineers on night possessions in Liverpool? What crews need from a house, how to plan around shifts, and the winter 2026 works picture."
 slug: rail-engineering-crew-accommodation-liverpool
 h1: "Rail Engineering Crew Stays on Merseyside: A Practical Guide for Bookers"
-quick_answer: "Rail crews on night possessions need a house where people can sleep in the day: separate beds, blackout, quiet hours, parking and a washer for PPE. North Liverpool suits Merseyrail and North West work because it sits near the M57 and M58 and on the Northern line. Zermatt Lodge in Fazakerley sleeps 7 in 4 bedrooms with 2 bathrooms and free parking for 2 cars."
+quick_answer: "Rail crews on night possessions need a house where people can sleep in the day: separate beds, blackout, quiet hours, parking and a washer for PPE. A base with motorway access and a train line suits Merseyrail and North West work. Zermatt Lodge in Liverpool sleeps 7 in 4 bedrooms with 2 bathrooms and free parking for 2 cars."
 primary_keyword: "rail worker accommodation Liverpool"
 secondary_keywords:
   - "Merseyrail engineering works accommodation"
@@ -67,10 +67,10 @@ A proper kitchen lets the team eat a hot meal before a night shift and something
 
 Crews usually travel in vans or shared cars. Ask how many vehicles fit off-street and whether vans are allowed. Shift workers come and go when the street is empty, so being able to park at the door also matters for safety.
 
-## Why north Liverpool works as a base
+## What makes a good base
 
 - **Motorways:** the M57 and M58 meet at Switch Island (M57 junction 7), and the M57 links south to the M62. That puts sites across Merseyside, Lancashire and Cheshire within reach without crossing the city centre.
-- **The Northern line:** Fazakerley station is on Merseyrail's Northern line, on the Headbolt Lane branch via Kirkby. It is usually served by 4 trains an hour each way off-peak, and about 15 minutes direct to Liverpool Central.
+- **The train:** Zermatt Lodge is about 15 minutes by train from Liverpool Central.
 - **Quieter streets** than the centre, which helps with daytime sleep.
 
 Always check the drive to your actual worksite at the time of day you'll travel. Night-time drives are often quicker than the map's daytime estimate, but don't count on it for start times.
@@ -87,7 +87,7 @@ For a full list of questions, use our [contractor accommodation checklist](/guid
 
 ## Zermatt Lodge for rail crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for after-shift showers

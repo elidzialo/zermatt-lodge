@@ -1,9 +1,9 @@
 ---
 title: "Accommodation near Knowsley Business Park & Kirkby"
-meta_description: "Working at Knowsley Industrial Park or Knowsley Business Park? A 4-bed house in nearby Fazakerley with parking for 2, M57 access and trains to Kirkby."
+meta_description: "Working at Knowsley Industrial Park or Knowsley Business Park? Where the sites are, getting there by car and train, and a 4-bed house in Liverpool with parking for 2."
 slug: kirkby-knowsley-business-park-accommodation
 h1: "Accommodation near Knowsley Business Park and Knowsley Industrial Park, Kirkby"
-quick_answer: "For work at Knowsley Industrial Park or Knowsley Business Park, neighbouring Fazakerley offers a short drive or a direct train to Kirkby. Zermatt Lodge there has free parking for two vehicles and is near the M57 and Fazakerley station, on the same Merseyrail line as Kirkby and Headbolt Lane."
+quick_answer: "Knowsley Industrial Park is on the eastern side of Kirkby, and units marketed as Knowsley Business Park are about a mile from junction 4 of the M57. Kirkby and Headbolt Lane stations are on Merseyrail's Northern line. Zermatt Lodge, a 4-bedroom house in Liverpool, has free parking for two vehicles."
 primary_keyword: "accommodation near knowsley business park"
 secondary_keywords:
   - "knowsley industrial park accommodation"
@@ -23,8 +23,8 @@ faqs:
     a: "Knowsley Industrial Park is on the eastern side of Kirkby, with addresses on roads such as South Boundary Road (L33). Units marketed as Knowsley Business Park, such as Unity Grove (L34), are about a mile from junction 4 of the M57, near the A580 East Lancashire Road. Check your exact unit address before you travel."
   - q: "Is there a train station near Knowsley Industrial Park?"
     a: "Yes. Headbolt Lane station opened in 2023 beyond Kirkby on Merseyrail's Northern line, the first extension of the line since 1977. Kirkby station also serves the town."
-  - q: "How do I get from Fazakerley to Kirkby?"
-    a: "By train, Fazakerley is on the same Merseyrail line as Kirkby and Headbolt Lane, so it's a short direct ride. By car, it's a short drive via the A506 or the M57."
+  - q: "How do I get to Kirkby?"
+    a: "By train, Kirkby and Headbolt Lane are at the end of the Kirkby branch of Merseyrail's Northern line, direct from Liverpool Central. By car, use the A506 or the M57."
   - q: "Can a shift team share Zermatt Lodge?"
     a: "Yes. It sleeps up to 7 in 4 bedrooms, has 2 bathrooms and parking for 2 vehicles. Agree quiet hours if people are on different shifts."
 sources:
@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-If you're working at Knowsley Industrial Park or Knowsley Business Park, staying in neighbouring Fazakerley gives you a short drive or a direct train to Kirkby, without the cost of city-centre hotels. Zermatt Lodge is a whole 4-bedroom house in Fazakerley with free parking for two vehicles. It's near the M57 and Fazakerley station, which is on the same Merseyrail line as Kirkby and Headbolt Lane. It's a practical base for engineers, installers, auditors and shift teams.
+If you're working at Knowsley Industrial Park or Knowsley Business Park, a house with parking can work out better than city-centre hotels. Zermatt Lodge is a whole 4-bedroom house in Liverpool with free parking for two vehicles. It's a practical base for engineers, installers, auditors and shift teams.
 
 Here's what to know about the area and how to plan a work stay.
 
@@ -49,20 +49,20 @@ Two names come up a lot, and they're easy to confuse:
 
 **Tip:** always get the full unit address and postcode from your client. A wrong turn between the two can cost you 15 minutes at shift change.
 
-## Getting there from Fazakerley
+## Getting there
 
 ### By car
 
-Fazakerley is next door to Kirkby. Depending on which part of the park you're going to, you'll use:
+Depending on which part of the park you're going to, you'll use:
 
 - **The A506 or M57 junction 6** for Kirkby and Knowsley Industrial Park
 - **The M57 to junction 4** and the A580 for the Unity Grove side
 
-Outside rush hour it's a short drive. Shift-change times can be busy at the estate entrances, so allow a few extra minutes for 6am, 2pm and 10pm starts.
+Shift-change times can be busy at the estate entrances, so allow a few extra minutes for 6am, 2pm and 10pm starts.
 
 ### By train
 
-Fazakerley, Kirkby and **Headbolt Lane** are all on the same Merseyrail Northern line branch. Merseyrail lists the stations as Liverpool Central, Moorfields, Sandhills, Kirkdale, Rice Lane, Fazakerley, Kirkby and Headbolt Lane. Headbolt Lane opened in **2023** and was the first extension to the line since 1977. It was built partly to improve access to jobs in the area.
+**Kirkby** and **Headbolt Lane** are on the Kirkby branch of Merseyrail's Northern line. Merseyrail lists the stations as Liverpool Central, Moorfields, Sandhills, Kirkdale, Rice Lane, Fazakerley, Kirkby and Headbolt Lane. Headbolt Lane opened in **2023** and was the first extension to the line since 1977. It was built partly to improve access to jobs in the area.
 
 Trains run several times an hour in the daytime, with fewer in the evenings and on Sundays. Check times for your shift on the Merseyrail app. From the stations, some sites are a walk, and others need a short bus or taxi ride. See our [Headbolt Lane station guide](/guides/headbolt-lane-station-guide).
 
@@ -98,20 +98,19 @@ Getting these answered before you travel saves a wasted first morning, and helps
 ## Around Kirkby after work
 
 - **Kirkby town centre** has shops, food and services. See our [Kirkby town guide](/guides/kirkby-town-guide).
-- **Croxteth Hall and Country Park** is close by for an evening walk.
-- **Liverpool city centre** is a direct train ride from Fazakerley for a night out or a match.
+- **Croxteth Hall and Country Park** is good for an evening walk.
+- **Liverpool city centre** is about 15 minutes by train from the house for a night out or a match.
 - Or simply stay in: pool, Netflix and a cooked dinner.
 
 ## Why Zermatt Lodge works for Knowsley and Kirkby jobs
 
-Zermatt Lodge is a whole house in Fazakerley, close to both the Kirkby and Knowsley sites.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for early starts
 - **Free parking for 2 vehicles** (call ahead about large vans)
-- **Near Fazakerley station**, on the same line as Kirkby and Headbolt Lane
-- **Near the M57 and M58**
-- **Big kitchen and dining room**, with a Lidl nearby for food shopping
+- **About 15 minutes by train or car** from the city centre
+- **Big kitchen and dining room** for batch cooking
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** for evenings off
 - **Large private back garden**
 - **Check-in 3pm, checkout 11am**

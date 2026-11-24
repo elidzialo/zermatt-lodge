@@ -1,6 +1,6 @@
 ---
 title: "Self-Catering Meal Plan for a Group of 7: Three Days, One Shop"
-meta_description: "A three-day self-catering meal plan for a group of 7, with a shopping list, one-pot dinners, a cooking rota, leftovers rules and shops near Fazakerley."
+meta_description: "A three-day self-catering meal plan for a group of 7, with a shopping list, one-pot dinners, a cooking rota, leftovers rules and tips for the big shop."
 slug: self-catering-meal-plan-group-of-7
 h1: "Self-Catering Meal Plan for a Group of 7"
 primary_keyword: "meal plan for group holiday"
@@ -20,8 +20,8 @@ faqs:
     a: "Plan breakfasts and lunches simply, cook one big one-pot dinner each night, and give each pair a night to cook. Do one main shop on arrival day and top up as you go."
   - q: "How long can we keep leftovers?"
     a: "The Food Standards Agency says to cool, cover and refrigerate or freeze leftovers within one to two hours, keep the fridge at 5°C or below, and eat or freeze them within 2 days, or within 1 day for rice dishes."
-  - q: "Where can we shop near Fazakerley?"
-    a: "There's a Lidl on Longmoor Lane, listed as open 8am to 10pm Monday to Saturday and 10am to 4pm on Sunday, and a Tesco Express on Longmoor Lane open 7am to 11pm daily. Check times before you go, especially on bank holidays."
+  - q: "When can we do the big shop?"
+    a: "Large supermarkets in England can open for six hours on Sundays, between 10am and 6pm, and close on Christmas Day and Easter Sunday. Check times before you go, especially on bank holidays."
   - q: "Is it cheaper to self-cater than eat out with a group?"
     a: "Usually, especially for breakfasts and at least some dinners. Many groups self-cater most meals and book one or two restaurant meals as treats."
 sources:
@@ -30,7 +30,7 @@ sources:
   - https://www.tesco.com/store-locator/liverpool/longmoor-ln
 ---
 
-The easiest way to feed a group of 7 on a self-catering trip is to keep breakfasts and lunches simple, cook one big one-pot dinner each evening, and share the cooking in pairs so no one is stuck in the kitchen. Do one main shop on arrival day with a list, then top up as you go. Below is a three-day plan with a shopping list, a rota and food safety tips, written for a group staying in a house with a full kitchen and a dining table, such as our 4-bedroom house in north Liverpool.
+The easiest way to feed a group of 7 on a self-catering trip is to keep breakfasts and lunches simple, cook one big one-pot dinner each evening, and share the cooking in pairs so no one is stuck in the kitchen. Do one main shop on arrival day with a list, then top up as you go. Below is a three-day plan with a shopping list, a rota and food safety tips, written for a group staying in a house with a full kitchen and a dining table, such as our 4-bedroom house in Liverpool.
 
 ## The principles
 
@@ -135,14 +135,14 @@ With rice, cook only what you need and get any extra into the fridge quickly.
 
 Also keep raw meat on the bottom shelf of the fridge and use separate chopping boards for raw meat and vegetables.
 
-## Shopping near Fazakerley
+## Doing the big shop
 
-If you're staying in Fazakerley, north Liverpool, the nearest supermarkets include:
+A few tips for the shop:
 
-- **Lidl, Longmoor Lane:** listed as open 8am to 10pm Monday to Saturday and 10am to 4pm on Sunday. It's good for the main shop.
-- **Tesco Express, Longmoor Lane:** listed as open 7am to 11pm every day. Handy for top-ups.
+- **Discount supermarkets** are good for the main shop for a group.
+- **Convenience stores** often open longer hours and are handy for top-ups.
 
-Larger stores are a short drive away. Bigger shops, like this Lidl, often have shorter Sunday hours, and times change on bank holidays and over Christmas (the Lidl's listing shows it closed on Christmas Day, Boxing Day and New Year's Day). Check before you go.
+Bigger shops often have shorter Sunday hours, and times change on bank holidays and over Christmas (many close on Christmas Day, Boxing Day and New Year's Day). Check before you go.
 
 You can also book an **online grocery delivery** to arrive soon after check-in. Book the slot early if you're coming on a busy weekend.
 
@@ -156,7 +156,7 @@ Self-catering doesn't mean never eating out. Many groups:
 
 ## Zermatt Lodge's kitchen and dining space
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre. It's set up for groups who like to cook and eat together.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's set up for groups who like to cook and eat together.
 
 - **Big fitted kitchen** and a **separate dining room**
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms

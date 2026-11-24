@@ -28,7 +28,7 @@ faqs:
   - q: "Which parts of Merseyside does the route pass through?"
     a: "The Liverpool City Region says the stage passes through Lancashire and then the boroughs of Knowsley and St Helens before the finish on The Strand. Exact roads had not been published in the sources we checked, so look for updates on letourgb.com."
   - q: "How do I get to the finish from Zermatt Lodge?"
-    a: "Take the Merseyrail Northern line from Fazakerley to Liverpool Central or Moorfields, about 15 minutes, then walk to the waterfront. Expect very busy trains on the day and allow plenty of time."
+    a: "Take the train to Liverpool Central or Moorfields, then walk to the waterfront. Expect very busy trains on the day and allow plenty of time."
 sources:
   - https://liverpoolexpress.co.uk/liverpool-announced-as-a-host-for-the-2027-tour-de-france/
   - https://www.cyclingweekly.com/racing/2027-tour-de-france-and-tour-de-france-femmes-british-grands-depart-routes-announced
@@ -77,7 +77,7 @@ Whichever you choose, remember the publicity caravan passes well before the ride
 
 ## Getting around on the day
 
-- **Train is the way in.** From Fazakerley, Merseyrail Northern line trains reach Liverpool Central in about 15 minutes, with around 69 trains a day on a normal weekday. Expect crowded trains and possible changes to services; check Merseyrail before you set off
+- **Train is the way in.** From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. Expect crowded trains and possible changes to services; check Merseyrail before you set off
 - **Driving into town is likely to be hard.** Closures around the waterfront and along the route are expected. Leave the car where you're staying if you can
 - **Coming from further away?** Liverpool Lime Street has frequent trains from Manchester, with the fastest taking about 31 minutes
 - **Cycling?** The Liverpool City Region says it is building more than 600km of new cycling and walking routes. Check secure parking near the finish before you ride in
@@ -94,7 +94,7 @@ If you're coming as a group of cycling friends or a family, a whole house is oft
 
 ## Zermatt Lodge for the Tour weekend
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, about **15 minutes by train** from the city centre. It isn't in the centre, and we won't pretend it is, but the train is direct and the house gives a group room to spread out.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from the city centre. It isn't in the centre, and we won't pretend it is, but the train is direct and the house gives a group room to spread out.
 
 - Sleeps 7: king en-suite, second king, queen and single
 - 2 bathrooms
@@ -118,6 +118,5 @@ Ready to plan? [Book direct](/zermatt-lodge#book) for your Tour weekend. Prefer 
 ## Related guides
 
 - [Liverpool events 2026 and 2027](/guides/events-concerts-liverpool-stays)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group)
 - [Group booking checklist](/guides/group-booking-checklist)

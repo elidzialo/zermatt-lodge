@@ -1,6 +1,6 @@
 ---
 title: "Huyton Area Guide: Knowsley Town for Visitors and Workers"
-meta_description: "Huyton guide: where it is, City Line trains to Liverpool and Wigan, M57 and M62 junctions, the village centre, Harold Wilson's statue and where to stay nearby."
+meta_description: "Huyton guide: where it is, City Line trains to Liverpool and Wigan, M57 and M62 junctions, the village centre, Harold Wilson's statue and where to stay."
 slug: huyton-area-guide
 h1: "Huyton, Merseyside: A Practical Guide for Visitors and Business Travellers"
 quick_answer: "Huyton is a town of about 33,000 people in the borough of Knowsley, 6 miles east of Liverpool city centre. It sits just west of the M57, with three motorway junctions nearby (M57 J2, M62 J5 and J6), and Huyton station has City Line trains to Liverpool, St Helens and Wigan. For business stays, it's well placed for Knowsley, the M62 corridor and south and east Liverpool."
@@ -25,7 +25,7 @@ faqs:
   - q: "Which motorway junctions are near Huyton?"
     a: "Three: M57 junction 2, and M62 junctions 5 and 6."
   - q: "Is there business accommodation in Huyton?"
-    a: "There are hotels and serviced flats in the wider area. For a team or crew that needs separate beds, a kitchen and parking, a whole house nearby can work better. Zermatt Lodge in Fazakerley is on the M57 corridor north of Huyton, sleeps 7 and has free parking for 2 cars."
+    a: "There are hotels and serviced flats in the wider area. For a team or crew that needs separate beds, a kitchen and parking, a whole house can work better. Zermatt Lodge in Liverpool sleeps 7 and has free parking for 2 cars."
 sources:
   - https://en.wikipedia.org/wiki/Huyton
   - https://en.wikipedia.org/wiki/M57_motorway
@@ -72,11 +72,11 @@ If the job is in Kirkby or on Knowsley Business Park, see our [Kirkby and Knowsl
 
 ## Where to stay
 
-Huyton is mostly housing, with few large holiday homes. For a team, the **M57 corridor** to the north, around Kirkby and Fazakerley, has whole-house options with parking and quick motorway links south to Huyton. Always check the drive at the time of day you'll travel.
+Huyton is mostly housing, with few large holiday homes. For a team, a whole house with parking elsewhere in Liverpool can work, using the M57 to reach Huyton. Always check the drive at the time of day you'll travel.
 
-## Zermatt Lodge on the M57 corridor
+## Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near M57 junction 6 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** and a **washer and dryer**

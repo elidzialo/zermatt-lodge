@@ -22,7 +22,7 @@ faqs:
   - q: "When will Liverpool Baltic station be built?"
     a: "Place North West reported that construction is hoped to start in 2027, with costs rising to £160m, subject to a Combined Authority funding vote. Planning permission was granted in April 2025."
   - q: "Where should a construction crew stay in Liverpool?"
-    a: "It depends on the site. For the north docks, Kirkby, Knowsley or anywhere off the M57 and M58, a base in north Liverpool keeps commutes short and parking easier than in the city centre."
+    a: "It depends on the site. For the north docks, Kirkby, Knowsley or anywhere off the M57 and M58, a base with parking outside the city centre keeps commutes and parking easier."
   - q: "How many homes are planned in the north docks?"
     a: "Liverpool Express reported that the council has identified potential for more than 17,500 new homes and 5 million sq ft of commercial space in the north docks area over 15 years."
 sources:
@@ -35,7 +35,7 @@ sources:
   - https://www.local.gov.uk/case-studies/kirkby-town-centre-regeneration-knowsley
 ---
 
-Liverpool City Region has a busy construction pipeline for 2026-27. The biggest areas of activity are the north docks, where a 174-hectare development zone has been proposed; the city centre, with the £5bn Liverpool Central masterplan and new Grade A offices; Paddington Village in the Knowledge Quarter; new rail stations led by Liverpool Baltic; and town centre schemes in Kirkby, St Helens, Bootle and Southport. Crews working on north Liverpool, Knowsley and motorway-side sites often base themselves outside the city centre for easier parking and shorter commutes. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7, with free parking for 2 cars, minutes from the M57 and M58 and about 15 minutes by train from the city centre.
+Liverpool City Region has a busy construction pipeline for 2026-27. The biggest areas of activity are the north docks, where a 174-hectare development zone has been proposed; the city centre, with the £5bn Liverpool Central masterplan and new Grade A offices; Paddington Village in the Knowledge Quarter; new rail stations led by Liverpool Baltic; and town centre schemes in Kirkby, St Helens, Bootle and Southport. Crews working on the north docks, Knowsley and motorway-side sites often base themselves outside the city centre for easier parking and shorter commutes. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars.
 
 This is a summary from public reports. Projects change, so check the latest status before planning a crew around any of them.
 
@@ -59,7 +59,7 @@ The area builds on the momentum of Everton's **Hill Dickinson Stadium** at Liver
 
 ### Why it matters for crews
 
-The north docks are on the north side of the city. From north Liverpool suburbs like Fazakerley, Walton and Aintree, the dock road and the A5036 are close by, and Sandhills station is on the same Merseyrail line.
+The north docks are on the north side of the city. The dock road and the A5036 serve them, and Sandhills station is on the Merseyrail Northern line.
 
 ## The city centre
 
@@ -141,7 +141,7 @@ The common theme: crews with vans usually want **off-street parking**, a **full 
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not in the city centre: it's a quiet residential area about 15 minutes by train from Liverpool city centre, near the M57 and M58, and well placed for the north docks, Kirkby and Knowsley.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential area about 15 minutes by train from Liverpool city centre, with free parking for crews driving to site.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, separate dining room

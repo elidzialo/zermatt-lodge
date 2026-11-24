@@ -1,4 +1,6 @@
-# Zermatt Lodge - Liverpool knowledge base (verified)
+# Liverpool knowledge base (verified)
+
+> Internal research only. The distances below are measured from Fazakerley station as a reference point. Never publish them as distances from Zermatt Lodge, and never say the house is in or near Fazakerley.
 
 Last checked: 18 November 2026. Every fact has a source. Anything marked **[UNVERIFIED]** must be checked before publishing.
 

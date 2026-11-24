@@ -134,7 +134,7 @@ Head home, or stay on for dinner in the Ropewalks or the Baltic Triangle before 
 
 - **Merseyrail** covers most of what you'll need. Since February 2026 you can **tap in and out with a contactless card**, phone or watch.
 - **Sandhills** is the key match-day station for both clubs.
-- From **Fazakerley** in north Liverpool, trains run direct to **Liverpool Central in about 15 minutes**, around 69 times a day.
+- From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**.
 
 ## Where to stay
 
@@ -142,7 +142,7 @@ For a football weekend, stay on the **Northern line**, which runs through Sandhi
 
 ### Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in **north Liverpool, near Fazakerley station**. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**, and Sandhills is on the same line.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**, and Sandhills is easy to reach by train.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room

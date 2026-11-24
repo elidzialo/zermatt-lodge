@@ -1,9 +1,9 @@
 ---
 title: "Accommodation near the M57 and M58 in Liverpool"
-meta_description: "Driving to Liverpool? Stay near the M57/M58 in Fazakerley and skip city-centre traffic. Junction guide, where each motorway goes, free parking for 2 cars."
+meta_description: "Driving to Liverpool? How the M57 and M58 help you skip city-centre traffic. Junction guide, where each motorway goes, and a 4-bed house with free parking."
 slug: accommodation-near-m57-m58-liverpool
 h1: "Accommodation near the M57 and M58: Liverpool Without the City Traffic"
-quick_answer: "Staying near the M57 and M58 in north Liverpool lets drivers skip city-centre traffic and parking charges. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to both motorways, with free parking for two cars and Fazakerley station nearby."
+quick_answer: "Using the M57 and M58 lets drivers skip city-centre traffic and parking charges. Zermatt Lodge is a whole 4-bedroom house in Liverpool with free parking for two cars."
 primary_keyword: "accommodation near m57 liverpool"
 secondary_keywords:
   - "stay near switch island"
@@ -35,7 +35,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're driving to Liverpool, staying near the M57 and M58 in the north of the city lets you skip city-centre traffic and parking charges while keeping the whole region within reach. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to both motorways, with free parking for two cars. Fazakerley station is close by for trains into the centre.
+If you're driving to Liverpool, staying near the M57 and M58 in the north of the city lets you skip city-centre traffic and parking charges while keeping the whole region within reach. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars.
 
 This guide explains where each motorway goes, what's near the key junctions and why a motorway-side base suits drivers, families and work teams.
 
@@ -110,7 +110,7 @@ If you're new to driving around Merseyside, the main thing to remember is that y
 - **Road trippers** breaking a long journey, for example between Scotland and North Wales or the ferry ports
 - **Families on a driving holiday** who want the city one day and the beach the next. See our [Liverpool weekend by car itinerary](/guides/liverpool-weekend-itinerary-by-car).
 - **Contractors and engineers** covering sites across Knowsley, Sefton and West Lancashire. See [contractor accommodation in Liverpool](/guides/contractor-accommodation-liverpool).
-- **Hospital visitors**, as Aintree University Hospital is right by junction 6
+- **Hospital visitors**, as Aintree University Hospital is by junction 6
 - **Racegoers** heading to Aintree
 
 ## Driving tips for north Liverpool
@@ -118,13 +118,13 @@ If you're new to driving around Merseyside, the main thing to remember is that y
 - **Rush hour:** the M57 and the routes into Kirkby and Aintree can be slow at peak times. The hospital also warns of congestion around its site.
 - **Race and match days:** expect closures and heavy traffic around Aintree on Grand National days, and around the stadiums on match days.
 - **Tunnels:** if you're heading to the Wirral, the Mersey tunnels are tolled. See our [Mersey tunnel tolls guide](/guides/mersey-tunnel-tolls-guide).
-- **Fuel and supplies:** retail parks around Aintree and a Lidl near the house cover the basics.
+- **Fuel and supplies:** retail parks around Aintree and the M57 corridor cover the basics.
 
 For more advice, see [driving in Liverpool: a visitor's guide](/guides/driving-in-liverpool-visitors).
 
 ## Why Zermatt Lodge suits drivers
 
-Zermatt Lodge is a whole house in Fazakerley, near the M57 and M58.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **Free parking for 2 cars**, so you aren't paying city-centre rates
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
@@ -132,7 +132,7 @@ Zermatt Lodge is a whole house in Fazakerley, near the M57 and M58.
 - **Big kitchen and dining room**, so you can cook after a long drive
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
-- **Near Fazakerley station** for car-free days in the city
+- **Trains to the city centre** in about 15 minutes for car-free days
 - **Check-in 3pm, checkout 11am**
 
 It's a quiet residential home: **no parties, no smoking and no pets**.
@@ -143,5 +143,5 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 - [Driving in Liverpool: a visitor's guide](/guides/driving-in-liverpool-visitors)
 - [Liverpool weekend by car: avoiding city parking](/guides/liverpool-weekend-itinerary-by-car)
-- [Driving from Manchester to north Liverpool](/guides/manchester-to-liverpool-drive)
+- [Driving from Manchester to Liverpool](/guides/manchester-to-liverpool-drive)
 - [Driving from Scotland to Liverpool](/guides/scotland-to-liverpool-drive)

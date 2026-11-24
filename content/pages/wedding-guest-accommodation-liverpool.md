@@ -99,7 +99,7 @@ Our [house vs hotel guide](/guides/house-vs-hotel-liverpool-groups) looks at thi
 
 ## Why Zermatt Lodge suits wedding guests
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's about 15 minutes by train from Fazakerley station to Liverpool Central, a short walk from St George's Hall, and it has free parking for 2 cars for venues you'd rather drive or taxi to. It isn't in the city centre, so build the journey into your timings.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train to Liverpool Central, a short walk from St George's Hall, and it has free parking for 2 cars for venues you'd rather drive or taxi to. It isn't in the city centre, so build the journey into your timings.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, so getting ready is manageable with a rota

@@ -82,14 +82,14 @@ Our [Merseyside derby weekend guide](/guides/merseyside-derby-weekend) has more 
 
 Three January games kick off in the evening: **Everton v Villa (7.30pm)**, **Liverpool v Lens (8pm)** and the trip to Sunderland. For the home ones, the final whistle comes around 9.30pm to 10pm. Staying over beats a late drive home, especially in winter weather.
 
-## Getting to the grounds from north Liverpool
+## Getting to the grounds
 
-- **Hill Dickinson Stadium:** Sandhills is the usual station, and it's on the same Merseyrail line as Fazakerley
+- **Hill Dickinson Stadium:** Sandhills is the usual station, on the Merseyrail Northern line
 - **Anfield:** there's no station at the ground. Many fans walk, get a bus or taxi, or park away from the stadium. See our [match day parking guide](/guides/liverpool-match-day-parking-guide)
 
 ## Where to stay for a January match
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**: trains reach Liverpool Central in about 15 minutes, and the house is on the north side of the city, close to both grounds.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in about 15 minutes, and the house is in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

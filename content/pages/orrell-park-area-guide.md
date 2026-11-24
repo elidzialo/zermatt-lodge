@@ -1,6 +1,6 @@
 ---
 title: "Orrell Park Area Guide: A Small North Liverpool Neighbourhood"
-meta_description: "Orrell Park guide: Victorian streets between Aintree and Walton, the station, the Orrell Park Ballroom, England's smallest Green Flag park and nearby places to stay."
+meta_description: "Orrell Park guide: Victorian streets between Aintree and Walton, the station, the Orrell Park Ballroom, England's smallest Green Flag park and places to stay."
 slug: orrell-park-area-guide
 h1: "Orrell Park, Liverpool: What Visitors and Relocators Should Know"
 quick_answer: "Orrell Park is a small residential area of north Liverpool (postcode L9) between Aintree and Walton. It grew from 1850 as housing for Bootle dock workers, has its own Merseyrail station opened in 1906, and is home to the Orrell Park Ballroom music venue and Devonfield Gardens, said to be England's smallest Green Flag park. It's handy for Aintree, Anfield and the city centre."
@@ -25,7 +25,7 @@ faqs:
   - q: "What is the Orrell Park Ballroom?"
     a: "A former ballroom built in 1927, known locally as the OPB, now a nightclub and concert venue. Rory Storm and the Hurricanes, Ringo Starr and Jerry Lee Lewis have played there."
   - q: "Is Orrell Park a good base for Aintree races?"
-    a: "Yes, it sits next to Aintree. For a whole house for a group, look at Orrell Park and neighbouring areas such as Aintree and Fazakerley, and plan race-day transport early."
+    a: "Yes, it sits next to Aintree. For a whole house for a group, look further afield in Liverpool, and plan race-day transport early."
 sources:
   - https://en.wikipedia.org/wiki/Orrell_Park
   - https://en.wikipedia.org/wiki/Fazakerley
@@ -82,11 +82,11 @@ Use a map app for walking and driving times from the street you're staying on.
 
 ## Where to stay
 
-Orrell Park is mostly terraced and semi-detached housing, with few holiday homes big enough for a group. Neighbouring **Fazakerley and Aintree** have whole-house options with off-street parking.
+Orrell Park is mostly terraced and semi-detached housing, with few holiday homes big enough for a group. For a whole house with off-street parking, look elsewhere in Liverpool.
 
-## Zermatt Lodge, near Orrell Park
+## Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** and a big kitchen and dining room
@@ -102,7 +102,6 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 ## Related guides
 
-- [Fazakerley area guide](/guides/fazakerley-area-guide)
 - [Aintree area guide](/guides/aintree-area-guide)
 - [Norris Green area guide](/guides/norris-green-area-guide)
 - [Anfield area guide](/guides/anfield-area-guide)

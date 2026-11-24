@@ -101,7 +101,7 @@ Our [hotel rooms vs one house worksheet](/guides/two-hotel-rooms-vs-one-house) w
 
 ## Location trade-offs
 
-Most hotels are in the city centre. Most houses big enough for a group are in residential areas. In Liverpool, that often means a short train ride. From Fazakerley station, direct Merseyrail trains reach **Liverpool Central in about 15 minutes**. For many groups, especially families, football fans, racegoers and people visiting the hospital, that trade-off is worth it. See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
+Most hotels are in the city centre. Most houses big enough for a group are in residential areas. In Liverpool, that often means a short train ride. From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. For many groups, especially families, football fans, racegoers and people visiting the hospital, that trade-off is worth it. See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
 
 ## Our honest recommendation
 
@@ -111,7 +111,7 @@ Most hotels are in the city centre. Most houses big enough for a group are in re
 
 ## Why Zermatt Lodge suits groups choosing a house
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -119,7 +119,7 @@ Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool.
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **Near Fazakerley station, the M57/M58 and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

@@ -137,7 +137,7 @@ If you're moving with a child in Year 10 or 11, speak to the new school about th
 
 While you look for a permanent home, a furnished house can be easier than a hotel for a family, with a kitchen, laundry and space for children to do homework.
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre, with stays of up to 30 nights.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with stays of up to 30 nights.
 
 - **Sleeps 7** in 4 bedrooms, with **2 bathrooms**
 - **Free parking for 2 cars** for viewings across the region

@@ -79,11 +79,11 @@ Blue Badge holders **park free**. Display the badge in a **marked bay**, because
 
 ## Where to stay
 
-Broadgreen is in east Liverpool, a residential area with few large holiday homes. If your family needs a whole house, or you're also visiting Aintree University Hospital, a house in north Liverpool can work: the M57 runs round the east of the city, and you can check the drive in a map app for your appointment time.
+Broadgreen is in east Liverpool, a residential area with few large holiday homes. If your family needs a whole house, or you're also visiting Aintree University Hospital, a house in Liverpool can work: the M57 runs round the east of the city, and you can check the drive in a map app for your appointment time.
 
 ## Zermatt Lodge for hospital visitors
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to Aintree University Hospital and the Walton Centre, and about 15 minutes by train from Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, and about 15 minutes by train from Liverpool Central.
 
 - **Sleeps 7** in 4 bedrooms, so the family can stay together
 - **2 bathrooms**, a big kitchen and a **washer and dryer**

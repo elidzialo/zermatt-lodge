@@ -87,13 +87,13 @@ If your trip runs over a weekend, you'll need to be within walking distance of t
 |---|---|
 | Weekdays only, working in the city centre | City centre hotel or serviced apartment, bring food |
 | Over a Shabbat | Walking distance of the shul you'll use |
-| Team trip, working in north Liverpool or off the M57 | A whole house with a kitchen and parking |
+| Team trip, working in Liverpool or off the M57 | A whole house with a kitchen and parking |
 
 Our [kosher hotels in Liverpool guide](/guides/kosher-hotels-liverpool) explains what hotels can and can't offer.
 
 ## Is Zermatt Lodge suitable?
 
-Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It may suit a weekday work team who bring their own food and equipment and want a big kitchen, separate beds and parking.
+Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It is **not kosher**, has no declared Shabbat features, and is **not within walking distance of a synagogue**. It may suit a weekday work team who bring their own food and equipment and want a big kitchen, separate beds and parking.
 
 - **Sleeps 7** with separate beds: king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a dining room

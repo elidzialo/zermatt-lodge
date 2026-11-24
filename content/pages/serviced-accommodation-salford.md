@@ -76,7 +76,7 @@ Our [contractor checklist](/guides/contractor-checklist-before-booking) has the 
 
 ## Working in Liverpool too?
 
-Some crews and families split time between Greater Manchester and Merseyside. Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool:
+Some crews and families split time between Greater Manchester and Merseyside. Zermatt Lodge is our 4-bedroom house in Liverpool:
 
 - Sleeps 7, with 2 bathrooms
 - Big kitchen, dining room, washer and dryer

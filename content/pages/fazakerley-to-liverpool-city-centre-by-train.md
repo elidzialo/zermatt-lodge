@@ -111,18 +111,18 @@ Take a train in the other direction, towards Kirkby or Headbolt Lane. Kirkby is 
 4. **Travelling with luggage?** There's space on the trains, but avoid rush hour if you can.
 5. **Step-free access:** check station accessibility on Merseyrail's website before travelling.
 
-## Why stay near Fazakerley station?
+## Why stay near a Merseyrail station?
 
-Staying near a Merseyrail station gives you the best of both worlds: a quieter, residential base with parking, and the city centre 15 minutes away.
+Staying near a Merseyrail station gives you the best of both worlds: a quieter, residential base with parking, and a quick train into the city centre.
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, near the station.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
 - **Free parking for 2 cars**, so you can leave them at the house and take the train
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Big kitchen, dining room and a large private back garden**
-- **Near the M57/M58, Aintree Hospital and a Lidl**
+- **About 15 minutes by train or car** from the city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 
@@ -132,5 +132,4 @@ Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or em
 
 - [Merseyrail guide for visitors](/guides/merseyrail-guide-for-visitors)
 - [Merseyrail tickets explained](/guides/merseyrail-tickets-day-saver)
-- [Fazakerley station guide](/guides/fazakerley-station-guide)
 - [Merseyrail evenings and Sundays](/guides/northern-line-sunday-and-evening-trains)

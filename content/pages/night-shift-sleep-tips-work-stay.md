@@ -94,9 +94,9 @@ See our [house share etiquette guide for trades teams](/guides/trades-team-house
 
 HSE good practice for shift design includes capping shifts at **12 hours**, or **8 hours** for night or safety-critical work, keeping night shifts to **2 or 3 in a row** and allowing **two nights of uninterrupted sleep** when switching between days and nights. The HSE also says that complying with the Working Time Regulations alone is not enough to manage fatigue.
 
-## A quiet crew base in north Liverpool
+## A quiet crew base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, in a quiet residential street close to the M57 and M58.
+Zermatt Lodge is our 4-bedroom house in Liverpool, in a quiet residential street.
 
 - Sleeps 7 in 4 bedrooms: king master with en-suite, second king, queen and single
 - 2 bathrooms, so staggered shifts don't queue

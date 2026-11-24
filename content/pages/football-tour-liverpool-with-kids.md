@@ -110,7 +110,7 @@ Kids get tired. Mix football with other things:
 
 ## Why Zermatt Lodge suits football families
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station on the Merseyrail Northern line, which runs through Sandhills for both clubs' match day transport. It isn't in the city centre or walking distance to either ground, but it gives a family room to breathe after a big day.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. For both clubs, take the train to Sandhills for match day transport. It isn't in the city centre or walking distance to either ground, but it gives a family room to breathe after a big day.
 
 - **4 bedrooms sleeping up to 7**: a king master with en-suite, a second king, a queen and a single, so kids can have their own room
 - **2 bathrooms**

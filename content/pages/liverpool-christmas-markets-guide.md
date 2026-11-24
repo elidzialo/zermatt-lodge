@@ -107,7 +107,7 @@ Our [winter things to do guide](/guides/liverpool-winter-things-to-do) has more 
 
 ## Where to stay for a Christmas market trip
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes, a short walk from St George's Plateau. For families and groups, it's a warm, roomy base to come back to after a cold evening at the market, with free parking for 2 cars so you don't pay city-centre car park prices.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes, a short walk from St George's Plateau. For families and groups, it's a warm, roomy base to come back to after a cold evening at the market, with free parking for 2 cars so you don't pay city-centre car park prices.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

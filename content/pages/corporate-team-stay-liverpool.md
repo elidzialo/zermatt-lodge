@@ -3,7 +3,7 @@ title: "Corporate Team Stays in Liverpool: Booking a Whole House"
 meta_description: "Booking a team into Liverpool for a multi-day project? Invoicing, workspace, room allocation and travel, plus a 4-bed house for up to 7 colleagues."
 slug: corporate-team-stay-liverpool
 h1: "Corporate Team Stays in Liverpool: How to Book a House for Colleagues"
-quick_answer: "For colleagues in Liverpool for several days, one whole house means one booking, one invoice, a table to work at and a kitchen. Zermatt Lodge is a 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7."
+quick_answer: "For colleagues in Liverpool for several days, one whole house means one booking, one invoice, a table to work at and a kitchen. Zermatt Lodge is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7."
 primary_keyword: "corporate team accommodation liverpool"
 secondary_keywords:
   - "business accommodation liverpool for teams"
@@ -24,7 +24,7 @@ faqs:
   - q: "Is there Wi-Fi for working?"
     a: "Ask the host about the connection before booking, and test it on arrival. If your work depends on a fast, stable connection, bring a mobile hotspot as a backup."
   - q: "How far is the house from Liverpool's business district?"
-    a: "Zermatt Lodge is in north Liverpool, near Fazakerley station. Direct trains reach Moorfields, in the business district, and Liverpool Central in around 15 minutes. It isn't in the city centre."
+    a: "Zermatt Lodge is in Liverpool. Direct trains reach Moorfields, in the business district, and Liverpool Central in around 15 minutes. It isn't in the city centre."
   - q: "Can the team hold a client event at the house?"
     a: "No. It's a quiet residential home with strictly no parties or events. It's a place for the team to stay, eat and prepare, not a venue."
 sources:
@@ -34,7 +34,7 @@ sources:
   - https://www.merseytravel.gov.uk/news/new-easier-to-use-era-starts-on-merseyrail-as-tap-and-go-extended-to-bank-cards-watches-and-smartphones/
 ---
 
-When a team of colleagues is in Liverpool for several days on the same project, booking one whole house often works better than a row of hotel rooms: one booking, one invoice, a table to work at and a kitchen so nobody lives on room service. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7.
+When a team of colleagues is in Liverpool for several days on the same project, booking one whole house often works better than a row of hotel rooms: one booking, one invoice, a table to work at and a kitchen so nobody lives on room service. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and beds for up to 7.
 
 This guide is for the person organising the stay, usually an office manager, project lead or PA, and covers the questions that come up when booking a house for a business team.
 
@@ -54,9 +54,9 @@ A city-centre hotel is still better for a solo executive on a one-night trip, or
 
 Liverpool's work locations are spread out, which is why base location matters.
 
-| Area | What's there | From north Liverpool |
+| Area | What's there | Getting there |
 |---|---|---|
-| Commercial district around Moorfields | Offices, legal and financial firms | Direct Merseyrail train from Fazakerley to Moorfields |
+| Commercial district around Moorfields | Offices, legal and financial firms | Merseyrail to Moorfields |
 | Knowledge Quarter | Universities, hospitals, science and health organisations | Train to Liverpool Central or drive in |
 | Waterfront (Kings Dock) | Liverpool Experience Campus conference and exhibition venues | Train to Central, then walk or change for James Street |
 | Knowsley Business Park | Knowsley Council says it has 800+ businesses and around 18,000 jobs | Short drive via the M57 |
@@ -94,7 +94,7 @@ A dining table seats the team for a working session. Bring:
 
 ### Travel
 
-- **Train:** Fazakerley to Liverpool Central takes about 15 minutes. Merseyrail now accepts contactless cards, phones and watches. Tap in and tap out
+- **Train:** Liverpool Central is about 15 minutes from the house. Merseyrail now accepts contactless cards, phones and watches. Tap in and tap out
 - **Car:** two free spaces at the house. City-centre parking is chargeable, so consider driving one car in and taking the train for the rest
 - **Expenses:** keep receipts. Tax guidance from LITRG explains how the temporary workplace rules affect what travel and subsistence can be claimed. Check your company policy
 
@@ -109,7 +109,7 @@ A games room with a pool table and a 55" Smart TV is a good way for colleagues t
 
 ## Why Zermatt Lodge works for corporate teams
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station, the M57/M58 and Aintree University Hospital. It's not in the city centre, but the train is direct and the house gives a team space a hotel can't.
+Zermatt Lodge is a whole house in Liverpool. It's not in the city centre, but the train is direct and the house gives a team space a hotel can't.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

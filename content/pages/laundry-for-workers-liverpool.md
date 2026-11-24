@@ -87,7 +87,7 @@ On a long stay, ask the host how bedding and towel changes work. Some hosts chan
 
 ## Zermatt Lodge for crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Washer and dryer** in the house
 - **2 bathrooms** for after-shift showers

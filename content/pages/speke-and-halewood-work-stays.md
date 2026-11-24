@@ -26,7 +26,7 @@ faqs:
     a: "Hunts Cross, on Merseyrail, is about a mile away according to Wikipedia. Liverpool South Parkway in Garston is also close and has Avanti West Coast and London Northwestern services."
   - q: "How far is Speke from Liverpool city centre?"
     a: "Wikipedia puts Speke about 8 miles south east of the city centre."
-  - q: "Can I stay in north Liverpool and work in Halewood?"
+  - q: "Can I stay elsewhere in Liverpool and work in Halewood?"
     a: "Yes, if you drive. The M57 runs from north Liverpool to the M62, which links towards the south of the city. Check the drive at your shift time, as peak traffic varies."
 sources:
   - https://en.wikipedia.org/wiki/Speke
@@ -65,16 +65,16 @@ According to Wikipedia:
 
 - **Hunts Cross** (Merseyrail) is the nearest station to Speke, about **a mile** away
 - **Liverpool South Parkway** in Garston is served by Merseyrail plus **Avanti West Coast** and **London Northwestern**, which helps visiting staff arriving from elsewhere
-- From **Fazakerley**, take the Northern line to the city centre and change for the Hunts Cross line. Check the journey in a planner, as it's a cross-city trip
+- From the north of the city, take the Northern line to the city centre and change for the Hunts Cross line. Check the journey in a planner, as it's a cross-city trip
 
 ### By road
 
-- From north Liverpool, the **M57** runs south to **junction 1 (Tarbock)**, where it meets the **M62**. From there, routes lead towards Halewood and Speke
+- The **M57** runs south to **junction 1 (Tarbock)**, where it meets the **M62**. From there, routes lead towards Halewood and Speke
 - Speke Boulevard and the airport roads get busy at peak times. Test the drive at your actual shift time
 
 ### From the airport
 
-If your team is flying in, see our [airport to Fazakerley guide](/guides/liverpool-airport-to-fazakerley). The airport is about **10 miles** straight-line from Fazakerley.
+If your team is flying in, see our [airport transport guide](/guides/liverpool-airport-to-fazakerley).
 
 ## Stay close, or stay north?
 
@@ -82,9 +82,9 @@ If your team is flying in, see our [airport to Fazakerley guide](/guides/liverpo
 |---|---|---|
 | Hotel near the airport | Shortest commute | Separate rooms, often no kitchen |
 | South Liverpool rental | Close to site | Fewer whole houses with parking for crews |
-| North Liverpool house | Space, kitchen, free parking, near the M57 | Longer drive to Speke and Halewood |
+| House elsewhere in Liverpool | Space, kitchen, free parking | Longer drive to Speke and Halewood |
 
-A north Liverpool base works best for teams that **drive**, that split time between sites (for example Halewood and Knowsley), or that want a whole house rather than hotel rooms. If every shift starts at 6am at Speke, a closer base may suit you better. Be honest about the commute before you book.
+A base elsewhere in Liverpool works best for teams that **drive**, that split time between sites (for example Halewood and Knowsley), or that want a whole house rather than hotel rooms. If every shift starts at 6am at Speke, a closer base may suit you better. Be honest about the commute before you book.
 
 ## Booking tips
 
@@ -95,7 +95,7 @@ A north Liverpool base works best for teams that **drive**, that split time betw
 
 ## Zermatt Lodge for Speke and Halewood teams
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58. It's a good fit for teams who drive and want space, a kitchen and parking.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's a good fit for teams who drive and want space, a kitchen and parking.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**
@@ -114,7 +114,6 @@ Or [see all homes](/) on Book Homes.
 
 ## Related guides
 
-- [Liverpool Airport to Fazakerley](/guides/liverpool-airport-to-fazakerley)
 - [Contractor accommodation in Liverpool](/guides/contractor-accommodation-liverpool)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)
 - [Liverpool Freeport business stays](/guides/liverpool-freeport-business-stays)

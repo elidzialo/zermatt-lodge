@@ -32,7 +32,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/about-the-event
 ---
 
-The secret to a smooth group trip is to settle the big questions before anyone pays: who's definitely coming, the budget per person, how you'll split the cost, who sleeps where, and what the house rules are. Then book with a payment method that protects you, ideally a credit card, and share the key information with everyone in one message. This checklist works for any holiday house. We've added a few Liverpool tips, as we run Zermatt Lodge, a 4-bedroom house in north Liverpool that sleeps 7.
+The secret to a smooth group trip is to settle the big questions before anyone pays: who's definitely coming, the budget per person, how you'll split the cost, who sleeps where, and what the house rules are. Then book with a payment method that protects you, ideally a credit card, and share the key information with everyone in one message. This checklist works for any holiday house. We've added a few Liverpool tips, as we run Zermatt Lodge, a 4-bedroom house in Liverpool that sleeps 7.
 
 ## Step 1: Agree the basics
 
@@ -156,7 +156,7 @@ A day or two before, send everyone:
 
 ## Zermatt Lodge for groups
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

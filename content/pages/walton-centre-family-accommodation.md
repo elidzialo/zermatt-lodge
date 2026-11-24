@@ -1,9 +1,9 @@
 ---
 title: "Where to Stay When Visiting The Walton Centre"
-meta_description: "Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Fazakerley nearby."
+meta_description: "Family accommodation near The Walton Centre, Liverpool. Parking costs, weekly passes, both buildings explained, and a 4-bed house in Liverpool."
 slug: walton-centre-family-accommodation
 h1: "Where to Stay When Visiting The Walton Centre in Liverpool"
-quick_answer: "Families visiting The Walton Centre do best staying close to its Fazakerley site, so they can reach the ward quickly without city-centre parking costs. Zermatt Lodge is a whole 4-bedroom house nearby, close to Fazakerley station, with free parking for two cars."
+quick_answer: "The Walton Centre is on Lower Lane, on the same site as Aintree University Hospital. Families staying several days often choose a whole house with parking: Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for two cars."
 primary_keyword: "walton centre accommodation for relatives"
 secondary_keywords:
   - "walton centre liverpool family accommodation"
@@ -20,7 +20,7 @@ faqs:
   - q: "Where is The Walton Centre?"
     a: "The Walton Centre is on Lower Lane, Fazakerley, Liverpool, on the same site as Aintree University Hospital. The Main Building is L9 7LJ and the Sid Watkins Building is L9 7BB. Check the appointment letter to see which one you need."
   - q: "Does The Walton Centre have accommodation for relatives?"
-    a: "The Walton Centre's website mentions 'Home from Home' accommodation for people visiting patients but gives no details online. Ask the ward or call the switchboard on 0151 525 3611. If there's no space, or your whole family is travelling, a house nearby in Fazakerley is a practical alternative."
+    a: "The Walton Centre's website mentions 'Home from Home' accommodation for people visiting patients but gives no details online. Ask the ward or call the switchboard on 0151 525 3611. If there's no space, or your whole family is travelling, a house in Liverpool is a practical alternative."
   - q: "How much does parking cost at The Walton Centre?"
     a: "The Walton Centre's page lists free parking for under 30 minutes, then £4.50 up to 1 hour, £5 up to 2 hours, £6 up to 4 hours, £7 up to 6 hours and £8.50 over 6 hours. A 7-day pass is £22.50. The machines are card-only. Aintree University Hospital's own page shows different figures, so check on the day."
   - q: "What's the nearest train station to The Walton Centre?"
@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-The best place for families to stay when visiting The Walton Centre is close to its site in Fazakerley, north Liverpool. That way you can reach the ward quickly at any hour without paying city-centre parking. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, close to the Aintree hospital site and Fazakerley station, with free parking for two cars. It gives families supporting a neurology or neurosurgery patient a quiet base for a few nights or several weeks.
+The Walton Centre is a specialist neurosciences hospital on the Aintree University Hospital site. When you're visiting for days or weeks, a base with parking and room for the whole family takes a lot of stress out of it. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars. It gives families supporting a neurology or neurosurgery patient a quiet base for a few nights or several weeks.
 
 The Walton Centre is a specialist neurosciences hospital that serves a wide region, so many families travel a long way and don't know how long they'll be staying. This guide covers the practical side.
 
@@ -56,7 +56,7 @@ The site is in north Liverpool, close to the end of the M57 and M58 motorways. T
 
 ### By train
 
-The Walton Centre says Fazakerley station is about a 10-minute walk away. It's on Merseyrail's Northern line, and direct trains reach Liverpool Central in about 15 minutes. Relatives arriving at Lime Street can walk to Central and be on the ward in well under an hour. See our guide to [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train).
+The Walton Centre says Fazakerley station is about a 10-minute walk away. It's on Merseyrail's Northern line, and direct trains reach Liverpool Central in about 15 minutes. Relatives arriving at Lime Street can walk to Central and be on the ward in well under an hour. 
 
 ### By bus
 
@@ -103,13 +103,14 @@ For more ideas, see our [tips for long hospital stays in Liverpool](/guides/long
 1. Check your letter or the ward for the right building (Main or Sid Watkins).
 2. Save the ward's phone number.
 3. Ask about the Home from Home accommodation and the frequent-visitor parking concession.
-4. Find the nearest supermarket. There's a Lidl near Zermatt Lodge, which helps when you arrive late.
+4. Book a supermarket delivery or click and collect, which helps when you arrive late.
+
 5. Agree a rota with family members.
 6. Pack a phone charger, comfortable shoes and a reusable water bottle.
 
 ## Why Zermatt Lodge suits Walton Centre families
 
-Zermatt Lodge is a whole house in Fazakerley, near the shared hospital site. It's built for families who need to stay together:
+Zermatt Lodge is a whole house in Liverpool. It's built for families who need to stay together:
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, so early starts aren't a queue
@@ -117,7 +118,7 @@ Zermatt Lodge is a whole house in Fazakerley, near the shared hospital site. It'
 - **Free parking for 2 cars**, useful when relatives arrive from different places
 - **Large private back garden** for fresh air and quiet phone calls
 - **55" Smart TV with Netflix, board games and a pool table** to help children and teenagers switch off
-- **Near Fazakerley station** for easy trips to Lime Street when relatives arrive by train
+- **About 15 minutes by train** from the city centre for relatives arriving at Lime Street
 
 Check-in is from 3pm and checkout is 11am. It's a quiet house: no parties, no smoking and no pets.
 

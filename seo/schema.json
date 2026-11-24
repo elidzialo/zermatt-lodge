@@ -7,14 +7,12 @@
       "name": "ZALO Stays",
       "url": "https://www.example-domain.co.uk/",
       "email": "eli@zelr.co.uk",
-      "telephone": "+447479905477",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.example-domain.co.uk/images/logo.png"
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+447479905477",
         "email": "eli@zelr.co.uk",
         "contactType": "reservations",
         "areaServed": "GB",
@@ -38,9 +36,8 @@
       ],
       "@id": "https://www.example-domain.co.uk/#lodge",
       "name": "Zermatt Lodge",
-      "description": "Entire 4-bedroom, 2-bathroom house in Fazakerley, north Liverpool, sleeping up to 7. Games room with pool table, board games, 55-inch Smart TV with Netflix, big kitchen, dining room, large private back garden and free parking for 2 cars. Close to Aintree University Hospital, The Walton Centre, Aintree Racecourse, Fazakerley station and the M57/M58.",
+      "description": "Entire 4-bedroom, 2-bathroom house in Liverpool, sleeping up to 7. Games room with pool table, board games, 55-inch Smart TV with Netflix, big kitchen, dining room, large private back garden and free parking for 2 cars. About 15 minutes from Liverpool city centre by train or car.",
       "url": "https://www.example-domain.co.uk/",
-      "telephone": "+447479905477",
       "email": "eli@zelr.co.uk",
       "brand": {
         "@id": "https://www.example-domain.co.uk/#org"
@@ -80,15 +77,9 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Fazakerley, Liverpool",
+        "addressLocality": "Liverpool",
         "addressRegion": "Merseyside",
         "addressCountry": "GB"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 53.47,
-        "longitude": -2.94,
-        "description": "Approximate - Fazakerley area, not the exact property location"
       },
       "checkinTime": "15:00",
       "checkoutTime": "11:00",
@@ -255,7 +246,7 @@
       "@id": "https://www.example-domain.co.uk/#webpage",
       "url": "https://www.example-domain.co.uk/",
       "name": "Zermatt Lodge | 4-Bed House to Rent in Liverpool, Sleeps 7",
-      "description": "Entire 4-bed, 2-bath house in Fazakerley, north Liverpool. Sleeps 7, games room, garden, free parking for 2 cars. Near Aintree Hospital. Book direct.",
+      "description": "Entire 4-bed, 2-bath house in Liverpool. Sleeps 7, games room, garden, free parking for 2 cars. About 15 minutes from the city centre. Book direct.",
       "isPartOf": {
         "@id": "https://www.example-domain.co.uk/#website"
       },
@@ -326,7 +317,7 @@
           "name": "Where is Zermatt Lodge?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zermatt Lodge is in Fazakerley, north Liverpool, Merseyside. It is close to Aintree University Hospital, The Walton Centre, Aintree Racecourse, Fazakerley station and the M57 and M58. The full address is sent to confirmed guests."
+            "text": "Zermatt Lodge is a 4-bedroom house in Liverpool, Merseyside, about 15 minutes from the city centre by train or car. The full address is sent to confirmed guests."
           }
         },
         {
@@ -334,7 +325,7 @@
           "name": "Is it close to Aintree University Hospital?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Aintree University Hospital is about 0.6 miles away in a straight line, in Fazakerley. It is a good base for patients' families, visitors and NHS staff who want a whole house with free parking."
+            "text": "Many guests stay while visiting a Liverpool hospital, including Aintree University Hospital. Free parking for 2 cars means you can drive to the hospital, or you can use Merseyrail."
           }
         },
         {
@@ -342,7 +333,7 @@
           "name": "How far is it from The Walton Centre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Walton Centre shares the Aintree University Hospital site on Lower Lane, Fazakerley, so it is about 0.6 miles away in a straight line. Fazakerley station is the closest station to the hospital site."
+            "text": "The Walton Centre shares the Aintree University Hospital site on Lower Lane. Free parking at the house means you can drive there, or use Merseyrail."
           }
         },
         {
@@ -358,7 +349,7 @@
           "name": "How do I get to Liverpool city centre?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Fazakerley station is on the Merseyrail Northern line, with trains to Liverpool Central taking about 15 minutes. You can tap in and out with a contactless card or phone. By car, the city centre is about 4.5 miles away."
+            "text": "Liverpool city centre is about 15 minutes by train or car. You can tap in and out with a contactless card or phone."
           }
         },
         {
@@ -374,7 +365,7 @@
           "name": "Is it close to Anfield and Everton's stadium?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Anfield is about 3 miles away. Everton's Hill Dickinson Stadium at Bramley-Moore Dock is about 4 miles away - take the train from Fazakerley to Sandhills (around 8 minutes) and walk from there."
+            "text": "It isn't walking distance to either ground. Take the train to Sandhills: Everton fans walk from there, and the matchday Soccerbus runs to Anfield."
           }
         },
         {
@@ -390,7 +381,7 @@
           "name": "Is the house suitable for contractors and work crews?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room, and is close to the M57 and M58 for getting around Merseyside and the North West."
+            "text": "Yes. It sleeps 7 across 4 bedrooms, has free parking for 2 cars, a big kitchen and a dining room."
           }
         },
         {
@@ -454,7 +445,7 @@
           "name": "Who runs Zermatt Lodge?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zermatt Lodge is run by ZALO Stays. You can call +44 7479 905477 or email eli@zelr.co.uk."
+            "text": "Zermatt Lodge is run by ZALO Stays. Email cs@zugati.co.uk."
           }
         },
         {
@@ -462,7 +453,7 @@
           "name": "Are there shops nearby?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Lidl, Tesco Express and Co-op are on Longmoor Lane in Fazakerley, close to the house."
+            "text": "Yes. There are supermarkets a short drive away, and delivery apps cover the area."
           }
         },
         {
@@ -470,7 +461,7 @@
           "name": "How far is Liverpool John Lennon Airport?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Liverpool John Lennon Airport is about 10 miles away in a straight line. Most guests drive or take a taxi; by public transport you can go via the city centre."
+            "text": "Most guests drive or take a taxi; by public transport you can go via the city centre."
           }
         },
         {
@@ -478,7 +469,7 @@
           "name": "Are there parks nearby?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Walton Hall Park has 130 acres and two lakes, and Croxteth Hall and Country Park, about 2.5 miles away, has a working farm, a walled garden and a free Saturday parkrun."
+            "text": "Yes. Liverpool has plenty of green space, including Croxteth Hall and Country Park."
           }
         }
       ]

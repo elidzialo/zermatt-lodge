@@ -112,7 +112,7 @@ Better when the group is bigger: parents, grandparents, siblings, partners. You 
 
 ## Why Zermatt Lodge suits graduation families
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. The Merseyrail Northern line runs to Liverpool Central in about 15 minutes, which is a short walk from the LJMU Sport Building and about 15 minutes' walk from Liverpool Cathedral, according to LJMU. It isn't in the city centre, so allow time for the train, but it keeps the whole family under one roof.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. The Merseyrail Northern line runs to Liverpool Central in about 15 minutes, which is a short walk from the LJMU Sport Building and about 15 minutes' walk from Liverpool Cathedral, according to LJMU. It isn't in the city centre, so allow time for the train, but it keeps the whole family under one roof.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, a second king, a queen and a single, so grandparents get a proper bed
 - **2 bathrooms** for a morning when everyone needs to look their best
@@ -129,6 +129,5 @@ It's a quiet home with clear rules: **no parties or events**, no smoking and no 
 
 - [Edge Hill University graduation stay](/guides/edge-hill-university-graduation-stay)
 - [University open day stays in Liverpool](/guides/university-open-day-liverpool-stay)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
 - [Parking in Liverpool city centre](/guides/parking-liverpool-city-centre)

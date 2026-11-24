@@ -70,7 +70,7 @@ According to Wikipedia:
 - There's the **Haydock Industrial Estate** and the **Old Boston Trading Estate** on a former colliery site
 - **Haydock Park Racecourse** is here too, so check the racing calendar if your shifts clash with a big meeting
 
-## Getting there from north Liverpool
+## Getting there from Liverpool
 
 - **A580 East Lancashire Road:** the direct route east from Liverpool towards Haydock
 - **M57 and M62:** the M57 runs from north Liverpool to the M62 at junction 1 (Tarbock), which continues east. From there, roads lead to St Helens and the M6
@@ -81,11 +81,11 @@ According to Wikipedia:
 | Base | Best for |
 |---|---|
 | St Helens, Haydock or Newton-le-Willows | Crews working every shift at one site |
-| North Liverpool | Crews who also work Merseyside sites, want a whole house, or prefer a city base for evenings |
+| Liverpool | Crews who also work Merseyside sites, want a whole house, or prefer a city base for evenings |
 
 ## Zermatt Lodge for St Helens crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**

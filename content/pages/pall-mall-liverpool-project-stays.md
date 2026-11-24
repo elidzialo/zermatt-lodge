@@ -25,7 +25,7 @@ faqs:
   - q: "When will One Pall Mall be finished?"
     a: "We couldn't find a published completion date. The July 2026 reports did not give a start on site date either, so check with the project team."
   - q: "Where is the nearest station to Pall Mall?"
-    a: "Moorfields, on Merseyrail's Northern and Wirral lines, is the station for the business district. Northern line trains from Fazakerley run through Moorfields to Liverpool Central."
+    a: "Moorfields, on Merseyrail's Northern and Wirral lines, is the station for the business district. Northern line trains run through Moorfields to Liverpool Central."
   - q: "Is there parking near Pall Mall for contractors?"
     a: "City centre parking is limited and charged. Many teams stay outside the centre where a house has free off-street parking, and take the train in."
 sources:
@@ -63,8 +63,8 @@ In March 2026, Kier said the refreshed RIBA Stage 3 design was complete and the 
 
 Pall Mall is in the business district, a short walk from **Moorfields** station.
 
-- **By train:** Merseyrail's Northern line runs through Moorfields to Liverpool Central. From **Fazakerley**, direct trains reach Liverpool Central in about 15 minutes, stopping at Moorfields on the way
-- **Early starts:** on a sample day the first train from Fazakerley left at 04.46. Check the current timetable for your shift pattern
+- **By train:** Merseyrail's Northern line runs through Moorfields to Liverpool Central. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes
+- **Early starts:** check the current timetable for your shift pattern
 - **By van:** the city centre has restricted streets and paid parking. Agree parking or a compound with the site team before you send vans in
 
 ## Where project teams stay
@@ -77,7 +77,7 @@ Most teams choose one of three options:
 | Serviced apartment | Small teams, a few weeks | Parking often not included |
 | Whole house outside the centre | Teams of 4 to 7, longer jobs | Check the commute and van rules |
 
-A house in north Liverpool keeps everyone together, with a kitchen, a washing machine and free parking, and the train goes straight to Moorfields. See our [contractor accommodation guide](/guides/contractor-accommodation-liverpool) and [contractor checklist](/guides/contractor-checklist-before-booking) for what to ask before booking.
+A house outside the centre keeps everyone together, with a kitchen, a washing machine and free parking, and the train goes into town. See our [contractor accommodation guide](/guides/contractor-accommodation-liverpool) and [contractor checklist](/guides/contractor-checklist-before-booking) for what to ask before booking.
 
 ## Booking tips
 
@@ -88,7 +88,7 @@ A house in north Liverpool keeps everyone together, with a kitchen, a washing ma
 
 ## Zermatt Lodge for project teams
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train to Liverpool Central via Moorfields.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**

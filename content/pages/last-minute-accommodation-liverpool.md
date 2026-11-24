@@ -3,7 +3,7 @@ title: "Last-Minute Accommodation in Liverpool: Booking for Tonight"
 meta_description: "Need somewhere to stay in Liverpool tonight? How to find a last-minute house or room, what to check fast, check-in times, parking and busy dates to watch."
 slug: last-minute-accommodation-liverpool
 h1: "Last-Minute Accommodation in Liverpool: How to Book Tonight Without Regrets"
-quick_answer: "For a last-minute stay in Liverpool, check the total price, the check-in time and how you'll get the keys before you pay. Look just outside the city centre for more choice and free parking, and avoid match days and big Aintree dates if you can. Zermatt Lodge in Fazakerley is a whole 4-bedroom house with check-in from 3pm; book direct if tonight's dates show as free."
+quick_answer: "For a last-minute stay in Liverpool, check the total price, the check-in time and how you'll get the keys before you pay. Look just outside the city centre for more choice and free parking, and avoid match days and big Aintree dates if you can. Zermatt Lodge in Liverpool is a whole 4-bedroom house with check-in from 3pm; book direct if tonight's dates show as free."
 primary_keyword: "accommodation Liverpool tonight"
 secondary_keywords:
   - "last minute accommodation Liverpool"
@@ -25,7 +25,7 @@ faqs:
   - q: "Is it safe to book a last-minute rental?"
     a: "Yes, if you book through a platform or a genuine direct-booking site and pay by card. Never pay a stranger by bank transfer for a listing you found on social media, and keep the conversation on the platform you booked through."
   - q: "Where should I look if the city centre is full?"
-    a: "Look at areas with a direct Merseyrail line into town, such as north Liverpool, Bootle, Crosby or Kirkby. You often get more space and free parking, and the train to Liverpool Central from Fazakerley takes about 15 minutes."
+    a: "Look at areas with a direct Merseyrail line into town, such as north Liverpool, Bootle, Crosby or Kirkby. You often get more space and free parking, and the train to Liverpool Central is quick."
 sources:
   - https://news.airbnb.com/what-were-doing-to-prevent-fake-listing-scams/
   - https://blog.moneysavingexpert.com/news/2025/05/holiday-booking-scams
@@ -77,13 +77,13 @@ If you can, check the [December events guide](/guides/liverpool-december-2026-ev
 
 The city centre fills first. Areas with a direct Merseyrail line into town often have more space, more choice and free parking:
 
-- **North Liverpool** (Fazakerley, Aintree, Walton): Northern line, about 15 minutes from Fazakerley to Liverpool Central
+- **North Liverpool** (Fazakerley, Aintree, Walton): Northern line into Liverpool Central
 - **Bootle and Crosby:** Northern line towards Southport
-- **Kirkby:** just beyond Fazakerley on the same line, near the M57
+- **Kirkby:** end of the Northern line's Kirkby branch, near the M57
 
 ## Zermatt Lodge for last-minute stays
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, close to Aintree University Hospital and the Walton Centre and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, a big kitchen and a washer and dryer

@@ -1,6 +1,6 @@
 ---
 title: "Sandhills Station Guide for Football Fans"
-meta_description: "Sandhills station explained for Anfield and Everton match days: the Soccerbus, walking to Bramley-Moore Dock, step-free access and trains from Fazakerley."
+meta_description: "Sandhills station explained for Anfield and Everton match days: the Soccerbus, walking to Bramley-Moore Dock, step-free access and which trains stop there."
 slug: sandhills-station-guide
 h1: "Sandhills Station: A Match Day Guide for Liverpool and Everton Fans"
 primary_keyword: "sandhills station"
@@ -35,7 +35,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Sandhills is the key station for football in Liverpool. It's the closest station to Everton's new stadium at Bramley-Moore Dock, about a 15-minute walk away, and it's where the matchday Soccerbus to Anfield starts. It sits on Merseyrail's Northern line just north of the city centre, so you can reach it directly from Liverpool Central, Moorfields, Southport, Ormskirk or Kirkby. Zermatt Lodge, our 4-bedroom house in Fazakerley in north Liverpool, is near Fazakerley station on the same line, a few stops from Sandhills with no change.
+Sandhills is the key station for football in Liverpool. It's the closest station to Everton's new stadium at Bramley-Moore Dock, about a 15-minute walk away, and it's where the matchday Soccerbus to Anfield starts. It sits on Merseyrail's Northern line just north of the city centre, so you can reach it directly from Liverpool Central, Moorfields, Southport, Ormskirk or Kirkby. Zermatt Lodge is our 4-bedroom house in Liverpool.
 
 ## Where Sandhills is
 
@@ -105,17 +105,15 @@ If you'd rather walk, Kirkdale station (one stop before Sandhills when coming fr
 6. **Evening kick-offs:** trains run less often late at night. Check the last train back before you set off.
 7. **Don't drive to Sandhills.** There's no car park and matchday parking restrictions cover the streets around both grounds. See our [match day parking guide](/guides/liverpool-match-day-parking-guide).
 
-## Getting to Sandhills from north Liverpool
+## Getting to Sandhills
 
-From Fazakerley, Sandhills is a short, direct ride on the Kirkby branch. Trainline puts the whole trip from Fazakerley to Liverpool Central at about **15 minutes**, and Sandhills is the stop before the city centre stations.
-
-That makes north Liverpool a practical base for match weekends. You can leave the cars on the drive, take the train in, and avoid the parking zones altogether. On non-match days the same train takes you into the city centre for sightseeing. Read more in our [Fazakerley to city centre train guide](/guides/fazakerley-to-liverpool-city-centre-by-train).
+All three branches of the Northern line (Southport, Ormskirk and Kirkby) run through Sandhills, and it's the stop before the city centre stations. That makes a base on any of them practical for match weekends. You can leave the car where you're staying, take the train in, and avoid the parking zones altogether.
 
 ## Staying for a match weekend
 
 Hotels near both grounds fill quickly for big fixtures, especially derbies and European nights. A whole house can work well for a group of friends or a family travelling together.
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train from the city centre and a few stops from Sandhills.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

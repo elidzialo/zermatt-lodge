@@ -84,12 +84,12 @@ Earlier years followed a similar pattern. In 2023, for example, Liverpool Expres
 
 If the celebration lands on a weekend in February, it may overlap with half term or football. A house can be easier and cheaper than several hotel rooms for families.
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool:
+Zermatt Lodge is our 4-bedroom house in Liverpool:
 
 - Sleeps 7, with 2 bathrooms
 - Big kitchen and dining room, and a games room with a pool table
 - Free parking for 2 cars
-- About **15 minutes by train** from Fazakerley to Liverpool Central
+- About **15 minutes by train** from Liverpool city centre
 - Check-in 3pm, checkout 11am
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.

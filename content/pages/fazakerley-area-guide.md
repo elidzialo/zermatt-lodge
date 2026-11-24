@@ -27,7 +27,7 @@ faqs:
   - q: "What is there to do near Fazakerley?"
     a: "Croxteth Country Park, with 500 acres of woodland, a walled garden and a working Victorian farm, is nearby. Aintree Racecourse hosts the Grand National in April and other race days through the year. The city's museums, waterfront and football grounds are a short train ride away."
   - q: "Is there parking in Fazakerley?"
-    a: "Fazakerley is mostly residential, with houses rather than city-centre flats. Zermatt Lodge has free parking for 2 cars, which saves the daily cost of city-centre car parks."
+    a: "Fazakerley is mostly residential, with houses rather than city-centre flats, so many homes have driveways or on-street parking. Check the parking at your accommodation before you book."
 sources:
   - https://en.wikipedia.org/wiki/Fazakerley
   - https://en.wikipedia.org/wiki/Fazakerley_railway_station
@@ -88,7 +88,7 @@ Stagecoach routes **17, 17A, 17X, 20 and 21** run to the city centre, with Arriv
 
 ### Aintree University Hospital
 
-The hospital is in Fazakerley itself. If you're visiting a patient, staying nearby saves long daily journeys and hospital parking fees. See our [Aintree hospital accommodation guide](/guides/accommodation-near-aintree-university-hospital).
+The hospital is in Fazakerley itself. See our [Aintree hospital accommodation guide](/guides/accommodation-near-aintree-university-hospital).
 
 ### Aintree Racecourse
 
@@ -124,9 +124,9 @@ With trains every 15 minutes or so, the **waterfront museums**, **Royal Albert D
 - Visitors who want to walk to bars and restaurants every night
 - Anyone who doesn't want to use a train, bus or car
 
-## Staying in Fazakerley: Zermatt Lodge
+## Staying in Liverpool: Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house **near Fazakerley station** in north Liverpool. It's **not in the city centre**: trains reach Liverpool Central in **about 15 minutes**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in **about 15 minutes**.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room, washer and dryer
@@ -146,7 +146,5 @@ Want to compare areas? [See all homes](/) on Book Homes.
 ## Related guides
 
 - [Aintree area guide](/guides/aintree-area-guide)
-- [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train)
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Accommodation near Aintree University Hospital](/guides/accommodation-near-aintree-university-hospital)
-- [Getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley)

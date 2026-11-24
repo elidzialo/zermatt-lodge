@@ -32,7 +32,7 @@ sources:
   - https://www.nationalrail.co.uk/stations/fazakerley/
 ---
 
-For a group of 5 to 7, a whole house usually gives you more space, a proper kitchen, parking and one shared living area, while serviced apartments give you a city-centre location and a walk to everything. If you're mainly in Liverpool for nights out or events in town, a serviced apartment can make sense. If you're a family, a work crew or a group that wants to spend time together, a house is usually the better fit. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
+For a group of 5 to 7, a whole house usually gives you more space, a proper kitchen, parking and one shared living area, while serviced apartments give you a city-centre location and a walk to everything. If you're mainly in Liverpool for nights out or events in town, a serviced apartment can make sense. If you're a family, a work crew or a group that wants to spend time together, a house is usually the better fit. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
 
 ## What "serviced accommodation" means in Liverpool
 
@@ -82,16 +82,16 @@ From **1 June 2025**, Liverpool's **Accommodation BID** introduced a **£2 a nig
 
 ## The location question
 
-The honest downside of a house is distance. Zermatt Lodge is in Fazakerley, north Liverpool. It's not walking distance to the waterfront or Bold Street. What you get instead:
+The honest downside of a house is distance. Zermatt Lodge is in Liverpool. It's not walking distance to the waterfront or Bold Street. What you get instead:
 
-- **Fazakerley station nearby**, with direct Merseyrail trains to **Liverpool Central in about 15 minutes**, according to Trainline
+- **Trains to Liverpool Central in about 15 minutes**
 - **Moorfields** on the same line for the business district
 - **M57 and M58** minutes away for driving around Merseyside
 - **Aintree Shopping Park**, with an M&S Foodhall and free parking, a short drive away for supplies
 
 For most groups, a 15-minute train ride is a fair trade for space and parking. For a group planning to be out until 2am every night, it probably isn't.
 
-National Rail notes that Fazakerley station has step-free access to its platforms, but not between platform 1 and the exit, so check before you travel if anyone in your group uses a wheelchair.
+Station access varies, so check National Rail's station pages before you travel if anyone in your group uses a wheelchair.
 
 ## Cost: how to compare properly
 
@@ -117,7 +117,7 @@ For a related comparison, see our [house vs hotel guide for groups](/guides/hous
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house, not an apartment block. It's in a quiet residential part of north Liverpool, about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house, not an apartment block. It's in a quiet residential part of Liverpool, about 15 minutes by train from Liverpool city centre.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

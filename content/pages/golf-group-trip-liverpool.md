@@ -3,7 +3,7 @@ title: "Golf Group Trip to Liverpool: Courses, Routes and a Base"
 meta_description: "Planning a golf trip to Liverpool? The Golf Coast links from Hoylake to Southport, booking rules at the big clubs, routes for two cars and a house for 7."
 slug: golf-group-trip-liverpool
 h1: "Golf Group Trip to Liverpool: Playing England's Golf Coast from One Base"
-quick_answer: "Base a golf group between the Wirral and the Sefton coast, with parking for two cars, to play several famous links without changing hotels. Royal Liverpool, Royal Birkdale, Hillside and Formby are all within reach of north Liverpool by car."
+quick_answer: "Base a golf group between the Wirral and the Sefton coast, with parking for two cars, to play several famous links without changing hotels. Royal Liverpool, Royal Birkdale, Hillside and Formby are all within reach of Liverpool by car."
 primary_keyword: "golf trip liverpool group"
 secondary_keywords:
   - "golf break liverpool"
@@ -22,7 +22,7 @@ faqs:
   - q: "Can visitors play Royal Birkdale?"
     a: "Yes, by booking. Royal Birkdale's visitor terms say full green fee payment is due 60 days before play, and after that point payments are non-refundable and tee times can't be moved. Winter maintenance from November to March can mean occasional hole closures."
   - q: "Where should a golf group stay to play both Hoylake and Southport?"
-    a: "Somewhere between the two with good road links. North Liverpool is close to the A5758 and A59 towards Formby and Southport, and has access to the Mersey tunnels for the Wirral and Hoylake."
+    a: "Somewhere between the two with good road links. Liverpool has the A5758 and A59 towards Formby and Southport, and the Mersey tunnels for the Wirral and Hoylake."
   - q: "How many cars does a golf group need?"
     a: "Usually two for a group of six to eight with full bags. Check that your accommodation has off-street parking for both, so clubs don't have to be carried in and out every night."
   - q: "When is the best time for a golf trip to Merseyside?"
@@ -86,7 +86,7 @@ Other clubs have their own rules. Many ask visitors about handicaps, dress codes
 Golf trips here work best by car. You'll be crossing from the Wirral to Southport and back, and nobody wants to carry a full tour bag on a train.
 
 - **Two cars for six to eight golfers** is typical.
-- **North to Formby and Southport:** from north Liverpool, the Switch Island interchange at the end of the M57 and M58 connects to the A5758 towards Formby and Southport, and to the A59.
+- **North to Formby and Southport:** the Switch Island interchange at the end of the M57 and M58 connects to the A5758 towards Formby and Southport, and to the A59.
 - **South-west to Hoylake:** through a Mersey tunnel into the Wirral. Tunnel tolls apply.
 - **Leave early.** Morning traffic around Liverpool varies, and you don't want to rush your warm-up.
 
@@ -111,7 +111,7 @@ Fancy something different for a non-golfer or a rest day? The [Aintree Golf Cent
 
 ## Why Zermatt Lodge suits golf groups
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M58. It isn't on the coast and it isn't in the city centre, but it sits between the Sefton coast and the Mersey tunnels, which suits a trip that mixes Southport and Hoylake.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't on the coast and it isn't in the city centre, but it sits between the Sefton coast and the Mersey tunnels, which suits a trip that mixes Southport and Hoylake.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for early tee times
@@ -119,7 +119,7 @@ Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near the M57 and M5
 - **Big kitchen and dining room** for breakfast before you go and dinner after
 - **Games room with a pool table** for settling the day's bets
 - **Large private garden** and a **55" Smart TV with Netflix** for watching the golf on TV
-- **Near Fazakerley station**, about 15 minutes by train to Liverpool Central for a night out without driving
+- **About 15 minutes by train** to Liverpool Central for a night out without driving
 
 It's a quiet home with firm rules: **no parties or events**, no smoking and no pets. Check-in is 3pm and checkout is 11am. The Moderate cancellation policy gives a full refund up to 5 days before check-in.
 

@@ -1,6 +1,6 @@
 ---
 title: "Maghull Area Guide: Canal Town on Liverpool's Northern Edge"
-meta_description: "Maghull guide for visitors, workers and relocators: the canal, Frank Hornby's town, two Merseyrail stations, Switch Island for the M57 and M58, and nearby stays."
+meta_description: "Maghull guide for visitors, workers and relocators: the canal, Frank Hornby's town, two Merseyrail stations, Switch Island for the M57 and M58, and where to stay."
 slug: maghull-area-guide
 h1: "Maghull, Merseyside: A Practical Area Guide"
 quick_answer: "Maghull is a canal town in Sefton, north of Liverpool and west of Kirkby, with about 20,000 people (20,444 at the 2011 Census). It has two Merseyrail Northern line stations, Maghull and Maghull North (opened June 2018), and sits next to Switch Island, where the M57 and M58 begin. It's a good base for Aintree, Ormskirk and the Sefton coast, and close to north Liverpool."
@@ -25,7 +25,7 @@ faqs:
   - q: "What is Maghull known for?"
     a: "The Leeds and Liverpool Canal, which reached the town in 1774; St Andrew's Old Church, described as the oldest church building in Merseyside still in regular use; and Frank Hornby, the inventor of Meccano, who lived and is buried in Maghull."
   - q: "Is there anywhere to stay in Maghull for a group?"
-    a: "There are few large holiday houses in Maghull itself. Nearby Fazakerley, on the other side of Switch Island and Aintree, has whole-house options such as Zermatt Lodge, which sleeps 7 with free parking for 2 cars."
+    a: "There are few large holiday houses in Maghull itself. Zermatt Lodge, a 4-bedroom house in Liverpool, sleeps 7 with free parking for 2 cars."
 sources:
   - https://en.wikipedia.org/wiki/Maghull
   - https://wikiwand.com/en/Maghull_North_railway_station
@@ -86,11 +86,11 @@ The **M57 and M58 both start at Switch Island**, between Aintree and Maghull. Th
 
 ## Where to stay
 
-Maghull has few large holiday houses. If you need a whole house for a family, group or crew, look just south at **Aintree and Fazakerley**, on the Liverpool side of Switch Island. Both have Merseyrail stations and quick access to the same motorways.
+Maghull has few large holiday houses. If you need a whole house for a family, group or crew, look at Liverpool, which has more choice and Merseyrail and motorway links to Maghull.
 
-## Zermatt Lodge, near Maghull
+## Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, a big kitchen and a washer and dryer
@@ -107,6 +107,5 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 ## Related guides
 
 - [Aintree area guide](/guides/aintree-area-guide)
-- [Fazakerley area guide](/guides/fazakerley-area-guide)
 - [Accommodation near the M57 and M58](/guides/accommodation-near-m57-m58-liverpool)
 - [House hunting in Liverpool](/guides/house-hunting-trip-liverpool)

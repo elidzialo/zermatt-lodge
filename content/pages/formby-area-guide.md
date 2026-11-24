@@ -34,7 +34,7 @@ sources:
   - https://www.savemyexams.com/learning-hub/school-holidays/england/merseyside/liverpool-city-council/fazakerley/
 ---
 
-Formby is a coastal town north of Liverpool, best known for the National Trust's pine woodlands, big sand dunes, a wide beach and rare red squirrels. It's one of the easiest nature days out from Liverpool, but the two National Trust car parks fill up very quickly on sunny days, so arrive early or take the Merseyrail train to Formby or Freshfield. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping up to 7, with free parking for 2 cars and about 15 minutes by train from Liverpool city centre, so Formby makes a good day trip from the house.
+Formby is a coastal town north of Liverpool, best known for the National Trust's pine woodlands, big sand dunes, a wide beach and rare red squirrels. It's one of the easiest nature days out from Liverpool, but the two National Trust car parks fill up very quickly on sunny days, so arrive early or take the Merseyrail train to Formby or Freshfield. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars and about 15 minutes by train from Liverpool city centre, so Formby makes a good day trip from the house.
 
 ## Where Formby is
 
@@ -134,7 +134,7 @@ From Fazakerley, you're on the **Kirkby branch** of the same line, so you'd chan
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool. It's not on the coast and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with Formby an easy day trip by car or train.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not on the coast and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with Formby an easy day trip by car or train.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms** for sandy feet after the beach
@@ -151,7 +151,7 @@ Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/180
 
 ## Related guides
 
-- [Family days out in north Liverpool](/guides/family-days-out-north-liverpool)
+- [Family days out on Merseyside](/guides/family-days-out-north-liverpool)
 - [Golf group trip to Liverpool](/guides/golf-group-trip-liverpool)
 - [Large family house in Liverpool](/guides/large-family-house-liverpool)
 - [Aintree area guide](/guides/aintree-area-guide)

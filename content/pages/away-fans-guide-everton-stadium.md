@@ -114,7 +114,7 @@ If you're visiting Liverpool for the first time, our [first visit guide to Evert
 
 ## Where to stay: Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station on the Merseyrail Northern line. Sandhills is on the same line, a few stops towards the city, so you can drop the bags, park the cars and get the train to the game. It isn't in the city centre or walking distance to the stadium, but it keeps a group of travelling supporters together.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. You can drop the bags, park the cars and get the train to Sandhills for the game. It isn't in the city centre or walking distance to the stadium, but it keeps a group of travelling supporters together.
 
 - **Sleeps 7:** king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -131,6 +131,5 @@ The house rules are firm: **no parties or events**, no smoking and no pets. Chec
 
 - [Everton stadium accommodation](/guides/everton-stadium-accommodation)
 - [First visit to Everton's new stadium](/guides/everton-new-stadium-first-visit-guide)
-- [Getting to Everton's stadium from Fazakerley](/guides/getting-to-everton-stadium-from-fazakerley)
 - [Liverpool match day parking guide](/guides/liverpool-match-day-parking-guide)
 - [Away fans' guide to Anfield](/guides/away-fans-guide-anfield)

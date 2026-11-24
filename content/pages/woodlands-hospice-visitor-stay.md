@@ -1,9 +1,9 @@
 ---
-title: "Staying Nearby While Visiting Woodlands Hospice"
-meta_description: "Travelling to be with someone at Woodlands Hospice in Liverpool? Where it is, getting there, parking and a quiet house nearby where the family can stay."
+title: "Where to Stay While Visiting Woodlands Hospice"
+meta_description: "Travelling to be with someone at Woodlands Hospice in Liverpool? Where it is, getting there, parking and a quiet house in Liverpool where the family can stay."
 slug: woodlands-hospice-visitor-stay
-h1: "Staying Nearby While Visiting Woodlands Hospice, Liverpool"
-quick_answer: "Woodlands Hospice is on the Aintree University Hospital campus in Fazakerley, north Liverpool. Zermatt Lodge is a whole 4-bedroom house nearby where family travelling from further away can stay together and be there quickly if needed."
+h1: "Where to Stay While Visiting Woodlands Hospice, Liverpool"
+quick_answer: "Woodlands Hospice is on the Aintree University Hospital campus in Liverpool. Zermatt Lodge is a whole 4-bedroom house in Liverpool where family travelling from further away can stay together."
 primary_keyword: "accommodation near woodlands hospice liverpool"
 secondary_keywords:
   - "woodlands hospice aintree visiting"
@@ -34,7 +34,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-When someone you love is being cared for at Woodlands Hospice, being close by matters more than almost anything else. Woodlands is on the Aintree University Hospital campus in Fazakerley, north Liverpool, and Zermatt Lodge is a whole 4-bedroom house nearby, where family travelling from further away can stay together, rest between visits and be there quickly if they're needed.
+When someone you love is being cared for at Woodlands Hospice, having somewhere calm for the family to stay matters a great deal. Woodlands is on the Aintree University Hospital campus in Liverpool, and Zermatt Lodge is a whole 4-bedroom house in Liverpool, where family travelling from further away can stay together, and rest between visits.
 
 This page is written for families in that situation. It covers the practical things, gently and simply, so you have less to think about.
 
@@ -74,9 +74,9 @@ A short list for the journey, so nothing important is left behind:
 4. Bring photos, music or a familiar blanket if your loved one would find them comforting, and ask the team first
 5. Decide who will keep the wider family updated, so the phone isn't ringing constantly
 
-## Being close by: why it helps
+## Staying in Liverpool: why it helps
 
-For families travelling in, distance is often the hardest part. Being nearby means:
+For families travelling in, distance is often the hardest part. Staying in Liverpool means:
 
 - **You can be there quickly** if the team calls
 - **You can take turns.** One person sits with your loved one while others rest, eat or make calls
@@ -107,7 +107,7 @@ If you're unsure, email cs@zugati.co.uk and we can talk it through. We'd rather 
 
 ## A quiet place for the family
 
-Zermatt Lodge is a whole house in north Liverpool, close to the Aintree campus and near Fazakerley station. It isn't a hotel, so there are no strangers in corridors or busy breakfast rooms: just your family, together.
+Zermatt Lodge is a whole house in Liverpool. It isn't a hotel, so there are no strangers in corridors or busy breakfast rooms: just your family, together.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

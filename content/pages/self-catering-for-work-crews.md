@@ -3,7 +3,7 @@ title: "Self-Catering for Work Crews: Feeding a Team on a Liverpool Job"
 meta_description: "Running a crew house in Liverpool? How to plan food shops, batch cooking, packed lunches, fridge space and food safety for a team on a long job."
 slug: self-catering-for-work-crews
 h1: "Self-Catering for Work Crews: A Simple System That Saves Money"
-quick_answer: "A crew house with a proper kitchen can save a lot compared with eating out every night. Do one big shop at the start of the week, batch cook two or three meals, prep packed lunches the night before and keep the fridge at 0 to 5C. Eat leftovers within 48 hours or freeze them. Zermatt Lodge in north Liverpool has a big kitchen, dining room and washer and dryer for crews of up to 7."
+quick_answer: "A crew house with a proper kitchen can save a lot compared with eating out every night. Do one big shop at the start of the week, batch cook two or three meals, prep packed lunches the night before and keep the fridge at 0 to 5C. Eat leftovers within 48 hours or freeze them. Zermatt Lodge in Liverpool has a big kitchen, dining room and washer and dryer for crews of up to 7."
 primary_keyword: "self catering accommodation for work crews"
 secondary_keywords:
   - "contractor accommodation with kitchen Liverpool"
@@ -24,8 +24,8 @@ faqs:
     a: "UK government food safety guidance says a fridge should be between 0 and 5C, and suggests checking it with a fridge thermometer about once a week."
   - q: "How long can we keep leftovers?"
     a: "Government guidance says to cool cooked food and put it in the fridge within one to two hours, and eat leftovers within 48 hours or freeze them."
-  - q: "Where can a crew shop near Zermatt Lodge?"
-    a: "There's a Lidl on Longmoor Lane in Fazakerley, open Monday to Saturday 8am to 10pm and Sunday 10am to 4pm (check holiday hours). Delivery apps also cover the area."
+  - q: "Where can a crew shop"
+    a: "Supermarket delivery and click and collect work well for crews, and delivery apps cover most of Liverpool. Check holiday hours."
 sources:
   - https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely
   - https://www.openingtimesin.uk/lidl-fazakerley-liverpool
@@ -95,13 +95,13 @@ For night shifts, plan the main meal before the shift and something light on ret
 
 For a full checklist, see our [contractor accommodation checklist](/guides/contractor-checklist-before-booking), and for a ready-made plan, our [meal plan for a group of 7](/guides/self-catering-meal-plan-group-of-7).
 
-## Shopping near Zermatt Lodge
+## Shopping
 
-Lidl Fazakerley on Longmoor Lane lists opening hours of 8am to 10pm Monday to Saturday and 10am to 4pm on Sunday. Check holiday hours, especially over Christmas. Delivery apps also cover the area.
+Large supermarkets in England can open for six hours on Sundays. Check holiday hours, especially over Christmas. Delivery apps also cover the area.
 
 ## Zermatt Lodge for crews
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, near the M57 and M58 and about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Big fitted kitchen** and a **dining room with a table for 7**
 - **Sleeps 7** with **separate beds**: a king master with en-suite, a second king, a queen and a single

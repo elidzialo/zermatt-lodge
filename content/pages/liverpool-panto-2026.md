@@ -108,7 +108,7 @@ Visit Liverpool's guide also lists these across the wider city region:
 | Cinderella | The Atkinson, Southport | 4 to 31 Dec 2026 |
 | Snow White | The Brindley, Runcorn | 9 Dec 2026 to 10 Jan 2027 |
 
-If you're staying in north Liverpool with a car, Prescot, St Helens and Southport are all reasonable drives. See our [Prescot town guide](/guides/prescot-town-guide).
+If you're staying in Liverpool with a car, Prescot, St Helens and Southport are all reasonable drives. See our [Prescot town guide](/guides/prescot-town-guide).
 
 ## Choosing the right show
 
@@ -120,7 +120,7 @@ If you're staying in north Liverpool with a car, Prescot, St Helens and Southpor
 
 ## Getting to the theatres
 
-From Fazakerley, direct Merseyrail trains reach **Liverpool Central in about 15 minutes**. From there:
+From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. From there:
 
 - **Liverpool Empire:** opposite Lime Street station
 - **Royal Court, Playhouse and Epstein:** short walks from Central
@@ -135,7 +135,7 @@ A panto trip often turns into a weekend: matinee on Saturday, the [Christmas mar
 
 ## Where to stay for a panto trip
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. For grandparents, parents and kids travelling together, it means one booking, a kitchen for breakfast and room for everyone.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. For grandparents, parents and kids travelling together, it means one booking, a kitchen for breakfast and room for everyone.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

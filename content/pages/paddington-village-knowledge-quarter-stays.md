@@ -27,7 +27,7 @@ faqs:
   - q: "How many jobs could the Knowledge Quarter create?"
     a: "KQ Liverpool has said the development could help create upwards of 10,000 highly skilled jobs in the city region."
   - q: "Where can a team stay with parking near the Knowledge Quarter?"
-    a: "City centre parking is charged, so some teams stay outside the centre in a house with free parking and take the train in. From Fazakerley, Liverpool Central is about 15 minutes by train."
+    a: "City centre parking is charged, so some teams stay outside the centre in a house with free parking and take the train in. From Zermatt Lodge, Liverpool Central is about 15 minutes by train."
 sources:
   - https://liverpoolexpress.co.uk/work-begins-at-liverpools-paddington-south-scheme/
   - https://liverpoolexpress.co.uk/contractor-appointed-for-61m-new-lab-scheme/
@@ -77,9 +77,9 @@ KQ Liverpool has said the wider development could help create **upwards of 10,00
 - **NHS and hospital contractors**
 - **Conference delegates** at university venues
 
-## Getting there from north Liverpool
+## Getting there
 
-- **By train:** from **Fazakerley**, direct trains reach **Liverpool Central** in about **15 minutes**. Paddington Village is on the east side of the centre, so allow time to walk or take a bus or taxi from there
+- **By train:** from Zermatt Lodge, trains reach **Liverpool Central** in about **15 minutes**. Paddington Village is on the east side of the centre, so allow time to walk or take a bus or taxi from there
 - **By car:** the area has paid parking, including the multi-storey at Paddington Village. Check rates before committing a team to driving in daily
 
 ## Short stay or long stay?
@@ -94,7 +94,7 @@ Our [corporate housing guide](/guides/corporate-housing-liverpool) compares the 
 
 ## Zermatt Lodge for KQ teams
 
-Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, about 15 minutes by train to Liverpool Central and close to the M57 and M58.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train to Liverpool Central.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**

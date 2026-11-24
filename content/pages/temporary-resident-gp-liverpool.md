@@ -102,7 +102,7 @@ The Royal Liverpool University Hospital serves the city centre and south. Childr
 
 ## Medicines and pharmacies
 
-If you've forgotten medication or run out, a pharmacy is often the quickest first step. Pharmacists can advise on minor illnesses and, in some circumstances, supply an emergency amount of a regular medicine. See our guide to [pharmacies near Fazakerley](/guides/pharmacies-near-fazakerley) for north Liverpool.
+If you've forgotten medication or run out, a pharmacy is often the quickest first step. Pharmacists can advise on minor illnesses and, in some circumstances, supply an emergency amount of a regular medicine. See our guide to [pharmacies in north Liverpool](/guides/pharmacies-near-fazakerley) for north Liverpool.
 
 ## A checklist for longer stays
 
@@ -116,13 +116,12 @@ If you're in Liverpool for weeks, for a contract, a placement or to support some
 
 Our [long-stay accommodation guide](/guides/long-stay-accommodation-liverpool) and [relocating to Liverpool guide](/guides/relocating-to-liverpool-temporary-house) cover other practicalities.
 
-## Staying in north Liverpool
+## Staying in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to Aintree University Hospital and Fazakerley station. Guests here for work or longer visits get a quiet base: 4 bedrooms sleeping up to 7, 2 bathrooms, a big kitchen, a large private garden and free parking for 2 cars. It's a calm residential home, with no parties or events, no smoking and no pets. For longer stays, email cs@zugati.co.uk or [check availability and book direct](/zermatt-lodge#book).
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. Guests here for work or longer visits get a quiet base: 4 bedrooms sleeping up to 7, 2 bathrooms, a big kitchen, a large private garden and free parking for 2 cars. It's a calm residential home, with no parties or events, no smoking and no pets. For longer stays, email cs@zugati.co.uk or [check availability and book direct](/zermatt-lodge#book).
 
 ## Related guides
 
-- [Pharmacies near Fazakerley](/guides/pharmacies-near-fazakerley)
 - [Long-stay accommodation in Liverpool](/guides/long-stay-accommodation-liverpool)
 - [Contractor accommodation in Liverpool](/guides/contractor-accommodation-liverpool)
 - [Relocating to Liverpool: a temporary house](/guides/relocating-to-liverpool-temporary-house)

@@ -3,7 +3,7 @@ title: "Long Hospital Stays in Liverpool: Tips for Families"
 meta_description: "Relative in a Liverpool hospital for weeks? Parking concessions compared, visiting rotas, meals, laundry and keeping children in a routine."
 slug: long-stay-hospital-visiting-tips-liverpool
 h1: "Long Hospital Stays in Liverpool: Practical Tips for Families"
-quick_answer: "When a relative is in a Liverpool hospital for weeks, sort the parking concession on day one, agree a visiting rota and stay somewhere you can cook, sleep and do laundry. Zermatt Lodge is a whole house near Aintree University Hospital with free parking for two cars."
+quick_answer: "When a relative is in a Liverpool hospital for weeks, sort the parking concession on day one, agree a visiting rota and stay somewhere you can cook, sleep and do laundry. Zermatt Lodge is a whole house."
 primary_keyword: "long hospital stay family tips liverpool"
 secondary_keywords:
   - "weekly hospital parking liverpool"
@@ -33,7 +33,7 @@ sources:
   - https://www.nhs.uk/nhs-services/help-with-health-costs/healthcare-travel-costs-scheme-htcs/
 ---
 
-When a relative is in a Liverpool hospital for weeks rather than days, the things that wear families down are the practical ones: parking costs, long drives, poor sleep, takeaway food and children's routines falling apart. The fixes are mostly simple: sort the parking concession on day one, agree a visiting rota, and stay somewhere you can cook, sleep and do laundry. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Aintree University Hospital, with free parking for two cars and room for up to 7.
+When a relative is in a Liverpool hospital for weeks rather than days, the things that wear families down are the practical ones: parking costs, long drives, poor sleep, takeaway food and children's routines falling apart. The fixes are mostly simple: sort the parking concession on day one, agree a visiting rota, and stay somewhere you can cook, sleep and do laundry. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars and room for up to 7.
 
 This guide pulls together tips that apply across Liverpool's main hospitals.
 
@@ -108,7 +108,7 @@ Discharge from a long stay is often followed by a recovery period, appointments 
 
 ## A base for families on long hospital stays
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station and the Aintree hospital site, which includes Aintree University Hospital, The Walton Centre and Woodlands Hospice. For hospitals elsewhere in the city, you'll drive or take the train (about 15 minutes from Fazakerley to Liverpool Central).
+Zermatt Lodge is a whole house in Liverpool. For hospitals across the city, you'll drive or take the train (about 15 minutes to Liverpool Central).
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

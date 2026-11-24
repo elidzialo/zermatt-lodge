@@ -1,6 +1,8 @@
 # Zermatt Lodge - Liverpool demand calendar (Nov 2026 - 2027)
 
-Events that push up demand for a 4-bed, sleeps-7 house in Fazakerley (north Liverpool). Checked by web search on 18 November 2026.
+> **Location rule (Eli, 22 Nov 2026):** describe Zermatt Lodge only as "a 4-bedroom house in Liverpool" (or "our house in Liverpool"). Never say or imply it is in or near Fazakerley, Aintree or north Liverpool, never use L9/L10, nearby streets or shops, walking or drive times or distances from the house, or a phone number. "Liverpool city centre is about 15 minutes by train or car" is fine. Area guides about Fazakerley or Aintree are fine as neutral visitor guides.
+
+Events that push up demand for a 4-bed, sleeps-7 house in Liverpool. Checked by web search on 18 November 2026.
 
 - **Verified** = the date was read on the source page given.
 - **Unverified** = the event is real or expected, but no confirmed date was found. Check again before you set prices or publish.
@@ -78,7 +80,7 @@ Demand key: **High** = price up and set a minimum stay. **Med** = some uplift. *
 
 ## Ongoing demand (not tied to a date)
 
-- **Aintree University Hospital and the Walton Centre** (Fazakerley site, next to the property). Patients' families, locum and agency staff, and NHS contractors book all year round. The Walton Centre runs its own "Home from Home" relatives' accommodation, which shows there is demand and that its rooms fill up. Source: https://www.thewaltoncentre.nhs.uk/home-from-home-accomodation
+- **Aintree University Hospital and the Walton Centre** (Fazakerley site). Patients' families, locum and agency staff, and NHS contractors book all year round. The Walton Centre runs its own "Home from Home" relatives' accommodation, which shows there is demand and that its rooms fill up. Source: https://www.thewaltoncentre.nhs.uk/home-from-home-accomodation
 - **Contractors and work crews** for the Port of Liverpool / Liverpool2 at Seaforth, Knowsley Industrial and Business Parks (Kirkby), Long Lane and Aintree business areas, and Liverpool Freeport sites. Bookings are midweek, Monday to Friday, and often run for weeks. Competitors include comfyworkers.com, rentastay.co.uk and Pass the Keys listings.
 - **Relocation and insurance-claim stays** (someone's home is being repaired). These run monthly.
 

@@ -36,7 +36,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/about-the-event
 ---
 
-Irish racegoers have more options than ever to reach the Grand National: short direct flights into Liverpool from Dublin, Belfast and the west of Ireland, the Belfast to Birkenhead ferry, or the Dublin to Holyhead crossing with a drive across North Wales. The 2027 festival runs from **Thursday 8 to Saturday 10 April**. Zermatt Lodge is a whole 4-bedroom house in north Liverpool, a few miles from Aintree Racecourse, sleeping up to 7 with free parking for two cars, so it suits groups who bring a car over on the ferry as well as those who fly in.
+Irish racegoers have more options than ever to reach the Grand National: short direct flights into Liverpool from Dublin, Belfast and the west of Ireland, the Belfast to Birkenhead ferry, or the Dublin to Holyhead crossing with a drive across North Wales. The 2027 festival runs from **Thursday 8 to Saturday 10 April**. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for two cars, so it suits groups who bring a car over on the ferry as well as those who fly in.
 
 This guide compares the routes and explains how to get from each one to Aintree.
 
@@ -66,7 +66,7 @@ The Jockey Club says the airport is about **20 minutes' drive** from Aintree Rac
 - **Taxi** straight to your accommodation
 - **Bus and train:** the Arriva 500 runs between the airport and the city centre, and from there Merseyrail serves Aintree
 
-Our [airport to Fazakerley guide](/guides/liverpool-airport-to-fazakerley) has the step-by-step options for reaching north Liverpool.
+Our [airport transport guide](/guides/liverpool-airport-to-fazakerley) has step-by-step options.
 
 ## Option 2: Belfast to Birkenhead by ferry
 
@@ -76,7 +76,7 @@ Stena Line runs the Belfast to Liverpool (Birkenhead) route:
 - **Sailings:** typically two a day
 - **Foot passengers:** accepted, as well as cars
 
-Birkenhead is on the Wirral, across the River Mersey from Liverpool. With a car, you drive through one of the Mersey road tunnels into Liverpool, which carries a toll. See our [Mersey tunnel tolls guide](/guides/mersey-tunnel-tolls-guide). From the tunnel, it's a straightforward drive north to Aintree and Fazakerley. Check a live route for timings.
+Birkenhead is on the Wirral, across the River Mersey from Liverpool. With a car, you drive through one of the Mersey road tunnels into Liverpool, which carries a toll. See our [Mersey tunnel tolls guide](/guides/mersey-tunnel-tolls-guide). From the tunnel, it's a straightforward drive north to Aintree. Check a live route for timings.
 
 Compare the departure times: a sailing that arrives the evening before your race day is far less stressful than one that lands on the morning itself. Our [Belfast ferry guide](/guides/belfast-ferry-birkenhead-stay) covers the terminal and arrival in more detail.
 
@@ -113,7 +113,7 @@ Many Irish groups arrive on the Thursday or Friday and leave on the Sunday or Mo
 
 ## Why Zermatt Lodge suits groups from Ireland
 
-Zermatt Lodge is a whole house in north Liverpool, near Fazakerley station and a few miles from Aintree. It isn't in the city centre, but the train to Liverpool Central takes about 15 minutes.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, but the train to Liverpool Central takes about 15 minutes.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for race-day mornings
@@ -132,4 +132,3 @@ Festival week books up fast. Check dates and book direct at [Zermatt Lodge](/zer
 - [Grand National accommodation: where to stay near Aintree](/guides/grand-national-accommodation)
 - [Grand National Festival: a first-timer's guide](/guides/grand-national-first-timers-guide)
 - [Belfast ferry from Birkenhead: where to stay](/guides/belfast-ferry-birkenhead-stay)
-- [Liverpool Airport to Fazakerley](/guides/liverpool-airport-to-fazakerley)

@@ -3,7 +3,7 @@ title: "Holiday House in Liverpool with a Games Room"
 meta_description: "A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups."
 slug: holiday-house-liverpool-games-room
 h1: "Holiday House in Liverpool with a Games Room and Pool Table"
-quick_answer: "Zermatt Lodge is a whole 4-bedroom holiday house in Fazakerley, north Liverpool, with a games room and pool table, board games and a 55-inch Smart TV with Netflix. It sleeps 7, has a garden and free parking for two cars, and trains reach the city centre in about 15 minutes."
+quick_answer: "Zermatt Lodge is a whole 4-bedroom holiday house in Liverpool, with a games room and pool table, board games and a 55-inch Smart TV with Netflix. It sleeps 7, has a garden and free parking for two cars, and trains reach the city centre in about 15 minutes."
 primary_keyword: "holiday house liverpool games room"
 secondary_keywords:
   - "liverpool accommodation pool table"
@@ -17,13 +17,13 @@ related:
   - large-family-house-liverpool
 faqs:
   - q: "Is there holiday accommodation in Liverpool with a pool table?"
-    a: "Yes. Zermatt Lodge in Fazakerley, north Liverpool, is a whole 4-bedroom house with a games room and pool table, plus board games and a 55-inch Smart TV with Netflix."
+    a: "Yes. Zermatt Lodge in Liverpool, is a whole 4-bedroom house with a games room and pool table, plus board games and a 55-inch Smart TV with Netflix."
   - q: "How many people can stay?"
     a: "Up to 7 people, in a king master with en-suite, a second king, a queen and a single, with 2 bathrooms."
   - q: "Can we use the games room for a party?"
     a: "No. The games room is for guests to enjoy relaxed evenings in. Zermatt Lodge has no parties, no smoking and no pets."
   - q: "What can we do in Liverpool on a rainy day?"
-    a: "Liverpool's national museums, such as the Museum of Liverpool, World Museum and the Walker Art Gallery, are free and indoors, and a short train ride from Fazakerley. Then come back for pool, board games and a film."
+    a: "Liverpool's national museums, such as the Museum of Liverpool, World Museum and the Walker Art Gallery, are free and indoors, and a short train ride from the house. Then come back for pool, board games and a film."
   - q: "Is the games room suitable for children?"
     a: "Families enjoy it. Supervise younger children around the pool table and cues, and keep drinks away from the cloth."
 sources:
@@ -31,7 +31,7 @@ sources:
   - https://www.merseyferries.co.uk/about
 ---
 
-If you want a Liverpool holiday house where the evenings are as good as the days, look for one with a games room. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, with a games room and pool table, a cupboard of board games and a 55" Smart TV with Netflix. It sleeps 7, has a big kitchen, a dining room and a garden, and there's free parking for two cars. Trains reach the city centre in about 15 minutes.
+If you want a Liverpool holiday house where the evenings are as good as the days, look for one with a games room. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with a games room and pool table, a cupboard of board games and a 55" Smart TV with Netflix. It sleeps 7, has a big kitchen, a dining room and a garden, and there's free parking for two cars. Trains reach the city centre in about 15 minutes.
 
 This page is about making the most of the time you spend at the house, whether that's a rainy afternoon, a post-match evening or a family games night.
 
@@ -82,7 +82,7 @@ More ideas are in our [group movie night guide](/guides/movie-night-group-ideas)
 
 ### Rainy day
 
-Morning: take the train from Fazakerley to Liverpool Central, then visit one of the free national museums, such as the Museum of Liverpool or World Museum.
+Morning: take the train to Liverpool Central, then visit one of the free national museums, such as the Museum of Liverpool or World Museum.
 Afternoon: back to the house for pool and a board game.
 Evening: a big home-cooked meal and a film.
 
@@ -90,7 +90,8 @@ See [rainy day things to do in Liverpool](/guides/rainy-day-liverpool).
 
 ### Match day
 
-Morning: a big breakfast at the house, then the train towards Sandhills.
+Morning: a big breakfast at the house, then the train to Sandhills.
+
 Afternoon: the match.
 Evening: back to watch the late game or highlights on the big TV, with a pool rematch.
 
@@ -138,7 +139,7 @@ The games room is for relaxed, sociable evenings, not parties. Zermatt Lodge is 
 - **Big kitchen and dining room**, with a large table for board games
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **Near Fazakerley station and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 
 Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk.

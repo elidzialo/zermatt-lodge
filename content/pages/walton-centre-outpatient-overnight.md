@@ -1,6 +1,6 @@
 ---
 title: "Walton Centre Appointment? Planning an Overnight Stay"
-meta_description: "Travelling far for a Walton Centre clinic or scan? Check where it is, plan the night before, parking, trains and a quiet house near the Fazakerley site."
+meta_description: "Travelling far for a Walton Centre clinic or scan? Check where it is, plan the night before, parking, trains and a quiet house in Liverpool."
 slug: walton-centre-outpatient-overnight
 h1: "Travelling to a Walton Centre Appointment: When and How to Stay Overnight"
 quick_answer: "If you have an early appointment at The Walton Centre and live more than a couple of hours away, stay in Liverpool the night before. The hospital is in Fazakerley, north Liverpool, and serves patients from Lancashire, Cheshire, North Wales and the Isle of Man."
@@ -79,7 +79,7 @@ The Walton Centre says **Fazakerley station** is about a 10-minute walk away. It
 
 ### By car
 
-The site is near the end of the M57 and M58, so drivers from the north and east can usually avoid the city centre. Aintree University Hospital warns that roads around the site are congested at peak times. For an early appointment, that's another reason to be close by the night before.
+The site is near the end of the M57 and M58, so drivers from the north and east can usually avoid the city centre. Aintree University Hospital warns that roads around the site are congested at peak times. For an early appointment, that's another reason to stay in Liverpool the night before.
 
 ### Parking
 
@@ -108,7 +108,7 @@ It's a good idea to bring a companion for neurology appointments. They can take 
 
 ## Why Zermatt Lodge suits Walton Centre outpatients
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, close to the Aintree hospital site and Fazakerley station. You're near your appointment, not in the city centre, so there's no early-morning drive across Liverpool.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, and with free parking you can drive to your appointment in the morning without a long trip from home.
 
 - **Free parking for 2 cars**, so you only pay hospital parking for the appointment itself
 - **4 bedrooms**, including a king master with en-suite, so a patient can rest properly while a partner or family member has their own room

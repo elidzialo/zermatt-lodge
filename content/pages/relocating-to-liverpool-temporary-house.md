@@ -3,7 +3,7 @@ title: "Relocating to Liverpool? Use a Short-Stay House as Base"
 meta_description: "Moving to Liverpool? How to use a furnished short-stay house as your relocation base: viewings, school transfers, GP registration and areas to research."
 slug: relocating-to-liverpool-temporary-house
 h1: "Relocating to Liverpool: Using a Short-Stay House as Your Base"
-quick_answer: "A furnished short-stay house gives a relocating family a calm base for the first few weeks while viewing homes, starting work and sorting schools. Zermatt Lodge in Fazakerley sleeps up to 7, with a full kitchen, two bathrooms, a garden and free parking for two cars."
+quick_answer: "A furnished short-stay house gives a relocating family a calm base for the first few weeks while viewing homes, starting work and sorting schools. Zermatt Lodge in Liverpool sleeps up to 7, with a full kitchen, two bathrooms, a garden and free parking for two cars."
 primary_keyword: "temporary accommodation relocating to liverpool"
 secondary_keywords:
   - "moving to liverpool short term rental"
@@ -17,7 +17,7 @@ related:
   - long-stay-accommodation-liverpool
 faqs:
   - q: "Where can a family stay while relocating to Liverpool?"
-    a: "A furnished whole house is usually more comfortable than a hotel for a relocating family. Zermatt Lodge in Fazakerley sleeps 7 in 4 bedrooms, with a full kitchen, garden and free parking for 2 cars, and it's near the M57/M58 and a Merseyrail station."
+    a: "A furnished whole house is usually more comfortable than a hotel for a relocating family. Zermatt Lodge in Liverpool sleeps 7 in 4 bedrooms, with a full kitchen, garden and free parking for 2 cars, and it's."
   - q: "Can I register with a GP while in temporary accommodation?"
     a: "Yes. The NHS says you can register as a temporary patient for up to 3 months, and you don't need ID or proof of address to register with a GP surgery."
   - q: "How do I apply for a school place when moving to Liverpool?"
@@ -33,7 +33,7 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-If you're relocating to Liverpool, booking a furnished short-stay house for the first few weeks gives you a calm base to view homes, start work and sort out schools, without squeezing the family into a hotel room. Zermatt Lodge is a whole 4-bedroom house in Fazakerley, north Liverpool, sleeping up to 7. It has a full kitchen, two bathrooms, a garden and free parking for two cars, and it's close to the M57/M58 and Fazakerley station.
+If you're relocating to Liverpool, booking a furnished short-stay house for the first few weeks gives you a calm base to view homes, start work and sort out schools, without squeezing the family into a hotel room. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7. It has a full kitchen, two bathrooms, a garden and free parking for two cars.
 
 This guide walks through a practical relocation plan.
 
@@ -50,16 +50,16 @@ A whole house gives children their own rooms, lets you cook proper meals and giv
 
 ## Step 1: Choose your base location
 
-Being central to the areas you're researching saves a lot of driving. North Liverpool works well if you're looking at:
+Being central to the areas you're researching saves a lot of driving. Areas people often look at include:
 
-- **North Liverpool suburbs:** Aintree, Walton, West Derby, Croxteth and Fazakerley itself
+- **North Liverpool suburbs:** Aintree, Walton, West Derby, Croxteth and Fazakerley
 - **Sefton:** Maghull, Crosby, Formby and Southport, via Switch Island and the M58
 - **Knowsley:** Kirkby, Prescot and Huyton, via the M57
 - **West Lancashire:** Ormskirk and Skelmersdale, via the M58
 
-And when you need the city centre, the Northern line from Fazakerley reaches **Liverpool Central in about 15 minutes**.
+And when you need the city centre, trains from Zermatt Lodge reach **Liverpool Central in about 15 minutes**.
 
-Our [best areas in north Liverpool for relocating families](/guides/relocating-areas-north-liverpool-families) compares the options.
+
 
 ## Step 2: Plan your viewing loops
 
@@ -123,7 +123,7 @@ Everyone's timeline is different, but writing a rough plan like this helps you d
 
 ## Why Zermatt Lodge suits relocating families
 
-Zermatt Lodge is a whole house in Fazakerley, north Liverpool.
+Zermatt Lodge is a whole house in Liverpool.
 
 - **4 bedrooms, sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
@@ -131,7 +131,7 @@ Zermatt Lodge is a whole house in Fazakerley, north Liverpool.
 - **Large private back garden**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Free parking for 2 cars**, so both adults can get to viewings or work
-- **Near Fazakerley station, the M57/M58 and a Lidl**
+- **About 15 minutes by train** from the city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

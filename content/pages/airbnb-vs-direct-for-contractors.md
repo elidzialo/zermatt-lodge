@@ -87,7 +87,7 @@ Never pay a stranger by bank transfer for a booking you found on social media.
 
 ## Zermatt Lodge, either way
 
-Zermatt Lodge is our 4-bedroom house in Fazakerley, north Liverpool, close to the M57 and M58.
+Zermatt Lodge is our 4-bedroom house in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, big kitchen, washer and dryer

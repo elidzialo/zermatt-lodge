@@ -103,9 +103,9 @@ If you're staying in Liverpool, the simplest plan is often to leave the car wher
 - **Don't park on residential streets.** Local roads near the course are busy, and some will be closed.
 - **Pick a designated driver** if you're driving home.
 
-## Staying close and leaving the car
+## Staying in Liverpool and leaving the car
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and close to the M57 and M58. It isn't next door to the racecourse, but it's in the same part of the city. As the crow flies, Fazakerley station is under a mile from the middle of the course, though the walking route depends on where you start and which entrance you need, so check a map. On festival days, you can leave both cars parked at the house and take a taxi, walk if the route suits you, or use the train via Sandhills.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. On festival days, you can leave both cars parked at the house and take a taxi or use the train via Sandhills.
 
 - **Free parking for 2 cars**, so you don't need a racecourse parking ticket
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
@@ -120,7 +120,6 @@ Festival dates book up early. [Check availability and book direct](/zermatt-lodg
 ## Related guides
 
 - [Grand National accommodation](/guides/grand-national-accommodation)
-- [Getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Ladies Day at Aintree: planning a group stay](/guides/grand-national-ladies-day-group-stay)
 - [Taking the family to the Grand National](/guides/grand-national-family-trip)
 - [Grand National weekend itinerary](/guides/grand-national-weekend-itinerary)

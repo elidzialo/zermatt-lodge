@@ -47,7 +47,7 @@ Here's how to plan the day, checked on 19 November 2026.
 
 ## Boxing Day racing at Aintree
 
-Aintree's Boxing Day meeting is a jump racing card a short drive from north Liverpool.
+Aintree's Boxing Day meeting is a jump racing card in north Liverpool.
 
 - **Date:** Saturday 26 December 2026
 - **Gates:** 10.30am
@@ -61,7 +61,7 @@ Times and races are subject to change. The Jockey Club gives the address as Orms
 
 ### Getting to Aintree on Boxing Day
 
-On normal days, Merseyrail trains run to Aintree station, a short walk from the course. On Boxing Day services may be reduced, and the 2026 timetable wasn't out when we checked. Our [guide to getting to Aintree](/guides/getting-to-aintree-racecourse-from-fazakerley) covers the options. From north Liverpool, Aintree is close by car or taxi, which helps if trains are thin.
+On normal days, Merseyrail trains run to Aintree station, a short walk from the course. On Boxing Day services may be reduced, and the 2026 timetable wasn't out when we checked. Our [guide to getting to Aintree](/guides/getting-to-aintree-racecourse-from-fazakerley) covers the options. A car or taxi is the backup if trains are thin.
 
 Racing finishes mid-afternoon, so you're back before dark for a family evening, or in time to watch Liverpool's 5.30pm game at Hull on TV.
 
@@ -69,7 +69,7 @@ Racing finishes mid-afternoon, so you're back before dark for a family evening, 
 
 - **Venue:** Hill Dickinson Stadium, Bramley-Moore Dock
 - **Kick-off:** most sources list **3pm**. The Premier League's fixture page appeared to show an earlier 12.30pm slot, so confirm with Everton
-- **Getting there:** Sandhills is the usual station. From Fazakerley it's a few stops on the same line, if trains are running
+- **Getting there:** Sandhills is the usual station, if trains are running
 
 Liverpool are away at **Hull City at 5.30pm** (Sky Sports). There's no game at Anfield on Boxing Day 2026. For every festive fixture, see our [Liverpool and Everton Christmas fixtures guide](/guides/liverpool-everton-christmas-fixtures-2026).
 
@@ -116,7 +116,7 @@ Or for football fans: Everton at Hill Dickinson Stadium, then the Liverpool game
 
 ## Where to stay over Boxing Day
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**, about 15 minutes by train from Liverpool Central when trains are running. It's well placed for a Boxing Day at Aintree or Hill Dickinson Stadium, both on the north side of the city.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central when trains are running. With free parking for 2 cars, it works as a base for a Boxing Day at Aintree or Hill Dickinson Stadium.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms
@@ -137,6 +137,5 @@ Or [see all homes](/) on Book Homes.
 
 - [Liverpool and Everton Christmas fixtures 2026](/guides/liverpool-everton-christmas-fixtures-2026)
 - [Aintree racecourse accommodation](/guides/aintree-racecourse-accommodation)
-- [Getting to Aintree racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley)
 - [Christmas family stay in Liverpool](/guides/christmas-family-stay-liverpool)
 - [Winter walks near Liverpool](/guides/winter-walks-near-liverpool-2026)

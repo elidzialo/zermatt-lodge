@@ -88,7 +88,7 @@ See our [December 2026](/guides/liverpool-december-2026-events) and [January 202
 
 ## A house for two or three couples
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes.
 
 - **Two king bedrooms**, one with an en-suite, plus a queen room and a single
 - **2 bathrooms**

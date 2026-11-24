@@ -1,6 +1,6 @@
 ---
 title: "Visiting Aintree Hospital: A Practical Guide"
-meta_description: "First visit to Aintree University Hospital in Liverpool? Entrances, drop-off points, walking from Fazakerley station, cycling, taxis and what to bring."
+meta_description: "First visit to Aintree University Hospital in Liverpool? Entrances, drop-off points, walking from the station, cycling, taxis and what to bring."
 slug: visiting-aintree-hospital-practical-guide
 h1: "Visiting Aintree University Hospital: A Practical Guide"
 quick_answer: "Aintree University Hospital is on Lower Lane in Fazakerley, north Liverpool (sat nav L9 7AL), close to junction 6 of the M57. The main entrance is on Lower Lane, and Fazakerley station is opposite the Longmoor Lane side, about a 15-minute walk from the main entrance."
@@ -120,9 +120,9 @@ If you qualify for the NHS Healthcare Travel Costs Scheme, the hospital's **Cash
 
 ## If you're travelling from further away
 
-Families from North Wales, Lancashire, Cumbria and the Isle of Man often visit Aintree for major trauma and specialist care. If you're visiting for several days, staying close by saves a lot of driving and parking.
+Families from North Wales, Lancashire, Cumbria and the Isle of Man often visit Aintree for major trauma and specialist care. If you're visiting for several days, a base with free parking saves a lot of money.
 
-Zermatt Lodge is a whole 4-bedroom house in north Liverpool, near Fazakerley station and the hospital site. It sleeps up to 7, with a big kitchen, two bathrooms, a large garden and free parking for two cars, so the family can avoid daily hospital parking charges. Check-in is 3pm and checkout is 11am. It's a quiet home with strictly no parties or events, no smoking and no pets.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It sleeps up to 7, with a big kitchen, two bathrooms, a large garden and free parking for two cars, so the family can avoid daily hospital parking charges. Check-in is 3pm and checkout is 11am. It's a quiet home with strictly no parties or events, no smoking and no pets.
 
 See our guide to [accommodation near Aintree University Hospital](/guides/accommodation-near-aintree-university-hospital), check dates at [Zermatt Lodge](/zermatt-lodge#book), or email cs@zugati.co.uk.
 
@@ -130,5 +130,4 @@ See our guide to [accommodation near Aintree University Hospital](/guides/accomm
 
 - [Aintree Hospital parking: prices, concessions and tips](/guides/aintree-hospital-parking-guide)
 - [Aintree Hospital site: which building is which?](/guides/outpatient-clinics-aintree-site-map)
-- [Walking from Fazakerley station to Aintree Hospital](/guides/walking-fazakerley-station-to-aintree-hospital)
 - [How to check Liverpool hospital visiting times](/guides/liverpool-hospital-visiting-times-how-to-check)

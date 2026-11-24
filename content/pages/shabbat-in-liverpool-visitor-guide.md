@@ -23,7 +23,7 @@ faqs:
   - q: "How do I choose where to stay for Shabbat in Liverpool?"
     a: "Contact the local community first and ask which shul to use, then book a home within walking distance. Check the walking route and time from any rental before you book."
   - q: "Is Zermatt Lodge suitable for walking to shul on Shabbat?"
-    a: "No. Zermatt Lodge is in north Liverpool, about 15 minutes by train from the city centre. It is not described as kosher and is not within walking distance of a synagogue. Use the Book Homes kosher stays page to find homes where hosts have declared these details."
+    a: "No. Zermatt Lodge is in Liverpool, about 15 minutes by train from the city centre. It is not described as kosher and is not within walking distance of a synagogue. Use the Book Homes kosher stays page to find homes where hosts have declared these details."
   - q: "Is Chanukah 2026 during a Shabbat?"
     a: "Yes. Chanukah 2026 begins on the evening of Friday 4 December, so the first candle is lit on a Friday before Shabbat. The eighth candle is lit on Friday 11 December and Chanukah ends at nightfall on Saturday 12 December."
 sources:
@@ -77,9 +77,9 @@ Walking distance is everything. Before you book any rental:
 
 ## An honest note about Zermatt Lodge
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, sleeping 7, with free parking for 2 cars and about 15 minutes by train from the city centre. It is **not** described as kosher, it has no declared Shabbat set-up, and it is **not within walking distance** of a synagogue.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, sleeping 7, with free parking for 2 cars and about 15 minutes by train from the city centre. It is **not** described as kosher, it has no declared Shabbat set-up, and it is **not within walking distance** of a synagogue.
 
-It can still suit families visiting north Liverpool on weekdays (for a hospital appointment at Aintree or the Walton Centre, for example) who are self-catering with their own food and equipment. For a Shabbat stay near shul, use the [kosher stays filter](/kosher-homes) instead.
+It can still suit families visiting Liverpool on weekdays (for a hospital appointment at Aintree or the Walton Centre, for example) who are self-catering with their own food and equipment. For a Shabbat stay near shul, use the [kosher stays filter](/kosher-homes) instead.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

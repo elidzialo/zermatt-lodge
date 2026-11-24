@@ -3,7 +3,7 @@ title: "Alternative Accommodation for Insurance Claims on Merseyside"
 meta_description: "For loss adjusters and claims handlers: placing a displaced household on Merseyside. Typical cover limits, stay lengths, what to check and a 4-bed house."
 slug: alternative-accommodation-insurance-claims-merseyside
 h1: "Alternative Accommodation for Insurance Claims on Merseyside: A Guide for Bookers"
-quick_answer: "When a flood, fire or escape of water makes a Merseyside home unliveable, the insurer or its loss adjuster usually arranges alternative accommodation. ABI guidance says most policies allow up to 20% of the sum insured for this, and drying alone can take weeks to months, so plan for a stay that may be extended. A whole house with parking near the family's school and work usually works better than hotel rooms."
+quick_answer: "When a flood, fire or escape of water makes a Merseyside home unliveable, the insurer or its loss adjuster usually arranges alternative accommodation. ABI guidance says most policies allow up to 20% of the sum insured for this, and drying alone can take weeks to months, so plan for a stay that may be extended. A whole house with parking."
 primary_keyword: "alternative accommodation provider Liverpool"
 secondary_keywords:
   - "alternative accommodation insurance claim Liverpool"
@@ -83,20 +83,20 @@ Before you confirm:
 
 ## Where on Merseyside?
 
-Displaced households usually want to stay close to home. North Liverpool, for instance, gives reasonable reach to Sefton (Bootle, Maghull, Crosby), Knowsley (Kirkby) and the north of the city. Motorway access matters for longer commutes: the M57 and M58 meet at Switch Island, and the M57 links to the M62 for Manchester and Warrington.
+Displaced households usually want to stay close to home. A base in Liverpool with motorway access gives reasonable reach to Sefton (Bootle, Maghull, Crosby) and Knowsley (Kirkby). Motorway access matters for longer commutes: the M57 and M58 meet at Switch Island, and the M57 links to the M62 for Manchester and Warrington.
 
-If someone in the household is also in hospital or attending appointments at Aintree University Hospital or the Walton Centre, both in Fazakerley, a temporary home nearby with free parking can take a lot of pressure off.
+If someone in the household is also in hospital or attending appointments at Aintree University Hospital or the Walton Centre, a temporary home with free parking can take a lot of pressure off.
 
 ## Zermatt Lodge for insurance stays
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in **north Liverpool**, near Fazakerley station and about **15 minutes by train** from the city centre. It isn't in the city centre. It is a quiet family home in a residential area, which is usually what displaced families want.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It isn't in the city centre. It is a quiet family home in a residential area, which is usually what displaced families want.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**
 - **Big kitchen and dining room** for normal family meals
 - **Free parking for 2 cars**
 - **Games room and large private garden**, useful for children through a long stay
-- **Near the M57/M58** and the Northern line into town
+- **About 15 minutes by train or car** from the city centre
 - **Check-in 3pm, checkout 11am**
 - No smoking and **no pets**
 
