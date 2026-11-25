@@ -30,7 +30,6 @@ sources:
   - https://en.wikipedia.org/wiki/Village_Cross,_West_Derby
   - https://en.wikipedia.org/wiki/Casbah_Coffee_Club
   - https://www.croxteth-hall.co.uk/?p=1754
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://alderhey.nhs.uk/parents-and-patients/before-you-visit/getting-to-alder-hey
 ---
 
@@ -113,7 +112,7 @@ West Derby is popular with families for its village centre, green space and choi
 
 ## Staying in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

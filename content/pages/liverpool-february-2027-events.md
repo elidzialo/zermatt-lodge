@@ -93,7 +93,7 @@ Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool:
 - **2 bathrooms**, a big kitchen and a dining room
 - **Games room** with a pool table, for a rainy February evening
 - **Free parking for 2 cars**
-- About **15 minutes by train** from Liverpool Central
+- **Easy trains** into Liverpool city centre
 - Check-in 3pm, checkout 11am
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.

@@ -31,7 +31,6 @@ sources:
   - https://en.wikipedia.org/wiki/Skelmersdale
   - https://en.wikipedia.org/wiki/M57_motorway
   - https://en.wikipedia.org/wiki/Fazakerley
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 If you're working in Skelmersdale and need somewhere for a crew to stay, look in Liverpool as well as in the town itself. Skelmersdale sits right on the M58, about 13 miles north-east of Liverpool, and the motorway's western end is at Switch Island on the edge of north Liverpool, so a house in Liverpool gives you a short commute plus far more shops, food and accommodation choice.
@@ -71,7 +70,7 @@ The M58 is a straight motorway run to Skelmersdale. Traffic varies, so check liv
 
 ### Better downtime
 
-After a long shift, a crew wants food, a supermarket and something to do. North Liverpool has supermarkets, takeaways and delivery apps, and a train to Liverpool city centre for nights off.
+After a long shift, a crew wants food, a supermarket and something to do. Liverpool has supermarkets, takeaways and delivery apps, and a train to Liverpool city centre for nights off.
 
 ### Access to other sites
 

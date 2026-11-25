@@ -70,7 +70,7 @@ Crews usually travel in vans or shared cars. Ask how many vehicles fit off-stree
 ## What makes a good base
 
 - **Motorways:** the M57 and M58 meet at Switch Island (M57 junction 7), and the M57 links south to the M62. That puts sites across Merseyside, Lancashire and Cheshire within reach without crossing the city centre.
-- **The train:** Zermatt Lodge is about 15 minutes by train from Liverpool Central.
+- **The train:** Zermatt Lodge is an easy train ride from Liverpool city centre.
 - **Quieter streets** than the centre, which helps with daytime sleep.
 
 Always check the drive to your actual worksite at the time of day you'll travel. Night-time drives are often quicker than the map's daytime estimate, but don't count on it for start times.

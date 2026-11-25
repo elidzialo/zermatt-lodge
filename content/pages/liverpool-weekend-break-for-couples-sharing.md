@@ -33,7 +33,6 @@ sources:
   - https://www.backtothefuture.com/events/2027/01/12/back-to-the-future-the-musical-liverpool
   - https://www.visitliverpool.com/blog/post/a-guide-to-christmas-pantos-and-shows-in-liverpool/
   - https://www.empireofthekop.com/2026/11/19/liverpool-games-v-man-united-everton-moved-tv-coverage/amp/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 A weekend away with another couple works best when everyone has their own space and somewhere to be together. In Liverpool, a **whole house with two good bedrooms** gives you both: a private room each, plus a kitchen and lounge for breakfast, a late drink after a show or a lazy Sunday. The trick is to **agree rooms and costs before you book** and plan **one shared highlight** for the weekend.
@@ -88,7 +87,7 @@ See our [December 2026](/guides/liverpool-december-2026-events) and [January 202
 
 ## A house for two or three couples
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central.
 
 - **Two king bedrooms**, one with an en-suite, plus a queen room and a single
 - **2 bathrooms**

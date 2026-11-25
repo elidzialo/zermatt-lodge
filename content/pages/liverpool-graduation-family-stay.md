@@ -13,7 +13,6 @@ last_updated: 2026-11-18
 related:
   - edge-hill-university-graduation-stay
   - university-open-day-liverpool-stay
-  - fazakerley-to-liverpool-city-centre-by-train
   - large-family-house-liverpool
   - parking-liverpool-city-centre
 faqs:
@@ -32,7 +31,6 @@ sources:
   - https://www.ljmu.ac.uk/students/graduation/summer-graduation/parking
   - https://liverpoolcathedral.org.uk/ljmu-graduation-closures-july-2026/
   - https://www.hope.ac.uk/graduation
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 For a Liverpool graduation, book accommodation as soon as the ceremony dates are announced, because the city's universities hold most of their ceremonies in the same few weeks of July and central hotels fill fast. If the whole family is coming, a house a short train ride from the city centre is often easier than several hotel rooms, especially when you need parking.
@@ -112,7 +110,7 @@ Better when the group is bigger: parents, grandparents, siblings, partners. You 
 
 ## Why Zermatt Lodge suits graduation families
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. The Merseyrail Northern line runs to Liverpool Central in about 15 minutes, which is a short walk from the LJMU Sport Building and about 15 minutes' walk from Liverpool Cathedral, according to LJMU. It isn't in the city centre, so allow time for the train, but it keeps the whole family under one roof.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. Trains run into Liverpool Central, which is a short walk from the LJMU Sport Building and about 15 minutes' walk from Liverpool Cathedral, according to LJMU. It isn't in the city centre, so allow time for the train, but it keeps the whole family under one roof.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, a second king, a queen and a single, so grandparents get a proper bed
 - **2 bathrooms** for a morning when everyone needs to look their best

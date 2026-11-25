@@ -156,7 +156,7 @@ Self-catering doesn't mean never eating out. Many groups:
 
 ## Zermatt Lodge's kitchen and dining space
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's set up for groups who like to cook and eat together.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre. It's set up for groups who like to cook and eat together.
 
 - **Big fitted kitchen** and a **separate dining room**
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms

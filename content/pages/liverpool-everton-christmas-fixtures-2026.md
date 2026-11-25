@@ -26,8 +26,8 @@ faqs:
     a: "Everton host Sunderland on Boxing Day, Manchester City on Tuesday 29 December at 8.15pm and Aston Villa on Tuesday 5 January 2027 at 7.30pm. Everton v Fulham is on the weekend of 5 and 6 December."
   - q: "Can I just buy tickets for these games?"
     a: "Liverpool home tickets are sold through the club's membership schemes and are very hard to get. Everton tickets can be easier for some games. Only buy from official club sales. See our LFC and Everton ticket guide."
-  - q: "How far is Zermatt Lodge from Anfield and Hill Dickinson Stadium?"
-    a: "It's a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. For both grounds, Sandhills is the station to use. Everton fans walk from there, and the matchday Soccerbus runs from Sandhills to Anfield."
+  - q: "Is Zermatt Lodge near Anfield and Hill Dickinson Stadium?"
+    a: "It's a 4-bedroom house in Liverpool, not walking distance to either ground, with easy trains into the city centre. For both grounds, Sandhills is the station to use. Everton fans walk from there, and the matchday Soccerbus runs from Sandhills to Anfield."
 sources:
   - https://www.empireofthekop.com/2026/10/19/liverpool-fixture-updates-december-2026/amp/
   - https://www.liverpoolfc.com/news/fixture-updates-three-premier-league-changes-liverpool-november
@@ -110,7 +110,7 @@ The 2026 festive timetables hadn't been published when we checked. In past years
 
 ## Where to stay for a festive match
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train to Liverpool Central, and handy for Sandhills on Everton match days. For a group of fans or a family trip around a game, one house often beats several hotel rooms when match-day prices rise.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's an easy train ride from Liverpool city centre, and on Everton match days you can take the train to Sandhills. For a group of fans or a family trip around a game, one house often beats several hotel rooms when match-day prices rise.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

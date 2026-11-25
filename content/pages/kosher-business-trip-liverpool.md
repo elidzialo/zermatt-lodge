@@ -98,7 +98,7 @@ Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in Liverp
 - **Sleeps 7** with separate beds: king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a dining room
 - **Free parking for 2 cars**
-- About **15 minutes by train** to Liverpool Central
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
 Strictly no parties or events - bookings found to be for parties are cancelled.

@@ -102,7 +102,7 @@ The Jockey Club's travel plan recommends public transport:
 - **Taxi or lift:** road closures apply. Drop-offs are directed to a shuttle into the racecourse enclosures
 - **Car:** parking must be booked online in advance. At the Steeplechase Car Park, the course crossing closes 30 minutes before the feature race and reopens 30 minutes after
 
-If you're staying on the Kirkby line, note that its trains start and end at Sandhills during the busiest hours on festival days, so you change there. See [getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
+If you're travelling on the Kirkby line, note that its trains start and end at Sandhills during the busiest hours on festival days, so you change there. See [getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley).
 
 ## Getting home without the crush
 

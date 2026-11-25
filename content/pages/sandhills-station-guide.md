@@ -24,8 +24,8 @@ faqs:
     a: "Yes. The station has lifts and ramps, with a lift leading into the booking office. It's an island platform, so both directions use the same platform."
   - q: "Can I park at Sandhills station?"
     a: "No. There's no car park at Sandhills. Park where you're staying or at a station further out and come in by train."
-  - q: "How do I get to Sandhills from Fazakerley?"
-    a: "Take a Merseyrail Northern line train towards Liverpool Central. Sandhills is a few stops down the line, after Rice Lane and Kirkdale, with no change needed."
+  - q: "How do I get to Sandhills from the city centre?"
+    a: "Take any Merseyrail Northern line train from Liverpool Central or Moorfields. Sandhills is the first stop after Moorfields heading north."
 sources:
   - https://en.wikipedia.org/wiki/Sandhills_railway_station
   - https://www.stagecoachbus.com/promos-and-offers/merseyside-and-south-lancashire/buses-to-liverpool-football-club
@@ -93,14 +93,14 @@ Anfield is too far to walk comfortably from Sandhills, so the **Soccerbus** runs
 
 You can pay by the Stagecoach app, contactless or cash. Merseyrail also sells combined rail and Soccerbus tickets from its booking offices, so ask at the station you start from. Fares change, so check before match day.
 
-If you'd rather walk, Kirkdale station (one stop before Sandhills when coming from Fazakerley) has signposted walking routes to Anfield. It's uphill and takes a while, so allow plenty of time.
+If you'd rather walk, Kirkdale station (one stop north of Sandhills on the Kirkby branch) has signposted walking routes to Anfield. It's uphill and takes a while, so allow plenty of time.
 
 ## Match day tips
 
 1. **Travel early.** Trains towards Sandhills get busy in the hour before kick-off. Going earlier also means you can take your time on the walk or bus.
 2. **Buy your return before you go.** It saves queueing at the machines after the game.
 3. **Check engineering works.** Merseyrail sometimes replaces trains with buses at weekends. Check the Merseyrail website or app the day before.
-4. **Know your train home.** From Sandhills, take a train towards Kirkby or Headbolt Lane for Fazakerley, and check the destination on the screen, as Southport and Ormskirk trains use the same platform.
+4. **Know your train home.** From Sandhills, take the train for your branch (Kirkby or Headbolt Lane, Ormskirk or Southport), and check the destination on the screen, as Southport and Ormskirk trains use the same platform.
 5. **Agree a meeting point.** Crowds at the station after the game are big. Pick a spot away from the entrance in case your group gets split up.
 6. **Evening kick-offs:** trains run less often late at night. Check the last train back before you set off.
 7. **Don't drive to Sandhills.** There's no car park and matchday parking restrictions cover the streets around both grounds. See our [match day parking guide](/guides/liverpool-match-day-parking-guide).
@@ -113,7 +113,7 @@ All three branches of the Northern line (Southport, Ormskirk and Kirkby) run thr
 
 Hotels near both grounds fill quickly for big fixtures, especially derbies and European nights. A whole house can work well for a group of friends or a family travelling together.
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

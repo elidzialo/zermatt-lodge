@@ -82,7 +82,7 @@ If you're in Liverpool for a midweek event, a hospital visit or work, you have m
 
 ## A note on Zermatt Lodge
 
-Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for 2 cars. **No kosher or Shabbat details have been declared for it,** so we don't describe it as kosher or Shabbat-friendly. It's also too far from a synagogue to walk on Shabbat.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for 2 cars. **No kosher or Shabbat details have been declared for it,** so we don't describe it as kosher or Shabbat-friendly. It's also too far from a synagogue to walk on Shabbat.
 
 It can still work for a weekday family visit if you bring your own supplies. Please ask the host any questions before you book.
 

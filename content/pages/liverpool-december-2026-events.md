@@ -118,7 +118,7 @@ When we checked, these 2026 details were still unpublished or unclear:
 
 ## Where to stay in December
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes. For match days, take the train to Sandhills.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central. For match days, take the train to Sandhills.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

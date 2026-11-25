@@ -11,8 +11,6 @@ secondary_keywords:
   - "pre cruise accommodation liverpool"
 last_updated: 2026-11-18
 related:
-  - liverpool-airport-to-fazakerley
-  - lime-street-to-fazakerley
   - parking-liverpool-city-centre
   - large-family-house-liverpool
   - liverpool-weekend-itinerary-by-car
@@ -30,7 +28,6 @@ faqs:
 sources:
   - https://ambassadorcruiseline.com/before-you-sail/travelling-to-port/liverpool-port-information
   - https://en.wikipedia.org/wiki/Liverpool_Cruise_Terminal
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolexpress.co.uk/council-issues-taxi-scam-warning-for-start-of-new-football-season/
 ---
 
@@ -111,7 +108,7 @@ Better for bigger families and groups travelling together, particularly with a c
 
 ## Why Zermatt Lodge works for cruise families
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't on the waterfront and it isn't in the city centre. Families heading for the terminal can drive in along the dock road or take a taxi, and travel time depends on the time of day, so check a live route for your embarkation slot. It's about 15 minutes by train to Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't on the waterfront and it isn't in the city centre. Families heading for the terminal can drive in along the dock road or take a taxi, and travel time depends on the time of day, so check a live route for your embarkation slot. It's an easy train ride from Liverpool city centre.
 
 What it offers a cruise family or group:
 

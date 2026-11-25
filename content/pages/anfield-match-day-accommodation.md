@@ -3,7 +3,7 @@ title: "Anfield Match Day Accommodation: Stay Nearby"
 meta_description: "Match day accommodation for Anfield: a 4-bed house in Liverpool with free parking. How to reach Anfield via Sandhills and the Soccerbus, plus tips."
 slug: anfield-match-day-accommodation
 h1: "Anfield Match Day Accommodation: A Stress-Free Base for Liverpool FC Games"
-quick_answer: "For a Liverpool FC match, stay just outside the Anfield parking zone near a Merseyrail station that links to the matchday buses. Zermatt Lodge in Liverpool sleeps up to 7 and has free parking for two cars."
+quick_answer: "For a Liverpool FC match, leave the car outside the Anfield parking zone and use Merseyrail to Sandhills, where the matchday buses start. Zermatt Lodge in Liverpool sleeps up to 7 and has free parking for two cars."
 primary_keyword: "anfield accommodation"
 secondary_keywords:
   - "places to stay near anfield"
@@ -29,11 +29,10 @@ faqs:
     a: "It depends. Staying right by the ground means you can walk in, but streets are packed on match days and parking is restricted. A base a short train ride away, with your own off-street parking, is calmer and often better for groups and families."
 sources:
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.merseyrail.org/journey-planning/plan-your-journey/three-trains-per-hour-between-headbolt-lane-and-liverpool-central/
 ---
 
-For a Liverpool FC match, the most practical place to stay is often just outside the Anfield parking zone, near a Merseyrail station that links to the official matchday buses. Zermatt Lodge is a whole 4-bedroom house in Liverpool. On match days, take the train to Sandhills, where the Soccerbus runs to Anfield. The house sleeps up to 7 and has free parking for two cars, so you can leave the car behind on match day.
+For a Liverpool FC match, the most practical plan is often to stay outside the Anfield parking zone and use Merseyrail to reach the official matchday buses. Zermatt Lodge is a whole 4-bedroom house in Liverpool. On match days, take the train to Sandhills, where the Soccerbus runs to Anfield. The house sleeps up to 7 and has free parking for two cars, so you can leave the car behind on match day.
 
 Here's how to plan match day, using Liverpool FC's own travel advice.
 

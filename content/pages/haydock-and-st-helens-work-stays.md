@@ -3,7 +3,7 @@ title: "Working in St Helens or Haydock: Where Contractors Can Stay"
 meta_description: "Work at Parkside, Haydock's distribution parks or the St Helens town centre rebuild? What's on site in 2026, the M6 and A580 routes, and a crew house with parking."
 slug: haydock-and-st-helens-work-stays
 h1: "Working in St Helens or Haydock: Accommodation Options"
-quick_answer: "St Helens has two big live jobs: VINCI's town centre rebuild, with a 120-bedroom Hampton by Hilton and 56 apartments going up in 2026, and Parkside in Newton-le-Willows, where J F Hunt started £15m of enabling works in March 2026 for an 800,000 sq ft logistics first phase linked to M6 junction 22. Haydock's distribution centres sit by M6 junction 23 on the A580 East Lancashire Road. A north Liverpool base works for crews who drive, using the A580 or the M57 and M62."
+quick_answer: "St Helens has two big live jobs: VINCI's town centre rebuild, with a 120-bedroom Hampton by Hilton and 56 apartments going up in 2026, and Parkside in Newton-le-Willows, where J F Hunt started £15m of enabling works in March 2026 for an 800,000 sq ft logistics first phase linked to M6 junction 22. Haydock's distribution centres sit by M6 junction 23 on the A580 East Lancashire Road. A Liverpool base works for crews who drive, using the A580 or the M57 and M62."
 primary_keyword: "accommodation st helens contractors"
 secondary_keywords:
   - "haydock contractor accommodation"

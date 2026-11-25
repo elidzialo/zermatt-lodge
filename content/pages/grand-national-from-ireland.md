@@ -14,7 +14,6 @@ related:
   - grand-national-accommodation
   - grand-national-first-timers-guide
   - belfast-ferry-birkenhead-stay
-  - liverpool-airport-to-fazakerley
   - mersey-tunnel-tolls-guide
 faqs:
   - q: "Can I fly direct from Ireland to Liverpool for the Grand National?"
@@ -113,7 +112,7 @@ Many Irish groups arrive on the Thursday or Friday and leave on the Sunday or Mo
 
 ## Why Zermatt Lodge suits groups from Ireland
 
-Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, but the train to Liverpool Central takes about 15 minutes.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre, but the train into Liverpool Central is straightforward.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for race-day mornings

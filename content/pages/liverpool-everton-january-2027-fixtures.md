@@ -89,7 +89,7 @@ Three January games kick off in the evening: **Everton v Villa (7.30pm)**, **Liv
 
 ## Where to stay for a January match
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in about 15 minutes, and the house is in Liverpool.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains run into Liverpool Central, and the house is in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

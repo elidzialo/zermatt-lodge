@@ -25,13 +25,12 @@ faqs:
   - q: "Is there free Blue Badge parking?"
     a: "Yes. The hospital says Blue Badge holders park free at the Mount Vernon Street entrance, but spaces are limited and you may be sent to the Q-Park if they're full."
   - q: "Which train station is nearest?"
-    a: "Liverpool Central (Northern and Wirral lines) is less than a mile on foot, and Liverpool Lime Street is about a mile. From Zermatt Lodge, the train to Liverpool Central takes about 15 minutes."
+    a: "Liverpool Central (Northern and Wirral lines) is less than a mile on foot, and Liverpool Lime Street is about a mile. From Zermatt Lodge, the train into Liverpool Central is straightforward."
   - q: "Can patients get kosher meals?"
     a: "Merseyside Jewish Community Care says kosher meals are available on request at all Merseyside hospitals. If there is a problem, ask the ward or contact the local community directly."
 sources:
   - https://www.uhliverpool.nhs.uk/our-hospitals/royal-liverpool-university-hospital/getting-here
   - https://www.uhliverpool.nhs.uk/about-us/our-stories/updated-car-parking-prices-uhl-group-sites
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://mjccliverpool.com/hospital-visitation
 ---
 
@@ -91,7 +90,7 @@ Hotels near the Royal are in the city centre, where parking costs extra. Another
 
 ## Zermatt Lodge for hospital visitors
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. Liverpool city centre is about 15 minutes by train or car, and free parking means you can also drive to Aintree University Hospital if your relative is moved between UHL sites.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. Liverpool city centre is an easy train ride or drive away, and free parking means you can also drive to Aintree University Hospital if your relative is moved between UHL sites.
 
 - **Sleeps 7** in 4 bedrooms, so the whole family can stay together
 - **2 bathrooms**, a big kitchen and a **washer and dryer**

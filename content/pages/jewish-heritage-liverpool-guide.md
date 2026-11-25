@@ -15,7 +15,6 @@ related:
   - kosher-shabbat-friendly-stays-liverpool
   - things-to-do-in-liverpool-with-a-group
   - multi-generational-family-trip-liverpool
-  - fazakerley-to-liverpool-city-centre-by-train
 faqs:
   - q: "Can you tour Princes Road Synagogue?"
     a: "Yes. The synagogue offers pre-booked tours for adult and school groups. Book tours via its official website, which has current details and prices."
@@ -27,7 +26,6 @@ sources:
   - https://princesroad.org/tours
   - https://images.liverpoolmuseums.org.uk/2022-05/Liverpool_Jewish_Community_Trail_WEB.pdf
   - https://www.liverpoolmuseums.org.uk/whatson/museum-of-liverpool/event/beyond-label-galkoffs-tiles
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The best way to see Jewish Liverpool is in two parts. First, book a **tour of Princes Road Synagogue**, which must be **pre-booked via its official website**. Then follow the **Jewish Community Trail at the Museum of Liverpool**, which includes the life-size **Galkoff's kosher butcher's shopfront**.
@@ -92,7 +90,7 @@ For a **weekday heritage trip**, especially with a car, you have more choice.
 
 ### Zermatt Lodge
 
-Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool. Direct trains reach **Liverpool Central in about 15 minutes**, and the waterfront museums are a walk from there. **It is not kosher**, and no Shabbat features have been declared for it. It suits a weekday family or group trip.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool. Direct trains run into **Liverpool Central**, and the waterfront museums are a walk from there. **It is not kosher**, and no Shabbat features have been declared for it. It suits a weekday family or group trip.
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen and dining room**

@@ -39,7 +39,6 @@ sources:
   - https://hayters.com/everton-2026-27-premier-league-fixtures-in-full-when-the-toffees-will-take-on-rivals-liverpool/
   - https://evertonia.com/seasons/2026-27/matches/
   - https://www.nationaltrust.org.uk/visit/liverpool-lancashire/formby
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Liverpool doesn't switch off after New Year. In **January 2027** the Everyman's **Beauty and the Beast** panto and the Royal Court's **Scouse Nativity** both run to **16 January**, **Icebox** skating runs to **10 January** and the **Indoor Funfair** to **9 January**. **Jack Whitehall** plays M&S Bank Arena on **10 January**, and the **Merseyside derby at Anfield** is scheduled for **Saturday 30 January**.
@@ -122,11 +121,11 @@ Weighing it up? Read our [house vs hotel guide for groups](/guides/house-vs-hote
 
 ## Getting into the city
 
-From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. Merseyrail also takes contactless. For Hill Dickinson Stadium and the Anfield Soccerbus, Sandhills is the station to use.
+From Zermatt Lodge, trains run into **Liverpool Central**. Merseyrail also takes contactless. For Hill Dickinson Stadium and the Anfield Soccerbus, Sandhills is the station to use.
 
 ## Where to stay
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central, in a quiet residential area.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's an easy train ride from Liverpool city centre, in a quiet residential area.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

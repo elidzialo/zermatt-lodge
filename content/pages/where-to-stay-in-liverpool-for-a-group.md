@@ -3,7 +3,7 @@ title: "Where to Stay in Liverpool for a Group: Area Guide"
 meta_description: "Best areas to stay in Liverpool for a group: city centre, waterfront, Baltic, Georgian Quarter and the suburbs compared honestly."
 slug: where-to-stay-in-liverpool-for-a-group
 h1: "Where to Stay in Liverpool for a Group: An Honest Area Guide"
-quick_answer: "For a car-free nightlife weekend, Liverpool city centre is hard to beat. For families, groups with cars, football, the Grand National or hospital visits, north Liverpool offers more space and free parking, with trains into town in about 15 minutes."
+quick_answer: "For a car-free nightlife weekend, Liverpool city centre is hard to beat. For families, groups with cars, football, the Grand National or hospital visits, the suburbs offer more space and free parking, with trains into town."
 primary_keyword: "where to stay in liverpool for a group"
 secondary_keywords:
   - "best area to stay in liverpool group"
@@ -17,7 +17,7 @@ related:
   - things-to-do-in-liverpool-with-a-group
 faqs:
   - q: "What's the best area to stay in Liverpool for a group?"
-    a: "It depends on your plans. For a nightlife-focused weekend without cars, the city centre (Ropewalks, Baltic, waterfront) is easiest. For families, groups with cars, football, racing or hospital visits, north Liverpool offers more space, free parking and quick trains into town."
+    a: "It depends on your plans. For a nightlife-focused weekend without cars, the city centre (Ropewalks, Baltic, waterfront) is easiest. For families, groups with cars, football, racing or hospital visits, the suburbs offer more space, free parking and quick trains into town."
   - q: "Is it noisy staying in Liverpool city centre?"
     a: "Parts can be, especially around Concert Square, Seel Street and the Ropewalks at weekends. If sleep matters, choose a quieter street, ask for a room away from the street, or stay out of the centre."
   - q: "How far is north Liverpool from the city centre?"
@@ -34,7 +34,7 @@ sources:
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
 ---
 
-The best area to stay in Liverpool for a group depends on why you're coming. For a car-free nightlife weekend, the city centre is hard to beat. For families, groups with cars, football, the Grand National or a hospital visit, north Liverpool gives you more space and free parking, with trains into town in about 15 minutes. This guide compares the main options honestly, including when somewhere other than a whole house is the better choice.
+The best area to stay in Liverpool for a group depends on why you're coming. For a car-free nightlife weekend, the city centre is hard to beat. For families, groups with cars, football, the Grand National or a hospital visit, the suburbs give you more space and free parking, with trains into town. This guide compares the main options honestly, including when somewhere other than a whole house is the better choice.
 
 ## Quick comparison
 
@@ -119,14 +119,14 @@ Our [Fazakerley vs city centre comparison](/guides/fazakerley-vs-city-centre-bas
 
 ## Why Zermatt Lodge suits many groups
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool.
 
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**
 - **Free parking for 2 cars**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Big kitchen, dining room and a large private back garden**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

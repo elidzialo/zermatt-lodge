@@ -105,7 +105,7 @@ Crosby is on the **Southport branch** of Merseyrail's Northern line. Useful stat
 
 Sefton Council says the coastal park is within easy walking distance of all three. Trains run direct from Liverpool Central and Moorfields.
 
-From **Fazakerley** in north Liverpool, take the train towards the city and change at **Sandhills**, where the Kirkby and Southport branches meet, onto a Southport train.
+From the Kirkby or Ormskirk branches, change at **Sandhills**, where the Northern line branches meet, onto a Southport train.
 
 ### By car
 
@@ -120,13 +120,13 @@ Crosby is popular with families moving to the Liverpool area because of its beac
 - **Commuting:** the Southport line runs direct into Liverpool city centre.
 - **House-hunting:** visit on a weekday and a weekend, and walk the streets near the station at rush hour. Our [house-hunting trip planner](/guides/house-hunting-trip-liverpool) suggests a full viewing loop.
 
-## Visiting Crosby from north Liverpool
+## Visiting Crosby from Liverpool
 
 If you're staying in Liverpool, Crosby makes an easy half-day out: by car for a beach walk and lunch on South Road, or by train with a change at Sandhills. Combine it with **Formby** for the pinewoods and red squirrels, a little further up the coast. See our [Formby area guide](/guides/formby-area-guide) and [family days out guide](/guides/family-days-out-north-liverpool).
 
 ## Zermatt Lodge, a base for the coast and the city
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's inland, not on the coast, but it's about 15 minutes by train from the city centre, and with free parking you can drive to Crosby and the Sefton coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's inland, not on the coast, but it's an easy train ride from Liverpool city centre, and with free parking you can drive to Crosby and the Sefton coast.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

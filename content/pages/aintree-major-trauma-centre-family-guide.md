@@ -26,7 +26,7 @@ faqs:
   - q: "How do I get to Aintree hospital from Liverpool city centre?"
     a: "Take a Merseyrail Northern line train towards Kirkby or Headbolt Lane from Liverpool Central or Moorfields to Fazakerley, which takes about 15 minutes. The station is across the road from the Longmoor Lane entrance."
   - q: "Where can a family stay near Aintree hospital?"
-    a: "Options are limited right next to the site. A whole house with free parking, like Zermatt Lodge, a 4-bedroom house in Liverpool that sleeps 7, suits families arriving from different places who want to stay together."
+    a: "Options are limited right next to the site, so many families look further out. For a larger family, Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7 with free parking, which suits families arriving from different places who want to stay together."
 
 sources:
   - https://uhliverpool.nhs.uk/about-us/our-stories/life-saving-hospital-helipad-marks-over-600-landings

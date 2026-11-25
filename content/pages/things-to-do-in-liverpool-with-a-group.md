@@ -28,18 +28,17 @@ faqs:
     a: "Head back to your accommodation for a home-cooked dinner, board games, pool and a film. At Zermatt Lodge's a games room with a pool table and a 55-inch Smart TV with Netflix."
 sources:
   - https://www.merseyferries.co.uk/about
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
   - https://sefton.gov.uk/around-sefton/another-place-by-antony-gormley/general-information
 ---
 
-The best things to do in Liverpool with a group mix the big sights with activities you can share: a Mersey ferry cruise, the waterfront and its free museums, a stadium tour, a food hall where everyone picks their own dinner, and a games night. Below is a two-day plan for a group of five to seven, based in north Liverpool with a train into town. Swap pieces in and out to suit your group.
+The best things to do in Liverpool with a group mix the big sights with activities you can share: a Mersey ferry cruise, the waterfront and its free museums, a stadium tour, a food hall where everyone picks their own dinner, and a games night. Below is a two-day plan for a group of five to seven, based in a house outside the centre with a train into town. Swap pieces in and out to suit your group.
 
 ## Day 1: The waterfront and the city
 
 ### Morning: Pier Head and a Mersey ferry
 
-Take the train to **Liverpool Central** (about 15 minutes from the house), then walk down to the **Pier Head**. Start with the **Three Graces**: the Royal Liver Building, the Cunard Building and the Port of Liverpool Building.
+Take the train to **Liverpool Central** (an easy train ride from the house), then walk down to the **Pier Head**. Start with the **Three Graces**: the Royal Liver Building, the Cunard Building and the Port of Liverpool Building.
 
 Then hop on the **Mersey Ferries River Explorer cruise**. It takes about 50 minutes and has commentary throughout. It currently runs between the Pier Head and Woodside on the Wirral, as Seacombe is closed for refurbishment. It's a great way for a group to see the skyline together and get your bearings. See our [Mersey ferry cruise guide](/guides/mersey-ferry-cruise-guide).
 
@@ -113,7 +112,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 - **Big kitchen and dining room** for group meals
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **About 15 minutes by train** to Liverpool Central
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
 It's a quiet residential home: **no parties, no smoking and no pets**. Enjoy the city, then come back to a calm base.

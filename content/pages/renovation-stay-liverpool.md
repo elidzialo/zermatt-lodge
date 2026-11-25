@@ -29,11 +29,10 @@ faqs:
     a: "Yes, if you're working on a home in or near Liverpool. It's a whole 4-bedroom house sleeping up to 7, with a full kitchen, two bathrooms and free parking for two cars."
 sources:
   - https://www.rics.org/consumer-guides/party-walls
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
 ---
 
-If your Liverpool home is having a major renovation, such as a new kitchen, a rewire, an extension or structural work, moving into a furnished house nearby for the duration can save your sanity. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with a full kitchen, two bathrooms and free parking for two cars. It lets a family live normally while the builders get on with it.
+If your Liverpool home is having a major renovation, such as a new kitchen, a rewire, an extension or structural work, moving into a furnished house nearby for the duration can save your sanity. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with a full kitchen, two bathrooms and free parking for two cars. It lets a family live normally while the builders get on with it.
 
 This guide covers how to decide whether to move out, how to time the stay, and how to plan for the delays that almost every building job brings.
 
@@ -99,7 +98,7 @@ Set up a Royal Mail redirection if you'll be away for weeks. Keep building deliv
 
 ### School and work routines
 
-Choose a base that keeps school runs and commutes manageable. Staying close to home means very little changes. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes for anyone working in town.
+Choose a base that keeps school runs and commutes manageable. Staying close to home means very little changes. From Zermatt Lodge, trains run into Liverpool Central for anyone working in town.
 
 ### Health
 

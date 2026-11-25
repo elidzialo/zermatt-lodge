@@ -3,7 +3,7 @@ title: "Liverpool Empire Theatre Group Trip: Tickets, Shows and Where to Stay"
 meta_description: "Planning a group trip to the Liverpool Empire? ATG group booking rules, what's on from December 2026 to spring 2027, seating tips and a house for up to 7."
 slug: liverpool-empire-theatre-group-trip
 h1: "Liverpool Empire Theatre: How to Plan a Group Trip"
-quick_answer: "The Liverpool Empire on Lime Street seats about 2,350 and has the largest two-tier auditorium in the UK. Its operator ATG offers group booking for groups of 10 or more (sometimes 6 or more), with tickets held without a deposit until everyone has paid. Shows from December 2026 include Mamma Mia, Back to the Future, Matthew Bourne's Cinderella, Heathers and Mrs Doubtfire. A group of up to 7 can share one house in north Liverpool, about 15 minutes by train from the city centre."
+quick_answer: "The Liverpool Empire on Lime Street seats about 2,350 and has the largest two-tier auditorium in the UK. Its operator ATG offers group booking for groups of 10 or more (sometimes 6 or more), with tickets held without a deposit until everyone has paid. Shows from December 2026 include Mamma Mia, Back to the Future, Matthew Bourne's Cinderella, Heathers and Mrs Doubtfire. A group of up to 7 can share one house in Liverpool, with an easy train into the city centre."
 primary_keyword: "liverpool empire theatre group trip"
 secondary_keywords:
   - "liverpool empire group booking"
@@ -34,7 +34,6 @@ sources:
   - https://www.atgtickets.com/groups/
   - https://merseyrail.org/destination-merseyside/locations/liverpool-empire-theatre
   - https://www.backtothefuture.com/events/2027/01/12/back-to-the-future-the-musical-liverpool
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.merseytravel.gov.uk/news/new-easier-to-use-era-starts-on-merseyrail-as-tap-and-go-extended-to-bank-cards-watches-and-smartphones/
 ---
 
@@ -93,7 +92,7 @@ For Christmas shows across the city, see our [Liverpool panto 2026 guide](/guide
 
 Liverpool Central and Lime Street are both a short walk from the theatre. If you're staying at Zermatt Lodge:
 
-- **To Liverpool Central:** about 15 minutes by train
+- **To Liverpool Central:** an easy train ride
 - **Last trains:** check the timetable on the night, especially for a long show
 - **Tap and go:** Merseyrail accepts contactless cards and phones, so nobody needs a paper ticket
 
@@ -101,7 +100,7 @@ Driving into town for a show means paying for city centre parking. Leaving the c
 
 ## A theatre weekend for up to 7
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's **not in the city centre**, which keeps the price per person down for a group.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre. It's **not in the city centre**, which keeps the price per person down for a group.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so getting ready for the show isn't a queue

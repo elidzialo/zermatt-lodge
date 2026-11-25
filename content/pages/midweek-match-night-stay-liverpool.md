@@ -31,7 +31,6 @@ sources:
   - https://www.mancity.com/news/mens/city-new-year-and-christmas-fixtures-63924639
   - https://www.skysports.com/football/news/11095/13555667/liverpool-premier-league-2026-27-fixtures-and-schedule
   - https://en.wikipedia.org/wiki/Hill_Dickinson_Stadium
-  - https://www.thetrainline.com/train-times/fazakerley-to-sandhills
 ---
 
 An evening kick-off is a great atmosphere and a hard trip home. A 7.30pm or 8pm game finishes after 9.30pm, and then you've got crowds, queues for buses and trains, and a long drive if you've come from outside Merseyside. If you live more than an hour or so away, **staying over turns a stressful midweek dash into an easy night out**, and you can travel home the next morning.
@@ -77,7 +76,7 @@ If you're going with friends or family, a whole house means everyone stays toget
 
 ## Zermatt Lodge for match nights
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for a quick start the next morning

@@ -116,7 +116,7 @@ Or for football fans: Everton at Hill Dickinson Stadium, then the Liverpool game
 
 ## Where to stay over Boxing Day
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central when trains are running. With free parking for 2 cars, it works as a base for a Boxing Day at Aintree or Hill Dickinson Stadium.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, an easy train ride from Liverpool city centre when trains are running. With free parking for 2 cars, it works as a base for a Boxing Day at Aintree or Hill Dickinson Stadium.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

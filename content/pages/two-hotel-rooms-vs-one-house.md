@@ -32,7 +32,6 @@ sources:
   - https://liverpoolbidcompany.com/liverpool-abid-charge/
   - https://liverpool.gov.uk/council/consultation-and-engagement/consultation/consultation-on-the-overnight-visitor-levy-and-business-improvement-districts/
   - https://www.gov.uk/trading-hours-for-retailers-the-law
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The headline price of a hotel room and the headline price of a house are not the same thing, so comparing them directly will mislead you. A fair comparison adds up **the whole trip**: every room, every night, every breakfast, every parking ticket and every fee. This guide gives you a simple worksheet to do that for Liverpool, without making up prices. Use real quotes for your own dates.
@@ -87,7 +86,7 @@ Divide each total by the number of people and the number of nights. That gives a
 
 - **Breakfast for seven, every morning.** In a house, one supermarket shop covers it. Remember that large shops in England can only open for six hours on a Sunday, between 10am and 6pm, so shop on Saturday if you arrive late.
 - **Parking.** City centre car parks charge by the day. A house with a drive avoids that.
-- **Taxis home.** Staying outside the centre can add a taxi on a big night out, but the train often covers it. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes.
+- **Taxis home.** Staying outside the centre can add a taxi on a big night out, but the train often covers it. From Zermatt Lodge, trains run into Liverpool Central.
 - **Dinners out.** A kitchen and a big dining table mean you can eat in for one night and save the restaurant budget for the other.
 
 ## A quick worked example (with blanks)
@@ -105,7 +104,7 @@ Be honest about your trip. A hotel is often better for **one night**, for **coup
 
 ## A house to price up
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a dining room

@@ -33,7 +33,7 @@ sources:
   - https://www.skysports.com/football/news/12040/13367219/goodison-park-everton-women-to-make-stadium-their-permanent-home-from-the-2025-26-season
 ---
 
-Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
+Anfield is the north Liverpool district around Liverpool FC's stadium, and away from match day it's a quieter, residential area with one big asset: Stanley Park, a Victorian park with a restored glasshouse, the Isla Gladstone Conservatory. There's also Homebaked, a community bakery known for its pies, and the stadium itself for tours and summer concerts. The area has been through a long regeneration and parts of the high street are still quiet between games, so most visitors combine it with the city centre. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, an easy train ride from Liverpool city centre.
 
 ## Where Anfield is
 
@@ -118,7 +118,7 @@ For a match, being close is convenient. For a longer stay, many people prefer a 
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Anfield and not walking distance to the stadium, and it's about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Anfield and not walking distance to the stadium, and it's an easy train ride from Liverpool city centre.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, dining room

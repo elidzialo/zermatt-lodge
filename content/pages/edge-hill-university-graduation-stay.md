@@ -95,7 +95,7 @@ Restaurants in Ormskirk and Liverpool get busy during graduation week. Book a ta
 
 ### Make a weekend of it
 
-If you're coming from far away, add a day in Liverpool. The waterfront, museums and the Albert Dock are about 15 minutes by train from the house.
+If you're coming from far away, add a day in Liverpool. The waterfront, museums and the Albert Dock are an easy train ride from the house.
 
 ## Why Zermatt Lodge suits Edge Hill graduation families
 

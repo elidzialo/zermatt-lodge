@@ -3,7 +3,7 @@ title: "Winter Walks near Liverpool 2026: Crosby, Formby and Croxteth"
 meta_description: "Christmas and New Year walks near Liverpool for winter 2026: Crosby Beach's Iron Men, Formby's pine woods and red squirrels, and Croxteth Country Park."
 slug: winter-walks-near-liverpool-2026
 h1: "Winter Walks near Liverpool: Christmas and New Year 2026"
-quick_answer: "The best winter walks near Liverpool are on the Sefton coast. Crosby Beach has Antony Gormley's 100 Iron Men statues (Blundellsands and Crosby is the nearest station), and Formby has National Trust pine woods, red squirrels and short trails, with £9 parking and stations at Formby and Freshfield. Closer to north Liverpool, Croxteth Country Park is a large green space with free parking in recent years."
+quick_answer: "The best winter walks near Liverpool are on the Sefton coast. Crosby Beach has Antony Gormley's 100 Iron Men statues (Blundellsands and Crosby is the nearest station), and Formby has National Trust pine woods, red squirrels and short trails, with £9 parking and stations at Formby and Freshfield. In the city, Croxteth Country Park is a large green space with free parking in recent years."
 primary_keyword: "winter walks near liverpool"
 secondary_keywords:
   - "boxing day walk liverpool"
@@ -33,7 +33,6 @@ sources:
   - https://merseyrail.org/destination-merseyside/locations/crosby-beach-antony-gormley
   - https://www.nationaltrust.org.uk/visit/liverpool-lancashire/formby
   - https://croxteth-hall.co.uk/?p=4097
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The best winter walks near Liverpool are on the **Sefton coast**, just north of the city. **Crosby Beach** has Antony Gormley's 100 cast-iron "Iron Men", and **Formby** has National Trust pine woods, sand dunes and red squirrels. Both are reachable by Merseyrail. Closer to home, **Croxteth Country Park** in north-east Liverpool is a big green space for a gentler stroll.
@@ -120,7 +119,7 @@ Pair a coastal walk with the city: a Saturday at the [Christmas market](/guides/
 
 ## Where to stay
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, and well placed for drives to the Sefton coast. Come back to space to dry boots and coats, and a big kitchen to warm up in.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, an easy train ride from Liverpool city centre, and well placed for drives to the Sefton coast. Come back to space to dry boots and coats, and a big kitchen to warm up in.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

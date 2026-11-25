@@ -3,7 +3,7 @@ title: "Working at Speke or Halewood: Accommodation for Contractors and Teams"
 meta_description: "Work at JLR Halewood, Liverpool John Lennon Airport or the Speke science and pharma sites? Getting there by road and rail, and a house for crews with parking."
 slug: speke-and-halewood-work-stays
 h1: "Working at Speke or Halewood: Accommodation Options"
-quick_answer: "Speke and Halewood in south east Liverpool are home to Liverpool John Lennon Airport, JLR's Halewood plant (where JLR announced a £500m upgrade for electric vehicle production in 2024) and a cluster of pharmaceutical sites including Elanco, MedImmune and Novartis. Hunts Cross and Liverpool South Parkway are the nearest stations. Crews who want a quieter base with parking can stay in north Liverpool and drive round on the M57 and M62."
+quick_answer: "Speke and Halewood in south east Liverpool are home to Liverpool John Lennon Airport, JLR's Halewood plant (where JLR announced a £500m upgrade for electric vehicle production in 2024) and a cluster of pharmaceutical sites including Elanco, MedImmune and Novartis. Hunts Cross and Liverpool South Parkway are the nearest stations. Crews who want a quieter base with parking can stay elsewhere in Liverpool and drive in on the M57 and M62."
 primary_keyword: "accommodation near halewood"
 secondary_keywords:
   - "speke contractor accommodation"
@@ -12,7 +12,6 @@ secondary_keywords:
   - "work accommodation south liverpool"
 last_updated: 2026-11-22
 related:
-  - liverpool-airport-to-fazakerley
   - contractor-accommodation-liverpool
   - accommodation-near-m57-m58-liverpool
   - liverpool-freeport-business-stays
@@ -36,7 +35,7 @@ sources:
   - https://en.wikipedia.org/wiki/Fazakerley
 ---
 
-South east Liverpool is one of the city region's main industrial areas. **Speke** has the airport, a pharmaceutical cluster and business parks; next door, **Halewood** has JLR's car plant. That means a steady demand for shutdown crews, installers, engineers and visiting specialists. This guide covers the main sites, how to get there, and the trade-off between staying close by and staying in north Liverpool.
+South east Liverpool is one of the city region's main industrial areas. **Speke** has the airport, a pharmaceutical cluster and business parks; next door, **Halewood** has JLR's car plant. That means a steady demand for shutdown crews, installers, engineers and visiting specialists. This guide covers the main sites, how to get there, and the trade-off between staying close by and staying elsewhere in Liverpool.
 
 We used public sources only, checked on 22 November 2026. Always confirm site access details with your contact.
 

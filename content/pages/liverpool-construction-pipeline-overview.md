@@ -141,7 +141,7 @@ The common theme: crews with vans usually want **off-street parking**, a **full 
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential area about 15 minutes by train from Liverpool city centre, with free parking for crews driving to site.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential area, an easy train ride from Liverpool city centre, with free parking for crews driving to site.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, separate dining room

@@ -107,7 +107,7 @@ Leave earlier than your rehearsal suggested. Have your registration number to ha
 
 ### If you're taking the train
 
-From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes, and early weekday trains start before 5am. That's useful if your companion needs to get into the city for the Royal or Clatterbridge without a car. Check the timetable for your exact date, as early services differ at weekends.
+From Zermatt Lodge, trains run into Liverpool Central, and early weekday trains start before 5am. That's useful if your companion needs to get into the city for the Royal or Clatterbridge without a car. Check the timetable for your exact date, as early services differ at weekends.
 
 ### Taxis
 
@@ -131,7 +131,7 @@ If you're discharged the same day but feel too tired for a long journey home, a 
 
 Zermatt Lodge is a quiet, whole house in Liverpool. It's not a hotel, so there's no lobby or late-night noise, just your own space.
 
-- **About 15 minutes by train or car** from the city centre
+- **An easy train ride or drive** from the city centre
 - **Free parking for 2 cars**, so you and your companion can each bring a car if needed
 - **King master bedroom with en-suite** for the patient, plus three more bedrooms
 - **2 bathrooms**, so no queues on an early morning

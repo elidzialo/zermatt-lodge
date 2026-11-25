@@ -3,7 +3,7 @@ title: "Run Aintree Half Marathon, 10k and 5k: December 2026 and January 2027"
 meta_description: "Running the Run Aintree half marathon, 10k or 5k on 13 December 2026 or 3 January 2027? Start times, the course, parking and where to stay the night before."
 slug: run-aintree-winter-races-stay
 h1: "Run Aintree This Winter: Race Day Tips and Where to Stay"
-quick_answer: "RunThrough holds Run Aintree half marathon, 10k and 5k races at Aintree Racecourse on Sunday 13 December 2026 and Sunday 3 January 2027. For the January race, findarace lists start times of 10am (half), 10.45am (10k) and 10.55am (5k), and warns that free parking on site is limited. Staying nearby the night before saves an early drive. Zermatt Lodge in Liverpool, sleeps 7."
+quick_answer: "RunThrough holds Run Aintree half marathon, 10k and 5k races at Aintree Racecourse on Sunday 13 December 2026 and Sunday 3 January 2027. For the January race, findarace lists start times of 10am (half), 10.45am (10k) and 10.55am (5k), and warns that free parking on site is limited. Staying in Liverpool the night before saves an early drive. Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7."
 primary_keyword: "Run Aintree half marathon"
 secondary_keywords:
   - "Aintree half marathon January 2027"
@@ -73,9 +73,9 @@ findarace says there is **limited free parking on site** and recommends arriving
 
 Aintree station, on Merseyrail's Northern line (Ormskirk branch), is the closest station to the racecourse. Trains usually run every 15 minutes Monday to Saturday and every 30 minutes on Sundays, so check the Sunday timetable and allow a buffer before your start time.
 
-### From Fazakerley
+### More travel detail
 
-See our guide to [getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
+See our guide to [getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley).
 
 ## Winter race tips
 

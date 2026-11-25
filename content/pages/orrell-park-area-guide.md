@@ -1,14 +1,12 @@
 ---
 title: "Orrell Park Area Guide: A Small North Liverpool Neighbourhood"
-meta_description: "Orrell Park guide: Victorian streets between Aintree and Walton, the station, the Orrell Park Ballroom, England's smallest Green Flag park and places to stay."
+meta_description: "Orrell Park guide: Victorian streets between Aintree and Walton, the station, the Orrell Park Ballroom, and England's smallest Green Flag park."
 slug: orrell-park-area-guide
 h1: "Orrell Park, Liverpool: What Visitors and Relocators Should Know"
 quick_answer: "Orrell Park is a small residential area of north Liverpool (postcode L9) between Aintree and Walton. It grew from 1850 as housing for Bootle dock workers, has its own Merseyrail station opened in 1906, and is home to the Orrell Park Ballroom music venue and Devonfield Gardens, said to be England's smallest Green Flag park. It's handy for Aintree, Anfield and the city centre."
 primary_keyword: "Orrell Park Liverpool"
 secondary_keywords:
   - "Orrell Park station"
-  - "4 bed house Orrell Park"
-  - "holiday home Orrell Park"
   - "living in Orrell Park"
 last_updated: 2026-11-21
 related:
@@ -84,9 +82,9 @@ Use a map app for walking and driving times from the street you're staying on.
 
 Orrell Park is mostly terraced and semi-detached housing, with few holiday homes big enough for a group. For a whole house with off-street parking, look elsewhere in Liverpool.
 
-## Zermatt Lodge
+## For a larger group: a house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool, an easy train ride from the city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** and a big kitchen and dining room

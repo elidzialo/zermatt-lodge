@@ -12,7 +12,6 @@ secondary_keywords:
 last_updated: 2026-11-19
 related:
   - ms-bank-arena-concert-accommodation
-  - fazakerley-to-liverpool-city-centre-by-train
   - things-to-do-in-liverpool-with-a-group
   - where-to-stay-in-liverpool-for-a-group
   - house-vs-hotel-liverpool-groups
@@ -33,10 +32,9 @@ sources:
   - https://www.skiddle.com/news/all/International-Beatleweek-Festival-brings-Beatlemania-back-to-Liverpool/61929/
   - https://www.timeout.com/uk/news/new-exhibition-70-years-cavern-club-liverpool-072126
   - https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/liverpool/Liverpool_City_Region_Events_2026_d7d111be-3639-43d7-b946-754c5162a0be.pdf
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-International Beatleweek is Liverpool's annual Beatles festival, held in late August with the Cavern Club as its hub and tribute bands, talks and fan events across the city. The 2026 festival ran from 26 August to 1 September; 2027 dates weren't confirmed when we checked, but late August is the pattern. Because the city centre fills up that week, many groups stay a short train ride out. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
+International Beatleweek is Liverpool's annual Beatles festival, held in late August with the Cavern Club as its hub and tribute bands, talks and fan events across the city. The 2026 festival ran from 26 August to 1 September; 2027 dates weren't confirmed when we checked, but late August is the pattern. Because the city centre fills up that week, many groups stay a short train ride out. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, sleeping up to 7 with free parking for 2 cars.
 
 ## What International Beatleweek is
 
@@ -77,7 +75,7 @@ Staying near Mathew Street means you can walk everywhere. The downsides are pric
 
 A base outside the city centre can work well, especially for groups:
 
-- **Trains to Liverpool Central take about 15 minutes** from Zermatt Lodge
+- **Trains run into Liverpool Central** from Zermatt Lodge
 - **Moorfields** is the handy stop for Mathew Street and the business district; **Liverpool Central** is closest to Bold Street and Liverpool ONE
 - You get **quiet nights**, parking and space to spread out
 
@@ -116,7 +114,7 @@ See our comparison of [house vs hotel for groups](/guides/house-vs-hotel-liverpo
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or walking distance to Mathew Street: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or walking distance to Mathew Street: it's a quiet residential base, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: king with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and separate dining room

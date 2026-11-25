@@ -99,7 +99,7 @@ Getting these answered before you travel saves a wasted first morning, and helps
 
 - **Kirkby town centre** has shops, food and services. See our [Kirkby town guide](/guides/kirkby-town-guide).
 - **Croxteth Hall and Country Park** is good for an evening walk.
-- **Liverpool city centre** is about 15 minutes by train from the house for a night out or a match.
+- **Liverpool city centre** is an easy train ride from the house for a night out or a match.
 - Or simply stay in: pool, Netflix and a cooked dinner.
 
 ## Why Zermatt Lodge works for Knowsley and Kirkby jobs
@@ -109,7 +109,7 @@ Zermatt Lodge is a whole house in Liverpool.
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for early starts
 - **Free parking for 2 vehicles** (call ahead about large vans)
-- **About 15 minutes by train or car** from the city centre
+- **An easy train ride or drive** from the city centre
 - **Big kitchen and dining room** for batch cooking
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** for evenings off
 - **Large private back garden**

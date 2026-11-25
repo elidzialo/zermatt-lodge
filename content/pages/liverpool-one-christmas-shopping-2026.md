@@ -66,7 +66,7 @@ A whole house means space for shopping bags and somewhere to wrap presents. Zerm
 - **Big kitchen and dining room**
 - **Games room** with a pool table
 - **Free parking for 2 cars**
-- Liverpool city centre is about **15 minutes by train or car**
+- Liverpool city centre is an **easy train ride or drive** away
 
 No parties or events, no smoking and no pets. Check-in 3pm, checkout 11am.
 

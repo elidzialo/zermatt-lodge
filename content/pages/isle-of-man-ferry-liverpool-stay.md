@@ -3,7 +3,7 @@ title: "Isle of Man Ferry from Liverpool: Stay the Night Before"
 meta_description: "Catching the Isle of Man ferry from Liverpool? Terminal address, check-in times, parking, TT 2027 dates and a 4-bed house with parking the night before."
 slug: isle-of-man-ferry-liverpool-stay
 h1: "Isle of Man Ferry from Liverpool: Where to Stay the Night Before"
-quick_answer: "Staying in Liverpool the night before an Isle of Man sailing means no rush up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
+quick_answer: "Staying in Liverpool the night before an Isle of Man sailing means no rush up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two cars and room for up to 7."
 primary_keyword: "isle of man ferry liverpool accommodation"
 secondary_keywords:
   - "liverpool isle of man ferry terminal"
@@ -31,10 +31,9 @@ sources:
   - https://www.steam-packet.com/ports/liverpool
   - https://itv.com/news/granada/2024-06-25/isle-of-man-ferry-terminal-begins-operating-after-years-of-delay-and-overspend
   - https://www.visordown.com/news/isle-man-tt-2027-dates-confirmed
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're sailing to the Isle of Man from Liverpool, staying in the city the night before means you won't be racing up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7. It suits families, groups of friends and work crews heading over, or coming back late and not wanting to drive home the same night.
+If you're sailing to the Isle of Man from Liverpool, staying in the city the night before means you won't be racing up the motorway to make check-in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two cars and room for up to 7. It suits families, groups of friends and work crews heading over, or coming back late and not wanting to drive home the same night.
 
 This guide covers the Liverpool terminal, check-in, parking and the extra planning needed around TT.
 
@@ -76,7 +75,7 @@ If you're travelling on foot, don't plan to leave a car at the port. The Steam P
 - **Princes Dock multi-storey**, about a 5-minute walk, open 24/7 with CCTV and EV charging, bookable through JustPark
 - **Q-Park Liverpool ONE**, a short walk away, with a discount code listed on the Steam Packet site
 
-Alternatively, leave the car at your accommodation and take the train. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. The Steam Packet says a council bus (£2, pay on board) runs to the terminal from Skelhorne Street via Lime Street and Liverpool ONE bus station, starting two hours before departure. It also names local taxi firms and Uber.
+Alternatively, leave the car at your accommodation and take the train. From Zermatt Lodge, trains run into Liverpool Central. The Steam Packet says a council bus (£2, pay on board) runs to the terminal from Skelhorne Street via Lime Street and Liverpool ONE bus station, starting two hours before departure. It also names local taxi firms and Uber.
 
 ### Left luggage
 

@@ -31,7 +31,6 @@ faqs:
 sources:
   - https://www.hostfully.com/blog/what-is-corporate-housing/
   - https://www.gov.uk/guidance/rating-manual-section-6-part-3-valuation-of-all-property-classes/section-890-serviced-apartments
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Corporate housing is a **fully furnished home rented for work**, usually for **30 days or longer**, with **utilities, wifi and housewares included** in one rate. Companies book it for relocating employees, project teams, secondments and new starters who need somewhere to live while they find a permanent home. The booker is often HR or a relocation agency, not the person who stays.
@@ -86,7 +85,7 @@ Liverpool's city centre suits single professionals working in the business distr
 
 ## A furnished family house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It suits the **shorter end of corporate housing**: a first month for a relocating family, or a project team for a few weeks. Direct trains reach Liverpool Central in about 15 minutes.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It suits the **shorter end of corporate housing**: a first month for a relocating family, or a project team for a few weeks. Direct trains run into Liverpool Central.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

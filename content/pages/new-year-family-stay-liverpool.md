@@ -101,7 +101,7 @@ This is where planning matters most.
 - **Taxis:** demand peaks just after midnight. Pre-book if you can, or agree to leave at 12.30am rather than 12.05am
 - **Driving:** don't. Leave the car at your accommodation
 
-From Zermatt Lodge, trains normally take **about 15 minutes to Liverpool Central**. If you're out late, book a taxi back in advance.
+From Zermatt Lodge, trains normally run into **Liverpool Central**. If you're out late, book a taxi back in advance.
 
 ## Tips for a New Year trip
 
@@ -113,7 +113,7 @@ From Zermatt Lodge, trains normally take **about 15 minutes to Liverpool Central
 
 ## Where to stay for New Year
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central. It suits families and small groups who want their own space over New Year.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, an easy train ride from Liverpool city centre. It suits families and small groups who want their own space over New Year.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

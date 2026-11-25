@@ -94,7 +94,7 @@ When we checked, M&S Bank Arena's published January list was short, and venues u
 
 ## Where to stay in January
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes, which suits a theatre night at the Empire. For football, take the train to Sandhills for Anfield and Hill Dickinson Stadium.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central, which suits a theatre night at the Empire. For football, take the train to Sandhills for Anfield and Hill Dickinson Stadium.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

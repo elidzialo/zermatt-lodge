@@ -31,7 +31,6 @@ sources:
   - https://liverpoolexpress.co.uk/record-growth-sees-liverpool-city-region-become-uks-leading-film-and-tv-hub-outside-london/
   - https://liverpoolexpress.co.uk/stage-set-for-opening-of-new-film-studios/
   - https://en.wikipedia.org/wiki/M57_motorway
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 For a small film or TV crew working in Liverpool, a whole house is often better than a block of hotel rooms: everyone has a proper bedroom, there's a kitchen for early call times, and you can park outside. The best location depends on where you're shooting. Studio work at The Depot off Edge Lane, city-centre locations and shoots across Merseyside each favour slightly different bases.
@@ -111,7 +110,7 @@ Our [contractor accommodation guide](/guides/contractor-accommodation-liverpool)
 
 ## Why Zermatt Lodge suits a small crew
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or next to the studios, but it gives a crew a quiet base with road access in several directions and a train to Liverpool Central in about 15 minutes for anyone not driving.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre or next to the studios, but it gives a crew a quiet base with road access in several directions and an easy train into Liverpool Central for anyone not driving.
 
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single. Ideal for four people with a room each, or up to seven sharing
 - **2 bathrooms** for early calls

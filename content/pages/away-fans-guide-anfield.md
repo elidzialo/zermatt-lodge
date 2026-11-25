@@ -31,7 +31,6 @@ sources:
   - https://footballgroundguide.com/leagues/england/premier-league/anfield-liverpool.html
   - https://www.leedsunited.com/en/news/information-for-supporters-travelling-to-anfield
   - https://www.legislation.gov.uk/ukpga/1994/33/section/166
-  - https://www.thetrainline.com/train-times/fazakerley-to-sandhills
 ---
 
 Away fans at Anfield sit in the **lower tier of the Anfield Road End**, with an allocation of around 3,000 for league games and Premier League tickets capped at £30. The ground is in north Liverpool, away from the city centre, with no station on the doorstep, so most travelling fans come by train to Sandhills or Kirkdale, by club coach, or by taxi. This guide covers getting in, getting there and back, and the option of staying over in Liverpool rather than facing a long drive home after the final whistle.

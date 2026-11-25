@@ -34,10 +34,9 @@ sources:
   - https://faq.liverpoolfc.com/articles/booking-a-tour/can-i-book-a-tour-on-a-matchday/65969c2074e6ff44331e56a5
   - https://www.merseytravel.gov.uk/news/new-easier-to-use-era-starts-on-merseyrail-as-tap-and-go-extended-to-bank-cards-watches-and-smartphones/
   - https://en.wikipedia.org/wiki/Liverpool_John_Lennon_Airport
-  - https://www.thetrainline.com/train-times/fazakerley-to-sandhills
 ---
 
-For an overseas fan, the most important thing to know before booking flights is how Liverpool's tickets actually work: home tickets go mainly to the club's members, so sort your ticket through official channels first, then book travel and accommodation around it. Once you have a ticket, Liverpool is an easy city to visit, with a compact centre, simple trains and plenty to do the day before the match. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7.
+For an overseas fan, the most important thing to know before booking flights is how Liverpool's tickets actually work: home tickets go mainly to the club's members, so sort your ticket through official channels first, then book travel and accommodation around it. Once you have a ticket, Liverpool is an easy city to visit, with a compact centre, simple trains and plenty to do the day before the match. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, sleeping up to 7.
 
 This guide walks you from planning to the final whistle.
 
@@ -122,7 +121,7 @@ For more ideas, see our [two-day football and city itinerary](/guides/liverpool-
 
 The city centre has the most hotels but they fill up and get expensive on match weekends. If you're travelling as a family or group of friends, a whole house can be better value and more comfortable.
 
-Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre and isn't walking distance to Anfield, but trains to Sandhills, for the Soccerbus, take about 8 minutes, and Liverpool Central about 15.
+Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre and isn't walking distance to Anfield, but you can take the train to Sandhills for the Soccerbus, or into Liverpool Central.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

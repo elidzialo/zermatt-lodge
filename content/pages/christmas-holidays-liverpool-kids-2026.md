@@ -119,7 +119,7 @@ Travelling with very little ones? Our [babies and toddlers guide](/guides/babies
 
 ## Where to stay for a Christmas family break
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, about 15 minutes by train from Liverpool Central, with **free parking for 2 cars** for days out to Knowsley Safari, Aintree and the coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, an easy train ride from Liverpool city centre, with **free parking for 2 cars** for days out to Knowsley Safari and the coast.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

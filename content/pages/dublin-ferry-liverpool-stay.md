@@ -14,7 +14,6 @@ related:
   - belfast-ferry-birkenhead-stay
   - isle-of-man-ferry-liverpool-stay
   - grand-national-from-ireland
-  - liverpool-airport-to-fazakerley
   - accommodation-near-m57-m58-liverpool
 faqs:
   - q: "Is there a ferry from Dublin to Liverpool?"
@@ -101,7 +100,7 @@ Liverpool has deep Irish roots, and it shows in the visitors: football supporter
 
 ## Why Zermatt Lodge suits travellers from Ireland
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but the train gets you to Liverpool Central in about 15 minutes, and you can leave the car parked at the house all weekend.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but the train into Liverpool Central is straightforward, and you can leave the car parked at the house all weekend.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

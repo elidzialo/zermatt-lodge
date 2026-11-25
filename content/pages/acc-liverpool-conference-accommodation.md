@@ -3,7 +3,7 @@ title: "ACC Liverpool Conference Accommodation for Teams"
 meta_description: "Attending a conference at ACC Liverpool, now Liverpool Experience Campus? Parking prices, trains to James Street and a 4-bed house for your team."
 slug: acc-liverpool-conference-accommodation
 h1: "Conference Accommodation for ACC Liverpool (Liverpool Experience Campus)"
-quick_answer: "For a team at ACC Liverpool (now branded Liverpool Experience Campus), one shared house can replace several waterfront hotel rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7 with free parking for two cars."
+quick_answer: "For a team at ACC Liverpool (now branded Liverpool Experience Campus), one shared house can replace several waterfront hotel rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, sleeping up to 7 with free parking for two cars."
 primary_keyword: "acc liverpool conference accommodation"
 secondary_keywords:
   - "liverpool experience campus accommodation"
@@ -15,7 +15,6 @@ related:
   - corporate-team-stay-liverpool
   - ms-bank-arena-concert-accommodation
   - liverpool-business-travel-guide
-  - fazakerley-to-liverpool-city-centre-by-train
 faqs:
   - q: "Is ACC Liverpool still called ACC Liverpool?"
     a: "The operator has rebranded as Liverpool Experience Campus (LEX), with the full launch in April 2026. The venues are now the Convention Centre and the Exhibition Centre at Liverpool Experience Campus. M&S Bank Arena kept its name. Many people and event invites still say ACC Liverpool."
@@ -30,10 +29,9 @@ sources:
   - https://micebook.com/blog/2026/04/13/acc-liverpool-rebrands-as-liverpool-experience-campus/
   - https://en.wikipedia.org/wiki/ACC_Liverpool
   - https://www.exhibitioncentreliverpool.com/media/52vdlnrp/exhibition-centre-liverpool-joining-instructions-2025.pdf
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If your team is heading to a conference at ACC Liverpool, now branded Liverpool Experience Campus, you can either pay waterfront hotel prices for several rooms or share a house and commute in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, sleeping up to 7 with free parking for two cars. It's a practical option for teams of colleagues who'd rather have one base, one invoice and space to prepare in the evenings.
+If your team is heading to a conference at ACC Liverpool, now branded Liverpool Experience Campus, you can either pay waterfront hotel prices for several rooms or share a house and commute in. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, sleeping up to 7 with free parking for two cars. It's a practical option for teams of colleagues who'd rather have one base, one invoice and space to prepare in the evenings.
 
 This guide is for **delegates and speakers** attending conferences. If your team is building a stand, see our separate [exhibitor stay guide](/guides/exhibition-centre-liverpool-exhibitor-stay).
 
@@ -59,7 +57,7 @@ The venue's joining instructions say:
 
 ### By train
 
-Trains from the house reach **Liverpool Central in about 15 minutes**. From there you can:
+Trains from the house run into **Liverpool Central**. From there you can:
 
 - Walk to the waterfront, or
 - Use the Wirral line to **James Street**. The venue says James Street is about a 10-minute walk from the campus

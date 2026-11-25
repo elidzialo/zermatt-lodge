@@ -158,7 +158,7 @@ def slugify(s):
 
 
 def area_name(l):
-    """'Fazakerley, north Liverpool' -> 'Fazakerley' (the neighbourhood). Empty if it is just the city again."""
+    """'Anfield, north Liverpool' -> 'Anfield' (the neighbourhood). Empty if it is just the city again."""
     a = (l.get("area") or "").split(",")[0].strip()
     return "" if not a or a.lower() == (l.get("city") or "").strip().lower() else a
 
@@ -503,7 +503,9 @@ def guides_for(l, guides, n=6):
         area_words += ["apartment", "serviced"]
 
     def score(g):
-        local = -10 if "fazakerley" in g["slug"] and "fazakerley" not in area_words else 0  # Zermatt Lodge's own area guides
+        local = -10 if "fazakerley" in g["slug"] and "fazakerley" not in area_words else 0  # area guides for one suburb only go to homes in that suburb
+        if l.get("_hide_map") and re.search(r"aintree|m57|walton-centre|woodlands|norris|croxteth|orrell|kirkby|maghull|bootle", g["slug"]):
+            local -= 10  # no map pin: don't hint at the area through a cluster of suburb or venue guides
         return (3 if g["cluster"] in clusters else 0) + sum(4 for w in area_words if w in g["words"]) - g["priority"] * 0.1 + local
 
     ranked = sorted(guides, key=score, reverse=True)
@@ -669,7 +671,7 @@ KOSHER_WORDS = ("kosher", "shabbat", "jewish", "chanukah", "pesach", "simcha")
 # Lead guide per topic (the main search-intent page); others in the topic follow by priority
 EXPLORE_LEAD = ["where-to-stay-in-liverpool-for-a-group", "accommodation-near-aintree-university-hospital", "contractor-accommodation-liverpool",
                 "anfield-match-day-accommodation", "grand-national-accommodation", "house-vs-hotel-liverpool-groups",
-                "things-to-do-in-liverpool-with-a-group", "fazakerley-to-liverpool-city-centre-by-train",
+                "things-to-do-in-liverpool-with-a-group", "getting-around-liverpool-public-transport",
                 "kosher-shabbat-friendly-stays-liverpool", "shabbat-in-liverpool-visitor-guide", "kosher-food-liverpool"]
 
 
@@ -1101,7 +1103,7 @@ def listing_body(l, reviews, guides, ex):
         faq_html += ('<section class="lp-sec" aria-labelledby="hgH"><h2 id="hgH">Guides to this home and area</h2><ul class="lguides">' +
                      "".join(f'<li><a href="{esc(g["url"])}">{icon("book")}<span>{esc(g["title"])}</span></a></li>' for g in ex["seo_guides"]) + "</ul></section>")
     gl = "".join(f'<li><a href="/guides/{esc(g["slug"])}">{icon("book")}<span>{esc(g["title"])}</span></a></li>' for g in guides)
-    guides_html = f'<section class="lp-sec" aria-labelledby="locH2"><h2 id="locH2">Local guides</h2><ul class="lguides">{gl}</ul></section>' if gl else ""
+    guides_html = f'<section class="lp-sec" aria-labelledby="locH2"><h2 id="locH2">Liverpool guides</h2><ul class="lguides">{gl}</ul></section>' if gl else ""
     also = [(n, l[k]) for n, k in [("Airbnb", "airbnb_url"), ("Booking.com", "booking_url")] if l.get(k)]
     also_html = ""
     if also:
@@ -1361,6 +1363,9 @@ def build():
         l["id"] = int(l["id"])
         l["tags"] = listing_tags(l)
         l["card_photos"] = card_photos(l, extras)
+        if (extras.get(l["slug"]) or {}).get("hide_map"):
+            l["lat"] = l["lng"] = None  # owner asked for no map pin or coordinates on the static pages (listing-extras.json)
+            l["_hide_map"] = True
     page_paths(listings)
     write_llms_homes(listings)
     reviews = data.get("reviews") or {}

@@ -3,7 +3,7 @@ title: "Business Accommodation for Bootle: Offices, Strand Works and Stays"
 meta_description: "Working in Bootle? Where the offices and projects are, trains via Sandhills, parking, and a 4-bed house in Liverpool with free parking."
 slug: bootle-business-accommodation
 h1: "Business Accommodation for Bootle Offices and Projects"
-quick_answer: "Many business visitors to Bootle stay in a nearby house or apartment. Bootle New Strand station has trains every 15 minutes Monday to Saturday, and Sandhills is 6 minutes away for changes to other Northern line branches. Zermatt Lodge in Liverpool sleeps 7 with free parking for 2 cars, suits crews working on the Bootle Strand regeneration, and is about 15 minutes by train from Liverpool Central."
+quick_answer: "Many business visitors to Bootle stay in a nearby house or apartment. Bootle New Strand station has trains every 15 minutes Monday to Saturday, and Sandhills is 6 minutes away for changes to other Northern line branches. For a larger crew, Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7 with free parking for 2 cars."
 primary_keyword: "accommodation near bootle"
 secondary_keywords:
   - "bootle business accommodation"
@@ -35,13 +35,12 @@ sources:
   - https://sefton.gov.uk/mysefton-news/latest-news/sefton-council-provides-exciting-update-on-current-works-and-next-phases-at-the-strand
   - https://www.thebusinessdesk.com/northwest/news/2145615-20m-redevelopment-plans-for-bootle’s-strand-approved-by-councillors
   - https://www.traintickets.com/train-times/fazakerley-to-bootle-new-strand/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://en.wikipedia.org/wiki/Fazakerley
   - https://en.wikipedia.org/wiki/Sandhills_railway_station
   - https://en.wikipedia.org/wiki/Switch_Island
 ---
 
-Bootle is a busy place to work, and many business visitors base themselves in a **nearby house or serviced apartment**. **Bootle New Strand** station has trains **every 15 minutes Monday to Saturday**, and **Sandhills is about 6 minutes away** for connections across the Northern line. If you're driving, or bringing a crew for the **Bootle Strand redevelopment**, a house with its own parking saves daily fees. **Zermatt Lodge** in Liverpool sleeps 7 with **free parking for 2 cars**, and trains reach Liverpool Central in **about 15 minutes**.
+Bootle is a busy place to work, and many business visitors base themselves in a **nearby house or serviced apartment**. **Bootle New Strand** station has trains **every 15 minutes Monday to Saturday**, and **Sandhills is about 6 minutes away** for connections across the Northern line. If you're driving, or bringing a crew for the **Bootle Strand redevelopment**, a house with its own parking saves daily fees. **Zermatt Lodge** in Liverpool sleeps 7 with **free parking for 2 cars**, and trains run into Liverpool Central.
 
 ## Who works in Bootle
 
@@ -101,7 +100,7 @@ For a team, a house usually means **separate bedrooms, a kitchen, a washer and p
 
 ## Zermatt Lodge: a base for Bootle work
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in Bootle or the city centre**, so be realistic about the commute. Liverpool city centre is about **15 minutes by train or car**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in Bootle or the city centre**, so be realistic about the commute. Liverpool city centre is an **easy train ride or drive** away.
 
 - **Sleeps 7**, with separate beds available
 - **2 bathrooms**, a big kitchen, washer and dryer

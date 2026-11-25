@@ -89,7 +89,7 @@ Most shutdowns are well under that. But the rules on accommodation and subsisten
 
 ## Zermatt Lodge for shutdown crews
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's about **15 minutes by train** from Liverpool city centre. It suits crews working at sites around Liverpool, Knowsley, Kirkby, the docks and along the motorway network. For sites over the river, check the drive and the tolls first.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's an **easy train ride** from Liverpool city centre. It suits crews working at sites around Liverpool and along the motorway network. For sites over the river, check the drive and the tolls first.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so mornings move faster

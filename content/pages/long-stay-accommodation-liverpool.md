@@ -3,7 +3,7 @@ title: "Long Stay Accommodation in Liverpool: A Practical Guide"
 meta_description: "Need a place in Liverpool for a month or more? What to ask about cleaning, linen, bills and invoices, house vs aparthotel, and a 4-bed house with parking."
 slug: long-stay-accommodation-liverpool
 h1: "Long Stay Accommodation in Liverpool: What to Ask Before You Book"
-quick_answer: "For a stay of a month or more in Liverpool, agree cleaning, linen, bills, parking and invoices upfront. Zermatt Lodge is a whole 4-bedroom house about 15 minutes by train from the city centre, with free parking for two cars and room for up to 7."
+quick_answer: "For a stay of a month or more in Liverpool, agree cleaning, linen, bills, parking and invoices upfront. Zermatt Lodge is a whole 4-bedroom house an easy train ride from Liverpool city centre, with free parking for two cars and room for up to 7."
 primary_keyword: "long stay accommodation liverpool"
 secondary_keywords:
   - "monthly let liverpool"
@@ -31,10 +31,9 @@ sources:
   - https://www.litrg.org.uk/tax-guides/employment/employment-benefits-and-expenses/what-travel-expenses-can-i-claim
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
   - https://www.merseytravel.gov.uk/news/new-easier-to-use-era-starts-on-merseyrail-as-tap-and-go-extended-to-bank-cards-watches-and-smartphones/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-For a long stay in Liverpool, of a month or more, the right place is the one where the boring details are agreed upfront: cleaning, linen, bills, parking and invoices. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two cars, a big kitchen and room for up to 7. It suits families between homes, project teams and anyone who needs more than a hotel room for several weeks.
+For a long stay in Liverpool, of a month or more, the right place is the one where the boring details are agreed upfront: cleaning, linen, bills, parking and invoices. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two cars, a big kitchen and room for up to 7. It suits families between homes, project teams and anyone who needs more than a hotel room for several weeks.
 
 This guide explains what to ask any host before booking a long stay, and how a house compares with an aparthotel.
 
@@ -109,7 +108,7 @@ Online grocery delivery makes a weekly shop easy.
 
 ### Getting around
 
-From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. Since February 2026, Merseyrail has accepted contactless bank cards, phones and watches: tap in and tap out. For longer stays, it's worth comparing weekly or monthly tickets on the Merseytravel website.
+From Zermatt Lodge, trains run into Liverpool Central. Since February 2026, Merseyrail has accepted contactless bank cards, phones and watches: tap in and tap out. For longer stays, it's worth comparing weekly or monthly tickets on the Merseytravel website.
 
 ### Tax and expenses
 

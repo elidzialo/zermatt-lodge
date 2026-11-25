@@ -1,9 +1,9 @@
 ---
-title: "Accommodation near the M57 and M58 in Liverpool"
-meta_description: "Driving to Liverpool? How the M57 and M58 help you skip city-centre traffic. Junction guide, where each motorway goes, and a 4-bed house with free parking."
+title: "Driving to Liverpool: The M57 and M58 Explained"
+meta_description: "Driving to Liverpool? How the M57 and M58 help you skip city-centre traffic. Junction guide, where each motorway goes and driving tips."
 slug: accommodation-near-m57-m58-liverpool
-h1: "Accommodation near the M57 and M58: Liverpool Without the City Traffic"
-quick_answer: "Using the M57 and M58 lets drivers skip city-centre traffic and parking charges. Zermatt Lodge is a whole 4-bedroom house in Liverpool with free parking for two cars."
+h1: "The M57 and M58: Driving Around Liverpool Without the City Traffic"
+quick_answer: "Using the M57 and M58 lets drivers skip city-centre traffic and parking charges. The M57 runs around the east of Liverpool from the M62 to Switch Island, and the M58 runs from Switch Island to the M6 near Wigan."
 primary_keyword: "accommodation near m57 liverpool"
 secondary_keywords:
   - "stay near switch island"
@@ -35,7 +35,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're driving to Liverpool, staying near the M57 and M58 in the north of the city lets you skip city-centre traffic and parking charges while keeping the whole region within reach. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with free parking for two cars.
+If you're driving to Liverpool, the M57 and M58 let you skip city-centre traffic and parking charges while keeping the whole region within reach. For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for two cars.
 
 This guide explains where each motorway goes, what's near the key junctions and why a motorway-side base suits drivers, families and work teams.
 
@@ -77,7 +77,7 @@ Liverpool city centre has bus lanes, one-way systems and event-day congestion. P
 
 From north Liverpool it's easy to cover a lot of the region from one base:
 
-- **Football at Anfield or Everton:** train from Fazakerley towards Sandhills
+- **Football at Anfield or Everton:** train to Sandhills
 - **Aintree Racecourse:** about a mile from the motorways, according to the Jockey Club
 - **Knowsley Safari:** via M57 junction 2
 - **Southport and Formby beaches:** via Switch Island
@@ -86,9 +86,9 @@ From north Liverpool it's easy to cover a lot of the region from one base:
 
 ### Keep the city within reach
 
-When you do want the city centre, leave the car at home. Fazakerley station has direct Merseyrail trains to Liverpool Central in about 15 minutes. See our guide to [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train).
+If you're staying near the M57 and want the city centre, leave the car behind. Fazakerley station has direct Merseyrail trains to Liverpool Central in about 15 minutes. See our guide to [Fazakerley to Liverpool city centre by train](/guides/fazakerley-to-liverpool-city-centre-by-train).
 
-## Sample drives from Fazakerley
+## Sample drives from M57 junction 6 (Fazakerley)
 
 Rough guide only. Times vary a lot with traffic, so check a live route before you set off.
 
@@ -122,9 +122,9 @@ If you're new to driving around Merseyside, the main thing to remember is that y
 
 For more advice, see [driving in Liverpool: a visitor's guide](/guides/driving-in-liverpool-visitors).
 
-## Why Zermatt Lodge suits drivers
+## A house in Liverpool with free parking
 
-Zermatt Lodge is a whole house in Liverpool.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool.
 
 - **Free parking for 2 cars**, so you aren't paying city-centre rates
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
@@ -132,7 +132,7 @@ Zermatt Lodge is a whole house in Liverpool.
 - **Big kitchen and dining room**, so you can cook after a long drive
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
-- **Trains to the city centre** in about 15 minutes for car-free days
+- **Easy trains to the city centre** for car-free days
 - **Check-in 3pm, checkout 11am**
 
 It's a quiet residential home: **no parties, no smoking and no pets**.

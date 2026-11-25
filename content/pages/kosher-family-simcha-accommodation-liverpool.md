@@ -85,7 +85,7 @@ Families also travel for a levaya or to sit shiva. If you're coming at short not
 
 ## An honest note about Zermatt Lodge
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from the city centre. It sleeps 7 (king en-suite, second king, queen and single), has 2 bathrooms, a big kitchen and dining room, a large private garden and **free parking for 2 cars**.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre. It sleeps 7 (king en-suite, second king, queen and single), has 2 bathrooms, a big kitchen and dining room, a large private garden and **free parking for 2 cars**.
 
 It is **not** described as kosher and it is **not within walking distance** of any synagogue, so it doesn't suit a Shabbat simcha where you'll walk to shul. It can suit a weekday simcha, for a family that self-caters with its own food and equipment.
 

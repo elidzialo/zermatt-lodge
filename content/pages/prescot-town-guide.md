@@ -35,7 +35,7 @@ sources:
   - https://www.placenorthwest.co.uk/liverpool-city-region-development-update-2026-summary-gallery/
 ---
 
-Prescot is a small market town in Knowsley, about 8 miles east of Liverpool city centre, with a surprising cultural draw: the Shakespeare North Playhouse, an award-winning theatre built to honour the Elizabethan playhouse that stood in the town in the 1590s. It also has a museum of its watch and clock-making past, a Grade I listed church, and Knowsley Safari on the edge of town. It's an easy half-day or evening out from Liverpool. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, about 15 minutes by train from Liverpool city centre.
+Prescot is a small market town in Knowsley, about 8 miles east of Liverpool city centre, with a surprising cultural draw: the Shakespeare North Playhouse, an award-winning theatre built to honour the Elizabethan playhouse that stood in the town in the 1590s. It also has a museum of its watch and clock-making past, a Grade I listed church, and Knowsley Safari on the edge of town. It's an easy half-day or evening out from Liverpool. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for 2 cars, an easy train ride from Liverpool city centre.
 
 ## Prescot at a glance
 
@@ -104,13 +104,13 @@ Place North West's 2026 development update lists **Prescot**, along with Kirkby 
 - **Monday to Saturday:** trains every 30 minutes between **Liverpool Lime Street** and **Wigan North Western**
 - **Sunday:** hourly
 
-From north Liverpool, the train route means going into the city first, so for most people driving is quicker.
+From most of Liverpool outside the centre, the train route means going into the city first, so for many people driving is quicker.
 
 ### By car
 
-From Fazakerley, the **M57** runs south towards Prescot, and the journey is usually a short drive outside rush hour. Park in a town centre car park and walk to the theatre and museum.
+The **M57** and **M62** both serve Prescot, so check a live route outside rush hour. Park in a town centre car park and walk to the theatre and museum.
 
-## A Prescot day from north Liverpool
+## A Prescot day from Liverpool
 
 | Time | Plan |
 |---|---|
@@ -132,7 +132,7 @@ Or split it: safari one day with the children, theatre another evening for the a
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Prescot and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with free parking so you can drive to Prescot and Knowsley.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in Prescot and not in the city centre: it's a quiet residential base, an easy train ride from Liverpool city centre, with free parking so you can drive to Prescot and Knowsley.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen and dining room

@@ -130,7 +130,7 @@ Many families don't want to sign a 12-month lease on a home they've only seen on
 
 ### Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in about **15 minutes**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains run into Liverpool Central.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen, dining room, washer and dryer

@@ -111,7 +111,7 @@ For a stadium event, staying on the **Merseyrail Northern line** makes life easy
 
 ### Zermatt Lodge in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**. It has free parking for 2 cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central. It has free parking for 2 cars.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room

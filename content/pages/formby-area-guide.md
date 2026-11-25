@@ -34,7 +34,7 @@ sources:
   - https://www.savemyexams.com/learning-hub/school-holidays/england/merseyside/liverpool-city-council/fazakerley/
 ---
 
-Formby is a coastal town north of Liverpool, best known for the National Trust's pine woodlands, big sand dunes, a wide beach and rare red squirrels. It's one of the easiest nature days out from Liverpool, but the two National Trust car parks fill up very quickly on sunny days, so arrive early or take the Merseyrail train to Formby or Freshfield. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars and about 15 minutes by train from Liverpool city centre, so Formby makes a good day trip from the house.
+Formby is a coastal town north of Liverpool, best known for the National Trust's pine woodlands, big sand dunes, a wide beach and rare red squirrels. It's one of the easiest nature days out from Liverpool, but the two National Trust car parks fill up very quickly on sunny days, so arrive early or take the Merseyrail train to Formby or Freshfield. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars and an easy train ride from Liverpool city centre, so Formby makes a good day trip from the house.
 
 ## Where Formby is
 
@@ -106,7 +106,7 @@ The National Trust says the **Lifeboat Road boardwalk is closed on 20, 24 and 27
 
 The National Trust recommends travelling by **Merseyrail to Formby or Freshfield** stations "if you can". Both are on the **Northern line towards Southport**.
 
-From Fazakerley, you're on the **Kirkby branch** of the same line, so you'd change onto a Southport train nearer the city. Check the Merseyrail journey planner for the best connection. From the stations, allow time for the walk to the woods and beach.
+From the Kirkby or Ormskirk branches of the same line, you'd change onto a Southport train nearer the city. Check the Merseyrail journey planner for the best connection. From the stations, allow time for the walk to the woods and beach.
 
 ## When to visit
 
@@ -114,7 +114,7 @@ From Fazakerley, you're on the **Kirkby branch** of the same line, so you'd chan
 - **Summer weekends and school holidays:** busiest, with lifeguards and refreshment vans but full car parks. Liverpool's 2027 summer school holiday runs from **22 July to 31 August**
 - **Winter:** bracing beach walks, fewer people, but shorter days and woodland conservation work
 
-## A family day at Formby from north Liverpool
+## A family day at Formby from Liverpool
 
 | Time | Plan |
 |---|---|
@@ -134,7 +134,7 @@ From Fazakerley, you're on the **Kirkby branch** of the same line, so you'd chan
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not on the coast and not in the city centre: it's a quiet residential base about 15 minutes by train from Liverpool city centre, with Formby an easy day trip by car or train.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not on the coast and not in the city centre: it's a quiet residential base, an easy train ride from Liverpool city centre, with Formby an easy day trip by car or train.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms** for sandy feet after the beach

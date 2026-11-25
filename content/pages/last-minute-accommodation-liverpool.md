@@ -7,8 +7,6 @@ quick_answer: "For a last-minute stay in Liverpool, check the total price, the c
 primary_keyword: "accommodation Liverpool tonight"
 secondary_keywords:
   - "last minute accommodation Liverpool"
-  - "accommodation Aintree tonight"
-  - "accommodation Fazakerley tonight"
   - "same day booking Liverpool house"
 last_updated: 2026-11-21
 related:

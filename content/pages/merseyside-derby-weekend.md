@@ -33,7 +33,6 @@ sources:
   - https://footballgroundguide.com/leagues/england/premier-league/anfield-liverpool.html
   - https://www.leedsunited.com/en/news/information-for-supporters-travelling-to-anfield
   - https://en.wikipedia.org/wiki/Hill_Dickinson_Stadium
-  - https://www.thetrainline.com/train-times/fazakerley-to-sandhills
   - https://www.legislation.gov.uk/ukpga/1994/33/section/166
   - https://www.liverpoolfc.com/news/protecting-fair-access-tickets-important-information-supporters
 ---
@@ -96,7 +95,7 @@ The November derby kicks off at **12pm on a Sunday**. Sunday trains start later 
 
 **Saturday**
 - Arrive, check in from 3pm, and do a food shop
-- Head into the city for the afternoon or evening. The train from the house reaches Liverpool Central in about 15 minutes
+- Head into the city for the afternoon or evening. The train from the house runs into Liverpool Central
 - Get back for a quiet night before an early start
 
 **Sunday (12pm kick-off)**

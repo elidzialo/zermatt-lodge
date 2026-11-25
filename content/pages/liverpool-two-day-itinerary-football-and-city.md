@@ -36,7 +36,6 @@ sources:
   - https://www.beatlesstory.com/prices
   - https://images.liverpoolmuseums.org.uk/2022-05/Liverpool_Jewish_Community_Trail_WEB.pdf
   - https://footballgroundguide.com/news/everton-hill-dickinson-stadium-tour-guide.html
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Two days is enough for a great football weekend in Liverpool. On **day one**, do the **Anfield stadium tour or LFC Museum** in the morning, then the **match**, reached by **Soccerbus from Sandhills** or the **917 bus** from near Lime Street. On **day two**, head to the **Royal Albert Dock** for the **Beatles Story** and the waterfront museums, and add **Everton's new stadium tour** if you have the energy. Get your **match tickets first**, then book a base on the **Merseyrail Northern line**.
@@ -134,7 +133,7 @@ Head home, or stay on for dinner in the Ropewalks or the Baltic Triangle before 
 
 - **Merseyrail** covers most of what you'll need. Since February 2026 you can **tap in and out with a contactless card**, phone or watch.
 - **Sandhills** is the key match-day station for both clubs.
-- From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**.
+- From Zermatt Lodge, trains run into **Liverpool Central**.
 
 ## Where to stay
 
@@ -142,7 +141,7 @@ For a football weekend, stay on the **Northern line**, which runs through Sandhi
 
 ### Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**, and Sandhills is easy to reach by train.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central, and Sandhills is easy to reach by train.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room

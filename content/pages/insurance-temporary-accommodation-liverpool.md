@@ -30,7 +30,6 @@ sources:
   - https://www.confused.com/home-insurance/guides/alternative-accommodation-cover
   - https://howdeninsurance.co.uk/private-client/resource-hub/what-is-alternative-accommodation-insurance
   - https://www.nhs.uk/nhs-services/gps/how-to-register-with-a-gp-surgery/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 If a flood, fire or major leak has made your Liverpool home unliveable, your home insurance may pay for temporary "alternative accommodation" while repairs are done. Usually your insurer, or a provider it uses, arranges the property. You can often ask for something that fits your family, such as enough bedrooms, a kitchen, parking and a location near school and work. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, which insurers and families can book for these stays.
@@ -107,7 +106,7 @@ When your normal life has been turned upside down, the right temporary home real
 - **Whole property:** no shared spaces with other guests
 - **Layout:** 4 bedrooms (king en-suite, king, queen, single) and 2 bathrooms, sleeping up to 7
 - **Parking:** free off-street parking for 2 cars
-- **Location:** Liverpool, about 15 minutes by train or car from the city centre
+- **Location:** Liverpool, an easy train ride or drive from the city centre
 - **House rules:** no parties, no smoking, no pets
 - **Contact:** one point of contact by email at cs@zugati.co.uk
 
@@ -121,7 +120,7 @@ Zermatt Lodge is a whole house in Liverpool, with free parking for families who 
 - **Large private back garden**
 - **Free parking for 2 cars**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
-- **About 15 minutes by train** to Liverpool Central
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

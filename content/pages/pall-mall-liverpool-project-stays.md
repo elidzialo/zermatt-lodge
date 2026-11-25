@@ -3,7 +3,7 @@ title: "Pall Mall Liverpool: Contractor and Consultant Accommodation"
 meta_description: "Working on One Pall Mall in Liverpool's business district? What's being built, who's involved, and where project teams can stay with parking and a train into town."
 slug: pall-mall-liverpool-project-stays
 h1: "Pall Mall Development: Where Contractors and Consultants Can Stay"
-quick_answer: "One Pall Mall is a planned 111,000 sq ft Grade A office building on a 1.2-hectare site behind the former Exchange Station in Liverpool's business district, with a half-acre park. Kier Property and Liverpool City Council are joint developers, and VINCI was named design and build contractor for the £55m first phase in July 2026. Teams who need parking often stay outside the centre: Fazakerley is about 15 minutes by train to Liverpool Central, via Moorfields."
+quick_answer: "One Pall Mall is a planned 111,000 sq ft Grade A office building on a 1.2-hectare site behind the former Exchange Station in Liverpool's business district, with a half-acre park. Kier Property and Liverpool City Council are joint developers, and VINCI was named design and build contractor for the £55m first phase in July 2026. Teams who need parking often stay outside the centre and take the train into Moorfields."
 primary_keyword: "pall mall liverpool development"
 secondary_keywords:
   - "one pall mall liverpool"
@@ -63,7 +63,7 @@ In March 2026, Kier said the refreshed RIBA Stage 3 design was complete and the 
 
 Pall Mall is in the business district, a short walk from **Moorfields** station.
 
-- **By train:** Merseyrail's Northern line runs through Moorfields to Liverpool Central. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes
+- **By train:** Merseyrail's Northern line runs through Moorfields to Liverpool Central. From Zermatt Lodge, trains run into Liverpool Central
 - **Early starts:** check the current timetable for your shift pattern
 - **By van:** the city centre has restricted streets and paid parking. Agree parking or a compound with the site team before you send vans in
 

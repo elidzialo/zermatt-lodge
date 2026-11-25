@@ -83,7 +83,7 @@ Teenagers like a bit of space. Zermatt Lodge is a **4-bedroom house in Liverpool
 - **Games room** with a pool table and board games
 - **55-inch Smart TV** in the living room
 - **Free parking for 2 cars**
-- Liverpool city centre is about **15 minutes by train or car**
+- Liverpool city centre is an **easy train ride or drive** away
 
 No parties or events, no smoking and no pets. Check-in 3pm, checkout 11am.
 

@@ -31,10 +31,9 @@ sources:
   - https://www.croxteth-hall.co.uk/?p=1754
   - https://knowsleysafariexperience.co.uk/plan-your-visit/opening-times
   - https://sefton.gov.uk/around-sefton/another-place-by-antony-gormley/general-information
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you need a large family house to rent in Liverpool, look for real bedrooms for everyone, at least two bathrooms, a garden and parking, so the holiday doesn't turn into a daily logistics puzzle. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7. It has a king master with en-suite, a second king, a queen and a single, plus two bathrooms, a big kitchen, a dining room, a games room and a large private back garden. There's free parking for two cars, and trains to the city centre take about 15 minutes.
+If you need a large family house to rent in Liverpool, look for real bedrooms for everyone, at least two bathrooms, a garden and parking, so the holiday doesn't turn into a daily logistics puzzle. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7. It has a king master with en-suite, a second king, a queen and a single, plus two bathrooms, a big kitchen, a dining room, a games room and a large private back garden. There's free parking for two cars, and trains into the city centre are easy.
 
 This guide shows how a family can use the house, which days out are nearby and some tips for a smooth stay.
 
@@ -118,7 +117,7 @@ Give each adult a night to cook and get the children to set the table. See our [
 - **Large private back garden**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Free parking for 2 cars**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**, so it's a calm family home.

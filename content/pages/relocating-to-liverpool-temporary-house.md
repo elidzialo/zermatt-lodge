@@ -57,7 +57,7 @@ Being central to the areas you're researching saves a lot of driving. Areas peop
 - **Knowsley:** Kirkby, Prescot and Huyton, via the M57
 - **West Lancashire:** Ormskirk and Skelmersdale, via the M58
 
-And when you need the city centre, trains from Zermatt Lodge reach **Liverpool Central in about 15 minutes**.
+And when you need the city centre, trains run into **Liverpool Central**.
 
 
 
@@ -131,7 +131,7 @@ Zermatt Lodge is a whole house in Liverpool.
 - **Large private back garden**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Free parking for 2 cars**, so both adults can get to viewings or work
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

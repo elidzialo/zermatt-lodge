@@ -34,7 +34,6 @@ sources:
   - https://www.boxpark.co.uk/liverpool/ice-skating
   - https://liverpoolexpress.co.uk/liverpool-christmas-markets-set-for-return-as-2026-festive-programme-revealed/
   - https://www.visitliverpool.com/blog/post/christmas-is-coming-at-liverpool-one-as-new-curling-experience-christmas-tree-and-events-announced/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Liverpool has **three Christmas ice rinks** for 2026. **Skate St George's** is the outdoor rink on St George's Plateau, open 21 November 2026 to 3 January 2027. **Icebox at Boxpark Liverpool** runs 16 November 2026 to 10 January 2027, with sessions from £8 for children and £10 for adults. And the council has announced a **covered rink at Liverpool Christmas Wonderland** at the Pier Head. All three are closed on Christmas Day.
@@ -111,7 +110,7 @@ We couldn't confirm the opening dates, hours or prices when we checked, and the 
 
 ## Getting there by train
 
-From Zermatt Lodge, trains take **about 15 minutes to Liverpool Central**.
+From Zermatt Lodge, trains run into **Liverpool Central**.
 
 - **Skate St George's:** opposite Lime Street station, a short walk from Central
 - **Icebox at Boxpark:** a walk south from Central towards the Baltic Triangle
@@ -121,7 +120,7 @@ Merseyrail takes contactless: tap in and tap out.
 
 ## Where to stay for a skating trip
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. After an evening on the ice, you come back to a warm house rather than a cramped hotel room.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's an easy train ride from Liverpool city centre. After an evening on the ice, you come back to a warm house rather than a cramped hotel room.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, so wet kit dries and everyone gets a warm shower

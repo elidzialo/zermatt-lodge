@@ -3,7 +3,7 @@ title: "Southport Guide: Christmas 2026, Events, the Pier and Where to Stay"
 meta_description: "Southport this winter: Christmas markets from 4 Dec, panto at The Atkinson, pier status, trains and a house for groups."
 slug: southport-area-guide
 h1: "Southport Area Guide: What's On, Getting There and Where to Stay"
-quick_answer: "Southport is a Victorian seaside town on the Sefton coast, north of Liverpool. This winter it has Christmas markets on Market Street from 4 December 2026 and Cinderella at The Atkinson from 4 to 31 December. The pier has been closed for safety works since December 2022. From Fazakerley in north Liverpool the train takes about 1 hour 4 minutes with one change."
+quick_answer: "Southport is a Victorian seaside town on the Sefton coast, north of Liverpool. This winter it has Christmas markets on Market Street from 4 December 2026 and Cinderella at The Atkinson from 4 to 31 December. The pier has been closed for safety works since December 2022. It's an easy day trip from Liverpool by train or car."
 primary_keyword: "accommodation Southport"
 secondary_keywords:
   - "holiday home Southport"
@@ -35,7 +35,7 @@ sources:
   - https://www.lonelyplanet.com/articles/best-neighborhoods-in-liverpool
 ---
 
-Southport is a Victorian seaside town on the **Sefton coast**, north of Liverpool, known for **Lord Street**, its long pier and big summer events. This winter it has **Christmas markets on Market Street from 4 December 2026** and **Cinderella at The Atkinson from 4 to 31 December**. The **pier has been closed for safety works since December 2022**. From Fazakerley in north Liverpool, the train takes **about 1 hour 4 minutes** with one change, which makes Southport an easy day trip from a Liverpool base.
+Southport is a Victorian seaside town on the **Sefton coast**, north of Liverpool, known for **Lord Street**, its long pier and big summer events. This winter it has **Christmas markets on Market Street from 4 December 2026** and **Cinderella at The Atkinson from 4 to 31 December**. The **pier has been closed for safety works since December 2022**. Southport makes an easy day trip from a Liverpool base by train or car.
 
 ## Christmas 2026 in Southport
 
@@ -101,7 +101,7 @@ Further down the coast, **Formby** has pinewoods, dunes and red squirrels, and *
 
 ## Zermatt Lodge: a Liverpool base for the coast
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool city centre. It isn't in Southport, and it isn't in the city centre. It's a quiet family house that works as a base for both.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre. It isn't in Southport, and it isn't in the city centre. It's a quiet family house that works as a base for both.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**

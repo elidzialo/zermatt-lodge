@@ -13,7 +13,6 @@ related:
   - relocating-to-liverpool-temporary-house
   - long-stay-accommodation-liverpool
   - liverpool-school-admissions-relocating
-  - fazakerley-to-liverpool-city-centre-by-train
   - temporary-resident-gp-liverpool
 faqs:
   - q: "How many days do I need for a house-hunting trip to Liverpool?"
@@ -23,7 +22,7 @@ faqs:
   - q: "Which areas should families look at around Liverpool?"
     a: "Common choices include Crosby and Formby on the coast, Maghull and Aintree to the north, West Derby to the east, and Allerton, Woolton and Aigburth in the south. Each has a different balance of price, schools, green space and commute."
   - q: "Where should I stay for a house-hunting trip?"
-    a: "Somewhere central to the areas you're viewing, with parking. A base with free parking and a train line makes it easy to get around, and Zermatt Lodge is about 15 minutes from the city centre by train."
+    a: "Somewhere central to the areas you're viewing, with parking. A base with free parking and a train line makes it easy to get around, and Zermatt Lodge is an easy train ride from Liverpool city centre."
 sources:
   - https://liverpool.gov.uk/council-tax/your-guide-to-council-tax/how-we-are-funded
   - https://en.wikipedia.org/wiki/Sandhills_railway_station
@@ -125,7 +124,7 @@ Use the same scorecard for every property so you can compare them later.
 
 ### By train
 
-Merseyrail's Northern line has three branches heading north: to **Southport** (via Crosby and Formby), to **Ormskirk** (via Orrell Park, Aintree and Maghull) and to **Kirkby and Headbolt Lane**. They all meet at Sandhills and run into the city centre. As an example, Trainline puts Fazakerley to Liverpool Central at about **15 minutes**.
+Merseyrail's Northern line has three branches heading north: to **Southport** (via Crosby and Formby), to **Ormskirk** (via Orrell Park, Aintree and Maghull) and to **Kirkby and Headbolt Lane**. They all meet at Sandhills and run into the city centre.
 
 Try the journey at the time you'll actually travel. Trains are busier, and roads slower, at 8am than at 11am.
 
@@ -151,13 +150,13 @@ For a house-hunting trip, a base with these makes life easier:
 
 ### Why a base with parking works
 
-With a car, Aintree, Maghull, Crosby and Formby are easy to reach, and the motorways take you east and south. The city centre is a short train ride from the house.
+With a car, the coast, the suburbs and the motorway network are easy to reach. The city centre is a short train ride from the house.
 
 The honest trade-off: if you're mainly viewing in one area, a base right there will save driving.
 
 ## Zermatt Lodge for house-hunting trips
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms, with **2 bathrooms**
 - **Free parking for 2 cars**

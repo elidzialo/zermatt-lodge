@@ -103,7 +103,7 @@ Manchester Airport is further away, so allow extra time by road or rail.
 Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 
 - **Free parking for 2 cars**, ideal if you hire at the airport
-- **About 15 minutes by train or car** from the city centre
+- **An easy train ride or drive** from the city centre
 - **Sleeps 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms, a big kitchen and dining room**
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**

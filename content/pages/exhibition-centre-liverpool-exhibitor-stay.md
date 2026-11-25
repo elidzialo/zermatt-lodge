@@ -3,7 +3,7 @@ title: "Exhibition Centre Liverpool: Exhibitor Team Stays"
 meta_description: "Exhibiting at Exhibition Centre Liverpool? Loading bay and hall facts, build-up tips, parking costs and a 4-bed house with parking for your stand team."
 slug: exhibition-centre-liverpool-exhibitor-stay
 h1: "Exhibiting at Exhibition Centre Liverpool: Build-Up, Breakdown and Where to Stay"
-quick_answer: "Exhibitors at Exhibition Centre Liverpool do best with the stand team under one roof, vans parked free overnight and a kitchen for early build-up. Zermatt Lodge is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two vehicles and beds for up to 7."
+quick_answer: "Exhibitors at Exhibition Centre Liverpool do best with the stand team under one roof, vans parked free overnight and a kitchen for early build-up. Zermatt Lodge is a 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two vehicles and beds for up to 7."
 primary_keyword: "exhibition centre liverpool exhibitor accommodation"
 secondary_keywords:
   - "exhibition centre liverpool loading bay"
@@ -35,7 +35,7 @@ sources:
   - https://www.prolificnorth.co.uk/?p=137853
 ---
 
-If your company is exhibiting at Exhibition Centre Liverpool, the stay that works best is one where the stand team sleeps under one roof, the vans are parked for free overnight, and there's a kitchen for early build-up mornings. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two vehicles and beds for up to 7. This guide covers the venue facts exhibitors need and how to plan build-up, show days and breakdown.
+If your company is exhibiting at Exhibition Centre Liverpool, the stay that works best is one where the stand team sleeps under one roof, the vans are parked for free overnight, and there's a kitchen for early build-up mornings. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two vehicles and beds for up to 7. This guide covers the venue facts exhibitors need and how to plan build-up, show days and breakdown.
 
 If you're attending as a delegate rather than building a stand, see our [conference accommodation guide](/guides/acc-liverpool-conference-accommodation).
 
@@ -105,7 +105,7 @@ The venue points exhibitors to the **AEV e-guide** for health, safety and operat
 ## Getting to the venue
 
 - **By van or car:** drive to the waterfront and follow your organiser's loading instructions. Check a live route for early-morning timings
-- **By train:** trains from the house reach Liverpool Central in about 15 minutes. The venue says James Street station is about a 10-minute walk, and Lime Street about 20 minutes
+- **By train:** Trains from the house run into Liverpool Central. The venue says James Street station is about a 10-minute walk, and Lime Street about 20 minutes
 
 A common pattern for stand teams: one van drives in for build-up and breakdown, while the rest of the team travels by train on show days.
 

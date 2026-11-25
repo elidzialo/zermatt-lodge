@@ -15,7 +15,6 @@ related:
   - long-stay-accommodation-liverpool
   - relocating-to-liverpool-temporary-house
   - liverpool-business-travel-guide
-  - fazakerley-to-liverpool-city-centre-by-train
   - invoice-and-vat-for-business-stays
 faqs:
   - q: "Do Liverpool universities provide accommodation for visiting academics?"
@@ -27,12 +26,11 @@ faqs:
   - q: "Can my university or funder pay for the stay?"
     a: "Often, yes. Ask the host for an invoice in the name of your institution or funder, with your name and the dates, before you pay."
   - q: "Is Zermatt Lodge convenient for the universities?"
-    a: "It's about 15 minutes by train from Liverpool Central. Check the walk or connection from Central to your department."
+    a: "It's an easy train ride from Liverpool Central. Check the walk or connection from Central to your department."
 sources:
   - https://www.liverpool.ac.uk/arts/work-with-us/visiting-scholars/
   - https://www.liverpool.ac.uk/working/relocating/visasandimmigration/visiting/academic-visitors-visa/
   - https://en.wikipedia.org/wiki/Liverpool_School_of_Tropical_Medicine
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.merseytravel.gov.uk/news/new-easier-to-use-era-starts-on-merseyrail-as-tap-and-go-extended-to-bank-cards-watches-and-smartphones/
 ---
 
@@ -88,7 +86,7 @@ Merseyrail is the easiest way in from the suburbs. Since **25 February 2026** yo
 
 ## A base in Liverpool
 
-Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre.
 
 - Sleeps 7, so there's room for family visits
 - Dining room and big kitchen, with space to work

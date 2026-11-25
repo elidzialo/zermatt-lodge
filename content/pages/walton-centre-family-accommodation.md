@@ -118,7 +118,7 @@ Zermatt Lodge is a whole house in Liverpool. It's built for families who need to
 - **Free parking for 2 cars**, useful when relatives arrive from different places
 - **Large private back garden** for fresh air and quiet phone calls
 - **55" Smart TV with Netflix, board games and a pool table** to help children and teenagers switch off
-- **About 15 minutes by train** from the city centre for relatives arriving at Lime Street
+- **Easy trains** into Liverpool city centre for relatives arriving at Lime Street
 
 Check-in is from 3pm and checkout is 11am. It's a quiet house: no parties, no smoking and no pets.
 

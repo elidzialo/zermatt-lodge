@@ -86,7 +86,7 @@ The Baltic is lively at night, so many groups prefer to stay a little way out an
 - **2 bathrooms**, a big kitchen and a dining room
 - **Games room** with a pool table
 - **Free parking for 2 cars**
-- Liverpool city centre is about **15 minutes by train or car**
+- Liverpool city centre is an **easy train ride or drive** away
 - Check-in 3pm, checkout 11am
 
 Strictly no parties or events. No smoking and no pets.

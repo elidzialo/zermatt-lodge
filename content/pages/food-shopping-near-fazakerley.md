@@ -1,15 +1,14 @@
 ---
-title: "Food Shopping near Fazakerley for a Self-Catering Stay"
-meta_description: "Where to do the big shop for a self-catering stay in north Liverpool: Lidl Fazakerley, Asda Aintree's long hours, Sunday trading rules and Christmas Day closures."
+title: "Food Shopping near Fazakerley: Supermarkets and Opening Hours"
+meta_description: "Where to do the big shop in north Liverpool: Lidl Fazakerley, Asda Aintree's long hours, Sunday trading rules and Christmas Day closures."
 slug: food-shopping-near-fazakerley
-h1: "Food Shopping near Fazakerley: A Guide for Self-Catering Guests"
+h1: "Food Shopping near Fazakerley: Supermarkets, Hours and Sunday Rules"
 quick_answer: "For a big shop near Fazakerley, Lidl on Longmoor Lane (listed 8am to 10pm Monday to Saturday, 10am to 4pm Sunday) and Asda Aintree on Ormskirk Road (open 24 hours Tuesday to Friday, with click and collect and a 24-hour petrol station) are the main options. Large shops in England can only open for six hours on Sundays, between 10am and 6pm, and must close on Christmas Day and Easter Sunday, so plan arrival-day shopping around that."
 primary_keyword: "food shopping near fazakerley"
 secondary_keywords:
   - "supermarkets near fazakerley"
   - "asda aintree opening hours"
   - "lidl fazakerley"
-  - "self catering shopping north liverpool"
 last_updated: 2026-11-22
 related:
   - self-catering-meal-plan-group-of-7
@@ -85,9 +84,9 @@ If you need **kosher** food, supply in Liverpool is limited, so plan ahead. See 
 
 Crews on early shifts usually shop once a week and top up in between. A big fridge and freezer make a difference. See our [self-catering guide for work crews](/guides/self-catering-for-work-crews).
 
-## Where to stay
+## A self-catering house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool, an easy train ride from the city centre.
 
 - **Big fitted kitchen** and a **dining room** that seats the whole group
 - **Sleeps 7:** king master with en-suite, second king, queen and single

@@ -86,7 +86,7 @@ Many wedding guests come from out of town and stay two or three nights. While yo
 
 - **Croxteth Country Park** has woodland walks, a working farm and the walled garden. See our [Croxteth Hall visitor guide](/guides/croxteth-hall-visitor-guide).
 - **West Derby village** has cafes and pubs for a lazy lunch the day after. See the [West Derby village guide](/guides/west-derby-village-guide).
-- **Liverpool city centre** is about 15 minutes by train, for the waterfront, museums and shops.
+- **Liverpool city centre** is an easy train ride away, for the waterfront, museums and shops.
 
 ## Hotel or house for wedding guests?
 

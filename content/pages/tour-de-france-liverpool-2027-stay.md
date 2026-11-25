@@ -14,7 +14,6 @@ secondary_keywords:
 last_updated: 2026-11-20
 related:
   - events-concerts-liverpool-stays
-  - fazakerley-to-liverpool-city-centre-by-train
   - where-to-stay-in-liverpool-for-a-group
   - accommodation-near-m57-m58-liverpool
   - group-booking-checklist
@@ -33,7 +32,6 @@ sources:
   - https://liverpoolexpress.co.uk/liverpool-announced-as-a-host-for-the-2027-tour-de-france/
   - https://www.cyclingweekly.com/racing/2027-tour-de-france-and-tour-de-france-femmes-british-grands-depart-routes-announced
   - https://www.liverpoolcityregion-ca.gov.uk/news/liverpool-city-region-has-been-announced-as-a-host-for-the-2027-tour-de-france
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.thetrainline.com/train-times/liverpool-lime-street-to-manchester
 ---
 
@@ -77,7 +75,7 @@ Whichever you choose, remember the publicity caravan passes well before the ride
 
 ## Getting around on the day
 
-- **Train is the way in.** From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. Expect crowded trains and possible changes to services; check Merseyrail before you set off
+- **Train is the way in.** From Zermatt Lodge, trains run into Liverpool Central. Expect crowded trains and possible changes to services; check Merseyrail before you set off
 - **Driving into town is likely to be hard.** Closures around the waterfront and along the route are expected. Leave the car where you're staying if you can
 - **Coming from further away?** Liverpool Lime Street has frequent trains from Manchester, with the fastest taking about 31 minutes
 - **Cycling?** The Liverpool City Region says it is building more than 600km of new cycling and walking routes. Check secure parking near the finish before you ride in
@@ -94,7 +92,7 @@ If you're coming as a group of cycling friends or a family, a whole house is oft
 
 ## Zermatt Lodge for the Tour weekend
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from the city centre. It isn't in the centre, and we won't pretend it is, but the train is direct and the house gives a group room to spread out.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre. It isn't in the centre, and we won't pretend it is, but the train is direct and the house gives a group room to spread out.
 
 - Sleeps 7: king en-suite, second king, queen and single
 - 2 bathrooms

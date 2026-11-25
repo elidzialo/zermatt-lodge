@@ -32,7 +32,6 @@ sources:
   - https://underbelly.co.uk/liverpool-christmas-market-set-for-return-as-2026-festive-programme-revealed/
   - https://liverpoolexpress.co.uk/liverpool-christmas-markets-set-for-return-as-2026-festive-programme-revealed/
   - https://liverpoolexpress.co.uk/liverpool-unwraps-a-brand-new-markets-offer-this-christmas/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The Liverpool Christmas Market for 2026 is on **St George's Plateau**, opposite Lime Street station, as part of **Skate St George's**, which Underbelly lists from **21 November 2026 to 3 January 2027**. Alongside the outdoor ice rink there's a Christmas market with local traders, a rooftop bar and a Big Wheel. The city also has a Christmas Wonderland at the Pier Head and pop-up markets on selected dates.
@@ -107,7 +106,7 @@ Our [winter things to do guide](/guides/liverpool-winter-things-to-do) has more 
 
 ## Where to stay for a Christmas market trip
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes, a short walk from St George's Plateau. For families and groups, it's a warm, roomy base to come back to after a cold evening at the market, with free parking for 2 cars so you don't pay city-centre car park prices.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains run into Liverpool Central, a short walk from St George's Plateau. For families and groups, it's a warm, roomy base to come back to after a cold evening at the market, with free parking for 2 cars so you don't pay city-centre car park prices.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

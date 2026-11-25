@@ -139,7 +139,7 @@ It's better to change plan before booking than to arrive and find the bathroom i
 
 ## About Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It sleeps 7, with 2 bathrooms and free parking for 2 cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre. It sleeps 7, with 2 bathrooms and free parking for 2 cars.
 
 We don't describe it as wheelchair accessible. It's a family house, and it's better you know exactly what it's like before you book. If anyone in your group has access needs, send the host the questions above for honest answers, with photos where possible.
 

@@ -94,7 +94,7 @@ Liverpool has many **city-centre serviced apartments**, close to offices and nig
 
 ## A serviced house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

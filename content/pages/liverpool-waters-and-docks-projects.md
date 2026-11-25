@@ -3,7 +3,7 @@ title: "Working on Liverpool Waters and the North Docks: Crew Accommodation"
 meta_description: "Central Docks at Liverpool Waters: what GRAHAM is building, the 2028 timeline, the north docks development zone, and where crews can stay with parking."
 slug: liverpool-waters-and-docks-projects
 h1: "Working on Liverpool's Waterfront Projects: What's Happening and Where to Stay"
-quick_answer: "The main live job on the waterfront is Central Docks at Peel's Liverpool Waters, where GRAHAM is building £81m of roads, utilities, drainage and bridge foundations, funded by Peel and Homes England, with the infrastructure due to finish in 2028. It will open up land for 2,350 homes and a 4.7-acre park. Hill Dickinson Stadium sits at the northern end. North Liverpool is a practical base: Sandhills station is about 8 minutes by train from Fazakerley."
+quick_answer: "The main live job on the waterfront is Central Docks at Peel's Liverpool Waters, where GRAHAM is building £81m of roads, utilities, drainage and bridge foundations, funded by Peel and Homes England, with the infrastructure due to finish in 2028. It will open up land for 2,350 homes and a 4.7-acre park. Hill Dickinson Stadium sits at the northern end. Sandhills is the usual Merseyrail station for the northern end."
 primary_keyword: "liverpool waters construction"
 secondary_keywords:
   - "central docks liverpool"

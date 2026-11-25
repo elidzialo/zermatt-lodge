@@ -83,7 +83,7 @@ The festive timetable for Merseyrail and buses hadn't been published when we che
 
 ## Where to stay over New Year
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: when trains are running, Liverpool Central is about 15 minutes away. It's handy for Anfield on 2 January.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: when trains are running, Liverpool Central is an easy train ride away, and Sandhills has the matchday Soccerbus to Anfield.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

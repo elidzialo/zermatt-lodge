@@ -3,7 +3,7 @@ title: "M&S Bank Arena Concerts: Where to Stay as a Group"
 meta_description: "Going to a gig at M&S Bank Arena Liverpool with friends or family? Getting there, parking, the journey home and a 4-bed house in Liverpool."
 slug: ms-bank-arena-concert-accommodation
 h1: "M&S Bank Arena Concerts: Where to Stay with a Group"
-quick_answer: "For an M&S Bank Arena concert with a group, stay somewhere with an easy route to the waterfront and home again. Zermatt Lodge in Liverpool sleeps up to 7, about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena."
+quick_answer: "For an M&S Bank Arena concert with a group, stay somewhere with an easy route to the waterfront and home again. Zermatt Lodge in Liverpool sleeps up to 7, an easy train ride from Liverpool Central, which is roughly a 20-minute walk from the arena."
 primary_keyword: "m&s bank arena accommodation"
 secondary_keywords:
   - "places to stay near m&s bank arena"
@@ -11,7 +11,6 @@ secondary_keywords:
   - "echo arena accommodation"
 last_updated: 2026-11-18
 related:
-  - fazakerley-to-liverpool-city-centre-by-train
   - arriving-late-liverpool
   - taxis-in-liverpool
   - acc-liverpool-conference-accommodation
@@ -29,11 +28,10 @@ faqs:
     a: "For a group, often yes. City-centre hotels raise prices on big gig nights. A shared house a short train ride away, with free parking, can work out better value, especially if you're also paying for parking."
 sources:
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.merseyrail.org/journey-planning/plan-your-journey/three-trains-per-hour-between-headbolt-lane-and-liverpool-central/
 ---
 
-If you're going to a concert at M&S Bank Arena with a group, the best place to stay is one that gets you to the waterfront easily and home again safely afterwards, without paying city-centre hotel prices for several rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7. It's about 15 minutes by train from Liverpool Central, which is roughly a 20-minute walk from the arena. There's free parking for two cars too.
+If you're going to a concert at M&S Bank Arena with a group, the best place to stay is one that gets you to the waterfront easily and home again safely afterwards, without paying city-centre hotel prices for several rooms. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7. It's an easy train ride from Liverpool Central, which is roughly a 20-minute walk from the arena. There's free parking for two cars too.
 
 This guide covers getting to the arena, parking, the journey home and how to make a weekend of it.
 
@@ -45,7 +43,7 @@ M&S Bank Arena (formerly the Echo Arena) sits on the waterfront at **King's Dock
 
 ### By train
 
-1. Take the train to **Liverpool Central**, about 15 minutes from the house.
+1. Take the train to **Liverpool Central**, an easy train ride from the house.
 2. Walk from Central to the arena through **Liverpool ONE**, down towards the waterfront and King's Dock. It's about a mile, around 20 minutes.
 
 If someone in your group has mobility needs, a taxi from Central or a drop-off near the arena is easier.

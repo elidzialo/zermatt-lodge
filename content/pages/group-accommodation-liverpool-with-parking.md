@@ -1,9 +1,9 @@
 ---
 title: "Group Accommodation in Liverpool with Parking"
-meta_description: "Group accommodation in Liverpool with free parking for 2 cars: a whole 4-bed house that sleeps 7, 15 minutes by train from the city centre. What to check."
+meta_description: "Group accommodation in Liverpool with free parking for 2 cars: a whole 4-bed house that sleeps 7, an easy train ride from the city centre. What to check."
 slug: group-accommodation-liverpool-with-parking
 h1: "Group Accommodation in Liverpool with Free Parking"
-quick_answer: "If your group is driving, check parking first, as many city-centre group stays have none. Zermatt Lodge is a whole 4-bedroom house in Liverpool that sleeps 7, with free parking for two cars and direct trains to the city centre in about 15 minutes."
+quick_answer: "If your group is driving, check parking first, as many city-centre group stays have none. Zermatt Lodge is a whole 4-bedroom house in Liverpool that sleeps 7, with free parking for two cars and direct trains into the city centre."
 primary_keyword: "group accommodation liverpool"
 secondary_keywords:
   - "large group accommodation liverpool"
@@ -18,7 +18,7 @@ related:
   - things-to-do-in-liverpool-with-a-group
 faqs:
   - q: "Where can a group of 7 stay in Liverpool with parking?"
-    a: "Zermatt Lodge is a whole 4-bedroom house in Liverpool sleeping 7, with free parking for 2 cars, about 15 minutes by train from Liverpool Central."
+    a: "Zermatt Lodge is a whole 4-bedroom house in Liverpool sleeping 7, with free parking for 2 cars, an easy train ride from Liverpool city centre."
   - q: "Is it hard to park a group's cars in Liverpool city centre?"
     a: "It can be. Many city-centre apartments and hotels don't include parking, so groups arriving in two cars often end up paying for multi-storey car parks overnight, which adds up across a weekend."
   - q: "What bed layout does Zermatt Lodge have?"
@@ -28,12 +28,11 @@ faqs:
   - q: "How do we book without platform fees?"
     a: "Book direct at bookhomes.co.uk/zermatt-lodge#book on the Zermatt Lodge website, or email cs@zugati.co.uk."
 sources:
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
 ---
 
-If your group is driving to Liverpool, the most important thing to check is parking. Many city-centre group stays have none, which means paying for a multi-storey car park every night on top of the room rate. Zermatt Lodge is a whole 4-bedroom house in Liverpool, that sleeps 7, with **free parking for two cars** and direct trains to the city centre in about 15 minutes.
+If your group is driving to Liverpool, the most important thing to check is parking. Many city-centre group stays have none, which means paying for a multi-storey car park every night on top of the room rate. Zermatt Lodge is a whole 4-bedroom house in Liverpool, that sleeps 7, with **free parking for two cars** and direct trains into the city centre.
 
 This guide covers what to look for in group accommodation with parking, how a base outside the city centre works day to day, and the questions to ask before you book.
 
@@ -53,7 +52,7 @@ Over a long weekend, parking two cars in town can become one of the biggest cost
 
 ### Park once, use the train
 
-Trains reach **Liverpool Central in about 15 minutes**. Check first and last trains for your dates, as they vary at weekends and on holidays. A typical day looks like this:
+Trains run into **Liverpool Central**. Check first and last trains for your dates, as they vary at weekends and on holidays. A typical day looks like this:
 
 1. Leave the cars at the house.
 2. Take the train into town.
@@ -125,7 +124,7 @@ This mix gives you a full city day without paying for parking in town, and a coa
 - **Big kitchen and dining room** for group meals
 - **Games room with a pool table**, plus **board games** and a **55" Smart TV with Netflix**
 - **Large private back garden**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**.

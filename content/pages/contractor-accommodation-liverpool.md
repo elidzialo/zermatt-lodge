@@ -22,7 +22,7 @@ faqs:
   - q: "Is there parking for work vans?"
     a: "There's free parking for 2 vehicles. If you're bringing large or high-sided vans, email cs@zugati.co.uk before booking to check they'll fit."
   - q: "Which parts of the city region can I reach easily from Zermatt Lodge?"
-    a: "With free parking for two vans and the motorway network, Knowsley, Kirkby, the north docks, Skelmersdale and the M62 and M6 are all straightforward. The city centre is about 15 minutes by train or car."
+    a: "With free parking for two vans and the motorway network, sites across Merseyside and the North West are within reach. The city centre is an easy train ride or drive away."
   - q: "Can my company book and pay directly?"
     a: "Yes. Book direct at bookhomes.co.uk/zermatt-lodge#book or call to arrange dates. Booking direct means no platform fees and one point of contact."
   - q: "Is the house suitable for long contracts?"
@@ -32,7 +32,6 @@ sources:
   - https://www.constructionenquirer.com/2026/01/19/liverpool-mayor-sets-out-2bn-plan-to-unlock-64000-homes/
   - https://www.knowsley.gov.uk/knowsley-offer/business/our-location
   - https://uhliverpool.nhs.uk/our-hospitals/aintree-university-hospital/location
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The best contractor accommodation in Liverpool gives each worker a proper bed, parks your vehicles for free, lets the crew cook and sits close to the motorways so you aren't stuck in city-centre traffic every morning. Zermatt Lodge is a whole 4-bedroom house in Liverpool. It has free parking for two vehicles, a big kitchen and two bathrooms, and sleeps up to 7.
@@ -79,7 +78,7 @@ You can reach a lot of the city region without going near the city centre.
 
 ### Train into town
 
-If the job is in the city centre, trains from the house reach Liverpool Central in about 15 minutes. That's handy when city sites have tight parking or delivery restrictions.
+If the job is in the city centre, trains from the house run into Liverpool Central. That's handy when city sites have tight parking or delivery restrictions.
 
 ### Supplies
 
@@ -109,7 +108,7 @@ Here's how a small crew might use the house on a multi-site job:
 | 19:30 | Downtime: pool, a match on the 55" TV or an early night |
 | Friday | Clean-down, then home for the weekend, or stay on for weekend work |
 
-For a city-centre job with tight parking, swap the van for the train to Liverpool Central, about 15 minutes, and leave the vehicles parked at the house. Many city-centre sites have strict delivery and parking windows, so this can save a lot of hassle.
+For a city-centre job with tight parking, swap the van for the train to Liverpool Central and leave the vehicles parked at the house. Many city-centre sites have strict delivery and parking windows, so this can save a lot of hassle.
 
 ### Booking tips for site managers
 
@@ -127,7 +126,7 @@ Zermatt Lodge is a whole house, not a shared house or rooms let individually. Yo
 - **Big kitchen and dining room** for proper meals
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** for downtime
 - **Large private back garden**
-- **About 15 minutes by train or car** from the city centre
+- **An easy train ride or drive** from the city centre
 - **Check-in 3pm, checkout 11am**
 
 House rules: **no parties, no smoking, no pets**. That keeps it a calm place to rest between shifts.

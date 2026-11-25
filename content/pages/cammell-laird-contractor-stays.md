@@ -3,7 +3,7 @@ title: "Cammell Laird Birkenhead: Contractor Stays for Shipyard Work"
 meta_description: "Working at Cammell Laird in Birkenhead? The yard's new owner, its defence and ferry work, crossing the Mersey by tunnel or train, and a crew house with parking."
 slug: cammell-laird-contractor-stays
 h1: "Contractor Stays for Birkenhead Shipyard Work at Cammell Laird"
-quick_answer: "Cammell Laird is a shipbuilding and ship repair yard in Birkenhead, dating back to 1828. In June 2026 its owner APCL Group, part of Peel, was bought by Balaena. The yard works on Royal Navy programmes including Type 26 frigate sections and carrier and submarine blocks, plus ship repair. Crews can stay on the Wirral or in Liverpool: from north Liverpool you cross by the tolled Kingsway Tunnel, or take Merseyrail's Wirral line."
+quick_answer: "Cammell Laird is a shipbuilding and ship repair yard in Birkenhead, dating back to 1828. In June 2026 its owner APCL Group, part of Peel, was bought by Balaena. The yard works on Royal Navy programmes including Type 26 frigate sections and carrier and submarine blocks, plus ship repair. Crews can stay on the Wirral or in Liverpool: from Liverpool you cross by the tolled Mersey tunnels, or take Merseyrail's Wirral line."
 primary_keyword: "cammell laird contractor accommodation"
 secondary_keywords:
   - "birkenhead shipyard accommodation"

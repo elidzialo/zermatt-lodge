@@ -36,7 +36,7 @@ sources:
   - https://www.legislation.gov.uk/ukpga/1994/33/section/166/enacted
 ---
 
-The honest answer is that tickets for Liverpool at Anfield and Everton at the Hill Dickinson Stadium go mainly to club members, so the first step is joining the right membership and learning how each club's sales and ballots work. Liverpool sells most tickets through All Red membership sales and ballots; Everton gives its Forever Blue+ members first priority through a ballot before each game. Buy only through official channels, because selling football tickets without the club's authority is a criminal offence in England. Once you have tickets, Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre.
+The honest answer is that tickets for Liverpool at Anfield and Everton at the Hill Dickinson Stadium go mainly to club members, so the first step is joining the right membership and learning how each club's sales and ballots work. Liverpool sells most tickets through All Red membership sales and ballots; Everton gives its Forever Blue+ members first priority through a ballot before each game. Buy only through official channels, because selling football tickets without the club's authority is a criminal offence in England. Once you have tickets, Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 ## Liverpool FC: how home tickets are sold
 
@@ -128,7 +128,7 @@ Football fixtures are often moved for TV, sometimes only a few weeks before the 
 
 ## Staying at Zermatt Lodge
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not walking distance to either stadium, but it's on the right side of the city, about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not walking distance to either stadium, but it's an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** across 4 bedrooms, with 2 bathrooms
 - **Games room** with a pool table and a 55" Smart TV for the other games of the weekend

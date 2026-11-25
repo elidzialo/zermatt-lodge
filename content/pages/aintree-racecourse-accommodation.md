@@ -24,7 +24,7 @@ faqs:
   - q: "Is it easier to find accommodation for Aintree's other race days?"
     a: "Generally, yes. Demand is far lower than in Grand National week, so you'll have more choice. A December fixture also fits nicely with Liverpool's Christmas season."
   - q: "How do I get to Aintree Racecourse from Fazakerley by train?"
-    a: "Take a Northern line train from Fazakerley towards Liverpool and change at Sandhills for an Ormskirk-line train to Aintree station. Check Merseyrail for race-day timetable changes."
+    a: "Take an Ormskirk-line train from Liverpool Central or Moorfields to Aintree station. From the Kirkby or Southport branches, change at Sandhills. Check Merseyrail for race-day timetable changes."
   - q: "What's the address of Aintree Racecourse?"
     a: "Ormskirk Road, Aintree, Merseyside, L9 5AS. The racecourse's ticket line is 0344 579 3001."
 sources:
@@ -55,9 +55,9 @@ The Becher Chase is run over the Grand National fences, including the one it's n
 
 The racecourse is on **Ormskirk Road, Aintree, L9 5AS**, on the A59, about a mile from the M57 and M58.
 
-### From Fazakerley by train
+### By train
 
-Fazakerley is on Merseyrail's Northern line, Kirkby branch, and Aintree station is on the Ormskirk branch. Take a train from Fazakerley towards Liverpool, change at **Sandhills**, then catch a train towards Ormskirk to **Aintree**. Aintree station is beside the racecourse.
+Aintree station is on the Ormskirk branch of Merseyrail's Northern line, with trains from Liverpool Central and Moorfields. From the Kirkby or Southport branches, change at **Sandhills**, then catch a train towards Ormskirk to **Aintree**. Aintree station is beside the racecourse.
 
 On normal days the Northern line runs frequently in the daytime, with fewer trains in the evenings and on Sundays. Check the Merseyrail app for your race day, especially for the journey home after the last race.
 

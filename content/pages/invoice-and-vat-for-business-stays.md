@@ -123,7 +123,7 @@ Our [contractor checklist](/guides/contractor-checklist-before-booking) covers t
 
 ## Booking Zermatt Lodge for work
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central. It suits crews, teams and staff on placement.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre. It suits crews, teams and staff on placement.
 
 - **Sleeps 7**, with separate beds available
 - **2 bathrooms**, a big kitchen, washer and dryer, and wifi

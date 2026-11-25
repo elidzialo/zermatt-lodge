@@ -8,8 +8,6 @@ primary_keyword: "Maghull Merseyside"
 secondary_keywords:
   - "Maghull North station"
   - "living in Maghull"
-  - "4 bed house Maghull"
-  - "holiday home near Maghull"
 last_updated: 2026-11-21
 related:
   - aintree-area-guide

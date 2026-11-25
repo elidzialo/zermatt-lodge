@@ -1,13 +1,11 @@
 ---
-title: "Fazakerley Area Guide: Staying in North Liverpool"
-meta_description: "A visitor's guide to Fazakerley in north Liverpool: trains to the city in 15 minutes, the M57, Aintree Hospital and racecourse, parks, and where to stay."
+title: "Fazakerley Area Guide: A Visitor's Guide to North Liverpool"
+meta_description: "A visitor's guide to Fazakerley in north Liverpool: trains to the city in 15 minutes, the M57, Aintree Hospital and racecourse, and parks."
 slug: fazakerley-area-guide
-h1: "Fazakerley Area Guide: What It's Like to Stay in North Liverpool"
+h1: "Fazakerley Area Guide: What It's Like to Visit North Liverpool"
 quick_answer: "Fazakerley is a residential suburb of north Liverpool, in the L9 and L10 postcodes, next to Aintree, Croxteth and Kirkby. Its station has direct Merseyrail trains to Liverpool Central in about 15 minutes, junction 6 of the M57 is about 1.5 miles away, and Aintree University Hospital and Aintree Racecourse are close by. It's a quiet, practical base rather than a tourist area."
 primary_keyword: "fazakerley liverpool"
 secondary_keywords:
-  - "staying in fazakerley"
-  - "accommodation fazakerley l9 l10"
   - "fazakerley to liverpool city centre"
   - "things to do near fazakerley"
 last_updated: 2026-11-20
@@ -92,7 +90,7 @@ The hospital is in Fazakerley itself. See our [Aintree hospital accommodation gu
 
 ### Aintree Racecourse
 
-Home of the **Grand National**, which in 2027 runs from **Thursday 8 to Saturday 10 April**, with the big race on the Saturday. The course is on the A59, about a mile from the M57 and M58. On race days, Merseyrail changes its timetables, including on the Kirkby line, so check before you travel. Our [guide to getting to Aintree from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley) has the details.
+Home of the **Grand National**, which in 2027 runs from **Thursday 8 to Saturday 10 April**, with the big race on the Saturday. The course is on the A59, about a mile from the M57 and M58. On race days, Merseyrail changes its timetables, including on the Kirkby line, so check before you travel. Our [guide to getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley) has the details.
 
 ### Croxteth Country Park
 
@@ -124,9 +122,9 @@ With trains every 15 minutes or so, the **waterfront museums**, **Royal Albert D
 - Visitors who want to walk to bars and restaurants every night
 - Anyone who doesn't want to use a train, bus or car
 
-## Staying in Liverpool: Zermatt Lodge
+## For a larger group: a house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: trains reach Liverpool Central in **about 15 minutes**.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool, with easy trains and roads into the city centre.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room, washer and dryer
@@ -135,7 +133,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city ce
 - **Free parking for 2 cars**
 - **Check-in 3pm, checkout 11am**, with self check-in
 
-Strictly no parties or events - bookings found to be for parties are cancelled. It's a residential street, and the house rules keep it that way for the neighbours.
+Strictly no parties or events. Bookings found to be for parties are cancelled.
 
 [Book direct](/zermatt-lodge#book) for the best rate.
 

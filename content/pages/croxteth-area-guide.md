@@ -4,13 +4,8 @@ meta_description: "Visiting Croxteth or Gillmoss in north Liverpool? Croxteth Ha
 slug: croxteth-area-guide
 h1: "Croxteth and Gillmoss, Liverpool: An Area Guide for Visitors and Workers"
 quick_answer: "Croxteth is a residential suburb in north Liverpool, next to Norris Green, Gillmoss, Fazakerley and West Derby, with the East Lancashire Road to the north and the M57 nearby. Its big draw is Croxteth Hall and Country Park, with a Victorian walled garden open 10am to 3pm daily and free parking in the dedicated areas. The nearest station is Fazakerley, about 3 miles away."
-primary_keyword: "accommodation Croxteth"
+primary_keyword: "Croxteth Liverpool"
 secondary_keywords:
-  - "4 bed house Croxteth"
-  - "Airbnb Croxteth"
-  - "accommodation Gillmoss"
-  - "Croxteth holiday let"
-  - "Croxteth Hall where to stay"
 last_updated: 2026-11-20
 related:
   - croxteth-hall-wedding-accommodation
@@ -93,19 +88,19 @@ In recent years the hall has hosted festive events such as **Santa Paws** (dogs 
 - **Workers** at Kirkby and the Knowsley business parks, just over the East Lancashire Road
 - **Hospital visitors** to Aintree University Hospital and the Walton Centre
 
-## Staying in Liverpool: Zermatt Lodge
+## For a larger group: a house in Liverpool
 
-There are few holiday lets in Croxteth itself. [Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool with free parking, and it isn't in the city centre.
+There are few holiday lets in Croxteth itself. For a larger group, [Zermatt Lodge](/zermatt-lodge) is a 4-bedroom house in Liverpool with free parking.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**
 - **Big kitchen and dining room**
 - **Free parking for 2 cars**
 - **Games room and large private garden**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
-Strictly no parties or events - bookings found to be for parties are cancelled. Wedding guests are welcome to stay and get ready; the house isn't a venue for receptions or after-parties.
+Strictly no parties or events. Bookings found to be for parties are cancelled. Wedding guests are welcome to stay and get ready; the house isn't a venue for receptions or after-parties.
 
 Check dates and [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Or [see all homes](/).
 

@@ -32,7 +32,6 @@ sources:
   - https://en.wikipedia.org/wiki/M%26S_Bank_Arena
   - https://www.hse.gov.uk/humanfactors/topics/good-practice-guidelines.htm
   - https://www.hse.gov.uk/humanfactors/topics/fatigue.htm
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Event work runs on long days: early load-ins, a show, a late get-out and sometimes an overnight build. For a crew in Liverpool, the best base is usually **one house with enough beds, free parking for vans and a kitchen**, rather than scattered hotel rooms and daily car park fees. Here's what to plan for.
@@ -86,7 +85,7 @@ The HSE also notes that fatigue has been implicated in **20% of accidents on maj
 
 ## A crew base in Liverpool
 
-Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, an **easy train ride** from Liverpool city centre.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

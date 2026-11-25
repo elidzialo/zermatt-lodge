@@ -3,7 +3,7 @@ title: "Liverpool Freeport and Port Work Stays: Where to Base"
 meta_description: "Working at the Port of Liverpool or a Liverpool City Region Freeport site? Where the sites are, getting around and a 4-bed house for crews."
 slug: liverpool-freeport-business-stays
 h1: "Liverpool Freeport and Port of Liverpool Work Stays"
-quick_answer: "For work at the Port of Liverpool's north docks, a base with parking and road links to Seaforth saves time. Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for two vehicles."
+quick_answer: "For work at the Port of Liverpool's north docks, a base with parking and good road links saves time. Zermatt Lodge is a 4-bedroom house in Liverpool with free parking for two vehicles."
 primary_keyword: "liverpool freeport accommodation"
 secondary_keywords:
   - "port of liverpool contractor accommodation"
@@ -22,7 +22,7 @@ faqs:
   - q: "Is the Port of Liverpool part of the freeport?"
     a: "Seaforth Dock, home of the Port of Liverpool's container terminals including Liverpool2, is described as part of the Port of Liverpool and Liverpool Freeport. The combined authority describes the freeport as covering a 45km area from Wirral Waters to Port Salford."
   - q: "Where should I stay for port work?"
-    a: "Seaforth and the north docks are on the north side of the city, reached via the A5036 and the A565. For Parkside, 3MG or Wirral Waters, a base closer to those sites may suit you better."
+    a: "Seaforth and the north docks are on the north side of the city, reached via the A5036 and the A565."
   - q: "Can a crew of 7 stay together?"
     a: "Yes. Zermatt Lodge is a whole 4-bedroom house sleeping up to 7, with free parking for two vehicles. If you're bringing more than two vans, call first to talk through parking."
 sources:
@@ -33,7 +33,7 @@ sources:
   - https://en.wikipedia.org/wiki/M57_motorway
 ---
 
-If your work is at the Port of Liverpool's north docks, a base with parking and good road links saves time every morning. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, with free parking for two vehicles and beds for up to 7. For the Freeport's tax sites further away, this guide is honest about when a different base would suit you better.
+If your work is at the Port of Liverpool's north docks, a base with parking and good road links saves time every morning. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two vehicles and beds for up to 7. For the Freeport's tax sites further away, this guide is honest about when a different base would suit you better.
 
 ## The Liverpool City Region Freeport explained
 
@@ -74,7 +74,7 @@ Be realistic about travel. The city region is big, and the M62, M57 and Mersey t
 
 - **Seaforth, the north docks and Bootle:** on the north side of the city. Seaforth is reached via the A5036 and A565. Switch Island (M57 junction 7) is where the M57 and M58 meet the A5036 towards Bootle
 - **Parkside, St Helens:** consider a base nearer St Helens or the M62. See [Haydock and St Helens work stays](/guides/haydock-and-st-helens-work-stays)
-- **3MG, Widnes:** further south and east. A Liverpool base works for a short job but means a longer daily drive
+- **3MG, Widnes:** further south and east. Check the daily drive from wherever you stay
 - **Wirral Waters, Birkenhead:** across the river. You'll pay a Mersey tunnel toll each way. See our [Mersey tunnel tolls guide](/guides/mersey-tunnel-tolls-guide)
 
 Check live drive times at the hours you'll actually travel, especially for early and late shifts.

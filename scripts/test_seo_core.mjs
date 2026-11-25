@@ -5,12 +5,12 @@ import * as C from "../supabase/functions/_shared/bh_seo_core.ts";
 
 const listing = { title: "Zermatt Lodge", area: "Liverpool", city: "Liverpool", property_type: "house", bedrooms: 4, beds: 4, baths: 2, max_guests: 7,
   amenities: ["wifi", "parking", "pool_table"], check_in_time: "15:00", check_out_time: "11:00", min_nights: 2, cancellation_policy: "moderate",
-  pets_allowed: false, house_rules: "No parties. 12 Hawksmoor Road L1 2AB is private.", description: "Big house – games room.",
+  pets_allowed: false, house_rules: "No parties. 12 Example Road L1 2AB is private.", description: "Big house – games room.",
   kosher: { shul_name: "X", eruv: true, kitchen: false }, business: { desk: false, wifi_mbps: 60 } };
 const answers = { special: "Games room with a pool table", nearby: [{ name: "Sefton Park", how: "about 10 minutes by car" }], guests: ["families", "contractors"], parking: "Driveway for 2 cars" };
 const facts = C.buildFacts(listing, answers);
 const ft = C.factsText(facts);
-assert(!/Hawksmoor Road/.test(ft) && !/L1 2AB/.test(ft), "address scrubbed");
+assert(!/Example Road/.test(ft) && !/L1 2AB/.test(ft), "address scrubbed");
 assert(!/–/.test(ft), "dashes replaced");
 assert(!/shul|eruv/i.test(ft), "community keys never used");
 assert(/60 Mbps/.test(ft));
@@ -31,7 +31,7 @@ const F = (n) => facts[n].id;
 assert.equal(C.checkItem("Is there parking?", longA("Yes, a driveway for 2 cars."), [F(0)], { facts, requireFacts: true }), "");
 assert.match(C.checkItem("Is there parking?", longA("Yes, 5 minutes from the station."), [F(0)], { facts, requireFacts: true }), /number not in the facts/);
 assert.match(C.checkItem("Price?", longA("It costs £99 a night."), [F(0)], { facts, requireFacts: true }), /number not in the facts/);
-assert.match(C.checkItem("Where?", longA("At 12 Hawksmoor Road."), [F(0)], { facts, requireFacts: true }), /address/);
+assert.match(C.checkItem("Where?", longA("At 12 Example Road."), [F(0)], { facts, requireFacts: true }), /address/);
 assert.match(C.checkItem("Shul?", longA("The synagogue is close."), [F(0)], { facts, requireFacts: true }), /community/);
 assert.equal(C.checkItem("Is it kosher?", longA("We cannot say. Contact the local community or kashrut authority directly for shul, mikvah and service details."), [F(0)], { facts, requireFacts: true }).startsWith("kosher"), true);
 assert.match(C.checkItem("Good?", longA("Guaranteed number one."), [F(0)], { facts, requireFacts: true }), /claim/);

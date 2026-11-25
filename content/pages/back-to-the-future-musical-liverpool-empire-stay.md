@@ -15,7 +15,6 @@ related:
   - liverpool-january-2027-events
   - liverpool-panto-2026
   - liverpool-city-centre-area-guide
-  - fazakerley-to-liverpool-city-centre-by-train
   - things-to-do-in-liverpool-with-a-group
 faqs:
   - q: "When is Back to the Future The Musical in Liverpool?"
@@ -31,7 +30,6 @@ faqs:
 sources:
   - https://www.backtothefuture.com/events/2027/01/12/back-to-the-future-the-musical-liverpool
   - https://www.atgtickets.com/shows/liverpool-legends/liverpool-empire/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.empireofthekop.com/2026/11/19/liverpool-games-v-man-united-everton-moved-tv-coverage/amp/
   - https://readeverton.com/everton-january-fixture-changes-liverpool-derby-2027/
 ---
@@ -52,7 +50,7 @@ Here's how to plan a trip, checked on 21 November 2026.
 
 The Empire faces **Lime Street station**, so it's one of the easiest theatres in the city to reach.
 
-- **By Merseyrail:** trains run to **Liverpool Central**, about 15 minutes from the house. It's a short walk from Central to Lime Street
+- **By Merseyrail:** trains run to **Liverpool Central**, an easy train ride from the house. It's a short walk from Central to Lime Street
 - **By car:** city-centre parking is limited and charged. Leaving the car at your accommodation and taking the train is usually simpler
 - **After the show:** check the time of the last train back before you go, especially on Sundays
 
@@ -83,7 +81,7 @@ Our [house vs hotel guide](/guides/house-vs-hotel-liverpool-groups) compares the
 
 ## A house for your theatre weekend
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in about 15 minutes, then it's a short walk to the Empire.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central, then it's a short walk to the Empire.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, a big kitchen and a dining room

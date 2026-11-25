@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/M57_motorway
 ---
 
-For a golf group trip to Liverpool, base yourselves somewhere between the Wirral and the Sefton coast, with parking for two cars, and you can play several of England's best-known links courses without changing hotels. Royal Liverpool at Hoylake, Royal Birkdale, Hillside and Formby are all within reach of north Liverpool by car, though each is a drive rather than a hop, so check live routes for your tee times.
+For a golf group trip to Liverpool, base yourselves somewhere between the Wirral and the Sefton coast, with parking for two cars, and you can play several of England's best-known links courses without changing hotels. Royal Liverpool at Hoylake, Royal Birkdale, Hillside and Formby are all within reach of Liverpool by car, though each is a drive rather than a hop, so check live routes for your tee times.
 
 This guide covers the courses, how to book them, getting around with clubs, and how to plan the days.
 
@@ -119,7 +119,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It isn't on the coast and
 - **Big kitchen and dining room** for breakfast before you go and dinner after
 - **Games room with a pool table** for settling the day's bets
 - **Large private garden** and a **55" Smart TV with Netflix** for watching the golf on TV
-- **About 15 minutes by train** to Liverpool Central for a night out without driving
+- **Easy trains** into Liverpool city centre for a night out without driving
 
 It's a quiet home with firm rules: **no parties or events**, no smoking and no pets. Check-in is 3pm and checkout is 11am. The Moderate cancellation policy gives a full refund up to 5 days before check-in.
 

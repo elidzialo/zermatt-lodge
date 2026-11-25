@@ -13,7 +13,6 @@ last_updated: 2026-11-19
 related:
   - things-to-do-in-liverpool-with-a-group
   - where-to-stay-in-liverpool-for-a-group
-  - fazakerley-to-liverpool-city-centre-by-train
   - house-vs-hotel-liverpool-groups
   - group-booking-checklist
 faqs:
@@ -22,7 +21,7 @@ faqs:
   - q: "Is Liverpool safe at night?"
     a: "Liverpool has held Purple Flag status, an award for safe and well-run night-time economies, every year since 2010. In May 2026 Merseyside Police launched nine Halo Points, well-lit safe spaces linked to 999 and CCTV, around Concert Square, Seel Street and Mathew Street."
   - q: "How do we get back after a night out?"
-    a: "Take the Merseyrail Northern line from Liverpool Central or Moorfields towards Kirkby or Headbolt Lane, and check the last train in the Merseyrail app. After that, use a licensed black cab from a rank or a pre-booked private hire car."
+    a: "Take Merseyrail from Liverpool Central or Moorfields, and check the last train for your line in the Merseyrail app. After that, use a licensed black cab from a rank or a pre-booked private hire car."
   - q: "Can private hire taxis pick you up off the street in Liverpool?"
     a: "No. Liverpool City Council says private hire journeys must be booked in advance. Only hackney carriages (black cabs) can be hailed or taken from a rank, and the meter should be on for trips within Liverpool."
 sources:
@@ -34,7 +33,7 @@ sources:
   - https://www.skiddle.com/e/42768039
 ---
 
-Liverpool is one of the best cities in the UK for a group night out. The main areas are the Ropewalks (Concert Square, Seel Street and Wood Street) for bars and clubs, Mathew Street for live music and Beatles bars, the Baltic Triangle for warehouse venues and street food, and Lark Lane in the south for a more relaxed pub crawl. The city has held Purple Flag status for safe nightlife since 2010, and in 2026 police added nine Halo Points as safe spaces in the busiest streets. If you're staying in north Liverpool, Fazakerley is about 15 minutes from Liverpool Central by train, so plan your last train or a taxi home.
+Liverpool is one of the best cities in the UK for a group night out. The main areas are the Ropewalks (Concert Square, Seel Street and Wood Street) for bars and clubs, Mathew Street for live music and Beatles bars, the Baltic Triangle for warehouse venues and street food, and Lark Lane in the south for a more relaxed pub crawl. The city has held Purple Flag status for safe nightlife since 2010, and in 2026 police added nine Halo Points as safe spaces in the busiest streets. If you're staying outside the centre, plan your last train or a taxi home.
 
 ## The main nightlife areas
 
@@ -102,7 +101,7 @@ Our group tips:
 
 ### By train
 
-From **Liverpool Central** or **Moorfields**, take the Merseyrail train home. Zermatt Lodge is about **15 minutes** from Central. Trains run less often late in the evening, so **check the last train in the Merseyrail app** before you go out, and set a reminder.
+From **Liverpool Central** or **Moorfields**, take the Merseyrail train home. Zermatt Lodge is an **easy train ride** from Central. Trains run less often late in the evening, so **check the last train in the Merseyrail app** before you go out, and set a reminder.
 
 ### By taxi
 
@@ -121,7 +120,7 @@ A house outside the centre is a great base for a night out, but remember you're 
 
 ## Zermatt Lodge for a group night out
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It suits groups who want a calm, comfortable base to come back to after a night in town.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre. It suits groups who want a calm, comfortable base to come back to after a night in town.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready

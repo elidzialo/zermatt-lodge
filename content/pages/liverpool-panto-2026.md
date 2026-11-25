@@ -37,7 +37,6 @@ sources:
   - https://uncoverliverpool.com/community/little-shop-of-horrors-revival-comes-to-liverpool-playhouse-for-christmas-2026
   - https://www.artscityliverpool.com/single-post/christmas-in-liverpool-for-mamma-mia-uk-tour
   - https://liverpoolbidcompany.com/christmas/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Liverpool's biggest pantos for Christmas 2026 are **Beauty and the Beast** (the Everyman's Rock 'n' Roll Panto), **Cinderella** at the Auditorium at M&S Bank Arena, and **Snow White** at the Epstein Theatre. For adults, the Royal Court has **The Scouse Nativity**, the Playhouse has **Little Shop of Horrors**, and the Empire hosts **Mamma Mia** over Christmas.
@@ -120,7 +119,7 @@ If you're staying in Liverpool with a car, Prescot, St Helens and Southport are 
 
 ## Getting to the theatres
 
-From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. From there:
+From Zermatt Lodge, trains run into **Liverpool Central**. From there:
 
 - **Liverpool Empire:** opposite Lime Street station
 - **Royal Court, Playhouse and Epstein:** short walks from Central
@@ -135,7 +134,7 @@ A panto trip often turns into a weekend: matinee on Saturday, the [Christmas mar
 
 ## Where to stay for a panto trip
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's about 15 minutes by train from Liverpool Central. For grandparents, parents and kids travelling together, it means one booking, a kitchen for breakfast and room for everyone.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**, it's an easy train ride from Liverpool city centre. For grandparents, parents and kids travelling together, it means one booking, a kitchen for breakfast and room for everyone.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

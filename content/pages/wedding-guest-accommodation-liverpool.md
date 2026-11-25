@@ -30,7 +30,6 @@ faqs:
 sources:
   - https://ceremonies.liverpool.gov.uk/venues-and-ceremonies/liverpool-register-office/parking-and-arrival/
   - https://liverpoolexpress.co.uk/council-issues-taxi-scam-warning-for-start-of-new-football-season/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 If you're a group of guests travelling to a Liverpool wedding, the simplest option is often to book one house together rather than several hotel rooms. You get ready in one place, share lifts or a pre-booked taxi to the venue, and wake up together the next morning. The right location depends on where the wedding is: a city-centre ceremony suits somewhere on a direct train line, while venues on the edge of the city suit a base with parking.
@@ -99,7 +98,7 @@ Our [house vs hotel guide](/guides/house-vs-hotel-liverpool-groups) looks at thi
 
 ## Why Zermatt Lodge suits wedding guests
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train to Liverpool Central, a short walk from St George's Hall, and it has free parking for 2 cars for venues you'd rather drive or taxi to. It isn't in the city centre, so build the journey into your timings.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. Trains run into Liverpool Central, a short walk from St George's Hall, and it has free parking for 2 cars for venues you'd rather drive or taxi to. It isn't in the city centre, so build the journey into your timings.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, so getting ready is manageable with a rota

@@ -3,7 +3,7 @@ title: "Ladies Day at Aintree: Planning a Group Stay"
 meta_description: "Ladies Day at Aintree is Friday 9 April 2027. Plan getting ready, bags, travel and the trip home, plus a quiet 4-bed house in Liverpool."
 slug: grand-national-ladies-day-group-stay
 h1: "Ladies Day at Aintree: Planning a Group Stay in Liverpool"
-quick_answer: "Ladies Day at Aintree is Friday 9 April 2027. A good group stay has enough bathrooms, a kitchen for breakfast and a short trip to the course; Zermatt Lodge has two bathrooms, sleeps up to 7 and is a calm base, not a party house."
+quick_answer: "Ladies Day at Aintree is Friday 9 April 2027. A good group stay has enough bathrooms, a kitchen for breakfast and a plan for getting to the course; Zermatt Lodge has two bathrooms, sleeps up to 7 and is a calm base, not a party house."
 primary_keyword: "ladies day aintree accommodation"
 secondary_keywords:
   - "ladies day aintree group"
@@ -35,7 +35,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/plan-your-day/travel
 ---
 
-Ladies Day at Aintree falls on **Friday 9 April 2027**, and the best group stays are the ones that make the morning easy: enough bathrooms, enough mirrors, a kitchen for breakfast and a short trip to the course. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with two bathrooms and room for up to 7. It suits friendship groups who want a calm base rather than a party house.
+Ladies Day at Aintree falls on **Friday 9 April 2027**, and the best group stays are the ones that make the morning easy: enough bathrooms, enough mirrors, a kitchen for breakfast and a plan for getting to the course. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with two bathrooms and room for up to 7. It suits friendship groups who want a calm base rather than a party house.
 
 This guide focuses on the practical side of a Ladies Day trip: getting ready as a group, what you can and can't take in, travel on the Friday and coming home.
 
@@ -92,7 +92,7 @@ Check your enclosure before you book. For example, the Jockey Club lists the Pri
 
 ### Train
 
-The Jockey Club's festival travel plan says trains run every seven and a half minutes between Liverpool Central/Moorfields and Aintree on each festival day. If you're staying on the Kirkby line, note that on festival days its trains start and end at **Sandhills** between 11:00 and 14:00 and between 17:00 and 21:00. You change at Sandhills for an Aintree train in both directions. Full detail is in our guide to [getting to Aintree Racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
+The Jockey Club's festival travel plan says trains run every seven and a half minutes between Liverpool Central/Moorfields and Aintree on each festival day. If you're travelling on the Kirkby line, note that on festival days its trains start and end at **Sandhills** between 11:00 and 14:00 and between 17:00 and 21:00. You change at Sandhills for an Aintree train in both directions. Full detail is in our guide to [getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley).
 
 ### Taxi or lift
 

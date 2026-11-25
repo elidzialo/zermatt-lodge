@@ -3,7 +3,7 @@ title: "Grand National Accommodation: Stay Near Aintree"
 meta_description: "Grand National accommodation for groups: a 4-bed house in Liverpool. Festival dates, race-day trains and parking explained."
 slug: grand-national-accommodation
 h1: "Grand National Accommodation: Where to Stay Near Aintree for the Festival"
-quick_answer: "The best Grand National base for a group is close to Aintree but outside the race-day road closures, with parking and room for everyone. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for two cars; book early for festival week."
+quick_answer: "The best Grand National base for a group has parking, room for everyone and a plan for the race-day road closures. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7 with free parking for two cars; book early for festival week."
 primary_keyword: "grand national accommodation"
 secondary_keywords:
   - "aintree accommodation grand national"
@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-The best Grand National accommodation for a group is somewhere close to Aintree but outside the race-day road closures, with your own parking and room for everyone under one roof. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars. Book early, because the festival is one of the busiest weeks of the year for accommodation in Liverpool.
+The best Grand National accommodation for a group has your own parking, room for everyone under one roof and a plan for the race-day road closures. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars. Book early, because the festival is one of the busiest weeks of the year for accommodation in Liverpool.
 
 This guide covers festival dates, how to get to the course, parking rules and how to plan a group stay.
 
@@ -64,7 +64,7 @@ The Jockey Club's festival travel plan says:
 - Going to the races, these run from about **11:00 to 13:00**. Coming back, they run from about **16:30 to 20:30**.
 - On the **Kirkby line**, between 11:00 and 14:00 and between 17:00 and 21:00, services **start and end at Sandhills**. Passengers returning to Rice Lane, **Fazakerley**, Kirkby or Headbolt Lane must change there.
 
-So from the Kirkby branch you take a train towards the city, change at Sandhills onto an Aintree train, and reverse it on the way home. Check the Merseyrail journey planner or app before you go, because race-day timetables are amended. Our step-by-step guide to [getting to Aintree from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley) has more detail.
+So if you're coming from the Kirkby branch, you take a train towards the city, change at Sandhills onto an Aintree train, and reverse it on the way home. Check the Merseyrail journey planner or app before you go, because race-day timetables are amended. Our step-by-step guide to [getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley) has more detail.
 
 ### By bus
 
@@ -118,7 +118,7 @@ Zermatt Lodge is a whole house in Liverpool, with everything a race group needs.
 - **Sleeps 7 in 4 bedrooms:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready on race mornings
 - **Free parking for 2 cars**, so you can leave them at the house and take the train
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix** for a relaxed evening after racing
 - **Big kitchen and dining room**, so you can cook for the group if local restaurants are full
 - **Large private back garden**

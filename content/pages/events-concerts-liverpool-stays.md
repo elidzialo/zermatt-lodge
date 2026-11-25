@@ -35,7 +35,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/plan-your-day/travel
 ---
 
-Liverpool's biggest event dates for the next year are the Grand National Festival at Aintree (Thursday 8 to Saturday 10 April 2027), the Tour de France stage finish on The Strand (Saturday 3 July 2027), the On the Waterfront summer concerts from 17 June 2027, and a full Christmas programme running through winter 2026. Hotels near the venues fill early for all of them. If you're coming as a group, a whole house in Liverpool with parking and a train into town can be easier to find and simpler to share. Zermatt Lodge is a 4-bedroom house in Liverpool, about 15 minutes by train from the city centre and.
+Liverpool's biggest event dates for the next year are the Grand National Festival at Aintree (Thursday 8 to Saturday 10 April 2027), the Tour de France stage finish on The Strand (Saturday 3 July 2027), the On the Waterfront summer concerts from 17 June 2027, and a full Christmas programme running through winter 2026. Hotels near the venues fill early for all of them. If you're coming as a group, a whole house in Liverpool with parking and a train into town can be easier to find and simpler to share. Zermatt Lodge is a 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 This guide lists confirmed dates from official sources as of November 2026. Dates do change, so check the organiser's site before you book anything.
 
@@ -69,7 +69,7 @@ Aintree's big winter race day, the Becher Chase, is on **Saturday 5 December 202
 
 This is the biggest weekend of the year for accommodation in north Liverpool. The Jockey Club lists the festival as **Thursday 8 to Saturday 10 April 2027**: Opening Day on Thursday, Ladies Day on Friday and Grand National Day on Saturday.
 
-Plan race-day transport early. Read our guides to [Grand National accommodation](/guides/grand-national-accommodation), [getting to Aintree from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley) and [Ladies Day for groups](/guides/grand-national-ladies-day-group-stay).
+Plan race-day transport early. Read our guides to [Grand National accommodation](/guides/grand-national-accommodation), [getting to Aintree Racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley) and [Ladies Day for groups](/guides/grand-national-ladies-day-group-stay).
 
 ### Arena events
 
@@ -113,7 +113,7 @@ For Aintree, Anfield or Everton, staying close sounds ideal, but options right b
 
 ### A house on a train line
 
-This is the middle ground. Zermatt Lodge is about **15 minutes by train from Liverpool Central**, and Sandhills (for Everton and the Anfield Soccerbus) is on the Merseyrail Northern line. You get space, parking and a quieter street, and you don't need to drive into the city.
+This is the middle ground. Zermatt Lodge is an **easy train ride from Liverpool Central**, and Sandhills (for Everton and the Anfield Soccerbus) is on the Merseyrail Northern line from the city centre. You get space, parking and a quieter street, and you don't need to drive into the city.
 
 The honest trade-off: you can't walk back from the city centre, so plan your last train or book a taxi after late finishes.
 
@@ -127,7 +127,7 @@ The honest trade-off: you can't walk back from the city centre, so plan your las
 
 ## Zermatt Lodge for event weekends
 
-Zermatt Lodge is a whole house in Liverpool, about 15 minutes by train from the city centre.
+Zermatt Lodge is a whole house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

@@ -3,7 +3,7 @@ title: "Holiday House in Liverpool with a Games Room"
 meta_description: "A Liverpool holiday house with a games room: pool table, board games and a 55-inch Smart TV with Netflix. Ideas for evenings in and rainy days for groups."
 slug: holiday-house-liverpool-games-room
 h1: "Holiday House in Liverpool with a Games Room and Pool Table"
-quick_answer: "Zermatt Lodge is a whole 4-bedroom holiday house in Liverpool, with a games room and pool table, board games and a 55-inch Smart TV with Netflix. It sleeps 7, has a garden and free parking for two cars, and trains reach the city centre in about 15 minutes."
+quick_answer: "Zermatt Lodge is a whole 4-bedroom holiday house in Liverpool, with a games room and pool table, board games and a 55-inch Smart TV with Netflix. It sleeps 7, has a garden and free parking for two cars, and easy trains into the city centre."
 primary_keyword: "holiday house liverpool games room"
 secondary_keywords:
   - "liverpool accommodation pool table"
@@ -27,11 +27,10 @@ faqs:
   - q: "Is the games room suitable for children?"
     a: "Families enjoy it. Supervise younger children around the pool table and cues, and keep drinks away from the cloth."
 sources:
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.merseyferries.co.uk/about
 ---
 
-If you want a Liverpool holiday house where the evenings are as good as the days, look for one with a games room. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with a games room and pool table, a cupboard of board games and a 55" Smart TV with Netflix. It sleeps 7, has a big kitchen, a dining room and a garden, and there's free parking for two cars. Trains reach the city centre in about 15 minutes.
+If you want a Liverpool holiday house where the evenings are as good as the days, look for one with a games room. Zermatt Lodge is a whole 4-bedroom house in Liverpool, with a games room and pool table, a cupboard of board games and a 55" Smart TV with Netflix. It sleeps 7, has a big kitchen, a dining room and a garden, and there's free parking for two cars. Trains run into the city centre.
 
 This page is about making the most of the time you spend at the house, whether that's a rainy afternoon, a post-match evening or a family games night.
 
@@ -139,7 +138,7 @@ The games room is for relaxed, sociable evenings, not parties. Zermatt Lodge is 
 - **Big kitchen and dining room**, with a large table for board games
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 
 Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk.

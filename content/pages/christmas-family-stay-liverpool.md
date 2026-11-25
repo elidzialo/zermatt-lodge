@@ -3,7 +3,7 @@ title: "Christmas in Liverpool: Self-Catering Family Stay"
 meta_description: "Spending Christmas in Liverpool with family? Festive events, Christmas Day transport, cooking dinner for 7 and a 4-bed house in Liverpool with parking."
 slug: christmas-family-stay-liverpool
 h1: "Christmas in Liverpool with the Family: A Self-Catering Stay Guide"
-quick_answer: "A Liverpool family Christmas works best from a whole house with a big kitchen and dining table. Zermatt Lodge in Liverpool sleeps 7, with a dining room, games room, free parking for two cars and trains to the city centre in about 15 minutes."
+quick_answer: "A Liverpool family Christmas works best from a whole house with a big kitchen and dining table. Zermatt Lodge in Liverpool sleeps 7, with a dining room, games room, free parking for two cars and easy trains into the city centre."
 primary_keyword: "christmas accommodation liverpool family"
 secondary_keywords:
   - "liverpool christmas house rental"
@@ -31,10 +31,9 @@ sources:
   - https://liverpoolcityregion-ca.gov.uk/news/christmas-and-new-year-timetables-revealed-for-bus-trains-ferries-and-tunnels
   - https://sefton.gov.uk/mysefton-news/latest-news/merseyrail-announces-boxing-day-services
   - https://www.thejockeyclub.co.uk/aintree/media/press-releases/2026/07/100000-grand-sefton-chase-returns-to-becher-chase-day-as-aintree-welcomes-new-molyneux-hurdle/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Spending Christmas in Liverpool with family works best from a whole house with a big kitchen and dining table, where you can cook Christmas dinner your way and still pop into the city for the festive events. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, with a big kitchen, a dining room, a games room and free parking for two cars. Trains reach the city centre in about 15 minutes.
+Spending Christmas in Liverpool with family works best from a whole house with a big kitchen and dining table, where you can cook Christmas dinner your way and still pop into the city for the festive events. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping 7, with a big kitchen, a dining room, a games room and free parking for two cars. Trains run into the city centre.
 
 Here's how to plan a family Christmas in Liverpool, from festive days out to the realities of Christmas Day transport.
 
@@ -55,7 +54,7 @@ Aintree's **Becher Chase Day**, run over the Grand National fences, falls in ear
 
 ### Getting into town
 
-Take the train to **Liverpool Central** (about 15 minutes from the house). St George's Hall is a short walk from Central and Lime Street, and the Pier Head is about 15 minutes' walk through Liverpool ONE. Leave the car at the house, because city-centre car parks get busy in December.
+Take the train to **Liverpool Central** (an easy train ride from the house). St George's Hall is a short walk from Central and Lime Street, and the Pier Head is about 15 minutes' walk through Liverpool ONE. Leave the car at the house, because city-centre car parks get busy in December.
 
 ## Christmas Day and Boxing Day: plan your transport
 
@@ -121,7 +120,7 @@ Adjust to suit your family, and always check the festive transport timetables fo
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
 - **Free parking for 2 cars**, important when public transport stops on Christmas Day
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **No parties, no smoking, no pets**, so it's a calm family Christmas
 
 Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees, or email cs@zugati.co.uk to check festive dates.

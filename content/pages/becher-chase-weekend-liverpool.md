@@ -120,7 +120,7 @@ If your group wants more racing history, look at [Aintree Racecourse tours](/gui
 
 ## Why Zermatt Lodge suits a Becher Chase weekend
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains reach Liverpool Central in about 15 minutes for the Christmas markets. For the races, take a taxi or the train via Sandhills.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre, but trains run into Liverpool Central for the Christmas markets. For the races, take a taxi or the train via Sandhills.
 
 - **Sleeps 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

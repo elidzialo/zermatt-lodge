@@ -117,7 +117,7 @@ Chanukah 2026 begins on **Friday 4 December**, so ask where you can safely light
 
 ## An honest note about Zermatt Lodge
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, sleeping 7, with free parking for 2 cars and about **15 minutes by train** from the city centre. It is **not** described as kosher, no Shabbat set-up has been declared, and it is **not within walking distance** of a synagogue. For a Shabbat stay, use the [kosher stays filter](/kosher-homes).
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool, sleeping 7, with free parking for 2 cars and an **easy train ride** from Liverpool city centre. It is **not** described as kosher, no Shabbat set-up has been declared, and it is **not within walking distance** of a synagogue. For a Shabbat stay, use the [kosher stays filter](/kosher-homes).
 
 For weekday visits, families who self-cater with their own equipment can [Book direct](/zermatt-lodge#book). Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Or [see all homes](/).
 

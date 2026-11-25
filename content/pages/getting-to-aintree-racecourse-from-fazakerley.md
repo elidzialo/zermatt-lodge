@@ -125,9 +125,9 @@ Everyone tries to leave after the last race. Options:
 - **Afternoon:** racing. Pre-book food if you're in a hospitality area.
 - **Early evening:** let the first crush clear, then head for the train or your taxi.
 
-## Where to stay: Zermatt Lodge
+## A house in Liverpool for a race weekend
 
-If you want a whole house for a race weekend, Zermatt Lodge is a 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool, sleeping up to 7, with free parking for 2 cars.
 
 - King master with en-suite, a second king, a queen and a single
 - 2 bathrooms for getting ready on race morning

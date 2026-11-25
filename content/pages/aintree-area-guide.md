@@ -1,12 +1,11 @@
 ---
 title: "Aintree Area Guide: Racecourse, Canal and Retail Park"
-meta_description: "A visitor's guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park, stations and where to stay."
+meta_description: "A visitor's guide to Aintree, north Liverpool: the racecourse, the old Grand Prix circuit, the canal, Aintree Shopping Park and stations."
 slug: aintree-area-guide
 h1: "Aintree Area Guide: More Than Just the Grand National"
 primary_keyword: "aintree liverpool area guide"
 secondary_keywords:
   - "things to do in aintree"
-  - "staying near aintree"
   - "aintree village"
   - "aintree shopping park"
 last_updated: 2026-11-19
@@ -77,7 +76,7 @@ Both run direct to **Liverpool Central** via Sandhills and Moorfields. Fazakerle
 
 The **Randox Grand National** itself is scheduled for **4:00pm on Saturday 10 April 2027**, according to the Jockey Club's event schedule. Note that the 2027 festival falls in the Easter school holidays for Liverpool schools, so expect accommodation to be busy.
 
-For full race-week planning, see our [Grand National accommodation guide](/guides/grand-national-accommodation) and [how to get to the racecourse from Fazakerley](/guides/getting-to-aintree-racecourse-from-fazakerley).
+For full race-week planning, see our [Grand National accommodation guide](/guides/grand-national-accommodation) and [how to get to the racecourse](/guides/getting-to-aintree-racecourse-from-fazakerley).
 
 ## Aintree's Formula One history
 
@@ -145,9 +144,9 @@ The trade-off is simple: you give up walking to bars and the waterfront, and in 
 
 4. **Pack for the weather.** The canal towpath and racecourse are exposed in wind and rain.
 
-## Staying at Zermatt Lodge
+## For a larger group: a house in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's a quiet residential area, about 15 minutes by train from Liverpool city centre.
+For a larger group, Zermatt Lodge is a 4-bedroom house in Liverpool, an easy train ride or drive from the city centre.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a separate dining room

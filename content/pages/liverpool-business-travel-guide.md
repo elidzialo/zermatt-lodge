@@ -32,10 +32,9 @@ sources:
   - https://liverpoolexpress.co.uk/new-development-zone-announced-to-accelerate-regeneration-across-north-docks/?nb=1
   - https://liverpoolexpress.co.uk/council-and-bid-company-respond-to-a-legal-challenge-to-accommodation-bid-visitor-levy/
   - https://www.litrg.org.uk/tax-guides/employment/employment-benefits-and-expenses/what-travel-expenses-can-i-claim
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Business travel to Liverpool is straightforward: the main office district, the conference venues on the waterfront and the Knowledge Quarter are all within a compact city centre, linked by Merseyrail trains you can pay for with a contactless card. The main decisions are where to base yourself and how to get between sites if you're also visiting business parks on the outskirts. Solo travellers often stay in town; teams and crews often prefer a house with parking. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for 2 cars.
+Business travel to Liverpool is straightforward: the main office district, the conference venues on the waterfront and the Knowledge Quarter are all within a compact city centre, linked by Merseyrail trains you can pay for with a contactless card. The main decisions are where to base yourself and how to get between sites if you're also visiting business parks on the outskirts. Solo travellers often stay in town; teams and crews often prefer a house with parking. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for 2 cars.
 
 ## Where business happens in Liverpool
 
@@ -100,7 +99,7 @@ Driving into the centre is fine outside peak hours, but parking costs add up ove
 
 Since **1 June 2025**, Liverpool's Accommodation BID has applied a **£2 a night** visitor charge at larger hotels and serviced accommodation blocks in the city centre. It's minor for one night, more noticeable for a team over a week.
 
-From Zermatt Lodge, trains reach Liverpool Central in **about 15 minutes**. Moorfields is the station for the Commercial District.
+From Zermatt Lodge, trains run into Liverpool Central. Moorfields is the station for the Commercial District.
 
 ## Expenses and tax: the basics
 
@@ -129,7 +128,7 @@ This is general information, not tax advice. Check HMRC's guidance or ask your f
 
 ## Staying at Zermatt Lodge for work
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the business district: it's a quiet residential base about 15 minutes by train from Liverpool city centre.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the business district: it's a quiet residential base, an easy train ride from Liverpool city centre.
 
 - **4 bedrooms, sleeps 7**, so a team gets their own rooms
 - **2 bathrooms** for early starts

@@ -27,7 +27,6 @@ faqs:
   - q: "Do I pay platform fees when booking a house?"
     a: "On many booking platforms you pay a service fee. Booking Zermatt Lodge direct at bookhomes.co.uk/zermatt-lodge#book means no platform fees."
 sources:
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://liverpoolfc.com/news/best-ways-travel-and-anfield-season
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
 ---
@@ -101,7 +100,7 @@ Our [hotel rooms vs one house worksheet](/guides/two-hotel-rooms-vs-one-house) w
 
 ## Location trade-offs
 
-Most hotels are in the city centre. Most houses big enough for a group are in residential areas. In Liverpool, that often means a short train ride. From Zermatt Lodge, trains reach **Liverpool Central in about 15 minutes**. For many groups, especially families, football fans, racegoers and people visiting the hospital, that trade-off is worth it. See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
+Most hotels are in the city centre. Most houses big enough for a group are in residential areas. In Liverpool, that often means a short train ride. From Zermatt Lodge, trains run into **Liverpool Central**. For many groups, especially families, football fans, racegoers and people visiting the hospital, that trade-off is worth it. See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
 
 ## Our honest recommendation
 
@@ -119,7 +118,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool.
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Large private back garden**
 - **Free parking for 2 cars**
-- **About 15 minutes by train** from the city centre
+- **Easy trains** into Liverpool city centre
 - **Check-in 3pm, checkout 11am**
 - **No parties, no smoking, no pets**
 

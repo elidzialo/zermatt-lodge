@@ -3,7 +3,7 @@ title: "Clatterbridge Cancer Centre Liverpool: Family Stays"
 meta_description: "Here for Clatterbridge Cancer Centre Liverpool treatment? Free Paddington Village parking, the shuttle bus and a 4-bed family house in Liverpool."
 slug: clatterbridge-cancer-centre-liverpool-family-stay
 h1: "Family Stays for Clatterbridge Cancer Centre Liverpool"
-quick_answer: "During treatment at Clatterbridge Cancer Centre Liverpool, a base with free parking and a kitchen helps families rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre, sleeping up to 7."
+quick_answer: "During treatment at Clatterbridge Cancer Centre Liverpool, a base with free parking and a kitchen helps families rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, sleeping up to 7."
 primary_keyword: "clatterbridge cancer centre liverpool accommodation"
 secondary_keywords:
   - "clatterbridge liverpool parking"
@@ -15,7 +15,6 @@ related:
   - long-stay-hospital-visiting-tips-liverpool
   - liverpool-hospital-parking-concessions-compared
   - hospital-appointment-early-morning-stay
-  - fazakerley-to-liverpool-city-centre-by-train
 faqs:
   - q: "Where is Clatterbridge Cancer Centre Liverpool?"
     a: "It's at 65 Pembroke Place, Liverpool, L7 8YA, in the city's Knowledge Quarter next to the Royal Liverpool University Hospital. The main phone number is 0151 556 5000."
@@ -30,11 +29,10 @@ faqs:
 sources:
   - https://www.clatterbridgecc.nhs.uk/cccl
   - https://www.clatterbridgecc.nhs.uk/about-us/news/reminder-changes-free-patient-parking-liverpool-1st-april-2022
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
   - https://www.nhs.uk/nhs-services/help-with-health-costs/healthcare-travel-costs-scheme-htcs/
 ---
 
-If someone you love is starting a course of treatment at Clatterbridge Cancer Centre in Liverpool, the most practical base is one where you can park for free, cook proper meals and rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from Liverpool city centre, with free parking for two cars and room for up to 7 people.
+If someone you love is starting a course of treatment at Clatterbridge Cancer Centre in Liverpool, the most practical base is one where you can park for free, cook proper meals and rest between appointments. Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre, with free parking for two cars and room for up to 7 people.
 
 This guide covers where the hospital is, how its free car park and shuttle work, and how to organise a family stay that might last several weeks.
 
@@ -77,7 +75,7 @@ If you drive, head for the Knowledge Quarter. Allow extra time at rush hour, and
 
 ### By train
 
-The hospital lists **Liverpool Lime Street** and **Liverpool Central** as its nearest stations. From Zermatt Lodge, trains reach Liverpool Central in about 15 minutes. That's handy for relatives who don't want to drive, or for days when the patient is too tired for a car journey and someone else is attending a meeting with the team. 
+The hospital lists **Liverpool Lime Street** and **Liverpool Central** as its nearest stations. From Zermatt Lodge, trains run into Liverpool Central. That's handy for relatives who don't want to drive, or for days when the patient is too tired for a car journey and someone else is attending a meeting with the team. 
 
 ## Planning a stay around a treatment course
 

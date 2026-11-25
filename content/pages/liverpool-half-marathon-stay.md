@@ -14,7 +14,6 @@ last_updated: 2026-11-20
 related:
   - sandhills-station-guide
   - everton-stadium-accommodation
-  - fazakerley-to-liverpool-city-centre-by-train
   - self-catering-meal-plan-group-of-7
 faqs:
   - q: "When is the Liverpool Half Marathon 2027?"
@@ -32,7 +31,6 @@ sources:
   - https://www.btrliverpool.com/events/liverpool-half-marathon-and-10-mile
   - https://britbrief.co.uk/weather/travel/new-liverpool-10k-race-announced-for-march-2027.html
   - https://www.traintickets.com/train-times/fazakerley-to-sandhills/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The **2027 Liverpool Half Marathon is on Sunday 14 March**. The half starts at **9.30am at Hill Dickinson Stadium** on Regent Road and finishes at the **Pier Head**, in front of the Three Graces. A new **Liverpool 10K** starts at **8.45am** from the Pier Head the same morning. The nearest station to the start is **Sandhills**. With the race selling out at 15,000 places in 2025, beds for the Saturday night go early, so book now.
@@ -97,7 +95,7 @@ Supporters can watch at the start, then take the train or walk into town to see 
 
 ## Zermatt Lodge for race weekend
 
-[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's about **15 minutes by train** to Liverpool Central. It isn't in the city centre, and free parking means you can leave the car at the house on race morning.
+[Zermatt Lodge](/zermatt-lodge) is a whole 4-bedroom house in Liverpool. It's an **easy train ride** from Liverpool city centre. It isn't in the city centre, and free parking means you can leave the car at the house on race morning.
 
 - **Sleeps 7:** king en-suite, second king, queen and single
 - **2 bathrooms**, so the pre-race queue moves

@@ -106,7 +106,7 @@ Neither is wrong. If you're two people who want to go out in town after, the cit
 
 ## Why Zermatt Lodge works for concert groups
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's about 15 minutes by train to Liverpool Central, and Sandhills, where the concert shuttle picked up in 2026, is easy to reach by train. It's not in the city centre and it's not walking distance to Anfield, but it gives a group a calm base with somewhere safe to leave bags and cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's an easy train ride from Liverpool city centre, and Sandhills, where the concert shuttle picked up in 2026, is easy to reach by train. It's not in the city centre and it's not walking distance to Anfield, but it gives a group a calm base with somewhere safe to leave bags and cars.
 
 - **Sleeps up to 7** in a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms** for getting ready

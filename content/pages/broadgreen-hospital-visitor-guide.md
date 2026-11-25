@@ -29,7 +29,6 @@ faqs:
 sources:
   - https://www.uhliverpool.nhs.uk/our-hospitals/broadgreen-hospital/getting-here
   - https://www.uhliverpool.nhs.uk/about-us/our-stories/updated-car-parking-prices-uhl-group-sites
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 Broadgreen Hospital is part of Liverpool University Hospitals (UHL), on **Thomas Drive** in east Liverpool. If you're going for an appointment or visiting someone, the essentials are: **park in the 24/7 multi-storey, or walk 5 to 10 minutes from Broad Green station**. Blue Badge holders park free in marked bays. For repeat visits, the 7-day parking pass is the best value.
@@ -79,11 +78,11 @@ Blue Badge holders **park free**. Display the badge in a **marked bay**, because
 
 ## Where to stay
 
-Broadgreen is in east Liverpool, a residential area with few large holiday homes. If your family needs a whole house, or you're also visiting Aintree University Hospital, a house in Liverpool can work: the M57 runs round the east of the city, and you can check the drive in a map app for your appointment time.
+Broadgreen is in east Liverpool, a residential area with few large holiday homes. If your family needs a whole house, a house elsewhere in Liverpool with parking can work: check the drive in a map app for your appointment time.
 
 ## Zermatt Lodge for hospital visitors
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, and about 15 minutes by train from Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, and an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** in 4 bedrooms, so the family can stay together
 - **2 bathrooms**, a big kitchen and a **washer and dryer**

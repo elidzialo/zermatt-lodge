@@ -32,7 +32,6 @@ faqs:
 sources:
   - https://www.actuarialpost.co.uk/downloads/cat_1/ABI-FloodguideOct2025.pdf
   - https://www.comparethemarket.com/home-insurance/home-emergency-cover/alternative-accommodation/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 When a flood, fire or escape of water leaves a Merseyside home unliveable, the insurer or its loss adjuster usually arranges **alternative accommodation** for the household. According to ABI guidance, most buildings and contents policies allow **up to 20% of the total insured value** for alternative accommodation and extra costs, and drying alone can take **weeks to months**. So the right booking is one that fits the family's daily life and can be extended without a fuss.
@@ -96,7 +95,7 @@ If someone in the household is also in hospital or attending appointments at Ain
 - **Big kitchen and dining room** for normal family meals
 - **Free parking for 2 cars**
 - **Games room and large private garden**, useful for children through a long stay
-- **About 15 minutes by train or car** from the city centre
+- **An easy train ride or drive** from the city centre
 - **Check-in 3pm, checkout 11am**
 - No smoking and **no pets**
 

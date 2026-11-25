@@ -3,7 +3,7 @@ title: "Where to Stay in Liverpool: Areas Compared for Holiday Homes"
 meta_description: "Where to stay in Liverpool: city centre, Albert Dock, Baltic Triangle, the suburbs and the coast compared for holiday homes and groups."
 slug: where-to-stay-in-liverpool
 h1: "Where to Stay in Liverpool: Which Area Suits Your Trip?"
-quick_answer: "Stay in the city centre or around the Albert Dock for a short break on foot, the Baltic Triangle for bars, and south Liverpool for leafy streets near Sefton Park. For families, groups, race goers and anyone driving, north Liverpool gives you a whole house with parking for the price of a city flat, with trains to Liverpool Central in about 15."
+quick_answer: "Stay in the city centre or around the Albert Dock for a short break on foot, the Baltic Triangle for bars, and south Liverpool for leafy streets near Sefton Park. For families, groups, race goers and anyone driving, the suburbs give you a whole house with parking for the price of a city flat, with direct trains into town."
 primary_keyword: "where to stay in liverpool"
 secondary_keywords:
   - "best area to stay in liverpool"
@@ -21,7 +21,7 @@ faqs:
   - q: "What is the best area to stay in Liverpool for first-time visitors?"
     a: "The city centre, including Liverpool ONE and the streets around Lime Street and Liverpool Central, puts most sights within walking distance. The Royal Albert Dock is a good choice for museums and the Beatles Story."
   - q: "Where should a family or group stay in Liverpool?"
-    a: "If you need several bedrooms, a kitchen and parking, look outside the centre. North Liverpool suburbs such as Fazakerley and Aintree have whole houses with parking and direct trains into town in about 15 minutes."
+    a: "If you need several bedrooms, a kitchen and parking, look outside the centre. The suburbs have more whole houses with parking, and Merseyrail runs direct trains into town."
   - q: "Is it expensive to park in Liverpool city centre?"
     a: "It can be. A 2022 round-up of city car parks listed 24-hour prices of around £17 to £24 at several central car parks, and prices may have risen since. Many city flats don't include parking."
   - q: "Where should I stay for the Grand National?"
@@ -39,7 +39,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/grand-national-day/
 ---
 
-The right area depends on your trip. For a **short break on foot**, stay in the **city centre** or around the **Royal Albert Dock**. For **bars and an edgier feel**, try the **Baltic Triangle**. For **leafy streets and parks**, look at **south Liverpool** near Sefton Park. For **families, groups, race goers and anyone driving**, **north Liverpool** gives you a whole house with parking for the price of a city flat, with direct trains to **Liverpool Central in about 15 minutes** from stations such as Fazakerley.
+The right area depends on your trip. For a **short break on foot**, stay in the **city centre** or around the **Royal Albert Dock**. For **bars and an edgier feel**, try the **Baltic Triangle**. For **leafy streets and parks**, look at **south Liverpool** near Sefton Park. For **families, groups, race goers and anyone driving**, the **suburbs** give you a whole house with parking for the price of a city flat, with direct trains to **Liverpool Central**.
 
 ## Liverpool's areas at a glance
 
@@ -98,7 +98,7 @@ North Liverpool is where you'll find **whole houses with gardens and parking**. 
 
 ## Zermatt Lodge in Liverpool
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains reach Liverpool Central in **about 15 minutes**.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city centre**: direct trains run into Liverpool Central.
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and dining room
@@ -106,7 +106,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city ce
 - **Free parking for 2 cars**
 - **Check-in 3pm, checkout 11am**
 
-Strictly no parties or events - bookings found to be for parties are cancelled.
+Strictly no parties or events. Bookings found to be for parties are cancelled.
 
 [Book direct](/zermatt-lodge#book) for the best rate.
 

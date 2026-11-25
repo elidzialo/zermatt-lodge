@@ -34,7 +34,6 @@ sources:
   - https://www.gov.uk/bank-holidays
   - https://sefton.gov.uk/around-sefton/another-place-by-antony-gormley/general-information
   - https://www.knowsleysafariexperience.co.uk/plan-your-visit/getting-here
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 For Liverpool City Council schools, the next half terms are **15 to 19 February 2027** and **31 May to 4 June 2027**. A good half term in Liverpool mixes one big city day, one free museum, a park or beach when the weather allows, and a slower day at home. Plan around opening days: World Museum, for example, is listed as closed on Mondays and Tuesdays. A house with parking gives you days out by car and a quick train into the city. Zermatt Lodge is a 4-bedroom house in Liverpool that sleeps 7.
@@ -122,7 +121,7 @@ A car is the easiest way to reach Croxteth, Knowsley Safari and the coast. City-
 
 ### By train
 
-From Zermatt Lodge, trains run to **Liverpool Central** in about **15 minutes**. Children travel at reduced fares. Check the Merseyrail app for engineering works, which sometimes happen in school holidays.
+From Zermatt Lodge, trains run into **Liverpool Central**. Children travel at reduced fares. Check the Merseyrail app for engineering works, which sometimes happen in school holidays.
 
 ## Half term tips
 
@@ -134,7 +133,7 @@ From Zermatt Lodge, trains run to **Liverpool Central** in about **15 minutes**.
 
 ## Zermatt Lodge for half term
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It's handy for Croxteth, Knowsley Safari and the motorways to the coast.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre. With free parking, days out by car to Knowsley Safari and the coast are easy.
 
 - **Sleeps 7** in 4 bedrooms: a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**

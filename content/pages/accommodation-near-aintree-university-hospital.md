@@ -8,7 +8,6 @@ primary_keyword: "accommodation near aintree hospital"
 secondary_keywords:
   - "places to stay near aintree university hospital"
   - "aintree hospital hotel"
-  - "fazakerley accommodation"
 last_updated: 2026-11-18
 related:
   - walton-centre-family-accommodation
@@ -123,7 +122,7 @@ Zermatt Lodge is a whole house in Liverpool, so you aren't sharing it with anyon
 - **A big kitchen and dining room** for cooking real food at whatever hour you get back
 - **Free parking for 2 cars**, so you aren't adding a car park bill on top of hospital charges
 - **A large private back garden**, somewhere quiet to sit and take a phone call
-- **Trains to the city centre in about 15 minutes**, for quick trips into town
+- **Easy trains to the city centre**, for quick trips into town
 - **Check-in from 3pm, checkout 11am**
 
 It's a calm, residential house. There are no parties, no smoking and no pets, so it stays quiet for people who need to rest.

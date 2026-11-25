@@ -47,7 +47,7 @@ These share one campus on Lower Lane and Longmoor Lane in Fazakerley, near junct
 
 ### Royal Liverpool University Hospital (city centre)
 
-The Royal is about a mile from both Lime Street and Liverpool Central. From Zermatt Lodge you can take the train to Central, about 15 minutes, then walk. The hospital also lists the Paddington Village car park (open 24 hours) and the Q-Park on Prescot Street (6am to 10pm) for drivers. Check staff parking arrangements with your trust, because visitor parking adds up quickly.
+The Royal is about a mile from both Lime Street and Liverpool Central. From Zermatt Lodge you can take the train to Central, then walk. The hospital also lists the Paddington Village car park (open 24 hours) and the Q-Park on Prescot Street (6am to 10pm) for drivers. Check staff parking arrangements with your trust, because visitor parking adds up quickly.
 
 ### Alder Hey Children's Hospital (West Derby)
 
@@ -55,7 +55,7 @@ Alder Hey is on East Prescot Road in West Derby. For most people it's a drive ra
 
 ### Liverpool Women's and other sites
 
-Liverpool University Hospitals NHS Foundation Trust also runs Liverpool Women's Hospital and Broadgreen, among others. If you're rotating between sites, a base with parking near the M57 and a Merseyrail station gives you the most options.
+Liverpool University Hospitals NHS Foundation Trust also runs Liverpool Women's Hospital and Broadgreen, among others. If you're rotating between sites, a base with parking and a Merseyrail station nearby gives you the most options.
 
 ## What shift workers need from accommodation
 
@@ -104,7 +104,7 @@ Knowing this before you book makes it much easier to choose the right base and d
 
 ## Why Zermatt Lodge works for NHS staff on placement
 
-Zermatt Lodge is a whole house in Liverpool, about 15 minutes by train or car from the city centre.
+Zermatt Lodge is a whole house in Liverpool, an easy train ride or drive from Liverpool city centre.
 
 - **4 bedrooms, sleeps up to 7:** a king master with en-suite, a second king, a queen and a single
 - **2 bathrooms**, which helps with staggered shifts

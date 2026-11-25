@@ -81,7 +81,7 @@ Some crews and families split time between Greater Manchester and Merseyside. Ze
 - Sleeps 7, with 2 bathrooms
 - Big kitchen, dining room, washer and dryer
 - Free parking for 2 cars
-- Near the M57, which links to the M62 towards Manchester
+- The M62 links Liverpool and Manchester
 - Stays from 2 to 30 nights, with monthly rates
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.

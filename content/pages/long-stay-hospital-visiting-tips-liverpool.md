@@ -108,7 +108,7 @@ Discharge from a long stay is often followed by a recovery period, appointments 
 
 ## A base for families on long hospital stays
 
-Zermatt Lodge is a whole house in Liverpool. For hospitals across the city, you'll drive or take the train (about 15 minutes to Liverpool Central).
+Zermatt Lodge is a whole house in Liverpool. For hospitals across the city, you'll drive or take the train.
 
 - **4 bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

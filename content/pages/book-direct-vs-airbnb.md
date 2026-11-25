@@ -119,7 +119,7 @@ That's fine. Zermatt Lodge is listed there too.
 
 ## About the house
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's about 15 minutes by train from Liverpool city centre, with free parking for 2 cars.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city centre: it's an easy train ride from Liverpool city centre, with free parking for 2 cars.
 
 - **Sleeps 7:** king with en-suite, second king, queen and single
 - **2 bathrooms**, big kitchen, dining room

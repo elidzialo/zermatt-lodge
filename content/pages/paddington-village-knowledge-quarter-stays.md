@@ -3,7 +3,7 @@ title: "Paddington Village and the Knowledge Quarter: Business and Contractor St
 meta_description: "Visiting or working at Paddington Village in Liverpool's Knowledge Quarter? What's there, the HEMISPHERE lab build, Paddington South, and where teams can stay."
 slug: paddington-village-knowledge-quarter-stays
 h1: "Visiting Liverpool's Knowledge Quarter for Work: Paddington Village Guide"
-quick_answer: "Paddington Village is Liverpool City Council's flagship site in the Knowledge Quarter (KQ Liverpool), on the east side of the city centre. It already has The Spine offices and a Novotel, with HEMISPHERE One, a £61m lab building by Morgan Sindall, and the 9-acre Paddington South phase coming next. The Royal Liverpool University Hospital is nearby. Teams who need parking can stay in north Liverpool and take the train to the city centre in about 15 minutes."
+quick_answer: "Paddington Village is Liverpool City Council's flagship site in the Knowledge Quarter (KQ Liverpool), on the east side of the city centre. It already has The Spine offices and a Novotel, with HEMISPHERE One, a £61m lab building by Morgan Sindall, and the 9-acre Paddington South phase coming next. The Royal Liverpool University Hospital is nearby. Teams who need parking can stay outside the centre and take the train in."
 primary_keyword: "paddington village liverpool"
 secondary_keywords:
   - "knowledge quarter liverpool accommodation"
@@ -27,11 +27,10 @@ faqs:
   - q: "How many jobs could the Knowledge Quarter create?"
     a: "KQ Liverpool has said the development could help create upwards of 10,000 highly skilled jobs in the city region."
   - q: "Where can a team stay with parking near the Knowledge Quarter?"
-    a: "City centre parking is charged, so some teams stay outside the centre in a house with free parking and take the train in. From Zermatt Lodge, Liverpool Central is about 15 minutes by train."
+    a: "City centre parking is charged, so some teams stay outside the centre in a house with free parking and take the train in. From Zermatt Lodge, Liverpool Central is an easy train ride."
 sources:
   - https://liverpoolexpress.co.uk/work-begins-at-liverpools-paddington-south-scheme/
   - https://liverpoolexpress.co.uk/contractor-appointed-for-61m-new-lab-scheme/
-  - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
 The **Knowledge Quarter (KQ Liverpool)** is the city's innovation district, home to universities, hospitals and research buildings on the east side of the city centre. **Paddington Village** is its main development site, and it brings a steady flow of visiting researchers, consultants, fit-out teams and site crews. Here's what's there, what's being built, and how a team can stay without paying city centre parking every day.
@@ -79,7 +78,7 @@ KQ Liverpool has said the wider development could help create **upwards of 10,00
 
 ## Getting there
 
-- **By train:** from Zermatt Lodge, trains reach **Liverpool Central** in about **15 minutes**. Paddington Village is on the east side of the centre, so allow time to walk or take a bus or taxi from there
+- **By train:** from Zermatt Lodge, trains run into **Liverpool Central**. Paddington Village is on the east side of the centre, so allow time to walk or take a bus or taxi from there
 - **By car:** the area has paid parking, including the multi-storey at Paddington Village. Check rates before committing a team to driving in daily
 
 ## Short stay or long stay?
@@ -94,7 +93,7 @@ Our [corporate housing guide](/guides/corporate-housing-liverpool) compares the 
 
 ## Zermatt Lodge for KQ teams
 
-Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train to Liverpool Central.
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, an easy train ride from Liverpool city centre.
 
 - **Sleeps 7** with **separate beds**: king master with en-suite, second king, queen and single
 - **2 bathrooms**
