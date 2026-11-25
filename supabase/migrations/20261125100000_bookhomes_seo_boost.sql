@@ -80,6 +80,7 @@ create table if not exists bookhomes.seo_items (
   updated_at timestamptz not null default now()
 );
 create index if not exists seo_items_page_idx on bookhomes.seo_items (page_id, position);
+create index if not exists seo_items_order_idx on bookhomes.seo_items (order_id);
 
 alter table bookhomes.seo_orders enable row level security;
 alter table bookhomes.seo_pages enable row level security;
