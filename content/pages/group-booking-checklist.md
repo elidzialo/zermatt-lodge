@@ -23,7 +23,7 @@ faqs:
   - q: "How do we decide who gets which room?"
     a: "Agree a rule before you arrive: couples first for double beds, a draw for the rest, or pay-more-for-the-best-room. Writing it down avoids arguments on the doorstep."
   - q: "Can we have a celebration at a holiday house?"
-    a: "Check the house rules first. Many hosts, including us, don't allow parties or events, and bookings made for parties can be cancelled. A meal for the people staying is usually fine; inviting extra guests usually isn't."
+    a: "Check the house rules first. Many hosts don't allow parties or events, and bookings made for parties can be cancelled. A meal for the people staying is usually fine; inviting extra guests usually isn't."
 sources:
   - https://www.actionfraud.police.uk/campaign/holidayfraud
   - https://financial-ombudsman.org.uk/news/misunderstanding-credit-protection-cost-consumers-thousands
@@ -32,7 +32,7 @@ sources:
   - https://www.thejockeyclub.co.uk/the-grand-national/about-the-event
 ---
 
-The secret to a smooth group trip is to settle the big questions before anyone pays: who's definitely coming, the budget per person, how you'll split the cost, who sleeps where, and what the house rules are. Then book with a payment method that protects you, ideally a credit card, and share the key information with everyone in one message. This checklist works for any holiday house. We've added a few Liverpool tips, as we run Zermatt Lodge, a 4-bedroom house in Liverpool that sleeps 7.
+The secret to a smooth group trip is to settle the big questions before anyone pays: who's definitely coming, the budget per person, how you'll split the cost, who sleeps where, and what the house rules are. Then book with a payment method that protects you, ideally a credit card, and share the key information with everyone in one message. This checklist works for any holiday house. We've added a few Liverpool tips from Zermatt Lodge, a 4-bedroom house in Liverpool that sleeps 7.
 
 ## Step 1: Agree the basics
 

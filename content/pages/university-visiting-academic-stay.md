@@ -88,7 +88,7 @@ Merseyrail is the easiest way in from the suburbs. Since **25 February 2026** yo
 
 ## A base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
 
 - Sleeps 7, so there's room for family visits
 - Dining room and big kitchen, with space to work

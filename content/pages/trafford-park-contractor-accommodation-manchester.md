@@ -22,9 +22,9 @@ faqs:
   - q: "Is there a tram to Trafford Park?"
     a: "Yes. The Metrolink Trafford Park line opened in March 2020. It runs from Pomona to the Trafford Centre, with stops at Wharfside, Imperial War Museum, Village, Parkway and Barton Dock Road."
   - q: "Can a crew park vans at your houses?"
-    a: "Several of our homes have free parking. Tell us how many vehicles you have and their size, and check with the host before booking."
+    a: "Several of the homes on Book Homes have free parking. Tell the host how many vehicles you have and their size, and check with the host before booking."
   - q: "Can the crew have people over?"
-    a: "Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
+    a: "Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
 sources:
   - https://en.wikipedia.org/wiki/Trafford_Park
   - https://en.wikipedia.org/wiki/MediaCityUK
@@ -61,7 +61,7 @@ Drive times vary a lot with M60 traffic at shift change, so check a route planne
 2. **Vehicles.** Confirm how many vans and cars can park.
 3. **Kitchen and washer.** See our [self-catering guide for work crews](/guides/self-catering-for-work-crews).
 4. **Invoices.** Ask for an invoice in your company's name.
-5. **House rules.** Our homes are in residential areas: strictly no parties or events - bookings found to be for parties are cancelled.
+5. **House rules.** Homes on Book Homes are in residential areas: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Our [contractor checklist](/guides/contractor-checklist-before-booking) has the full list.
 

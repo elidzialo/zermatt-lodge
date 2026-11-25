@@ -128,7 +128,7 @@ Zermatt Lodge is a whole house in Liverpool, so you aren't sharing it with anyon
 
 It's a calm, residential house. There are no parties, no smoking and no pets, so it stays quiet for people who need to rest.
 
-When you book direct at [Zermatt Lodge](/zermatt-lodge#book), there are no platform fees. If your dates are uncertain because of a discharge date, email us at cs@zugati.co.uk and we'll talk through what's possible.
+When you book direct at [Zermatt Lodge](/zermatt-lodge#book), there are no platform fees. If your dates are uncertain because of a discharge date, email the host at cs@zugati.co.uk to talk through what's possible.
 
 ## Related guides
 

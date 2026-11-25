@@ -132,7 +132,7 @@ def hub_body():
         secs.append(f'<h2 id="more">More guides</h2><ul class="hub-list">{items}</ul>')
     import bh_areas
     areas = " ".join(f'<a href="{bh_areas.url(a)}">{esc(a["name"])}</a>' + ("," if i < len(bh_areas.AREAS) - 1 else ".") for i, a in enumerate(bh_areas.AREAS))
-    return ('<p>First-hand guides from Book Homes hosts. Our guides start with Liverpool, written by the hosts of <a href="/zermatt-lodge">Zermatt Lodge, a large house to rent in Liverpool</a>. '
+    return ('<p>Local guides from Book Homes. Our guides start with Liverpool, home of <a href="/zermatt-lodge">Zermatt Lodge, a large house to rent in Liverpool listed on Book Homes</a>. '
             'Guides for our other areas follow as homes go live there.</p>'
             f'<p>Homes by area: {areas}</p><h2 id="liverpool">Liverpool guides</h2><p>Pick a topic:</p>'
             f'<ul class="hub-jump">{"".join(jump)}</ul>' + "".join(secs))

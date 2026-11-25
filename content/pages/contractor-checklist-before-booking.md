@@ -137,7 +137,7 @@ HMRC's manual also says the 24-month rule is overridden for **fixed-term appoint
 |---|---|
 | Beds | 4 bedrooms: king with en-suite, second king, queen and a single. Sleeps 7 |
 | Bathrooms | 2 |
-| Parking | Free parking on the premises for 2 cars. Ask us before booking if you have large or high-top vans |
+| Parking | Free parking on the premises for 2 cars. Ask the host before booking if you have large or high-top vans |
 | Kitchen | Big, fully equipped kitchen and a separate dining room |
 | Laundry | Washing machine and tumble dryer |
 | Check-in | Self check-in with a lockbox from 3pm; checkout by 11am |
@@ -146,7 +146,7 @@ HMRC's manual also says the 24-month rule is overridden for **fixed-term appoint
 | Payment | Secure card payment via Stripe, no booking fees when booking direct |
 | Rules | No parties or events, no smoking, no pets. Guest ID and a signed rental agreement required |
 
-For crews of more than 7, or with more than two vans, you'd need a second property. Ask us about mid-stay cleaning and invoicing when you book.
+For crews of more than 7, or with more than two vans, you'd need a second property. Ask the host about mid-stay cleaning and invoicing when you book.
 
 Retail parks around the city, such as Aintree Shopping Park with an M&S Foodhall, B&Q and Halfords, cover food and supplies.
 

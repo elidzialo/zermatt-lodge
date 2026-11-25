@@ -27,7 +27,7 @@ faqs:
   - q: "Is there parking in Bootle?"
     a: "The Strand shopping centre has a multi-storey car park on Vermont Way. On Everton match days it's used for park and ride to Hill Dickinson Stadium, so it may be busier. For a long stay, accommodation with its own parking saves daily fees."
   - q: "Can I get a company invoice for a stay?"
-    a: "Ask the host before you book. At Zermatt Lodge, message us first and we'll confirm how we can invoice your company."
+    a: "Ask the host before you book. At Zermatt Lodge, message the host first to confirm how they can invoice your company."
 sources:
   - https://www.hse.gov.uk/contact/maps/northwest.htm
   - https://www.wikiwand.com/en/articles/Bootle_New_Strand_railway_station
@@ -106,13 +106,13 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in Bootle or t
 - **Sleeps 7**, with separate beds available
 - **2 bathrooms**, a big kitchen, washer and dryer
 - **Wifi**, a dining table for evening paperwork, and a large garden
-- **Free parking for 2 cars**. We can't offer dedicated van parking, so ask before booking with large vans
+- **Free parking for 2 cars**. Zermatt Lodge can't offer dedicated van parking, so ask before booking with large vans
 - **Stays of 2 to 30 nights**, with monthly rates available
 - **Check-in 3pm, checkout 11am**, with self check-in
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/zermatt-lodge#book), or message us first about company invoices and longer stays.
+[Book direct](/zermatt-lodge#book), or message the host first about company invoices and longer stays.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

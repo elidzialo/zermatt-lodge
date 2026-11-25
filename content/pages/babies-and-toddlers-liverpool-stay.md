@@ -26,7 +26,7 @@ faqs:
   - q: "Is there a family ticket on Merseyrail?"
     a: "Yes. Merseyrail's Family Ticket costs £13 and covers up to five people (one or two adults with children aged 5 to 15) for unlimited off-peak travel on the Northern and Wirral lines and the City Line. Under-5s already travel free."
   - q: "Does Zermatt Lodge have a cot and high chair?"
-    a: "Please ask us before you book. We'd rather confirm exactly what's available for your dates than promise something here."
+    a: "Please ask the host before you book. It's better to confirm exactly what's available for your dates than promise something here."
 sources:
   - https://merseytravel.gov.uk/tickets-and-pricing/young-people-(5-18)/
   - https://merseyrail.org/tickets-passes/daily-travel/family-tickets
@@ -162,7 +162,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's not in the city cent
 - **Free parking for 2 cars**
 - **Self check-in** from 3pm
 
-Please **ask us about cots, high chairs and stair gates** before you book, so we can confirm what's available for your dates.
+Please **ask the host about cots, high chairs and stair gates** before you book, so the host can confirm what's available for your dates.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 

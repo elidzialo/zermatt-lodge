@@ -266,6 +266,36 @@ def og_img(url):
     return img(url, 1200) if "assets.guesty.com" in (url or "") else url
 
 
+def share_img(url):
+    """Link-preview photo, absolute and about 1200x630 (Guesty CDN crops; our Storage photos go through Vercel at 1080px)."""
+    if "assets.guesty.com" in (url or "") and re.search(r"/w_\d+,", url):
+        return re.sub(r"/w_\d+,(?:h_\d+,)?(?:c_\w+,)?", "/w_1200,h_630,c_fill,", url)
+    if SUPA_IMG.match(url or ""):
+        return DOMAIN + img(url, 1080)
+    return url
+
+
+SHARE_KIND = {"house": "Home", "home": "Home", "flat": "Flat", "apartment": "Flat", "bungalow": "Bungalow", "cottage": "Cottage"}
+
+
+def share_title(l):
+    """Airbnb-style link-preview title: 'Home in Liverpool · 4 bedrooms · 5 beds · 2 baths' (+ ' · ★4.9' with real Book Homes reviews)."""
+    pt = (l.get("property_type") or "home").strip().lower()
+    kind = SHARE_KIND.get(pt) or pt.capitalize()
+    where = (l.get("city") or "").strip() or area_name(l)
+    bits = [f"{kind} in {where}" if where else kind]
+    if l.get("bedrooms"):
+        bits.append(plural(l["bedrooms"], "bedroom"))
+    if l.get("beds"):
+        bits.append(plural(l["beds"], "bed"))
+    if l.get("baths"):
+        bits.append(plural(l["baths"], "bath"))
+    rv = l.get("reviews") or {}
+    if rv.get("count") and rv.get("average"):  # only Book Homes reviews from completed stays, never ratings from other sites
+        bits.append("★" + f"{float(rv['average']):.2f}".rstrip("0").rstrip("."))
+    return no_dashes(" · ".join(bits))
+
+
 def srcset(url, widths=(480, 720, 1080)):
     if "assets.guesty.com" not in (url or "") and not SUPA_IMG.match(url or ""):
         return ""
@@ -307,12 +337,14 @@ def lcp_preload(url, widths, sizes, w=720):
             + (f' imagesrcset="{esc(ss)}" imagesizes="{sizes}"' if ss else "") + ' fetchpriority="high">\n')
 
 
-def head(title, desc, path, robots="index, follow", extra="", schema=None, og_image=None, body_class="", preload=""):
+def head(title, desc, path, robots="index, follow", extra="", schema=None, og_image=None, body_class="", preload="", og_title=None, og_desc=None, site_name="Book Homes"):
     canon = DOMAIN + path
+    og_title, og_desc = og_title or title, og_desc or desc
     ld = ""
     if schema:
         ld = '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
-    og = f'<meta property="og:image" content="{esc(og_image or DOMAIN + "/assets/og-bookhomes.png")}">' 
+    og_image = og_image or DOMAIN + "/assets/og-bookhomes.png"
+    og = f'<meta property="og:image" content="{esc(og_image)}">' 
     bc = f' class="{body_class}"' if body_class else ""
     # error pages are served at any unknown URL: no canonical (it would point Google at /404)
     canon_tag = "" if path == "/404" else f'<link rel="canonical" href="{esc(canon)}">\n'
@@ -328,9 +360,9 @@ def head(title, desc, path, robots="index, follow", extra="", schema=None, og_im
 <meta name="robots" content="{robots}">
 {canon_tag}<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Book Homes"><meta property="og:locale" content="en_GB">
-<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canon)}">{og}
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:site_name" content="{esc(site_name)}"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="{esc(og_title)}"><meta property="og:description" content="{esc(og_desc)}"><meta property="og:url" content="{esc(canon)}">{og}
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(og_title)}"><meta name="twitter:description" content="{esc(og_desc)}"><meta name="twitter:image" content="{esc(og_image)}">
 {preload}{FONTS}<link rel="stylesheet" href="/assets/bh.css?v={asset_v('bh.css')}">
 <script src="/assets/bh-track.js?v={asset_v('bh-track.js')}" defer></script>
 {extra}{ld}</head>
@@ -853,7 +885,6 @@ def vacation_schema(l, path, reviews, ex):
         "containsPlace": {"@type": "Accommodation", "additionalType": "EntirePlace",
                           "occupancy": {"@type": "QuantitativeValue", "value": l["max_guests"], "maxValue": l["max_guests"]},
                           "numberOfBedrooms": l.get("bedrooms") or 0, "numberOfBathroomsTotal": l.get("baths") or 0, "amenityFeature": am},
-        "brand": {"@id": DOMAIN + "/#org"},
         "potentialAction": {"@type": "ReserveAction", "target": DOMAIN + path + "#book"},
     }
     node["address"] = {k: v for k, v in node["address"].items() if v}
@@ -1186,11 +1217,13 @@ def listing_page(l, reviews, guides, ex):
     title = ex.get("seo_title") or listing_seo_title(l)
     desc = ex.get("seo_description") or cut_words(no_dashes((l.get("description") or l["title"]).replace("\n", " ")), 155)
     photos = listing_photos(l, ex)
-    og = ex.get("og_image") or (og_img(photos[0]["url"]) if photos else None)
+    og = share_img(photos[0]["url"]) if photos else (ex.get("og_image") or None)  # link previews: cover photo, about 1200x630
+    share_desc = no_dashes(" ".join((ex.get("seo_title") or l["title"]).replace(" | Book Homes", "").split()))
     cfg = json.dumps(stay_config(l, ex))
     offer = OFFER + f'<script src="/assets/offer.js?v={asset_v("offer.js")}" defer></script>\n' if ex.get("offer") else ""
     pre = lcp_preload(photos[0]["url"], (480, 720, 1080, 1600), "(max-width:860px) 100vw, 50vw", 1080) if photos else ""
-    return (head(title, desc, path, extra=listing_assets(), schema=vacation_schema(l, path, reviews, ex), og_image=og, body_class="has-mbook listing", preload=pre)
+    return (head(title, desc, path, extra=listing_assets(), schema=vacation_schema(l, path, reviews, ex), og_image=og, body_class="has-mbook listing", preload=pre,
+                 og_title=share_title(l), og_desc=share_desc, site_name="BookHomes")
             + header("listing") + listing_body(l, reviews, guides, ex) + f"<script>window.STAY = {cfg};</script>\n" + listing_scripts()
             + offer + footer() + end())
 

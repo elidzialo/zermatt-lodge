@@ -101,7 +101,7 @@ The **Merseyside Maritime Museum** and **International Slavery Museum** are **cl
 
 A **whole house** with a kitchen can save a group a lot on eating out, and free parking saves on city-centre car parks.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen and dining room** for meals in

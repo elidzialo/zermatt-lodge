@@ -86,7 +86,7 @@ The HSE also notes that fatigue has been implicated in **20% of accidents on maj
 
 ## A crew base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, about **15 minutes by train** from Liverpool Central.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

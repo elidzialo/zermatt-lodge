@@ -60,7 +60,7 @@ On a trip of more than a night or two, a kitchen of your own makes a big differe
 
 - Every price on Book Homes is the total for the stay, with no guest booking fees.
 - For invoices in your company's name, see [invoices and VAT for business stays](/guides/invoice-and-vat-for-business-stays).
-- Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+- Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Manchester](/stays-in/manchester), [homes in Salford](/stays-in/salford) and [homes in Prestwich](/stays-in/prestwich), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

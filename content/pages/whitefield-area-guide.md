@@ -24,7 +24,7 @@ faqs:
   - q: "Is Whitefield good for driving?"
     a: "Yes. Whitefield lies on the west side of the junction where the M60 and M66 motorways meet, so it is handy for road trips around Greater Manchester and north to Lancashire."
   - q: "Are parties allowed in your homes near Whitefield?"
-    a: "No. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
+    a: "No. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
 sources:
   - https://en.wikipedia.org/wiki/Whitefield,_Greater_Manchester
   - https://en.wikipedia.org/wiki/Prestwich_tram_stop
@@ -56,7 +56,7 @@ Whitefield is the next town up the Bury line from Prestwich. Visitors mostly com
 
 Book Homes doesn't list homes in Whitefield itself yet, but our **Prestwich** houses are next door on the same tram line. Several have free parking, which suits contractors and families with cars. See the [Prestwich area guide](/guides/prestwich-area-guide-visitors).
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Prestwich](/stays-in/prestwich) or [homes across Manchester](/stays-in/manchester), or [see all homes](/). Every price is the total for the stay, with no guest booking fees. Questions? Email cs@zugati.co.uk.
 

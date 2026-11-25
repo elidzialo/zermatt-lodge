@@ -30,7 +30,7 @@ sources:
   - https://www.tesco.com/store-locator/liverpool/longmoor-ln
 ---
 
-The easiest way to feed a group of 7 on a self-catering trip is to keep breakfasts and lunches simple, cook one big one-pot dinner each evening, and share the cooking in pairs so no one is stuck in the kitchen. Do one main shop on arrival day with a list, then top up as you go. Below is a three-day plan with a shopping list, a rota and food safety tips, written for a group staying in a house with a full kitchen and a dining table, such as our 4-bedroom house in Liverpool.
+The easiest way to feed a group of 7 on a self-catering trip is to keep breakfasts and lunches simple, cook one big one-pot dinner each evening, and share the cooking in pairs so no one is stuck in the kitchen. Do one main shop on arrival day with a list, then top up as you go. Below is a three-day plan with a shopping list, a rota and food safety tips, written for a group staying in a house with a full kitchen and a dining table, such as Zermatt Lodge, a 4-bedroom house in Liverpool listed on Book Homes.
 
 ## The principles
 

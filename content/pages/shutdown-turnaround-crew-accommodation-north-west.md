@@ -28,7 +28,7 @@ faqs:
   - q: "Are crew accommodation costs tax deductible?"
     a: "It depends on the arrangement. HMRC treats a workplace as temporary if attendance is for a limited task or period, but not if the employee spends 40% or more of their working time there over more than 24 months. Ask your accountant about accommodation and subsistence."
   - q: "Can we park vans at Zermatt Lodge?"
-    a: "There is free parking for 2 vehicles. Tell us your van sizes before booking so we can confirm they fit."
+    a: "There is free parking for 2 vehicles. Tell the host your van sizes before booking so the host can confirm they fit."
 sources:
   - https://eetfuels.com/media/2177/ta-letter-to-community-2025.pdf
   - https://eetfuels.com/our-locations/stanlow
@@ -94,14 +94,14 @@ Most shutdowns are well under that. But the rules on accommodation and subsisten
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so mornings move faster
 - **Big kitchen and dining room** for meal prep
-- **Free parking for 2 vehicles**. Tell us your van sizes before booking
+- **Free parking for 2 vehicles**. Tell the host your van sizes before booking
 - **Garden** for fresh air on days off
 - **Check-in 3pm, checkout 11am**. Ask about crew-change days
 - No smoking and no pets
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-Check dates and [Book direct](/zermatt-lodge#book), and tell us your company details for the invoice. Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Need more beds or a different area? [See all homes](/).
+Check dates and [Book direct](/zermatt-lodge#book), and tell the host your company details for the invoice. Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Need more beds or a different area? [See all homes](/).
 
 ## Booking checklist for crew managers
 

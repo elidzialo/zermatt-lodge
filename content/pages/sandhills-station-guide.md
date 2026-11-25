@@ -35,7 +35,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-Sandhills is the key station for football in Liverpool. It's the closest station to Everton's new stadium at Bramley-Moore Dock, about a 15-minute walk away, and it's where the matchday Soccerbus to Anfield starts. It sits on Merseyrail's Northern line just north of the city centre, so you can reach it directly from Liverpool Central, Moorfields, Southport, Ormskirk or Kirkby. Zermatt Lodge is our 4-bedroom house in Liverpool.
+Sandhills is the key station for football in Liverpool. It's the closest station to Everton's new stadium at Bramley-Moore Dock, about a 15-minute walk away, and it's where the matchday Soccerbus to Anfield starts. It sits on Merseyrail's Northern line just north of the city centre, so you can reach it directly from Liverpool Central, Moorfields, Southport, Ormskirk or Kirkby. Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool.
 
 ## Where Sandhills is
 

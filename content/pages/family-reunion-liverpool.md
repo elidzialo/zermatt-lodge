@@ -83,7 +83,7 @@ Share the host's rules with everyone before you arrive: check-in time, quiet hou
 
 ## A family house in Liverpool
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

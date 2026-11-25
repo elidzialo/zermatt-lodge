@@ -73,7 +73,7 @@ Pair the train with Bury Market, the free Bury Art Museum or a winter light trai
 
 Book Homes has family houses in **Prestwich**, on the same tram line as Bury, and a 5-bedroom house in **Crumpsall**. Several have free parking. Every price is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled. That includes Christmas.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled. That includes Christmas.
 
 Browse [homes in Prestwich](/stays-in/prestwich) and [homes in Manchester](/stays-in/manchester), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

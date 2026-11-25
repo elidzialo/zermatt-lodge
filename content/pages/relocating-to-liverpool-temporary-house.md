@@ -23,7 +23,7 @@ faqs:
   - q: "How do I apply for a school place when moving to Liverpool?"
     a: "Liverpool City Council says families moving into Liverpool apply for an in-year place online through its Citizen Portal. Processing should take no longer than 15 school days, and transfers can't be fully processed during school holidays. Sefton and Knowsley councils run their own processes."
   - q: "How long should I book a relocation stay for?"
-    a: "Enough time to view homes, settle work and sort schools, often two to six weeks. Talk to us about your dates so there's some flexibility if a move slips."
+    a: "Enough time to view homes, settle work and sort schools, often two to six weeks. Talk to the host about your dates so there's some flexibility if a move slips."
   - q: "Can my employer book the stay?"
     a: "Yes. Employers and relocation agents can book direct at bookhomes.co.uk/zermatt-lodge#book or email cs@zugati.co.uk."
 sources:

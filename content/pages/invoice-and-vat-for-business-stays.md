@@ -131,7 +131,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool, about **15 minutes by tra
 - **Stays of 2 to 30 nights**, with monthly rates available
 - **Check-in 3pm, checkout 11am**, with self check-in
 
-Message us before you book if you need a company invoice, a PO number on it, or want to check how VAT will be shown. We'll tell you straight what we can provide.
+Message the host before you book if you need a company invoice, a PO number on it, or want to check how VAT will be shown. The host will tell you straight what they can provide.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 

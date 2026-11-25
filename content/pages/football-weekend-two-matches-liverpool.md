@@ -93,7 +93,7 @@ Then **Liverpool v Hull** at Anfield on **Sat 20 Feb, 3pm**.
 
 For a group of mates or a family on a football trip, a **whole house** for several nights usually beats paying for hotel rooms in the city centre on match nights.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

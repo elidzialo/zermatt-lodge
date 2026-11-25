@@ -70,7 +70,7 @@ Travel is paid at **42p a mile** for driving and **30p a mile** for cycling.
 
 ## A house for placement groups
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool. It can suit a group of students on placement at the same time, or a student with family:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes. It can suit a group of students on placement at the same time, or a student with family:
 
 - **4 bedrooms, sleeps 7**, with 2 bathrooms
 - **Big kitchen** for batch cooking between shifts

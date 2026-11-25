@@ -3,7 +3,7 @@ title: "Friends' Reunion Weekend in Liverpool: How to Plan It"
 meta_description: "Planning a reunion weekend with old friends in Liverpool? Dates, splitting the cost of a house, a 2-day plan with shows, football and sights, and the house rules."
 slug: friends-reunion-weekend-liverpool
 h1: "Planning a Friends' Reunion Weekend in Liverpool"
-quick_answer: "For a friends' reunion in Liverpool, book a whole house for two nights and split the cost, then build the weekend around one big thing: a Royal Court comedy, a match, a concert or a night at the Philharmonic. Fill the rest with free sights, such as the waterfront, both cathedrals and Another Place on Crosby Beach. Keep it a reunion, not a party: most houses, including ours, ban parties."
+quick_answer: "For a friends' reunion in Liverpool, book a whole house for two nights and split the cost, then build the weekend around one big thing: a Royal Court comedy, a match, a concert or a night at the Philharmonic. Fill the rest with free sights, such as the waterfront, both cathedrals and Another Place on Crosby Beach. Keep it a reunion, not a party: most houses ban parties."
 primary_keyword: "friends reunion weekend liverpool"
 secondary_keywords:
   - "reunion weekend ideas liverpool"
@@ -77,11 +77,11 @@ More ideas are in our [things to do with a group](/guides/things-to-do-in-liverp
 
 ## Step 4: Keep it a reunion, not a party
 
-A reunion is about catching up. Most holiday houses, including ours, have strict rules on parties, noise and extra guests. Share the house rules with everyone before you arrive.
+A reunion is about catching up. Most holiday houses have strict rules on parties, noise and extra guests. Share the house rules with everyone before you arrive.
 
 ## A house for your group
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

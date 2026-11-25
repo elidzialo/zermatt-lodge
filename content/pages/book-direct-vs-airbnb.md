@@ -23,7 +23,7 @@ faqs:
   - q: "What protection do I get paying by card?"
     a: "MoneySavingExpert explains that credit card purchases over £100 may be covered by Section 75, and debit card or lower-value credit card payments may be covered by chargeback. Bank transfers give you very little protection."
   - q: "Can I still book Zermatt Lodge on Airbnb?"
-    a: "Yes. The same house is listed on Airbnb. Book direct on our site if you'd rather avoid platform fees, or use Airbnb if you prefer its system."
+    a: "Yes. The same house is listed on Airbnb. Book direct on Book Homes if you'd rather avoid platform fees, or use Airbnb if you prefer its system."
 sources:
   - https://docs.rentalsunited.com/external/fr/Content/KnowledgeBase/FAQ/AirbnbSingleServiceFeeChange.htm
   - https://blog.moneysavingexpert.com/news/2025/05/holiday-booking-scams
@@ -82,7 +82,7 @@ Common tricks include:
 
 ## How to book direct safely: a checklist
 
-Use this for any direct booking site, not just ours.
+Use this for any direct booking site, not just Book Homes.
 
 1. **Check the web address.** Make sure it matches the site you meant to visit.
 2. **Look for a real business.** A working phone number and an email address that gets answered are basic signs.
@@ -100,7 +100,7 @@ Zermatt Lodge is listed on Book Homes and on Airbnb. It's the same house and the
 When you book direct here:
 
 - **No booking fees.** The price shown is the total for the stay
-- **Secure card payment** through Stripe's checkout page. We never ask for a bank transfer
+- **Secure card payment** through Stripe's checkout page. Book Homes never asks for a bank transfer
 - **Instant confirmation** once you pay
 - **You deal with the host** from start to finish, by phone or email
 - **Guest ID and a signed rental agreement** are required, as with many whole-home rentals
@@ -115,7 +115,7 @@ Be honest with yourself about what you value:
 - You want everything in one app with your other trips
 - You're more comfortable with the platform's own processes
 
-That's fine. We list there too.
+That's fine. Zermatt Lodge is listed there too.
 
 ## About the house
 

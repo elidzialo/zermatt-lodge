@@ -65,7 +65,7 @@ An open day often means an early start, a long day on your feet and a teenager w
 
 Book Homes has an apartment in **Salford** and family houses in **Prestwich** and **Crumpsall**, several with free parking. From Prestwich and Crumpsall, the Bury line tram runs into the city centre. Every price is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Salford](/stays-in/salford) and [homes in Manchester](/stays-in/manchester), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

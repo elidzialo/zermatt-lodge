@@ -55,7 +55,7 @@ See our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holid
 
 ## If your trip includes Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars, and the M62 links Liverpool to Manchester. **It is not kosher** and has no declared Shabbat features, so it's best for a weekday visit.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool. It sleeps 7, with 2 bathrooms, a big kitchen and free parking for 2 cars, and the M62 links Liverpool to Manchester. **It is not kosher** and has no declared Shabbat features, so it's best for a weekday visit.
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 

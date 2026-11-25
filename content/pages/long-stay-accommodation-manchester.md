@@ -38,7 +38,7 @@ Book Homes has **8 whole homes in Greater Manchester**, sleeping 4 to 12, most w
 
 ## Who long stays suit
 
-- **Relocating families.** Live in an area before you commit. Our homes are mostly in **Prestwich** and **Crumpsall** in north Manchester, with family houses and gardens, plus homes in **Salford**.
+- **Relocating families.** Live in an area before you commit. Homes on Book Homes are mostly in **Prestwich** and **Crumpsall** in north Manchester, with family houses and gardens, plus homes in **Salford**.
 - **Insurance claims.** If your home is being repaired after a flood, leak or fire, your insurer or loss adjuster may arrange alternative accommodation. A whole house keeps the family together, and pets in some cases, which a hotel can't.
 - **Renovations.** When the kitchen or bathroom is out, staying nearby keeps school runs and commutes the same.
 - **Long work contracts.** For staff and crews on long jobs, see our [contractor accommodation guide](/guides/contractor-accommodation-manchester). Manchester City Council's Victoria North programme alone plans 15,000 new homes over two decades.
@@ -61,7 +61,7 @@ Book Homes has **8 whole homes in Greater Manchester**, sleeping 4 to 12, most w
 
 ## House rules
 
-Our homes are on residential streets. Strictly no parties or events - bookings found to be for parties are cancelled.
+Homes on Book Homes are on residential streets. Strictly no parties or events - bookings found to be for parties are cancelled.
 
 ## Book direct
 

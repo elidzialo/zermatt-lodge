@@ -23,7 +23,7 @@ faqs:
   - q: "Where are Changing Places toilets in Liverpool?"
     a: "Visit Liverpool lists Changing Places toilets at World Museum, the Museum of Liverpool, the Everyman Theatre, Liverpool ONE, Tate Liverpool and Strawberry Field, among others. Check opening hours before you rely on one."
   - q: "Is Zermatt Lodge wheelchair accessible?"
-    a: "We don't describe it as wheelchair accessible. If anyone in your group has mobility needs, please ask us about steps, stairs, bathrooms and parking before you book so you can decide if it works."
+    a: "We don't describe it as wheelchair accessible. If anyone in your group has mobility needs, please ask the host about steps, stairs, bathrooms and parking before you book so you can decide if it works."
 sources:
   - https://liverpool.gov.uk/parking-roads-and-travel/find-parking/on-street-parking-bays/blue-badge-disabled-spaces
   - https://merseyrail.org/new-trains/accessibility-of-the-new-trains
@@ -33,7 +33,7 @@ sources:
   - https://www.liverpoolmuseums.org.uk/news/press-releases/free-family-events-maritime-museum-temporary-closure
 ---
 
-If someone in your group has access needs, the most important thing is to ask the host specific questions before you pay: how many steps there are to the door, whether there's a bedroom and bathroom on the same level, what the shower is like, and how close you can park. Words like "accessible" mean different things to different people, so get measurements and photos. In Liverpool itself, Blue Badge holders can park free in pay and display bays, Merseyrail's new trains have level boarding, and there are Changing Places toilets at several major attractions. This guide gives you a checklist to use with any host, including us.
+If someone in your group has access needs, the most important thing is to ask the host specific questions before you pay: how many steps there are to the door, whether there's a bedroom and bathroom on the same level, what the shower is like, and how close you can park. Words like "accessible" mean different things to different people, so get measurements and photos. In Liverpool itself, Blue Badge holders can park free in pay and display bays, Merseyrail's new trains have level boarding, and there are Changing Places toilets at several major attractions. This guide gives you a checklist to use with any host, including the host of Zermatt Lodge.
 
 ## Why groups need to check more carefully
 
@@ -141,7 +141,7 @@ It's better to change plan before booking than to arrive and find the bathroom i
 
 Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train from the city centre. It sleeps 7, with 2 bathrooms and free parking for 2 cars.
 
-We don't describe it as wheelchair accessible. It's a family house, and we'd rather you knew exactly what it's like before you book. If anyone in your group has access needs, send us the questions above and we'll answer them honestly, with photos where we can.
+We don't describe it as wheelchair accessible. It's a family house, and it's better you know exactly what it's like before you book. If anyone in your group has access needs, send the host the questions above for honest answers, with photos where possible.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 

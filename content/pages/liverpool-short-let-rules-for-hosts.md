@@ -128,7 +128,7 @@ Council proposals on short lets in Liverpool focus on **noise, waste, antisocial
 
 Book Homes is a Liverpool marketplace for whole homes, where guests book direct with no booking fees. If you have a well-run house or flat, we'd like to hear from you. [Become a host](/become-a-host).
 
-For an example of a listing, see **Zermatt Lodge**, our 4-bedroom house in Liverpool, about **15 minutes by train** from the city centre, with free parking for 2 cars. Strictly no parties or events - bookings found to be for parties are cancelled.
+For an example of a listing, see **Zermatt Lodge**, a 4-bedroom house in Liverpool listed on Book Homes, about **15 minutes by train** from the city centre, with free parking for 2 cars. Strictly no parties or events - bookings found to be for parties are cancelled.
 
 Guests can [Book direct](/zermatt-lodge#book), or [see all homes](/) on Book Homes.
 

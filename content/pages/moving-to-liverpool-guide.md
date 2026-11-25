@@ -141,7 +141,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city ce
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/zermatt-lodge#book), or message us about a longer stay.
+[Book direct](/zermatt-lodge#book), or message the host about a longer stay.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

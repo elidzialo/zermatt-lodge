@@ -33,7 +33,7 @@ sources:
   - https://www.sefton.gov.uk/media/npwjjy1i/in-year-admissions-guide-a1.pdf
 ---
 
-A house-hunting trip to Liverpool works best as three focused days: one loop of viewings in the north and along the coast, one loop in the south or east of the city, and a third day for second viewings, school visits and testing your commute at rush hour. Book viewings in clusters by area, visit at different times of day, and keep a simple scorecard for every property. Stay somewhere with parking and good road and rail links so you're not crossing the city every morning. Zermatt Lodge, our 4-bedroom house in Liverpool, is.
+A house-hunting trip to Liverpool works best as three focused days: one loop of viewings in the north and along the coast, one loop in the south or east of the city, and a third day for second viewings, school visits and testing your commute at rush hour. Book viewings in clusters by area, visit at different times of day, and keep a simple scorecard for every property. Stay somewhere with parking and good road and rail links so you're not crossing the city every morning. Zermatt Lodge, a 4-bedroom house in Liverpool, is.
 
 ## Before you travel
 

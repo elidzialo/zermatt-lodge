@@ -40,13 +40,13 @@ Book Homes has **8 whole homes in Greater Manchester**, sleeping 4 to 12. See th
 
 ## Where to stay
 
-- **Prestwich.** Quiet streets of family houses next to Heaton Park, with Metrolink trams from Prestwich and Heaton Park stops into the city. Several of our homes here have gardens and free parking. See [homes in Prestwich](/stays-in/prestwich).
+- **Prestwich.** Quiet streets of family houses next to Heaton Park, with Metrolink trams from Prestwich and Heaton Park stops into the city. Several of the homes on Book Homes here have gardens and free parking. See [homes in Prestwich](/stays-in/prestwich).
 - **Crumpsall.** A large 5-bedroom house with a pool table and free parking, good for families travelling together.
 - **Salford.** Smaller homes close to the city centre. See [homes in Salford](/stays-in/salford).
 
 ## What to check for children
 
-1. **Cot and high chair.** Several of our Manchester listings include them. Confirm with the host, and ask if bedding for the cot is provided.
+1. **Cot and high chair.** Several of the Manchester listings on Book Homes include them. Confirm with the host, and ask if bedding for the cot is provided.
 2. **Stairs and gates.** Ask about stair gates if you have a crawler.
 3. **Bath.** Many listings have a bath, which matters for bedtime routines.
 4. **Garden.** Ask whether it's enclosed.

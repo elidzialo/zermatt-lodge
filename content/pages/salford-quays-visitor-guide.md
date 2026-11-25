@@ -24,7 +24,7 @@ faqs:
   - q: "Is IWM North free?"
     a: "Yes, general admission is free. The museum opened on 5 July 2002 on Trafford Wharf Road, across the canal from The Lowry and MediaCityUK."
   - q: "Can we stay in a house near Salford Quays for a party?"
-    a: "No. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
+    a: "No. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
 sources:
   - https://thelowry.com/visit-us/how-to-get-here
   - https://en.wikipedia.org/wiki/IWM_North
@@ -66,7 +66,7 @@ Visiting for work rather than fun? See our [MediaCityUK business stays guide](/g
 
 A whole home gives you a kitchen and space to spread out after a day on your feet. Book Homes has an apartment in **Salford** and family houses in **Prestwich** and **Crumpsall**, several with free parking. Every price is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Salford](/stays-in/salford) and [homes in Manchester](/stays-in/manchester), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

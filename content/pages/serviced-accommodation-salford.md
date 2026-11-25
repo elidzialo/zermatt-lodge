@@ -70,13 +70,13 @@ If you're observant, read our [kosher accommodation in Salford guide](/guides/ko
 3. **Invoices:** in your company's name, with VAT if the host is registered. See [invoices and VAT for business stays](/guides/invoice-and-vat-for-business-stays)
 4. **Check-in:** self check-in suits late arrivals
 5. **Wifi:** ask for a speed if you'll be working from the home
-6. **House rules:** many homes, including ours, don't allow parties
+6. **House rules:** many homes don't allow parties
 
 Our [contractor checklist](/guides/contractor-checklist-before-booking) has the full list.
 
 ## Working in Liverpool too?
 
-Some crews and families split time between Greater Manchester and Merseyside. Zermatt Lodge is our 4-bedroom house in Liverpool:
+Some crews and families split time between Greater Manchester and Merseyside. Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool:
 
 - Sleeps 7, with 2 bathrooms
 - Big kitchen, dining room, washer and dryer

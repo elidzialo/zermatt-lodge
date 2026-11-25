@@ -96,7 +96,7 @@
     },
     {
       "source": "/:slug([a-z0-9-]+)",
-      "destination": "/stays/listing"
+      "destination": "/api/listing-page?slug=:slug"
     }
   ],
   "headers": [

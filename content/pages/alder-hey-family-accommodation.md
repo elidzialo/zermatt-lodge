@@ -79,7 +79,7 @@ If your child has **at least 3 outpatient appointments within a month (30 days),
 
 ## Keeping the family going during a hospital stay
 
-When one child is in hospital, the rest of the family's life doesn't stop. Families often tell us these things help:
+When one child is in hospital, the rest of the family's life doesn't stop. Families often say these things help:
 
 ### Split the roles
 
@@ -125,7 +125,7 @@ Zermatt Lodge is a whole house, not a room, in Liverpool.
 
 It's a calm house: no parties, no smoking and no pets.
 
-Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. If you don't yet know how long your child will be in, email us at cs@zugati.co.uk and we'll talk it through.
+Book direct at [Zermatt Lodge](/zermatt-lodge#book) with no platform fees. If you don't yet know how long your child will be in, email the host at cs@zugati.co.uk to talk it through.
 
 ## Related guides
 

@@ -23,7 +23,7 @@ faqs:
   - q: "What do night-shift rail crews need from accommodation?"
     a: "Separate beds, rooms that stay dark in the day, a quiet house during daytime sleep, parking close to the door, a washer and dryer for PPE, and a kitchen for meals at odd hours. Ask the host about blackout and neighbours before you book."
   - q: "Can we book Zermatt Lodge for a crew on nights?"
-    a: "Yes, it is a whole 4-bedroom house with separate beds for 7, 2 bathrooms, free off-street parking for 2 cars and a washer and dryer. Tell us your shift pattern when you enquire so we can talk through arrival times. Strictly no parties or events."
+    a: "Yes, it is a whole 4-bedroom house with separate beds for 7, 2 bathrooms, free off-street parking for 2 cars and a washer and dryer. Tell the host your shift pattern when you enquire so they can talk through arrival times. Strictly no parties or events."
   - q: "Can we get an invoice for a crew stay?"
     a: "Book direct and ask for an invoice for your finance team. Our business stays guide explains how direct bookings, invoices and longer stays work."
 sources:

@@ -72,7 +72,7 @@ The Trust lists free parking for:
 
 Book Homes doesn't have homes in Bury town, but our **Prestwich** houses are on the same tram line, and several have **free parking**, so you can drive to the hospital at any hour. There's also a **5-bedroom house in Crumpsall** for bigger families. Every price is the total for the stay, with no guest booking fees.
 
-Ask about flexible dates, because discharge dates move. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+Ask about flexible dates, because discharge dates move. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Prestwich](/stays-in/prestwich) and [homes in Manchester](/stays-in/manchester), or [see all homes](/). If your dates are uncertain, email cs@zugati.co.uk.
 

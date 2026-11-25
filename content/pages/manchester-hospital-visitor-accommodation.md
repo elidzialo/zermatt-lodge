@@ -68,11 +68,11 @@ Salford Royal is an NHS teaching hospital and major trauma centre. Our [Salford 
 2. **Parking.** A space at the house means you can drive in at odd hours.
 3. **Kitchen and washer.** You'll want proper meals and clean clothes on a long stay.
 4. **Self check-in.** Useful if you arrive late from the ward.
-5. **Quiet.** You'll need sleep. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+5. **Quiet.** You'll need sleep. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 ## Where to stay
 
-Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford). Every price on Book Homes is the total for the stay, with no guest booking fees. If your dates are uncertain, email cs@zugati.co.uk and we'll help where we can. [See all homes](/).
+Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford). Every price on Book Homes is the total for the stay, with no guest booking fees. If your dates are uncertain, email cs@zugati.co.uk for help. [See all homes](/).
 
 ## Related guides
 

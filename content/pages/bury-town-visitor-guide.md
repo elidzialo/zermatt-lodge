@@ -67,7 +67,7 @@ Bury is a proper market town at the top of the tram line. You can do the market,
 
 Book Homes doesn't have homes in Bury town yet. Our **Prestwich** houses are on the same tram line, about 4 miles south, and several have free parking. They suit families, groups and anyone visiting Fairfield General Hospital.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Prestwich](/stays-in/prestwich) or [homes across Manchester](/stays-in/manchester), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

@@ -24,7 +24,7 @@ faqs:
   - q: "How far is the station from the terminals?"
     a: "Manchester Airport says it's a 5 to 15 minute walk from the station to the terminals, depending on which one you're using."
   - q: "Can we have a leaving party at the house the night before?"
-    a: "No. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
+    a: "No. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
 sources:
   - https://www.manchesterairport.co.uk/getting-to-and-from/by-tram/
   - https://www.visitmanchester.com/visitor-information/travel-information/manchester-airport/
@@ -41,7 +41,7 @@ If your family is flying from Manchester, staying the night before saves a very 
 - **To the terminals:** a **5 to 15 minute walk** from the station, depending on your terminal.
 - **Works:** Manchester Airport warned that Airport line trams would end at Firswood from 19 October to 1 November 2026 for improvement works. Check the Bee Network travel updates before any trip.
 
-## From our homes
+## From homes on Book Homes
 
 - **Prestwich and Crumpsall:** take the **Bury line** tram into the city centre and change for the Airport line or a train from Piccadilly. Use the Bee Network journey planner for the quickest change at your time of day.
 - **Salford:** take the tram or a train into the city centre, then the tram or a train to the airport.
@@ -52,14 +52,14 @@ If your family is flying from Manchester, staying the night before saves a very 
 1. **Space.** Families and groups can sleep under one roof instead of booking several rooms.
 2. **A kitchen.** Make breakfast before you leave, or a proper meal when you land.
 3. **Laundry.** Wash clothes before a long trip, or after one.
-4. **Parking.** Several of our homes have free parking, so a friend can drop the car back.
+4. **Parking.** Several of the homes on Book Homes have free parking, so a friend can drop the car back.
 5. **One price.** Every price on Book Homes is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 ## Where to stay
 
-Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford), or [see all homes](/). Flight times changed? Email cs@zugati.co.uk and we'll help where we can.
+Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford), or [see all homes](/). Flight times changed? Email the host at cs@zugati.co.uk for help.
 
 ## Related guides
 

@@ -96,7 +96,7 @@ HSE good practice for shift design includes capping shifts at **12 hours**, or *
 
 ## A quiet crew base in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Liverpool, in a quiet residential street.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, in a quiet residential street.
 
 - Sleeps 7 in 4 bedrooms: king master with en-suite, second king, queen and single
 - 2 bathrooms, so staggered shifts don't queue

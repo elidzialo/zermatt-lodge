@@ -34,7 +34,7 @@ sources:
   - https://www.justpark.com/resource-centre/beat-the-crowds-how-to-park-near-m-s-bank-arena-liverpool
 ---
 
-The best area to stay in Liverpool for a group depends on why you're coming. For a car-free nightlife weekend, the city centre is hard to beat. For families, groups with cars, football, the Grand National or a hospital visit, north Liverpool gives you more space and free parking, with trains into town in about 15 minutes. This guide compares the main options honestly, including when somewhere other than our own house is the better choice.
+The best area to stay in Liverpool for a group depends on why you're coming. For a car-free nightlife weekend, the city centre is hard to beat. For families, groups with cars, football, the Grand National or a hospital visit, north Liverpool gives you more space and free parking, with trains into town in about 15 minutes. This guide compares the main options honestly, including when somewhere other than a whole house is the better choice.
 
 ## Quick comparison
 

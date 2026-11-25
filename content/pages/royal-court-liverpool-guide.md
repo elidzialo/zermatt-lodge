@@ -77,7 +77,7 @@ The cast hadn't been announced when Arts City Liverpool wrote about it. The list
 
 For a group of friends or a family, a **whole house** means one booking, space to get ready together and breakfast in the morning.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**

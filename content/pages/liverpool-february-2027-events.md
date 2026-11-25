@@ -87,7 +87,7 @@ We checked every date below on 22 November 2026. Shows can move and football fix
 
 For arena shows, the city centre is closest. For football, half term and family trips, a **whole house with parking** often works out better, especially for groups.
 
-Zermatt Lodge is our 4-bedroom house in Liverpool:
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, a big kitchen and a dining room

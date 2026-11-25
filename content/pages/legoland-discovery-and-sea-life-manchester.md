@@ -80,7 +80,7 @@ Tips:
 
 For a family, a whole house beats a hotel room: children in their own beds, a kitchen and space for everyone. Book Homes has family houses in Prestwich and Crumpsall in north Manchester, several with free parking, a cot or a high chair. See our [family holiday homes guide](/guides/family-holiday-home-manchester), or browse [homes in Manchester](/stays-in/manchester) and [homes in Prestwich](/stays-in/prestwich).
 
-House rules at our homes: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules at homes on Book Homes: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Every price on Book Homes is the total for the stay, with no guest booking fees. [See all homes](/).
 

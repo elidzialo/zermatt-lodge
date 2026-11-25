@@ -135,7 +135,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city ce
 - **Free parking for 2 cars**
 - **Check-in 3pm, checkout 11am**, with self check-in
 
-Strictly no parties or events - bookings found to be for parties are cancelled. It's a residential street, and we keep it that way for the neighbours.
+Strictly no parties or events - bookings found to be for parties are cancelled. It's a residential street, and the house rules keep it that way for the neighbours.
 
 [Book direct](/zermatt-lodge#book) for the best rate.
 

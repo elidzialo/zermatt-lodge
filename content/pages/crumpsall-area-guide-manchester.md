@@ -62,7 +62,7 @@ Our [Manchester hospitals guide](/guides/manchester-hospital-visitor-accommodati
 
 Book Homes has a **luxury 5-bedroom house in Crumpsall** with a **pool table** and **free parking**. It suits big families, groups visiting for a wedding or a match, and hospital families who want to cook and rest properly. The price you see is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Manchester](/stays-in/manchester) and [homes in Prestwich](/stays-in/prestwich), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

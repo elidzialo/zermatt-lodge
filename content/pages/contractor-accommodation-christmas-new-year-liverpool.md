@@ -25,7 +25,7 @@ faqs:
   - q: "Do trains run in Liverpool on Christmas Day?"
     a: "The 2026 festive timetable hadn't been published when we checked. In past years Merseyrail hasn't run on Christmas Day and has run some services on Boxing Day. If your crew needs to get to site on those days, plan to drive."
   - q: "Can a company book Zermatt Lodge over Christmas?"
-    a: "Yes, subject to availability. Stays run from 2 to 30 nights, with monthly rates. Ask us for an invoice in your company's name before you book."
+    a: "Yes, subject to availability. Stays run from 2 to 30 nights, with monthly rates. Ask the host for an invoice in your company's name before you book."
   - q: "Is the house quiet over the holidays?"
     a: "It's a residential house in Liverpool. Strictly no parties or events, including at Christmas and New Year."
 sources:
@@ -89,7 +89,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/zermatt-lodge#book) for your holiday-week dates, or message us about a longer job.
+[Book direct](/zermatt-lodge#book) for your holiday-week dates, or message the host about a longer job.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

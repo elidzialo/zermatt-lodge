@@ -88,7 +88,7 @@ More shows are on sale at both arenas. Check the venues' own listings for the fu
 
 Book Homes has a **5-bedroom house in Crumpsall** with free parking and several **Prestwich** houses, all on the Bury tram line into Victoria, plus an apartment in **Salford**. Every price is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled. Please keep noise down when you get back late.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled. Please keep noise down when you get back late.
 
 Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

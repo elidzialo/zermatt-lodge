@@ -78,7 +78,7 @@ More tips are in our [M&S Bank Arena concert guide](/guides/ms-bank-arena-concer
 
 If your group is three or four couples, or a big family with grandparents, a **whole house** often costs less than several hotel rooms and gives you somewhere to get ready together and have a cup of tea afterwards.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms**, so getting ready is easier

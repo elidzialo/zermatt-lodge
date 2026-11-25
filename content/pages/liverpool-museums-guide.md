@@ -92,7 +92,7 @@ More ideas are in our [free things to do](/guides/liverpool-free-things-to-do) a
 
 For a family museum trip, a **whole house** gives you somewhere to rest, cook and spread out after a busy day in town.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen, dining room and games room** with a pool table

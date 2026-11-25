@@ -23,7 +23,7 @@ faqs:
   - q: "How do I keep tools safe in a van overnight?"
     a: "Police advice is to take tools out overnight where possible or use a tool vault, mark tools with your postcode and register serial numbers, park on a driveway or in a well-lit spot, and use extra locks, an alarm and a tracker."
   - q: "Does Zermatt Lodge have van parking?"
-    a: "Zermatt Lodge has free off-street parking for 2 cars. We don't list it as having van parking, so please ask us about your vehicle's size before booking."
+    a: "Zermatt Lodge has free off-street parking for 2 cars. It isn't listed as having van parking, so please ask the host about your vehicle's size before booking."
 sources:
   - https://liverpool.gov.uk/parking-roads-and-travel/find-parking/council-car-parks
   - https://liverpoolexpress.co.uk/liverpool-finds-a-different-route-to-clean-air/
@@ -34,7 +34,7 @@ sources:
 
 If your crew is coming to Liverpool with vans, don't just look for "free parking" on a listing. Ask the host how many vehicles fit off-street, how long and high the space is, and whether vans are allowed. Many homes have driveways sized for cars, and city-centre multi-storeys often have height limits of around 2.1m. The good news is that Liverpool has no Clean Air Zone charge, and the suburbs near the M57 and M58 give quicker access to sites across the city region than the centre does. This guide covers what to ask, where vans can and can't go, and how to keep tools safe.
 
-We'll be upfront about our own house too: Zermatt Lodge in Liverpool has free off-street parking for **2 cars**. We don't list it as having van parking, so if you're bringing vans, please ask before booking.
+To be upfront about Zermatt Lodge too: it has free off-street parking for **2 cars**. It isn't listed as having van parking, so if you're bringing vans, please ask before booking.
 
 ## Why van parking matters more than people think
 

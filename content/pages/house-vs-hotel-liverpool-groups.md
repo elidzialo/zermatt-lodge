@@ -84,7 +84,7 @@ Hotels are genuinely better in some situations:
 - **You want daily housekeeping**, room service or a 24-hour desk.
 - **You'll be out in the city centre every night.** Being able to walk back from the Ropewalks has real value.
 - **Specific accessibility needs** that a hotel's adapted rooms meet. Always check the details with any property.
-- **The trip is a party.** Many houses, including ours, don't allow parties, and a hotel with nightlife on the doorstep suits that kind of trip better.
+- **The trip is a party.** Many houses don't allow parties, and a hotel with nightlife on the doorstep suits that kind of trip better.
 
 ## Doing the maths properly
 

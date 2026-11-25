@@ -82,7 +82,7 @@ See our [Liverpool panto guide](/guides/liverpool-panto-2026) for the full list.
 
 The best rainy-day plan is a place to stay with room to play. At Zermatt Lodge, a **games room with a pool table and board games** means a wet afternoon at home is still fun.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Games room** with a pool table and board games

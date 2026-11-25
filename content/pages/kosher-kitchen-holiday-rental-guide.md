@@ -99,7 +99,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It is **not kosher**. It 
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-Questions about the kitchen? Message us, then [book direct](/zermatt-lodge#book).
+Questions about the kitchen? Message the host, then [book direct](/zermatt-lodge#book).
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

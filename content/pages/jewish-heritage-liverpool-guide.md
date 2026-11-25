@@ -92,7 +92,7 @@ For a **weekday heritage trip**, especially with a car, you have more choice.
 
 ### Zermatt Lodge
 
-Zermatt Lodge is our 4-bedroom house in Liverpool. Direct trains reach **Liverpool Central in about 15 minutes**, and the waterfront museums are a walk from there. **It is not kosher**, and no Shabbat features have been declared for it. It suits a weekday family or group trip.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool. Direct trains reach **Liverpool Central in about 15 minutes**, and the waterfront museums are a walk from there. **It is not kosher**, and no Shabbat features have been declared for it. It suits a weekday family or group trip.
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen and dining room**

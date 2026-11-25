@@ -102,7 +102,7 @@ If someone in the household is also in hospital or attending appointments at Ain
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-To place a household, check dates and [Book direct](/zermatt-lodge#book), and tell us the claim reference and billing details so the invoice is right first time. Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Need a different size or area? [See all homes](/) on Book Homes.
+To place a household, check dates and [Book direct](/zermatt-lodge#book), and tell the host the claim reference and billing details so the invoice is right first time. Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677). Need a different size or area? [See all homes](/) on Book Homes.
 
 ## When a house is not the right answer
 

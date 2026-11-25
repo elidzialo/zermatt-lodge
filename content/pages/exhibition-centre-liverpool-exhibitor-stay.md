@@ -115,7 +115,7 @@ Zermatt Lodge is a whole house in Liverpool. It isn't in the city centre or on t
 
 - **4 separate bedrooms, sleeps 7:** king master with en-suite, second king, queen and single
 - **2 bathrooms** for early starts
-- **Free parking for 2 vehicles.** We can't promise every van will fit, so call if you're bringing a large van or more than two vehicles
+- **Free parking for 2 vehicles.** The host can't promise every van will fit, so call if you're bringing a large van or more than two vehicles
 - **Big kitchen and dining room** for breakfasts and team dinners
 - **Games room with a pool table, board games and a 55" Smart TV with Netflix**
 - **Check-in 3pm, checkout 11am**

@@ -104,7 +104,7 @@ Arriving at the wrong gate with the wrong paperwork can cost you a morning.
 
 ### Vehicles
 
-Zermatt Lodge has free parking for **two vehicles**. We don't promise that every van or high-top will fit, so if you're bringing larger vehicles or more than two, call before booking. See [van parking accommodation in Liverpool](/guides/van-parking-accommodation-liverpool).
+Zermatt Lodge has free parking for **two vehicles**. The host doesn't promise that every van or high-top will fit, so if you're bringing larger vehicles or more than two, call before booking. See [van parking accommodation in Liverpool](/guides/van-parking-accommodation-liverpool).
 
 ### Food and laundry
 

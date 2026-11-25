@@ -57,7 +57,7 @@ Here are some common ways families use the four bedrooms:
 **One big family**
 - Parents in the master, the children split across the other rooms, so nobody's sharing with a sibling they're fighting with
 
-With two bathrooms, including the en-suite, mornings are far less chaotic than in a typical family hotel room. If you're bringing a baby or toddler, read our [Liverpool with a baby or toddler checklist](/guides/babies-and-toddlers-liverpool-stay), and ask us about anything you need before booking.
+With two bathrooms, including the en-suite, mornings are far less chaotic than in a typical family hotel room. If you're bringing a baby or toddler, read our [Liverpool with a baby or toddler checklist](/guides/babies-and-toddlers-liverpool-stay), and ask the host about anything you need before booking.
 
 ## Why families choose a house over hotel rooms
 

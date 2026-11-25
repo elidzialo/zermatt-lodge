@@ -33,7 +33,7 @@ sources:
   - https://www.thetrainline.com/train-times/fazakerley-to-liverpool-central
 ---
 
-If you're booking accommodation for locums, agency nurses or other NHS staff on placement in Liverpool, start with the site they'll work at and their shift pattern, then work backwards. A base that's a short walk or drive from the hospital, with parking, blackout-friendly bedrooms and flexible dates, will do more for retention than a city-centre hotel. Check the host's safety basics, get the invoicing arrangements agreed before arrival, and build in flexibility for extensions. Zermatt Lodge is our 4-bedroom house in Liverpool, with free parking for 2 cars.
+If you're booking accommodation for locums, agency nurses or other NHS staff on placement in Liverpool, start with the site they'll work at and their shift pattern, then work backwards. A base that's a short walk or drive from the hospital, with parking, blackout-friendly bedrooms and flexible dates, will do more for retention than a city-centre hotel. Check the host's safety basics, get the invoicing arrangements agreed before arrival, and build in flexibility for extensions. Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, with free parking for 2 cars.
 
 This guide is for **recruitment agencies, staff bank teams and trust coordinators** who book on behalf of clinicians. If you're a locum booking for yourself, see our [locum and agency nurse accommodation guide](/guides/locum-and-agency-nurse-accommodation-liverpool).
 

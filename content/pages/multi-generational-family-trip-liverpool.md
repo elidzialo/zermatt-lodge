@@ -149,7 +149,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool, about 15 minutes by train
 - **Washer and dryer** for longer stays
 - **Check-in 3pm, checkout 11am**
 
-If anyone in your group has limited mobility, please ask us about stairs, bathroom layout and parking before you book, so you can be sure the house suits everyone.
+If anyone in your group has limited mobility, please ask the host about stairs, bathroom layout and parking before you book, so you can be sure the house suits everyone.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 

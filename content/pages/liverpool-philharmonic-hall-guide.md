@@ -79,7 +79,7 @@ Pair a concert with the [Christmas markets](/guides/liverpool-christmas-markets-
 
 Hope Street has a few hotels, but for a family or a group of friends a **whole house** can work out cheaper, with a kitchen for breakfast and space to relax after the concert.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen and dining room**

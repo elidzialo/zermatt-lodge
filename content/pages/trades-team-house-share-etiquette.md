@@ -3,7 +3,7 @@ title: "House Share Etiquette for Trades Teams and Contractors"
 meta_description: "Sharing a house with your crew? Simple ground rules for bedrooms, bathrooms, kitchens, noise, parking, laundry and leaving the house as you found it."
 slug: trades-team-house-share-etiquette
 h1: "Sharing a House on a Job: Ground Rules That Work for Trades Teams"
-quick_answer: "A crew house works best with a few rules agreed on day one: who gets which bedroom, a bathroom rota for early starts, a shared food kitty or shelf each, quiet hours for anyone on nights, muddy boots and workwear kept by the door, vans parked where the host says, and bins and dishes done daily. Most holiday homes, including ours, ban parties, smoking indoors and extra overnight guests, so the site lead should brief the crew before arrival."
+quick_answer: "A crew house works best with a few rules agreed on day one: who gets which bedroom, a bathroom rota for early starts, a shared food kitty or shelf each, quiet hours for anyone on nights, muddy boots and workwear kept by the door, vans parked where the host says, and bins and dishes done daily. Most holiday homes ban parties, smoking indoors and extra overnight guests, so the site lead should brief the crew before arrival."
 primary_keyword: "house share etiquette contractors"
 secondary_keywords:
   - "crew house rules"
@@ -108,7 +108,7 @@ See our [van parking guide](/guides/van-parking-accommodation-liverpool).
 
 ## A crew house in Liverpool
 
-Zermatt Lodge is our 4-bedroom house in Liverpool.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms

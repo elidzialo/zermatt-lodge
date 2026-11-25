@@ -76,7 +76,7 @@ Large shops in England are closed on Christmas Day, and supermarkets get very bu
 
 ### Plan the oven
 
-Christmas dinner is mostly about timing. Write a schedule backwards from when you want to eat, and use the hob for veg and gravy to free up oven space. If you've got specific equipment questions, such as a large roasting tin, ask us before you arrive.
+Christmas dinner is mostly about timing. Write a schedule backwards from when you want to eat, and use the hob for veg and gravy to free up oven space. If you've got specific equipment questions, such as a large roasting tin, ask the host before you arrive.
 
 ### Share the jobs
 

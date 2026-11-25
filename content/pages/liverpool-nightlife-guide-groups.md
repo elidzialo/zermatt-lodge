@@ -117,7 +117,7 @@ If you have a problem with a taxi, the council's licensing enforcement team can 
 
 ## Coming back to a quiet street
 
-A house outside the centre is a great base for a night out, but remember you're coming back to a residential street where people are asleep. Keep it quiet getting out of the taxi, and save the after-party for another trip. Most hosts, including us, have house rules about this.
+A house outside the centre is a great base for a night out, but remember you're coming back to a residential street where people are asleep. Keep it quiet getting out of the taxi, and save the after-party for another trip. Most hosts have house rules about this.
 
 ## Zermatt Lodge for a group night out
 

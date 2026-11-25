@@ -193,7 +193,7 @@ def hub_page(a, listings, guides):
               + "".join(f'<li><a class="link" href="/guides/{B.esc(g["slug"])}">{B.esc(g["title"])}</a></li>' for g in local[:8]) + "</ul>")
     if a.get("guides") == "liverpool" and guides:
         pop = B.explore_guides(guides, n=8)
-        gl = (f'<h2>Liverpool guides</h2><p>Local guides from the hosts of <a class="link" href="/zermatt-lodge">Zermatt Lodge, Liverpool</a>:</p><ul class="dots">'
+        gl = (f'<h2>Liverpool guides</h2><p>Local guides from Book Homes, featuring <a class="link" href="/zermatt-lodge">Zermatt Lodge, Liverpool</a>:</p><ul class="dots">'
               + "".join(f'<li><a class="link" href="/guides/{B.esc(g["slug"])}">{B.esc(g["title"])}</a></li>' for g in pop)
               + '<li><a class="link" href="/guides"><b>All Liverpool guides</b></a></li></ul>')
     near = [x for x in AREAS if x["slug"] != a["slug"] and (x.get("parent") == a["slug"] or x["slug"] == a.get("parent")

@@ -18,7 +18,7 @@ related:
   - two-hotel-rooms-vs-one-house
 faqs:
   - q: "What is the biggest house on Book Homes in Manchester?"
-    a: "Our largest Greater Manchester homes sleep 11 and 12 guests. Check each listing for the bed list and parking."
+    a: "The largest Greater Manchester homes on Book Homes sleep 11 and 12 guests. Check each listing for the bed list and parking."
   - q: "Can we have a party?"
     a: "No. Strictly no parties or events. Bookings found to be for parties are cancelled. The homes suit family visits, wedding guests, reunions and quiet celebrations."
   - q: "Where in Manchester are the group houses?"
@@ -37,7 +37,7 @@ Book Homes has **8 whole homes in Greater Manchester**. The largest sleep **8, 1
 
 ## Where the group houses are
 
-- **Prestwich.** Several of our larger family houses are here, including 4-bedroom homes for 8 and 12 guests. Prestwich and Heaton Park stops are on the Metrolink Bury line, with trams into Manchester Victoria. Heaton Park itself, which Manchester City Council calls "the biggest and best park in the NorthWest", is next door. See [homes in Prestwich](/stays-in/prestwich).
+- **Prestwich.** Several of the larger family houses on Book Homes are here, including 4-bedroom homes for 8 and 12 guests. Prestwich and Heaton Park stops are on the Metrolink Bury line, with trams into Manchester Victoria. Heaton Park itself, which Manchester City Council calls "the biggest and best park in the NorthWest", is next door. See [homes in Prestwich](/stays-in/prestwich).
 - **Crumpsall.** A 5-bedroom house for up to 11, with a pool table and free parking, also in north Manchester.
 - **Salford.** Smaller homes close to the city centre. See [homes in Salford](/stays-in/salford).
 
@@ -48,7 +48,7 @@ For a group of 8, you'd need four hotel rooms or more. A house gives you:
 - **One total price** on Book Homes, with no guest booking fees
 - **A kitchen**, so breakfast and at least some dinners cost supermarket prices
 - **Space to be together**, which a row of hotel rooms doesn't
-- **Parking** at most of our homes, rather than paying a city centre car park
+- **Parking** at most of the homes on Book Homes, rather than paying a city centre car park
 
 Our guide [Four hotel rooms or one house?](/guides/two-hotel-rooms-vs-one-house) runs through the sums, using Liverpool as the example. The same logic applies in Manchester.
 

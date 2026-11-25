@@ -75,7 +75,7 @@ Visit Manchester describes it as exploring **250 years of innovations** that sta
 
 On a rainy trip, a whole home beats a hotel room: space to dry coats, a kitchen for lunch and room for board games. Book Homes has family houses in **Prestwich** and **Crumpsall**, several with free parking, and an apartment in **Salford**. Every price is the total for the stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Manchester](/stays-in/manchester), [homes in Prestwich](/stays-in/prestwich) and [homes in Salford](/stays-in/salford), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 

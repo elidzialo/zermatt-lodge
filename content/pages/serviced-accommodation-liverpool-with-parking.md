@@ -27,7 +27,7 @@ faqs:
   - q: "Can a company book serviced accommodation and get an invoice?"
     a: "Usually, yes. Ask the host before you book whether they can issue an invoice in your company's name, and whether VAT is included, as not every host is VAT registered."
   - q: "How long can I stay at Zermatt Lodge?"
-    a: "Stays run from 2 nights up to 30 nights, and monthly rates are available. For longer projects, message us before you book."
+    a: "Stays run from 2 nights up to 30 nights, and monthly rates are available. For longer projects, message the host before you book."
 sources:
   - https://www.liverpool-one.com/parking/
   - https://www.q-park.co.uk/en-gb/cities/liverpool
@@ -127,7 +127,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It's **not in the city ce
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/zermatt-lodge#book), or message us first about invoices and longer stays.
+[Book direct](/zermatt-lodge#book), or message the host first about invoices and longer stays.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

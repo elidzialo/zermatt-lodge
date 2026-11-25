@@ -88,7 +88,7 @@ TT is the busiest fortnight of the year on the route. **TT 2027 runs from Monday
 
 - **Book the ferry first.** The Steam Packet opens TT sailings well in advance and vehicle space goes fast
 - **Then book your Liverpool stay** around your sailing, especially for early departures or late returns
-- **Bikes and vans:** the house has free parking for two vehicles. If you're travelling with trailers or several bikes, call us before booking to check what will fit
+- **Bikes and vans:** the house has free parking for two vehicles. If you're travelling with trailers or several bikes, call the host before booking to check what will fit
 - **Coming back:** a late arrival into Liverpool after a long day at the races is a good reason to stay one more night rather than drive home tired
 
 ## A simple plan for a morning sailing

@@ -3,7 +3,7 @@ title: "Business Accommodation for MediaCityUK and Salford Quays"
 meta_description: "Working at MediaCityUK, the BBC, ITV or the University of Salford? Trams, parking and car park prices, and whole homes in Salford and north Manchester for crews and business travellers."
 slug: mediacityuk-salford-business-accommodation
 h1: "MediaCityUK Business Stays: Where to Base a Crew or a Team"
-quick_answer: "MediaCityUK is a 200-acre development on the Manchester Ship Canal, home to the BBC, ITV and the University of Salford. MediaCityUK tram stop is at the end of a spur from the Eccles line, and Broadway and Harbour City stops are nearby. Parking is paid: the Quayside MediaCityUK car park is £7.50 for up to 6 hours, pre-booked. For crews and long jobs, a whole home in Salford or north Manchester gives everyone a room, a kitchen and, at several of our homes, free parking."
+quick_answer: "MediaCityUK is a 200-acre development on the Manchester Ship Canal, home to the BBC, ITV and the University of Salford. MediaCityUK tram stop is at the end of a spur from the Eccles line, and Broadway and Harbour City stops are nearby. Parking is paid: the Quayside MediaCityUK car park is £7.50 for up to 6 hours, pre-booked. For crews and long jobs, a whole home in Salford or north Manchester gives everyone a room, a kitchen and, at several of the homes on Book Homes, free parking."
 primary_keyword: "accommodation near mediacityuk"
 secondary_keywords:
   - "mediacityuk business accommodation"
@@ -52,8 +52,8 @@ Production crews, freelancers, visiting lecturers and contractors all end up at 
 1. **A room each.** No sharing rooms with colleagues after a long shoot.
 2. **A kitchen.** Cook for early calls and late wraps instead of eating out every night.
 3. **Washing machine.** Essential on a stay of more than a few days.
-4. **Parking for vans and cars.** Several of our homes have free parking. Check space for your vehicles with the host.
-5. **Quiet streets.** Our homes are in residential areas: strictly no parties or events - bookings found to be for parties are cancelled.
+4. **Parking for vans and cars.** Several of the homes on Book Homes have free parking. Check space for your vehicles with the host.
+5. **Quiet streets.** Homes on Book Homes are in residential areas: strictly no parties or events - bookings found to be for parties are cancelled.
 
 ## Where to stay
 

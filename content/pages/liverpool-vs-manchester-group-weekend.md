@@ -25,7 +25,7 @@ faqs:
   - q: "Which city has more group houses on Book Homes?"
     a: "Greater Manchester, with 8 whole homes sleeping 4 to 12. In Liverpool, Zermatt Lodge in Liverpool sleeps 7, and other Liverpool homes are listed on the Liverpool hub."
   - q: "Are stag and hen parties allowed?"
-    a: "No. Strictly no parties or events at our homes. Bookings found to be for parties are cancelled."
+    a: "No. Strictly no parties or events at homes on Book Homes. Bookings found to be for parties are cancelled."
 sources:
   - https://www.tpexpress.co.uk/travelling-with-us/routes/trains-from-liverpool-lime-street-to-manchester-piccadilly
   - https://www.skysports.com/football/news/12040/13555661/man-city-premier-league-2026-27-fixtures-and-schedule
@@ -51,7 +51,7 @@ Browse [homes in Manchester](/stays-in/manchester).
 
 - **You're going to Anfield, the Hill Dickinson Stadium or Aintree.** North Liverpool puts you close to all three.
 - **You want the waterfront, the museums and the Beatles.** See [things to do in Liverpool with a group](/guides/things-to-do-in-liverpool-with-a-group).
-- **There are up to 7 of you.** Zermatt Lodge is our 4-bedroom house in Liverpool, sleeping 7, with free parking, a garden and a pool table.
+- **There are up to 7 of you.** Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool, sleeping 7, with free parking, a garden and a pool table.
 
 See [where to stay in Liverpool for a group](/guides/where-to-stay-in-liverpool-for-a-group).
 
@@ -61,7 +61,7 @@ In either city, a group of 6 or more usually does better in one house: one total
 
 ## House rules
 
-All our homes are on residential streets. Strictly no parties or events - bookings found to be for parties are cancelled. Stag and hen groups should look elsewhere.
+All homes on Book Homes are on residential streets. Strictly no parties or events - bookings found to be for parties are cancelled. Stag and hen groups should look elsewhere.
 
 ## Book
 

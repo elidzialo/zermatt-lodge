@@ -78,7 +78,7 @@ The hall is in the **St George's Quarter**, next to World Museum and the Walker 
 
 For a family skating trip or a group coming for the carols, a **whole house** gives you space to warm up, cook and dry wet gloves.
 
-Zermatt Lodge is our whole 4-bedroom house in Liverpool:
+Zermatt Lodge is a whole 4-bedroom house in Liverpool, listed on Book Homes:
 
 - **Sleeps 7** in 4 bedrooms, with 2 bathrooms
 - **Big kitchen, dining room and games room** with a pool table

@@ -25,7 +25,7 @@ faqs:
   - q: "Is corporate housing cheaper than a hotel?"
     a: "For stays of several weeks, it's usually cheaper per month than an extended-stay hotel, and you get a kitchen and separate living space. Compare total costs, including parking and meals."
   - q: "Can a company book Zermatt Lodge?"
-    a: "Yes. Stays run from 2 to 30 nights, with monthly rates. Ask us before booking about an invoice in your company's name. For stays beyond 30 nights, message us."
+    a: "Yes. Stays run from 2 to 30 nights, with monthly rates. Ask the host before booking about an invoice in your company's name. For stays beyond 30 nights, message the host."
   - q: "What should HR check before booking corporate housing?"
     a: "Location and commute, the number of beds, parking, laundry, wifi, cleaning, the cancellation terms, who is named on the booking, and whether the host can issue invoices."
 sources:
@@ -96,7 +96,7 @@ Zermatt Lodge is a whole 4-bedroom house in Liverpool. It suits the **shorter en
 - **Stays from 2 to 30 nights, with monthly rates**
 - Check-in 3pm, checkout 11am
 
-For longer than 30 nights, message us before you book.
+For longer than 30 nights, message the host before you book.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 

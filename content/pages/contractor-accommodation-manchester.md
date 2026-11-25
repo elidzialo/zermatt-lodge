@@ -21,7 +21,7 @@ faqs:
   - q: "How many contractors can stay in one house?"
     a: "Book Homes has Greater Manchester houses that sleep from 4 up to 12 guests. Always ask for the bed list, because many crews want one person per bed or per room."
   - q: "Is there van parking?"
-    a: "Most of our Manchester homes list parking, but the number and size of spaces varies. Tell the host how many vehicles you have and their size before you book."
+    a: "Most of the Manchester homes on Book Homes list parking, but the number and size of spaces varies. Tell the host how many vehicles you have and their size before you book."
   - q: "What big projects are happening in north Manchester?"
     a: "Manchester University NHS Foundation Trust says construction of a new Outpatient Centre at North Manchester General Hospital is expected to start in 2027, subject to approvals, with Bovis as contractor. Manchester City Council's Victoria North programme plans 15,000 homes north-east of the city centre over two decades."
   - q: "Can the company pay and get an invoice?"
@@ -32,7 +32,7 @@ sources:
   - https://www.railway-technology.com/projects/manchester-metrolink/
 ---
 
-Crews working in Manchester usually face the same choice: four or five hotel rooms, or one house. For more than a couple of nights, the house tends to win. You get a kitchen so the team isn't paying for every meal, a washer for work clothes, a living room for the evening and, at most of our homes, parking off the street.
+Crews working in Manchester usually face the same choice: four or five hotel rooms, or one house. For more than a couple of nights, the house tends to win. You get a kitchen so the team isn't paying for every meal, a washer for work clothes, a living room for the evening and, at most of the homes on Book Homes, parking off the street.
 
 Book Homes has **8 whole homes live in Greater Manchester**, including large houses in **Prestwich** and **Crumpsall** that sleep up to 12. See them on the [Manchester hub](/stays-in/manchester).
 
@@ -43,7 +43,7 @@ Two long-running projects are worth knowing about if you're quoting or planning 
 - **North Manchester General Hospital rebuild.** Manchester University NHS Foundation Trust (MFT) says the hospital in Crumpsall is part of the Government's New Hospital Programme, with **up to £1.5 billion** invested over the next nine years. A new **Outpatient Centre** is the first phase. **Bovis** holds the construction contract, building is expected to start in **2027**, subject to approvals, the Outpatient Centre is due to open in **2029**, and the full hospital in **2035**.
 - **Victoria North.** Manchester City Council says this joint venture with the Far East Consortium will create **15,000 new homes** in seven neighbourhoods north-east of the city centre over the next two decades, largely on brownfield land.
 
-Our Crumpsall and Prestwich houses are in the north of the city, which suits crews working on that side of Manchester.
+The Crumpsall and Prestwich houses on Book Homes are in the north of the city, which suits crews working on that side of Manchester.
 
 ## Getting around
 

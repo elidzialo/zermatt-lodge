@@ -27,7 +27,7 @@ faqs:
   - q: "What should a contractor check before booking direct?"
     a: "That the host is a real, contactable business, that you pay by card on a secure page, that the invoice will be in your company's name, and what the cancellation and damage terms are."
   - q: "Can a company book Zermatt Lodge either way?"
-    a: "Yes. It's listed on Airbnb and can be booked direct on our site, where we can issue an invoice in your company's name. Strictly no parties or events."
+    a: "Yes. It's listed on Airbnb and can be booked direct on Book Homes, where the host can issue an invoice in your company's name. Strictly no parties or events."
 sources:
   - https://www.airbnb.com/help/article/2370
   - https://www.airbnb.com/help/article/438
@@ -87,7 +87,7 @@ Never pay a stranger by bank transfer for a booking you found on social media.
 
 ## Zermatt Lodge, either way
 
-Zermatt Lodge is our 4-bedroom house in Liverpool.
+Zermatt Lodge, listed on Book Homes, is a 4-bedroom house in Liverpool.
 
 - Sleeps 7: king master with en-suite, second king, queen and single
 - 2 bathrooms, big kitchen, washer and dryer
@@ -97,7 +97,7 @@ Zermatt Lodge is our 4-bedroom house in Liverpool.
 
 Strictly no parties or events - bookings found to be for parties are cancelled. No smoking and no pets.
 
-[Book direct](/zermatt-lodge#book) and tell us your company details for the invoice, or [see all homes](/) on Book Homes.
+[Book direct](/zermatt-lodge#book) and tell the host your company details for the invoice, or [see all homes](/) on Book Homes.
 
 Prefer Airbnb? <https://www.airbnb.co.uk/rooms/1801505261909570677>
 

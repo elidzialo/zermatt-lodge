@@ -101,7 +101,7 @@ Be clear about what you need. Zermatt Lodge is a whole 4-bedroom house in Liverp
 
 Strictly no parties or events - bookings found to be for parties are cancelled.
 
-[Book direct](/zermatt-lodge#book), and message us before you book if you want to ask about candles.
+[Book direct](/zermatt-lodge#book), and message the host before you book if you want to ask about candles.
 
 Prefer Airbnb? [Book Zermatt Lodge on Airbnb](https://www.airbnb.co.uk/rooms/1801505261909570677)
 

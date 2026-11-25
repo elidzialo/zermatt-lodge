@@ -64,11 +64,11 @@ Our [Shabbat-friendly holiday home checklist](/guides/shabbat-friendly-holiday-h
 
 Chanukah begins on the evening of **Friday 4 December 2026** and ends on **Saturday 12 December**, according to Hebcal. See our [Chanukah family stay guide](/guides/chanukah-manchester-2026-family-stay).
 
-## Where our Manchester homes are
+## Where the Manchester homes on Book Homes are
 
 Book Homes has 8 whole homes in Greater Manchester, sleeping 4 to 12, in Prestwich, Crumpsall, Salford and elsewhere in the city. Some hosts declare a kosher kitchen or Shabbat features. See [homes in Prestwich](/stays-in/prestwich), [homes in Salford](/stays-in/salford) or the [kosher homes page](/kosher-homes).
 
-House rules: strictly no parties or events - bookings found to be for parties are cancelled. For a simcha, our homes suit family members staying over, not the event itself.
+House rules: strictly no parties or events - bookings found to be for parties are cancelled. For a simcha, these homes suit family members staying over, not the event itself.
 
 Every price on Book Homes is the total for the stay, with no guest booking fees. [See all homes](/).
 

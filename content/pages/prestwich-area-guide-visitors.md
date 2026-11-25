@@ -24,7 +24,7 @@ faqs:
   - q: "Is Prestwich far from Bury?"
     a: "No. Visit Manchester puts Prestwich about 4 miles south of Bury, and both are on the same Metrolink line."
   - q: "Can I have a party in a Prestwich holiday home?"
-    a: "No. Our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
+    a: "No. Homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled."
 sources:
   - https://en.wikipedia.org/wiki/Prestwich_tram_stop
   - https://www.woodlandtrust.org.uk/visiting-woods/woods/prestwich-clough/
@@ -59,7 +59,7 @@ Prestwich sits between Manchester and Bury, on the edge of Heaton Park. It is a 
 
 Book Homes has several whole houses in Prestwich, including **4-bedroom homes** for groups and a **3-bedroom riverview home with free parking**. Every price is the total for your stay, with no guest booking fees.
 
-House rules: our homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
+House rules: homes on Book Homes are on residential streets: strictly no parties or events - bookings found to be for parties are cancelled.
 
 Browse [homes in Prestwich](/stays-in/prestwich), or [see all homes](/). Questions? Email cs@zugati.co.uk.
 
