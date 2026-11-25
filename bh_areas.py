@@ -110,7 +110,7 @@ def chips_html(listings, heading="Explore by area", kosher_only=False, host=Fals
     for a, n in rows:
         badge = f'<span class="ac-n">{B.plural(n, "home")}</span>' if n else '<span class="ac-n soon">Now taking hosts</span>'
         sub = a["name"] if not a.get("parent") else f'{a["name"]}, {BY_SLUG[a["parent"]]["name"]}'
-        href = url(a) + ("#host" if host else "")
+        href = f"/hosts/{a['slug']}" if host else url(a)
         items.append(f'<li><a class="acard" href="{href}">{icon("pin")}<span><b>{B.esc(sub)}</b>{badge}</span></a></li>')
     return (f'<section class="areas" aria-labelledby="arH"><div class="rail-h"><div><h2 id="arH">{B.esc(heading)}</h2>'
             f'<p>Whole homes booked direct with the host. New areas open as hosts join.</p></div><a href="{BASE}">All areas</a></div>'
@@ -202,7 +202,7 @@ def hub_page(a, listings, guides):
         f'<li><a class="acard" href="{url(x)}">{icon("pin")}<span><b>{B.esc(x["name"])}</b></span></a></li>' for x in near) + "</ul>") if near else ""
     host = (f'<section class="area-host" id="host"><div><h2>Host in {B.esc(name)}</h2><p>Own a holiday let, a family home or serviced accommodation in {B.esc(where)}? '
             f'List it on Book Homes: no sign-up or monthly fee, guests pay no booking fees, and your Airbnb and Booking.com calendars stay in sync.</p></div>'
-            f'<a class="btn amber" href="/become-a-host">Host in {B.esc(name)}</a></section>')
+            f'<a class="btn amber" href="/hosts/{B.esc(a["slug"])}">Host in {B.esc(name)}</a></section>')
     body = f"""<main class="wrap area-main" id="content">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="{BASE}">Areas</a>{f' › <a href="{url(parent)}">{B.esc(parent["name"])}</a>' if parent else ""} › <span>{B.esc(name)}</span></nav>
 <div class="rhead"><h1>Holiday homes in {B.esc(name)}</h1>{state}</div>

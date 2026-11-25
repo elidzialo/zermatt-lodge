@@ -59,48 +59,6 @@ REVIEW = """<h1>How was your stay?</h1>
 <script src="/assets/review.js" defer></script>"""
 
 
-def host_landing(listings=None):
-    import bh_areas
-    feat = [
-        ("check", "No guest booking fees", "Guests see one total price, cleaning included. That helps your home stand out against platforms that add a service fee."),
-        ("bolt", "Paid automatically", "Guests pay by card through Stripe. Once you connect payouts, Stripe pays your share straight to your bank (until then we pay you by bank transfer)."),
-        ("calendar", "Works with Airbnb and Booking.com", "Paste your iCal links. We import your bookings every 15 minutes and give you one link to export ours, so nothing double-books."),
-        ("kosher", "Reach kosher and Shabbat-observant guests", "Tell guests about your kosher kitchen, Shabbat set-up and whether a shul is within walking distance. A rare filter that guests search for."),
-        ("work", "Work crews and business stays", "Show desks, wifi speed, van parking and separate beds. Guests can get a company receipt at checkout."),
-        ("shield", "You stay in control", "Your prices, your minimum stay, your house rules. Each listing is checked by us before it goes live."),
-    ]
-    tiles = "".join(f'<div>{icon(i)}<b>{esc(t)}</b><p>{esc(d)}</p></div>' for i, t, d in feat)
-    schema = {"@context": "https://schema.org", "@type": "WebPage", "name": "List your holiday home on Book Homes", "url": DOMAIN + "/become-a-host",
-              "description": "Owners in Manchester, Salford, Prestwich, Liverpool, London and Gateshead: list your holiday let or serviced accommodation on Book Homes. No guest fees, simple commission, Airbnb and Booking.com calendar sync.",
-              "areaServed": bh_areas.area_served()}
-    chips = bh_areas.chips_html(listings or [], "Where we are taking hosts", host=True)
-    body = f"""<section class="hero2"><h1 class="serif">List your holiday home on Book Homes</h1>
-<p>For owners of holiday lets, serviced accommodation and family homes in Manchester, Salford, Prestwich, Liverpool, London (Golders Green and Stamford Hill) and Gateshead. Guests book direct with no booking fees, and you keep control.</p>
-<a class="btn" href="/host?signup=1">Get started</a> <a class="btn ghost" href="/host">Host login</a></section>
-<div class="feat">{tiles}</div>
-{chips}
-<h2>How it works</h2>
-<ol class="dots" style="list-style:decimal;padding-left:22px">
-<li>Create your host account with your email and a password. You can add 2-step verification later if you like.</li>
-<li>Tell us if you host as a business (trader) or a private individual. Guests see this on your listing, as UK rules require.</li>
-<li>Add your home one question at a time: photos, rooms, price, house rules and your Airbnb or Booking.com calendar links.</li>
-<li>We check every listing (for example that no street address is shown) and approve it, usually within one working day.</li>
-<li>Guests book and pay. You get an email with the guest's details and the dates close on every calendar.</li>
-</ol>
-<h2>What it costs</h2>
-<p>No sign-up fee and no monthly fee. Book Homes takes a simple commission on each booking (currently {COMMISSION_TEXT}), taken from the amount the guest pays. Guests pay no booking fee. Once your payouts are connected, Stripe also takes its standard card processing fee from your share.</p>
-<table class="cmp"><tr><th></th><th>Book Homes</th></tr>
-<tr><td>Guest service fee</td><td>None</td></tr><tr><td>Host commission</td><td>Currently {COMMISSION_TEXT} per booking</td></tr>
-<tr><td>Calendar sync with Airbnb and Booking.com</td><td>Yes, iCal import and export</td></tr><tr><td>Card processing fee</td><td>Stripe's standard fee, taken from your share once payouts are connected</td></tr><tr><td>Payout</td><td>Automatic by Stripe once connected</td></tr></table>
-<h2>Good to know</h2>
-<ul class="dots"><li>You need the right to let the property (owner, or landlord's permission) and the usual safety checks: gas safety certificate, electrical checks, smoke and carbon monoxide alarms, fire safety, and suitable insurance.</li>
-<li>Local rules can change, so keep an eye on any short-let registration scheme for England.</li>
-<li>Read the <a class="link" href="/terms/hosts">host terms</a> before you sign up.</li></ul>
-<p style="margin-top:24px"><a class="btn" href="/host?signup=1">List your property</a></p>"""
-    return text_page("/become-a-host", "List your holiday home | Book Homes for hosts",
-                     "List your holiday let in Manchester, Prestwich, Liverpool, London or Gateshead. No guest booking fees, simple commission, Airbnb and Booking.com sync.",
-                     body, schema=schema)
-
 
 TERMS_HOSTS = f"""{DRAFT}<h1>Host terms</h1><p>Last updated: 19 November 2026</p>
 <p>These terms are between you (the host) and Book Homes, {OPERATOR}. They apply when you list a property on bookhomes.co.uk.</p>
@@ -235,10 +193,11 @@ def write_all(listings=None):
     write("stays/listing/index.html", dynamic_listing())
     write("stays/booked/index.html", text_page("/stays/booked", "Your booking | Book Homes", "Your Book Homes booking.", BOOKED, robots="noindex, nofollow"))
     write("stays/review/index.html", text_page("/stays/review", "Review your stay | Book Homes", "Review your stay.", REVIEW, robots="noindex, nofollow"))
-    write("become-a-host/index.html", host_landing(listings))
+    import bh_hosts  # /become-a-host and /hosts/* (host acquisition pages, 25 Nov 2026)
+    host_urls = bh_hosts.write_all(listings)
     write("terms/hosts/index.html", text_page("/terms/hosts", "Host terms (draft) | Book Homes", "Plain-English terms for hosts listing a home on Book Homes: listings, bookings, payouts, cancellations and fees. Draft.", TERMS_HOSTS))
     write("terms/guests/index.html", text_page("/terms/guests", "Guest terms (draft) | Book Homes", "Plain-English terms for guests booking a home on Book Homes: price, booking, cancellations, your stay, reviews and what to do if there is a problem. Draft.", TERMS_GUESTS))
     write("trips/index.html", trips_page())
     write("trips/messages/index.html", messages_page())
     write("privacy/index.html", text_page("/privacy", "Privacy notice (draft) | Book Homes", "How Book Homes collects, uses and protects personal data for guests and hosts, who we share it with, how long we keep it, and your rights. Draft.", PRIVACY))
-    return [f"{DOMAIN}/become-a-host", f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]
+    return host_urls + [f"{DOMAIN}/terms/hosts", f"{DOMAIN}/terms/guests", f"{DOMAIN}/privacy"]

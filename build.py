@@ -97,6 +97,7 @@ CLUSTERS = [
     ("transport", "Getting to and around Liverpool", ["transport"]),
     ("things-to-do", "Things to do and seasonal trips", ["things-to-do", "seasonal"]),
     ("practical", "Relocation, insurance and renovation stays", ["practical"]),
+    ("hosting", "For hosts: listing your home", ["hosts"]),
 ]
 def cluster_of(slug):
     c = topics.get(slug, {}).get("cluster")
@@ -263,7 +264,7 @@ PUB = os.path.join(ROOT, "public")
 shutil.rmtree(PUB, ignore_errors=True)
 INDEXNOW_KEY = "00d622ef355b6708bc52633c7be81118"  # IndexNow (Bing, Yandex, Seznam...): key file served at /00d622ef355b6708bc52633c7be81118.txt
 for rel in [f"{INDEXNOW_KEY}.txt", "googled6ee9c134120fba4.html", "googlec5a5ee698941ade7.html", "index.html", "404.html", "booking-confirmed.html", "booking-cancelled.html", "robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml", "data/availability.json", "assets", "guides", "admin",
-            "stays", "stays-in", "host", "become-a-host", "terms", "privacy", "kosher-homes", "saved", "trips"]:
+            "stays", "stays-in", "host", "hosts", "become-a-host", "terms", "privacy", "kosher-homes", "saved", "trips"]:
     src = os.path.join(ROOT, rel); dst = os.path.join(PUB, rel)
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     (shutil.copytree if os.path.isdir(src) else shutil.copy2)(src, dst)

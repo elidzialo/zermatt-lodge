@@ -36,6 +36,7 @@ DOMAIN = os.environ.get("SITE_DOMAIN", "https://bookhomes.co.uk").rstrip("/")
 CACHE = os.path.join(ROOT, "data/listings.json")
 EXTRAS_FILE = os.path.join(ROOT, "data/listing-extras.json")
 COMMISSION_TEXT = "15%"  # keep in step with admin > Settings (bookhomes.settings commission_pct)
+KOSHER_COMMISSION_TEXT = "3%"  # keep in step with admin > Settings (bookhomes.settings commission_by_type.kosher)
 
 
 def load_extras():
@@ -52,7 +53,7 @@ EMAIL = _SITE_CONTACT.get("email", "")
 # Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
 RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
-            "listing", "listings", "data", "public", "saved", "stays-in", "areas", "wishlists", "trips", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+            "listing", "listings", "data", "public", "saved", "stays-in", "areas", "wishlists", "trips", "hosts", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
 HOME_TITLE = "Holiday Homes in Manchester & Liverpool | Book Homes"  # build() rewrites from live areas
 HOME_DESC = ("Whole holiday homes in Manchester, Prestwich and Liverpool, booked direct. Kosher-friendly, no booking fees. "
