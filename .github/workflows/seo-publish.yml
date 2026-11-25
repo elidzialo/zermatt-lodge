@@ -1,0 +1,45 @@
+name: SEO Boost publish
+# Daily: pg_cron (bookhomes-seo-publish, 05:40 UTC) releases 2-3 approved SEO Boost guide pages per order; this job then
+# rebuilds the static site so they go live at /<listing>/guide/<topic> (with sitemap entries and listing-page FAQs).
+# Listing pages are kept as committed (BH_LISTINGS_OFFLINE=1); only the SEO pages are read live from bookhomes-seo.
+# Run it by hand (Actions > SEO Boost publish > Run workflow) after approving an order to publish the first pages at once.
+on:
+  schedule:
+    - cron: "10 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: seo-publish
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build dependencies
+        run: pip install markdown pyyaml
+      - name: Build the site
+        env:
+          SITE_DOMAIN: https://bookhomes.co.uk
+          BH_LISTINGS_OFFLINE: "1"
+        run: python3 build.py
+      - name: Commit and push if anything changed
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then echo "no changes"; exit 0; fi
+          git config user.name "bookhomes-bot"
+          git config user.email "bookhomes-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "SEO Boost: daily guide page publish"
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              sleep 120  # let Vercel deploy, then tell Bing / IndexNow about the new pages
+              python3 scripts/indexnow.py HEAD~1..HEAD || true
+              exit 0
+            fi
+            sleep 20
+          done
+          exit 1

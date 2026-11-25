@@ -4,7 +4,8 @@
 //   - "bookhomes-connect-accounts" (Connected accounts) events, signed with BOOKHOMES_STRIPE_CONNECT_WEBHOOK_SECRET.
 //     Connect bookings are DIRECT charges (Accounts v2, Managed Risk), so their checkout / charge events arrive here with
 //     event.account = the host's account. account.updated (v1 snapshot) still fires for v2 accounts and updates payout status.
-// Only marketplace sessions (metadata.bh_booking_id) are handled; Zermatt Lodge keeps zermatt-stripe-webhook.
+// Only marketplace sessions (metadata.bh_booking_id) and SEO Boost orders (metadata.bh_kind = seo_boost, platform only) are handled;
+// Zermatt Lodge keeps zermatt-stripe-webhook.
 // Source: github.com/elidzialo/zermatt-lodge supabase/functions/bookhomes-stripe-webhook (shared modules pinned by commit)
 import Stripe from "npm:stripe@17.7.0";
 import { optionalEnv, stripeClient } from "../_shared/util.ts";
@@ -45,6 +46,12 @@ Deno.serve(async (req: Request): Promise<Response> => {
       case "checkout.session.async_payment_succeeded": {
         const s = event.data.object as Stripe.Checkout.Session;
         if (s.metadata?.bh_booking_id) await settlePaidSession(stripe, s, account);
+        else if (!account && s.metadata?.bh_kind === "seo_boost" && s.payment_status === "paid" && s.metadata.seo_order_id) {
+          // SEO Boost (bookhomes-seo): platform charge; the generation worker picks the order up and sends the receipt
+          const pi = typeof s.payment_intent === "string" ? s.payment_intent : s.payment_intent?.id ?? null;
+          await sql`update bookhomes.seo_orders set status = 'paid', paid_at = coalesce(paid_at, now()), stripe_payment_intent = coalesce(${pi}, stripe_payment_intent), updated_at = now()
+                     where id = ${s.metadata.seo_order_id}::uuid and stripe_session_id = ${s.id} and status in ('checkout', 'expired')`;
+        }
         break;
       }
       case "checkout.session.expired": {
@@ -60,6 +67,12 @@ Deno.serve(async (req: Request): Promise<Response> => {
         const c = event.data.object as Stripe.Charge;
         const pi = typeof c.payment_intent === "string" ? c.payment_intent : c.payment_intent?.id;
         if (!pi) break;
+        if (!account && c.refunded) { // SEO Boost refunded in full (also done by bookhomes-seo admin_cancel): take its pages down
+          const so = await sql`update bookhomes.seo_orders set status = 'refunded', refunded_at = coalesce(refunded_at, now()), updated_at = now()
+                                where stripe_payment_intent = ${pi} and status not in ('refunded', 'cancelled') returning id`;
+          for (const r of so) await sql`update bookhomes.seo_pages set status = case when status = 'published' then 'unpublished' else 'removed' end, updated_at = now()
+                                         where order_id = ${r.id} and status in ('draft', 'queued', 'published')`;
+        }
         const share = c.amount > 0 ? c.amount_refunded / c.amount : 0;
         if (share >= 0.5) {
           const rows = await sql`update bookhomes.bookings set status = 'cancelled',

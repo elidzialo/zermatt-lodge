@@ -83,6 +83,8 @@ def fetch_listings():
             return json.loads(r.read().decode("utf-8"))
 
     try:
+        if os.environ.get("BH_LISTINGS_OFFLINE"):  # daily SEO Boost build (GitHub Action): keep listing pages as committed
+            raise RuntimeError("BH_LISTINGS_OFFLINE set")
         data = get("action=list")
         data["reviews"] = {l["slug"]: get("action=get&slug=" + l["slug"]).get("reviews", [])
                            for l in data["listings"] if (l.get("reviews") or {}).get("count")}
@@ -1094,6 +1096,9 @@ def listing_body(l, reviews, guides, ex):
     if ex.get("faqs"):
         faq_html = ('<section class="lp-sec" id="faq" aria-labelledby="faqH"><h2 id="faqH">Questions</h2>' +
                     "".join(f"<details><summary>{esc(q['q'])}</summary><p>{esc(q['a'])}</p></details>" for q in ex["faqs"]) + "</section>")
+    if ex.get("seo_guides"):  # SEO Boost guide pages for this home (bh_seo.py)
+        faq_html += ('<section class="lp-sec" aria-labelledby="hgH"><h2 id="hgH">Guides to this home and area</h2><ul class="lguides">' +
+                     "".join(f'<li><a href="{esc(g["url"])}">{icon("book")}<span>{esc(g["title"])}</span></a></li>' for g in ex["seo_guides"]) + "</ul></section>")
     gl = "".join(f'<li><a href="/guides/{esc(g["slug"])}">{icon("book")}<span>{esc(g["title"])}</span></a></li>' for g in guides)
     guides_html = f'<section class="lp-sec" aria-labelledby="locH2"><h2 id="locH2">Local guides</h2><ul class="lguides">{gl}</ul></section>' if gl else ""
     also = [(n, l[k]) for n, k in [("Airbnb", "airbnb_url"), ("Booking.com", "booking_url")] if l.get(k)]
@@ -1383,9 +1388,15 @@ def build():
     if os.path.exists(os.path.join(ROOT, "stays/index.html")):
         os.remove(os.path.join(ROOT, "stays/index.html"))  # /stays now redirects to /
     urls = [f"{DOMAIN}/kosher-homes"]
+    import sys
+    import bh_seo  # SEO Boost: published guide pages per listing (/<listing>/guide/<topic>) and extra listing FAQs
+    seo = bh_seo.load(supabase_config())
     for l in listings:
-        write(f"listings/{l['path']}/index.html", listing_page(l, reviews.get(l["slug"], []), guides_for(l, guides), extras.get(l["slug"]) or {}))
+        ex = bh_seo.merge(l, extras.get(l["slug"]) or {}, seo)
+        write(f"listings/{l['path']}/index.html", listing_page(l, reviews.get(l["slug"], []), guides_for(l, guides), ex))
         urls.append(DOMAIN + l["url"])
+        urls += bh_seo.write_pages(l, seo, sys.modules[__name__])
+    urls += bh_seo.write_unbuilt(listings, seo, sys.modules[__name__])  # live listings without a static page yet (served by /stays/listing)
     import bh_pages
     urls += bh_pages.write_all(listings)
     urls += bh_areas.write_all(listings, guides)

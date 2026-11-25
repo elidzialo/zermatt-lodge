@@ -458,6 +458,7 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
     <button type="button" role="tab" data-tab="mphosts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Hosts<span class="newb hidden" id="mpHostsN"></span></button>
     <button type="button" role="tab" data-tab="mpbookings" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Bookings</button>
     <button type="button" role="tab" data-tab="mppayouts" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 7c0-2.2-1.8-4-4-4s-4 1.8-4 4v14"/><path d="M6 21h12M6 13h8"/></svg>Payouts<span class="newb hidden" id="mpPayN"></span></button>
+    <button type="button" role="tab" data-tab="mpseo" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6M11 8v6"/></svg>SEO Boost<span class="newb hidden" id="mpSeoN"></span></button>
     <p class="grp">Insights</p>
     <a href="/admin/messages/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/></svg>Guest messages</a>
     <a href="/admin/feedback/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback and bugs</a>
@@ -625,6 +626,7 @@ button.stat:hover{border-color:#ccc;box-shadow:0 4px 14px rgba(0,0,0,.06)}
         <p class="muted" style="margin-top:8px">New people get an email to set a password. Invited hosts are approved straight away; their listings still need approval.</p></form></div>
       <div class="card"><h2>Users</h2><div class="tools"><input type="search" data-search="#mpUsers" placeholder="Search name or email" aria-label="Search name or email"></div><div id="mpUsers" class="list"></div></div>
     </section>
+    <section data-panel="mpseo" class="hidden"><div id="seoAdmin"><div class="card"><p class="muted">Loading...</p></div></div></section>
     <section data-panel="mpsettings" class="hidden">
       <div class="card"><h2>Commission</h2><div id="mpSetMsg"></div>
         <form id="mpCommission" novalidate><label class="f">Standard commission (% of each booking)<input type="number" id="mpPct" min="0" max="50" step="0.5"></label><button class="btn" type="submit">Save</button></form>
@@ -957,7 +959,7 @@ $("#signOutAll").addEventListener("click", function(){
 });
 
 /* ---------- tabs (sidebar) ---------- */
-var TITLES = {mpover: ["Overview", "Everything across Book Homes"], mplistings: ["Listings", "Approve new homes and check edits"], mphosts: ["Hosts", "Who is connected to payouts, details, and account tools"],
+var TITLES = {mpseo: ["SEO Boost", "Paid guide pages: orders, keywords, pages to approve, refunds"], mpover: ["Overview", "Everything across Book Homes"], mplistings: ["Listings", "Approve new homes and check edits"], mphosts: ["Hosts", "Who is connected to payouts, details, and account tools"],
   mpbookings: ["Bookings", "Every booking on every home, including Zermatt Lodge"], mppayouts: ["Payouts", "What hosts are owed and what has been paid"], mpusers: ["Users", "Invite hosts and admins, change roles"],
   emails: ["Emails", "Every email the system sent, and any that failed"], mpsettings: ["Settings", "Commission, Stripe Connect and the change log"],
   dash: ["Zermatt Lodge today", "Arrivals, departures and sync health"], bookings: ["Direct bookings", "Zermatt Lodge bookings made on this website"], calendar: ["Calendar", "Zermatt Lodge: direct bookings, channel blocks and your blocks"],
@@ -1217,7 +1219,14 @@ function mpApi(body){
     return fetch(SUPABASE_URL + "/functions/v1/bookhomes-admin", {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
   }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok){ var er = new Error(j.error || ("Error " + res.status)); er.code = j.code; er.bookings = j.bookings; throw er; } return j; }); });
 }
-window.BHAdmin = {api: mpApi, refresh: function(){ MP = null; return mpLoad(true); }}; // assets/admin-bank.js, assets/admin-ops.js
+function fnApi(name, body){ // other bookhomes-* functions with the same admin session (assets/admin-seo.js: bookhomes-seo)
+  return sb.auth.getSession().then(function(r){
+    var tok = r.data && r.data.session && r.data.session.access_token;
+    if (!tok) throw new Error("Please sign in again.");
+    return fetch(SUPABASE_URL + "/functions/v1/" + name, {method: "POST", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tok, "apikey": SUPABASE_KEY}, body: JSON.stringify(body)});
+  }).then(function(res){ return res.json().catch(function(){ return {}; }).then(function(j){ if (!res.ok) throw new Error(j.error || ("Error " + res.status)); return j; }); });
+}
+window.BHAdmin = {api: mpApi, fn: fnApi, refresh: function(){ MP = null; return mpLoad(true); }}; // assets/admin-bank.js, assets/admin-ops.js, assets/admin-seo.js
 function mpLoad(force){
   if (MP && !force) return Promise.resolve(mpRender());
   if (MP_LOADING) return MP_LOADING;
@@ -1775,6 +1784,7 @@ function deleteHost(h){
 </script>
 <script src="/assets/admin-bank.js?v=817b2340" defer></script>
 <script src="/assets/admin-ops.js?v=d114ecd5" defer></script>
+<script src="/assets/admin-seo.js?v=ef1c2fe6" defer></script>
 <script src="/assets/bh-feedback.js?v=063b82dd" defer></script>
 </body>
 </html>
