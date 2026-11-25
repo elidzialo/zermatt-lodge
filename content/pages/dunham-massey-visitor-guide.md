@@ -3,7 +3,7 @@ title: "Dunham Massey in Winter: Deer Park, Christmas Trail, Prices and Getting 
 meta_description: "Visiting Dunham Massey near Altrincham this winter: park, garden and house opening times, 2026 prices, the Christmas after-dark trail, dogs, the 280 bus and family homes nearby."
 slug: dunham-massey-visitor-guide
 h1: "Dunham Massey: A Winter Visitor Guide"
-quick_answer: "Dunham Massey (Woodhouse Lane, Altrincham, WA14 4SJ) is a National Trust estate with over 300 acres of deer park. In late November 2026 the park opens 9am to 4pm and the garden 10am to 3.30pm, and parking is included in the ticket. Park and garden tickets are £11 for an adult (£12.10 with Gift Aid), children 5 to 17 pay half and under-5s are free. Christmas at Dunham Massey, an after-dark trail, runs from 25 November 2026 to 2 January 2027, 4.30pm to 8.30pm."
+quick_answer: "Dunham Massey (Woodhouse Lane, Altrincham, WA14 4SJ) is a National Trust estate with over 300 acres of deer park. In late November 2026 the park opens 9am to 4pm and the garden 10am to 3.30pm, and parking is included in the ticket. Park and garden tickets are £11 for an adult (£12.10 with Gift Aid), children 5 to 17 pay half and under-5s are free. Christmas at Dunham Massey, an after-dark trail, runs from 20 November 2026 to 2 January 2027, with evening entry slots from about 4.15pm."
 primary_keyword: "dunham massey opening times"
 secondary_keywords:
   - "dunham massey christmas 2026"
@@ -68,9 +68,9 @@ On a typical late November day in 2026 the National Trust lists:
 
 ## Christmas at Dunham Massey 2026
 
-- **Christmas at Dunham Massey**, the illuminated after-dark trail: **25 November 2026 to 2 January 2027**, **4.30pm to 8.30pm**. It's ticketed.
-- **A Trail of Tails: Christmas in the House**, a children's trail: **25 November to 24 December**, 10am to 3pm.
-- **Christmas at the Stables Restaurant:** lunches from 25 November to 18 December.
+- **Christmas at Dunham Massey**, the illuminated after-dark trail: **20 November 2026 to 2 January 2027**, with timed evening entry from about 4.15pm. It's ticketed.
+- **A Trail of Tails: Christmas in the House**, a children's trail: **20 November to 24 December**, 10am to 3pm.
+- **Christmas at the Stables Restaurant:** lunches from 23 November to 18 December.
 
 See our [Christmas light trails guide](/guides/christmas-light-trails-manchester-2026) to compare it with Heaton Park and RHS Bridgewater.
 
