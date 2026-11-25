@@ -1,6 +1,33 @@
 # Book Homes launch checklist
 
-Last checked: 24 November 2026, built site served locally, at 390px and 1280px (headless Chrome). The QA sandbox cannot reach Supabase, Vercel or the live site, so live data, /api/*, resized listing photos and the host sign-in screen were not run in the browser. Previous pass: 23 November.
+Last checked: 25 November 2026 (final daily run). Built output checked in full; live home page fetched (bookhomes.co.uk loads, cs@zugati.co.uk, no phone, no dashes, Zermatt shown only as "Liverpool"). Other live pages could not be fetched from the QA sandbox, so they were checked in the built output. Payments and forms were not tested. Previous pass: 24 November.
+
+## Launch readiness (25 Nov)
+
+**Ready**
+- Site: 324 HTML pages, 270 guides plus hub (26 new today: 13 Liverpool winter, 13 Greater Manchester), 304 sitemap URLs all exist on one domain, 0 broken internal links, 305 JSON-LD blocks all valid, 0 em or en dashes, OG tags on every public page (only the booking confirmed/cancelled screens and Google verification files have none).
+- New host pages build and are indexable: /become-a-host, /hosts, /hosts/airbnb-hosts, /hosts/kosher. Area hubs: Manchester, Liverpool, Prestwich, Salford indexed; London, Golders Green, Stamford Hill, Gateshead noindex.
+- Privacy: contact email is cs@zugati.co.uk everywhere; no Book Homes or owner phone number. Zermatt Lodge page has no Fazakerley, north Liverpool, street name or postcode.
+- Fixed today: robots.txt had `Disallow: /host`, which also blocked /hosts and /hosts/* from Google. Now `Disallow: /host$` and `Disallow: /host/` (host login still blocked, host marketing pages crawlable).
+- Fixed today: Grand National guide intro said Zermatt Lodge, then "accommodation in north Liverpool" in the next sentence; now "in Liverpool".
+
+**Checked, left (not trivial)**
+- About 30 older Liverpool guides still talk about Fazakerley or north Liverpool near a Zermatt Lodge mention (e.g. NHS agency, relocating, Norris Green, Anfield, house vs serviced apartment, large family house, Aintree trauma centre). Read together they place the house. Needs an editorial pass if the house location must stay fully private; Fazakerley-only guides themselves were allowed so far.
+- Third-party public phone numbers in guides (hospitals, Merseyrail, taxis) kept, as before.
+- Listing 15 "Studio Appartement In Salford" still shows on the home page as a studio with 2 bedrooms (host data).
+
+**Eli must do**
+1. Supabase Auth custom SMTP: Resend domain is verified and RESEND_API_KEY was set on 22 Nov, but Supabase Auth is not yet using Resend as SMTP, so sign-up and password-reset emails are still Supabase-branded (and rate limited). Set it in Supabase > Authentication > Emails > SMTP settings.
+2. Stripe: set `BOOKHOMES_STRIPE_WEBHOOK_SECRET` (platform webhook) so marketplace bookings confirm by themselves.
+3. Supabase secrets: add `ANTHROPIC_API_KEY` so SEO Boost can write its guide pages.
+4. Stripe: public business name still shows "ZUGATI" at checkout; change it (or use a Book Homes account).
+5. Solicitor sign-off on host terms, guest terms and privacy, then remove "(draft)".
+6. Run `supabase/PENDING_analytics.sql`.
+7. Fix listing 15 data mismatch (studio title, 2 bedrooms in facts, 1 in description).
+8. Twilio: set up for SMS (not live yet).
+9. OK to delete test logins (test+hostfn, test+launch) and the `net._http_response` row 1955.
+10. Redeploy the Zermatt payment functions so guest emails no longer include the phone number.
+11. Decide: launch commission rate for standard hosts, the definition of a "kosher host" (for the 3% rate), and the referral reward.
 
 ## Launch readiness (24 Nov)
 

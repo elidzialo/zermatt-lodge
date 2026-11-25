@@ -34,7 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/Merseyrail_Northern_Line
 ---
 
-The best Grand National accommodation for a group is somewhere close to Aintree but outside the race-day road closures, with your own parking and room for everyone under one roof. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars. Book early, because the festival is one of the busiest weeks of the year for accommodation in north Liverpool.
+The best Grand National accommodation for a group is somewhere close to Aintree but outside the race-day road closures, with your own parking and room for everyone under one roof. Zermatt Lodge is a whole 4-bedroom house in Liverpool, sleeping up to 7, with free parking for two cars. Book early, because the festival is one of the busiest weeks of the year for accommodation in Liverpool.
 
 This guide covers festival dates, how to get to the course, parking rules and how to plan a group stay.
 

@@ -20,7 +20,8 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin
-Disallow: /host
+Disallow: /host$
+Disallow: /host/
 Disallow: /checkout/
 
 Sitemap: https://bookhomes.co.uk/sitemap.xml
