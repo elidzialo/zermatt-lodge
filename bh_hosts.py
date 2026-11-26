@@ -1,4 +1,5 @@
 """Host acquisition pages (25 Nov 2026): /become-a-host, /hosts (index), /hosts/airbnb-hosts, /hosts/kosher, /hosts/<area>.
+More /hosts/* pages (26 Nov 2026) live in bh_hosts_more.py.
 
 Called by bh_pages.write_all(). Returns the sitemap URLs.
 Rules for this copy (owner, 25 Nov 2026):
@@ -74,22 +75,20 @@ def steps_html():
     return '<ol class="hsteps">' + "".join(f'<li>{icon(i)}<b>{B.esc(t)}</b><p>{B.esc(d)}</p></li>' for i, t, d in STEPS) + "</ol>"
 
 
-def fee_table():
-    return f"""<div class="tblwrap"><table class="cmp hcmp">
-<tr><th scope="col"></th><th scope="col">Book Homes</th><th scope="col">Book Homes, kosher hosts</th><th scope="col">Airbnb (UK, host-only fee)</th></tr>
-<tr><td>Commission taken from your payout</td><td>{STD}</td><td>{KOSHER}</td><td>15.5% service fee</td></tr>
-<tr><td>Card processing</td><td>Stripe's fee, from your share (UK cards 1.5% + 20p)</td><td>Stripe's fee, from your share (UK cards 1.5% + 20p)</td><td>No separate card fee</td></tr>
-<tr><td>Guest booking fee</td><td>None</td><td>None</td><td>None on host-only fee listings</td></tr>
-<tr><td>Sign-up or monthly fee</td><td>None</td><td>None</td><td>None</td></tr>
-<tr><td>Calendar sync with other sites</td><td>Yes, iCal in and out</td><td>Yes, iCal in and out</td><td>Yes, iCal in and out</td></tr>
-</table></div>
-<p class="muted hnote">Worked example, a £1,000 booking paid with a standard UK card: on Book Homes you keep about £834.80 ({STD} = £150, card fee £15.20), as a kosher host about £954.80 ({KOSHER} = £30, card fee £15.20), and on Airbnb about £845 (15.5% = £155). European and international cards cost more with Stripe. Booking.com commission varies by market and property; Guesty puts the average at around 15%, with a range of 10% to 25%.</p>
-<p>So for most hosts, Book Homes is not about a cheaper fee than Airbnb. It is a second place to get bookings, with your calendar kept in step, and no cost unless a guest books. Kosher hosts pay much less.</p>"""
+def costs_table():
+    """Book Homes costs only (owner, 26 Nov 2026: no fee comparisons with other platforms on host pages)."""
+    return f"""<div class="tblwrap"><table class="cmp"><tr><td>Commission, only when a guest books</td><td>{STD} per booking ({KOSHER} for kosher hosts)</td></tr>
+<tr><td>Card processing</td><td>Stripe's standard fee from your share once payouts are connected (UK cards 1.5% + 20p; European and international cards cost more)</td></tr>
+<tr><td>Guest booking fee</td><td>None</td></tr>
+<tr><td>Sign-up or monthly fee</td><td>None</td></tr>
+<tr><td>Calendar sync with other sites</td><td>Yes, iCal in and out</td></tr></table></div>
+<p class="muted hnote">Worked example, a £1,000 booking paid with a standard UK card: you keep about £834.80 ({STD} = £150, card fee £15.20), or about £954.80 as a kosher host ({KOSHER} = £30, card fee £15.20).</p>
+<p>Book Homes is an extra place to get bookings, next to the sites you already use, with your calendar kept in step and no cost unless a guest books here.</p>"""
 
 
 FAQ_MAIN = [
-    ("Do I have to leave Airbnb?",
-     "No. Most hosts keep their Airbnb listing. Add your Airbnb calendar link to Book Homes, and add your Book Homes calendar link to Airbnb, so a booking on one site closes the dates on the other."),
+    ("Can I keep my Airbnb listing?",
+     "Yes. Most hosts keep their Airbnb listing as it is. Add your Airbnb calendar link to Book Homes, and add your Book Homes calendar link to Airbnb, so a booking on one site closes the dates on the other."),
     ("How does calendar sync stop double bookings?",
      "Book Homes reads your Airbnb, Booking.com, Vrbo or Guesty calendar link every 15 minutes and closes those dates. Airbnb reads other calendars about every 3 hours (you can refresh it by hand), so for a short time after a Book Homes booking the dates can still look open on Airbnb. If a clash does happen on our side, the Book Homes guest is refunded in full and told straight away."),
     ("How do payouts work?",
@@ -119,7 +118,7 @@ def become_a_host(listings):
     ]
     tiles = "".join(f'<div>{icon(i)}<b>{B.esc(t)}</b><p>{B.esc(d)}</p></div>' for i, t, d in feat)
     chips = bh_areas.chips_html(listings or [], "Where we are taking hosts", host=True)
-    desc = "Already on Airbnb? Import your listing in one click, keep Airbnb with calendar sync, and get bookings from a second channel. No sign-up or monthly fee."
+    desc = "Already on Airbnb? Import your listing in one click, keep Airbnb with calendar sync, and get bookings from an extra channel. No sign-up or monthly fee."
     body = f"""<section class="hero2"><p class="eyebrow">For Airbnb hosts in the UK</p><h1 class="serif">List your Airbnb on Book Homes in 2 minutes</h1>
 <p>Paste your Airbnb link and we copy your listing into a draft: title, description, rooms, amenities and photos. Keep your Airbnb listing too: calendar sync closes booked dates on both sites.</p>
 <a class="btn" href="{SIGNUP}">Import my Airbnb listing</a> <a class="btn ghost" href="/host">Host login</a></section>
@@ -127,14 +126,14 @@ def become_a_host(listings):
 {steps_html()}
 <div class="feat">{tiles}</div>
 <h2 id="keep-airbnb">Keep your Airbnb listing</h2>
-<p>You do not have to choose. Book Homes works as an extra channel next to Airbnb and Booking.com:</p>
+<p>You do not have to choose. Book Homes works as an extra channel next to Airbnb, Booking.com and Vrbo:</p>
 <ul class="dots"><li>Paste your Airbnb calendar link (iCal) into Book Homes. We read it every 15 minutes and close those dates here.</li>
 <li>Paste your Book Homes calendar link into Airbnb as an imported calendar, so a Book Homes booking closes the dates there.</li>
-<li>Use Guesty or another channel manager? Paste its iCal link instead.</li></ul>
-<p>Read more: <a href="/hosts/airbnb-hosts">Add Book Homes as a second channel</a> and <a href="/guides/sync-airbnb-calendar-with-another-site">how to sync your Airbnb calendar with another site</a>.</p>
-<h2 id="fees">What it costs, compared honestly</h2>
-{fee_table()}
-{src_html(["airbnb_fee", "stripe", "booking_fee"])}
+<li>Use Guesty or another channel manager? Paste its iCal link instead. See <a href="/hosts/multi-platform-hosts">hosts on several sites</a>.</li></ul>
+<p>Read more: <a href="/hosts/airbnb-hosts">Add Book Homes alongside Airbnb</a> and <a href="/guides/sync-airbnb-calendar-with-another-site">how to sync your Airbnb calendar with another site</a>.</p>
+<h2 id="fees">What it costs</h2>
+{costs_table()}
+{src_html(["stripe"])}
 <h2>Kosher hosts: {KOSHER} commission</h2>
 <p>Hosts with a host-declared kosher kitchen can be set up as kosher hosts at a {KOSHER} commission. <a href="/hosts/kosher">See how it works for kosher hosts</a>.</p>
 {chips}
@@ -142,9 +141,10 @@ def become_a_host(listings):
 <div class="hfaq">{faq_html(FAQ_MAIN)}</div>
 <h2>Good to know</h2>
 <ul class="dots"><li>Read the <a href="/terms/hosts">host terms</a> before you sign up.</li>
-<li>Guides for hosts: <a href="/guides/airbnb-host-fees-uk-2026-explained">Airbnb host fees UK 2026 explained</a>, <a href="/guides/airbnb-alternatives-uk-for-hosts">Airbnb alternatives for UK hosts</a>, <a href="/guides/direct-bookings-holiday-let-uk">how to get direct bookings</a>.</li>
+<li>Not a whole home? You can also list <a href="/hosts/rent-a-room">a spare room</a> or <a href="/hosts/annexes-and-granny-flats">an annexe</a>. All host pages: <a href="/hosts">Hosting</a>.</li>
+<li>Guides for hosts: <a href="/guides/list-holiday-let-on-more-than-one-site-uk">how to list on more than one site</a>, <a href="/guides/sync-airbnb-calendar-with-another-site">sync your Airbnb calendar</a>, <a href="/guides/direct-bookings-holiday-let-uk">how to get direct bookings</a>.</li>
 <li>Questions? Email <a href="mailto:cs@zugati.co.uk">cs@zugati.co.uk</a>.</li></ul>
-{cta("List your property")}"""
+{cta("List your home in 2 minutes")}"""
     graph = [{"@type": "WebPage", "@id": B.DOMAIN + "/become-a-host#page", "name": "List your Airbnb on Book Homes", "url": B.DOMAIN + "/become-a-host",
               "description": desc, "inLanguage": "en-GB", "isPartOf": {"@id": B.DOMAIN + "/#website"}, "areaServed": bh_areas.area_served()},
              crumbs(("List your property", "/become-a-host")), faq_schema(FAQ_MAIN)]
@@ -162,13 +162,13 @@ FAQ_AIRBNB = [
 
 
 def airbnb_hosts():
-    desc = "Already host on Airbnb? Add Book Homes as a second channel: one-click import, two-way calendar sync, no sign-up or monthly fee. Keep your Airbnb listing."
+    desc = "Already host on Airbnb? Add Book Homes too: one-click import, two-way calendar sync, no sign-up or monthly fee. Your Airbnb listing stays as it is."
     body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/hosts">Hosting</a> › <span>Airbnb hosts</span></nav>
-<h1>Already on Airbnb? Add a second channel, keep everything else</h1>
-<p class="lead-p">You do not need to switch. Book Homes sits next to your Airbnb listing: import it in one click, sync calendars both ways and take bookings from guests who search here.</p>
-{cta()}
-<h2>Why add a second channel</h2>
-<ul class="dots"><li><b>Less reliance on one platform.</b> If your Airbnb listing is paused or slips in search, you still have somewhere guests can book.</li>
+<h1>Already on Airbnb? Add Book Homes too</h1>
+<p class="lead-p">Keep your Airbnb listing exactly as it is. Book Homes works alongside it: import your listing in one click, sync calendars both ways and take bookings from guests who search here as well.</p>
+{cta("List your home in 2 minutes")}
+<h2>Why hosts add an extra channel</h2>
+<ul class="dots"><li><b>One more place to be found.</b> Many hosts list on more than one site. Book Homes is one more, with your calendars kept in step.</li>
 <li><b>Guests who search differently.</b> Book Homes guests can filter for a host-declared kosher kitchen, Shabbat-friendly set-up, van parking and work stays.</li>
 <li><b>No cost unless you get a booking.</b> No sign-up or monthly fee. Commission is {STD} per booking ({KOSHER} for kosher hosts), plus Stripe's card fee once payouts are connected.</li></ul>
 <h2>Set up in three steps</h2>
@@ -178,16 +178,17 @@ def airbnb_hosts():
 <li>Paste it into Book Homes (Calendar, then Sync your other calendars). We read it every 15 minutes.</li>
 <li>Copy your Book Homes calendar link and add it to Airbnb as an imported calendar. Airbnb refreshes imported calendars about every 3 hours, and you can press Refresh after a new booking.</li></ol>
 <p>Full walkthrough: <a href="/guides/sync-airbnb-calendar-with-another-site">Sync your Airbnb calendar with another site</a>.</p>
-<h2>Fees side by side</h2>
-{fee_table()}
-{src_html(["airbnb_fee", "airbnb_ical", "stripe", "booking_fee"])}
+<h2>What it costs on Book Homes</h2>
+{costs_table()}
+{src_html(["airbnb_ical", "stripe"])}
+<p>Also on Booking.com or Vrbo, or using a channel manager? See <a href="/hosts/multi-platform-hosts">hosts on several sites</a>.</p>
 <h2>Questions</h2>
 <div class="hfaq">{faq_html(FAQ_AIRBNB)}</div>
-{cta("Import my Airbnb listing")}"""
-    graph = [{"@type": "WebPage", "name": "Add Book Homes as a second channel for your Airbnb", "url": B.DOMAIN + "/hosts/airbnb-hosts", "description": desc,
+{cta("List your home in 2 minutes")}"""
+    graph = [{"@type": "WebPage", "name": "Add Book Homes alongside your Airbnb listing", "url": B.DOMAIN + "/hosts/airbnb-hosts", "description": desc,
               "inLanguage": "en-GB", "isPartOf": {"@id": B.DOMAIN + "/#website"}},
              crumbs(("Hosting", "/hosts"), ("Airbnb hosts", "/hosts/airbnb-hosts")), faq_schema(FAQ_AIRBNB)]
-    return page("/hosts/airbnb-hosts", "Airbnb Hosts: Add a Second Channel | Book Homes", desc, body, graph)
+    return page("/hosts/airbnb-hosts", "Airbnb Hosts: Add Book Homes Too | Book Homes", desc, body, graph)
 
 
 # --------------------------------------------------------------------------- /hosts/kosher
@@ -266,7 +267,7 @@ def area_host(a, listings):
 <h2>Set up in three steps</h2>
 {steps_html()}
 <h2>What it costs</h2>
-<p>No sign-up or monthly fee. Commission is {STD} per booking, or {KOSHER} for <a href="/hosts/kosher">kosher hosts</a>. Once payouts are connected, Stripe takes its standard card fee from your share. Guests pay no booking fee. <a href="/become-a-host#fees">See the full fee comparison with Airbnb</a>.</p>
+<p>No sign-up or monthly fee. Commission is {STD} per booking, or {KOSHER} for <a href="/hosts/kosher">kosher hosts</a>. Once payouts are connected, Stripe takes its standard card fee from your share. Guests pay no booking fee. <a href="/become-a-host#fees">See what it costs</a>.</p>
 <h2>Before you list</h2>
 {rules}
 <ul class="dots"><li>You need the right to let the property for short stays, and the usual gas, electrical and fire safety checks and smoke and carbon monoxide alarms.</li>
@@ -280,18 +281,34 @@ def area_host(a, listings):
 
 
 def hosts_index(listings):
-    desc = "Host with Book Homes: one-click Airbnb import, calendar sync, no sign-up or monthly fee. Pages for Airbnb hosts, kosher hosts and each area we cover."
+    import bh_hosts_more as M
+    desc = "Host with Book Homes alongside Airbnb, Booking.com or Vrbo. List a whole home, a spare room or an annexe. Calendar sync, no sign-up or monthly fee."
+    cards = "".join(f'<li><a class="acard" href="{p}">{icon(i)}<span><b>{B.esc(t)}</b><small class="muted" style="display:block;margin-top:2px;font-size:14px">{B.esc(d)}</small></span></a></li>' for p, i, t, d in M.HUB_CARDS)
     areas = "".join(f'<li><a class="acard" href="{host_url(a)}">{icon("pin")}<span><b>Host in {B.esc(a["name"])}</b></span></a></li>' for a in bh_areas.AREAS)
+    guides = [("list-holiday-let-on-more-than-one-site-uk", "How to list your holiday let on more than one site"),
+              ("ical-calendar-sync-avoid-double-bookings", "Using iCal to avoid double bookings"),
+              ("rent-a-room-scheme-short-lets-2026", "Rent a Room Scheme and short lets explained"),
+              ("hosting-a-spare-room-safely-checklist-uk", "Hosting a spare room safely: a checklist"),
+              ("letting-an-annexe-short-term-uk", "Letting an annexe for short stays"),
+              ("void-period-short-lets-for-landlords", "Void period short lets for landlords"),
+              ("serviced-accommodation-direct-bookings-guide", "Serviced accommodation direct bookings guide"),
+              ("managing-several-holiday-lets-checklist", "Managing several holiday lets: a checklist"),
+              ("sync-airbnb-calendar-with-another-site", "Sync your Airbnb calendar with another site")]
+    glist = "".join(f'<li><a href="/guides/{s}">{B.esc(t)}</a></li>' for s, t in guides)
     body = f"""<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Hosting</span></nav>
 <h1>Host with Book Homes</h1>
-<p class="lead-p">A UK marketplace for whole homes. Import your Airbnb listing, keep your calendars in sync, and pay commission only when a guest books.</p>
-<ul class="dots"><li><a href="/become-a-host">List your property: how it works and what it costs</a></li>
-<li><a href="/hosts/airbnb-hosts">Already on Airbnb? Add a second channel</a></li>
-<li><a href="/hosts/kosher">Kosher hosts: {KOSHER} commission</a></li></ul>
+<p class="lead-p">A UK booking site for whole homes and private rooms. Keep your listings where they are and add Book Homes too: import from Airbnb in one click, keep your calendars in sync, and pay commission only when a guest books here.</p>
+<p class="hcta"><a class="btn" href="{SIGNUP}">List your home in 2 minutes</a></p>
+<h2>Which sounds like you?</h2><ul class="acards hcards">{cards}</ul>
+<h2>How it works</h2>
+{steps_html()}
+<p>No sign-up or monthly fee. Commission is {STD} per booking ({KOSHER} for kosher hosts), plus Stripe's card fee from your share. Guests pay no booking fee. <a href="/become-a-host">How it works and what it costs</a>.</p>
 <h2>Host by area</h2><ul class="acards">{areas}</ul>
-{cta()}"""
+<h2>Guides for hosts</h2><ul class="dots">{glist}</ul>
+<p class="hcta"><a class="btn" href="{SIGNUP}">List your home in 2 minutes</a></p>"""
     graph = [{"@type": "CollectionPage", "name": "Host with Book Homes", "url": B.DOMAIN + "/hosts", "description": desc, "inLanguage": "en-GB",
-              "isPartOf": {"@id": B.DOMAIN + "/#website"}}, crumbs(("Hosting", "/hosts"))]
+              "isPartOf": {"@id": B.DOMAIN + "/#website"},
+              "hasPart": [{"@type": "WebPage", "url": B.DOMAIN + p, "name": t} for p, _, t, _ in M.HUB_CARDS]}, crumbs(("Hosting", "/hosts"))]
     return page("/hosts", "Host with Book Homes | List Your Home", desc, body, graph)
 
 
@@ -304,6 +321,8 @@ def write_all(listings):
     B.write("hosts/airbnb-hosts/index.html", airbnb_hosts())
     B.write("hosts/kosher/index.html", kosher_hosts())
     urls = [f"{B.DOMAIN}/become-a-host", f"{B.DOMAIN}/hosts", f"{B.DOMAIN}/hosts/airbnb-hosts", f"{B.DOMAIN}/hosts/kosher"]
+    import bh_hosts_more  # round 2 (26 Nov 2026): platform, room / annexe / shared-space and host-type pages
+    urls += bh_hosts_more.write_all()
     for a in bh_areas.AREAS:
         B.write(f"hosts/{a['slug']}/index.html", area_host(a, listings))
         urls.append(B.DOMAIN + host_url(a))

@@ -473,7 +473,7 @@ def footer():
     return f"""<footer class="ft"><div class="wrap">
   <div class="ft-cols{' ft-4' if wo_html else ''}">
     <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/kosher-homes">Kosher-friendly homes</a><a href="/contractors">Contractor and crew stays</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
-    <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
+    <div><h2>Hosting</h2><a href="/hosts">Host with us</a><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
     {wo_html}
   </div>

@@ -764,3 +764,4 @@ details>p{margin-top:10px;color:var(--ink-2)}
 .ct-faq details{border-bottom:1px solid var(--line-2);padding:12px 0}
 .ct-faq summary{font-weight:600;cursor:pointer}
 .ct-faq p{margin:8px 0 0}
+@media (max-width:600px){.page .acards.hcards{grid-template-columns:1fr}}
