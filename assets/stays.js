@@ -23,7 +23,8 @@ var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 var D = JSON.parse($("#bh-data").textContent);
 var TAGS = D.tags, PRESET = D.preset || [];
-var S = {listings: D.listings, tag: "", where: "", ci: null, co: null, adults: 0, children: 0, infants: 0, pets: 0,
+var FOR = D["for"] || [];
+var S = {listings: D.listings, tag: "", forKey: "", where: "", ci: null, co: null, adults: 0, children: 0, infants: 0, pets: 0,
   f: {pmin: 0, pmax: null, bedrooms: 0, beds: 0, baths: 0, tags: {}, amen: {}}, results: null, map: false, flex: null};
 
 /* ---------- tags: same rules as listing_tags() in build_listings.py ---------- */
@@ -55,6 +56,19 @@ function tagsFor(l){
   Object.keys(TAGS).forEach(function(k){ if (r[k]) out.push(k); });
   return out;
 }
+/* "Who is it for" chips: same rules as for_keys() / crew_ready() in build_listings.py */
+function forFor(l){
+  var am = l.amenities || [], t = l.tags || [];
+  function has(a, x){ return a.indexOf(x) >= 0; }
+  var r = {
+    contractors: feats(l).work_crew || ((l.bedrooms || 0) >= 2 && ["parking", "washer", "kitchen", "wifi"].every(function(a){ return has(am, a); })),
+    groups: has(t, "large-groups") || has(t, "family"),
+    kosher: has(t, "kosher-kitchen") || has(t, "shabbat-friendly") || has(t, "near-shul"),
+    pets: l.pets_allowed === true || has(am, "pets"),
+    beds3: (l.bedrooms || 0) >= 3
+  };
+  return FOR.filter(function(k){ return r[k]; });
+}
 function tagInfo(k){
   if (TAGS[k]) return {label: TAGS[k][0], icon: TAGS[k][1]};
   for (var i = 0; i < S.listings.length; i++){
@@ -83,6 +97,7 @@ function pathFor(l){
 var q = new URLSearchParams(location.search);
 var dre = /^\d{4}-\d{2}-\d{2}$/;
 if (q.get("tag")) S.tag = q.get("tag");
+if (FOR.indexOf(q.get("for") || "") >= 0) S.forKey = q.get("for");
 if (q.get("where")) S.where = q.get("where").slice(0, 60);
 if (dre.test(q.get("check_in") || "") && dre.test(q.get("check_out") || "") && q.get("check_in") >= today && q.get("check_out") > q.get("check_in")){ S.ci = q.get("check_in"); S.co = q.get("check_out"); }
 if (!S.ci && /^(weekend|week|month)$/.test(q.get("flex") || "")){
@@ -99,6 +114,7 @@ function guests(){ return S.adults + S.children; }
 function pushUrl(){
   var p = new URLSearchParams();
   if (S.tag) p.set("tag", S.tag);
+  if (S.forKey) p.set("for", S.forKey);
   if (S.where) p.set("where", S.where);
   if (S.ci && S.co){ p.set("check_in", S.ci); p.set("check_out", S.co); }
   else if (S.flex){ p.set("flex", S.flex.kind); if (S.flex.months.length) p.set("months", S.flex.months.join(",")); }
@@ -140,6 +156,7 @@ function visible(f){
   return S.listings.filter(function(l){
     if (S.tag){ if (l.tags.indexOf(S.tag) < 0) return false; }
     else if (PRESET.length && !PRESET.some(function(t){ return l.tags.indexOf(t) >= 0; })) return false;
+    if (S.forKey && (l["for"] || []).indexOf(S.forKey) < 0) return false;
     if (!whereMatch(l)) return false;
     if (guests() && l.max_guests < guests()) return false;
     if (S.pets && !l.pets_allowed && (l.amenities || []).indexOf("pets") < 0) return false;
@@ -185,7 +202,7 @@ function card(l, i){
   var dates = r && rci && rco ? fmtShort.format(parse(rci)) + " to " + fmtShort.format(parse(rco)) : "No booking fees";
   var price = r && r.total_pence ? "" : l.from_price ? '<span class="from">From</span> <b>' + money(l.from_price) + "</b> night" : "<b>Add dates</b> for prices";
   var pbtn = r && r.total_pence ? '<button type="button" class="prbtn" aria-expanded="false" aria-label="Price details: ' + money(r.total_pence / 100) + ' total"><b>' + money(r.total_pence / 100) + "</b> total" + (r.nights ? " for " + plural(r.nights, "night") : "") + "</button>" : "";
-  return '<article class="card" data-id="' + l.id + '"><div class="cph"><div class="track">' + slides + "</div>" + nav +
+  return '<article class="card" data-id="' + l.id + '"' + ((l["for"] || []).length ? ' data-for="' + esc(l["for"].join(" ")) + '"' : "") + '><div class="cph"><div class="track">' + slides + "</div>" + nav +
     '<button type="button" class="heart" aria-pressed="' + (isSaved(l.id) ? "true" : "false") + '" aria-label="Save ' + esc(l.title) + '">' + icon("heart") + "</button>" +
     '<div class="cdots" aria-hidden="true">' + dots + "</div></div>" +
     '<a class="meta" href="' + href + '"><span class="l1"><b>' + esc(place) + "</b>" + (rv.count ? '<span class="rt">' + icon("star", "ic st") + (+rv.average).toFixed(2) + " (" + rv.count + ")</span>" : "") + "</span>" +
@@ -227,6 +244,8 @@ function emptyHtml(){
       '<button type="button" class="chipbtn" id="resetAll">' + icon("x") + "Clear dates and filters</button></div></div>";
   }
   var w = S.where ? " in " + esc(S.where) : "";
+  if (S.forKey && !S.where && !S.tag && !filterCount() && !guests() && !S.pets)
+    return '<div class="empty"><h2>No homes match</h2><p>No homes match this filter yet. New homes appear as soon as hosts are approved.</p><p><button type="button" class="btn ghost" id="resetAll">See all homes</button></p></div>';
   return '<div class="empty"><h2>No homes match' + w + '</h2><p>' + (S.where && !S.listings.some(whereMatch) ? "There are no homes listed" + w + " yet. New homes appear as soon as hosts are approved." : "Try other dates, fewer filters or another category.") +
     '</p><p><button type="button" class="btn ghost" id="resetAll">Clear search and filters</button> <a class="btn" href="/become-a-host">List your property</a></p></div>';
 }
@@ -241,13 +260,14 @@ function render(){
   var c = $("#count");
   c.textContent = loading ? "Checking availability..." : plural(v.length, "home") + (S.ci && S.co ? " available " + fmtShort.format(parse(S.ci)) + " to " + fmtShort.format(parse(S.co)) : S.flex && S.results ? " free " + flexTxt() : "");
   $$(".cat").forEach(function(b){ b.setAttribute("aria-pressed", (b.getAttribute("data-tag") || "") === S.tag ? "true" : "false"); });
+  $$(".qchip").forEach(function(b){ b.setAttribute("aria-pressed", (b.getAttribute("data-for") || "") === S.forKey ? "true" : "false"); });
   var fc = filterCount();
   $$(".fcount").forEach(function(x){ x.textContent = fc; x.hidden = !fc; });
   paintSearch();
   if (S.map) drawMap(v);
 }
 function resetAll(){
-  S.tag = ""; S.where = ""; S.ci = S.co = null; S.flex = null; S.adults = S.children = S.infants = S.pets = 0; S.results = null;
+  S.tag = ""; S.forKey = ""; S.where = ""; S.ci = S.co = null; S.flex = null; S.adults = S.children = S.infants = S.pets = 0; S.results = null;
   S.f = {pmin: 0, pmax: null, bedrooms: 0, beds: 0, baths: 0, tags: {}, amen: {}};
   syncFilterUI(); pushUrl(); render();
 }
@@ -286,6 +306,13 @@ catsScroll.addEventListener("scroll", function(){ window.requestAnimationFrame(f
 window.addEventListener("resize", spaceCats);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(spaceCats);
 $("#catNext").addEventListener("click", function(){ catsScroll.scrollBy({left: catsScroll.clientWidth * 0.7, behavior: reduce ? "auto" : "smooth"}); });
+
+var qchips = $("#qchips");
+if (qchips) qchips.addEventListener("click", function(e){
+  var b = e.target.closest(".qchip"); if (!b) return;
+  S.forKey = b.getAttribute("data-for") || ""; pushUrl(); render();
+  b.scrollIntoView({behavior: reduce ? "auto" : "smooth", block: "nearest", inline: "nearest"});
+});
 
 /* ---------- card carousels and hearts ---------- */
 grid.addEventListener("click", function(e){
@@ -674,7 +701,7 @@ window.addEventListener("scroll", onScroll, {passive: true}); window.addEventLis
 
 /* ---------- refresh from the live API (homes approved since the last build) ---------- */
 function prep(l, old){
-  l.id = +l.id; l.tags = tagsFor(l);
+  l.id = +l.id; l.tags = tagsFor(l); l["for"] = forFor(l);
   l.url = old && old.url ? old.url : pathFor(l);
   var th = {}; (l.photos || []).forEach(function(p){ if (p.thumb) th[p.url] = p.thumb; });
   l.card_photos = (old && old.card_photos ? old.card_photos : (l.photos || []).slice(0, 5)).map(function(p){ return th[p.url] && !p.thumb ? Object.assign({}, p, {thumb: th[p.url]}) : p; });
@@ -685,7 +712,7 @@ fetch("/api/bh/listings?action=list", {headers: {"Accept": "application/json"}})
   .then(function(j){
     if (!j || !Array.isArray(j.listings) || !j.listings.length) return;
     var byId = {}; S.listings.forEach(function(l){ byId[l.id] = l; });
-    var sig = function(){ return S.listings.map(function(l){ return [l.id, l.from_price, l.max_guests, l.tags.join("+"), (l.reviews || {}).count].join(":"); }).join("|"); };
+    var sig = function(){ return S.listings.map(function(l){ return [l.id, l.from_price, l.max_guests, l.tags.join("+"), (l["for"] || []).join("+"), (l.reviews || {}).count].join(":"); }).join("|"); };
     var before = categoryRow().join(","), s0 = sig();
     S.listings = j.listings.map(function(l){ return prep(l, byId[+l.id]); });
     if (categoryRow().join(",") !== before) drawCats();

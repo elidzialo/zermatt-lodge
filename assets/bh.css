@@ -744,3 +744,23 @@ details>p{margin-top:10px;color:var(--ink-2)}
 .hpage .hero2{padding-top:24px}
 .hcta{margin-top:24px}
 @media (max-width:760px){.hsteps{grid-template-columns:1fr}.hcmp{min-width:560px}}
+/* "Who is it for" quick chips above the homes grid on "/" (for_chips_html, stays.js) */
+.qchips{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 0 20px;padding:2px 1px 4px;max-width:100%}
+.qchips::-webkit-scrollbar{display:none}
+.qchip{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;cursor:pointer}
+.qchip .ic{width:18px;height:18px}
+.qchip:hover{border-color:var(--ink)}
+.qchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.qchip:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+/* /contractors pages (bh_contractors.py) */
+.ct-cta{display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 24px}
+.ct-crit{background:var(--brand-tint);border-radius:16px;padding:18px 22px;margin:8px 0 24px}
+.ct-crit p{margin:0}
+.ct-t{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.ct-t th,.ct-t td{border-bottom:1px solid var(--line-2);padding:10px 8px;text-align:left;vertical-align:top}
+.ct-t th{font-weight:700}
+.ct-team{border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-top:32px}
+.ct-team h2{margin-top:0}
+.ct-faq details{border-bottom:1px solid var(--line-2);padding:12px 0}
+.ct-faq summary{font-weight:600;cursor:pointer}
+.ct-faq p{margin:8px 0 0}

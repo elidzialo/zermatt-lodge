@@ -200,6 +200,9 @@ def hub_page(a, listings, guides):
                                                           or (parent and x.get("parent") == parent["slug"]))]
     near_html = ("<h2>Nearby areas</h2><ul class='acards small'>" + "".join(
         f'<li><a class="acard" href="{url(x)}">{icon("pin")}<span><b>{B.esc(x["name"])}</b></span></a></li>' for x in near) + "</ul>") if near else ""
+    nc = sum(1 for l in shown if B.crew_ready(l))
+    crew = (f'<p>Booking for a work crew? See the <a class="link" href="/contractors/{B.esc(a["slug"])}">{B.plural(nc, "contractor-friendly home")} in {B.esc(name)}</a>, '
+            f'with free parking, a washing machine, a kitchen and Wi-Fi listed.</p>') if nc else ""
     host = (f'<section class="area-host" id="host"><div><h2>Host in {B.esc(name)}</h2><p>Own a holiday let, a family home or serviced accommodation in {B.esc(where)}? '
             f'List it on Book Homes: no sign-up or monthly fee, guests pay no booking fees, and your Airbnb and Booking.com calendars stay in sync.</p></div>'
             f'<a class="btn amber" href="/hosts/{B.esc(a["slug"])}">Host in {B.esc(name)}</a></section>')
@@ -213,6 +216,7 @@ def hub_page(a, listings, guides):
 <section><h2>Getting to {B.esc(name)}</h2>{_bullets(a.get("getting_there") or [])}</section>
 <section><h2>Types of stay in {B.esc(name)}</h2>{_bullets(a.get("stay_types") or [])}</section>
 </div>
+{crew}
 <section class="area-ask"><h2>What to ask a host before you book</h2>{_bullets(ASK_HOST)}{f"<p>{B.esc(ASK_HOST_KOSHER)}</p>" if a.get("kosher_focus") else ""}</section>
 {kosher}
 {gl}

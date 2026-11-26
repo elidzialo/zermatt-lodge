@@ -53,7 +53,7 @@ EMAIL = _SITE_CONTACT.get("email", "")
 # Top-level paths a listing can never take (also enforced in the bookhomes-host / bookhomes-admin functions).
 RESERVED = {"guides", "host", "admin", "stays", "api", "terms", "privacy", "become-a-host", "booking", "booked", "review",
             "assets", "kosher", "kosher-homes", "login", "search", "about", "contact", "help", "sitemap", "robots", "llms",
-            "listing", "listings", "data", "public", "saved", "stays-in", "areas", "wishlists", "trips", "hosts", "index", "booking-confirmed", "booking-cancelled", "favicon"}
+            "listing", "listings", "data", "public", "saved", "stays-in", "areas", "contractors", "wishlists", "trips", "hosts", "index", "booking-confirmed", "booking-cancelled", "favicon"}
 
 HOME_TITLE = "Holiday Homes in Manchester & Liverpool | Book Homes"  # build() rewrites from live areas
 HOME_DESC = ("Whole holiday homes in Manchester, Prestwich and Liverpool, booked direct. Kosher-friendly, no booking fees. "
@@ -151,6 +151,46 @@ FEATURE_TAGS = {
     "near-shul": ("Near shul", "shul"),
 }
 KOSHER_TAGS = ("kosher-kitchen", "shabbat-friendly", "near-shul")
+
+
+# --------------------------------------------------------------------------- "Who is it for" quick chips on "/" (mirrored in stays.js forFor())
+# Each chip only uses fields the host filled in. A chip is shown only when at least one listing matches.
+CREW_AMENITIES = ("parking", "washer", "kitchen", "wifi")
+
+
+def crew_ready(l):
+    """Contractor-friendly: 2+ bedrooms with free parking, a washing machine, a kitchen and Wi-Fi listed (or the host's work-crew set-up)."""
+    am = set(l.get("amenities") or [])
+    return features(l)["work_crew"] or ((l.get("bedrooms") or 0) >= 2 and all(a in am for a in CREW_AMENITIES))
+
+
+FOR_PRESETS = [  # key, chip label, icon
+    ("contractors", "Contractors & work crews", "van"),
+    ("groups", "Families & groups", "groups"),
+    ("kosher", "Kosher-friendly", "kosher"),
+    ("pets", "Pets allowed", "pets"),
+    ("beds3", "3+ bedrooms", "bed"),
+]
+
+
+def for_keys(l):
+    t = set(l.get("tags") or listing_tags(l))
+    rules = {
+        "contractors": crew_ready(l),
+        "groups": bool(t & {"large-groups", "family"}),
+        "kosher": bool(t & set(KOSHER_TAGS)),
+        "pets": l.get("pets_allowed") is True or "pets" in (l.get("amenities") or []),
+        "beds3": (l.get("bedrooms") or 0) >= 3,
+    }
+    return [k for k, _, _ in FOR_PRESETS if rules[k]]
+
+
+def for_chips_html(listings):
+    counts = {k: sum(1 for l in listings if k in l["for"]) for k, _, _ in FOR_PRESETS}
+    btns = [f'<button type="button" class="qchip" data-for="" aria-pressed="true"><span>All</span></button>']
+    btns += [f'<button type="button" class="qchip" data-for="{k}" aria-pressed="false">{icon(ic)}<span>{esc(lbl)}</span></button>'
+             for k, lbl, ic in FOR_PRESETS if counts[k]]
+    return f'<div class="qchips" id="qchips" role="group" aria-label="Who is the stay for">{"".join(btns)}</div>'
 
 
 def slugify(s):
@@ -381,7 +421,7 @@ def menu_html():
     return (f'<div class="umenu"><button type="button" class="ubtn" id="umBtn" aria-haspopup="true" aria-expanded="false" aria-controls="umList" aria-label="Menu">'
             f'{icon("menu")}<span class="uav">{icon("user")}</span></button>'
             f'<div class="umlist" id="umList" hidden><a href="/host"><b>Log in</b></a><a href="/become-a-host">List your property</a><hr>'
-            f'<a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/saved">Saved homes</a><a href="/guides">Guides</a><a href="/kosher-homes">Kosher-friendly homes</a>{contact}</div></div>')
+            f'<a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/saved">Saved homes</a><a href="/guides">Guides</a><a href="/kosher-homes">Kosher-friendly homes</a><a href="/contractors">Contractor and crew stays</a>{contact}</div></div>')
 
 
 def header(kind="page"):
@@ -432,7 +472,7 @@ def footer():
     sup = (f'<a href="tel:{tel}">{esc(PHONE)}</a>' if PHONE else "") + (f'<a href="mailto:{esc(EMAIL)}">{esc(EMAIL)}</a>' if EMAIL else "")
     return f"""<footer class="ft"><div class="wrap">
   <div class="ft-cols{' ft-4' if wo_html else ''}">
-    <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/kosher-homes">Kosher-friendly homes</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
+    <div><h2 class="ft-wm">Book<b>Homes</b></h2><a href="/">All homes</a><a href="/stays-in">Homes by area</a><a href="/kosher-homes">Kosher-friendly homes</a><a href="/contractors">Contractor and crew stays</a><a href="/zermatt-lodge">Zermatt Lodge, Liverpool</a><a href="/guides">Liverpool guides</a></div>
     <div><h2>Hosting</h2><a href="/become-a-host">List your property</a><a href="/host">Host login</a><a href="/terms/hosts">Host terms</a></div>
     <div><h2>Support</h2>{sup}<a href="/terms/guests">Guest terms</a><a href="/privacy">Privacy</a></div>
     {wo_html}
@@ -542,7 +582,8 @@ def card_html(l, eager=False):
     place = ", ".join(x for x in [l.get("city"), area_name(l)] if x)
     price = (f'<span class="from">From</span> <b>{money(l["from_price"])}</b> night' if l.get("from_price")
              else '<b>Add dates</b> for prices')
-    return (f'<article class="card" data-id="{l["id"]}"><div class="cph"><div class="track">{slides}</div>{nav}'
+    dfor = f' data-for="{esc(" ".join(l["for"]))}"' if l.get("for") else ""
+    return (f'<article class="card" data-id="{l["id"]}"{dfor}><div class="cph"><div class="track">{slides}</div>{nav}'
             f'<button type="button" class="heart" aria-pressed="false" aria-label="Save {esc(l["title"])}">{icon("heart")}</button>'
             f'<div class="cdots" aria-hidden="true">{dots}</div></div>'
             f'<a class="meta" href="{esc(l["url"])}"><span class="l1"><b>{esc(place)}</b>{rating}</span>'
@@ -732,10 +773,10 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]})
     data = {"listings": [{k: (public_kosher(l) if k == "kosher" else l.get(k)) for k in ("id", "slug", "title", "city", "area", "max_guests", "bedrooms", "beds", "baths", "amenities",
                                                  "categories", "business", "kosher", "monthly_discount_pct", "max_nights", "lat", "lng",
-                                                 "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source", "pets_allowed")}
+                                                 "from_price", "cleaning_fee", "reviews", "url", "card_photos", "tags", "legacy_source", "pets_allowed", "for")}
                          for l in listings],
             "tags": {k: list(v) for k, v in FEATURE_TAGS.items()}, "reserved": sorted(RESERVED), "nearby": NEARBY,
-            "preset": preset or [], "amenity_labels": AMENITY_LABELS}
+            "preset": preset or [], "amenity_labels": AMENITY_LABELS, "for": [k for k, _, _ in FOR_PRESETS]}
     faq_html = ""
     if faq:
         faq_html = "<section class='home-faq'><h2>Questions</h2>" + "".join(
@@ -770,6 +811,7 @@ def home_page(listings, guides, path="/", preset=None, title=HOME_TITLE, desc=HO
 <main class="wrap home-main" id="content">
 <div class="rhead"><h1>{esc(h1)}</h1><p><span id="count">{count}</span><span class="dot-sep" aria-hidden="true">·</span><span>Total prices, no booking fees</span></p></div>
 {intro}
+{for_chips_html(listings) if path == "/" else ""}
 <div class="results" id="results"><div class="grid" id="grid">{cards or empty}</div><div class="mapview" id="mapview" hidden><div id="map" role="region" aria-label="Map of approximate locations"></div></div></div>
 {areas}
 {faq_html}
@@ -1362,6 +1404,7 @@ def build():
     for l in listings:
         l["id"] = int(l["id"])
         l["tags"] = listing_tags(l)
+        l["for"] = for_keys(l)
         l["card_photos"] = card_photos(l, extras)
         if (extras.get(l["slug"]) or {}).get("hide_map"):
             l["lat"] = l["lng"] = None  # owner asked for no map pin or coordinates on the static pages (listing-extras.json)
@@ -1406,6 +1449,8 @@ def build():
     import bh_pages
     urls += bh_pages.write_all(listings)
     urls += bh_areas.write_all(listings, guides)
+    import bh_contractors  # /contractors landing and /contractors/<area> (contractor and work crew stays)
+    urls += bh_contractors.write_all(listings, guides)
     row = category_row(listings)
     print(f"marketplace: {len(listings)} listing pages; categories: " + ", ".join(f"{lbl} ({n})" for _, lbl, _, n in row))
     return urls
